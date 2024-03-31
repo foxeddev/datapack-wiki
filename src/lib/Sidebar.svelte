@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SidebarPage from './SidebarPage.svelte';
+
   import SidebarCategory from './SidebarCategory.svelte';
 
     import "../app.css";
@@ -12,41 +14,20 @@
 
 <div class="w-1/6 bg-stone-800">
     <div class="flex flex-col p-2 space-y-1">
-        <a href="other" class="bg-stone-700 p-2 rounded-lg flex items-center space-x-2">
-            <IconPennant />
-            <div class="flex-grow">
-                <span>Getting Started</span>
-            </div>
-        </a>
+        <SidebarPage label="Getting Started" icon={IconPennant} page="getting-started"/>
         <SidebarCategory name="Basics" icon={IconBasics}>
-            <a href="other" class="bg-stone-700 p-2 rounded-lg flex items-center space-x-2">
-                <IconPennant />
-                <div class="flex-grow">
-                    <span>Functions</span>
-                </div>
-            </a>
+            <SidebarPage label="Functions" icon={IconPennant} page="functions"/>
         </SidebarCategory>
-        <a href="other" class="p-2 rounded-lg flex items-center space-x-2">
-            <IconCommand />
-            <div class="flex-grow">
-                <span>Command Reference</span>
-            </div>
-            <IconGo />
-        </a>
-        <a href="other" class="p-2 rounded-lg flex items-center space-x-2">
-            <IconBrackets />
-            <div class="flex-grow">
-                <span>Item Components</span>
-            </div>
-            <IconGo />
-        </a>
-        <a href="other" class="p-2 rounded-lg flex items-center space-x-2">
-            <IconNBT />
-            <div class="flex-grow">
-                <span>NBT Data</span>
-            </div>
-            <IconGo />
-        </a>
+        <SidebarCategory name="Command Reference" icon={IconCommand}>
+            <SidebarPage label="function" icon={IconCommand} page="command/function"/>
+            <SidebarPage label="execute" icon={IconCommand} page="command/execute"/>
+            <SidebarPage label="data" icon={IconCommand} page="command/data"/>
+            <SidebarPage label="summon" icon={IconCommand} page="command/summon"/>
+        </SidebarCategory>
+        <SidebarCategory name="Item Components" icon={IconBrackets}>
+        </SidebarCategory>
+        <SidebarCategory name="NBT Data" icon={IconNBT}>
+        </SidebarCategory>
     </div>
 </div>
 
