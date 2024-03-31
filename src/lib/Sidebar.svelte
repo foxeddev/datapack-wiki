@@ -14,20 +14,22 @@
 
 <div class="w-1/6 bg-stone-800">
     <div class="flex flex-col p-2 space-y-1">
-        <SidebarPage label="Getting Started" icon={IconPennant} page="getting-started"/>
+        <SidebarPage label="Getting Started" icon={IconPennant} page="/getting-started"/>
+
         <SidebarCategory name="Basics" icon={IconBasics}>
-            <SidebarPage label="Functions" icon={IconPennant} page="functions"/>
+            <SidebarPage label="Functions" icon={IconPennant} page="/functions"/>
         </SidebarCategory>
+
         <SidebarCategory name="Command Reference" icon={IconCommand}>
-            <SidebarPage label="function" icon={IconCommand} page="command/function"/>
-            <SidebarPage label="execute" icon={IconCommand} page="command/execute"/>
-            <SidebarPage label="data" icon={IconCommand} page="command/data"/>
-            <SidebarPage label="summon" icon={IconCommand} page="command/summon"/>
+            <SidebarPage label="function" icon={IconCommand} page="/command/function"/>
+            <SidebarPage label="execute" icon={IconCommand} page="/command/execute"/>
+            <SidebarPage label="data" icon={IconCommand} page="/command/data"/>
+            <SidebarPage label="summon" icon={IconCommand} page="/command/summon"/>
         </SidebarCategory>
-        <SidebarCategory name="Item Components" icon={IconBrackets}>
-        </SidebarCategory>
-        <SidebarCategory name="NBT Data" icon={IconNBT}>
-        </SidebarCategory>
+
+        <SidebarCategory name="Item Components" icon={IconBrackets}></SidebarCategory>
+
+        <SidebarCategory name="NBT Data" icon={IconNBT}></SidebarCategory>
     </div>
 </div>
 
