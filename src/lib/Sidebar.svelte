@@ -31,7 +31,10 @@
 
         <SidebarCategory name="Item Components" icon={IconBrackets}></SidebarCategory>
 
-        <SidebarCategory name="NBT Data" icon={IconNBT}></SidebarCategory>
+        <SidebarCategory name="NBT Data" icon={IconNBT}>
+            <SidebarPage label="Entity NBT" icon={IconBrackets} page="/nbt/entity"/>
+            <SidebarPage label="Storages" icon={IconBasics} page="/nbt/storages"/>
+        </SidebarCategory>
     </div>
 </div>
 
