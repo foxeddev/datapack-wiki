@@ -12,7 +12,7 @@
     <div class="flex h-[94%]">
         <Sidebar />
         <div class="flex flex-col w-5/6">
-            <div class="p-3">
+            <div class="p-3 prose prose-headings:text-stone-200 text-stone-200">
                 <slot />
             </div>
         </div>
