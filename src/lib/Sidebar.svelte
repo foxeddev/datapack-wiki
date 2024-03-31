@@ -4,7 +4,8 @@
   import SidebarCategory from './SidebarCategory.svelte';
 
     import "../app.css";
-    import IconGo from '~icons/tabler/chevron-right'
+
+    import IconHome from '~icons/tabler/home'
     import IconPennant from '~icons/tabler/pennant'
     import IconBasics from '~icons/tabler/box'
     import IconCommand from '~icons/tabler/slash'
@@ -14,6 +15,7 @@
 
 <div class="w-1/6 bg-stone-800">
     <div class="flex flex-col p-2 space-y-1">
+        <SidebarPage label="Home" icon={IconHome} page="/"/>
         <SidebarPage label="Getting Started" icon={IconPennant} page="/getting-started"/>
 
         <SidebarCategory name="Basics" icon={IconBasics}>
