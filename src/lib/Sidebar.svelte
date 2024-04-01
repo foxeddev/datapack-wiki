@@ -115,7 +115,7 @@
 </div>
 
 
-<dialog bind:this={dialog} class="w-1/3 bg-none">
+<dialog bind:this={dialog} class="w-1/3 bg-none backdrop:bg-black/50">
 	<div class="bg-stone-900 w-full p-4 gap-1 rounded-lg">
 		<input
 			class="bg-stone-950 w-full rounded-md focus:outline-0 text-white p-2 placeholder:text-stone-500"
