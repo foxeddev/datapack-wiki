@@ -1,0 +1,18 @@
+<script lang="ts">
+	import { page } from '$app/stores';
+</script>
+
+<svelte:head>
+	<title>Error: {$page.status} | Datapack Hub</title>
+	<meta name="description" content="You shouldn't be here..." />
+</svelte:head>
+
+![DPH Icon](/logos/dph.svg) 
+
+# Error: {$page.status}
+
+There was an error when loading this page! 
+
+[Go Home](/) 
+
+[Get Support](https://discord.datapackhub.net/)
