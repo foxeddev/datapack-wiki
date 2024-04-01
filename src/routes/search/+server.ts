@@ -47,7 +47,7 @@ function stripMarkdown(markdown: string) {
 }
 
 export async function GET() {
-	const paths = import.meta.glob("/src/routes/{command,test}/**/*.{svx,md}", { as: "raw", eager: true });
+	const paths = import.meta.glob("/{command,test}/**/*.{svx,md}", { query: '?raw', import: 'default', eager: true });
 	const posts = Object.entries(paths)
 		.map(([url, content]) => {
 			const frontmatter = matter(content)
@@ -58,8 +58,8 @@ export async function GET() {
 
 			return {
 				title: frontmatter.data.title,
-                content: stripMarkdown(content),
-                url: url.slice("/src/routes/".length).slice(0, -9),
+                content: stripMarkdown(content as string),
+                url: url.slice(0, -9),
 			}
 		})
 		.filter(Boolean)
