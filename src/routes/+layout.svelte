@@ -1,7 +1,20 @@
 <script lang="ts">
 	import Sidebar from '../lib/Sidebar.svelte';
 
+	import IconShare from '~icons/tabler/share';
+	import IconDiscord from '~icons/tabler/brand-discord';
+
 	import '../app.css';
+
+	var shareText = "Share"
+
+	function copyUrl(){
+		navigator.clipboard.writeText(window.location.href);
+		shareText = "Copied!"
+		setTimeout(() => {
+			shareText = "Share"
+		},2000)
+	}
 </script>
 
 <div class="font-lexend bg-stone-900 h-screen text-stone-200">
@@ -10,12 +23,21 @@
 			<img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-9" />
 			<h1 class="font-bold text-lg">Datapack Wiki</h1>
 		</div>
-		<a href="https://discord.datapackhub.net/" class="bg-blue-600 px-3 py-1 rounded-lg m-1">Join our discord</a>
+		<div class="flex items-center space-x-2 h-full">
+			<a href="https://discord.datapackhub.net" class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 hover:text-stone-100">
+				<IconDiscord />
+				<span>Discord</span>
+			</a> 
+			<button class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 hover:text-stone-100" on:click={copyUrl}>
+				<IconShare />
+				<span>{shareText}</span>
+			</button> 
+		</div>
 	</div>
-	<div class="flex h-[94%] w-full">
+	<div class="flex h-[94%] w-full bg-stone-800">
 		<Sidebar />
-		<div class="flex flex-col w-5/6">
-			<div class="p-3 w-full prose md prose-headings:text-stone-200 text-stone-200">
+		<div class="flex flex-col w-full">
+			<div class="p-3 w-full prose md prose-headings:text-stone-200 text-stone-200 bg-stone-900 h-full">
 				<slot />
 			</div>
 		</div>

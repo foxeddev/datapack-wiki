@@ -10,8 +10,15 @@
 	import IconBrackets from '~icons/tabler/brackets-contain';
 	import IconHome from '~icons/tabler/home';
 	import IconPennant from '~icons/tabler/pennant';
-	import IconSearch from '~icons/tabler/search';
+	import IconBox from '~icons/tabler/box';
 	import IconCommand from '~icons/tabler/slash';
+	import IconBrackets from '~icons/tabler/brackets-contain';
+	import IconNBT from '~icons/tabler/braces';
+    import IconSearch from '~icons/tabler/search';
+    import IconStar from '~icons/tabler/star'
+    import IconGrid from '~icons/tabler/grid-3x3'
+    import IconButterfly from '~icons/tabler/butterfly'
+    import IconCloud from '~icons/tabler/cloud'
 
 	import { sidebarExpanded } from '$lib';
 	import IconCollapse from '~icons/tabler/chevron-left';
@@ -35,7 +42,7 @@
 	let dialog: HTMLDialogElement;
 </script>
 
-<div class="w-fit max-w-[16.66%] bg-stone-800 flex flex-col items-center">
+<div class="{$sidebarExpanded ? "w-[18%]" : "w-fit"} bg-stone-800 flex flex-col items-center">
 	<div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto">
 		<!-- <button
 			class="bg-stone-600 size-8 rounded-md flex items-center justify-center"
@@ -62,8 +69,11 @@
 			page="/getting-started"
 		/>
 
-		<SidebarCategory name="Basics" icon={IconBasics}>
+		<SidebarCategory name="Basics" icon={IconBox}>
+            <SidebarPage label="Commands" icon={IconCommand} page="/commands" />
 			<SidebarPage label="Functions" icon={IconPennant} page="/functions" />
+            <SidebarPage label="Advancements" icon={IconStar} page="/advancements" />
+            <SidebarPage label="Recipes" icon={IconGrid} page="/recipes" />
 		</SidebarCategory>
 
 		<SidebarCategory name="Command Reference" icon={IconCommand}>
@@ -81,8 +91,10 @@
 		></SidebarCategory>
 
 		<SidebarCategory name="NBT Data" icon={IconNBT}>
-			<SidebarPage label="Entity NBT" icon={IconBrackets} page="/nbt/entity" />
-			<SidebarPage label="Storages" icon={IconBasics} page="/nbt/storages" />
+            <SidebarPage label="SNBT" icon={IconNBT} page="/nbt/entity" />
+			<SidebarPage label="Entity NBT" icon={IconButterfly} page="/nbt/entity" />
+            <SidebarPage label="Block NBT" icon={IconBox} page="/nbt/block" />
+			<SidebarPage label="Storages" icon={IconCloud} page="/nbt/storages" />
 		</SidebarCategory>
 
 		<!-- End of Sidebar Pages -->
