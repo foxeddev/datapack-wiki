@@ -12,17 +12,27 @@
 	import IconBrackets from '~icons/tabler/brackets-contain';
 	import IconNBT from '~icons/tabler/braces';
 	import IconMenu from '~icons/tabler/menu2';
+    import IconSearch from '~icons/tabler/search';
+
+    import IconCollapse from '~icons/tabler/chevron-left'
+    import IconUnCollapse from '~icons/tabler/chevron-right'
 	import { sidebarExpanded } from '$lib';
 </script>
 
-<div class="w-fit max-w-[16.66%] bg-stone-800 overflow-y-auto">
-	<div class="flex flex-col p-2 gap-1">
-		<button
+<div class="w-fit max-w-[16.66%] bg-stone-800 flex flex-col items-center">
+	<div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto">
+		<!-- <button
 			class="bg-stone-600 size-8 rounded-md flex items-center justify-center"
 			on:click={() => ($sidebarExpanded = !$sidebarExpanded)}
 		>
 			<IconMenu />
-		</button>
+		</button> -->
+        {#if $sidebarExpanded}
+        <div class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 mb-2">
+            <IconSearch />
+            <input class="bg-black/0 w-full focus:outline-0"/>
+        </div> 
+        {/if}
 		<SidebarPage label="Home" icon={IconHome} page="/" />
 		<SidebarPage
 			label="Getting Started"
@@ -53,4 +63,18 @@
 			<SidebarPage label="Storages" icon={IconBasics} page="/nbt/storages" />
 		</SidebarCategory>
 	</div>
+    <div class="text-sm text-stone-600 p-2 flex items-center w-full">
+        {#if $sidebarExpanded}
+        <span class="flex-grow flex flex-col items-center">
+            BETA - Dev Version
+        </span>
+        <button class="text-stone-200 text-lg" on:click={() => ($sidebarExpanded = !$sidebarExpanded)}>
+            <IconCollapse />
+        </button>
+        {:else}
+        <button class="text-stone-200 text-lg flex-grow" on:click={() => ($sidebarExpanded = !$sidebarExpanded)}>
+            <IconUnCollapse />
+        </button>
+        {/if}
+    </div>
 </div>

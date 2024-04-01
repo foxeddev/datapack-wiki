@@ -12,23 +12,23 @@
 </script>
 
 <button
-	class="hover:bg-stone-700 py-2 rounded-lg flex items-center gap-2 cursor-default"
-	on:click={() => (expanded = !expanded)}
+	class="hover:bg-stone-700 py-2 rounded-lg flex gap-2 cursor-default p-1 items-center"
+	on:click={() => {expanded = !expanded; $sidebarExpanded = true}}
 >
 	<svelte:component this={icon} />
 	{#if $sidebarExpanded}
 		<div class="flex-grow text-left mr-12">
 			<span>{name}</span>
-		</div>
-	{/if}
-	{#if !expanded}
-		<IconExpand />
-	{:else}
-		<IconDexpand />
+		</div>	
+		{#if !expanded}
+			<IconExpand />
+		{:else}
+			<IconDexpand />
+		{/if}
 	{/if}
 </button>
-{#if expanded}
-	<div class="flex flex-col space-y-1 ml-4">
+{#if expanded && $sidebarExpanded}
+	<div class="flex flex-col ml-4">
 		<slot />
 	</div>
 {/if}

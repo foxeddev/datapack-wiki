@@ -9,7 +9,7 @@
 
 <a
 	href={page}
-	class="hover:bg-stone-700 cursor-default py-2 rounded-lg flex gap-2"
+	class="hover:bg-stone-700 cursor-default py-2 rounded-lg flex gap-2 pl-1 items-center"
 >
 	<svelte:component this={icon} />
 	{#if $sidebarExpanded}

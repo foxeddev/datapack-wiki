@@ -5,7 +5,7 @@
 </script>
 
 <div class="font-lexend bg-stone-900 h-screen text-stone-200">
-	<div class="bg-white/10 h-[6%] flex items-center px-2 space-x-2">
+	<div class="bg-stone-800 h-[6%] flex items-center px-2 space-x-2">
 		<img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-9" />
 		<h1 class="font-bold text-lg">Datapack Wiki</h1>
 	</div>
