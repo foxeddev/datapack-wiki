@@ -1,5 +1,5 @@
 ---
-title: Function command
+title: /function
 ---
 
 <script lang="ts">

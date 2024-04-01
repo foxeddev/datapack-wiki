@@ -112,30 +112,36 @@
 			<IconCollapse />
 		</button>
 	</div>
-
-	<dialog bind:this={dialog}>
-		<div class="bg-stone-800 w-full md:max-w-xl max-w-full p-4 gap-1">
-			<input
-				class="bg-stone-900 w-full focus:outline-0 text-white p-2 placeholder:text-stone-500"
-				type="text"
-				placeholder="Looking for something?"
-				bind:value={searchTerm}
-			/>
-			{#each results as result}
-				<a on:click={() => dialog.close()} href="/{result.url}">
-					<div class="p-2 my-4 bg-stone-700 rounded-md">
-						<p class="text-stone-200 text-xl">
-							{result.title}
-							<span class="text-stone-500 text-xs">/{result.url}</span>
-						</p>
-						<span class="text-stone-500 line-clamp-2">
-							{result.content}
-						</span>
-					</div>
-				</a>
-			{:else}
-				<p class="text-stone-500">No results</p>
-			{/each}
-		</div>
-	</dialog>
 </div>
+
+
+<dialog bind:this={dialog} class="w-1/3 bg-none">
+	<div class="bg-stone-900 w-full p-4 gap-1 rounded-lg">
+		<input
+			class="bg-stone-950 w-full rounded-md focus:outline-0 text-white p-2 placeholder:text-stone-500"
+			type="text"
+			placeholder="Search for a page..."
+			bind:value={searchTerm}
+		/>
+		{#each results as result}
+			<a on:click={() => dialog.close()} href="/{result.url}">
+				<div class="p-2 my-2 rounded-md hover:bg-black/20">
+					<p class="text-stone-200 text-lg">
+						{result.title}
+						<span class="text-stone-500 text-xs">/{result.url}</span>
+					</p>
+				</div>
+			</a>
+			<a on:click={() => dialog.close()} href="/{result.url}">
+				<div class="p-2 my-2 rounded-md hover:bg-black/20">
+					<p class="text-stone-200 text-lg">
+						{result.title}
+						<span class="text-stone-500 text-xs">/{result.url}</span>
+					</p>
+				</div>
+			</a>
+		{:else}
+			<p class="text-stone-500 mt-2">No results</p>
+		{/each}
+	</div>
+</dialog>
