@@ -1,3 +1,7 @@
+---
+title: "Function Command"
+---
+
 # `/function` command
 This command runs any `.mcfunction` file when called. You can also pass in a NBT compound or NBT source path if the function is a macro function.
 

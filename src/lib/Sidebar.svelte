@@ -5,18 +5,34 @@
 
 	import '../app.css';
 
+	import IconBasics from '~icons/tabler/box';
+	import IconNBT from '~icons/tabler/braces';
+	import IconBrackets from '~icons/tabler/brackets-contain';
 	import IconHome from '~icons/tabler/home';
 	import IconPennant from '~icons/tabler/pennant';
-	import IconBasics from '~icons/tabler/box';
+	import IconSearch from '~icons/tabler/search';
 	import IconCommand from '~icons/tabler/slash';
-	import IconBrackets from '~icons/tabler/brackets-contain';
-	import IconNBT from '~icons/tabler/braces';
-	import IconMenu from '~icons/tabler/menu2';
-    import IconSearch from '~icons/tabler/search';
 
-    import IconCollapse from '~icons/tabler/chevron-left'
-    import IconUnCollapse from '~icons/tabler/chevron-right'
 	import { sidebarExpanded } from '$lib';
+	import IconCollapse from '~icons/tabler/chevron-left';
+	import { onMount } from 'svelte';
+	import { createSearchIndex, search, type Post } from './search';
+
+	let results: Post[] = [];
+	let searchTerm = '';
+	let searchState: 'waiting' | 'done' = 'waiting';
+
+	onMount(async () => {
+		const posts = await fetch('/search/').then((r) => r.json());
+		createSearchIndex(posts);
+		searchState = 'done';
+	});
+
+	$: if (searchState === 'done') {
+		results = search(searchTerm);
+	}
+
+	let dialog: HTMLDialogElement;
 </script>
 
 <div class="w-fit max-w-[16.66%] bg-stone-800 flex flex-col items-center">
@@ -27,12 +43,18 @@
 		>
 			<IconMenu />
 		</button> -->
-        {#if $sidebarExpanded}
-        <div class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 mb-2">
-            <IconSearch />
-            <input class="bg-black/0 w-full focus:outline-0"/>
-        </div> 
-        {/if}
+		{#if $sidebarExpanded}
+			<button
+				class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 mb-2"
+				on:click={() => dialog.showModal()}
+			>
+				<IconSearch />
+				<!-- <input class="bg-black/0 w-full focus:outline-0" /> -->
+			</button>
+		{/if}
+
+		<!-- Add Sidebar Pages below! -->
+
 		<SidebarPage label="Home" icon={IconHome} page="/" />
 		<SidebarPage
 			label="Getting Started"
@@ -62,19 +84,48 @@
 			<SidebarPage label="Entity NBT" icon={IconBrackets} page="/nbt/entity" />
 			<SidebarPage label="Storages" icon={IconBasics} page="/nbt/storages" />
 		</SidebarCategory>
+
+		<!-- End of Sidebar Pages -->
 	</div>
-    <div class="text-sm text-stone-600 p-2 flex items-center w-full">
-        {#if $sidebarExpanded}
-        <span class="flex-grow flex flex-col items-center">
-            BETA - Dev Version
-        </span>
-        <button class="text-stone-200 text-lg" on:click={() => ($sidebarExpanded = !$sidebarExpanded)}>
-            <IconCollapse />
-        </button>
-        {:else}
-        <button class="text-stone-200 text-lg flex-grow" on:click={() => ($sidebarExpanded = !$sidebarExpanded)}>
-            <IconUnCollapse />
-        </button>
-        {/if}
-    </div>
+	<div class="text-sm text-stone-600 p-2 flex items-center w-full">
+		{#if $sidebarExpanded}
+			<span class="flex-grow flex flex-col items-center">
+				BETA - Dev Version
+			</span>
+		{/if}
+		<button
+			class="text-stone-200 text-lg transition-all {$sidebarExpanded
+				? 'rotate-0'
+				: 'rotate-180'}"
+			on:click={() => ($sidebarExpanded = !$sidebarExpanded)}
+		>
+			<IconCollapse />
+		</button>
+	</div>
+
+	<dialog bind:this={dialog}>
+		<div class="bg-stone-800 w-full md:max-w-xl max-w-full p-4 gap-1">
+			<input
+				class="bg-stone-900 w-full focus:outline-0 text-white p-2 placeholder:text-stone-500"
+				type="text"
+				placeholder="Looking for something?"
+				bind:value={searchTerm}
+			/>
+			{#each results as result}
+				<a on:click={() => dialog.close()} href="/{result.url}">
+					<div class="p-2 my-4 bg-stone-700 rounded-md">
+						<p class="text-stone-200 text-xl">
+							{result.title}
+							<span class="text-stone-500 text-xs">/{result.url}</span>
+						</p>
+						<span class="text-stone-500 line-clamp-2">
+							{result.content}
+						</span>
+					</div>
+				</a>
+			{:else}
+				<p class="text-stone-500">No results</p>
+			{/each}
+		</div>
+	</dialog>
 </div>
