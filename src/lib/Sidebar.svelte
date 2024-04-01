@@ -6,8 +6,6 @@
 	import '../app.css';
 
 	import IconBasics from '~icons/tabler/box';
-	import IconNBT from '~icons/tabler/braces';
-	import IconBrackets from '~icons/tabler/brackets-contain';
 	import IconHome from '~icons/tabler/home';
 	import IconPennant from '~icons/tabler/pennant';
 	import IconBox from '~icons/tabler/box';
