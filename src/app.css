@@ -47,5 +47,5 @@
 /* @Silabear 
    these are defaults from the previous design */
 .md {
-	@apply prose prose-sm prose-zinc prose-invert md:prose-base prose-headings:mb-2 prose-headings:mt-10 prose-h2:text-3xl prose-p:my-3 prose-blockquote:rounded-l-sm prose-blockquote:rounded-r-lg prose-blockquote:border-blue-500 prose-blockquote:bg-blue-500/20 prose-blockquote:py-1 prose-blockquote:pr-2 prose-blockquote:font-normal prose-blockquote:not-italic prose-code:p-2 prose-code:text-base prose-code:font-thin prose-code:before:content-none prose-code:after:content-none prose-pre:p-0 prose-ol:mt-0 prose-li:my-1;
+	@apply prose prose-sm prose-zinc prose-invert max-w-full md:prose-base prose-headings:mb-2 prose-h2:text-3xl prose-h2:mt-7 prose-p:my-3 prose-blockquote:rounded-l-sm prose-blockquote:rounded-r-lg prose-blockquote:border-blue-500 prose-blockquote:bg-blue-500/20 prose-blockquote:py-1 prose-blockquote:pr-2 prose-code:bg-black/20 prose-code:rounded-md prose-blockquote:font-normal prose-blockquote:not-italic prose-code:p-2 prose-code:font-thin prose-code:before:content-none prose-code:after:content-none prose-pre:p-0 prose-ol:mt-0 prose-li:my-1; 
 }
