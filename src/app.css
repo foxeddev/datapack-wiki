@@ -43,8 +43,18 @@
   src: url("/fonts/lexend-v19-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-/* @Silabear 
-   these are defaults from the previous design */
 .md {
   @apply prose prose-sm prose-zinc prose-invert max-w-full md:prose-base prose-headings:mb-2 prose-h2:text-3xl prose-h2:mt-7 prose-p:my-3 prose-blockquote:rounded-l-sm prose-code:bg-black/20 prose-code:rounded-md prose-blockquote:font-normal prose-blockquote:not-italic prose-code:p-2 prose-code:font-thin prose-code:before:content-none prose-code:after:content-none prose-pre:p-2 prose-pre:bg-black/40 prose-ol:mt-0 prose-li:my-1;
+}
+
+::-webkit-scrollbar {
+  width: 0.15rem;
+}
+
+::-webkit-scrollbar-track {
+  @apply rounded-full bg-zinc-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-zinc-500;
 }

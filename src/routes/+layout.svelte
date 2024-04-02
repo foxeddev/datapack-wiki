@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Sidebar from "../lib/Sidebar.svelte";
+  import Sidebar from "$lib/sidebar/Sidebar.svelte";
 
   import IconShare from "~icons/tabler/share";
   import IconDiscord from "~icons/tabler/brand-discord";
@@ -42,7 +42,7 @@
   <div class="flex h-[94%] w-full bg-stone-800">
     <Sidebar />
     <div class="flex flex-col w-full">
-      <div id="content" class="p-3 w-full prose md prose-headings:text-stone-200 text-stone-200 bg-stone-900 h-full">
+      <div id="content" class="p-4 w-full prose md prose-headings:text-stone-200 text-stone-200 bg-stone-900 h-full overflow-y-auto">
         <slot />
       </div>
     </div>

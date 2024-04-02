@@ -1,9 +1,6 @@
 <script lang="ts">
   import SidebarPage from "./SidebarPage.svelte";
-
   import SidebarCategory from "./SidebarCategory.svelte";
-
-  import "../app.css";
 
   import IconBasics from "~icons/tabler/box";
   import IconHome from "~icons/tabler/home";
@@ -21,7 +18,8 @@
   import { sidebarExpanded } from "$lib";
   import IconCollapse from "~icons/tabler/chevron-left";
   import { onMount } from "svelte";
-  import { createSearchIndex, search } from "./search";
+  import { createSearchIndex, search } from "../search";
+    import SidebarPages from "$lib/SidebarPages.svelte";
 
   let results: Post[] = [];
   let searchTerm = "";
@@ -51,42 +49,14 @@
     {#if $sidebarExpanded}
       <button
         aria-label="Open Search Modal"
-        class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 mb-2"
+        class="bg-black/45 p-2 py-1 rounded-lg flex items-center space-x-2 mb-2"
         on:click={() => dialog.showModal()}>
         <IconSearch />
-        <!-- <input class="bg-black/0 w-full focus:outline-0" /> -->
+        <span class="py-1 text-stone-500">Search...</span>
       </button>
     {/if}
 
-    <!-- Add Sidebar Pages below! -->
-
-    <SidebarPage label="Home" icon={IconHome} page="/" />
-    <SidebarPage label="Getting Started" icon={IconPennant} page="/getting-started" />
-
-    <SidebarCategory name="Basics" icon={IconBox}>
-      <SidebarPage label="Commands" icon={IconCommand} page="/commands" />
-      <SidebarPage label="Functions" icon={IconPennant} page="/functions" />
-      <SidebarPage label="Advancements" icon={IconStar} page="/advancements" />
-      <SidebarPage label="Recipes" icon={IconGrid} page="/recipes" />
-    </SidebarCategory>
-
-    <SidebarCategory name="Command Reference" icon={IconCommand}>
-      <SidebarPage label="function" icon={IconCommand} page="/command/function" />
-      <SidebarPage label="execute" icon={IconCommand} page="/command/execute" />
-      <SidebarPage label="data" icon={IconCommand} page="/command/data" />
-      <SidebarPage label="summon" icon={IconCommand} page="/command/summon" />
-    </SidebarCategory>
-
-    <SidebarCategory name="Item Components" icon={IconBrackets}></SidebarCategory>
-
-    <SidebarCategory name="NBT Data" icon={IconNBT}>
-      <SidebarPage label="SNBT" icon={IconNBT} page="/nbt/entity" />
-      <SidebarPage label="Entity NBT" icon={IconButterfly} page="/nbt/entity" />
-      <SidebarPage label="Block NBT" icon={IconBox} page="/nbt/block" />
-      <SidebarPage label="Storages" icon={IconCloud} page="/nbt/storages" />
-    </SidebarCategory>
-
-    <!-- End of Sidebar Pages -->
+    <SidebarPages />
   </div>
   <div class="text-sm text-stone-600 p-2 flex items-center w-full">
     {#if $sidebarExpanded}

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import "../app.css";
   import IconExpand from "~icons/tabler/chevron-right";
   import IconDexpand from "~icons/tabler/chevron-down";
   import type { ComponentType, SvelteComponent } from "svelte";
@@ -12,7 +11,7 @@
 </script>
 
 <button
-  class="hover:bg-stone-700 py-2 rounded-lg flex gap-2 cursor-default p-1 items-center"
+  class="hover:bg-stone-700 py-1 rounded-lg flex gap-2 cursor-default p-1 items-center"
   on:click={() => {
     expanded = !expanded;
     $sidebarExpanded = true;
