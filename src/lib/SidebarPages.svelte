@@ -19,6 +19,8 @@
     import IconButterfly from "~icons/tabler/butterfly";
     import IconCloud from "~icons/tabler/cloud";
     import IconTree from "~icons/tabler/sitemap";
+    import IconPeopleBook from "~icons/tabler/address-book";
+    import IconBook from "~icons/tabler/book";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -54,3 +56,7 @@
     <SidebarPage label="Block NBT" icon={IconBox} page="/nbt/block" />
     <SidebarPage label="Storages" icon={IconCloud} page="/nbt/storages" />
 </SidebarCategory>
+
+<SidebarCategory name="Resources" icon={IconBook}></SidebarCategory>
+
+<SidebarCategory name="Credits" icon={IconPeopleBook}></SidebarCategory>
