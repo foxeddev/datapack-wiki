@@ -1,0 +1,2 @@
+# Commands
+Commands tell the game to do things. Functions are files which are made up of many 

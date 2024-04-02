@@ -5,6 +5,18 @@
   import IconDiscord from "~icons/tabler/brand-discord";
 
   import "../app.css";
+  import { onMount } from "svelte";
+
+  import hljs from 'highlight.js/lib/core';
+  import json from 'highlight.js/lib/languages/json'
+  import md from 'highlight.js/lib/languages/markdown'
+  import "highlight.js/styles/github-dark.css"
+  hljs.registerLanguage('json', json);
+  hljs.registerLanguage('md', md);
+
+  onMount(() => {
+    hljs.highlightAll();
+  })
 
   var shareText = "Share";
 

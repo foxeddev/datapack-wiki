@@ -11,11 +11,5 @@ import Tip from '$lib/reusables/Tip.svelte';
 # /function command
 This command runs any `.mcfunction` file when called. You can also pass in a NBT compound or NBT source path if the function is a macro function.
 
-<Info>I am a very important piece of information. Please dont ignore me. I'm only smol.</Info>
-
-<Warning>The stuff in this box is probably very important.</Warning>
-
-<Tip>You can do this really cool thing. It'll make your life a lot better!</Tip>
-
 ## Syntax
 `function <function>` - Runs a function

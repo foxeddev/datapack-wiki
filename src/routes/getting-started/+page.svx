@@ -42,7 +42,7 @@ This Getting Started Page explains step-by-step, how to set up the file structur
 
 3. Enter the folder, and create a new file with the name and extention: **`pack.mcmeta`**, this is what Minecraft Reads to identify the file as a datapack.
 4. Inside the `pack.mcmeta` file you'll need to paste these lines of code:
-```
+```json
 {
 	"pack": {
 		"pack_format": 26,
@@ -64,7 +64,7 @@ This Getting Started Page explains step-by-step, how to set up the file structur
 7. Inside the new `minecraft` folder create another folder named **`tags`**, and inside that another folder named **`functions`**, in this we'll be allocating our `load` and `tick` json files.
 
 * Create a new file called **`load.json`**, and inside paste this code:
-```
+```json
 {
 	"values": [
 		"foo:load"
@@ -75,7 +75,7 @@ This Getting Started Page explains step-by-step, how to set up the file structur
 
 
 * And in the same folder create another new file called **`tick.json`**, and inside pase this code:
-```
+```json
 {
 	"values": [
 		"foo:tick"
