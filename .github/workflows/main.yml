@@ -15,5 +15,5 @@ jobs:
 
       # run any `bun` or `bunx` command
       - run: bun install
-      - run: bun src/lib/search.ts
+      - run: bun ./generate_search_indexes.ts
       - run: bun run build
