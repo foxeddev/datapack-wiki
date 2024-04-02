@@ -54,7 +54,7 @@
   <div class="flex h-[94%] w-full bg-stone-800">
     <Sidebar />
     <div class="flex flex-col w-full">
-      <div id="content" class="p-10 w-full prose md prose-headings:text-stone-200 text-stone-200 bg-stone-900 h-full overflow-y-auto">
+      <div id="content" class="p-10 px-16 w-full prose md prose-headings:text-stone-200 text-stone-200 bg-stone-900 h-full overflow-y-auto">
         <slot />
       </div>
     </div>
