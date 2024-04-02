@@ -10,7 +10,7 @@ If you're new to datapacks, you're at the right place. Looking around, getting i
 This Getting Started Page explains step-by-step, how to set up the file structure for a datapack, prominently for the use of `.mcfunction` files.
 
   
-<Info>These docs are still work in progress, please join the <Link to="https://discord.datapackhub.net/">Discord Server</Link> for any specific help you require.</Info>
+<Info>These docs are still work in progress, please join the [Discord Server](https://discord.datapackhub.net/) for any specific help you require.</Info>
 
 ## What is a Datapack?
 
@@ -31,7 +31,7 @@ This Getting Started Page explains step-by-step, how to set up the file structur
 
 ## What will you need to make a Datapack?
 
-- A reliable text-editor, we recommend: <Link to="https://code.visualstudio.com">**Visual Studio Code**</Link> with the <Link to="https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server">Data-pack Helper Plus (Extension)</Link> in conjunction with the <Link to="https://marketplace.visualstudio.com/items?itemName=arcensoth.language-mcfunction">language-mcfunction (Extension)</Link>. [These extensions will aid in command syntax when making `.mcfunction` files].
+- A reliable text-editor, we recommend: [Visual Studio Code](https://code.visualstudio.com) with the [Data-Pack Helper Plus (Extention)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server) in conjunction with the [language-mcfunction (Extension)](https://marketplace.visualstudio.com/items?itemName=arcensoth.language-mcfunction). [These extensions will aid in command syntax when making `.mcfunction` files].
 
 ## How to set up the base of the Datapack:
 
