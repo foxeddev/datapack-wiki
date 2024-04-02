@@ -1,6 +1,8 @@
 # Contributing Guide
 Contributing to the Datapack Wiki is very easy. We use MDSveX to integrate markdown pages with the SvelteKit backend, so to add or edit pages you only need to know how to write Markdown, and very limited HTML knowledge.
 
+To contribute, please fork this repo and then submit a pull request with your added changes. 
+
 > [!TIP]
 > If you don't understand markdown or HTML, or if you require additional support, please [join our Discord](https://discord.datapackhub.net) and we'd be happy to help!
 
