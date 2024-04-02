@@ -6,12 +6,10 @@ import Tip from '$lib/reusables/Tip.svelte';
 
 # Credits
 
-> Brought to you by [Datapackhub.net](https://datapackhub.net)
-> *
+Brought to you by [Datapackhub.net](https://datapackhub.net)
+
 > - SilaBear
-> *
 > - Cobblestone
-> *
 > - PuckiSilver
 
 ### Editorial Team
@@ -21,7 +19,5 @@ import Tip from '$lib/reusables/Tip.svelte';
 ### Contributors
 
 > -
-> *
 > -
-> *
 > -
