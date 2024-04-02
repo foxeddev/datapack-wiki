@@ -6,7 +6,7 @@ on:
 name: my-workflow
 jobs:
   my-job:
-    name: generate-index
+    name: my-job
     runs-on: ubuntu-latest
     steps:
       # ...
