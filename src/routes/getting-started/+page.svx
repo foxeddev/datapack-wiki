@@ -51,7 +51,7 @@ This Getting Started Page explains step-by-step, how to set up the file structur
 }
 ```
 
-<Tip>Please note that the <code>pack_format</code> number can change depending on future Minecraft Updates. <bold>26</bold> is the current major release datapack format number.</Tip>
+<Tip>Please note that the <code>pack_format</code> number can change depending on future Minecraft Updates. <code>26</code> is the current major release datapack format number for 1.20.4.</Tip>
 
 5. Save the `pack.mcmeta` file and in the same directory, create a new file named: **`data`**.
 6. Inside the new `data` folder create 2 new folders. One named: **`minecraft`** and another named whater you wish. The name you choose for this folder will impact the way you execute functions in future. So keep it short and simple. examples: **`main`** or **`map`**. This is the folder where we'll be adding all of the `.mcfunction` files. (In these docs, `foo` will be used as the example.)
