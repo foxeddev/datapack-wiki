@@ -18,9 +18,10 @@
 </script>
 
 <div class="font-lexend bg-stone-900 h-screen text-stone-200">
+  <a href="#content" class="absolute -top-64 focus:top-8 left-1/2 -translate-x-1/2">Jump to content</a>
   <div class="bg-stone-800 h-[6%] flex items-center px-2">
     <div class="flex items-center space-x-2 flex-grow">
-      <img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-9" />
+      <img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-8" width="32" height="32" />
       <h1 class="font-bold text-lg">Datapack Wiki</h1>
     </div>
     <div class="flex items-center space-x-2 h-full">
@@ -41,12 +42,9 @@
   <div class="flex h-[94%] w-full bg-stone-800">
     <Sidebar />
     <div class="flex flex-col w-full">
-      <div class="p-3 w-full prose md prose-headings:text-stone-200 text-stone-200 bg-stone-900 h-full">
+      <div id="content" class="p-3 w-full prose md prose-headings:text-stone-200 text-stone-200 bg-stone-900 h-full">
         <slot />
       </div>
     </div>
   </div>
 </div>
-
-<style lang="postcss">
-</style>

@@ -4,47 +4,47 @@
 
 /* lexend-300 - latin */
 @font-face {
-	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-	font-family: "Lexend";
-	font-style: normal;
-	font-weight: 300;
-	src: url("/fonts/lexend-v19-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/lexend-v19-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* lexend-regular - latin */
 @font-face {
-	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-	font-family: "Lexend";
-	font-style: normal;
-	font-weight: 400;
-	src: url("/fonts/lexend-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/lexend-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* lexend-500 - latin */
 @font-face {
-	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-	font-family: "Lexend";
-	font-style: normal;
-	font-weight: 500;
-	src: url("/fonts/lexend-v19-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/lexend-v19-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* lexend-600 - latin */
 @font-face {
-	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-	font-family: "Lexend";
-	font-style: normal;
-	font-weight: 600;
-	src: url("/fonts/lexend-v19-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/lexend-v19-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* lexend-700 - latin */
 @font-face {
-	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-	font-family: "Lexend";
-	font-style: normal;
-	font-weight: 700;
-	src: url("/fonts/lexend-v19-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/lexend-v19-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* @Silabear 
    these are defaults from the previous design */
 .md {
-	@apply prose prose-sm prose-zinc prose-invert max-w-full md:prose-base prose-headings:mb-2 prose-h2:text-3xl prose-h2:mt-7 prose-p:my-3 prose-blockquote:rounded-l-sm prose-code:bg-black/20 prose-code:rounded-md prose-blockquote:font-normal prose-blockquote:not-italic prose-code:p-2 prose-code:font-thin prose-code:before:content-none prose-code:after:content-none prose-pre:p-2 prose-pre:bg-black/40 prose-ol:mt-0 prose-li:my-1; 
+  @apply prose prose-sm prose-zinc prose-invert max-w-full md:prose-base prose-headings:mb-2 prose-h2:text-3xl prose-h2:mt-7 prose-p:my-3 prose-blockquote:rounded-l-sm prose-code:bg-black/20 prose-code:rounded-md prose-blockquote:font-normal prose-blockquote:not-italic prose-code:p-2 prose-code:font-thin prose-code:before:content-none prose-code:after:content-none prose-pre:p-2 prose-pre:bg-black/40 prose-ol:mt-0 prose-li:my-1;
 }

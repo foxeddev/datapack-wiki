@@ -101,25 +101,27 @@
   </div>
 </div>
 
-<dialog bind:this={dialog} class="w-1/3 bg-none backdrop:bg-black/50">
-  <div class="bg-stone-900 w-full p-4 gap-1 rounded-lg">
+<dialog bind:this={dialog} class="w-1/3 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm">
+  <div class="bg-stone-800 w-full p-4 gap-1 rounded-lg">
     <input
-      class="bg-stone-950 w-full rounded-md focus:outline-0 text-white p-2 placeholder:text-stone-500"
-      type="text"
+      class="bg-stone-900 w-full rounded-md focus:outline-0 text-white p-2 placeholder:text-stone-500"
+      type="search"
       placeholder="Search for a page..."
       bind:value={searchTerm} />
     {#each results as result}
       <a on:click={() => dialog.close()} href={result.url}>
-        <div class="p-2 my-2 rounded-md hover:bg-black/20">
+        <div class="p-2 my-2 rounded-md hover:bg-black/20 transition-all">
           <p class="text-stone-200 text-lg">
             {result.title}
-            <span class="text-stone-500 text-xs">{result.url}</span>
+            <span class="text-stone-400 text-xs">{result.url}</span>
           </p>
           <p class="text-stone-400 line-clamp-2">{result.content}</p>
         </div>
       </a>
     {:else}
-      <p class="text-stone-500 mt-2">No results</p>
+      <p class="text-stone-400 mt-2">No results</p>
     {/each}
+
+    <button class="bg-stone-700 w-full rounded-md p-2 mt-2 text-white" on:click={() => dialog.close()}>Close</button>
   </div>
 </dialog>
