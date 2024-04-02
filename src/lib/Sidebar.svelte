@@ -50,6 +50,7 @@
 		</button> -->
     {#if $sidebarExpanded}
       <button
+        aria-label="Open Search Modal"
         class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 mb-2"
         on:click={() => dialog.showModal()}>
         <IconSearch />
@@ -92,6 +93,7 @@
       <span class="flex-grow flex flex-col items-center"> BETA - Dev Version </span>
     {/if}
     <button
+      aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
       class="text-stone-200 text-lg transition-all {$sidebarExpanded ? 'rotate-0' : 'rotate-180'}"
       on:click={() => ($sidebarExpanded = !$sidebarExpanded)}>
       <IconCollapse />
