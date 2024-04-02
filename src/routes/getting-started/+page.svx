@@ -92,7 +92,7 @@ This Getting Started Page explains step-by-step, how to set up the file structur
 
 ### Final File Structure:
 
-```md
+```json
 `.minecraft/saves/(world)/datapacks`
     └(your-datapack-name)
       ├`pack.mcmeta`
