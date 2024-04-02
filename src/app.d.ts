@@ -9,6 +9,14 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+
+	export type Post = {
+		title: string
+		content: string, 
+		url: string,
+		tags: string[],
+		versions: string
+	}
 }
 
 export {};
