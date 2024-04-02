@@ -57,6 +57,6 @@
     <SidebarPage label="Storages" icon={IconCloud} page="/nbt/storages" />
 </SidebarCategory>
 
-<SidebarCategory name="Resources" icon={IconBook}></SidebarCategory>
+<SidebarPage label="Resources" icon={IconBook} page="/resources" />
 
-<SidebarCategory name="Credits" icon={IconPeopleBook}></SidebarCategory>
+<SidebarPage label="Credits" icon={IconPeopleBook} page="/credits" />
