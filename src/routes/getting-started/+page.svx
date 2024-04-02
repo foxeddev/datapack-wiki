@@ -4,18 +4,6 @@ import Warning from '$lib/reusables/Warning.svelte';
 import Tip from '$lib/reusables/Tip.svelte';
 </script>
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
-
 # Getting Started
 
 If you're new to datapacks, you're at the right place. Looking around, getting into datapack creation might seem confusing, but once you've grasped the basics, you'll be off to a good start.
