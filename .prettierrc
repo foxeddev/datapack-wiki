@@ -1,0 +1,9 @@
+{
+    "bracketSameLine": true,
+    "printWidth": 120,
+    "trailingComma": "es5",
+    "semi": true,
+    "svelteIndentScriptAndStyle": true,
+    "embeddedLanguageFormatting": "auto",
+    "svelteAllowShorthand": true
+}
