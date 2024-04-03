@@ -3,9 +3,9 @@ title: Getting Started
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip} from '$lib/reusables';
+import {Info, Warning, Tip, Version} from '$lib/reusables';
 </script>
-<Info> This page is validated and up to date with the most current version: 1.20.4 </Info>
+<Version> This page is validated and up to date with the most current version: 1.20.4 </Version>
 
 # Getting Started
 
