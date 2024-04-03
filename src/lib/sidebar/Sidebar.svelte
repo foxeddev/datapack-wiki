@@ -1,25 +1,11 @@
 <script lang="ts">
-  import SidebarPage from "./SidebarPage.svelte";
-  import SidebarCategory from "./SidebarCategory.svelte";
-
-  import IconBasics from "~icons/tabler/box";
-  import IconHome from "~icons/tabler/home";
-  import IconPennant from "~icons/tabler/pennant";
-  import IconBox from "~icons/tabler/box";
-  import IconCommand from "~icons/tabler/slash";
-  import IconBrackets from "~icons/tabler/brackets-contain";
-  import IconNBT from "~icons/tabler/braces";
   import IconSearch from "~icons/tabler/search";
-  import IconStar from "~icons/tabler/star";
-  import IconGrid from "~icons/tabler/grid-3x3";
-  import IconButterfly from "~icons/tabler/butterfly";
-  import IconCloud from "~icons/tabler/cloud";
 
   import { sidebarExpanded } from "$lib";
   import IconCollapse from "~icons/tabler/chevron-left";
   import { onMount } from "svelte";
   import { createSearchIndex, search } from "../search";
-    import SidebarPages from "$lib/SidebarPages.svelte";
+  import SidebarPages from "$lib/SidebarPages.svelte";
 
   let results: Post[] = [];
   let searchTerm = "";

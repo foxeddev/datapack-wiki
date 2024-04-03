@@ -3,8 +3,10 @@ title: /function
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip} from '$lib/reusables';
+import {Info, Warning, Tip, Version} from '$lib/reusables';
 </script>
+
+<Version> This page is up to date and validated for the Minecraft version: 1.20.4</Version>
 
 # /function command
 This command runs any `.mcfunction` file when called. You can also pass in a NBT compound or NBT source path if the function is a macro function. All functions are run independently and one after another - for example, if you run `function1` and then `function2`, then `function2` will only run once `function1` has finished.

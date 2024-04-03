@@ -12,13 +12,13 @@
     import IconPennant from "~icons/tabler/pennant";
     import IconBox from "~icons/tabler/box";
     import IconCommand from "~icons/tabler/slash";
-    import IconBrackets from "~icons/tabler/brackets-contain";
     import IconNBT from "~icons/tabler/braces";
     import IconStar from "~icons/tabler/star";
     import IconGrid from "~icons/tabler/grid-3x3";
     import IconButterfly from "~icons/tabler/butterfly";
     import IconCloud from "~icons/tabler/cloud";
-    import IconTree from "~icons/tabler/sitemap";
+    import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
+    import IconWorldgen from "~icons/tabler/mountain";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -36,12 +36,9 @@
     <SidebarPage label="Functions" icon={IconPennant} page="/files/functions" />
     <SidebarPage label="Advancements" icon={IconStar} page="/files/advancements" />
     <SidebarPage label="Recipes" icon={IconGrid} page="/files/recipes" />
-    <SidebarPage label="Loot Tables" icon={IconTree} page="/files/recipes" />
-    <SidebarCategory name="Command Reference" icon={IconCommand}>
-        <SidebarPage label="function" icon={IconCommand} page="/command/function" />
-        <SidebarPage label="execute" icon={IconCommand} page="/command/execute" />
-        <SidebarPage label="data" icon={IconCommand} page="/command/data" />
-        <SidebarPage label="summon" icon={IconCommand} page="/command/summon" />
+    <SidebarPage label="Loot Tables" icon={IconAlienShapedWeirdGraphThingy} page="/files/recipes" />
+    <SidebarCategory name="Worldgen" icon={IconWorldgen}>
+        
     </SidebarCategory>
     
 </SidebarCategory>
