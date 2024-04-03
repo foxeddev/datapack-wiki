@@ -60,4 +60,4 @@
 </SidebarCategory>
 
 <SidebarPage label="Resources" icon={IconResources} page="/resources" />
-<SidebarPage label="Credits" icon={IconCredits} page="/resources" />
+<SidebarPage label="Credits" icon={IconCredits} page="/credits" />
