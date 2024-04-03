@@ -37,6 +37,13 @@
     <SidebarPage label="Advancements" icon={IconStar} page="/files/advancements" />
     <SidebarPage label="Recipes" icon={IconGrid} page="/files/recipes" />
     <SidebarPage label="Loot Tables" icon={IconTree} page="/files/recipes" />
+    <SidebarCategory name="Command Reference" icon={IconCommand}>
+        <SidebarPage label="function" icon={IconCommand} page="/command/function" />
+        <SidebarPage label="execute" icon={IconCommand} page="/command/execute" />
+        <SidebarPage label="data" icon={IconCommand} page="/command/data" />
+        <SidebarPage label="summon" icon={IconCommand} page="/command/summon" />
+    </SidebarCategory>
+    
 </SidebarCategory>
 
 <SidebarCategory name="Command Reference" icon={IconCommand}>

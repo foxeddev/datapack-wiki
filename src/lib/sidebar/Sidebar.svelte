@@ -49,7 +49,7 @@
       </button>
     {/if}
     
-    <div class="flex-grow flex flex-col">
+    <div class="flex-grow flex flex-col w-72">
       <SidebarPages />
     </div>
     <div class="flex flex-col">
