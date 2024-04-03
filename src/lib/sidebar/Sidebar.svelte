@@ -2,10 +2,10 @@
   import IconSearch from "~icons/tabler/search";
 
   import { sidebarExpanded } from "$lib";
-  import IconCollapse from "~icons/tabler/chevron-left";
+  import SidebarPages from "$lib/sidebar/SidebarPages.svelte";
   import { onMount } from "svelte";
+  import IconCollapse from "~icons/tabler/chevron-left";
   import { createSearchIndex, search } from "../search";
-  import SidebarPages from "$lib/SidebarPages.svelte";
 
   let results: Post[] = [];
   let searchTerm = "";
@@ -24,8 +24,8 @@
   let dialog: HTMLDialogElement;
 </script>
 
-<div class="{$sidebarExpanded ? 'w-[18%]' : 'w-fit'} bg-stone-800 flex flex-col items-center">
-  <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full">
+<aside class="w-max bg-stone-800 flex flex-col items-center fixed md:static h-full">
+  <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full mt-16">
     <!-- <button
 			class="bg-stone-600 size-8 rounded-md flex items-center justify-center"
 			on:click={() => ($sidebarExpanded = !$sidebarExpanded)}
@@ -55,7 +55,7 @@
       <IconCollapse />
     </button>
   </div>
-</div>
+</aside>
 
 <dialog bind:this={dialog} class="w-1/3 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm">
   <div class="bg-stone-800 w-full p-4 gap-1 rounded-lg">

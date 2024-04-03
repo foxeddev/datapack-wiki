@@ -1,8 +1,8 @@
 <script lang="ts">
-  import IconExpand from "~icons/tabler/chevron-right";
-  import IconDexpand from "~icons/tabler/chevron-down";
-  import type { ComponentType, SvelteComponent } from "svelte";
   import { sidebarExpanded } from "$lib";
+  import type { ComponentType, SvelteComponent } from "svelte";
+  import IconDexpand from "~icons/tabler/chevron-down";
+  import IconExpand from "~icons/tabler/chevron-right";
 
   export let name: string;
   export let icon: ComponentType<SvelteComponent>;

@@ -11,7 +11,7 @@ Brought to you by [datapackhub.net](https://datapackhub.net)
 
 ### Developers
 - [Silabear](https://silabear.carrd.co)
-- [Cobblestone](https://github.com/HoodieRocks)
+- [Cobblestone](https://hoodierocks.vercel.app)
 
 ### Editorial Team
 - [Aandeel](https://aandeel.co.uk/)

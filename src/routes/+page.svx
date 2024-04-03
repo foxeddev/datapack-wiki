@@ -16,9 +16,13 @@ Paragraph text under heading 2
 Paragraph text under heading 3
 
 I have some `code` for you. Here's some more: 
+
+```json
+{
+    "this.is":"cool!"
+}
 ```
-super code cool wow
-```
+
 <Info>I am a very important piece of information. Please dont ignore me. I'm only smol.</Info>
 
 <Warning>The stuff in this box is probably very important.</Warning>
