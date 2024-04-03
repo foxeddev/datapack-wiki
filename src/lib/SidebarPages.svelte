@@ -19,8 +19,6 @@
     import IconButterfly from "~icons/tabler/butterfly";
     import IconCloud from "~icons/tabler/cloud";
     import IconTree from "~icons/tabler/sitemap";
-    import IconPeopleBook from "~icons/tabler/address-book";
-    import IconBook from "~icons/tabler/book";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -35,10 +33,10 @@
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
-    <SidebarPage label="Functions" icon={IconPennant} page="/structure/functions" />
-    <SidebarPage label="Advancements" icon={IconStar} page="/structure/advancements" />
-    <SidebarPage label="Recipes" icon={IconGrid} page="/structure/recipes" />
-    <SidebarPage label="Loot Tables" icon={IconTree} page="/structure/recipes" />
+    <SidebarPage label="Functions" icon={IconPennant} page="/files/functions" />
+    <SidebarPage label="Advancements" icon={IconStar} page="/files/advancements" />
+    <SidebarPage label="Recipes" icon={IconGrid} page="/files/recipes" />
+    <SidebarPage label="Loot Tables" icon={IconTree} page="/files/recipes" />
 </SidebarCategory>
 
 <SidebarCategory name="Command Reference" icon={IconCommand}>
@@ -48,8 +46,6 @@
     <SidebarPage label="summon" icon={IconCommand} page="/command/summon" />
 </SidebarCategory>
 
-<SidebarCategory name="Item Components" icon={IconBrackets}></SidebarCategory>
-
 <SidebarCategory name="NBT Data" icon={IconNBT}>
     <SidebarPage label="SNBT" icon={IconNBT} page="/nbt/entity" />
     <SidebarPage label="Entity NBT" icon={IconButterfly} page="/nbt/entity" />
@@ -57,6 +53,3 @@
     <SidebarPage label="Storages" icon={IconCloud} page="/nbt/storages" />
 </SidebarCategory>
 
-<SidebarPage label="Resources" icon={IconBook} page="/resources" />
-
-<SidebarPage label="Credits" icon={IconPeopleBook} page="/credits" />

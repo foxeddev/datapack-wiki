@@ -32,6 +32,7 @@
 		"highlight.js": "^11.9.0",
 		"isomorphic-dompurify": "^2.6.0",
 		"postcss": "^8.4.38",
+		"radash": "^12.1.0",
 		"remove-markdown": "^0.5.0",
 		"tailwindcss": "^3.4.3",
 		"unplugin-icons": "^0.18.5"

@@ -1,22 +1,22 @@
+---
+title: Credits
+---
+
 <script lang="ts">
-import Info from '$lib/reusables/Info.svelte';
-import Warning from '$lib/reusables/Warning.svelte';
-import Tip from '$lib/reusables/Tip.svelte';
+import {Info, Warning, Tip} from '$lib/reusables';
 </script>
 
 # Credits
+Brought to you by [datapackhub.net](https://datapackhub.net)
 
-Brought to you by [Datapackhub.net](https://datapackhub.net)
-
-> - SilaBear
-> - Cobblestone
+### Developers
+- [Silabear](https://silabear.carrd.co)
+- [Cobblestone](https://github.com/HoodieRocks)
 
 ### Editorial Team
-
-> - Aandeel
+- [Aandeel](https://aandeel.co.uk/)
 
 ### Contributors
-
-> -
-> -
-> -
+-
+-
+-

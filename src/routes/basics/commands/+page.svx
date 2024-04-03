@@ -1,2 +1,10 @@
+---
+title: Commands
+---
+
+<script lang="ts">
+import {Info, Warning, Tip} from '$lib/reusables';
+</script>
+
 # Commands
-Commands tell the game to do things. Functions are files which are made up of many 
+Commands tell the game to do things. [Functions](/files/functions) are files which are made up of many 

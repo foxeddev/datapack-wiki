@@ -3,9 +3,7 @@ title: Getting Started
 ---
 
 <script lang="ts">
-import Info from '$lib/reusables/Info.svelte';
-import Warning from '$lib/reusables/Warning.svelte';
-import Tip from '$lib/reusables/Tip.svelte';
+import {Info, Warning, Tip} from '$lib/reusables';
 </script>
 
 # Getting Started

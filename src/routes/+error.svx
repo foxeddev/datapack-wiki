@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Info from '$lib/reusables/Info.svelte';
 </script>
 
 <svelte:head>
@@ -7,12 +8,7 @@
 	<meta name="description" content="You shouldn't be here..." />
 </svelte:head>
 
-![DPH Icon](/logos/dph.svg) 
+# Error {$page.status}: {$page.error.message}
+There was an error when loading this page. Maybe it doesn't exist?
 
-# Error: {$page.status}
-
-There was an error when loading this page! 
-
-[Go Home](/) 
-
-[Get Support](https://discord.datapackhub.net/)
+<Info>If you think this is an error, please report it in our [discord](https://discord.datapackhub.net/).</Info>
