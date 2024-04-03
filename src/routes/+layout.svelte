@@ -18,13 +18,13 @@
     hljs.highlightAll();
   })
 
-  var shareText = "Share";
+  var shareText = "Copy URL";
 
   function copyUrl() {
     navigator.clipboard.writeText(window.location.href);
     shareText = "Copied!";
     setTimeout(() => {
-      shareText = "Share";
+      shareText = "Copy URL";
     }, 2000);
   }
 </script>
