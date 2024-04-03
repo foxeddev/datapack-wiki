@@ -19,6 +19,8 @@
     import IconCloud from "~icons/tabler/cloud";
     import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
     import IconWorldgen from "~icons/tabler/mountain";
+    import IconCredits from "~icons/tabler/address-book"
+    import IconResources from "~icons/tabler/book"
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -56,3 +58,6 @@
 <SidebarCategory name="Worldgen" icon={IconWorldgen}>
         
 </SidebarCategory>
+
+<SidebarPage label="Resources" icon={IconResources} page="/resources" />
+<SidebarPage label="Credits" icon={IconCredits} page="/resources" />
