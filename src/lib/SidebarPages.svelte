@@ -37,10 +37,6 @@
     <SidebarPage label="Advancements" icon={IconStar} page="/files/advancements" />
     <SidebarPage label="Recipes" icon={IconGrid} page="/files/recipes" />
     <SidebarPage label="Loot Tables" icon={IconAlienShapedWeirdGraphThingy} page="/files/recipes" />
-    <SidebarCategory name="Worldgen" icon={IconWorldgen}>
-        
-    </SidebarCategory>
-    
 </SidebarCategory>
 
 <SidebarCategory name="Command Reference" icon={IconCommand}>
@@ -57,3 +53,6 @@
     <SidebarPage label="Storages" icon={IconCloud} page="/nbt/storages" />
 </SidebarCategory>
 
+<SidebarCategory name="Worldgen" icon={IconWorldgen}>
+        
+</SidebarCategory>
