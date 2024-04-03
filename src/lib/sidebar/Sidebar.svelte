@@ -1,16 +1,25 @@
 <script lang="ts">
+  import SidebarPage from "./SidebarPage.svelte";
+  import SidebarCategory from "./SidebarCategory.svelte";
+
+  import IconBasics from "~icons/tabler/box";
+  import IconHome from "~icons/tabler/home";
+  import IconPennant from "~icons/tabler/pennant";
+  import IconBox from "~icons/tabler/box";
+  import IconCommand from "~icons/tabler/slash";
+  import IconBrackets from "~icons/tabler/brackets-contain";
+  import IconNBT from "~icons/tabler/braces";
   import IconSearch from "~icons/tabler/search";
-  import IconPeopleBook from "~icons/tabler/address-book";
-  import IconBook from "~icons/tabler/book";
+  import IconStar from "~icons/tabler/star";
+  import IconGrid from "~icons/tabler/grid-3x3";
+  import IconButterfly from "~icons/tabler/butterfly";
+  import IconCloud from "~icons/tabler/cloud";
 
   import { sidebarExpanded } from "$lib";
   import IconCollapse from "~icons/tabler/chevron-left";
   import { onMount } from "svelte";
   import { createSearchIndex, search } from "../search";
-  import { windowWidth } from "$lib";
-  
-  import SidebarPage from "./SidebarPage.svelte";
-  import SidebarPages from "$lib/SidebarPages.svelte";
+    import SidebarPages from "$lib/SidebarPages.svelte";
 
   let results: Post[] = [];
   let searchTerm = "";
@@ -26,12 +35,10 @@
     results = search(searchTerm);
   }
 
-  $: isSmall = $windowWidth < 930;
-
   let dialog: HTMLDialogElement;
 </script>
 
-<div class="bg-stone-800 flex flex-col items-center w-[23rem] md:relative fixed h-[92%] md:h-full {$sidebarExpanded ? '' : 'w-fit'}">
+<div class="{$sidebarExpanded ? 'w-[18%]' : 'w-fit'} bg-stone-800 flex flex-col items-center">
   <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto">
     <!-- <button
 			class="bg-stone-600 size-8 rounded-md flex items-center justify-center"
@@ -48,17 +55,10 @@
         <span class="py-1 text-stone-500">Search...</span>
       </button>
     {/if}
-    
-    <div class="flex-grow flex flex-col w-72">
-      <SidebarPages />
-    </div>
-    <div class="flex flex-col">
-      <SidebarPage label="Resources" icon={IconBook} page="/resources" />
-      <SidebarPage label="Credits" icon={IconPeopleBook} page="/credits" />
-    </div>
-  </div>
 
-  <div class="text-sm text-stone-600 p-2 flex items-center w-full bottom-0">
+    <SidebarPages />
+  </div>
+  <div class="text-sm text-stone-600 p-2 flex items-center w-full">
     {#if $sidebarExpanded}
       <span class="flex-grow flex flex-col items-center"> BETA - Dev Version </span>
     {/if}
