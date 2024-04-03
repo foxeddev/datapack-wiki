@@ -39,7 +39,7 @@
 </script>
 
 <div class="{$sidebarExpanded ? 'w-[18%]' : 'w-fit'} bg-stone-800 flex flex-col items-center">
-  <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto">
+  <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full">
     <!-- <button
 			class="bg-stone-600 size-8 rounded-md flex items-center justify-center"
 			on:click={() => ($sidebarExpanded = !$sidebarExpanded)}

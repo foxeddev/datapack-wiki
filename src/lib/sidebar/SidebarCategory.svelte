@@ -11,14 +11,14 @@
 </script>
 
 <button
-  class="hover:bg-stone-700 py-1 rounded-lg flex gap-2 cursor-default p-1 items-center"
+  class="hover:bg-stone-700 py-1 rounded-lg flex gap-2 cursor-default p-1 items-center w-full"
   on:click={() => {
     expanded = !expanded;
     $sidebarExpanded = true;
   }}>
   <svelte:component this={icon} />
   {#if $sidebarExpanded}
-    <div class="flex-grow text-left mr-12">
+    <div class="flex-grow text-left">
       <span>{name}</span>
     </div>
     {#if !expanded}
