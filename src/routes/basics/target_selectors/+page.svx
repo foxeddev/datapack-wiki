@@ -23,3 +23,5 @@ In Java Edition, there are 5 base target selectors:
 - **@r**: `@r` selects a random player. *This is equivalent to `@e[type=player,limit=1,sort=random]`*
 
 <Warning>@e only selects entities in a loaded chunk. If an entity exists but is not currently being loaded, it will not select that entity.</Warning>
+
+## Additional arguments

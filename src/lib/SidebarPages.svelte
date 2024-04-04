@@ -58,6 +58,3 @@
 <SidebarCategory name="Worldgen" icon={IconWorldgen}>
         
 </SidebarCategory>
-
-<SidebarPage label="Resources" icon={IconResources} page="/resources" />
-<SidebarPage label="Credits" icon={IconCredits} page="/credits" />

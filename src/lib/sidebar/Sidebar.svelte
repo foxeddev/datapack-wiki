@@ -2,7 +2,7 @@
   import IconSearch from "~icons/tabler/search";
 
   import { sidebarExpanded } from "$lib";
-  import SidebarPages from "$lib/sidebar/SidebarPages.svelte";
+  import SidebarPages from "$lib/SidebarPages.svelte";
   import { onMount } from "svelte";
   import IconCollapse from "~icons/tabler/chevron-left";
   import { createSearchIndex, search } from "../search";
@@ -24,14 +24,8 @@
   let dialog: HTMLDialogElement;
 </script>
 
-<aside class="w-max bg-stone-800 flex flex-col items-center fixed md:static h-full">
-  <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full mt-16">
-    <!-- <button
-			class="bg-stone-600 size-8 rounded-md flex items-center justify-center"
-			on:click={() => ($sidebarExpanded = !$sidebarExpanded)}
-		>
-			<IconMenu />
-		</button> -->
+<aside class="{$sidebarExpanded ? "absolute w-[100%] sm:w-80" : "w-fit hidden sm:flex"} flex flex-col bg-stone-800 items-center sm:relative h-full z-50">
+  <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full">
     {#if $sidebarExpanded}
       <button
         aria-label="Open Search Modal"
@@ -44,7 +38,7 @@
 
     <SidebarPages />
   </div>
-  <div class="text-sm text-stone-600 p-2 flex items-center w-full">
+  <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
     {#if $sidebarExpanded}
       <span class="flex-grow flex flex-col items-center"> BETA - Dev Version </span>
     {/if}
@@ -57,16 +51,16 @@
   </div>
 </aside>
 
-<dialog bind:this={dialog} class="w-1/3 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm">
+<dialog bind:this={dialog} class="w-[90%] sm:w-1/2 lg:w-1/3 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm">
   <div class="bg-stone-800 w-full p-4 gap-1 rounded-lg">
     <input
-      class="bg-stone-900 w-full rounded-md focus:outline-0 text-white p-2 placeholder:text-stone-500"
+      class="bg-stone-900 w-full rounded-sm focus:outline-0 text-white p-2 placeholder:text-stone-500"
       type="search"
       placeholder="Search for a page..."
       bind:value={searchTerm} />
     {#each results as result}
       <a on:click={() => dialog.close()} href={result.url}>
-        <div class="p-2 my-2 rounded-md hover:bg-black/20 transition-all">
+        <div class="p-2 my-2 rounded-sm hover:bg-black/20 transition-all">
           <p class="text-stone-200 text-lg">
             {result.title}
             <span class="text-stone-400 text-xs">{result.url}</span>
@@ -78,6 +72,6 @@
       <p class="text-stone-400 mt-2">No results</p>
     {/each}
 
-    <button class="bg-stone-700 w-full rounded-md p-2 mt-2 text-white" on:click={() => dialog.close()}>Close</button>
+    <button class="bg-stone-700 w-full rounded-sm p-2 mt-2 text-white" on:click={() => dialog.close()}>Close</button>
   </div>
 </dialog>
