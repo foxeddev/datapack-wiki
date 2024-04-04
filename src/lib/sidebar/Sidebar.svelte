@@ -4,8 +4,12 @@
   import { sidebarExpanded } from "$lib";
   import SidebarPages from "$lib/SidebarPages.svelte";
   import { onMount } from "svelte";
-  import IconCollapse from "~icons/tabler/chevron-left";
   import { createSearchIndex, search } from "../search";
+
+  import IconCollapse from "~icons/tabler/chevron-left";
+  import IconCredits from "~icons/tabler/address-book"
+  import IconResources from "~icons/tabler/book"
+    import SidebarPage from "./SidebarPage.svelte";
 
   let results: Post[] = [];
   let searchTerm = "";
@@ -35,8 +39,15 @@
         <span class="py-1 text-stone-500">Search...</span>
       </button>
     {/if}
-
-    <SidebarPages />
+    <div class="flex flex-col h-full">
+      <div class="flex-grow">
+        <SidebarPages />
+      </div>
+      <div>
+        <SidebarPage label="Resources" icon={IconResources} page="/resources" />
+        <SidebarPage label="Credits" icon={IconCredits} page="/credits" />
+      </div>
+    </div>
   </div>
   <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
     {#if $sidebarExpanded}

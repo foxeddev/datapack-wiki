@@ -7,7 +7,7 @@ import {Info, Warning, Tip} from '$lib/reusables';
 </script>
 
 # Credits
-Brought to you by [datapackhub.net](https://datapackhub.net)
+The Datapack Wiki is brought to you by [Datapack Hub](https://datapackhub.net) in collaboration with Aandeel.
 
 ### Developers
 - [Silabear](https://silabear.carrd.co)
@@ -20,3 +20,5 @@ Brought to you by [datapackhub.net](https://datapackhub.net)
 -
 -
 -
+
+<Info>Want to be on this list? Anyone can contribute to our GitHub! </Info>

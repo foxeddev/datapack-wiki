@@ -28,7 +28,7 @@
     <Sidebar />
     <div
       id="content"
-      class="px-6 md:px-10 lg:px-16 pt-12 w-full md prose-headings:text-stone-200 text-stone-200 bg-stone-900 overflow-y-auto">
+      class="px-6 md:px-10 lg:px-16 py-12 w-full md prose-headings:text-stone-200 text-stone-200 bg-stone-900 overflow-y-auto">
       <slot />
     </div>
   </div>

@@ -25,3 +25,147 @@ In Java Edition, there are 5 base target selectors:
 <Warning>@e only selects entities in a loaded chunk. If an entity exists but is not currently being loaded, it will not select that entity.</Warning>
 
 ## Additional arguments
+Target selectors can (and usually are) followed by additional arguments to filter the selection even more to only find the entities that you want. Target selector arguments are contained within square brackets after the base selector (`@e[...]`) and are written as `[<argument_name>:<argument_value>,<argument_name>=<argument_value>,...]`
+
+**Example**: In our previous example (`@a[distance=..10]`), we use the argument `distance=..10` to specify that we only want to target entities which are less than 10 blocks away.
+
+<Tip>Most target selectors can be inverted by using =! meaning it will only select entities who do not match the argument.</Tip>
+
+### `type` argument
+The `type=<entity_type>` argument will filter the selection to only include entities of a certain type, or those in an entity_type tag. 
+
+`<entity_type>` must be a valid entity ID or entity_type tag ID. This argument can only be used with `@e` or `@s`.
+
+**Examples**: 
+- `@e[type=minecraft:pig]`: Selects all pigs
+- `@e[type=#minecraft:aquatic]`: Selects all aquatic animals
+
+### `name` argument
+The `name=<entity_name>` argument will filter the selection to only include entities who have a specific name. 
+
+`<entity_name>` is a string (it cannot be a JSON text component).
+
+**Examples**: 
+- `@e[name=Aron]`: Selects all entiies named `Aron`
+- `@e[name="Aron Aronson"]`: Selects entiies named `Aron Aaronson`
+
+### `distance` argument
+The `distance=<value_or_range>` argument will filter the selection to only include entities who are within a distance range. 
+
+`<value_or_range>` can either be a value (such as `7`) or a range (such as `..8` or `21..`)
+
+**Examples**: 
+- `@e[distance=6]`: Selects all entities which are exactly 6 blocks away from the execution position.
+- `@e[distance=..20]`: Selects all entiies within 20 blocks of the execution position.
+- `@e[distance=3..]`: Selects all entiies that are more than 3 blocks away from the execution position.
+- `@e[distance=12..15]`: Selects all entiies between 12 and 15 (inclusive) blocks from the execution position.
+
+### `nbt` argument
+The `nbt=<object>` argument will filter the selection to only include entities which have or do not have specific NBT data. 
+
+`<object>` is an NBT compound. The entity must match everything within the compound.
+
+**Examples**: 
+- `@a[nbt={SelectedItem:{id:"minecraft:stone"}}]`: Selects all players who are holding stone
+- `@e[type=minecraft:arrow,nbt={inGround:1b}]`: Selects all `arrow` entities who are in a block.
+
+### `sort` and `limit` arguments
+The `sort=<sort_type>,limit=<value>` will limit the amount of possible entities it will select and will select entities based on the priority defined in `<sort_type>`. 
+
+`<sort_type>` can be one of the following:
+- `arbitrary`: does not sort in any guaranteed order
+- `nearest`: sort in increasing order of distance
+- `furthest`: sort in decreasing order of distance
+- `random`: sort randomly (default type for `@r`)
+
+`<value>` can be any integer.
+
+**Examples**: 
+- `@e[limit=1,sort=nearest]`: Selects the nearest entity to the position of execution
+- `@e[limit=5,sort=furthest]`: Selects the furthest 5 entities from the position of execution.
+- `@e[limit=7,sort=random,type=minecraft:cow]`: Selects 7 random cows..
+
+### `x`/`y`/`z` arguments
+The `x`/`y`/`z=<value>` arguments do not directly change the selection, but are used alongside other arguments to specify a starting position to work from. 
+
+This argument(s) will affect the arguments `distance`, `dx`/`dy`/`dz` and `sort`/`limit`.
+
+**Examples**:
+- `@e[x=10,y=9,z=-5,distance=..5]`: Selects all entities less than 5 blocks away from the position `X=10/Y=9/Z=-5`
+
+### `dx`/`dy`/`dz` arguments
+The `dx`/`dy`/`dz=<value>` arguments will select any entities if their hitbox is partially inside a cuboid defined by the `<value>`s of `dx` (width), `dy` (height), and `dz` (length). `<value>` can be any number.
+
+The `dx/y/z` arguments create a cuboid of width `dx`, height `dy`, and length `dz`, starting from the point of execution OR the coordinates defined by the `x`/`y`/`z` arguments, and will only select entities if their hitbox partially or fully instersects with the cuboid.
+
+If `dx`/`dy`/`dz` is set to `0`, then it will select any entities if their hitbox contains the point of execution OR the coordinates defined by the `x`/`y`/`z` arguments.
+
+**Examples**: 
+- `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`: Selects any entities if any part of their hitbox is within the cuboid `w=10,h=20,l=5` starting from the position `x=10,y=13,z-87`
+- `@e[x=7,y=3,z=9,dx=0,dy=0,dz=0]`: Selects any entities if their hitbox contains the point `x=7,y=3,z=9`
+
+### `tag` argument
+The `tag=<tag>` argument will select entities which have the specified tag. `<tag>` is any tag string (no spaces).
+
+Entities do not naturally have tags - these are separate from `entity_type` tags such as that used in the `type` argument. Instead, these select entities based on the tags added with the `/tag` command or `Tags[]` NBT.
+
+**Examples**:
+- `@a[tag=CustomTag]`: Selects all players with the tag `CustomTag`
+- `@e[tag=!ignore]`: Selects all entities which do not have the `ignore` tag.
+
+### `team` argument
+The `team=<team_name>` argument will select entiies which are in a specific team. Since entities can only be in one team at a time, you cannot use `team=` more than once, however you can duplicate negated team arguments (`team=!`).
+
+`<team_name>` is any tag string (no spaces).
+
+**Examples**:
+- `@a[team=red]`: Selects all players in the `red` team
+- `@e[team=Bears]`: Selects all entities in the `Bears` team
+- `@e[team=!blue]`: Selects all entities which are not in the `blue` team
+
+### `scores` argument
+The `scores={<scoreboard>=<value>,...}` argument will select entities based on their value on a scoreboard.
+
+`<objective>` is a scoreboard objective which must exist already. `<value>` can be either an integer or a range.
+
+**Examples**:
+- `@e[scores={foo=10}]`: Selects all entiies with a score of exactly `10` on the `foo` scoreboard.
+- `@e[scores={foo=5,bar=7}]`: Selects all entities with a score of exactly `5` on the `foo` scoreboard and exactly `7` on the `bar` scoreboard.
+- `@e[scores={foo=8..}]`: Selects all entities with a score of `8` or more on the `foo` scoreboard.
+
+### `predicate` argument
+The `predicate=<predicate>` argument will select players based on whether they pass a predicate check. `<predicate>` is a predicate ID.
+
+**Examples**:
+- `@e[predicate=namespace:my_predicate]`: Selects all entities who pass the predicate in `/data/namespace/predicates/my_predicate.- - `@e[predicate=!namespace:another_predicate]`: Selects all entities who fail the predicate in `/data/namespace/predicates/another_predicate.json`
+
+### `gamemode` argument
+The `gamemode=(survival|creative|adventure|spectator)` argument will select players who are in a specific game mode.
+
+**Examples**:
+- `@a[gamemode=creative]`: Selects all players in creative mode
+
+### `advancements` argument
+The `advancements={<advancement_name>=(true/false)}` argument will select players based on whether they've unlocked an advancement. `<advancement_name>` is an advancement ID.
+
+**Examples**:
+- `@a[advancements={minecraft:story/follow_ender_eye=true}]`: Selects all players who have unlocked the `follow_ender_eye` advancement.
+- `@a[advancements={minecraft:story/follow_ender_eye=false}]`: Selects all players who have not unlocked the `follow_ender_eye` advancement.
+
+### `advancements` argument
+The `advancements={<advancement_name>=(true/false)}` argument will select players based on whether they've unlocked an advancement. `<advancement_name>` is an advancement ID.
+
+**Examples**:
+- `@a[advancements={minecraft:story/follow_ender_eye=true}]`: Selects all players who have unlocked the `follow_ender_eye` advancement.
+- `@a[advancements={minecraft:story/follow_ender_eye=false}]`: Selects all players who have not unlocked the `follow_ender_eye` advancement.
+
+### `level` argument
+The `level=<value>` argument selects players based on their current XP level (not amount of points).
+
+`<value>` can be an integer or range.
+
+**Examples**:
+- `@a[level=10]`: Selects all players who have an XP level of exactly 10.
+- `@a[level=4..]`: Selects all players who have an XP level of 4 or more.
+
+### TODO x_rotation and y_rotation
