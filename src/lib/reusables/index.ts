@@ -3,3 +3,4 @@ export { default as Tip } from "./Tip.svelte";
 export { default as Warning } from "./Warning.svelte";
 export { default as LatestPackFormat } from "./LatestPackFormat.svelte";
 export { default as Version } from "./Version.svelte";
+export { default as Highlight } from "./Highlight.svelte";
