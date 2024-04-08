@@ -1,17 +1,9 @@
 ---
 title: Resources
 ---
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+<script lang="ts">
+import {Info, Warning, Tip, Version, Highlight} from '$lib/reusables';
+</script>
 
 # Resources
 
