@@ -17,7 +17,6 @@ export const Highlight = ({children, color}) => (
 
 <Info>
 Listed here are links to credible and reliable places to aid in command support and creation.
-If you are in need of any assistance, we direct you to the **Minecraft Commands** Discord Server, which is filled to the brim with knowledgable and intelligent community support members.
 </Info>
 
 ### Minecraft Commands
