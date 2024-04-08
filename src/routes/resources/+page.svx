@@ -12,18 +12,18 @@ import {Info, Warning, Tip, Version, Highlight} from '$lib/reusables';
 ### Minecraft Commands
 
 
-> **<Highlight color="#738ADB">Discord</Highlight>** **https://discord.gg/QAFXFtZ**
+> <Highlight color="#738ADB">Discord</Highlight> https://discord.gg/QAFXFtZ
 > 
-> **<Highlight color="#FF4500">Reddit</Highlight>** **https://www.reddit.com/r/MinecraftCommands/**
+> <Highlight color="#FF4500">Reddit</Highlight> https://www.reddit.com/r/MinecraftCommands/
 
 
 ### MCStacker
 
-> **<Highlight color="#138A8E">Website</Highlight>** **https://mcstacker.net/**<
+> <Highlight color="#138A8E">Website</Highlight> https://mcstacker.net/
 > 
-> **<Highlight color="#738ADB">Discord</Highlight>** **https://discord.gg/WCb6GNf/**<
+> <Highlight color="#738ADB">Discord</Highlight> https://discord.gg/WCb6GNf/
 
 ### Data Pack Generators
 
-> **<Highlight color="#138A8E">Website</Highlight>** **https://misode.github.io/**
+> <Highlight color="#138A8E">Website</Highlight> https://misode.github.io/
 
