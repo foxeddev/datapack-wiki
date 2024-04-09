@@ -1,23 +1,11 @@
 <script lang="ts">
-  import Navbar from '../lib/Navbar.svelte';
+  import Navbar from "../lib/Navbar.svelte";
 
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
-
-  import IconDiscord from "~icons/tabler/brand-discord";
-  import IconShare from "~icons/tabler/share";
-
-  import "../app.css";
-  import "../code_theme.css";
-
-  var shareText = "Copy URL";
-
-  function copyUrl() {
-    navigator.clipboard.writeText(window.location.href);
-    shareText = "Copied!";
-    setTimeout(() => {
-      shareText = "Copy URL";
-    }, 2000);
-  }
+  
+  import "../styles/fonts.css"
+  import "../styles/app.css";
+  import "../styles/code_theme.css";
 </script>
 
 <div class="font-lexend bg-stone-900 h-screen max-h-screen flex flex-col text-stone-200">

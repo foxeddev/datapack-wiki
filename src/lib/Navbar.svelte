@@ -3,12 +3,9 @@
   import IconShare from "~icons/tabler/share";
   import IconMenu from "~icons/tabler/menu-2";
 
-  import "../app.css";
-  import "../code_theme.css";
-
   import { sidebarExpanded } from "$lib";
 
-  var shareText = "Copy URL";
+  let shareText = "Copy URL";
 
   function copyUrl() {
     navigator.clipboard.writeText(window.location.href);
@@ -21,7 +18,7 @@
 
 <div class="bg-stone-800 flex w-full items-center p-2 h-full">
   <div class="flex items-center flex-grow">
-    <button class="px-2 pr-3 sm:hidden" on:click={() => $sidebarExpanded = !$sidebarExpanded}><IconMenu /></button>
+    <button class="px-2 pr-3 sm:hidden" on:click={() => ($sidebarExpanded = !$sidebarExpanded)}><IconMenu /></button>
     <img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-8 mr-2" width="32" height="32" />
     <h1 class="font-bold text-lg block">Datapack Wiki</h1>
   </div>
@@ -40,4 +37,3 @@
     </button>
   </div>
 </div>
-

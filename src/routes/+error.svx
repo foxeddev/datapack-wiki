@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Info from '$lib/reusables/Info.svelte';
+	import Info from '$lib/reusables/alerts/Info.svelte';
 </script>
 
 <svelte:head>
