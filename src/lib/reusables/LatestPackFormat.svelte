@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
 
   type PackFormatEntry = {
-    data_pack_format: number;
+    data_pack_version: number;
     stable: boolean;
   };
 
@@ -11,7 +11,7 @@
 
   onMount(async () => {
     const data: PackFormatEntry[] = await fetch(url).then((r) => r.json());
-    latestPackFormat = data.filter((v) => v.stable)[0].data_pack_format;
+    latestPackFormat = data.filter((v) => v.stable)[0].data_pack_version;
   });
 </script>
 
