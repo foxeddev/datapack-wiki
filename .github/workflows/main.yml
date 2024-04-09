@@ -3,7 +3,7 @@ on:
     branches:
     - main
     
-name: my-workflow
+name: pre-deploy
 jobs:
   compile-page-meta:
     name: compile-page-meta

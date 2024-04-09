@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+.md {
+  @apply prose prose-sm prose-zinc prose-invert max-w-full md:prose-base;
+  @apply prose-headings:mb-2 prose-h2:text-3xl prose-h2:mt-7;
+  @apply prose-p:my-3;
+  @apply prose-blockquote:rounded-l-sm prose-blockquote:font-normal prose-blockquote:not-italic;
+  @apply prose-pre:p-2 prose-pre:bg-stone-900;
+
+  /* TODO @HoodieRocks can we make the inline code highlight not show up in the code blocks plz */
+  /* @Silabear what the heck does this mean */
+  @apply prose-code:bg-stone-950 prose-code:rounded-md prose-code:p-1 prose-code:font-thin prose-code:before:content-none prose-code:after:content-none;
+  @apply prose-ol:mt-0 prose-ul:mt-0 prose-li:my-1;
+}
+
+::-webkit-scrollbar {
+  width: 0.15rem;
+}
+
+::-webkit-scrollbar-track {
+  @apply rounded-full bg-zinc-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-zinc-500;
+}
