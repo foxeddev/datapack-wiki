@@ -18,10 +18,7 @@ To contribute, please fork this repo and then submit a pull request with your ad
 3. Import the reusable components that you want to use in your page. Put the following after the metadata:
    ```svelte
    <script lang="ts">
-     import Info from '$lib/reusables/Info.svelte';
-     import Warning from '$lib/reusables/Warning.svelte';
-     import Tip from '$lib/reusables/Tip.svelte';
-     // any others you wish to import can go here
+   import {Info, Warning, Tip} from '$lib/reusables';
    </script>
    ```
 4. Use the rest of the file to write the page content as markdown:
