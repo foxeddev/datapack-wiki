@@ -17,7 +17,7 @@ jobs:
 
       # run any `bun` or `bunx` command
       - run: bun install
-      - run: bun ./generate_search_indexes.ts
+      - run: bun ./gen_search_indexes.ts
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
