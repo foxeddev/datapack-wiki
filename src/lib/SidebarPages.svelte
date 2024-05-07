@@ -19,6 +19,7 @@
   import IconCloud from "~icons/tabler/cloud";
   import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
   import IconWorldgen from "~icons/tabler/mountain";
+  import IconFilters from "~icons/tabler/filters";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -34,6 +35,7 @@
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
   <SidebarPage label="Functions" icon={IconPennant} page="/files/functions" />
+  <SidebarPage label="Tags" icon={IconFilters} page="/files/tags" />
   <SidebarPage label="Advancements" icon={IconStar} page="/files/advancements" />
   <SidebarPage label="Recipes" icon={IconGrid} page="/files/recipes" />
   <SidebarPage label="Loot Tables" icon={IconAlienShapedWeirdGraphThingy} page="/files/recipes" />
