@@ -46,8 +46,8 @@ The `name=<entity_name>` argument will filter the selection to only include enti
 `<entity_name>` is a string (it cannot be a JSON text component).
 
 **Examples**: 
-- `@e[name=Aron]`: Selects all entiies named `Aron`
-- `@e[name="Aron Aronson"]`: Selects entiies named `Aron Aaronson`
+- `@e[name=Aron]`: Selects all entities named `Aron`
+- `@e[name="Aron Aronson"]`: Selects entities named `Aron Aaronson`
 
 ### `distance` argument
 The `distance=<value_or_range>` argument will filter the selection to only include entities who are within a distance range. 
@@ -56,9 +56,9 @@ The `distance=<value_or_range>` argument will filter the selection to only inclu
 
 **Examples**: 
 - `@e[distance=6]`: Selects all entities which are exactly 6 blocks away from the execution position.
-- `@e[distance=..20]`: Selects all entiies within 20 blocks of the execution position.
-- `@e[distance=3..]`: Selects all entiies that are more than 3 blocks away from the execution position.
-- `@e[distance=12..15]`: Selects all entiies between 12 and 15 (inclusive) blocks from the execution position.
+- `@e[distance=..20]`: Selects all entities within 20 blocks of the execution position.
+- `@e[distance=3..]`: Selects all entities that are more than 3 blocks away from the execution position.
+- `@e[distance=12..15]`: Selects all entities between 12 and 15 (inclusive) blocks from the execution position.
 
 ### `nbt` argument
 The `nbt=<object>` argument will filter the selection to only include entities which have or do not have specific NBT data. 
@@ -96,7 +96,7 @@ This argument(s) will affect the arguments `distance`, `dx`/`dy`/`dz` and `sort`
 ### `dx`/`dy`/`dz` arguments
 The `dx`/`dy`/`dz=<value>` arguments will select any entities if their hitbox is partially inside a cuboid defined by the `<value>`s of `dx` (width), `dy` (height), and `dz` (length). `<value>` can be any number.
 
-The `dx/y/z` arguments create a cuboid of width `dx`, height `dy`, and length `dz`, starting from the point of execution OR the coordinates defined by the `x`/`y`/`z` arguments, and will only select entities if their hitbox partially or fully instersects with the cuboid.
+The `dx/y/z` arguments create a cuboid of width `dx`, height `dy`, and length `dz`, starting from the point of execution OR the coordinates defined by the `x`/`y`/`z` arguments, and will only select entities if their hitbox partially or fully intersects with the cuboid.
 
 If `dx`/`dy`/`dz` is set to `0`, then it will select any entities if their hitbox contains the point of execution OR the coordinates defined by the `x`/`y`/`z` arguments.
 
@@ -114,7 +114,7 @@ Entities do not naturally have tags - these are separate from `entity_type` tags
 - `@e[tag=!ignore]`: Selects all entities which do not have the `ignore` tag.
 
 ### `team` argument
-The `team=<team_name>` argument will select entiies which are in a specific team. Since entities can only be in one team at a time, you cannot use `team=` more than once, however you can duplicate negated team arguments (`team=!`).
+The `team=<team_name>` argument will select entities which are in a specific team. Since entities can only be in one team at a time, you cannot use `team=` more than once, however you can duplicate negated team arguments (`team=!`).
 
 `<team_name>` is any tag string (no spaces).
 
@@ -129,7 +129,7 @@ The `scores={<scoreboard>=<value>,...}` argument will select entities based on t
 `<objective>` is a scoreboard objective which must exist already. `<value>` can be either an integer or a range.
 
 **Examples**:
-- `@e[scores={foo=10}]`: Selects all entiies with a score of exactly `10` on the `foo` scoreboard.
+- `@e[scores={foo=10}]`: Selects all entities with a score of exactly `10` on the `foo` scoreboard.
 - `@e[scores={foo=5,bar=7}]`: Selects all entities with a score of exactly `5` on the `foo` scoreboard and exactly `7` on the `bar` scoreboard.
 - `@e[scores={foo=8..}]`: Selects all entities with a score of `8` or more on the `foo` scoreboard.
 

@@ -22,7 +22,7 @@ This Getting Started Page explains step-by-step, how to set up the file structur
   - Loot Tables
   - Predicates
   - Item Modifiers
-  - Recipies
+  - Recipes
   - Structures
   - Tags
   - Damage Types
@@ -31,7 +31,7 @@ This Getting Started Page explains step-by-step, how to set up the file structur
 
 ## What will you need to make a Datapack?
 
-- A reliable text-editor, we recommend: [Visual Studio Code](https://code.visualstudio.com) with the [Data-Pack Helper Plus (Extention)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server) in conjunction with the [language-mcfunction (Extension)](https://marketplace.visualstudio.com/items?itemName=arcensoth.language-mcfunction). [These extensions will aid in command syntax when making `.mcfunction` files].
+- A reliable text-editor, we recommend: [Visual Studio Code](https://code.visualstudio.com) with the [Data-Pack Helper Plus (Extension)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server) in conjunction with the [language-mcfunction (Extension)](https://marketplace.visualstudio.com/items?itemName=arcensoth.language-mcfunction). [These extensions will aid in command syntax when making `.mcfunction` files].
 
 ## How to set up the base of the Datapack:
 
