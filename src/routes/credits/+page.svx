@@ -15,6 +15,7 @@ The Datapack Wiki is brought to you by [Datapack Hub](https://datapackhub.net) i
 
 ### Editorial Team
 - [Aandeel](https://aandeel.co.uk/)
+- [Gears](https://gearsdatapacks.github.io/)
 
 ### Contributors
 -
