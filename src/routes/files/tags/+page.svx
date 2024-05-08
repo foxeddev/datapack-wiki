@@ -1,0 +1,60 @@
+---
+title: Tags
+---
+
+<script lang="ts">
+import {Info, Warning, Tip, Version} from '$lib/reusables';
+</script>
+
+<Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
+
+# Tags
+Tags, not to be confused with [entity tags](/command/tag), are files in a datapack that allow grouping of multiple blocks, items, etc.  
+Tags are JSON files located in the `data/<namespace>/tags/<category>` folder.
+
+## Special tags
+Minecraft uses some tags internally for certain behaviour. For example, you will already have seen that the `minecraft:load` function tag controls which functions get run when a datapack is loaded, or the `minecraft:minable/pickaxe` block tag which controls what blocks are mined faster with a pickaxe.  
+Modifying these tags allows you to configure how Minecraft behaves in certain cases.
+
+
+## Categories
+Tags can be used to group various things of one category. Here is a list of possible categories, along with the subfolder needed to put them in.
+- Items (`items`)
+- Blocks (`blocks`)
+- Entities (`entity_types`)
+- Functions (`functions`)
+- Fluids (`fluids`)
+- Game Events (`game_events`)
+- Chat Types (`chat_type`)
+- Damage Types (`damage_type`)
+
+
+## JSON format
+Tags have a very simple format, with two fields.
+
+### Replace
+Replace (`replace`) is a boolean field which decides whether the tag should replace other tags with the same path, or merge with them.  
+For example, if `"replace": true` was added to the `tick.json` function tag, only the tick functions in that datapack would load, as it would replace all other defined tick tags. If `replace` is false, tags with the same path will be merged.  
+`replace` is an optional field, and if not specified will default to `false`.
+
+### Values
+Values (`values`) is a list containing everything to group under this tag. Each element is a string, containing either the id of the entry (like `minecraft:diamond_block`), or the id of another tag, beginning with a `#` (E.g. `#minecraft:logs`).
+
+
+## Example tag
+Here is an example tag, located in `data/example/tags/items/wood.json` (`example` is the namespace being used).  
+<Info>
+`#minecraft:logs` and `#minecraft:planks` are two item tags provided by Minecraft.
+</Info>
+
+```json
+{
+  "replace": true,
+  "values": [
+    "#minecraft:logs",
+    "#minecraft:planks",
+    "minecraft:chest",
+    "minecraft:stick"
+  ]
+}
+```

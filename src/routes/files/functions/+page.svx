@@ -1,0 +1,44 @@
+---
+title: Functions
+---
+
+<script lang="ts">
+import {Info, Warning, Tip, Version} from '$lib/reusables';
+</script>
+
+<Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
+
+# Functions
+A function is a file containing a list of Minecraft commands.  
+Function files end in `.mcfunction`, and are located in the `data/<namespace>/functions` folder.  
+Functions can be called using the `function` command. (See [`function`](/command/function) for more information)
+
+Functions can be located in sub-folders within the base functions folder. This changes how they are called. For example, a function located at `data/<namespace>/functions/sub_folder/my_func.mcfunction` would be called using `function <namespace>:sub_folder/my_func`.
+
+When a function is run, the commands within it get executed from top to bottom. If the `return` command is run, the function stops executing immediately and any commands after the return are ignored.
+
+## Macros
+Macros allow you to insert values into commands dynamically, based on an NBT value.
+
+Any function can define a macro within it. A macro is a command beginning with `$`.  
+Macros can use a special syntax: `$(<argument>)`. This will substitute for any value provided as `<argument>` when run.  
+
+When a macro function is called, it will be passed an NBT compound. It will then look in that compound for the key-names matching each of its arguments. If any are missing, it can't run.  
+If all arguments are present, it substitutes each argument with the SNBT representation of the given value. It then tries to run the commands with those substituted values.
+
+In this example, we write a function that gives the player a number of diamonds using a macro.
+```
+# data/example/functions/macro.mcfunction
+
+# When called, $(count) will be replaced with some number, producing a valid command
+$give @s diamond $(count)
+```
+
+```
+# data/example/functions/give.mcfunction
+function example:macro {count: 7}
+
+# This also works
+data modify storage example:storage count set value 12
+function example:macro with storage example:storage
+```
