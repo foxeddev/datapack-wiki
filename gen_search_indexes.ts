@@ -34,10 +34,10 @@ for await (const file of fileGlob.scan("./src/routes")) {
     versions: (frontmatter.data.versions as string) || "latest",
     url: "/" + file.slice(0, -9),
   });
-
-  // the first item is the error page
-  posts.shift()
 }
+
+// first post is the error page
+posts.shift()
 
 // write to file
 await Bun.write("./src/routes/search.json/meta.json", JSON.stringify(posts));
