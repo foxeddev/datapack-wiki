@@ -3,7 +3,7 @@ title: Credits
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip} from '$lib/reusables';
+import {Info, Warning, Tip} from '$lib/reuseables';
 </script>
 
 # Credits

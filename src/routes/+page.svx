@@ -3,7 +3,7 @@ title: Home
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, LatestPackFormat} from '$lib/reusables';
+import {Info, Warning, Tip, LatestPackFormat} from '$lib/reuseables';
 </script>
 
 # Heading 1

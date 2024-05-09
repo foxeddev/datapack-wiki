@@ -2,7 +2,7 @@
 title: Resources
 ---
 <script lang="ts">
-import {Info, Warning, Tip, Version, Highlight} from '$lib/reusables';
+import {Info, Warning, Tip, Version, Highlight} from '$lib/reuseables';
 </script>
 
 # Resources

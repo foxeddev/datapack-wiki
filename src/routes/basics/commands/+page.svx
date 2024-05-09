@@ -3,7 +3,7 @@ title: Commands
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version} from '$lib/reusables';
+import {Info, Warning, Tip, Version} from '$lib/reuseables';
 </script>
 
 # Commands
