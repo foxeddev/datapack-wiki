@@ -6,15 +6,11 @@ import {Info, Warning, Tip, Version, Highlight} from '$lib/reuseables';
 </script>
 
 # Resources
+Listed here are links to credible and reliable places to aid in command support and creation.
 
-<Info>Listed here are links to credible and reliable places to aid in command support and creation.</Info>
-
-### Minecraft Commands
-
-
-> <Highlight color="#738ADB">Discord</Highlight> https://discord.gg/QAFXFtZ
-> 
-> <Highlight color="#FF4500">Reddit</Highlight> https://www.reddit.com/r/MinecraftCommands/
+### Datapack Hub
+- <Highlight color="#738ADB">Discord</Highlight> https://discord.datapackhub.net
+- <Highlight color="#00AA50">PlanetMinecraft</Highlight>
 
 
 ### MCStacker

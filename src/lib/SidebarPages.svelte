@@ -49,7 +49,7 @@
 </SidebarCategory>
 
 <SidebarCategory name="NBT Data" icon={IconNBT}>
-  <SidebarPage label="SNBT" icon={IconNBT} page="/nbt/entity" />
+  <SidebarPage label="SNBT" icon={IconNBT} page="/nbt/snbt" />
   <SidebarPage label="Entity NBT" icon={IconButterfly} page="/nbt/entity" />
   <SidebarPage label="Block NBT" icon={IconBox} page="/nbt/block" />
   <SidebarPage label="Storages" icon={IconCloud} page="/nbt/storages" />

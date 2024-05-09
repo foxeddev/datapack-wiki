@@ -2,14 +2,15 @@
    export let color: string = "blue";
  </script>
  
- <span style="--highlight-color: {color};" class="dph-highlight">
+ <span style="--background-color: {color}BB;" class="dph-highlight">
     <slot />
   </span>
 
   <style>
     span.dph-highlight {
-      border-radius: 2px;
-      color: var(--highlight-color);
+      border-radius: 6px;
+      background-color: var(--background-color);
       padding: 0.2rem;
+      /* box-shadow: 0px 2px 5px black;  */
     }
   </style>

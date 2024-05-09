@@ -9,12 +9,12 @@ import {Info, Warning, Tip} from '$lib/reuseables';
 # Credits
 The Datapack Wiki is brought to you by [Datapack Hub](https://datapackhub.net) in collaboration with Aandeel.
 
-### Developers
-- [Silabear](https://silabear.carrd.co)
-- [Cobblestone](https://hoodierocks.vercel.app)
+### Managers
+- [Silabear](https://silabear.carrd.co) (web dev)
+- [Cobblestone](https://hoodierocks.vercel.app) (web dev)
+- [Aandeel](https://aandeel.co.uk/) (original idea + editing)
 
 ### Editorial Team
-- [Aandeel](https://aandeel.co.uk/)
 - [Gears](https://gearsdatapacks.github.io/)
 
 ### Contributors
