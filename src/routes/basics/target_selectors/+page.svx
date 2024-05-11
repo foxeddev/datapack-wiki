@@ -29,7 +29,7 @@ Target selectors can (and usually are) followed by additional arguments to filte
 
 **Example**: In our previous example (`@a[distance=..10]`), we use the argument `distance=..10` to specify that we only want to target entities which are less than 10 blocks away.
 
-<Tip>Most target selectors can be inverted by using =! meaning it will only select entities who do not match the argument.</Tip>
+<Tip>Most target selectors can be inverted by using =! meaning it will only select entities who do not match the argument. (E.g. @e[type=!minecraft:creeper] will select every entity that is NOT a creeper) </Tip>
 
 ### `type` argument
 The `type=<entity_type>` argument will filter the selection to only include entities of a certain type, or those in an entity_type tag. 
