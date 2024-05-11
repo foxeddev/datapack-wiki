@@ -6,6 +6,44 @@ title: Home
 import {Info, Warning, Tip, LatestPackFormat, Version} from '$lib/reuseables';
 </script>
 
+# The Datapack Hub wiki!
+
+TODO?
+
+Here, you'll find everything you need to know about creating, and mastering datapacks!
+
+**What are datapacks?**
+
+Datapacks are similiar to mods, but they are vanilla, TODO:
+
+With datapack you can:
+
+* Add and modify custom recipes,
+* Modify existing or creat new loot tables,
+* Add new advancements,
+* Create unique structures,
+* And much more!
+
+**Who are we?**
+
+TODO?
+
+**A huge thank you to our contributors!**
+
+TODO?
+
+**Get started with your first datapack!**
+
+ADD FIRST GUIDE?
+
+**Join the community!**
+
+Have questions, ideas, or datapack creations you want to share? Join the Datapack Hub Discord server to connect with other datapackers!
+
+ADD DISCORD HERE?
+
+# Testing?
+
 # Heading 1
 Paragraph text under heading 1
 
