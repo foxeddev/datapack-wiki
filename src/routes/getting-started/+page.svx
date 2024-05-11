@@ -5,7 +5,7 @@ title: Getting Started
 <script lang="ts">
 import {Info, Warning, Tip, Version} from '$lib/reuseables';
 </script>
-<Version>This page is validated and up to date with Minecraft Java: 1.20.4</Version>
+<Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
 
 # Getting Started
 If you're new to datapacks, you're at the right place. Looking around, getting into datapack creation might seem confusing, but once you've grasped the basics, you'll be off to a good start.
@@ -27,6 +27,7 @@ In hindsight a Datapack is a collection of `.json` files, and `.mcfunction` file
   - Damage Types
   - World Generation Settings
   - Biomes
+  - Enchantments [1.21+]
 
 ## Tools required for this tutorial
 You will need a reliable text-editor, we recommend: [Visual Studio Code](https://code.visualstudio.com) with the [Data-Pack Helper Plus (Extension)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server) in conjunction with the [language-mcfunction (Extension)](https://marketplace.visualstudio.com/items?itemName=arcensoth.language-mcfunction). (These extensions will aid in command syntax when making `.mcfunction` files).
