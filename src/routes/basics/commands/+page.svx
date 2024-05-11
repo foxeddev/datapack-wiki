@@ -29,18 +29,17 @@ These commands require a permission level same or bigger than 2 to run them.
 - `/clear [<targets>] [<item>] [<maxCount>]` - Clears items from the players inventory
 - `/clone <begin-xyz> <end-xyz> ... OR /clone from <sourceDimension> <begin-xyz> <end-xyz> ...` - Copies blocks in an area from one place to another
 - `/damage <target> <amount> [<damageType>] [at <location>]|[by <entity>] [from <cause>]` - Damages selected entities
-- `/data get|merge|modify|remove ...` - Changes block entity or entity NBT data
+- `/data get|merge|modify|remove ...` - Changes block entity or entity NBT data (See more here: [Data](/command/data))
    - Data get: `/data get (block <targetPos>|entity <target>|storage <target>) [<path>] [<scale>]` 
     - Data merge: `/data merge (block <targetPos>|entity <target>|storage <target>) <nbt>`
     - Data modify: `/data modify <targetPos>|entity <target>|storage <target>) <targetPath> (append|insert <index>|merge)`
-         - <Info>More info on MC wiki? or we will have a page for this WIP!</Info>
     - Data remove: `/data remove (block <targetPos>|entity <target>|storage <target>) <path>`
 - `/datapack disable <name>|enable <name> (first|last|before|after)|list [available|enabled]` - Enables and disables datapacks
 - `/debug start|stop|function <name>` - Starts or stops a debug session.
 - `/difficulty [peaceful|easy|normal|hard]` - Sets or gets the difficulty of a world
 - `/effect clear [<targets>] [<effect>]|give <targets> <effect> [<seconds>|infinite] [<amplifier>] [<hideParticles>]` - Changes the entity's effects
 - `/enchant <targets> <enchantment> [<level>]` -  Changes enchants of the item the entity is holding (NOTE: You can't enchant items with a level higher than what is possible in survival.)
-- `/execute ...` - Executes a different command (See more here: [Execute](/files/execute))
+- `/execute ...` - Executes a different command (See more here: [Execute](/command/execute))
 - `/experience add|set|query <targets> ...` - Adds, removes or checks the players experience points (ALIAS: `/xp`)
 - `/fill <from-XYZ> <to-XYZ> <block> [destroy|hollow|keep|outline|replace [<filter>]]` - 
 - `/fillbiome <from-XYZ> <to-XYZ> <biome> [replace <filter>]` - 
