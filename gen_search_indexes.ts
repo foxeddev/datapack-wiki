@@ -26,13 +26,16 @@ for await (const file of fileGlob.scan("./src/routes")) {
   // ignore the error page
   if (file === "+error.svx") continue;
 
+  const fileWithoutPage = file.slice(0, -9);
+  const filePath = fileWithoutPage.slice(2)
+
   // add to posts
   posts.push({
     title: (frontmatter.data.title as string) || "MissingNo.",
     content: removeMarkdown(DOMPurify.sanitize(frontmatter.content)),
     tags: (frontmatter.data.tags as string[]) || ([] as string[]),
     versions: (frontmatter.data.versions as string) || "latest",
-    url: "/" + file.slice(0, -9),
+    url: "/" + filePath
   });
 }
 

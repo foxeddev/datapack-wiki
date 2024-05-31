@@ -6,69 +6,26 @@ title: Home
 import {Info, Warning, Tip, LatestPackFormat, Version} from '$lib/reuseables';
 </script>
 
-# The Datapack Hub wiki!
+# Welcome to the Datapack Hub Wiki!
 
 TODO?
 
 Here, you'll find everything you need to know about creating, and mastering datapacks!
 
-**What are datapacks?**
+## What are Datapacks?
 
-Datapacks are similiar to mods, but they are vanilla, TODO:
+Datapacks are similar to mods, but they are vanilla, TODO:
 
 With datapack you can:
 
 * Add and modify custom recipes,
-* Modify existing or creat new loot tables,
+* Modify existing or create new loot tables,
 * Add new advancements,
 * Create unique structures,
 * And much more!
 
-**Who are we?**
+Ready to learn? Click [here](/getting-started) to get started.
 
-TODO?
+## Join the community!
 
-**A huge thank you to our contributors!**
-
-TODO?
-
-**Get started with your first datapack!**
-
-ADD FIRST GUIDE?
-
-**Join the community!**
-
-Have questions, ideas, or datapack creations you want to share? Join the Datapack Hub Discord server to connect with other datapackers!
-
-ADD DISCORD HERE?
-
-# Testing?
-
-# Heading 1
-Paragraph text under heading 1
-
-## Heading 2
-Paragraph text under heading 2
-
-### Heading 3
-Paragraph text under heading 3
-
-
-I have some `code` for you. Here's some more: 
-
-```json
-{
-    "this.is":"cool!"
-}
-```
-
-<Info>I am a very important piece of information. Please dont ignore me. I'm only smol.</Info>
-
-<Warning>The stuff in this box is probably very important.</Warning>
-
-<Tip>You can do this really cool thing. It'll make your life a lot better!</Tip>
-
-This guide is updated to the version:
-<Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
-
-The latest pack format is <LatestPackFormat />
+Have questions, ideas, or datapack creations you want to share? Join the [Datapack Hub Discord server](https://discord.datapackhub.net/) to connect with other datapackers!

@@ -172,7 +172,7 @@ Possible values for `condition`:
 - **`items (block|entity) <target> <slot> <item>`**: Checks if the given item matches the specified slot of the target block or entity. `item` is in the format `<item_id>[<components>]`.
 - **`loaded <pos>`**: Checks if the specified position is loaded.
 - **`predicate <predicate>`**: Checks whether a predicate succeeds.
-- **`score <target> <objective> (matches <range>|<operator> <source> <sourceObjective>)`**: Checks whether a score is withing a range (`matches`), or has a specified comparison to another score. `operator` can be on of: `<`, `<=`, `=`, `>=`, `>`.
+- **`score <target> <objective> (matches <range>|<operator> <source> <sourceObjective>)`**: Checks whether a score is within a range (`matches`), or has a specified comparison to another score. `operator` can be on of: `<`, `<=`, `=`, `>=`, `>`.
 
 #### Examples:
 `execute if biome ~ ~ ~ minecraft:snowy_taiga ...`  

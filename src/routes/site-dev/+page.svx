@@ -1,0 +1,56 @@
+<script lang="ts">
+import {Info, Warning, Tip, LatestPackFormat, Version} from '$lib/reuseables';
+</script>
+
+# Welcome to the site guide page
+
+This page is meant to be an introduction to developing a page for the wiki. In it is multiple examples which you can examine raw in the [site source code](https://github.com/Datapack-Hub/wiki).
+
+## Basic formatting
+
+All content on the website (other than navbar, sidebar and things that are not the actual wiki pages) are made using a technology called mdsvex. This technology enables people like you to insert markdown with [svelte components](https://svelte.dev).
+
+Each page is made of 3 parts:
+
+- front matter (metadata about the page such as title)
+- content (the actual content of the page)
+- components (custom components that allow for interactivity or other non text content)
+
+Each is crucial to making the page look and feel how it does.
+
+### Formatting Examples
+
+# Testing?
+
+# Heading 1
+Paragraph text under heading 1
+
+## Heading 2
+Paragraph text under heading 2
+
+### Heading 3
+Paragraph text under heading 3
+
+
+I have some `code` for you. Here's some more: 
+
+```json
+{
+    "this.is":"cool!"
+}
+```
+
+<Info>I am a very important piece of information. Please don't ignore me. I'm only smol.</Info>
+
+<Warning>The stuff in this box is probably very important.</Warning>
+
+<Tip>You can do this really cool thing. It'll make your life a lot better!</Tip>
+
+This guide is updated to the version:
+<Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
+
+The latest pack format is <LatestPackFormat />
+
+## Contributing
+
+We prefer that you clone the repo first, then submit a pull request if you wish to contribute to the page, we are fine with you signing the page to prove you made it, but we believe in less is more, so don't clog up space for a self promo plug.

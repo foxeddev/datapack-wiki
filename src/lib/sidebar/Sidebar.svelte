@@ -32,6 +32,7 @@
   <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full">
     {#if $sidebarExpanded}
       <button
+        disabled={searchState === "waiting"}
         aria-label="Open Search Modal"
         class="bg-black/45 p-2 py-1 rounded-lg flex items-center space-x-2 mb-2"
         on:click={() => dialog.showModal()}>
@@ -51,7 +52,7 @@
   </div>
   <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
     {#if $sidebarExpanded}
-      <span class="flex-grow flex flex-col items-center"> BETA - Dev Version </span>
+      <span class="flex-grow flex flex-col items-center"> BETA - Expect bugs! </span>
     {/if}
     <button
       aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"

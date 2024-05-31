@@ -20,6 +20,7 @@
   import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
   import IconWorldgen from "~icons/tabler/mountain";
   import IconFilters from "~icons/tabler/filters";
+  import IconGlobe from "~icons/tabler/globe";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -56,3 +57,5 @@
 </SidebarCategory>
 
 <SidebarCategory name="Worldgen" icon={IconWorldgen}></SidebarCategory>
+
+<SidebarPage label="Site Development" icon={IconGlobe} page="/site-dev" />

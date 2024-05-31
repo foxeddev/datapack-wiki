@@ -37,7 +37,7 @@ You will need a reliable text-editor, we recommend: [Visual Studio Code](https:/
 2. In this directory, create a new folder. You can name this anything you want.
 
 ### The `pack.mcmeta` file:
-3. Enter the folder, and create a new file with the name and extention: **`pack.mcmeta`**. This is what Minecraft reads to identify the datapack.
+3. Enter the folder, and create a new file with the name and extension: **`pack.mcmeta`**. This is what Minecraft reads to identify the datapack.
 4. Inside the `pack.mcmeta` file you'll need to paste these lines of code:
 ```json
 {
@@ -51,7 +51,7 @@ You will need a reliable text-editor, we recommend: [Visual Studio Code](https:/
 <Tip>Please note that the <code>pack_format</code> number can change depending on future Minecraft Updates. <code>41</code> is the current major release datapack format number for 1.20.6.</Tip>
 
 5. Save the `pack.mcmeta` file and in the same directory, create a new folder called **`data`**.
-6. Inside the new `data` folder create 2 new folders. One named: **`minecraft`** and another named whater you wish. The name you choose for this folder will impact the way you execute functions in future. Keep it simple, but **unique to your project**. If another datapack uses a similar name, then there will be compatibility issues. This folder that you create is called your **__namespace__**.
+6. Inside the new `data` folder create 2 new folders. One named: **`minecraft`** and another named whatever you wish. The name you choose for this folder will impact the way you execute functions in future. Keep it simple, but **unique to your project**. If another datapack uses a similar name, then there will be compatibility issues. This folder that you create is called your **__namespace__**.
 
 ### `tick` and `load` `.json` files:
 - The `tick.json` file basically tells the game which `.mcfunction` file (we'll make this later) to run in an infinite loop, or rather 20 times every second
