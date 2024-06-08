@@ -6,7 +6,7 @@ title: Target Selectors
 import {Info, Warning, Tip, Version} from '$lib/reuseables';
 </script>
 
-<Version>This page is validated and up to date with Minecraft Java: 1.20.4</Version>
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
 # Target Selectors
 Target Selectors are used as an argument in commands to select entities and players in the world. We use target selectors to find players or mobs and do things to them.
@@ -21,6 +21,7 @@ In Java Edition, there are 5 base target selectors:
 - **@s**: `@s` selects the current entity who is running the command or function.
 - **@p**: `@p` selects the nearest player to the position of execution. *This is equivalent to `@e[type=player,limit=1,sort=nearest]`*
 - **@r**: `@r` selects a random player. *This is equivalent to `@e[type=player,limit=1,sort=random]`*
+- **@n**: `@n` selects the nearest entity from the command's execution. *This is equivalent to `@e[sort=nearest,limit=1]`* [1.21+]
 
 <Warning>@e only selects entities in a loaded chunk. If an entity exists but is not currently being loaded, it will not select that entity.</Warning>
 
