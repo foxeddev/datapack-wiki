@@ -17,6 +17,7 @@ const config = {
       extensions: [".svx", ".md"],
       remarkPlugins: [remarkGemoji],
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+      layout: "src/lib/MDLayout.svelte",
     }),
   ],
 

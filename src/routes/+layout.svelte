@@ -8,11 +8,6 @@
   import "../styles/code_theme.css";
 </script>
 
-<svelte:head>
-  <title>WIP - Datapack Hub</title>
-  <meta name="description" content="WIP - Datapack Hub" />
-</svelte:head>
-
 <div class="font-lexend bg-stone-900 h-screen max-h-screen flex flex-col text-stone-200">
   <div class="h-[6%]">
     <Navbar />

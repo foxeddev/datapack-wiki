@@ -1,5 +1,6 @@
 ---
 title: Resources
+description: "Listed here are links to credible and reliable places to aid in command support and creation."
 ---
 <script lang="ts">
 import {Info, Warning, Tip, Version, Highlight} from '$lib/reuseables';

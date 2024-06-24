@@ -1,5 +1,6 @@
 ---
 title: Credits
+description: "The Datapack Wiki is brought to you by [Datapack Hub](https://datapackhub.net) in collaboration with Aandeel."
 ---
 
 <script lang="ts">

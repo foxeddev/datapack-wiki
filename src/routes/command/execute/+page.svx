@@ -1,5 +1,6 @@
 ---
 title: /execute
+description: "The execute command is used to execute other commands conditionally, or in a different context. The execute command is made up of multiple subcommands, which can be chained repeatedly and in any order to modify context in various ways."
 ---
 
 <script lang="ts">
@@ -27,11 +28,14 @@ Some commands cause a fork. That is, the following chain of subcommands get exec
 
 For example, if there are two markers A and B, and the following command is run: `execute as @e[type=marker] run function example`  
 And the `example` function contained the following commands:
+
 ```
 say first command
 say second command
 ```
+
 The chat output would look like this:
+
 ```
 [A] first command
 [A] second command

@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+description: "If you're new to datapacks, you're at the right place. Looking around, getting into datapack creation might seem confusing, but once you've grasped the basics, you'll be off to a good start."
 ---
 
 <script lang="ts">
@@ -88,19 +89,19 @@ In the same folder create another new file called **`tick.json`**, and inside pa
 ### Final File Structure:
 
 ```json
-`.minecraft/saves/(world)/datapacks`
-    └(your-datapack-name)
-      ├`pack.mcmeta`
-      └(data)
-        ├(minecraft)
-        |  └(tags)
-        |    └(functions)
-        |      ├`load.json`
-        |      └`tick.json`
-        └(foo)
-           └(functions)
-             ├`load.mcfunction`
-             └`tick.mcfunction`
+.minecraft/saves/(world)/datapacks
+  └(your-datapack-name)
+    ├pack.mcmeta
+    └(data)
+      ├(minecraft)
+      |  └(tags)
+      |    └(functions)
+      |      ├load.json
+      |      └tick.json
+      └(foo)
+        └(functions)
+          ├load.mcfunction
+          └tick.mcfunction
 ```
 
 To test that the datapack works, in the `load.mcfunction` file, type `say hello new datapack`. Save it and in-game, type the command `/reload`, If everything is setup correctly, the Say command should execute.

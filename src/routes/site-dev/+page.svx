@@ -14,12 +14,13 @@ Each page is made of 3 parts:
 
 - front matter (metadata about the page such as title)
 - content (the actual content of the page)
-- components (custom components that allow for interactivity or other non text content)
+- components (custom components that allow for interactivity or other features not able to be reproduced with markdown)
 
 Each is crucial to making the page look and feel how it does.
 
 ### Formatting Examples
 
+```md
 # Testing?
 
 # Heading 1
@@ -31,6 +32,38 @@ Paragraph text under heading 2
 ### Heading 3
 Paragraph text under heading 3
 
+Linking to things [like Header 1](#header-1)
+
+I have some `code` for you. Here's some more: 
+
+```json
+{
+    "this.is":"cool!"
+}
+\`\`\`
+```
+
+You can see the results of the markdown above at the end of the page.
+
+## Contributing
+
+We prefer that you clone the repo first, then submit a pull request if you wish to contribute to the page, we are fine with you signing the page to prove you made it, but we believe in less is more, so don't clog up space for a self promo plug.
+
+
+# Resulting Markup
+
+Below is the result of the markdown in [Formatting Examples](#formatting-examples).
+
+# Heading 1
+Paragraph text under heading 1
+
+## Heading 2
+Paragraph text under heading 2
+
+### Heading 3
+Paragraph text under heading 3
+
+Linking to things [like Header 1](#header-1)
 
 I have some `code` for you. Here's some more: 
 
@@ -50,7 +83,3 @@ This guide is updated to the version:
 <Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
 
 The latest pack format is <LatestPackFormat />
-
-## Contributing
-
-We prefer that you clone the repo first, then submit a pull request if you wish to contribute to the page, we are fine with you signing the page to prove you made it, but we believe in less is more, so don't clog up space for a self promo plug.
