@@ -10,7 +10,7 @@
   description={description}
   author="Datapack Hub"
   logo="dph.png"
-  imageURL="banner.png"
+  imageURL="android-chrome-192x192.png"
   siteName="Datapack Hub"
   keywords="datapack, datapack hub, minecraft datapacks, datapack help, datapack creation"
   socials={[
