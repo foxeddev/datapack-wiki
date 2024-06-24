@@ -9,8 +9,7 @@
   title="{title} | WIP - Datapack Hub"
   description={description}
   author="Datapack Hub"
-  logo="dph.png"
-  imageURL="android-chrome-192x192.png"
+  imageURL="/android-chrome-192x192.png"
   siteName="Datapack Hub"
   keywords="datapack, datapack hub, minecraft datapacks, datapack help, datapack creation"
   socials={[
@@ -20,6 +19,6 @@
     "https://x.com/DatapackHub",
     "https://instagram.com/datapackhub",
   ]}
-  canonical="https://datapackhub.net" />
+  canonical="https://datapack.wiki" />
 
 <slot />
