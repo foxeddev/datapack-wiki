@@ -9,8 +9,8 @@
   title="{title} | WIP - Datapack Hub"
   description={description}
   author="Datapack Hub"
-  logo="/logos/dph.png"
-  imageURL="/logos/banner.png"
+  logo="dph.png"
+  imageURL="banner.png"
   siteName="Datapack Hub"
   keywords="datapack, datapack hub, minecraft datapacks, datapack help, datapack creation"
   socials={[
