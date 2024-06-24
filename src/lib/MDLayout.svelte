@@ -9,7 +9,7 @@
   title="{title} | WIP - Datapack Hub"
   description={description}
   author="Datapack Hub"
-  imageURL="https://datapack-wiki.pages.dev/android-chrome-192x192.png"
+  imageURL="https://datapack-wiki.pages.dev/banner.png"
   siteName="Datapack Hub"
   keywords="datapack, datapack hub, minecraft datapacks, datapack help, datapack creation"
   socials={[
