@@ -50,7 +50,7 @@ Tags have a very simple format, with two fields.
 `replace` is an optional field, and if not specified will default to `false`.
 
 ### `values`
-Values (`values`) is an array containing everything to group under this tag. Each element is either a string or an object containing an `id` field and a `required` field (object example `{"required": false, "id":"minecraft:stick"}` ). The plain string and the `id` field contain either the ID of the entry (such as `minecraft:diamond_block`), or the ID of another tag, beginning with a `#` (such as `#minecraft:logs`). The `required` field in the object is a boolean (`true` or `false`) which defines if the id has to be there or if it should simply ignore this entry if it can't find it.
+Values (`values`) is an array containing everything to group under this tag. Each element is either a string or an object containing an `id` field and a `required` field (object example `{"required": false, "id":"minecraft:stick"}` ). The plain string and the `id` field contain either the ID of the entry (such as `minecraft:diamond_block`), or the ID of another tag, beginning with a `#` (such as `#minecraft:logs`). The `required` field in the object is a boolean (`true` or `false`) which defines if this entry can be ignored if the id cannot be found.
 
 ### Example
 Here is an example tag, located in `data/example/tags/items/wood.json` (`example` is the namespace being used).  
