@@ -7,6 +7,30 @@ To contribute, please fork this repo and then submit a pull request with your ad
 > [!TIP]
 > If you don't understand markdown or HTML, or if you require additional support, please [join our Discord](https://discord.datapackhub.net) and we'd be happy to help!
 
+## Setting up the development environment
+
+Before you begin developing the site, you need a few requirements
+
+- [Node](https://nodejs.org/en)
+- A package manager (`npm, pnpm, bun`)
+- [Bun (optional)](https://bun.sh) - we use this to generate our search indexes, it can also be used to run the project
+
+### Installing
+
+To install the project, first install the requirements, then, run the install command in your package manager, for this example, we will use NPM.
+
+`$ npm install`
+
+### Running the dev server
+
+To run the dev server, run the `dev` script with your package manager, then open the URL. When you then make changes to files, they will automatically update on the dev URL.
+
+`$ npm run dev`
+
+### Checking for errors (optional)
+
+It's recommended before you make your pull request that you run the `build` and `check` commands with your package manager. These will check for common issues you may run into.
+
 ## Adding a page
 
 1. Create your page .svx file. If I want to make a page at `/command/say`, I would create the file at `/src/routes/command/say/+page.svx`.
@@ -16,6 +40,7 @@ To contribute, please fork this repo and then submit a pull request with your ad
    ```yml
    ---
    title: Page title
+   description: "Here is a short description!"
    ---
    ```
 
@@ -43,6 +68,8 @@ To contribute, please fork this repo and then submit a pull request with your ad
    ## Syntax
 
    `function <function>` - Runs a function
+
+   ...
    ```
 
 > [!TIP]
