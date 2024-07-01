@@ -9,7 +9,7 @@
   title="{title} | WIP - Datapack Hub"
   description={description}
   author="Datapack Hub"
-  imageURL="https://datapack-wiki.pages.dev/banner.png"
+  imageURL="https://datapack.wiki/banner.png"
   siteName="Datapack Hub"
   keywords="datapack, datapack hub, minecraft datapacks, datapack help, datapack creation"
   socials={[
@@ -18,7 +18,6 @@
     "https://github.com/Datapack-Hub",
     "https://x.com/DatapackHub",
     "https://instagram.com/datapackhub",
-  ]}
-  canonical="https://datapack.wiki" />
+  ]}/>
 
 <slot />

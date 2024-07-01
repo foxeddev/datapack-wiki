@@ -1,5 +1,6 @@
 ---
 title: Commands
+description: "Commands tell the game to do things. [Functions](/files/functions) are files which are made up of many commands. They form the basic building blocks for any function datapack."
 ---
 
 <script lang="ts">
@@ -9,20 +10,25 @@ import {Info, Warning, Tip, Version} from '$lib/reuseables';
 <Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
 
 # Commands
+
 Commands tell the game to do things. [Functions](/files/functions) are files which are made up of many commands. They form the basic building blocks for any function datapack.
 
-# Command Syntax
-Variable | Meaning 
+## Command Syntax
+
+Variable | Meaning
 ---------|---------
- `<argumentName>` | An argument. 
- `[entry]` | An optional entry. 
- `[entryA|entryB|entryC]` | Pick one of these. This is optional. 
- `(entryA|entryB|entryC)` | Pick one of these. This is required 
- `...` | Some syntax is left out, you can find more about the command on its dedicated page 
+ `<argumentName>` | An argument.
+ `[entry]` | An optional entry.
+ `[entryA│entryB│entryC]` | Pick one of these. This is optional.
+ `(entryA│entryB│entryC)` | Pick one of these. This is required
+ `...` | Some syntax is left out, you can find more about the command on its dedicated page
 
 ## Every command & what it does
+
 ### Permission level 2+
-These commands require a permission level same or bigger than 2 to run them.
+
+These commands require a permission level greater than or equal to 2 to run them.
+
 - `/advancement grant|revoke <targets> everything|only|from|through|until (<advancement>|)` - Gives, removes or checks player advancements
 - `/attribute <target> <attribute> get|base|modifier ...` - Can change or read attributes
 - `/bossbar list|add|remove|set|get [<id>] ...` - Changes and creates bossbars
@@ -30,10 +36,10 @@ These commands require a permission level same or bigger than 2 to run them.
 - `/clone <begin-xyz> <end-xyz> ... OR /clone from <sourceDimension> <begin-xyz> <end-xyz> ...` - Copies blocks in an area from one place to another
 - `/damage <target> <amount> [<damageType>] [at <location>]|[by <entity>] [from <cause>]` - Damages selected entities
 - `/data get|merge|modify|remove ...` - Changes block entity or entity NBT data (See more here: [Data](/command/data))
-   - Data get: `/data get (block <targetPos>|entity <target>|storage <target>) [<path>] [<scale>]` 
-    - Data merge: `/data merge (block <targetPos>|entity <target>|storage <target>) <nbt>`
-    - Data modify: `/data modify <targetPos>|entity <target>|storage <target>) <targetPath> (append|insert <index>|merge)`
-    - Data remove: `/data remove (block <targetPos>|entity <target>|storage <target>) <path>`
+  - Data get: `/data get (block <targetPos>|entity <target>|storage <target>) [<path>] [<scale>]`
+  - Data merge: `/data merge (block <targetPos>|entity <target>|storage <target>) <nbt>`
+  - Data modify: `/data modify <targetPos>|entity <target>|storage <target>) <targetPath> (append|insert <index>|merge)`
+  - Data remove: `/data remove (block <targetPos>|entity <target>|storage <target>) <path>`
 - `/datapack disable <name>|enable <name> (first|last|before|after)|list [available|enabled]` - Enables and disables datapacks
 - `/debug start|stop|function <name>` - Starts or stops a debug session.
 - `/difficulty [peaceful|easy|normal|hard]` - Sets or gets the difficulty of a world
@@ -41,8 +47,8 @@ These commands require a permission level same or bigger than 2 to run them.
 - `/enchant <targets> <enchantment> [<level>]` -  Changes enchants of the item the entity is holding (NOTE: You can't enchant items with a level higher than what is possible in survival.)
 - `/execute ...` - Executes a different command (See more here: [Execute](/command/execute))
 - `/experience add|set|query <targets> ...` - Adds, removes or checks the players experience points (ALIAS: `/xp`)
-- `/fill <from-XYZ> <to-XYZ> <block> [destroy|hollow|keep|outline|replace [<filter>]]` - 
-- `/fillbiome <from-XYZ> <to-XYZ> <biome> [replace <filter>]` - 
+- `/fill <from-XYZ> <to-XYZ> <block> [destroy|hollow|keep|outline|replace [<filter>]]` -
+- `/fillbiome <from-XYZ> <to-XYZ> <biome> [replace <filter>]` -
 - `/forceload add <from> [<to>]|remove all OR <from> [<to>]|query [<pos>]>` - Forces chunks to be loaded constantly
 - `/function <name> <arguments>|with (block <sourcePos>|entity <source>|storage <source>) [<path>]` - Triggers a function
 - `/gamemode <gamemode> [<target>]` - Changes the player's gamemode
@@ -80,8 +86,11 @@ These commands require a permission level same or bigger than 2 to run them.
 - `/title <targets> (times <fadeIn> <stay> <fadeOut>clear|reset|title <title>|subtitle <title>|actionbar <title>)` -  Displays text on the player's screen
 - `/weather weather (clear|rain|thunder) [<duration>]` -  Changes the weather
 - `/worldborder add|center|damage|get|set|warning ...` -  Controls the worldborder
+
 ### Permission level 0
+
 These commands can be run by any player, no matter their permission level.
+
 - `/help [<command>]` - Shows the help menu for commands
 - `/list [uuids]` - Lists players on the server.
 - `/random (roll|value) <range>` - Creates a random value (\<sequence> requires OP)
@@ -94,7 +103,9 @@ These commands can be run by any player, no matter their permission level.
 - `/trigger <objective> [add|set] [<value>]` - Displays the world's seed
 
 ### Multiplayer Commands
+
 These commands can only be run only on a server.
+
 - `/ban <targets> [<reason>]` - Adds the player profile into the server's blacklist
 - `/ban-ip <target> [<reason>]` - Adds the player's IP address into the server's blacklist
 - `/banlist [ips|players]` - Displays the server's blacklist
@@ -110,6 +121,9 @@ These commands can only be run only on a server.
 - `/stop` - Stops the server
 - `/transfer <hostname> [<port>] [<players>]` - Transfers a player to a different server
 - `/whitelist on|off|list|reload|remove|add ...` - Can change the server's whitelist
+
 ### Singleplayer Commands
+
 This command can only be run in singleplayer, not on a server.
+
 - `/publish [<allowCommands>] [<gamemode>] [<port>]` -  Opens a singleplayer world to your local network
