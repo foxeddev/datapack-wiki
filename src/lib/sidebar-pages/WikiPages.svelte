@@ -21,6 +21,8 @@
   import IconWorldgen from "~icons/tabler/mountain";
   import IconFilters from "~icons/tabler/filters";
   import IconGlobe from "~icons/tabler/globe";
+  import IconList from "~icons/tabler/list-details";
+  import IconComponents from "~icons/tabler/brackets-contain";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -32,6 +34,7 @@
 <SidebarCategory name="Basics" icon={IconBox}>
   <SidebarPage label="Commands" icon={IconCommand} page="/basics/commands" />
   <SidebarPage label="Target Selectors" icon={IconAt} page="/basics/target_selectors" />
+  <SidebarPage label="Item Components" icon={IconComponents} page="/basics/item_components" />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
@@ -43,6 +46,7 @@
 </SidebarCategory>
 
 <SidebarCategory name="Command Reference" icon={IconCommand}>
+  <SidebarPage label="Commands List" icon={IconList} page="/command/all" />
   <SidebarPage label="function" icon={IconCommand} page="/command/function" />
   <SidebarPage label="execute" icon={IconCommand} page="/command/execute" />
   <SidebarPage label="data" icon={IconCommand} page="/command/data" />

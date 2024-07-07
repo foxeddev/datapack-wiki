@@ -2,18 +2,24 @@
   import IconSearch from "~icons/tabler/search";
 
   import { sidebarExpanded } from "$lib";
-  import SidebarPages from "$lib/SidebarPages.svelte";
+  import SidebarPages from "$lib/sidebar-pages/WikiPages.svelte";
+  import GuidePages from "$lib/sidebar-pages/Guides.svelte";
   import { onMount } from "svelte";
   import { createSearchIndex, search } from "../search";
 
   import IconCollapse from "~icons/tabler/chevron-left";
   import IconCredits from "~icons/tabler/address-book"
   import IconResources from "~icons/tabler/book"
-    import SidebarPage from "./SidebarPage.svelte";
+  import IconWiki from "~icons/tabler/globe"
+  import IconGuides from "~icons/tabler/book-2"
+  
+  import SidebarPage from "./SidebarPage.svelte";
 
   let results: Post[] = [];
   let searchTerm = "";
   let searchState: "waiting" | "done" = "waiting";
+
+  let page = 1;
 
   onMount(async () => {
     const posts = await fetch("/search.json").then((r) => r.json());
@@ -39,10 +45,18 @@
         <IconSearch />
         <span class="py-1 text-stone-500">Search...</span>
       </button>
+      <div class="flex items-center mb-2 ml-1 space-x-1">
+        <button class="{page == 1 ? "bg-stone-700" : "bg-stone-800"} px-2 py-1 rounded-md flex items-center space-x-1" on:click={() => page = 1}><IconWiki /><span>Wiki</span></button>
+        <button class="{page == 2 ? "bg-stone-700" : "bg-stone-800"} px-2 py-1 rounded-md flex items-center space-x-1" on:click={() => page = 2}><IconGuides /><span>Guides</span></button>
+      </div>
     {/if}
     <div class="flex flex-col h-full">
       <div class="flex-grow">
+        {#if page == 1}
         <SidebarPages />
+        {:else}
+        <GuidePages />
+        {/if}
       </div>
       <div>
         <SidebarPage label="Resources" icon={IconResources} page="/resources" />

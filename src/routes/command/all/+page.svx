@@ -1,0 +1,102 @@
+---
+title: Getting Started
+---
+
+<script lang="ts">
+import {Info, Warning, Tip, Version} from '$lib/reuseables';
+</script>
+<Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
+
+# List of all commands
+### Permission level 2+
+These commands require a permission level same or bigger than 2 to run them.
+- `/advancement grant|revoke <targets> everything|only|from|through|until (<advancement>|)` - Gives, removes or checks player advancements
+- `/attribute <target> <attribute> get|base|modifier ...` - Can change or read attributes
+- `/bossbar list|add|remove|set|get [<id>] ...` - Changes and creates bossbars
+- `/clear [<targets>] [<item>] [<maxCount>]` - Clears items from the players inventory
+- `/clone <begin-xyz> <end-xyz> ... OR /clone from <sourceDimension> <begin-xyz> <end-xyz> ...` - Copies blocks in an area from one place to another
+- `/damage <target> <amount> [<damageType>] [at <location>]|[by <entity>] [from <cause>]` - Damages selected entities
+- `/data get|merge|modify|remove ...` - Changes block entity or entity NBT data (See more here: [Data](/command/data))
+   - Data get: `/data get (block <targetPos>|entity <target>|storage <target>) [<path>] [<scale>]` 
+    - Data merge: `/data merge (block <targetPos>|entity <target>|storage <target>) <nbt>`
+    - Data modify: `/data modify <targetPos>|entity <target>|storage <target>) <targetPath> (append|insert <index>|merge)`
+    - Data remove: `/data remove (block <targetPos>|entity <target>|storage <target>) <path>`
+- `/datapack disable <name>|enable <name> (first|last|before|after)|list [available|enabled]` - Enables and disables datapacks
+- `/debug start|stop|function <name>` - Starts or stops a debug session.
+- `/difficulty [peaceful|easy|normal|hard]` - Sets or gets the difficulty of a world
+- `/effect clear [<targets>] [<effect>]|give <targets> <effect> [<seconds>|infinite] [<amplifier>] [<hideParticles>]` - Changes the entity's effects
+- `/enchant <targets> <enchantment> [<level>]` -  Changes enchants of the item the entity is holding (NOTE: You can't enchant items with a level higher than what is possible in survival.)
+- `/execute ...` - Executes a different command (See more here: [Execute](/command/execute))
+- `/experience add|set|query <targets> ...` - Adds, removes or checks the players experience points (ALIAS: `/xp`)
+- `/fill <from-XYZ> <to-XYZ> <block> [destroy|hollow|keep|outline|replace [<filter>]]` - 
+- `/fillbiome <from-XYZ> <to-XYZ> <biome> [replace <filter>]` - 
+- `/forceload add <from> [<to>]|remove all OR <from> [<to>]|query [<pos>]>` - Forces chunks to be loaded constantly
+- `/function <name> <arguments>|with (block <sourcePos>|entity <source>|storage <source>) [<path>]` - Triggers a function
+- `/gamemode <gamemode> [<target>]` - Changes the player's gamemode
+- `/gamerule <rule name> [<value>]` - Changes or checks a gamerule
+- `/give <target> <item> [<count>]` - Gives an item to the player
+- `/item modify|replace (block <pos>|entity <targets>) <slot> ...` - Changes or copies items from inventories of entities or blocks
+- `/jfr start|stop` - Starts or stops JFR(Java FlightRecorder + some other custom events) profiling.
+- `/kick <target> [<reason>]` - Kicks a player off a server. (NOTE: A player in a single player world or the host of a world cannot be kicked tho)
+- `/kill [<targets>]` - Can kill entities
+- `/locate structure <structure>|biome <biome>|poi <poi>` - Displays the coordinates of the nearest biome, structure or a point of interest
+- `/loot loot <target> <source>` - Spawns a given loot table into a specified inventory or into the world
+- `/particle <name> [<pos>] OR particle <name> <pos> <delta> <speed> <count> [force|normal] [<viewers>]` - Spawns a particle
+- `/place feature|jigsaw|structure|template ...` - Places a structure, a feature, a structure template or a template pool
+- `/playsound <sound> <_source_> <targets> [<pos>] [<volume>] [<pitch>] [<minVolume>]` -  Plays a specified sound to a player
+- `/random value|roll|reset ...` -  Rolls a random number
+- `/recipe give|take <targets> <recipe|*>` - Gives or takes recipes from the player
+- `/reload` -  Reloads all datapacks in a world. (If there is a bug in the pack, it doesn't reload it and uses the previous version)
+- `/return <value>|fail|run <command>` -  Control execution flow inside functions and change their return value
+- `/ride <target> mount <vehicle>|dismount` -  Used to make an entity ride or dismount a different entity
+- `/say <message>` -  Sends a message into chat to all players
+- `/schedule function <function> <time> [append|replace] OR clear <function>` -  Schedules a function
+- `/scoreboard objectives|players ...` -  Manages scoreboard objectives and players
+- `/setblock <pos-XYZ> <block> [destroy|keep|replace]` -  Changes or replaces a specified block with a different one
+- `/spawnpoint [<targets>] [<pos>] [<angle>]` -  Changes the spawnpoint for a player
+- `/spectate <target> [<player>]` -  Makes a player spectate an entity, the player has to be in spectator mode.
+- `/spreadplayers <center> <spreadDistance> <maxRange> [under <maxHeight>] <respectTeams> <targets>` -  Teleport entities randomly across a specified area
+- `/stopsound <targets> [<_source_>] [<sound>]` -  Stops any playing sound
+- `/summon <entity> [<pos>] [<nbt>]` -  Summons an entity
+- `/tag <targets> add <name>|remove <name>| list` -  Adds, removes or lists entities tags
+- `/team list|add|remove|empty|join|leave|modify ...` -  Manages teams
+- `/teleport [<targets>] <destination|location> ...` -  Teleport entities to a specified location. (ALIAS: `/tp`)
+- `/tellraw <targets> <message>` -  Sends a JSON message to players
+- `/tick query|rate <rate>|freeze|unfreeze|step [<time>|stop]|sprint [<time>|stop]` -  Controls or checks the tick rate of a world
+- `/time add <time>|query (daytime|gametime|day)|set <daytime|gametime|day)|time>` - Controls or checks the time of a world  
+- `/title <targets> (times <fadeIn> <stay> <fadeOut>clear|reset|title <title>|subtitle <title>|actionbar <title>)` -  Displays text on the player's screen
+- `/weather weather (clear|rain|thunder) [<duration>]` -  Changes the weather
+- `/worldborder add|center|damage|get|set|warning ...` -  Controls the worldborder
+### Permission level 0
+These commands can be run by any player, no matter their permission level.
+- `/help [<command>]` - Shows the help menu for commands
+- `/list [uuids]` - Lists players on the server.
+- `/random (roll|value) <range>` - Creates a random value (\<sequence> requires OP)
+- `/seed` - Displays the world's seed (In multiplayer requires your op level to be 2+)
+- `/teammsg <message>` - Sends a message to all players in the same team of the command runner. (Alias `/tm`)
+- `/me <message>` - Displays a message about the sender.
+- `/msg <targets> <message>` - Sends a private message to a player. (Alias `/tell` and `/w`)
+- `/tell <targets> <message>` - Sends a private message to a player (Alias `/msg` and `/w`)
+- `/w <targets> <message>` - Sends a private message to a player (Alias `/tell` and `/msg`)
+- `/trigger <objective> [add|set] [<value>]` - Displays the world's seed
+
+### Multiplayer Commands
+These commands can only be run only on a server.
+- `/ban <targets> [<reason>]` - Adds the player profile into the server's blacklist
+- `/ban-ip <target> [<reason>]` - Adds the player's IP address into the server's blacklist
+- `/banlist [ips|players]` - Displays the server's blacklist
+- `/op <targets>` - Makes a player operator
+- `/deop <targets>` - Removes a player operator status
+- `/pardon <targets>` - Removes player's profile from the server's blacklist
+- `/pardon-ip <target>` - Removes player's IP address from the server's blacklist
+- `/perf start|stop` - Captures info and metrics about the game for 10 seconds
+- `/save-all [flush]` - Saves the server to a disk
+- `/save-on` - Enables automatic server saves.
+- `/save-off` - Disables automatic server saves.
+- `/setidletimeout <minutes>` - Used to set the time before idle players are kicked (If 0 - disabled)
+- `/stop` - Stops the server
+- `/transfer <hostname> [<port>] [<players>]` - Transfers a player to a different server
+- `/whitelist on|off|list|reload|remove|add ...` - Can change the server's whitelist
+### Singleplayer Commands
+This command can only be run in singleplayer, not on a server.
+- `/publish [<allowCommands>] [<gamemode>] [<port>]` -  Opens a singleplayer world to your local network

@@ -2,16 +2,18 @@
   import IconDiscord from "~icons/tabler/brand-discord";
   import IconShare from "~icons/tabler/share";
   import IconMenu from "~icons/tabler/menu-2";
+  import IconEdit from "~icons/tabler/pencil";
 
   import { sidebarExpanded } from "$lib";
+  import { page } from '$app/stores';  
 
-  let shareText = "Copy URL";
+  let shareText = "Share";
 
   function copyUrl() {
     navigator.clipboard.writeText(window.location.href);
-    shareText = "Copied!";
+    shareText = "Copied URL!";
     setTimeout(() => {
-      shareText = "Copy URL";
+      shareText = "Share";
     }, 2000);
   }
 </script>
@@ -24,11 +26,11 @@
   </div>
   <div class="flex items-center space-x-2">
     <a
-      href="https://discord.datapackhub.net"
+      href="https://github.com/Datapack-Hub/wiki/blob/main/src/routes{$page.url.pathname}/%2Bpage.svx"
       class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 hover:text-stone-100 aspect-square sm:aspect-auto"
       aria-label="Discord">
-      <IconDiscord />
-      <span class="hidden sm:block">Discord</span>
+      <IconEdit />
+      <span class="hidden sm:block">Edit</span>
     </a>
     <button
       class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 hover:text-stone-100 aspect-square sm:aspect-auto"
@@ -37,5 +39,12 @@
       <IconShare />
       <span class="hidden sm:block">{shareText}</span>
     </button>
+    <a
+      href="https://discord.datapackhub.net"
+      class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 hover:text-stone-100 aspect-square sm:aspect-auto"
+      aria-label="Discord">
+      <IconDiscord />
+      <span class="hidden sm:block">Discord</span>
+    </a>
   </div>
 </div>
