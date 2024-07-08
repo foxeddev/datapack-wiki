@@ -12,15 +12,15 @@ The Datapack Wiki is brought to you by [Datapack Hub](https://datapackhub.net) i
 
 ### Managers
 - [Silabear](https://silabear.carrd.co) (web dev)
-- [Cobblestone](https://hoodierocks.vercel.app) (web dev)
+- Cobblestone (web dev)
 - [Aandeel](https://aandeel.co.uk/) (original idea + editing)
 
 ### Editorial Team
 - [Gears](https://gearsdatapacks.github.io/)
 
 ### Contributors
--
--
+- Diamond
+- HeDeAn
 -
 
 <Info>Want to be on this list? Anyone can contribute to our GitHub! </Info>

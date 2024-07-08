@@ -2,24 +2,24 @@
   import IconSearch from "~icons/tabler/search";
 
   import { sidebarExpanded } from "$lib";
-  import SidebarPages from "$lib/sidebar-pages/WikiPages.svelte";
+  import WikiPages from "$lib/sidebar-pages/WikiPages.svelte";
   import GuidePages from "$lib/sidebar-pages/Guides.svelte";
   import { onMount } from "svelte";
   import { createSearchIndex, search } from "../search";
 
   import IconCollapse from "~icons/tabler/chevron-left";
-  import IconCredits from "~icons/tabler/address-book"
-  import IconResources from "~icons/tabler/book"
-  import IconWiki from "~icons/tabler/globe"
-  import IconGuides from "~icons/tabler/book-2"
-  
+  import IconCredits from "~icons/tabler/address-book";
+  import IconResources from "~icons/tabler/book";
+  import IconWiki from "~icons/tabler/globe";
+  import IconGuides from "~icons/tabler/book-2";
+
   import SidebarPage from "./SidebarPage.svelte";
 
   let results: Post[] = [];
   let searchTerm = "";
   let searchState: "waiting" | "done" = "waiting";
 
-  let page = 1;
+  let page = "wiki";
 
   onMount(async () => {
     const posts = await fetch("/search.json").then((r) => r.json());
@@ -34,7 +34,10 @@
   let dialog: HTMLDialogElement;
 </script>
 
-<aside class="{$sidebarExpanded ? "absolute w-[100%] sm:w-80" : "w-fit hidden sm:flex"} flex flex-col bg-stone-800 items-center sm:relative h-full z-50">
+<aside
+  class="{$sidebarExpanded
+    ? 'absolute w-[100%] sm:w-80'
+    : 'w-fit hidden sm:flex'} flex flex-col bg-stone-800 items-center sm:relative h-full z-50">
   <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full">
     {#if $sidebarExpanded}
       <button
@@ -46,16 +49,24 @@
         <span class="py-1 text-stone-500">Search...</span>
       </button>
       <div class="flex items-center mb-2 ml-1 space-x-1">
-        <button class="{page == 1 ? "bg-stone-700" : "bg-stone-800"} px-2 py-1 rounded-md flex items-center space-x-1" on:click={() => page = 1}><IconWiki /><span>Wiki</span></button>
-        <button class="{page == 2 ? "bg-stone-700" : "bg-stone-800"} px-2 py-1 rounded-md flex items-center space-x-1" on:click={() => page = 2}><IconGuides /><span>Guides</span></button>
+        <button
+          class="{page == 'wiki' ? 'bg-stone-700' : 'bg-stone-800'} px-2 py-1 rounded-md flex items-center space-x-1"
+          on:click={() => (page = "wiki")}>
+          <IconWiki /><span>Wiki</span>
+        </button>
+        <button
+          class="{page == 'guides' ? 'bg-stone-700' : 'bg-stone-800'} px-2 py-1 rounded-md flex items-center space-x-1"
+          on:click={() => (page = "guides")}>
+          <IconGuides /><span>Guides</span>
+        </button>
       </div>
     {/if}
     <div class="flex flex-col h-full">
       <div class="flex-grow">
-        {#if page == 1}
-        <SidebarPages />
+        {#if page == "wiki"}
+          <WikiPages />
         {:else}
-        <GuidePages />
+          <GuidePages />
         {/if}
       </div>
       <div>
@@ -77,7 +88,9 @@
   </div>
 </aside>
 
-<dialog bind:this={dialog} class="w-[90%] sm:w-1/2 lg:w-1/3 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm">
+<dialog
+  bind:this={dialog}
+  class="w-[90%] sm:w-1/2 lg:w-1/3 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm">
   <div class="bg-stone-800 w-full p-4 gap-1 rounded-lg">
     <input
       class="bg-stone-900 w-full rounded-sm focus:outline-0 text-white p-2 placeholder:text-stone-500"

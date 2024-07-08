@@ -25,15 +25,20 @@
       <div class="md px-6 md:px-10 lg:px-16 prose-headings:text-stone-200">
         <slot />
       </div>
-      {#if !dev}
-      <div class="fixed bottom-0 w-full flex items-center" bind:this={betaWarning}>
-        <div class="bg-red-600 p-3 flex items-center space-x-2">
-          <IconBeta />
-          <b>EARLY BETA</b>
+      {#if dev}
+      <div class="fixed z-50 bottom-0 w-fit flex items-center" bind:this={betaWarning}>
+        <div class="bg-red-600 flex items-center">
+          <div class="p-3 flex items-center space-x-2 text-sm lg:text-base">
+            <b>EARLY BETA</b>
+            <IconBeta />
+          </div>
+          <div class="bg-red-700 p-3 flex items-center text-sm lg:text-base">
+            <p>
+              This wiki is in very early development. Your contributions are welcome! 
+            </p>
+            <button class="underline ml-2" on:click={() => betaWarning.remove()}>Dismiss</button>
+          </div>
         </div>
-        <span class="bg-red-700 p-3 flex items-center flex-grow">
-          This wiki is in very early development. Your contributions are welcome! <button class="underline ml-2" on:click={() => betaWarning.remove()}>Dismiss</button>
-        </span>
       </div>
       {/if}
     </div>
