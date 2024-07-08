@@ -1,0 +1,68 @@
+---
+title: Adding Jukebox Songs
+description: "If you've ever wanted to add your own jukebox songs and music discs, now is an amazinh time to learn and do it!"
+---
+
+<script lang="ts">
+import {Info, Warning, Tip, Version, Note} from '$lib/reuseables';
+</script>
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+
+# GUIDE: How to add custom jukebox songs
+
+## A) Default Minecraft Sound
+### Datapack setup
+
+- You need to create a jukebox song file in `data/DIRECTORY/jukebox_song/YOURSONG.json`
+- In that file insert and configure, this:
+```json
+{
+    "comparator_output": 13,
+    "description": {
+        "text": "ARTIST - SONG NAME"
+    },
+    "length_in_seconds": 69.0,
+    "sound_event": {
+        "sound_id": "minecraft:SOUND_NAME"
+    }
+}
+```
+
+> **Values:** 
+> sound_event: The sound event to play when the item is in the jukebox.
+> description: The description of the enchantment, a text componenet.
+> length_in_seconds: The lenght of the song in seconds
+> comparator_output: A value between 1 and 15, the redstone output of a comparator when placed next to a jukebox playing this song.
+
+## B) Custom Resourcepack Sound
+### Datapack setup
+- For the datapack, do the same steps as above, just replace the `sound_id` fied with
+`YOUR_RP_DIRECTORY:music_disc.YOUR_SONG_NAME`
+### Resourcepack setup
+- You need to add your .ogg file (the audio of your music disc) to `assets/YOUR_RP_DIRECTORY/sounds/SONG_OGG_NAME.ogg`
+- Then create a .json file in `assets/YOUR_RP_DIRECTORY/sounds.json` with this inside:
+```json
+{
+    "music_disc.YOUR_SONG_NAME": {
+        "sounds": [
+            {
+                "name": "YOUR_RP_DIRECTORY:SONG_OGG_NAME",
+                "stream": true
+            }
+        ]
+    }
+}
+```
+
+- Lastly reload the resourcepack with **F3 + T**!
+
+### Give command
+If you want to give yourself an item with the jukebox_song component, just run this command:
+```ansi
+give @s minecraft:YOUR_ITEM[minecraft:jukebox_playable={song: "DIRECTORY:YOUR_SONG_NAME"}]
+```
+
+> **Note:** If this doesnt work, that is because for it to work, you may need to leave and rejoin the world.
+
+
+> Guide made by dev_diamond

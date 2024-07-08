@@ -23,6 +23,7 @@
   import IconGlobe from "~icons/tabler/globe";
   import IconList from "~icons/tabler/list-details";
   import IconComponents from "~icons/tabler/brackets-contain";
+  import IconMusic from "~icons/tabler/music";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -30,3 +31,5 @@
 <SidebarPage label="Home" icon={IconHome} page="/" />
 
 <SidebarPage label="Getting Started" icon={IconPennant} page="/guide/getting-started" />
+
+<SidebarPage label="Adding Jukebox Songs" icon={IconMusic} page="/guide/jukebox-songs" />
