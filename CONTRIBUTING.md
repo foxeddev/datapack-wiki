@@ -85,7 +85,7 @@ It's recommended before you make your pull request that you run the `build` and 
 
 > [!NOTE]
 > If you don't know where to put a page on the sidebar, then mention that in your PR, and someone else will add it for you.
-> The sidebar pages are stored in `/src/lib/SidebarPages.svelte`.
+> The sidebar pages are stored in `/src/lib/sidebar-pages/WikiPages.svelte`.
 
 ### Sidebar Categories
 
