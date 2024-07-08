@@ -63,6 +63,3 @@ give @s minecraft:YOUR_ITEM[minecraft:jukebox_playable={song: "DIRECTORY:YOUR_SO
 ```
 
 > **Note:** If this doesnt work, that is because for it to work, you may need to leave and rejoin the world.
-
-
-> Guide made by dev_diamond
