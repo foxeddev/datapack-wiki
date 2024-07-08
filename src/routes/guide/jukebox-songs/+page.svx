@@ -62,4 +62,4 @@ If you want to give yourself an item with the jukebox_song component, just run t
 give @s minecraft:YOUR_ITEM[minecraft:jukebox_playable={song: "DIRECTORY:YOUR_SONG_NAME"}]
 ```
 
-> **Note:** If this doesnt work, that is because for it to work, you may need to leave and rejoin the world.
+<Warning>If this doesnt work, that is because for it to work, you may need to leave and rejoin the world.</Warning>
