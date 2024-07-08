@@ -107,3 +107,20 @@ In the same folder create another new file called **`tick.json`**, and inside pa
 To test that the datapack works, in the `load.mcfunction` file, type `say hello new datapack`. Save it and in-game, type the command `/reload`, If everything is setup correctly, the Say command should execute.
 
 <Warning>Please note, that <code>.mcfunction</code> files do <bold>NOT</bold> use the <bold>/</bold> prefix for commands. Adding a <code>/</code> will cause the datapack to not load, until it is removed from all commands that contain the prefix.</Warning>
+
+### 1.21 File Structure Namespace Changes from 1.20.6:
+```
+advancements      -> advancement
+functions         -> function
+item_modifiers    -> item_modifier
+loot_tables       -> loot_table
+predicates        -> predicate
+recipes           -> recipe
+structures        -> structure
+tags/blocks       -> tags/block
+tags/entity_types -> tags/entity_type
+tags/fluids       -> tags/fluid
+tags/functions    -> tags/function
+tags/game_events  -> tags/game_event
+tags/items        -> tags/item
+```
