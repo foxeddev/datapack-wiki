@@ -5,7 +5,17 @@ title: Getting Started
 <script lang="ts">
 import {Info, Warning, Tip, Version} from '$lib/reuseables';
 </script>
-<Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+
+# Syntax
+
+Variable | Meaning
+---------|---------
+ `<argumentName>` | An argument.
+ `[entry]` | An optional entry.
+ `[entryA│entryB│entryC]` | Pick one of these. This is optional.
+ `(entryA│entryB│entryC)` | Pick one of these. This is required
+ `...` | Some syntax is left out, you can find more about the command on its dedicated page
 
 # List of all commands
 ### Permission level 2+

@@ -9,23 +9,23 @@ import {Info, Warning, Tip, LatestPackFormat, Version} from '$lib/reuseables';
 
 # Welcome to the Datapack Hub Wiki!
 
-TODO?
-
 Here, you'll find everything you need to know about creating, and mastering datapacks!
 
 ## What are Datapacks?
 
-Datapacks are similar to mods, but they are vanilla, TODO:
+Datapacks are similar to mods, but they are vanilla,
 
-With datapack you can:
+With datapacks you can:
 
 * Add and modify custom recipes,
 * Modify existing or create new loot tables,
-* Add new advancements,
+* Add new advancements and enchantments,
 * Create unique structures,
 * And much more!
 
 Ready to learn? Click [here](/getting-started) to get started.
+
+<Info>The latest pack format is <LatestPackFormat /></Info>
 
 ## Join the community!
 
