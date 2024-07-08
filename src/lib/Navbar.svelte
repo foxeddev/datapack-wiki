@@ -11,8 +11,11 @@
 
   function copyUrl() {
     // the windows share menu looks ugly, so only show it on mobile which looks nice
-    if (navigator.maxTouchPoints > 0 && navigator.share) navigator.share({ url: window.location.href });
-    navigator.clipboard.writeText(window.location.href);
+    if (navigator.maxTouchPoints > 0 && navigator.share) {
+      navigator.share({ url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+    }
     shareText = "Copied!";
     setTimeout(() => {
       shareText = "Share";
