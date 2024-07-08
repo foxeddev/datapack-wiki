@@ -33,7 +33,7 @@ It's recommended before you make your pull request that you run the `build` and 
 
 ## Adding a page
 
-1. Create your page .svx file. If I want to make a page at `/command/say`, I would create the file at `/src/routes/command/say/+page.svx`.
+1. Create your page .svx file. If I want to make a page at `/wiki/command/say`, I would create the file at `/src/routes/wiki/command/say/+page.svx`. **All pages should be in either the `wiki` or `guide` folder
 
 2. Add the page metadata by putting the following at the top of the .svx file:
 

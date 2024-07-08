@@ -1,0 +1,121 @@
+---
+title: Getting Started
+description: "If you're new to datapacks, you're at the right place. Looking around, getting into datapack creation might seem confusing, but once you've grasped the basics, you'll be off to a good start."
+---
+
+<script lang="ts">
+import {Info, Warning, Tip, Version, Note} from '$lib/reuseables';
+</script>
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+
+# Getting Started
+If you're new to datapacks, you're at the right place. Looking around, getting into datapack creation might seem confusing, but once you've grasped the basics, you'll be off to a good start!
+
+<Info>If you don't know what datapacks are, then take this explanation. Datapacks are essentially add-ons to Minecraft which can change the game, whether by adding a simple game mechanic, or creating completely new experiences! The best part is that they're really easy to create, even if you have little coding knowledge</Info>
+
+This guide will help you to create your first datapack, whether you've never tried coding before or if you've got loads of experience. The process of coding a datapack is a bit different to other typical programs. By the end of this tutorial, you'll have made a simple datapack which makes **arrows explode when they land!**
+
+## Getting Started - Setting up an empty datapack
+<!-- <b style="color: #2563eb;">Learn:</b> How to set up an empty datapack to start working in -->
+
+The first step when creating a datapack is to **make a new world** to test it in. Go ahead and do that now - make sure that your world has **cheats enabled** and it is set to **creative mode**. Once you've created the world, the next step is to find and open your world folder:
+1. Save and quit your world
+2. Go to your world in the Singleplayer menu and hit "Edit"
+3. Press "Open World Folder"
+
+This folder opens contains all the data in your Minecraft world. You should see that there's lots of other subfolders in this folder. Find the one which is called `datapacks`, and open it.
+
+This folder is where the world's datapacks are stored. Create a folder - this will be the root folder of your datapack project. The name doesn't matter. I'm just going to call it `Example Datapack`. **Open this new folder**. Inside this folder is where all the data starts from.
+
+<Tip>Before we go further, if you have downloaded and installed Visual Studio Code and the relevant extensions, then you should be able to right click inside the new folder that you created and "Open in Code". If not, then no worries, it isn't required.</Tip>
+
+The first file we want to create is the `pack.mcmeta` file. This file will tell Minecraft that the folder is a datapack, as well as holding the basic information of the pack. **Create `pack.mcmeta`, and put this inside it**:
+```json
+{
+    "pack":{
+        "description":"DATAPACK NAME HERE",
+        "pack_format":48
+    }
+}
+```
+If you're interested, here's what this file means:
+- `pack` is an object containing the metadata of the file.
+  - `description` is the name of your datapack, usually along with a short description of what your pack does.
+  - `pack_format` tells Minecraft what versions this datapack works in. `48` is the latest for 1.21
+
+## Writing your first function
+<Info>What are functions? In short, functions are the majority of what makes up most datapacks. A function is a file containing Minecraft commands. When a function is ran, every command in the function is ran in order. Functions are always ran as an entity (or as the Server) and at a position</Info>
+Let's get started by writing one simple function. In traditional programming function, let's make a function to show you "Hello World" when it is ran.
+
+1. Create a folder in your datapack called `data`. 
+2. In the `data` folder, create a new folder. 
+This folder is your **namespace** - it will contain all the data specific to your datapack. Usually this needs to have a **unique name** (one which other people would not have picked), but for this tutorial just call it `example`.
+3. In the `example` folder, create a folder called `function`. This folder will contain all the **mcfunction** files.
+
+You should now have a folder structure that looks something like this:
+```
+/world/datapacks/Example Datapack/data/example/function
+```
+<Warning>In versions earlier than 1.21, the function folder should be called functions, due to some pesky name changes Mojang introduced in a recent update.</Warning>
+
+Once you're sure that's correct, you can start writing the actual function. 
+
+In the `function` folder, create an empty file called `hello_world.mcfunction`. Open this file with any text editor (we reccomend Visual Studio Code)
+
+Inside `hello_world.mcfunction`, put the following:
+```
+# Show the player Hello World on their screen
+title @s title "Hello World!"
+
+# Give the player a diamond
+give @s diamond
+```
+It's that simple! Once you **save that file**, **rejoin your world** and then run `/reload`, you should be able to use the following command to run the function:
+```
+/function example:hello_world
+```
+
+## What's next?
+ow you know how to create a basic function and run it, we'll next start to think about how to create our project. For more advanced projects, this can sometimes be the most difficult part. Luckily for us, what we want to create won't be too difficult.
+
+Let's break down the idea into smaller steps. Remember, we want to create a datapack which makes arrows explode.
+
+1. **Detect when an arrow lands on the ground**. We can do this by running a command on a loop which will select any arrow on the ground and then run a function.
+2. **Create an explosion**. This is as simple as summoning a TNT at the position of the arrow.
+3. **Remove the arrow**. If you don't do this, then it will keep on exploding forever.
+
+The next steps of this guide will guide you through the typical process of each of those steps.
+
+## Running functions on a loop
+The first step on our list is to detect arrows which land on the ground. To do this, we need to run a command on a loop. Luckily, Minecraft makes this pretty easy for us.
+
+Firstly, let's make the function which you want to run on a loop. In the `function` folder, create a new `mcfunction` file - call this one `loop.mcfunction`. 
+
+For now, let's just make it say "Hi" every time it loops. You can do this by putting this in the new function:
+```
+say Hi
+```
+
+To make this function run on a loop, we need to create a JSON file which tells Minecraft "run this command every tick" (every tick = 20 times per second)
+
+1. In the `data` folder, create the `minecraft` folder.
+2. In the `minecraft` folder, create a `tags` folder
+3. In the `tags` folder, create a `function` folder
+4. In the new `function` folder, create a new file: `tick.json`
+
+**`tick.json` is NOT a function**. In `tick.json`, we are going to put a **list of functions** which we want to run every tick. If you put any commands in tick.json, it will break your pack.
+
+In `tick.json`, put the following:
+```json
+{
+    "values":[
+        "example:loop"
+    ]
+}
+```
+- `values` is a list of function references which will be run on a loop.
+- `example:loop` is a reference to the `loop.mcfunction` file we created earlier. `example` refers to the namespace (the folder in `data`), and `loop` refers to the mcfunction file name.
+
+If you save this file, go back to your world, and run `/reload`, you should see that the chat is being spammed with "Hi" over and over again!
+
+<Note>This guide goes up to the end of section "[​1] Running functions in a loop" in the original PMC guide. Feel free to continue writing it, but do not copy all of it over since much could be rewritten.</Note>

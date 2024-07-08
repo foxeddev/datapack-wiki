@@ -1,11 +1,16 @@
 <script lang="ts">
   import Navbar from "../lib/Navbar.svelte";
-
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
+
+  import { dev } from '$app/environment';
+
+  import IconBeta from "~icons/tabler/flask-2-filled";
   
   import "../styles/fonts.css"
   import "../styles/app.css";
   import "../styles/code_theme.css";
+
+  let betaWarning: HTMLDivElement
 </script>
 
 <div class="font-lexend bg-stone-900 h-screen max-h-screen flex flex-col text-stone-200">
@@ -16,8 +21,21 @@
     <Sidebar />
     <div
       id="content"
-      class="px-6 md:px-10 lg:px-16 py-12 w-full md prose-headings:text-stone-200 text-stone-200 bg-stone-900 overflow-y-auto">
-      <slot />
+      class="py-12 w-full text-stone-200 bg-stone-900 overflow-y-auto">
+      <div class="md px-6 md:px-10 lg:px-16 prose-headings:text-stone-200">
+        <slot />
+      </div>
+      {#if !dev}
+      <div class="fixed bottom-0 w-full flex items-center" bind:this={betaWarning}>
+        <div class="bg-red-600 p-3 flex items-center space-x-2">
+          <IconBeta />
+          <b>EARLY BETA</b>
+        </div>
+        <span class="bg-red-700 p-3 flex items-center flex-grow">
+          This wiki is in very early development. Your contributions are welcome! <button class="underline ml-2" on:click={() => betaWarning.remove()}>Dismiss</button>
+        </span>
+      </div>
+      {/if}
     </div>
   </div>
 </div>

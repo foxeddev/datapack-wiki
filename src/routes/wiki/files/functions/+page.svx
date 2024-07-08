@@ -1,6 +1,6 @@
 ---
 title: Functions
-description: "Functions are files essentially containing a list of Minecraft commands. Function files end in `.mcfunction`, and are located in the `data/<namespace>/functions` folder. Functions can be called (ran) using the `function` command. (See [`/function`](/command/function) for more information)"
+description: "Functions are files essentially containing a list of Minecraft commands. Function files end in `.mcfunction`, and are located in the `data/<namespace>/functions` folder. Functions can be called (ran) using the `function` command. (See [`/function`](/wiki/command/function) for more information)"
 ---
 
 <script lang="ts">
@@ -10,7 +10,7 @@ import {Info, Warning, Tip, Version} from '$lib/reuseables';
 <Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
 
 # Functions
-Functions are files essentially containing a list of Minecraft commands. Function files end in `.mcfunction`, and are located in the `data/<namespace>/functions` folder. Functions can be called (ran) using the `function` command. (See [`/function`](/command/function) for more information)
+Functions are files essentially containing a list of Minecraft commands. Function files end in `.mcfunction`, and are located in the `data/<namespace>/functions` folder. Functions can be called (ran) using the `function` command. (See [`/function`](/wiki/command/function) for more information)
 
 The `functions` folder can contain sub-folders for organisation. This changes their reference accordingly - for example, a function located at `data/<namespace>/functions/sub_folder/my_func.mcfunction` would be called using `function <namespace>:sub_folder/my_func`.
 

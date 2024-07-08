@@ -1,6 +1,6 @@
 ---
 title: Commands
-description: "Commands tell the game to do things. [Functions](/files/functions) are files which are made up of many commands. They form the basic building blocks for any function datapack."
+description: "Commands tell the game to do things. [Functions](/wiki/files/functions) are files which are made up of many commands. They form the basic building blocks for any function datapack."
 ---
 
 <script lang="ts">
@@ -11,7 +11,7 @@ import {Info, Warning, Tip, Version} from '$lib/reuseables';
 
 # Commands
 
-Commands tell the game to do things. [Functions](/files/functions) are files which are made up of many commands. They form the basic building blocks for any function datapack.
+Commands tell the game to do things. [Functions](/wiki/files/functions) are files which are made up of many commands. They form the basic building blocks for any function datapack.
 
 ## Command Syntax
 
@@ -35,7 +35,7 @@ These commands require a permission level greater than or equal to 2 to run them
 - `/clear [<targets>] [<item>] [<maxCount>]` - Clears items from the players inventory
 - `/clone <begin-xyz> <end-xyz> ... OR /clone from <sourceDimension> <begin-xyz> <end-xyz> ...` - Copies blocks in an area from one place to another
 - `/damage <target> <amount> [<damageType>] [at <location>]|[by <entity>] [from <cause>]` - Damages selected entities
-- `/data get|merge|modify|remove ...` - Changes block entity or entity NBT data (See more here: [Data](/command/data))
+- `/data get|merge|modify|remove ...` - Changes block entity or entity NBT data (See more here: [/data](/wiki/command/data))
   - Data get: `/data get (block <targetPos>|entity <target>|storage <target>) [<path>] [<scale>]`
   - Data merge: `/data merge (block <targetPos>|entity <target>|storage <target>) <nbt>`
   - Data modify: `/data modify <targetPos>|entity <target>|storage <target>) <targetPath> (append|insert <index>|merge)`
@@ -45,7 +45,7 @@ These commands require a permission level greater than or equal to 2 to run them
 - `/difficulty [peaceful|easy|normal|hard]` - Sets or gets the difficulty of a world
 - `/effect clear [<targets>] [<effect>]|give <targets> <effect> [<seconds>|infinite] [<amplifier>] [<hideParticles>]` - Changes the entity's effects
 - `/enchant <targets> <enchantment> [<level>]` -  Changes enchants of the item the entity is holding (NOTE: You can't enchant items with a level higher than what is possible in survival.)
-- `/execute ...` - Executes a different command (See more here: [Execute](/command/execute))
+- `/execute ...` - Executes a different command (See more here: [/execute](/wiki/command/execute))
 - `/experience add|set|query <targets> ...` - Adds, removes or checks the players experience points (ALIAS: `/xp`)
 - `/fill <from-XYZ> <to-XYZ> <block> [destroy|hollow|keep|outline|replace [<filter>]]` -
 - `/fillbiome <from-XYZ> <to-XYZ> <biome> [replace <filter>]` -
