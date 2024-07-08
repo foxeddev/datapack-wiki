@@ -7,7 +7,7 @@ description: "Registry tags, not to be confused with [entity tags](/command/tag)
 import {Info, Warning, Tip, Version} from '$lib/reuseables';
 </script>
 
-<Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
 # Tags
 Registry tags, not to be confused with [entity tags](/command/tag), are essentially lists of groups such as blocks, items, entity types, etc. They use JSON format and are located in the `data/<namespace>/tags/<category>` folder.
@@ -23,15 +23,15 @@ In many cases, modifying these special tags allows you to configure certain aspe
 Tags group various types in a specific registry (category). 
 
 This list shows all of the possible registry types, as well as the path their tags should be put in.
-- Items (`/tags/items`)
-- Blocks (`/tags/blocks`)
-- Entity types (`/tags/entity_types`)
-- Functions (`/tags/functions`)
-- Fluids (`/tags/fluids`)
-- Game Events (`/tags/game_events`)
+- Items (`/tags/item`)
+- Blocks (`/tags/block`)
+- Entity types (`/tags/entity_type`)
+- Functions (`/tags/function`)
+- Fluids (`/tags/fluid`)
+- Game Events (`/tags/game_event`)
 - Chat Types (`/tags/chat_type`)
 - Damage Types (`/tags/damage_type`)
-- Banner patterns (`/tags/banner_patterns`) 
+- Banner patterns (`/tags/banner_pattern`) 
 - Cat variants (`/tags/cat_variant`)
 - Enchantments (`/tags/enchantment`) 
 - Goat horns (`/tags/instrument`) 
@@ -53,7 +53,7 @@ Tags have a very simple format, with two fields.
 Values (`values`) is an array containing everything to group under this tag. Each element is either a string or an object containing an `id` field and a `required` field (object example `{"required": false, "id":"minecraft:stick"}` ). The plain string and the `id` field contain either the ID of the entry (such as `minecraft:diamond_block`), or the ID of another tag, beginning with a `#` (such as `#minecraft:logs`). The `required` field in the object is a boolean (`true` or `false`) which defines if this entry can be ignored if the id cannot be found.
 
 ### Example
-Here is an example tag, located in `data/example/tags/items/wood.json` (`example` is the namespace being used).  
+Here is an example tag, located in `data/<namespace>/tags/item/wood.json`.  
 <Info>
 `#minecraft:logs` and `#minecraft:planks` are two item tags provided by Minecraft.
 </Info>
