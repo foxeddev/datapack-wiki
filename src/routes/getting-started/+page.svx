@@ -6,7 +6,7 @@ description: "If you're new to datapacks, you're at the right place. Looking aro
 <script lang="ts">
 import {Info, Warning, Tip, Version} from '$lib/reuseables';
 </script>
-<Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
 # Getting Started
 If you're new to datapacks, you're at the right place. Looking around, getting into datapack creation might seem confusing, but once you've grasped the basics, you'll be off to a good start.
@@ -43,7 +43,7 @@ You will need a reliable text-editor, we recommend: [Visual Studio Code](https:/
 ```json
 {
 	"pack": {
-		"pack_format": 41,
+		"pack_format": 48,
 		"description": "(Fill this with your datapack's description.)"
 	}
 }
@@ -95,11 +95,11 @@ In the same folder create another new file called **`tick.json`**, and inside pa
     └(data)
       ├(minecraft)
       |  └(tags)
-      |    └(functions)
+      |    └(function)
       |      ├load.json
       |      └tick.json
-      └(foo)
-        └(functions)
+      └(<namespace>)
+        └(function)
           ├load.mcfunction
           └tick.mcfunction
 ```
