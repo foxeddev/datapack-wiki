@@ -11,7 +11,7 @@
 </script>
 
 <button
-  class="hover:bg-stone-700 py-1 rounded-lg flex gap-2 cursor-default p-1 items-center w-full"
+  class="hover:bg-stone-700 rounded-lg flex gap-2 cursor-default p-1 items-center w-full"
   on:click={() => {
     expanded = !expanded;
     $sidebarExpanded = true;
@@ -29,7 +29,7 @@
   {/if}
 </button>
 {#if expanded && $sidebarExpanded}
-  <div class="flex flex-col ml-4">
+  <div class="flex flex-col ml-4 pb-2">
     <slot />
   </div>
 {/if}

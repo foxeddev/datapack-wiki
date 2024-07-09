@@ -2,6 +2,7 @@
   // Page imports
   import SidebarPage from "$lib/sidebar/SidebarPage.svelte";
   import SidebarCategory from "$lib/sidebar/SidebarCategory.svelte";
+  import SidebarHeading from "$lib/sidebar/SidebarHeading.svelte";
 
   // Icon imports
   // https://tabler-icons.io
@@ -23,16 +24,20 @@
   import IconGlobe from "~icons/tabler/globe";
   import IconList from "~icons/tabler/list-details";
   import IconComponents from "~icons/tabler/brackets-contain";
+  import IconTilde from "~icons/tabler/tilde";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
 
 <SidebarPage label="Home" icon={IconHome} page="/" />
 
-<SidebarCategory name="Basics" icon={IconBox}>
-  <SidebarPage label="Commands" icon={IconCommand} page="/wiki/basics/commands" />
-  <SidebarPage label="Target Selectors" icon={IconAt} page="/wiki/basics/target_selectors" />
-  <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/basics/item_components" />
+<SidebarCategory name="Commands" icon={IconCommand}>
+  <SidebarPage label="Intro" icon={IconCommand} page="/wiki/commands/intro" />
+
+  <SidebarHeading label="Command Arguments" />
+  <SidebarPage label="Target Selectors" icon={IconAt} page="/wiki/commands/target_selectors" />
+  <SidebarPage label="Coordinates" icon={IconTilde} page="/wiki/commands/coordinates" />
+  <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item_components" />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>

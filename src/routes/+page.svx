@@ -7,9 +7,8 @@ description: "Welcome to the Datapack Hub Wiki!"
 import {Info, Warning, Tip, LatestPackFormat, Version} from '$lib/reuseables';
 </script>
 
-# Welcome to the Datapack Hub Wiki!
-
-Here, you'll find everything you need to know about creating, and mastering datapacks!
+# Welcome to the Datapack Wiki!
+This is a community-bu
 
 ## What are Datapacks?
 
