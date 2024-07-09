@@ -3,9 +3,6 @@ import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { mdsvex } from "mdsvex";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
-import remarkGemoji from "remark-gemoji";
-
-// TODO: if needed, add embeds and twemoji support
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -15,7 +12,7 @@ const config = {
     vitePreprocess(),
     mdsvex({
       extensions: [".svx", ".md"],
-      remarkPlugins: [remarkGemoji],
+      remarkPlugins: [],
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
       layout: "src/lib/MDLayout.svelte",
     }),
