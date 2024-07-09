@@ -11,13 +11,15 @@ import {Info, Warning, Tip, Version, Note} from '$lib/reuseables';
 # How to add custom jukebox songs
 In this guide, we will not only learn how to create custom jukebox songs, but also how to give yourself the "music disc" item and implement custom sounds!
 
+**One note about this, since custom jukebox songs were introduced in snapshot 24w21a, this will only work in 1.21+**
+
 <Info>This guide requires you to have atleast a small understanding of datapacks, if you don't understand this guide, you can read the **Getting Started** guide.</Info>
 
 ### Setting up the datapack
 To start you will need a basic datapack, if you don't know how to make one, see the [Getting Started](/guide/getting-started) guide.
 
-Firstly we are going to create the actual jukebox song file in the directory `data/*YOUR_DIRECTORY*/jukebox_song/YOURSONG.json`
-- In that file insert and configure, this:
+Firstly we are going to create the actual jukebox song file in the directory `data/YOUR_DIRECTORY/jukebox_song//YOURNAME.json`. The file can be named whatever, but it has to be a `.json` file format. Inside, we will put and configure this:
+
 ```json
 {
     "comparator_output": 13,
@@ -26,16 +28,17 @@ Firstly we are going to create the actual jukebox song file in the directory `da
     },
     "length_in_seconds": 69.0,
     "sound_event": {
-        "sound_id": "minecraft:SOUND_NAME"
+        "sound_id": "YOUR_RP_DIRECTORY:YOUR_SONG_NAME"
     }
 }
 ```
 
-> **Values:** 
-> sound_event: The sound event to play when the item is in the jukebox.
-> description: The description of the enchantment, a text componenet.
-> length_in_seconds: The lenght of the song in seconds
-> comparator_output: A value between 1 and 15, the redstone output of a comparator when placed next to a jukebox playing this song.
+But you might wonder, what values should i enter into the fields? Here is the list of them:
+> **Values:** \
+> `comparator_output`: A value between 1 and 15, the redstone output when a comparator is placed next to the jukebox playing this song.
+> `description`: The description of the enchantment, a text componenet. \
+> `length_in_seconds`: The lenght of the song in seconds \
+> `sound_event`: The sound events id to play when the item is in the jukebox. \
 
 ## B) Custom Resourcepack Sound
 ### Datapack setup
