@@ -11,12 +11,12 @@ import {Info, Warning, Tip, Version, Note} from '$lib/reuseables';
 # How to add custom jukebox songs
 In this guide, we will not only learn how to create custom jukebox songs, but also how to give yourself the "music disc" item and implement custom sounds!
 
-<Info>This guide requires you to have atleast a small understanding of datapacks, if you don't, you can read the [Getting Started](/guide/getting-started) guide.</Info>
+<Info>This guide requires you to have atleast a small understanding of datapacks, if you don't understand this guide, you can read the **Getting Started** guide.</Info>
 
-### Creting the datapack
-To start you will need a datapack, if you don't know how to make one, see the [Getting Started](/guide/getting-started) guide.
+### Setting up the datapack
+To start you will need a basic datapack, if you don't know how to make one, see the [Getting Started](/guide/getting-started) guide.
 
-- You need to create a jukebox song file in `data/DIRECTORY/jukebox_song/YOURSONG.json`
+Firstly we are going to create the actual jukebox song file in the directory `data/*YOUR_DIRECTORY*/jukebox_song/YOURSONG.json`
 - In that file insert and configure, this:
 ```json
 {
