@@ -76,7 +76,7 @@ It's that simple! Once you **save that file**, **rejoin your world** and then ru
 ```
 
 ## What's next?
-ow you know how to create a basic function and run it, we'll next start to think about how to create our project. For more advanced projects, this can sometimes be the most difficult part. Luckily for us, what we want to create won't be too difficult.
+Now you know how to create a basic function and run it, we'll next start to think about how to create our project. For more advanced projects, this can sometimes be the most difficult part. Luckily for us, what we want to create won't be too difficult.
 
 Let's break down the idea into smaller steps. Remember, we want to create a datapack which makes arrows explode.
 

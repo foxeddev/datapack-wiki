@@ -23,7 +23,7 @@ With datapacks you can:
 * Create unique structures,
 * And much more!
 
-Ready to learn? Click [here](/getting-started) to get started.
+Ready to learn? Click [here](/guide/getting-started) to get started.
 
 <Info>The latest pack format is <LatestPackFormat /></Info>
 
