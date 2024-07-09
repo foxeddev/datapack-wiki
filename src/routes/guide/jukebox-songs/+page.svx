@@ -38,10 +38,10 @@ This is a run-down of the fields in that file:
 - `length_in_seconds`: The length of the song (in seconds)
 - `sound_event`: The ID of the sound (from the resourcepack) to play.
 
-If you don't understand what to put in `sound_event`, dont worry, this next part is going to focus specifically on this!
+If you don't understand what to put in `sound_event`, dont worry, the next part is going to focus specifically on this!
 
 ## Adding custom music - Resourcepack
-This part is going to be optional for you, if you only want a vanila Minecraft sound to play from the jukebox. In that case, change the `sound_id` in the `example_jukebox_song.json` file from the datapack to the sounds ID. (for example: `"sound_id": "minecraft:music_disc.cat"`).
+This part is going to be optional in the case, that you only want a vanila Minecraft sound to play from the jukebox. In that case, change the `sound_id` in the `example_jukebox_song.json` file from the datapack to the sounds ID. (for example: `"sound_id": "minecraft:music_disc.cat"`).
 
 If you don't want to use a default Minecarft sound, then a resource pack is required to add the custom sound (in this case, the music on the disc) to Minecraft, so that the datapack can read it.
 
@@ -64,13 +64,13 @@ Then, if you haven't already, you need to create a `sounds.json` file at the pos
 ```
 
 ## See it in action
-Once you save the above files, you need to activate the resource pack, and reload it with the keybind **F3 + T** in-game. You will also need to leave and rejoin the world.
+Once you save the above files, you need to activate the resource pack, and reload it with the keybind **F3 + T** in-game. You will also need to leave and rejoin the world to update the datapack.
 
 <Warning>For this to work, you will need to leave and rejoin the world, just using the `/reload` command won't do the trick here!</Warning>
 
 To get the music disc, you need to get an item which has the `minecraft:jukebox_playable` component. This can be any item - it doesn't have to necessarily be an already existing music disc (but you can if you want)
 ```ansi
-give @s minecraft:YOUR_ITEM[minecraft:jukebox_playable={song: "<datapack namespace>:example_jukebox_song"}]
+give @s minecraft:YOUR_ITEM[minecraft:jukebox_playable={song:"<datapack namespace>:example_jukebox_song"}]
 ```
 
 Then, you can use this item on a jukebox, and it should start playing your song!
