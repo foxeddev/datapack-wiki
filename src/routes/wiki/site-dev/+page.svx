@@ -84,6 +84,8 @@ I have some `code` for you. Here's some more:
 
 <Tip>You can do this really cool thing. It'll make your life a lot better!</Tip>
 
+<Note>Rhis is a contributor note</Note>
+
 This guide is updated to the version:
 <Version>This page is validated and up to date with Minecraft Java: 1.20.6</Version>
 
