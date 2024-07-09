@@ -9,16 +9,15 @@ import {Info, Warning, Tip, Version, Note} from '$lib/reuseables';
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
 # How to add custom jukebox songs
-In this guide, we will not only learn how to create custom jukebox songs, but also how to give yourself the "music disc" item and implement custom sounds!
+In this guide, we will not only learn how to create custom jukebox songs, but also how to give yourself a custom music disc item and implement custom sounds!
 
-**One note about this, since custom jukebox songs were introduced in the snapshot 24w21a, this will only work with 1.21+**
+This guide only works in 1.21+, as they were added in the snapshot
+<Info>This guide requires you to have atleast a small understanding of datapacks, if you don't understand this guide, you can read the Getting Started guide.</Info>
 
-<Info>This guide requires you to have atleast a small understanding of datapacks, if you don't understand this guide, you can read the **Getting Started** guide.</Info>
-
-### Setting up the datapack
+## Setting up the datapack
 To start you will need a basic datapack, if you don't know how to make one, see the [Getting Started](/guide/getting-started) guide.
 
-Firstly we are going to create the actual jukebox song file in the directory `data/YOUR_DIRECTORY/jukebox_song//YOURNAME.json`. The file can be named whatever, but it has to be a `.json` file format. Inside, we will put and configure this:
+Firstly, we are going to create the actual jukebox song file in the directory `data/<datpack namespace>/jukebox_song/`. The file can be named whatever, but it has to be a `.json` file format. For the purposes of this tutorial, we're gonna call it `example_jukebox_song.json`. Inside, we will put and configure this:
 
 ```json
 {
@@ -28,31 +27,31 @@ Firstly we are going to create the actual jukebox song file in the directory `da
     },
     "length_in_seconds": 69.0,
     "sound_event": {
-        "sound_id": "YOUR_RP_DIRECTORY:YOUR_SONG_NAME"
+        "sound_id": "<namespace>:<title>"
     }
 }
 ```
 
-But you might wonder, what values should i enter into the fields? Here is the list of them:
-> **Values:** \
-> `comparator_output`: A value between 1 and 15, the redstone output when a comparator is placed next to the jukebox playing this song.
-> `description`: The description of the enchantment, a text componenet. \
-> `length_in_seconds`: The lenght of the song in seconds \
-> `sound_event`: The sound events id to play when the item is in the jukebox. \
+This is a run-down of the fields in that file:
+- `comparator_output`: A value between 1 and 15, representing the redstone output when a comparator is placed next to the jukebox playing this song.
+- `description`: The description of the enchantment (should be a JSON text component). 
+- `length_in_seconds`: The length of the song (in seconds)
+- `sound_event`: The ID of the sound (from the resourcepack) to play.
 
-## B) Custom Resourcepack Sound
-### Datapack setup
-- For the datapack, do the same steps as above, just replace the `sound_id` fied with
-`YOUR_RP_DIRECTORY:music_disc.YOUR_SONG_NAME`
-### Resourcepack setup
-- You need to add your .ogg file (the audio of your music disc) to `assets/YOUR_RP_DIRECTORY/sounds/SONG_OGG_NAME.ogg`
-- Then create a .json file in `assets/YOUR_RP_DIRECTORY/sounds.json` with this inside:
+## Setting up the Resourcepack
+A resource pack is required to add the custom sound (in this case, the music on the disc) to Minecraft, so that the datapack can read it.
+
+<Info>Minecraft handles sound in `.ogg` files. There are many different converters you can use to convert an MP3, WAV, or other audio file to .ogg.</Info>
+
+You need to add your .ogg file (the audio of your music disc) to `assets/<namespace>/sounds/<title>.ogg`. Make sure that `<namespace>` and `<title>` are the same values you put in the datapack's JSON file.
+
+Then, if you haven't already, you need to create a `sounds.json` file at the position`assets/<namespace>/sounds.json`. This file tells Minecraft what audio files map to what IDs. Put this inside:
 ```json
 {
-    "music_disc.YOUR_SONG_NAME": {
+    "music_disc.<title>": {
         "sounds": [
             {
-                "name": "YOUR_RP_DIRECTORY:SONG_OGG_NAME",
+                "name": "<namespace>:<title>",
                 "stream": true
             }
         ]
@@ -60,13 +59,12 @@ But you might wonder, what values should i enter into the fields? Here is the li
 }
 ```
 
-- Lastly reload the resourcepack with **F3 + T**!
+## See it in action
+Once you save the above files, you need to activate the resource pack, and reload it with the keybind **F3 + T** in-game. Then, you need to `/reload` and then **leave and rejoin the world** in order to reload the datapack. (Just using `/reload` won't work)
 
-### Give command
-If you want to give yourself an item with the jukebox_song component, just run this command:
+To get the music disc, you need to get an item which has the `minecraft:jukebox_playable` component. This can be any item - it doesn't have to necessarily be an already existing music disc (but you can if you want)
 ```ansi
-give @s minecraft:YOUR_ITEM[minecraft:jukebox_playable={song: "DIRECTORY:YOUR_SONG_NAME"}]
+give @s minecraft:YOUR_ITEM[minecraft:jukebox_playable={song: "<datapack namespace>:example_jukebox_song"}]
 ```
 
-
-<Warning>For this to work, you will need to leave and rejoin the world, /reload won't do the trick!</Warning>
+Then, you can use this item on a jukebox, and it should start playing your song!
