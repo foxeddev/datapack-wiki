@@ -17,6 +17,7 @@
   @apply prose-ol:mt-0 prose-ul:mt-0 prose-li:my-1;
   @apply prose-h2:border-b prose-h2:pb-2 prose-h2:border-white prose-h2:border-opacity-20;
   @apply prose-h3:border-b prose-h3:pb-2 prose-h3:border-white prose-h3:border-opacity-20;
+  @apply prose-thead:rounded-lg prose-th:p-2 prose-th:text-left prose-thead:bg-stone-800 prose-td:p-2 prose-tr:bg-stone-600/10;
 }
 
 ::-webkit-scrollbar {
