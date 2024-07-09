@@ -32,7 +32,7 @@
 <SidebarPage label="Home" icon={IconHome} page="/" />
 
 <SidebarCategory name="Commands" icon={IconCommand}>
-  <SidebarPage label="Intro" icon={IconCommand} page="/wiki/commands/intro" />
+  <SidebarPage label="About" icon={IconCommand} page="/wiki/commands/about" />
 
   <SidebarHeading label="Command Arguments" />
   <SidebarPage label="Target Selectors" icon={IconAt} page="/wiki/commands/target_selectors" />
@@ -43,26 +43,26 @@
 <SidebarCategory name="Datapack Files" icon={IconZip}>
   <SidebarPage label="Functions" icon={IconPennant} page="/wiki/files/functions" />
   <SidebarPage label="Tags" icon={IconFilters} page="/wiki/files/tags" />
-  <SidebarPage label="Advancements" icon={IconStar} page="/wiki/files/advancements" />
-  <SidebarPage label="Recipes" icon={IconGrid} page="/wiki/files/recipes" />
-  <SidebarPage label="Loot Tables" icon={IconAlienShapedWeirdGraphThingy} page="/wiki/files/recipes" />
+  <!-- <SidebarPage label="Advancements" icon={IconStar} page="/wiki/files/advancements" /> -->
+  <!-- <SidebarPage label="Recipes" icon={IconGrid} page="/wiki/files/recipes" /> -->
+  <!-- <SidebarPage label="Loot Tables" icon={IconAlienShapedWeirdGraphThingy} page="/wiki/files/recipes" /> -->
 </SidebarCategory>
 
 <SidebarCategory name="Command Reference" icon={IconCommand}>
   <SidebarPage label="Commands List" icon={IconList} page="/wiki/command/all" />
   <SidebarPage label="function" icon={IconCommand} page="/wiki/command/function" />
   <SidebarPage label="execute" icon={IconCommand} page="/wiki/command/execute" />
-  <SidebarPage label="data" icon={IconCommand} page="/wiki/command/data" />
-  <SidebarPage label="summon" icon={IconCommand} page="/wiki/command/summon" />
+  <!-- <SidebarPage label="data" icon={IconCommand} page="/wiki/command/data" /> -->
+  <!-- <SidebarPage label="summon" icon={IconCommand} page="/wiki/command/summon" /> -->
 </SidebarCategory>
 
 <SidebarCategory name="NBT Data" icon={IconNBT}>
   <SidebarPage label="SNBT" icon={IconNBT} page="/wiki/nbt/snbt" />
-  <SidebarPage label="Entity NBT" icon={IconButterfly} page="/wiki/nbt/entity" />
-  <SidebarPage label="Block NBT" icon={IconBox} page="/wiki/nbt/block" />
-  <SidebarPage label="Storages" icon={IconCloud} page="/wiki/nbt/storages" />
+  <!-- <SidebarPage label="Entity NBT" icon={IconButterfly} page="/wiki/nbt/entity" /> -->
+  <!-- <SidebarPage label="Block NBT" icon={IconBox} page="/wiki/nbt/block" /> -->
+  <!-- <SidebarPage label="Storages" icon={IconCloud} page="/wiki/nbt/storages" /> -->
 </SidebarCategory>
 
-<SidebarCategory name="Worldgen" icon={IconWorldgen}></SidebarCategory>
+<!-- <SidebarCategory name="Worldgen" icon={IconWorldgen}></SidebarCategory> -->
 
 <SidebarPage label="Site Development" icon={IconGlobe} page="/wiki/site-dev" />

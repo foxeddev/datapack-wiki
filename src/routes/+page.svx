@@ -8,10 +8,9 @@ import {Info, Warning, Tip, LatestPackFormat, Version} from '$lib/reuseables';
 </script>
 
 # Welcome to the Datapack Wiki!
-This is a community-bu
+This is a community-built wiki documenting features of Minecraft Datapacks. On this site, you can find all you need to know to start making your own datapacks, as well as resources for more advanced datapackers.
 
 ## What are Datapacks?
-
 Datapacks are similar to mods, but they are vanilla,
 
 With datapacks you can:
@@ -24,8 +23,5 @@ With datapacks you can:
 
 Ready to learn? Click [here](/guide/getting-started) to get started.
 
-<Info>The latest pack format is <LatestPackFormat /></Info>
-
 ## Join the community!
-
 Have questions, ideas, or datapack creations you want to share? Join the [Datapack Hub Discord server](https://discord.datapackhub.net/) to connect with other datapackers!

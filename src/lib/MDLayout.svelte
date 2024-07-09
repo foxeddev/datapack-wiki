@@ -6,12 +6,11 @@
 </script>
 
 <Seo
-  title="{title} | WIP - Datapack Hub"
+  title="{title} | Datapack Wiki"
   description={description}
-  author="Datapack Hub"
-  imageURL="https://datapack.wiki/banner.png"
-  siteName="Datapack Hub"
-  keywords="datapack, datapack hub, minecraft datapacks, datapack help, datapack creation"
+  author="Datapack Wiki"
+  siteName="Datapack Wiki"
+  keywords="datapacks, datapack wiki, datapack docs, minecraft datapacks, datapack help, datapack creation"
   socials={[
     "https://discord.datapackhub.net",
     "https://planetminecraft.com/group/datapack_hub/",

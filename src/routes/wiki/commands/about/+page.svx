@@ -10,10 +10,16 @@ import {Info, Warning, Tip, Version} from '$lib/reuseables';
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
 # Commands
-
-Commands tell the game to do things. [Functions](/wiki/files/functions) are files which are made up of many commands. They form the basic building blocks for any function datapack.
+Commands are the basic building blocks of most datapacks. Each command is a simple instruction which can tell the game to do something. Most datapacks are made primarily of [functions](/wiki/files/functions) - functions are just lists of commands ran in order.
 
 ## Command Syntax
+Most commands follow this basic syntax:
+```
+command ...
+```
+`command` would refer to the name of the command, and `...` would be the arguments that come after the command, changing how it runs.
+
+Minecraft (and this wiki) use these for showing command syntax, to make it easier for you to understand:
 
 Variable | Meaning
 ---------|---------
