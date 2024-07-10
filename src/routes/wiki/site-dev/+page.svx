@@ -68,7 +68,7 @@ Paragraph text under heading 2
 ### Heading 3
 Paragraph text under heading 3
 
-Linking to things [like Header 1](#header-1)
+Linking to things [like Header 1](#heading-1)
 
 I have some `code` for you. Here's some more: 
 
