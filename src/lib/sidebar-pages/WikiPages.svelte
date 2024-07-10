@@ -3,6 +3,7 @@
   import SidebarPage from "$lib/sidebar/SidebarPage.svelte";
   import SidebarCategory from "$lib/sidebar/SidebarCategory.svelte";
   import SidebarHeading from "$lib/sidebar/SidebarHeading.svelte";
+  import SidebarPlaceholder from "$lib/sidebar/SidebarPlaceholder.svelte";
 
   // Icon imports
   // https://tabler-icons.io
@@ -14,6 +15,7 @@
   import IconPennant from "~icons/tabler/pennant";
   import IconBox from "~icons/tabler/box";
   import IconCommand from "~icons/tabler/slash";
+  import IconCommands from "~icons/tabler/slashes";
   import IconNBT from "~icons/tabler/braces";
   import IconStar from "~icons/tabler/star";
   import IconGrid from "~icons/tabler/grid-3x3";
@@ -22,11 +24,9 @@
   import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
   import IconWorldgen from "~icons/tabler/mountain";
   import IconFilters from "~icons/tabler/filters";
-  import IconGlobe from "~icons/tabler/globe";
   import IconList from "~icons/tabler/list-details";
   import IconComponents from "~icons/tabler/brackets-contain";
   import IconTilde from "~icons/tabler/tilde";
-    import SidebarPlaceholder from "$lib/sidebar/SidebarPlaceholder.svelte";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -50,7 +50,7 @@
   <SidebarPlaceholder label="Loot Tables" icon={IconAlienShapedWeirdGraphThingy} />
 </SidebarCategory>
 
-<SidebarCategory name="Command Reference" icon={IconCommand}>
+<SidebarCategory name="Command Reference" icon={IconCommands}>
   <SidebarPage label="Commands List" icon={IconList} page="/wiki/command/all" />
 
   <SidebarHeading label="Commonly Used" />
