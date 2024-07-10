@@ -20,7 +20,7 @@
 
 <SidebarPage label="Home" icon={IconHome} page="/" />
 <SidebarPage label="Getting Started" icon={IconPennant} page="/guide/getting-started" />
-<SidebarPage label="Debugging your Datapacks" icon={IconBug} page="/guide/debugging-datapacks" />
+<SidebarPage label="Debugging" icon={IconBug} page="/guide/debugging" />
 <SidebarPage label="Installing a Datapack" icon={IconFileZip} page="/guide/installing-a-datapack" />
 <SidebarPage label="Creating a Datapack" icon={IconBrackets} page="/guide/creating-a-datapack" />
 

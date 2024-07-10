@@ -12,20 +12,21 @@
   import IconAt from "~icons/tabler/at";
   import IconZip from "~icons/tabler/file-zip";
   import IconPennant from "~icons/tabler/pennant";
-  // import IconBox from "~icons/tabler/box";
+  import IconBox from "~icons/tabler/box";
   import IconCommand from "~icons/tabler/slash";
   import IconNBT from "~icons/tabler/braces";
-  // import IconStar from "~icons/tabler/star";
-  // import IconGrid from "~icons/tabler/grid-3x3";
-  // import IconButterfly from "~icons/tabler/butterfly";
-  // import IconCloud from "~icons/tabler/cloud";
-  // import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
-  // import IconWorldgen from "~icons/tabler/mountain";
+  import IconStar from "~icons/tabler/star";
+  import IconGrid from "~icons/tabler/grid-3x3";
+  import IconButterfly from "~icons/tabler/butterfly";
+  import IconCloud from "~icons/tabler/cloud";
+  import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
+  import IconWorldgen from "~icons/tabler/mountain";
   import IconFilters from "~icons/tabler/filters";
-  // import IconGlobe from "~icons/tabler/globe";
+  import IconGlobe from "~icons/tabler/globe";
   import IconList from "~icons/tabler/list-details";
   import IconComponents from "~icons/tabler/brackets-contain";
   import IconTilde from "~icons/tabler/tilde";
+    import SidebarPlaceholder from "$lib/sidebar/SidebarPlaceholder.svelte";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -44,9 +45,9 @@
 <SidebarCategory name="Datapack Files" icon={IconZip}>
   <SidebarPage label="Functions" icon={IconPennant} page="/wiki/files/functions" />
   <SidebarPage label="Tags" icon={IconFilters} page="/wiki/files/tags" />
-  <!-- <SidebarPage label="Advancements" icon={IconStar} page="/wiki/files/advancements" /> -->
-  <!-- <SidebarPage label="Recipes" icon={IconGrid} page="/wiki/files/recipes" /> -->
-  <!-- <SidebarPage label="Loot Tables" icon={IconAlienShapedWeirdGraphThingy} page="/wiki/files/recipes" /> -->
+  <SidebarPlaceholder label="Advancements" icon={IconStar} />
+  <SidebarPlaceholder label="Recipes" icon={IconGrid} />
+  <SidebarPlaceholder label="Loot Tables" icon={IconAlienShapedWeirdGraphThingy} />
 </SidebarCategory>
 
 <SidebarCategory name="Command Reference" icon={IconCommand}>
@@ -55,15 +56,15 @@
   <SidebarHeading label="Commonly Used" />
   <SidebarPage label="function" icon={IconCommand} page="/wiki/command/function" />
   <SidebarPage label="execute" icon={IconCommand} page="/wiki/command/execute" />
-  <!-- <SidebarPage label="data" icon={IconCommand} page="/wiki/command/data" /> -->
-  <!-- <SidebarPage label="summon" icon={IconCommand} page="/wiki/command/summon" /> -->
+  <SidebarPlaceholder label="data" icon={IconCommand} />
+  <SidebarPlaceholder label="summon" icon={IconCommand} />
 </SidebarCategory>
 
 <SidebarCategory name="NBT Data" icon={IconNBT}>
   <SidebarPage label="SNBT" icon={IconNBT} page="/wiki/nbt/snbt" />
-  <!-- <SidebarPage label="Entity NBT" icon={IconButterfly} page="/wiki/nbt/entity" /> -->
-  <!-- <SidebarPage label="Block NBT" icon={IconBox} page="/wiki/nbt/block" /> -->
-  <!-- <SidebarPage label="Storages" icon={IconCloud} page="/wiki/nbt/storages" /> -->
+  <SidebarPlaceholder label="Entity NBT" icon={IconButterfly} />
+  <SidebarPlaceholder label="Block NBT" icon={IconBox} />
+  <SidebarPlaceholder label="Storages" icon={IconCloud} />
 </SidebarCategory>
 
-<!-- <SidebarCategory name="Worldgen" icon={IconWorldgen}></SidebarCategory> -->
+<SidebarPlaceholder label="Worldgen" icon={IconWorldgen} />
