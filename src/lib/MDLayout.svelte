@@ -7,7 +7,7 @@
 
 <Seo
   title="{title} | Datapack Wiki"
-  description={description}
+  {description}
   author="Datapack Wiki"
   siteName="Datapack Wiki"
   keywords="datapacks, datapack wiki, datapack docs, minecraft datapacks, datapack help, datapack creation"
@@ -17,6 +17,6 @@
     "https://github.com/Datapack-Hub",
     "https://x.com/DatapackHub",
     "https://instagram.com/datapackhub",
-  ]}/>
+  ]} />
 
 <slot />

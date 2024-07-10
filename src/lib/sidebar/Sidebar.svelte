@@ -25,8 +25,7 @@
     const posts = await fetch("/search.json").then((r) => r.json());
     createSearchIndex(posts);
     searchState = "done";
-
-    if (typeof(sessionStorage.getItem("page")) == "string") {page = sessionStorage.getItem("page")}
+    page = sessionStorage.getItem("page") || "wiki";
   });
 
   $: if (searchState === "done") {
@@ -53,12 +52,18 @@
       <div class="flex items-center mb-2 ml-1 space-x-1">
         <button
           class="{page == 'wiki' ? 'bg-stone-700' : 'bg-stone-800'} px-2 py-1 rounded-md flex items-center space-x-1"
-          on:click={() => {page = "wiki"; sessionStorage.setItem("page","wiki")}}>
+          on:click={() => {
+            page = "wiki";
+            sessionStorage.setItem("page", "wiki");
+          }}>
           <IconWiki /><span>Wiki</span>
         </button>
         <button
           class="{page == 'guides' ? 'bg-stone-700' : 'bg-stone-800'} px-2 py-1 rounded-md flex items-center space-x-1"
-          on:click={() => {page = "guides"; sessionStorage.setItem("page","guides")}}>
+          on:click={() => {
+            page = "guides";
+            sessionStorage.setItem("page", "guides");
+          }}>
           <IconGuides /><span>Guides</span>
         </button>
       </div>

@@ -27,7 +27,7 @@ for await (const file of fileGlob.scan("./src/routes")) {
   if (file === "+error.svx") continue;
 
   const fileWithoutPage = file.slice(0, -9);
-  const filePath = fileWithoutPage.slice(2)
+  const filePath = fileWithoutPage.slice(2);
 
   // add to posts
   posts.push({
@@ -35,12 +35,12 @@ for await (const file of fileGlob.scan("./src/routes")) {
     content: removeMarkdown(DOMPurify.sanitize(frontmatter.content)),
     tags: (frontmatter.data.tags as string[]) || ([] as string[]),
     versions: (frontmatter.data.versions as string) || "latest",
-    url: "/" + filePath
+    url: "/" + filePath,
   });
 }
 
 // first post is the error page
-posts.shift()
+posts.shift();
 
 // write to file
 await Bun.write("./src/routes/search.json/meta.json", JSON.stringify(posts));

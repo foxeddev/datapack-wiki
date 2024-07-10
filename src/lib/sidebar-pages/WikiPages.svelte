@@ -7,21 +7,22 @@
   // Icon imports
   // https://tabler-icons.io
   // import Icon<whatever name> from "~icons/tabler/<icon ID>"
+  
   import IconHome from "~icons/tabler/home";
   import IconAt from "~icons/tabler/at";
   import IconZip from "~icons/tabler/file-zip";
   import IconPennant from "~icons/tabler/pennant";
-  import IconBox from "~icons/tabler/box";
+  // import IconBox from "~icons/tabler/box";
   import IconCommand from "~icons/tabler/slash";
   import IconNBT from "~icons/tabler/braces";
-  import IconStar from "~icons/tabler/star";
-  import IconGrid from "~icons/tabler/grid-3x3";
-  import IconButterfly from "~icons/tabler/butterfly";
-  import IconCloud from "~icons/tabler/cloud";
-  import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
-  import IconWorldgen from "~icons/tabler/mountain";
+  // import IconStar from "~icons/tabler/star";
+  // import IconGrid from "~icons/tabler/grid-3x3";
+  // import IconButterfly from "~icons/tabler/butterfly";
+  // import IconCloud from "~icons/tabler/cloud";
+  // import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
+  // import IconWorldgen from "~icons/tabler/mountain";
   import IconFilters from "~icons/tabler/filters";
-  import IconGlobe from "~icons/tabler/globe";
+  // import IconGlobe from "~icons/tabler/globe";
   import IconList from "~icons/tabler/list-details";
   import IconComponents from "~icons/tabler/brackets-contain";
   import IconTilde from "~icons/tabler/tilde";
@@ -50,7 +51,7 @@
 
 <SidebarCategory name="Command Reference" icon={IconCommand}>
   <SidebarPage label="Commands List" icon={IconList} page="/wiki/command/all" />
-  
+
   <SidebarHeading label="Commonly Used" />
   <SidebarPage label="function" icon={IconCommand} page="/wiki/command/function" />
   <SidebarPage label="execute" icon={IconCommand} page="/wiki/command/execute" />

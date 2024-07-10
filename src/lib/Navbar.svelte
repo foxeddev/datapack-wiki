@@ -5,7 +5,7 @@
   import IconEdit from "~icons/tabler/pencil";
 
   import { sidebarExpanded } from "$lib";
-  import { page } from '$app/stores';  
+  import { page } from "$app/stores";
 
   let shareText = "Share";
 
@@ -25,10 +25,15 @@
 
 <div class="bg-stone-800 flex w-full items-center p-3 h-full">
   <div class="flex items-center flex-grow">
-    <button class="px-2 pr-3 sm:hidden" aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar" on:click={() => ($sidebarExpanded = !$sidebarExpanded)}><IconMenu /></button>
+    <button
+      class="px-2 pr-3 sm:hidden"
+      aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
+      on:click={() => ($sidebarExpanded = !$sidebarExpanded)}><IconMenu /></button>
+
     <img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-8 mr-2" width="32" height="32" />
     <h1 class="font-bold text-xl">Datapack Wiki</h1>
   </div>
+  
   <div class="flex items-center space-x-2">
     <a
       href="https://github.com/Datapack-Hub/wiki/blob/main/src/routes{$page.url.pathname}/%2Bpage.svx"
