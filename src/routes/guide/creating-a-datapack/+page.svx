@@ -1,0 +1,160 @@
+---
+title: Creating a Datapack
+description: "Creating a Minecraft Datapack is an easy way to change something in Minecraft. If you've ever done anything with Minecraft commands or command blocks, then it's very simple."
+---
+
+# Hello there, traveller!
+
+Creating a Minecraft Datapack is an easy way to change something in Minecraft. If you've ever done anything with Minecraft commands or command blocks, then it's very simple.
+
+> If you don't know what datapacks are, then take this explanation. Datapacks are essentially add-ons to Minecraft which can change the game, whether by adding a simple game mechanic, or creating completely new experiences! The best part is that they're really easy to create, even if you have little coding knowledge.
+
+This guide will help you to create your first datapack, whether you've never tried coding before or if you've got loads of experience. The process of coding a datapack is a bit different to other typical programs. By the end of this tutorial, you'll have made a simple datapack which makes **arrows explode when they land**! Pay close attention, because some of this will be a bit difficult if you're new to making datapacks. If you need any help, please join our Discord server.
+
+![finished product](https://us-east-1.tixte.net/uploads/silabear.tixte.co/finished-product.gif)
+
+## Getting Started - setting up the empty datapack folder
+
+**Learn**: How to create an empty datapack
+
+The first step when creating a datapack is to make a new world to test it in. Go ahead and do that now. Once you've created the world, the next step is to find and open your world folder. Getting to the world folder is pretty simple:
+
+1. Leave your world
+2. Go to your world in Minecraft and hit "Edit"
+3. Press "Open World Folder"
+
+This folder opens contains all the data in your Minecraft world. You should see that there's lots of other subfolders in this folder. **Find the one which is called datapacks, and open it.**
+
+![world folder](https://us-east-1.tixte.net/uploads/silabear.tixte.co/world_folder.png)
+
+This folder is where the world's datapacks are stored. Open this and create a folder - this is the root folder of your datapack project. The name doesn't matter for now. I'm just going to call it **Example Datapack**.
+
+> Unlike mods, datapacks are essentially just folders containing more folders. This is called a folder structure. The **root folder** is the folder at the top of the structure - in this case, the folder we just created now. **Subfolders** are the name given to a folder inside another folder. Any folders we make under the root folder are subfolders of the root folder.
+
+Open the folder you just made. By the end, this folder is going to contain three things - the **pack.mcmeta** file (this tells Minecraft that it is a datapack), the **pack.png** (the project's icon), and the **data** folder (which contains all the code and features of your datapack - hence the name!).
+
+Before we go further, if you have downloaded and installed **Visual Studio Code** and the relevant extensions, then you should be able to right click and "Open in Code". If not, then no worries, it isn't required.
+
+We first need to create the **pack.mcmeta** file. Go ahead and create a new empty file, and name it pack.mcmeta. In this file, you put the description and version of your pack:
+
+```json
+{
+	"pack": {
+		"description": "Float when you sneak",
+		"pack_format": 18
+	}
+}
+```
+
+Here's the run-down of what this all means:
+
+- `description`: This is a short description of what your pack does. Here, you should put the name of your datapack, your name, and a very short description. This description will be shown in the datapack viewer.
+- `pack_format`: This represents the version that your project supports. You can find the list of pack_format values [here](https://minecraft.fandom.com/wiki/Pack_format). 18 is 1.20.2.
+
+## Writing your first function
+
+**Learn**: How to create and use functions
+
+> First, a brief explanation. Most datapacks will mostly consist of functions, stored in mcfunction files (such as example.mcfunction). Functions are essentially just lists of commands (such as /give, /summon, etc) which are all ran at once in order.
+> When you run a function, it is always run as a **mob/entity** (or the game) and at a **position/rotation**. If your function places a block, it will place a block at the position the function is run at.
+
+We'll get started by writing a simple function. In traditional programming fashion, let's make a function to show you "Hello World" when it is run.
+
+1. Open the `data` folder
+2. Inside the `data` folder, create a new folder. This is the namespace of your datapack. You can give it any name as long as it has no capital letters or spaces, but for the purposes of this tutorial we're going to call it `example`.
+3. Open the `example` folder and create a new folder called `functions`. This folder will contain all the `.mcfunction` files which make up the body of your datapack. Open that folder.
+
+The path of the folder you have open should be: `/world/datapacks/Example Datapack/data/example/functions`
+
+Once you've done that, we can finally get started creating the function. **Create a new empty file**, and **name it hello_world.mcfunction**. Open it with any text editor (we recommend VS code - see the top of this article).
+
+Inside the function, put this:
+
+```mcfunction
+# Show the player Hello World on their screen
+title @s title "Hello World!"
+
+# Give the player a diamond
+give @s diamond
+```
+
+> You may notice that `title` and `give` are actually just normal minecraft commands - you could run these in chat and it would do the same thing as this function. That's all datapacks are, just lists of commands. The lines which start with `#` are comments - the game ignores these lines, so we can write useful comments there.
+
+It's that simple! Once you save that file and then join your minecraft world if you haven't already, then you can run `/reload` to, well, reload the data pack. Then, in chat, run `/function example:hello_world` to see it in action!
+
+## So, what's next?
+
+Now you know how to create a basic function and run it, we'll next start to think about how to create our project. For more advanced projects, this can sometimes be the most difficult part. Luckily for us, what we want to create won't be too difficult.
+
+Let's break down the project into smaller steps. (In computer science, this is called decomposition).
+
+1. Detect when an arrow lands on the ground. We can do this by running a simple operation on a loop which selects all arrows in the world, but only if they are in the ground.
+2. If an arrow is in the ground, make an explosion. We can do this by summoning a TNT block.
+3. Remove the arrow so it only explodes once.
+
+## Running functions on a loop
+
+The first step on our to-do list is to detect arrows which have landed on the ground. To do this, we're going to have to run a command on loop which will select all arrows which are in the ground. Luckily, Minecraft makes looping commands very easy.
+
+First, let's make the function which we want to run on a loop. In your `functions` folder, create a new function - call it `loop.mcfunction`. For now, let's make this function say "Hi" when it's ran. The contents of the function should be just this:
+
+```mcfunction
+say Hi
+```
+
+After you've done that, we're going to need to create some more folders. Pay attention here, because this is where some people mess up.
+
+1. In data, create another folder. Call this one minecraft, all lower case.
+2. In the new minecraft folder, create a tags folder.
+3. In the new tags folder, create a functions folder.
+4. Finally, create a new file: `tick.json`.
+   In the new `tick.json` file, we're going to put a list of files which we want to run on a loop. More specifically, every game tick, which is 20 times per second. We only want one function to run on a loop, so just put this in `tick.json`:
+
+```json
+{
+	"values": ["example:loop"]
+}
+```
+
+Here, `example` is the name of your namespace - the folder in `data` which contains the `functions` folder. (`/data/example/functions/loop.mcfunction`). `loop` is just the name of your function without the .mcfunction at the end.
+
+If you save this file, go back to your world, and run /reload, you should see that the chat is being spammed with "Hi" over and over again!
+
+## Finding the arrows
+
+Now we've created a function which will run infinitely on a loop, we can move on to detecting when an arrow is in the ground.
+
+As far as the game is concerned, an arrow is an **entity**, just like a pig, cow, zombie, skeleton, or anything else like that. In our code, we can **select** entities which match a set of criteria, and then **run commands** as the entity. Selecting an entity is basically like finding any entity which matches a set of criteria, and then doing something to it. We're going to want to select all **arrow entities** which are **in the ground**.
+
+The selector to do that is as follows: `@e[type=arrow,nbt={inGround:1b}]`. [Click for a guide to how selectors work.]()
+
+Using a selector, we can run an `execute` command which will run a command as any entity which matches the selector.
+
+```mcfunction
+execute as @e[type=arrow,nbt={inGround:1b}] at @s run say I'm an arrow, I'm in the ground!
+```
+
+If you put this command in your `loop.mcfunction` (remove the other command, since we don't need that any more), then save and reload, you can then fire an arrow onto the ground. You should see that the arrow says "I'm an arrow, I'm in the ground!"
+
+![arrow in ground](https://us-east-1.tixte.net/uploads/silabear.tixte.co/arrow_in_ground.png)
+
+## Make it go boom
+
+This is the fun part! We've made a simple system which will select all arrows in the ground, and run a command as those arrows. From here, it isn't too hard to make it explode. We can split the last section up into two parts:
+
+1. Make an explosion
+2. Remove the arrow, so it only explodes once.
+
+Firstly, we can remove the old command in `loop.mcfunction` which makes the arrow say it's an arrow and that it's in the ground. Replace it with the commands to spawn a TNT entity as the arrow, and then remove the entity, as follows:
+
+```mcfunction
+# Summon a TNT at any arrow in the ground.
+execute as @e[type=arrow,nbt={inGround:1b}] at @s run summon tnt
+
+# Remove any arrow in the ground
+kill @e[type=arrow,nbt={inGround:1b}]
+```
+
+> The `at @s` in the commands above make sure that the command is ran at the position of the arrow, otherwise it would run as the arrow, but at the world spawn.
+
+And, that's it! You're done! If you put that in `loop.mcfunction` and save, /reload, and join your world, then you can fire an arrow. If all goes well then it should explode when it lands.
