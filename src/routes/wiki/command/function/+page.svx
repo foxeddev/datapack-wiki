@@ -17,4 +17,4 @@ This command runs any `.mcfunction` file when called. You can also pass in a NBT
 - **`function <namespace>:<function> {key:value}`**: Runs the `.mcfunction` file at `data/<namespace>/function/<function>`, and uses the `{key:value}` if the function is a macro function.
 - **`function <namespace>:<function> with (block <targetPos>|entity <target>|storage <id>) <path>`**: Runs the `.mcfunction` file at `data/<namespace>/function/<function>`, and uses the NBT source if the function is a macro function.
 
-<Tip>You can stop a function running in real-time using the `return` command.</Tip>
+<Tip>You can stop a function running in real-time using the return command.</Tip>
