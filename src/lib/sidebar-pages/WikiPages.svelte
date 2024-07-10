@@ -50,6 +50,8 @@
 
 <SidebarCategory name="Command Reference" icon={IconCommand}>
   <SidebarPage label="Commands List" icon={IconList} page="/wiki/command/all" />
+  
+  <SidebarHeading label="Commonly Used" />
   <SidebarPage label="function" icon={IconCommand} page="/wiki/command/function" />
   <SidebarPage label="execute" icon={IconCommand} page="/wiki/command/execute" />
   <!-- <SidebarPage label="data" icon={IconCommand} page="/wiki/command/data" /> -->
@@ -64,5 +66,3 @@
 </SidebarCategory>
 
 <!-- <SidebarCategory name="Worldgen" icon={IconWorldgen}></SidebarCategory> -->
-
-<SidebarPage label="Site Development" icon={IconGlobe} page="/wiki/site-dev" />
