@@ -1,4 +1,6 @@
 <script lang="ts">
+  const INFOTEXT = "pack_format: 48 (1.21)";
+
   import IconSearch from "~icons/tabler/search";
 
   import { sidebarExpanded } from "$lib";
@@ -85,7 +87,7 @@
   </div>
   <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
     {#if $sidebarExpanded}
-      <span class="flex-grow flex flex-col items-center"> BETA - Expect bugs! </span>
+      <span class="flex-grow flex flex-col items-center">{INFOTEXT}</span>
     {/if}
     <button
       aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
