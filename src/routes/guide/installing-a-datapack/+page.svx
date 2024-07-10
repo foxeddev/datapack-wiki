@@ -17,7 +17,7 @@ So you've found a nice datapack for Minecraft, and the next step is to get it in
    ![World folder with datapacks highlighted](https://dph.tixte.co/r/install_guide_3.png)
 4. Put the datapack zip file into the folder.
    ![zip folder in datapacks folder](https://dph.tixte.co/r/install_guide_4.png)
-   <Info>If the zip folder contains a folder which contains "data" and "pack.mcmeta", then put that folder in the datapacks folder instead of the full zip. Putting the zip in the datapacks folder **only works** when "data" and "pack.mcmeta" are directly in the root folder of the zip.</Info>
+   > If the zip folder contains a folder which contains `data` and `pack.mcmeta`, then put that folder in the datapacks folder instead of the full zip. Putting the zip in the datapacks folder **only works** when `data` and `pack.mcmeta` are directly in the root folder of the zip.
 5. Rejoin the world and run /reload.
    ![Reload command in chat](https://dph.tixte.co/r/install_guide_5.png)
 
@@ -29,7 +29,7 @@ So you've found a nice datapack for Minecraft, and the next step is to get it in
    ![The Data Packs screen option](https://dph.tixte.co/r/install_guide_7.png)
 3. Drag and drop the datapack zip into this screen.
    ![The Data Packs screen after I dragged and dropped something in](https://dph.tixte.co/r/install_guide_8.png)
-   <Info>If it doesn't show up, then it's likely that the zip file contains a folder which contains the datapack, and not the zip file just containing the datapack. You need to take the folder out of the datapack, and put it in the datapacks folder (click the "Open Packs Folder" button to open it.)</Info>
+   > If it doesn't show up, then it's likely that the zip file contains a folder which contains the datapack, and not the zip file just containing the datapack. You need to take the folder out of the datapack, and put it in the datapacks folder (click the "Open Packs Folder" button to open it.)
 4. Click on the datapack icon to apply it to the world
    ![The Data Packs screen after I clicked the icon](https://dph.tixte.co/r/install_guide_9.png)
 5. Create the world, and then run `/reload` in chat.
