@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded, windowWidth } from "$lib";
+  import { sidebarExpanded } from "$lib";
   import type { ComponentType, SvelteComponent } from "svelte";
 
   export let label: string;

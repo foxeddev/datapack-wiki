@@ -22,11 +22,10 @@
   import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
   import IconWorldgen from "~icons/tabler/mountain";
   import IconFilters from "~icons/tabler/filters";
-  import IconGlobe from "~icons/tabler/globe";
   import IconList from "~icons/tabler/list-details";
   import IconComponents from "~icons/tabler/brackets-contain";
   import IconTilde from "~icons/tabler/tilde";
-    import SidebarPlaceholder from "$lib/sidebar/SidebarPlaceholder.svelte";
+  import SidebarPlaceholder from "$lib/sidebar/SidebarPlaceholder.svelte";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
