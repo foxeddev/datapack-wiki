@@ -4,7 +4,7 @@ description: "SNBT (Stringified Named Binary Tags) format is a JSON-like tree st
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, LatestPackFormat} from '$lib/reuseables';
+import {Info, Warning, Tip, LatestPackFormat} from '$lib/reusables';
 </script>
 
 # SNBT Format

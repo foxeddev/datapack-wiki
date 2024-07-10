@@ -4,7 +4,7 @@ description: "If you're new to datapacks, you're at the right place. Looking aro
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version, Note} from '$lib/reuseables';
+import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
 </script>
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 

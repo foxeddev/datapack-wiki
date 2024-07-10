@@ -4,7 +4,7 @@ description: "Sometimes your datapack won't work, and you will have to figure ou
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version, Note} from '$lib/reuseables';
+import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
 </script>
 
 # Debugging your datapacks

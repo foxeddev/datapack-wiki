@@ -4,7 +4,7 @@ description: "This page is meant to be an introduction to developing a page for 
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, LatestPackFormat, Version} from '$lib/reuseables';
+import {Info, Warning, Tip, LatestPackFormat, Version} from '$lib/reusables';
 </script>
 
 # Site Meta and Contribution

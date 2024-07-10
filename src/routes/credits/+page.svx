@@ -4,7 +4,7 @@ description: "The Datapack Wiki is brought to you by [Datapack Hub](https://data
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Note} from '$lib/reuseables';
+import {Info, Warning, Tip, Note} from '$lib/reusables';
 </script>
 
 # Credits
