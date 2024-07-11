@@ -63,7 +63,3 @@ The first main method for debugging datapacks is using Minecrafts output logs, w
 ![A scoreboard on screen](https://i.postimg.cc/HWQm72Vp/image.png)
 
 You might also find that some other methods that suit you the best, for example you might find the [Data Reload](https://modrinth.com/mod/data-reload) mod useful for displaying errors in chat, or a completely different method, that is up to you.
-
-## Thanks for reading!
-
-You made it to the end! Hopefully you now know how to debug your datapacks, but if you ever get stuck, want help or just want to improve, please join our super friendly Discord community: https://discord.datapackhub.net/. We've got teams of people waiting to help you with any questions or projects you may have!
