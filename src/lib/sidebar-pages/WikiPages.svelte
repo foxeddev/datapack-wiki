@@ -56,8 +56,8 @@
   <SidebarHeading label="Commonly Used" />
   <SidebarPage label="function" icon={IconCommand} page="/wiki/command/function" />
   <SidebarPage label="execute" icon={IconCommand} page="/wiki/command/execute" />
+  <SidebarPage label="summon" icon={IconCommand} page="/wiki/command/summon" />
   <SidebarPlaceholder label="data" icon={IconCommand} />
-  <SidebarPlaceholder label="summon" icon={IconCommand} />
 </SidebarCategory>
 
 <SidebarCategory name="NBT Data" icon={IconNBT}>
