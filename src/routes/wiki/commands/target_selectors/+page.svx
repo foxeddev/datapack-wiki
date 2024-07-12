@@ -10,7 +10,9 @@ import {Info, Warning, Tip, Version} from '$lib/reusables';
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
 # Target Selectors
-Target Selectors are used as an argument in commands to select entities and players in the world. We use target selectors to find players or mobs and do things to them.
+Target Selectors are used as an argument in commands to select entities and players in the world. We use target selectors to find players or mobs and do things to them. Many commands need to be given a target selector as an argument, or otherwise require being executed as an entity.
+
+All target selectors start with an `@` symbol, followed by a base selector (see the table below), and optionally any other criteria which will narrow down the selection further.
 
 **Example:** `tellraw @a[distance=..10] "You're within 10 blocks of me"`. The target selector is `@a[distance=..10]`, and tells the game to only send the message to players within 10 blocks.
 
@@ -19,12 +21,12 @@ In Java Edition, there are 6 base target selectors:
 
 | Target Selector | Description |
 |---|---|
-| @e | **All Entities** - By itself, this selector will select every single entity which is currently loaded in the world |
-| @s | **This Entity** - This selector will select the entity which is currently running the command. For example, if I run a command as @s, then it will run the commands as me. |
-| @a | **All Players** - This selects all currently online players. (All players are always loaded in the world). |
-| @r | **Random Player** - This selects one random player. |
-| @p | **Nearest Player** - This selects the nearest player to the position this command is ran from. |
-| @n | **Nearest Entity** - This selects the nearest entity (player or non-player) to the position this command is ran from. |
+| @**e** | **All Entities** - By itself, this selector will select every single entity which is currently loaded in the world |
+| @**s** | **This Entity** - This selector will select the entity which is currently running the command. For example, if I run a command as @s, then it will run the commands as me. |
+| @**a** | **All Players** - This selects all currently online players. (All players are always loaded in the world). |
+| @**r** | **Random Player** - This selects one random player. |
+| @**p** | **Nearest Player** - This selects the nearest player to the position this command is ran from. |
+| @**n** | **Nearest Entity** - This selects the nearest entity (player or non-player) to the position this command is ran from. |
 
 <Warning>@e only selects entities in a loaded chunk. If an entity exists but is not currently being loaded, it will not select that entity.</Warning>
 

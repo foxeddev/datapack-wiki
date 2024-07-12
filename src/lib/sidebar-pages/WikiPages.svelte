@@ -40,6 +40,7 @@
   <SidebarPage label="Target Selectors" icon={IconAt} page="/wiki/commands/target_selectors" />
   <SidebarPage label="Coordinates" icon={IconTilde} page="/wiki/commands/coordinates" />
   <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item_components" />
+  <SidebarPlaceholder label="JSON Text" icon={IconNBT} />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
