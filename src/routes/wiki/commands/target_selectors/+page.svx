@@ -15,14 +15,16 @@ Target Selectors are used as an argument in commands to select entities and play
 **Example:** `tellraw @a[distance=..10] "You're within 10 blocks of me"`. The target selector is `@a[distance=..10]`, and tells the game to only send the message to players within 10 blocks.
 
 ## Base target selectors
-In Java Edition, there are 5 base target selectors:
+In Java Edition, there are 6 base target selectors:
 
-- **@e**: `@e` selects all entities, no matter what type or where they are.
-- **@a**: `@a` selects all players. *This is equivalent to `@e[type=player]`*
-- **@s**: `@s` selects the current entity who is running the command or function.
-- **@p**: `@p` selects the nearest player to the position of execution. *This is equivalent to `@e[type=player,limit=1,sort=nearest]`*
-- **@r**: `@r` selects a random player. *This is equivalent to `@e[type=player,limit=1,sort=random]`*
-- **@n**: `@n` selects the nearest entity from the command's execution. *This is equivalent to `@e[sort=nearest,limit=1]`* [1.21+]
+| Target Selector | Description |
+|---|---|
+| @e | **All Entities** - By itself, this selector will select every single entity which is currently loaded in the world |
+| @s | **This Entity** - This selector will select the entity which is currently running the command. For example, if I run a command as @s, then it will run the commands as me. |
+| @a | **All Players** - This selects all currently online players. (All players are always loaded in the world). |
+| @r | **Random Player** - This selects one random player. |
+| @p | **Nearest Player** - This selects the nearest player to the position this command is ran from. |
+| @n | **Nearest Entity** - This selects the nearest entity (player or non-player) to the position this command is ran from. |
 
 <Warning>@e only selects entities in a loaded chunk. If an entity exists but is not currently being loaded, it will not select that entity.</Warning>
 
@@ -32,6 +34,25 @@ Target selectors can (and usually are) followed by additional arguments to filte
 **Example**: In our previous example (`@a[distance=..10]`), we use the argument `distance=..10` to specify that we only want to target entities which are less than 10 blocks away.
 
 <Tip>Most target selectors can be inverted by using =! meaning it will only select entities who do not match the argument. (E.g. @e[type=!minecraft:creeper] will select every entity that is NOT a creeper) </Tip>
+
+| Argument | Example | Description |
+|--|--|--|
+| `type` | `@e[type=minecraft:pig]` | Filters to only include entities of a certain type or entity_type tag. Valid with `@e`, `@s` and `@n`. `type` can be any entity ID or entity_type tag. |
+| `name` | `@e[name=Aron]` | Filters to include entities with a specific name. `name` is a string - it cannot be JSON text. |
+| `distance` | `@e[distance=6]` | Filters to include entities within a certain distance or range. `..` is used to represent "greater/less than" operations - for example, `..6` means less than 6 and, `8..` means more than 8. |
+| `nbt` | `@a[nbt={SelectedItem:{id:"minecraft:stone"}}]` | Filters to include entities with specific NBT data. NBT data will be partially matched - as long as the specified data exists on the entity, it doesn't matter what other data it has. |
+| `sort` and `limit`| `@e[limit=1,sort=nearest]` | These two arguments are often used together to find entities based on ordering. For example, `limit=5,sort=furthest` selects the 5 entities which are furthest away from the current position. |
+| `x`/`y`/`z` | `@e[x=10,y=9,z=-5,distance=..5]` | Specifies a starting position to work from; affectin `distance`, `dx`/`dy`/`dz`, and `sort`/`limit`. If left blank, it defaults to `~ ~ ~`. |
+| `dx`/`dy`/`dz` | `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]` | Creates a selection area (cuboid) which will only select entities if any of their hitbox is within the area. `x`/`y`/`z` is needed to specify the position of the bottom right corner of the cuboid - if it is left out it defaults to the current position. If all the `dxyz` values are `0` (or one is set to 0 and no others are set), then it will select any entities if the current position is inside their hitbox.|
+| `tag` | `@a[tag=CustomTag]` | Selects entities with a specified tag added with the `/tag` command or `Tags[]` NBT. No entities have tags by default - tags can only be added by the datapack or by commands. |
+| `team` | `@a[team=red]` | Selects entities in a specific team. |
+| `scores` | `@e[scores={foo=10}]` | Selects entities based on their value on a scoreboard. Like `distance`, you can use `..` to specify ranges. |
+| `predicate` | `@e[predicate=namespace:my_predicate]` | Selects entites based on whether they pass a custom predicate check. |
+| `gamemode` | `@a[gamemode=creative]` | Selects players in a specific game mode. |
+| `advancements` | `@a[advancements={minecraft:story/follow_ender_eye=true}]` | Selects players based on whether they have unlocked a specific advancement. |
+| `level` | `@a[level=10]` | Selects players based on their current XP level (not amount of points). |
+
+More information about the arguments:
 
 ### `type` argument
 The `type=<entity_type>` argument will filter the selection to only include entities of a certain type, or those in an entity_type tag. 
@@ -139,7 +160,7 @@ The `scores={<scoreboard>=<value>,...}` argument will select entities based on t
 - `@e[scores={foo=8..}]`: Selects all entities with a score of `8` or more on the `foo` scoreboard.
 
 ### `predicate` argument
-The `predicate=<predicate>` argument will select players based on whether they pass a predicate check. `<predicate>` is a predicate ID.
+The `predicate=<predicate>` argument will select entities based on whether they pass a predicate check. `<predicate>` is a predicate ID.
 
 **Examples**:
 - `@e[predicate=namespace:my_predicate]`: Selects all entities who pass the predicate in `/data/namespace/predicates/my_predicate.- - `@e[predicate=!namespace:another_predicate]`: Selects all entities who fail the predicate in `/data/namespace/predicates/another_predicate.json`

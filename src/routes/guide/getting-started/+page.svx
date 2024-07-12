@@ -137,6 +137,7 @@ Target selectors are a special bit of code we can use to find an entity in the w
 | @a | **All Players** - This selects all currently online players. (All players are always loaded in the world). |
 | @r | **Random Player** - This selects one random player. |
 | @p | **Nearest Player** - This selects the nearest player to the position this command is ran from. |
+| @n | **Nearest Entity** - This selects the nearest entity (player or non-player) to the position this command is ran from. |
 
 On it's own, a base target selector (like in the table) does not do much. We can narrow down the selection even more by using criteria. Criteria are put in square brackets after the base selector. 
 
