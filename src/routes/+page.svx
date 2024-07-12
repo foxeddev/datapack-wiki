@@ -4,7 +4,7 @@ description: "Welcome to the Datapack Hub Wiki!"
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, LatestPackFormat, Version} from '$lib/reusables';
+import {Info, Warning, Tip, LatestPackFormat, Version, Discord} from '$lib/reusables';
 </script>
 
 # Welcome to the Datapack Wiki!

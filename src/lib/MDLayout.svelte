@@ -1,5 +1,6 @@
 <script>
   import Seo from "sk-seo";
+    import Discord from "./reusables/Discord.svelte";
 
   export let title;
   export let description;
@@ -20,3 +21,4 @@
   ]} />
 
 <slot />
+<Discord />
