@@ -33,7 +33,7 @@
 <div class="h-2" />
 <SidebarHeading label="Advanced" />
 <SidebarCategory name="Adding new features" icon={IconNew}>
-  <SidebarPage label="Adding Jukebox Songs" icon={IconMusic} page="/guide/jukebox-songs" />
+  <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/jukebox-songs" />
   <SidebarPage label="Custom Items" icon={IconApple} page="/guide/custom-items" />
 </SidebarCategory>
 
