@@ -1,5 +1,7 @@
 <script lang="ts">
+    import { sidebarExpanded } from "$lib";
+
   export let label: string;
 </script>
 
-<span class="uppercase text-sm mt-2 text-zinc-400">{label}</span>
+<span class="uppercase text-sm mt-4 text-zinc-400 {$sidebarExpanded ? 'block' : 'hidden'}">{label}</span>

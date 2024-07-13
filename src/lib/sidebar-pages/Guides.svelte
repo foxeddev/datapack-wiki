@@ -29,8 +29,6 @@
 <SidebarPage label="Home" icon={IconHome} page="/" />
 <SidebarPage label="Getting Started" icon={IconPennant} page="/guide/getting-started" />
 <SidebarPage label="Installing datapacks" icon={IconFileZip} page="/guide/installing-a-datapack" />
-
-<div class="h-2" />
 <SidebarHeading label="Advanced" />
 <SidebarCategory name="Adding new features" icon={IconNew}>
   <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/jukebox-songs" />

@@ -1,4 +1,6 @@
 <script lang="ts">
+  // ! IMPORTANT: If you want to add pages or categories, this is not the place to do it!
+
   const INFOTEXT = "pack_format: 48 (1.21)";
 
   import IconSearch from "~icons/tabler/search";
@@ -40,7 +42,7 @@
 <aside
   class="{$sidebarExpanded
     ? 'absolute w-[100%] sm:w-80'
-    : 'w-fit hidden sm:flex'} flex flex-col bg-stone-800 items-center sm:relative h-full z-50">
+    : 'w-fit hidden sm:flex'} flex flex-col bg-stone-800 items-center sm:relative h-[92%] sm:h-full z-50">
   <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full">
     {#if $sidebarExpanded}
       <button
