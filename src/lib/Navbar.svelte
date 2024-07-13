@@ -23,15 +23,16 @@
   }
 </script>
 
-<div class="bg-stone-800 flex w-full items-center p-3 h-full">
+<div class="bg-stone-800 flex w-full items-center p-2 h-full">
   <div class="flex items-center flex-grow">
     <button
       class="px-2 pr-3 sm:hidden"
       aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
       on:click={() => ($sidebarExpanded = !$sidebarExpanded)}><IconMenu /></button>
-
-    <img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-8 mr-2" width="32" height="32" />
-    <h1 class="font-bold text-xl">Datapack Wiki</h1>
+    <a class="flex items-center cursor-default hover:text-white p-1" href="/">
+      <img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-8 mr-2" width="32" height="32" />
+      <h1 class="font-bold text-xl">Datapack Wiki</h1>
+    </a>
   </div>
   
   <div class="flex items-center space-x-2">
