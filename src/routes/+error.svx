@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Info from '$lib/reusables/alerts/Info.svelte';
 </script>
 
 <svelte:head>
@@ -9,6 +8,6 @@
 </svelte:head>
 
 # Error {$page.status}: {$page.error.message}
-There was an error when loading this page. Maybe it doesn't exist?
 
-<Info>If you think this is an error, please report it in our [discord](https://discord.datapackhub.net/).</Info>
+There was an error when loading this page. Maybe it doesn't exist?
+If you think this is an error, please report it in our [Discord](https://discord.datapackhub.net/).

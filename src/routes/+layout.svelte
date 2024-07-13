@@ -23,7 +23,7 @@
       <div class="md px-6 md:px-10 lg:px-16 prose-headings:text-stone-200">
         <slot />
       </div>
-      {#if dev}
+      {#if !dev}
         <div class="fixed z-50 bottom-0 w-fit flex items-center" bind:this={betaWarning}>
           <div class="bg-red-600 flex items-center">
             <div class="p-3 flex items-center space-x-2 text-sm lg:text-base">
