@@ -15,7 +15,6 @@
     expanded = !expanded;
     $sidebarExpanded = true;
   }}>
-
   <svelte:component this={icon} />
 
   {#if $sidebarExpanded}

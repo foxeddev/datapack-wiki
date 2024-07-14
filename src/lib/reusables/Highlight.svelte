@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let color: string = "blue";
+  export let color: string = "FFFF00";
 </script>
 
 <span style="--background-color: {color}BB;" class="dph-highlight">

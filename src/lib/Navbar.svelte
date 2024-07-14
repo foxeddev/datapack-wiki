@@ -34,7 +34,7 @@
       <h1 class="font-bold text-xl">Datapack Wiki</h1>
     </a>
   </div>
-  
+
   <div class="flex items-center space-x-2">
     <a
       href="https://github.com/Datapack-Hub/wiki/blob/main/src/routes{$page.url.pathname}/%2Bpage.svx"

@@ -55,7 +55,9 @@
       </button>
       <div class="flex items-center mb-2 ml-1 space-x-1">
         <button
-          class="{page == 'wiki' ? 'bg-stone-700' : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center space-x-1"
+          class="{page == 'wiki'
+            ? 'bg-stone-700'
+            : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center space-x-1"
           on:click={() => {
             page = "wiki";
             sessionStorage.setItem("page", "wiki");
@@ -63,7 +65,9 @@
           <IconWiki /><span>Wiki</span>
         </button>
         <button
-          class="{page == 'guides' ? 'bg-stone-700' : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center space-x-1"
+          class="{page == 'guides'
+            ? 'bg-stone-700'
+            : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center space-x-1"
           on:click={() => {
             page = "guides";
             sessionStorage.setItem("page", "guides");

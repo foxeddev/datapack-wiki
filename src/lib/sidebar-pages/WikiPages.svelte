@@ -8,7 +8,7 @@
   // Icon imports
   // https://tabler-icons.io
   // import Icon<whatever name> from "~icons/tabler/<icon ID>"
-  
+
   import IconHome from "~icons/tabler/home";
   import IconAt from "~icons/tabler/at";
   import IconZip from "~icons/tabler/file-zip";
