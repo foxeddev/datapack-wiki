@@ -34,8 +34,7 @@ This is just a guide, so you'll need to change a few things for your actual data
 
 Using an Eye of Ender is a very similiar method to using the [Food Component](/guide/right-click/food_component), with the difference that this can only be used in worlds without strongholds. With that out of the way, the first file we will need to create will be an advancement. Located in `data/<namespace>/advancement/`, we will need to create a `.json` file, we are going to call it `used_eye_of_ender.json` for the rest of he guide.
 
-> `used_eye_of_ender.json`
-```json
+```json:used_eye_of_ender
 {
   "criteria": {
     "requirement": {
@@ -59,9 +58,7 @@ Using an Eye of Ender is a very similiar method to using the [Food Component](/g
 
 Now that we have the advancement, we can detect if the player is holding right click and call our function, that is located in `data/<namespace>/function/`. You will have to call this function the same name as you did in the advancement, for us that is `rightclick_run.mcfunction`.
 
-`rightclick_run.mcfunction`
-
-```
+```mcfunction:rightclick_run
 # Revoke the advancement from the player so it can be used again
 advancement revoke @s only <namespace>:used_eye_of_ender
 # Announce the use of the item in chat, feel free to replace this with whatever
