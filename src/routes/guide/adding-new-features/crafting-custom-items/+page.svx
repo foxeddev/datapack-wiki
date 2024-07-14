@@ -122,7 +122,7 @@ advancement revoke @s only <namespace>:craft_scuteaxe
 
 # Any code can go here, this will run when the player crafts the item.
 loot give @s loot <namespace>:<scuteaxe_item_loot_table>
-# You can also you a give command: give @s iron_pickaxe{display:{Name:'{"text":"sCUTE-axe"}'}} 1
+# You can also you a give command here instead
 ```
 
 <Tip>If you want to create more recipes, you can just copy, rename and configure all the files we've just created.</Tip>
