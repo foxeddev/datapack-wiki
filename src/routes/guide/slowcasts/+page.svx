@@ -4,7 +4,7 @@ description: "Like a raycast but in slow. Usefull if simply using tp every tick 
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, LatestPackFormat} from '$lib/reusables';
+import {LatestPackFormat} from '$lib/reusables';
 </script>
 
 # Slowcasting
@@ -16,8 +16,8 @@ If you wanted it to move faster however, you have to increase the distance it te
 
 A slowcast solves this problem by teleporting multiple times within a single tick to travel fastre but still chekcing if it hits something on its way.
 
-:::Info
-This tutorial uses a thing called a <ins>recursive function</ins>. A recursive function is a function which runs itself over and over again.
+:::info
+This tutorial uses a thing called a ___recursive function___. A recursive function is a function which runs itself over and over again.
 :::
 
 ## Slowcasting to an entity

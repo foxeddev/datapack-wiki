@@ -12,7 +12,7 @@
   import IconNew from "~icons/tabler/folder-plus";
   import IconMusic from "~icons/tabler/music";
   import IconBug from "~icons/tabler/bug";
-  import IconFileZip from "~icons/tabler/zip";
+  import IconDownload from "~icons/tabler/zip";
   import IconArrow from "~icons/tabler/arrow-down-left-circle";
   import IconBrackets from "~icons/tabler/code";
   import IconMouse from "~icons/tabler/mouse";
@@ -22,17 +22,18 @@
   import IconSelection from "~icons/tabler/new-section";
   import IconDice from "~icons/tabler/dice-5";
   import IconID from "~icons/tabler/id-badge";
+  import IconGrid from "~icons/tabler/grid-3x3";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
 
 <SidebarPage label="Home" icon={IconHome} page="/" />
 <SidebarPage label="Getting Started" icon={IconPennant} page="/guide/getting-started" />
-<SidebarPage label="Installing datapacks" icon={IconFileZip} page="/guide/installing-a-datapack" />
+<SidebarPage label="Installing datapacks" icon={IconDownload} page="/guide/installing-a-datapack" />
 <SidebarHeading label="Advanced" />
 <SidebarCategory name="Adding new features" icon={IconNew}>
-  <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/jukebox-songs" />
-  <SidebarPage label="Custom Items" icon={IconApple} page="/guide/custom-items" />
+  <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/adding-new-features/jukebox-songs" />
+  <SidebarPage label="Custom Item Recipes" icon={IconGrid} page="/guide/adding-new-features/crafting-custom-items" />
 </SidebarCategory>
 
 <SidebarCategory name="Right Click Detection" icon={IconMouse}>
@@ -41,7 +42,7 @@
   <SidebarHeading label="Techniques" />
   <SidebarPage label="Carrot on a Stick" icon={IconCarrot} page="/guide/right-click/coas" />
   <SidebarPage label="Eye of Ender" icon={IconEye} page="/guide/right-click/eoe" />
-  <SidebarPage label="Food" icon={IconApple} page="/guide/right-click/food" />
+  <SidebarPage label="Food Component" icon={IconApple} page="/guide/right-click/food_component" />
   <SidebarPage label="Interaction Entity" icon={IconSelection} page="/guide/right-click/interaction" />
 </SidebarCategory>
 

@@ -4,15 +4,15 @@ description: "Raycasting is when we shoot a line from the player's eyes in the d
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, LatestPackFormat} from '$lib/reusables';
+import {LatestPackFormat} from '$lib/reusables';
 </script>
 
 # Raycasting
 
 Raycasting is when we shoot a line from the player's eyes in the direction they are looking. We use this to get what the player is looking at, and do something to it, such as spawning an explosion.
 
-:::Info
-This tutorial uses a neat thing called a <ins>recursive function</ins>. A recursive function is a function which runs itself over and over again.
+:::info
+This tutorial uses a neat thing called a ___recursive function___. A recursive function is a function which runs itself over and over again.
 :::
 
 ## Raycast to an entity

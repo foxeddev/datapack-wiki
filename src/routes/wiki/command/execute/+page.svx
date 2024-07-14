@@ -4,7 +4,7 @@ description: "The execute command is used to execute other commands conditionall
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version} from '$lib/reusables';
+import {Version} from '$lib/reusables';
 </script>
 
 <Version> This page is up to date and validated for the Minecraft version: 1.20.6</Version>
@@ -44,9 +44,9 @@ The chat output would look like this:
 ```
 
 ## Subcommands
-<Info>
+:::info
 In this documentation, `...` represents another required subcommand, and `[...]` denotes that another subcommand is optional.
-</Info>
+:::
 
 ### `execute align <axes> ...`
 The `align`  subcommand aligns the executing position to the specified axes (rounding down coordinates to integers). `<axes>` can be any subset of `xyz`, in any order.
@@ -61,7 +61,9 @@ Changes the execution anchor to the eyes or feet of the entity.
 #### Examples:
 `execute anchored eyes ...`
 
-<Warning>When the position is changed not relative to the player, it resets back to feet. You can lock this though by using `positioned ^ ^ ^` after it.</Warning>
+:::warning
+When the position is changed not relative to the player, it resets back to feet. You can lock this though by using `positioned ^ ^ ^` after it.
+:::
 
 ### `execute as <entity> ...`
 Changes the executor of the following subcommand to `<entity>` (Does not modify any other context such as location).  
@@ -141,9 +143,9 @@ Summons the specified entity at the current position, and executes the following
 
 ### `execute run <command>`
 Runs the specified command with the current context. Takes no further subcommands.  
-<Info>
+:::info
 This is useless by itself, and should always be preceded by other subcommands.
-</Info>
+:::
 
 #### Examples:
 `execute run say hi`  

@@ -3,10 +3,6 @@ title: SNBT Format
 description: "SNBT (Stringified Named Binary Tags) format is a JSON-like tree structure used in datapack development to manipulate the NBT data of an entity. SNBT is a human-readable version of NBT (Named Binary Tags), which is a format used by Minecraft to store data. NBT is used to store data about entities, items, blocks, structures, game saves, and more."
 ---
 
-<script lang="ts">
-import {Info, Warning, Tip, LatestPackFormat} from '$lib/reusables';
-</script>
-
 # SNBT Format
 SNBT (Stringified Named Binary Tags) format is a JSON-like tree structure used in datapack development to manipulate the NBT data of an entity. SNBT is a human-readable version of NBT (Named Binary Tags), which is a format used by Minecraft to store data. NBT is used to store data about entities, items, blocks, structures, game saves, and more.
 

@@ -1,10 +1,39 @@
 ---
-title: Right Click Detection (Interaction)
-description: "Interaction entity tutorial"
+title: Using an Interaction Entity for RC detection
+description: "If you want to learn how to detect right (and left) clicks on interaction entities, you are in the right place!"
 ---
 
-`interacted_with_interaction.json` (located in the packs `advancement` folder)
+<script lang="ts">
+import {Version} from '$lib/reusables';
+</script>
 
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+
+# Pros and cons
+**Pros:**
+- Can also detect left clicks
+- Works in any world
+- Doesn't need to run every tick
+- Doesn't attract mob
+
+**Cons:**
+- Only works in 1.19.4+
+- Slows player down when holding right click
+- Requires an additional entity
+- Can't be interacted through (e.g. can't build,attack,... throught it)
+
+**Other:**
+- Detects up to 5 clicks/second when holding right click
+- Bound to a specific location, not player
+
+# Using an Interaction Entity for Right Click Detection
+
+Firstly we will need to create an advancement, located in `data/<namespace>/advancement/`. You can call it hovewer you want, but for the purpose of this guide we will call it `interacted_with_interaction.json`. This advancement is used to detect when a player clicks on an interaction entity.
+
+:::tip
+If you don't want to detect a click on every interaction, you can detect it on only some by checking their NBT data, and using Tags to differentiate them.:::
+
+> `interacted_with_interaction.json`
 ```json
 {
   "criteria": {
@@ -18,15 +47,22 @@ description: "Interaction entity tutorial"
     }
   },
   "rewards": {
-    "function": "namespace:rightclick_run"
+    "function": "<namespace>:rightclick_run"
   }
 }
 ```
 
-`rightclick_run.mcfunction` (located in the packs `function` folder)
+Then just create a simple function in `data/<namespace>/function/`, and call it the same as you did in the advancement, for us that would be `rightclick_run.mcfunction`
 
+> `rightclick_run.mcfunction`
 ```hs
-# announces the use of the item in chat, feel free to replace this with whatever
-say Used interaction 
+# Revoke the advancement so we can detect the click again
 advancement revoke @s only namespace:interacted_with_interaction
+# Announce that the player clicked on the interaction in chat, feel free to replace this with whatever you want it to do
+# your logic here...
+say Used interaction
 ```
+
+Now you can summon the interaction entity by doing `/summon interaction ~ ~ ~ {width:2f,height:3f}`.
+
+That's it, you should now have working right click detection using an interaction entity.
