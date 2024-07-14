@@ -12,8 +12,8 @@
   import IconNew from "~icons/tabler/folder-plus";
   import IconMusic from "~icons/tabler/music";
   import IconBug from "~icons/tabler/bug";
-  import IconDownload from "~icons/tabler/download";
-  import IconArrow from "~icons/tabler/ArcheryArrow";
+  import IconDownload from "~icons/tabler/zip";
+  import IconArrow from "~icons/tabler/arrow-down-left-circle";
   import IconBrackets from "~icons/tabler/code";
   import IconMouse from "~icons/tabler/mouse";
   import IconCarrot from "~icons/tabler/carrot";
@@ -47,8 +47,9 @@
 </SidebarCategory>
 
 <SidebarCategory name="Technical" icon={IconBrackets}>
-  <SidebarPage label="Debugging" icon={IconBug} page="/guide/technical/debugging" />
-  <SidebarPage label="Random Numbers (old)" icon={IconDice} page="/guide/technical/random-numbers" />
-  <SidebarPage label="Player ID System" icon={IconID} page="/guide/technical/player-id-system" />
-  <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/technical/raycasts" />
+  <SidebarPage label="Debugging" icon={IconBug} page="/guide/debugging" />
+  <SidebarPage label="Random Numbers (old)" icon={IconDice} page="/guide/random-number-old" />
+  <SidebarPage label="Player ID System" icon={IconID} page="/guide/player-id-system" />
+  <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/raycasts" />
+  <SidebarPage label="Slowcasts" icon={IconArrow} page="/guide/slowcasts" />
 </SidebarCategory>
