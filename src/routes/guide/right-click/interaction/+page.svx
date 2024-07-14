@@ -33,8 +33,7 @@ Firstly we will need to create an advancement, located in `data/<namespace>/adva
 :::tip
 If you don't want to detect a click on every interaction, you can detect it on only some by checking their NBT data, and using Tags to differentiate them.:::
 
-> `interacted_with_interaction.json`
-```json
+```json:interacted_with_interaction.json
 {
   "criteria": {
     "requirement": {
@@ -54,8 +53,7 @@ If you don't want to detect a click on every interaction, you can detect it on o
 
 Then just create a simple function in `data/<namespace>/function/`, and call it the same as you did in the advancement, for us that would be `rightclick_run.mcfunction`
 
-> `rightclick_run.mcfunction`
-```hs
+```mcfunction:rightclick_run.mcfunction
 # Revoke the advancement so we can detect the click again
 advancement revoke @s only namespace:interacted_with_interaction
 # Announce that the player clicked on the interaction in chat, feel free to replace this with whatever you want it to do

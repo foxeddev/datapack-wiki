@@ -31,9 +31,7 @@ Firstly, we'll make the function which, when you run it, will **start** the rayc
 To set a maximum distance, we store the maximum amount of times we want the function to run in a scoreboard. Every time the recursive function runs, we want to subtract one from that scoreboard, and only continue if the score is more than 0.
 
 First, you need to create a scoreboard in your load function.
-```mcfunction
-# namespace:load
-
+```mcfunction:load.mcfunction
 scoreboard objectives add temp dummy
 ```
 
@@ -44,9 +42,7 @@ We also tag the entity executing the raycast so we can exclude it later for hit 
 Call The raycats function one step further in the facing direction.
 
 Remove the tag at the end of the function so it does not interfere with other raycasts that might be executed within the same tick.
-```mcfunction
-# namespace:init
-
+```mcfunction:init.mcfunction
 tag @s add raycaster
 
 scoreboard players set raycastLimit temp 1000
@@ -71,9 +67,7 @@ The last command checks if the raycast hit a wall.
 If it does, the raycast will end.
 If it doesn't, it will then check if the limit is reached, again ending if it is.
 Should the limit not be reached yet, it will move 0.1 blocks forward and call the raycast function again _(recursion)_.
-```mcfunction
-# namespace:raycast
-
+```mcfunction:raycast.mcfunction
 scoreboard players remove raycastlimit temp 1
 
 particle minecraft:flame

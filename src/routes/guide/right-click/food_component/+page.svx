@@ -39,7 +39,7 @@ You can use any item for the method, but if the item already has an existing rig
 
 The first step will be creating the advancement that detects when a player is "using" (in this case eating) the item, the name can be whatever you want ending in `json`, but for the purpose of this tutorial we will call it `click_food.json`. Then put this file into `data/<namespace>/advancement/`
 
-```json:click_food
+```json:click_food.json
 {
   "criteria": {
     "requirement": {
@@ -66,7 +66,7 @@ As you can see, the advancement runs a function when it detects a player eating 
 
 You can put whatever commands you want into this function, but make sure you revoke the advancement from the player, so the item can be clicked again.
 
-```mcfunction:rightclick_run
+```mcfunction:rightclick_run.mcfunction
 # Revoke the advancement from the player so it can be used again
 advancement revoke @s only <namespace>:click_food
 # Announce the use of the item in chat, feel free to replace this with whatever
