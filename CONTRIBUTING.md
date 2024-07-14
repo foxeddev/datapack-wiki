@@ -7,12 +7,12 @@ To contribute, please fork this repo and then submit a pull request with your ad
 > [!TIP]
 > If you don't understand markdown or HTML, or if you require additional support, please [join our Discord](https://discord.datapackhub.net) and we'd be happy to help!
 
-## Setting up the development environment
+## (Optional, but reccomended) Setting up the development environment
 
-Before you begin developing the site, you need a few requirements
+Before you begin developing the site, it's a good idea to set up a local dev server so you can view your changes on the site in real-time. You only need a few requirements:
 
 - [Node](https://nodejs.org/en)
-- A package manager (`npm, pnpm, bun`)
+- A package manager (`npm`, the default with node.js, is more than enough.
 - [Bun (optional)](https://bun.sh) - we use this to generate our search indexes, it can also be used to run the project
 
 ### Installing
