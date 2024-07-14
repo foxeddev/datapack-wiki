@@ -12,7 +12,8 @@ import { Version, Discord } from '$lib/reusables';
 If you're new to datapacks, you're at the right place. Looking around, getting into datapack creation might seem confusing, but once you've grasped the basics, you'll be off to a good start!
 
 :::info
-If you don't know what datapacks are, then take this explanation. Datapacks are essentially add-ons to Minecraft which can change the game, whether by adding a simple game mechanic, or creating completely new experiences! The best part is that they're really easy to create, even if you have little coding knowledge:::
+If you don't know what datapacks are, then take this explanation. Datapacks are essentially add-ons to Minecraft which can change the game, whether by adding a simple game mechanic, or creating completely new experiences! The best part is that they're really easy to create, even if you have little coding knowledge
+:::
 
 This guide will help you to create your first datapack, whether you've never tried coding before or if you've got loads of experience. The process of coding a datapack is a bit different to other typical programs. By the end of this tutorial, you'll have made a simple datapack which makes **arrows explode when they land!**
 
@@ -29,7 +30,8 @@ This folder opens contains all the data in your Minecraft world. You should see 
 This folder is where the world's datapacks are stored. Create a folder - this will be the root folder of your datapack project. The name doesn't matter. I'm just going to call it `Example Datapack`. **Open this new folder**. Inside this folder is where all the data starts from.
 
 :::tip
-Before we go further, if you have downloaded and installed Visual Studio Code and the relevant extensions, then you should be able to right click inside the new folder that you created and "Open in Code". If not, then no worries, it isn't required.:::
+Before we go further, if you have downloaded and installed Visual Studio Code and the relevant extensions, then you should be able to right click inside the new folder that you created and "Open in Code". If not, then no worries, it isn't required.
+:::
 
 The first file we want to create is the `pack.mcmeta` file. This file will tell Minecraft that the folder is a datapack, as well as holding the basic information of the pack. **Create `pack.mcmeta`, and put this inside it**:
 ```json
@@ -47,7 +49,8 @@ If you're interested, here's what this file means:
 
 ## Writing your first function
 :::info
-What are functions? In short, functions are the majority of what makes up most datapacks. A function is a file containing Minecraft commands. When a function is ran, every command in the function is ran in order. Functions are always ran as an entity (or as the Server) and at a position:::
+What are functions? In short, functions are the majority of what makes up most datapacks. A function is a file containing Minecraft commands. When a function is ran, every command in the function is ran in order. Functions are always ran as an entity (or as the Server) and at a position
+:::
 Let's get started by writing one simple function. In traditional programming function, let's make a function to show you "Hello World" when it is ran.
 
 1. Create a folder in your datapack called `data`. 
@@ -60,7 +63,8 @@ You should now have a folder structure that looks something like this:
 /world/datapacks/Example Datapack/data/example/function
 ```
 :::warning
-In versions earlier than 1.21, the function folder should be called functions, due to some pesky name changes Mojang introduced in a recent update.:::
+In versions earlier than 1.21, the function folder should be called functions, due to some pesky name changes Mojang introduced in a recent update.
+:::
 
 Once you're sure that's correct, you can start writing the actual function. 
 
@@ -182,7 +186,8 @@ kill @e[type=arrow,nbt={inGround:1b}]
 ```
 
 :::info
-In reality, this method isn't the best one to use. Instead of having two commands for this, you can just execute a function as the arrow which will summon the TNT at @s's position, and then kill @s. By only using the @e selector once and then referring to @s, you remove extra stress from the computer. For now, it doesn't matter - this guide is designed to give you a better idea of the logic rather than the little details:::
+In reality, this method isn't the best one to use. Instead of having two commands for this, you can just execute a function as the arrow which will summon the TNT at @s's position, and then kill @s. By only using the @e selector once and then referring to @s, you remove extra stress from the computer. For now, it doesn't matter - this guide is designed to give you a better idea of the logic rather than the little details
+:::
 
 You're done! Once you `/reload` your pack, you should be free to play around with a simple exploding arrows datapack which you made with the help of this tutorial. Take a break to play around with it - you deserve one!
 
