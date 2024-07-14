@@ -4,7 +4,7 @@ description: "If you don't know how to use a COAS for right click detection, thi
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
+import {Version} from '$lib/reusables';
 </script>
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
@@ -12,7 +12,9 @@ import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
 # Detecting right clicks: carrot on a stick
 Using a carrot on a stick (or a warped fungus on a stick) is perhaps one of the simplest methods of right-click detection, requiring only a single tick command and a scoreboard. This method works due to the `used:carrot_on_a_stick` statistic detecting right clicks on any `carrot_on_a_stick` item.
 
-<Info>For the sake of simplicity, we will use a carrot on a stick, **shortened to COAS**. This method also works with warped fungus on a stick (WFOAS) items.</Info>
+:::info
+For the sake of simplicity, we will use a carrot on a stick, **shortened to COAS**. This method also works with warped fungus on a stick (WFOAS) items.
+:::
 
 COAS and WFOAS items have a unique property that means that right clicking the item counts as "using" an item, and will therefore increase the `used:carrot_on_a_stick` statistic. We can track changes to this statistic using a scoreboard. When it goes up, we know that the player has right clicked a COAS, and we can run a command when that happens.
 
@@ -39,4 +41,6 @@ In the `rightclick_run.mcfunction` file, you can do whatever you like as a resul
 say Used COAS
 ```
 
-<Note>Add another subheading for detecting clicks on a specific item with NBT, explaining how to check the currently held item.</Note>
+:::note
+Add another subheading for detecting clicks on a specific item with NBT, explaining how to check the currently held item.
+:::

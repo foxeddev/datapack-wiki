@@ -4,7 +4,7 @@ description: "The execute command is used to execute other commands conditionall
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version} from '$lib/reusables';
+import {Version} from '$lib/reusables';
 </script>
 
 <Version> This page is up to date and validated for the Minecraft version: 1.20.6</Version>

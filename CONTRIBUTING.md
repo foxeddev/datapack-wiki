@@ -33,7 +33,7 @@ It's recommended before you make your pull request that you run the `build` and 
 
 ## Adding a page
 
-1. Create your page .svx file. If I want to make a page at `/wiki/command/say`, I would create the file at `/src/routes/wiki/command/say/+page.svx`. **All pages should be in either the `wiki` or `guide` folder
+1. Create your page .svx file. If I want to make a page at `/wiki/command/say`, I would create the file at `/src/routes/wiki/command/say/+page.svx`. \*\*All pages should be in either the `wiki` or `guide` folder
 
 2. Add the page metadata by putting the following at the top of the .svx file:
 
@@ -58,27 +58,38 @@ It's recommended before you make your pull request that you run the `build` and 
    # /function command
 
    This command runs any `.mcfunction` file when called. You can also pass in a NBT compound or NBT source path.
-
-   <Info>I am a very important piece of information. Please dont ignore me. I'm only smol.</Info>
-
-   <Warning>The stuff in this box is probably very important.</Warning>
-
-   <Tip>You can do this really cool thing. It'll make your life a lot better!</Tip>
-
-   ## Syntax
-
-   `function <function>` - Runs a function
-
-   ...
    ```
+
+   :::info
+   I am a very important piece of information. Please dont ignore me. I'm only smol.
+   :::
+
+   :::warning
+   The stuff in this box is probably very important.
+   :::
+
+   :::tip
+   You can do this really cool thing. It'll make your life a lot better!
+   :::
+
+## Syntax
+
+`function <function>` - Runs a function
+
+...
+
+````
 
 > [!TIP]
 > You can create info, warning, or tip boxes using the following syntax:
 >
 > ```md
-> <Info>This is an info box!</Info>
-> <Warning>This is a warning box!</Warning>
-> <Tip>This is a tip box!</Tip>
+> :::info
+> This is an info box!> :::
+> :::warning
+> This is a warning box!> :::
+> :::tip
+> This is a tip box!> :::
 > ```
 
 ## Adding a page to the sidebar
@@ -93,12 +104,12 @@ You can add categories using the `<SidebarCategory>` tag:
 
 ```svelte
 <SidebarCategory name="Basics" icon={IconBox}>
-    <SidebarPage label="Commands" icon={IconCommand} page="/commands" />
-    <SidebarPage label="Functions" icon={IconPennant} page="/functions" />
-    <SidebarPage label="Advancements" icon={IconStar} page="/advancements" />
-    <SidebarPage label="Recipes" icon={IconGrid} page="/recipes" />
+ <SidebarPage label="Commands" icon={IconCommand} page="/commands" />
+ <SidebarPage label="Functions" icon={IconPennant} page="/functions" />
+ <SidebarPage label="Advancements" icon={IconStar} page="/advancements" />
+ <SidebarPage label="Recipes" icon={IconGrid} page="/recipes" />
 </SidebarCategory>
-```
+````
 
 ### Sidebar Pages
 

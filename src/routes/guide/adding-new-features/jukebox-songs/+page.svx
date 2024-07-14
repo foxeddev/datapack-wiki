@@ -4,7 +4,7 @@ description: "If you've ever wanted to add your own jukebox songs and music disc
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
+import {Version} from '$lib/reusables';
 </script>
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
@@ -12,7 +12,9 @@ import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
 In this guide, we will not only learn how to create custom jukebox songs, but also how to give yourself a custom music disc item and implement custom sounds!
 
 This will only work in 1.21+, as custom enchantments were added in the snapshot 24w21a.
-<Info>This guide requires you to have atleast a small understanding of datapacks, if you don't understand this guide, you can read the Getting Started guide.</Info>
+:::info
+This guide requires you to have atleast a small understanding of datapacks, if you don't understand this guide, you can read the Getting Started guide.
+:::
 
 ## Setting up the datapack
 To start you will need a basic datapack, if you don't know how to make one, see the [Getting Started](/guide/getting-started) guide.
@@ -45,7 +47,9 @@ This part is going to be optional in the case, that you only want a vanila Minec
 
 If you don't want to use a default Minecarft sound, then a resource pack is required to add the custom sound (in this case, the music on the disc) to Minecraft, so that the datapack can read it.
 
-<Info>Minecraft handles sound in `.ogg` files. There are many different converters you can use to convert an MP3, WAV, or other audio file to .ogg.</Info>
+:::info
+Minecraft handles sound in `.ogg` files. There are many different converters you can use to convert an MP3, WAV, or other audio file to .ogg.
+:::
 
 You need to add your `.ogg` file (the audio of your music disc) to `assets/<namespace>/sounds/<title>.ogg`. Make sure that `<namespace>` and `<title>` are the same values you put in the datapack's JSON file (the `example_jukebox_song.json` file in our case).
 
@@ -66,7 +70,9 @@ Then, if you haven't already, you need to create a `sounds.json` file at the pos
 ## See it in action
 Once you save the above files, you need to activate the resource pack, and reload it with the keybind **F3 + T** in-game. You will also need to leave and rejoin the world to update the datapack.
 
-<Warning>For this to work, you will need to leave and rejoin the world, just using the `/reload` command won't do the trick here!</Warning>
+:::warning
+For this to work, you will need to leave and rejoin the world, just using the `/reload` command won't do the trick here!
+:::
 
 To get the music disc, you need to get an item which has the `minecraft:jukebox_playable` component. This can be any item - it doesn't have to necessarily be an already existing music disc (but you can if you want)
 ```ansi

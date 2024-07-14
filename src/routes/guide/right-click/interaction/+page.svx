@@ -4,7 +4,7 @@ description: "If you want to learn how to detect right (and left) clicks on inte
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
+import {Version} from '$lib/reusables';
 </script>
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
@@ -30,7 +30,8 @@ import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
 
 Firstly we will need to create an advancement, located in `data/<namespace>/advancement/`. You can call it hovewer you want, but for the purpose of this guide we will call it `interacted_with_interaction.json`. This advancement is used to detect when a player clicks on an interaction entity.
 
-<Tip>If you don't want to detect a click on every interaction, you can detect it on only some by checking their NBT data, and using Tags to differentiate them.</Tip>
+:::tip
+If you don't want to detect a click on every interaction, you can detect it on only some by checking their NBT data, and using Tags to differentiate them.:::
 
 > `interacted_with_interaction.json`
 ```json

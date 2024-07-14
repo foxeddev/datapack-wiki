@@ -3,10 +3,6 @@ title: Home
 description: "Welcome to the Datapack Hub Wiki!"
 ---
 
-<script lang="ts">
-import {Info, Warning, Tip, LatestPackFormat, Version, Discord} from '$lib/reusables';
-</script>
-
 # Welcome to the Datapack Wiki!
 This is a community-built wiki documenting features of Minecraft Datapacks. On this site, you can find all you need to know to start making your own datapacks, as well as resources for more advanced datapackers.
 
@@ -25,3 +21,7 @@ Ready to learn? [Click here](/guide/getting-started) to get started.
 
 ## Join the community!
 Have questions, ideas, or datapack creations you want to share? Join the [Datapack Hub Discord server](https://discord.datapackhub.net/) to connect with other datapackers!
+
+:::info
+If you're contributing, feel free to add your username to this page! You can contribute by clicking the Edit button on any page.
+:::

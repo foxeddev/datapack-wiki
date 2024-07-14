@@ -4,7 +4,7 @@ description: "An intresting right click detection method for sure, due to the fa
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
+import {Version} from '$lib/reusables';
 </script>
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
@@ -25,7 +25,8 @@ import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
 
 # Using an Eye of Ender for Right Click Detection
 
-<Warning>This only works in world without strongholds, if you don't want that, you can either use a similiar method that works everywhere (using the Food Component method) or do some chnages to these functions, as specified at the end of this guide.</Warning>
+:::warning
+This only works in world without strongholds, if you don't want that, you can either use a similiar method that works everywhere (using the Food Component method) or do some chnages to these functions, as specified at the end of this guide.:::
 
 This is just a guide, so you'll need to change a few things for your actual datapack:
 - Change `<namespace>` to your namespace

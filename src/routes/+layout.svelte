@@ -9,6 +9,7 @@
   import "../styles/fonts.css";
   import "../styles/app.css";
   import "../styles/code_theme.css";
+  // import "remark-admonitions/styles/classic.css"
 
   let betaWarning: HTMLDivElement;
 </script>
