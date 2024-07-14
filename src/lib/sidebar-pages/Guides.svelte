@@ -12,7 +12,7 @@
   import IconNew from "~icons/tabler/folder-plus";
   import IconMusic from "~icons/tabler/music";
   import IconBug from "~icons/tabler/bug";
-  import IconFileZip from "~icons/tabler/zip";
+  import IconDownloadFile from "~icons/tabler/file-download";
   import IconArrow from "~icons/tabler/ArcheryArrow";
   import IconBrackets from "~icons/tabler/code";
   import IconMouse from "~icons/tabler/mouse";
@@ -22,17 +22,18 @@
   import IconSelection from "~icons/tabler/new-section";
   import IconDice from "~icons/tabler/dice-5";
   import IconID from "~icons/tabler/id-badge";
+  import IconGrid from "~icons/tabler/grid-3x3";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
 
 <SidebarPage label="Home" icon={IconHome} page="/" />
 <SidebarPage label="Getting Started" icon={IconPennant} page="/guide/getting-started" />
-<SidebarPage label="Installing datapacks" icon={IconFileZip} page="/guide/installing-a-datapack" />
+<SidebarPage label="Installing datapacks" icon={IconDownloadFile} page="/guide/installing-a-datapack" />
 <SidebarHeading label="Advanced" />
 <SidebarCategory name="Adding new features" icon={IconNew}>
-  <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/jukebox-songs" />
-  <SidebarPage label="Custom Items" icon={IconApple} page="/guide/custom-items" />
+  <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/adding-new-features/jukebox-songs" />
+  <SidebarPage label="Custom Item Recipes" icon={IconGrid} page="/guide/adding-new-features/custom-items" />
 </SidebarCategory>
 
 <SidebarCategory name="Right Click Detection" icon={IconMouse}>
@@ -41,13 +42,13 @@
   <SidebarHeading label="Techniques" />
   <SidebarPage label="Carrot on a Stick" icon={IconCarrot} page="/guide/right-click/coas" />
   <SidebarPage label="Eye of Ender" icon={IconEye} page="/guide/right-click/eoe" />
-  <SidebarPage label="Food" icon={IconApple} page="/guide/right-click/food" />
+  <SidebarPage label="Food Component" icon={IconApple} page="/guide/right-click/food_component" />
   <SidebarPage label="Interaction Entity" icon={IconSelection} page="/guide/right-click/interaction" />
 </SidebarCategory>
 
 <SidebarCategory name="Technical" icon={IconBrackets}>
-  <SidebarPage label="Debugging" icon={IconBug} page="/guide/debugging" />
-  <SidebarPage label="Random Numbers (old)" icon={IconDice} page="/guide/random-number-old" />
-  <SidebarPage label="Player ID System" icon={IconID} page="/guide/player-id-system" />
-  <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/raycasts" />
+  <SidebarPage label="Debugging" icon={IconBug} page="/guide/technical/debugging" />
+  <SidebarPage label="Random Numbers (old)" icon={IconDice} page="/guide/technical/random-numbers" />
+  <SidebarPage label="Player ID System" icon={IconID} page="/guide/technical/player-id-system" />
+  <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/technical/raycasts" />
 </SidebarCategory>

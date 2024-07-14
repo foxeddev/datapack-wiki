@@ -1,0 +1,56 @@
+---
+title: Generating Random Numbers
+description: "This guide will teach you how to generate random numbers using datapack!"
+---
+
+<script lang="ts">
+import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
+</script>
+
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+
+Generating a random number is very useful in programming for a variety of reasons, so lets lean how to do it with a datapack! The method for you will vary based on your datapack's Minecraft version, if you use 1.20.2+, it will be a bit easier, because of the acces to the `random` command.
+
+# 1.20.2+
+
+Use the `/random` command, TODO: put guide here.
+
+# 1.20.1 and below
+
+Lets begin by creating a new file in `data/<namespace>/loot_tables/`. We will call it `rng.json`, with that done, lets put this inside:
+
+> `rng.json`
+```json
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 1,
+        "max": 10
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+You can change the values 1 and 10 to change the range. If you leave it as it is, it generates a random number between 1-10.  
+
+## See it in action!
+To use this, you will just have to store the result of summoning this loot table. So you can just do this:
+```
+execute store result . . . run loot spawn ~ ~ ~ loot <namespace>:rng
+```
+
+This will store the random number in wherever you specified (Can be a scoreboard, storage, ...).
