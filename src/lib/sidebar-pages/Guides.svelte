@@ -47,9 +47,9 @@
 </SidebarCategory>
 
 <SidebarCategory name="Technical" icon={IconBrackets}>
-  <SidebarPage label="Debugging" icon={IconBug} page="/guide/debugging" />
-  <SidebarPage label="Random Numbers (old)" icon={IconDice} page="/guide/random-number-old" />
-  <SidebarPage label="Player ID System" icon={IconID} page="/guide/player-id-system" />
-  <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/raycasts" />
-  <SidebarPage label="Slowcasts" icon={IconArrow} page="/guide/slowcasts" />
+  <SidebarPage label="Debugging" icon={IconBug} page="/guide/technical/debugging" />
+  <SidebarPage label="Random Numbers (old)" icon={IconDice} page="/guide/technical/random-number-old" />
+  <SidebarPage label="Player ID System" icon={IconID} page="/guide/technical/player-id-system" />
+  <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/technical/raycasts" />
+  <SidebarPage label="Slowcasts" icon={IconArrow} page="/guide/technical/slowcasts" />
 </SidebarCategory>
