@@ -4,7 +4,7 @@ description: "Like a raycast but in slow. Usefull if simply using tp every tick 
 ---
 
 <script lang="ts">
-import {LatestPackFormat} from '$lib/reusables';
+import { Version, LatestPackFormat } from '$lib/reusables';
 </script>
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
