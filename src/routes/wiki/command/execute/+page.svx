@@ -61,6 +61,8 @@ Changes the execution anchor to the eyes or feet of the entity.
 #### Examples:
 `execute anchored eyes ...`
 
+<Warning>When the position is changed not relative to the player, it resets back to feet. You can lock this though by using `positioned ^ ^ ^` after it.</Warning>
+
 ### `execute as <entity> ...`
 Changes the executor of the following subcommand to `<entity>` (Does not modify any other context such as location).  
 If `<entity>` refers to multiple entities, the following subcommand gets executed once for each referenced entity, with that entity as the executor.  

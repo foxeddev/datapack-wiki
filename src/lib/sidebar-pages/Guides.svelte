@@ -13,7 +13,7 @@
   import IconMusic from "~icons/tabler/music";
   import IconBug from "~icons/tabler/bug";
   import IconFileZip from "~icons/tabler/zip";
-  import IconArrow from "~icons/tabler/ArcheryArrow";
+  import IconArrow from "~icons/tabler/arrow-down-left-circle";
   import IconBrackets from "~icons/tabler/code";
   import IconMouse from "~icons/tabler/mouse";
   import IconCarrot from "~icons/tabler/carrot";
@@ -50,4 +50,5 @@
   <SidebarPage label="Random Numbers (old)" icon={IconDice} page="/guide/random-number-old" />
   <SidebarPage label="Player ID System" icon={IconID} page="/guide/player-id-system" />
   <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/raycasts" />
+  <SidebarPage label="Slowcasts" icon={IconArrow} page="/guide/slowcasts" />
 </SidebarCategory>

@@ -3,11 +3,17 @@ title: Raycasts
 description: "Raycasting is when we shoot a line from the player's eyes in the direction they are looking. We use this to get what the player is looking at, and do something to it, such as spawning an explosion."
 ---
 
+<script lang="ts">
+import {Info, Warning, Tip, LatestPackFormat} from '$lib/reusables';
+</script>
+
 # Raycasting
 
 Raycasting is when we shoot a line from the player's eyes in the direction they are looking. We use this to get what the player is looking at, and do something to it, such as spawning an explosion.
 
-> This tutorial uses a neat thing called a **recursive function**. A recursive function is a function which runs itself over and over again.
+:::Info
+This tutorial uses a neat thing called a <ins>recursive function</ins>. A recursive function is a function which runs itself over and over again.
+:::
 
 ## Raycast to an entity
 
@@ -22,40 +28,55 @@ Firstly, we'll make the function which, when you run it, will **start** the rayc
 
 To set a maximum distance, we store the maximum amount of times we want the function to run in a scoreboard. Every time the recursive function runs, we want to subtract one from that scoreboard, and only continue if the score is more than 0.
 
-Firstly, you need to create a scoreboard. This should go in your `/reload` function.
-
+First, you need to create a scoreboard in your load function.
 ```mcfunction
-scoreboard objectives add raycast_temp dummy
+# namespace:load
+
+scoreboard objectives add temp dummy
 ```
 
-Then, we can use this scoreboard to set the limit of the raycast before we run it.
+Then, we can use this scoreboard to set the limit of the raycast before we run it _(In this case weset it to 1000 which is 100 blocks. 1000 steps * 0.1 blocks/setp = 100 blocks)_.
 
+We also tag the entity executing the raycast so we can exclude it later for the hit detection.
+
+Call The raycats function one step further in the facing direction.
+
+Remove the tag at the end of the function so it does not interfer with other racasts thhat might be executed within the same tick.
 ```mcfunction
+# namespace:init
+
 tag @s add raycaster
 
-# Set the distance limit on the raycast. (10 x limit in blocks, so 1000 would be 100 blocks)
-scoreboard players set .limit raycast_temp 1000
+scoreboard players set raycastLimit temp 1000
 
-# Start the raycast
 execute at @s anchored eyes positioned ^ ^ ^.1 run function <namespace>:raycast
 
 tag @s remove raycaster
 ```
 
-The `raycaster` tag is used to make sure that the raycast doesn't hit the player who ran it. In the raycast, we check for any entity at the current position which doesn't match the tag.
+In the raycast function, we want to check if the function has hit an entity, and if not, run it again until it does, hit a wall, or reaches the raycasts limt, moving a bit forward each time.
 
-In the raycast function, we want to check if the function has hit an entity, and if not, run it again until it does, moving a bit forward each time:
+We first decrement the limit vale by 1.
 
+Then we make the path of the raycast visible by summoning a few particles. Instead of summoning particles, it could also run another function for more complex behaviour.
+
+The next step is a bit more complex.
+We execute a command as every entity that is not the caster and whose hitbox intersects with the two differebtky offset [virtual volumes](https://datapack.wiki/wiki/commands/target_selectors#dxdydz-arguments).
+Near the end you see `unless function <namespace>:hit` this will run function as the hit entity and, because all functions without a return command return false and we check for `unless`, this condition resolves to true and will return with the number 0, ending the raycast.
+Should no entity be in both voluems and the  function doesn't get run, the return command at the end won't be reached and the raycast will continue.
+
+The last command checks if the raycast hit a wall.
+If it does, the raycast will end.
+If it doesn't, it will then check if the limit is reached, again ending if it is.
+Should the limit not be reacched yet, it will move 0.1 block forward and call the raycast function again _(regursion)_.
 ```mcfunction
-# Remove one from the limit
-scoreboard players remove .limit <objective> 1
+# namespace:raycast
 
-# Optional - place a particle, to make the raycast leave a trail
-particle minecraft:dust 1 0 0 1 ~ ~ ~
+scoreboard players remove raycastlimit temp 1
 
-# If the raycast has hit an entity, make it say hi
-execute as @e[dx=0,tag=!raycaster] run say hi
+particle minecraft:flame
 
-# If the raycast hasn't hit an entity, continue, but only if the limit is 1 or more (1..)
-execute if block ~ ~ ~ #minecraft:replaceable unless entity @e[dx=0,tag=!raycaster] positioned ^ ^ ^0.1 if score .limit <objective> matches 1.. run function <namespace>:raycast
+execute positioned ~-.99 ~-.99 ~-.99 as @e[dx=0,tag=!raycaster] positioned ~.99 ~.99 ~.99 as @s[dx=0] unless function <namespace>:hit run return 0
+
+execute if block ~ ~ ~ #minecraft:replaceable if score raycastLimit temp matches 1.. positioned ^ ^ ^0.1 run function <namespace>:raycast
 ```
