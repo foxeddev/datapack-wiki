@@ -7,12 +7,14 @@ description: "Raycasting is when we shoot a line from the player's eyes in the d
 import {LatestPackFormat} from '$lib/reusables';
 </script>
 
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+
 # Raycasting
 
-Raycasting is when we shoot a line from the player's eyes in the direction they are looking. We use this to get what the player is looking at, and do something to it, such as spawning an explosion.
+Raycasting is when we shoot a line from the player's eyes in the direction they are looking. We use this to get what the player is looking at and do something to it, such as spawning an explosion.
 
 :::info
-This tutorial uses a neat thing called a <ins>recursive function</ins>. A recursive function is a function which runs itself over and over again.
+This tutorial uses a neat thing called a <ins>recursive function</ins>. A recursive function is a function that runs itself over and over again.
 :::
 
 ## Raycast to an entity
@@ -35,13 +37,13 @@ First, you need to create a scoreboard in your load function.
 scoreboard objectives add temp dummy
 ```
 
-Then, we can use this scoreboard to set the limit of the raycast before we run it _(In this case weset it to 1000 which is 100 blocks. 1000 steps * 0.1 blocks/setp = 100 blocks)_.
+Then, we can use this scoreboard to set the limit of the raycast before we run it _(In this case we set it to 1000 which is 100 blocks. 1000 steps * 0.1 blocks/step = 100 blocks)_.
 
-We also tag the entity executing the raycast so we can exclude it later for the hit detection.
+We also tag the entity executing the raycast so we can exclude it later for hit detection.
 
 Call The raycats function one step further in the facing direction.
 
-Remove the tag at the end of the function so it does not interfer with other racasts thhat might be executed within the same tick.
+Remove the tag at the end of the function so it does not interfere with other raycasts that might be executed within the same tick.
 ```mcfunction
 # namespace:init
 
@@ -54,21 +56,21 @@ execute at @s anchored eyes positioned ^ ^ ^.1 run function <namespace>:raycast
 tag @s remove raycaster
 ```
 
-In the raycast function, we want to check if the function has hit an entity, and if not, run it again until it does, hit a wall, or reaches the raycasts limt, moving a bit forward each time.
+In the raycast function, we want to check if the function has hit an entity, and if not, run it again until it does, hit a wall, or reaches the raycasts limit, moving a bit forward each time.
 
-We first decrement the limit vale by 1.
+We first decrement the limit value by 1.
 
-Then we make the path of the raycast visible by summoning a few particles. Instead of summoning particles, it could also run another function for more complex behaviour.
+Then we make the path of the raycast visible by summoning a few particles. Instead of summoning particles, it could also run another function for more complex behavior.
 
 The next step is a bit more complex.
-We execute a command as every entity that is not the caster and whose hitbox intersects with the two differebtky offset [virtual volumes](https://datapack.wiki/wiki/commands/target_selectors#dxdydz-arguments).
-Near the end you see `unless function <namespace>:hit` this will run function as the hit entity and, because all functions without a return command return false and we check for `unless`, this condition resolves to true and will return with the number 0, ending the raycast.
-Should no entity be in both voluems and the  function doesn't get run, the return command at the end won't be reached and the raycast will continue.
+We execute a command as every entity that is not the caster and whose hitbox intersects with the two differently offset [virtual volumes](https://datapack.wiki/wiki/commands/target_selectors#dxdydz-arguments).
+Near the end you see `unless function <namespace>:hit` this will run the function as the hit entity and, because all functions without a return command return false and we check for `unless`, this condition resolves to true and will return with the number 0, ending the raycast.
+Should no entity be in both volumes and the  function doesn't get run, the return command at the end won't be reached and the raycast will continue.
 
 The last command checks if the raycast hit a wall.
 If it does, the raycast will end.
 If it doesn't, it will then check if the limit is reached, again ending if it is.
-Should the limit not be reacched yet, it will move 0.1 block forward and call the raycast function again _(regursion)_.
+Should the limit not be reached yet, it will move 0.1 blocks forward and call the raycast function again _(recursion)_.
 ```mcfunction
 # namespace:raycast
 
