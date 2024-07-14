@@ -12,7 +12,7 @@
   import IconNew from "~icons/tabler/folder-plus";
   import IconMusic from "~icons/tabler/music";
   import IconBug from "~icons/tabler/bug";
-  import IconDownloadFile from "~icons/tabler/file-download";
+  import IconDownload from "~icons/tabler/download";
   import IconArrow from "~icons/tabler/ArcheryArrow";
   import IconBrackets from "~icons/tabler/code";
   import IconMouse from "~icons/tabler/mouse";
@@ -29,11 +29,11 @@
 
 <SidebarPage label="Home" icon={IconHome} page="/" />
 <SidebarPage label="Getting Started" icon={IconPennant} page="/guide/getting-started" />
-<SidebarPage label="Installing datapacks" icon={IconDownloadFile} page="/guide/installing-a-datapack" />
+<SidebarPage label="Installing datapacks" icon={IconDownload} page="/guide/installing-a-datapack" />
 <SidebarHeading label="Advanced" />
 <SidebarCategory name="Adding new features" icon={IconNew}>
   <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/adding-new-features/jukebox-songs" />
-  <SidebarPage label="Custom Item Recipes" icon={IconGrid} page="/guide/adding-new-features/custom-items" />
+  <SidebarPage label="Custom Item Recipes" icon={IconGrid} page="/guide/adding-new-features/crafting-custom-items" />
 </SidebarCategory>
 
 <SidebarCategory name="Right Click Detection" icon={IconMouse}>

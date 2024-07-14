@@ -30,8 +30,9 @@ Create a `tick` advancement to assign an id to a player when they first join
 ```
 ## Check if an entity has the same ID as the player
 Create a predicate that compares the id
+
+> `namespace:match_id`
 ```json
-// namespace:match_id
 { "condition": "minecraft:entity_scores", "entity": "this", "scores": {
   "playerid": {
     "min": { "type": "minecraft:score", "target": { "type": "minecraft:fixed", "name": "#this" }, "score": "playerid" },

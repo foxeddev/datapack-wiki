@@ -63,7 +63,6 @@ Now that we have the advancement, we can detect if the player is holding right c
 ```
 # Revoke the advancement from the player so it can be used again
 advancement revoke @s only <namespace>:used_eye_of_ender
-
 # Announce the use of the item in chat, feel free to replace this with whatever
 # your logic here...
 say I successfully used EoE detection!

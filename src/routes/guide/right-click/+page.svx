@@ -23,7 +23,7 @@ If you alredy know which right click detection technique you are goin to use, yo
 |Method | Pros | Cons | Difficulty to make | X clicks/second | Player/Location |
 |---|---|---|---|---|---|
 | COAS/WFOAS |  | Attracks pigs/striders when held, requires a command that runs every tick | Easy | Detects up to 5 clicks/second when holding right click | Bound to player, not location |
-| Food Component | Can detect clicks from any item,  | Only works 1.20.5+, slows player down when holding right click | Harder-ish| Detects up to 20 clicks/second when holding right click | Bound to player, not location | Bound to player, not location |
+| Food Component | Can detect clicks from any item,  | Only works 1.20.5+, slows player down when holding right click | Medium | Detects up to 20 clicks/second when holding right click | Bound to player, not location | Bound to player, not location |
 | Eye Of Ender |  | Slows player down when holding right click, only works in worlds without stronghold | Medium | Detects up to 20 clicks/second when holding right click | Bound to player, not location |
 | Interaction Entity | Also detects left clicks, an entity | Players can't break/hit/place through, requires an entity | Medium | detects up to 5 clicks/second when holding right click | Bound to location, not a player |
 

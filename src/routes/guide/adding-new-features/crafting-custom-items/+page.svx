@@ -119,7 +119,6 @@ You can either use a `give` command or, what I recommend more, define the item i
 ```
 clear @s knowledge_book
 advancement revoke @s only <namespace>:craft_scuteaxe
-
 # Any code can go here, this will run when the player crafts the item.
 loot give @s loot <namespace>:<scuteaxe_item_loot_table>
 # You can also you a give command here instead

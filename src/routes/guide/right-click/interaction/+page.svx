@@ -53,7 +53,7 @@ Firstly we will need to create an advancement, located in `data/<namespace>/adva
 
 Then just create a simple function in `data/<namespace>/function/`, and call it the same as you did in the advancement, for us that would be `rightclick_run.mcfunction`
 
-: `rightclick_run.mcfunction`
+> `rightclick_run.mcfunction`
 ```hs
 # Revoke the advancement so we can detect the click again
 advancement revoke @s only namespace:interacted_with_interaction

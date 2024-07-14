@@ -27,7 +27,7 @@ import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
 
 Using a carrot on a stick (or a warped fungus on a stick) is perhaps one of the simplest methods of right-click detection, requiring only a single tick command and a scoreboard.
 
-<Info>For the sake of simplicity, we will use a carrot on a stick, called coas from now on, but if you prefer to use wfoas, just replace "carrot_on_a_stick" in the load function with "warped_fungus_on_a_stick"</Info>.
+<Info>For the sake of simplicity, we will use a carrot on a stick, called coas from now on, but if you prefer to use wfoas, just replace "carrot_on_a_stick" in the load function with "warped_fungus_on_a_stick"</Info>
 
 To get started, we need to create a scoreboard with the criteria `item.used:minecraft.carrot_on_a_stick`, so that we can later detect when a player uses the coas, in this case that means detecting a right-clicking
 
@@ -58,7 +58,6 @@ Now the only thing left is to create the actual logic of what happens when the i
 ```
 # Resets the coas_rightclick score to 0 so the item can be used again
 scoreboard players set @s coas_rightclick 0
-
 # Announce the use of the item in chat, feel free to replace this with whatever you want your item to do
 # your logic here...
 say Used COAS
