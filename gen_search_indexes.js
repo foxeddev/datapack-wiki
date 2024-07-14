@@ -1,22 +1,14 @@
 import { Glob } from "bun";
 import matter from "gray-matter";
 import removeMarkdown from "remove-markdown";
-import * as DOMPurify from "isomorphic-dompurify";
+import { stripHtml } from "string-strip-html";
 
 // Requires Bun to be installed
 // Sorry!
 
 const fileGlob = new Glob("./**/*.{svx,md}");
 
-type Post = {
-  title: string;
-  content: string;
-  url: string;
-  tags: string[];
-  versions: string;
-};
-
-let posts: Post[] = [];
+let posts = [];
 
 // read all routes
 for await (const file of fileGlob.scan("./src/routes")) {
@@ -31,10 +23,10 @@ for await (const file of fileGlob.scan("./src/routes")) {
 
   // add to posts
   posts.push({
-    title: (frontmatter.data.title as string) || "MissingNo.",
-    content: removeMarkdown(DOMPurify.sanitize(frontmatter.content)),
-    tags: (frontmatter.data.tags as string[]) || ([] as string[]),
-    versions: (frontmatter.data.versions as string) || "latest",
+    title: frontmatter.data.title || "MissingNo.",
+    content: removeMarkdown(stripHtml(frontmatter.content).result),
+    tags: frontmatter.data.tags || [],
+    versions: frontmatter.data.versions || "latest",
     url: "/" + filePath,
   });
 }

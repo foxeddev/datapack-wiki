@@ -21,8 +21,8 @@ Note that there is currently no way to specify item components in the recipe's i
 The instructions here will be very simple, requiring you to only create one file, that being the actual crafting recipe file. This file can be named whatever, but has to end in the `.json` file format.
 
 Here is an example of a recipe with the output of a custom item:
-> `scuteaxe.json`
-```json
+
+```json:scuteaxe.json
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
@@ -69,8 +69,7 @@ To create a crafting recipe for one of your custom items, you need just a little
 
 Lets create the recipe first:
 
-> scuteaxe.json
-```json
+```json:scuteaxe.json
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
@@ -97,8 +96,7 @@ As mentioned before, we can't use the custom item as output, so we use the knowl
 To switch the knowledge book with our custom item, we need an advancement to react when we craft the recipe. For this we use the `recipe_crafted` trigger.
 *With some trickery, here it is also possible to make the ingredients require certain nbt.*
 
-> craft_scuteaxe.json
-```json
+```json:craft_scuteaxe.json
 {
     "criteria": {
         "requirement": {
@@ -117,8 +115,7 @@ To switch the knowledge book with our custom item, we need an advancement to rea
 Lasty we have to make the actual function that handles the item switching.
 You can either use a `give` command or, what I recommend more, define the item in a separate loot table and then use the `loot` command.
 
-> craft_scuteaxe.mcfunction
-```
+```mcfunction:craft_scuteaxe.mcfunction
 clear @s knowledge_book
 advancement revoke @s only <namespace>:craft_scuteaxe
 # Any code can go here, this will run when the player crafts the item.

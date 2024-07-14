@@ -1,8 +1,9 @@
-import adapter from "@sveltejs/adapter-cloudflare";
+import adapter from "@sveltejs/adapter-auto";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { mdsvex } from "mdsvex";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkAdmonitions from "remark-admonitions";
+import remarkCodeTitles from "remark-code-titles";
 import rehypeSlug from "rehype-slug";
 
 const admonitionsOptions = {
@@ -44,7 +45,7 @@ const config = {
     vitePreprocess(),
     mdsvex({
       extensions: [".svx", ".md"],
-      remarkPlugins: [[remarkAdmonitions, admonitionsOptions]],
+      remarkPlugins: [[remarkAdmonitions, admonitionsOptions], [remarkCodeTitles]],
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
       layout: "src/lib/MDLayout.svelte",
     }),

@@ -32,6 +32,10 @@
   @apply rounded-full bg-zinc-500;
 }
 
+.remark-code-title {
+  @apply text-sm font-mono font-bold uppercase bg-[#322931] py-1 px-2 rounded-md absolute -translate-y-1/2;
+}
+
 /* Admonition styles */
 
 .admonition {
