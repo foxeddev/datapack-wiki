@@ -35,12 +35,11 @@ This is just a guide, so you'll need to change a few things for your actual data
 - Change `<custom_data>` to whatever custom data you want
 
 :::warning
-You can use any item for method, but if the item alredy has an existing right-click functionality (like placing a block), it will keep that.:::
+You can use any item for the method, but if the item already has an existing right-click functionality (like placing a block), it will keep that.:::
 
 The first step will be creating the advancement that detects when a player is "using" (in this case eating) the item, the name can be whatever you want ending in `json`, but for the purpose of this tutorial we will call it `click_food.json`. Then put this file into `data/<namespace>/advancement/`
 
-> `click_food.json`
-```json
+```json:click_food
 {
   "criteria": {
     "requirement": {
@@ -67,8 +66,7 @@ As you can see, the advancement runs a function when it detects a player eating 
 
 You can put whatever commands you want into this function, but make sure you revoke the advancement from the player, so the item can be clicked again.
 
-> `rightclick_run.mcfunction`
-```hs
+```mcfunction:rightclick_run
 # Revoke the advancement from the player so it can be used again
 advancement revoke @s only <namespace>:click_food
 # Announce the use of the item in chat, feel free to replace this with whatever
@@ -77,8 +75,8 @@ say I successfully used food component detection!
 ```
 
 ## See it in action!
-After `/reload`ing the datapack, we will now need to give ourselfs the actual item with the custom food component. (You can run this in the chat to test it, or put it in a function to trigger when you want):
-```hs
+After `/reload`ing the datapack, we will now need to give ourselves the actual item with the custom food component. (You can run this in the chat to test it, or put it in a function to trigger when you want):
+```mcfunction
 give @s stick[minecraft:food={nutrition:0, saturation:0, can_always_eat:true, eat_seconds:999999999}, minecraft:custom_data={<custom_data>:true}]
 ```
 
