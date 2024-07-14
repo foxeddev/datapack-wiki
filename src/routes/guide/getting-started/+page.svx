@@ -4,7 +4,7 @@ description: "Learn how to make datapacks with our beginner-friendly guide. Crea
 ---
 
 <script lang="ts">
-import {Note, Discord} from '$lib/reusables';
+import { Version, Discord } from '$lib/reusables';
 </script>
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 

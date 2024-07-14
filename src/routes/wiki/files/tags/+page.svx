@@ -54,9 +54,9 @@ Values (`values`) is an array containing everything to group under this tag. Eac
 
 ### Example
 Here is an example tag, located in `data/<namespace>/tags/item/wood.json`.  
-<Info>
+:::info
 `#minecraft:logs` and `#minecraft:planks` are two item tags provided by Minecraft.
-</Info>
+:::
 
 ```json
 {

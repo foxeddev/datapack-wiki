@@ -4,7 +4,7 @@ description: "Player id system tutorial"
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
+import {   Version, } from '$lib/reusables';
 </script>
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>

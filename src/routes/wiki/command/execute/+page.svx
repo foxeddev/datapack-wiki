@@ -44,9 +44,9 @@ The chat output would look like this:
 ```
 
 ## Subcommands
-<Info>
+:::info
 In this documentation, `...` represents another required subcommand, and `[...]` denotes that another subcommand is optional.
-</Info>
+:::
 
 ### `execute align <axes> ...`
 The `align`  subcommand aligns the executing position to the specified axes (rounding down coordinates to integers). `<axes>` can be any subset of `xyz`, in any order.
@@ -139,9 +139,9 @@ Summons the specified entity at the current position, and executes the following
 
 ### `execute run <command>`
 Runs the specified command with the current context. Takes no further subcommands.  
-<Info>
+:::info
 This is useless by itself, and should always be preceded by other subcommands.
-</Info>
+:::
 
 #### Examples:
 `execute run say hi`  

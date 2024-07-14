@@ -48,7 +48,7 @@ It's recommended before you make your pull request that you run the `build` and 
 
    ```svelte
    <script lang="ts">
-   import {Info, Warning, Tip} from '$lib/reusables';
+   import {  Tip} from '$lib/reusables';
    </script>
    ```
 

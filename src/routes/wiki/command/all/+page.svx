@@ -2,6 +2,9 @@
 title: Getting Started
 ---
 
+<script lang="ts">
+import {Version} from '$lib/reusables';
+</script>
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
