@@ -23,7 +23,7 @@
   }
 </script>
 
-<div class="bg-stone-800 flex w-full items-center p-2 h-full">
+<div class="bg-stone-800 flex w-full items-center p-2 h-12 sticky top-0">
   <div class="flex items-center flex-grow">
     <button
       class="px-2 pr-3 sm:hidden"

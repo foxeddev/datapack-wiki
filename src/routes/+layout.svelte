@@ -13,13 +13,11 @@
   let betaWarning: HTMLDivElement;
 </script>
 
-<div class="font-lexend bg-stone-900 h-screen max-h-screen flex flex-col text-stone-200">
-  <div class="h-[6%]">
-    <Navbar />
-  </div>
-  <div class="flex w-full bg-stone-800 h-[94%]">
+<div class="font-lexend h-full flex flex-col text-stone-200">
+  <Navbar />
+  <div class="flex w-full h-[93%]">
     <Sidebar />
-    <div id="content" class="py-12 w-full text-stone-200 bg-stone-900 overflow-y-auto">
+    <div id="content" class="py-12 w-full text-stone-200 bg-stone-900">
       <div class="md px-6 md:px-10 lg:px-16 prose-headings:text-stone-200">
         <slot />
       </div>
