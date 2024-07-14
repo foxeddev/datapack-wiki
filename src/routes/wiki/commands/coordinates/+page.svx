@@ -16,7 +16,8 @@ Block coordinates are locked to the grid and are unique - there can only be one 
 `x.0 y.0 z.0` represents the bottom left corner of a block, not the centre. The centre of a block would be represented by the coordinates `x.5 y.5 z.5`.
 
 :::info
-Every command and function in Minecraft is always executed at a position. This is usually the world spawn. You can change this using the commands "execute at" or "execute positioned".:::
+Every command and function in Minecraft is always executed at a position. This is usually the world spawn. You can change this using the commands "execute at" or "execute positioned".
+:::
 
 ### Examples 
 - `/setblock 123 86 94 minecraft:pink_concrete`:
