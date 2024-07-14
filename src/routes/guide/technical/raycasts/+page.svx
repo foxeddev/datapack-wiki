@@ -4,7 +4,7 @@ description: "Raycasting is when we shoot a line from the player's eyes in the d
 ---
 
 <script lang="ts">
-import {LatestPackFormat} from '$lib/reusables';
+import { Version, LatestPackFormat } from '$lib/reusables';
 </script>
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
