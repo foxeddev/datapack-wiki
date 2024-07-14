@@ -115,7 +115,7 @@ execute if score slowcastSteps temp matches 1.. positioned ^ ^ ^.1 run function 
 ```
 
 The hit function called in the hit detection does whatever you want it to do when hitting an entity.
-It could spawn an explosion, apply an effect, or simpoly deals some damage.
+It could spawn an explosion, apply an effect, or simply deal some damage.
 :::Tip
 When you make the hit function have a successful return value, it will not kill the projectile in the step function. You could use this to make a piercing projectile for example.
 :::
