@@ -9,58 +9,34 @@ import {Info, Warning, Tip, Version, Note} from '$lib/reusables';
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
-# Pros and cons
-**Pros:**
-- Very easy to pull off
-- Works in any world
-- Doesn't require additional entities
+# Detecting right clicks: carrot on a stick
+Using a carrot on a stick (or a warped fungus on a stick) is perhaps one of the simplest methods of right-click detection, requiring only a single tick command and a scoreboard. This method works due to the `used:carrot_on_a_stick` statistic detecting right clicks on any `carrot_on_a_stick` item.
 
-**Cons:**
-- Has a command that needs to run every tick
-- Coas attracks pigs, wfoas attracts striders
+For the sake of simplicity, we will use a carrot on a stick, **shortened to COAS**. This method also works with warped fungus on a stick (WFOAS) items.
 
-**Other:**
-- Detects up to 5 clicks/second when holding right click
-- Bound to the player, not a specific location
+COAS and WFOAS items have a unique property that means that right clicking the item counts as "using" an item, and will therefore increase the `used:carrot_on_a_stick` statistic. We can track changes to this statistic using a scoreboard. When it goes up, we know that the player has right clicked a COAS, and we can run a command when that happens.
 
-# Using a COAS/WFOAS for Right Click Detection
+## Method
+To get started, we need to create a scoreboard with the criteria `item.used:minecraft.carrot_on_a_stick`, so that we can later detect when a player uses the COAS (by right clicking on it).
 
-Using a carrot on a stick (or a warped fungus on a stick) is perhaps one of the simplest methods of right-click detection, requiring only a single tick command and a scoreboard.
+If you don't already have it, you'll need to create a load function with a command that creates a new scoreboard objective. You can name the objective whatever you want. We reccomend naming it something like `<namespace>.rc_coas`. In your load function, put a **scoreboard command** such as this:
 
-<Info>For the sake of simplicity, we will use a carrot on a stick, called coas from now on, but if you prefer to use wfoas, just replace "carrot_on_a_stick" in the load function with "warped_fungus_on_a_stick"</Info>
-
-To get started, we need to create a scoreboard with the criteria `item.used:minecraft.carrot_on_a_stick`, so that we can later detect when a player uses the coas, in this case that means detecting a right-clicking
-
-<Warning> The item here must be either a coas or a wfoas, other items won't work because they don't register right click detection.</Warning>
-
-If you don't already have it, you'll need to create a load function with a command that creates a new objective, you can name it whatever you want, but you will also have to use that name in future functions.
-
-> `load.mcfunction`
 ```hs
-# Adds the objective to be used later on
-scoreboard objectives add coas_rightclick minecraft.used:minecraft.carrot_on_a_stick 
+scoreboard objectives add <namespace>.rc_coas minecraft.used:minecraft.carrot_on_a_stick 
 ```
 
+This scoreboard will go up by 1 **every time a player right clicks a COAS** - when this happens we can execute our function. Note that this command must run every tick, otherwise it won't be able to detect right clicking. Put this in your tick/loop function:
 
-With the objective ready, we can now detect if the player clicks on the coas, and then execute our function. Note that this command must run every tick, otherwise it won't be able to detect right clicking.
-
-<Tip>You can also specify, if the player has to hold a special item with custom NBT to execute the function, meaning it will only run when the player right clicks your custom item. But even if you do so, you will still have to reset the score on EVERY click (not just the one with your special item).</Tip>
-
-> `tick.mcfunction`
 ```
-# This will run the "rightclick_run" function as the player who uses the coas.
-execute as @a[scores={coas_rightclick=1..}] run function <namespace>:rightclick_run 
+# This will run the "rightclick_run" function as the player who uses the COAS.
+execute as @a[scores={<namespace>.rc_coas=1..}] run function <namespace>:rightclick_run 
+scoreboard players reset @a[scores={<namespace>.rc_coas=1..}] <namespace>.rc_coas
 ```
 
-Now the only thing left is to create the actual logic of what happens when the item is clicked, you can put anything you want in this function, but you will need to reset the player's score if you want them to be able to click the item again.
+In the `rightclick_run.mcfunction` file, you can do whatever you like as a result of right clicking the COAS. As an example, putting this in `rightclick_run.mcfunction` will make the player say `Used COAS` when they right click a COAS item.
 
-> `rightclick_run.mcfunction`
 ```
-# Resets the coas_rightclick score to 0 so the item can be used again
-scoreboard players set @s coas_rightclick 0
-# Announce the use of the item in chat, feel free to replace this with whatever you want your item to do
-# your logic here...
 say Used COAS
 ```
 
-Once this is done, you should be able to detect right clicks with a carrot on a stick!
+<Note>Add another subheading for detecting clicks on a specific item with NBT, explaining how to check the currently held item.</Note>
