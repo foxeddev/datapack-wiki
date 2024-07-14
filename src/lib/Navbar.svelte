@@ -15,15 +15,15 @@
       navigator.share({ url: window.location.href });
     } else {
       navigator.clipboard.writeText(window.location.href);
+      shareText = "Copied!";
+      setTimeout(() => {
+        shareText = "Share";
+      }, 2000);
     }
-    shareText = "Copied!";
-    setTimeout(() => {
-      shareText = "Share";
-    }, 2000);
   }
 </script>
 
-<div class="bg-stone-800 flex w-full items-center p-2 h-12 sticky top-0">
+<div class="bg-stone-800 flex w-full items-center p-2 h-12 sticky top-0 border-b border-stone-700">
   <div class="flex items-center flex-grow">
     <button
       class="px-2 pr-3 sm:hidden"
