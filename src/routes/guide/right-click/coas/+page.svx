@@ -23,13 +23,13 @@ To get started, we need to create a scoreboard with the criteria `item.used:mine
 
 If you don't already have it, you'll need to create a load function with a command that creates a new scoreboard objective. You can name the objective whatever you want. We reccomend naming it something like `<namespace>.rc_coas`. In your load function, put a **scoreboard command** such as this:
 
-```mcfunction
+```mcfunction:load.mcfunction
 scoreboard objectives add <namespace>.rc_coas minecraft.used:minecraft.carrot_on_a_stick 
 ```
 
 This scoreboard will go up by 1 **every time a player right clicks a COAS** - when this happens we can execute our function. Note that this command must run every tick, otherwise it won't be able to detect right clicking. Put this in your tick/loop function:
 
-```mcfunction
+```mcfunction:tick.mcfunction
 # This will run the "rightclick_run" function as the player who uses the COAS.
 execute as @a[scores={<namespace>.rc_coas=1..}] run function <namespace>:rightclick_run 
 scoreboard players reset @a[scores={<namespace>.rc_coas=1..}] <namespace>.rc_coas
@@ -37,7 +37,7 @@ scoreboard players reset @a[scores={<namespace>.rc_coas=1..}] <namespace>.rc_coa
 
 In the `rightclick_run.mcfunction` file, you can do whatever you like as a result of right clicking the COAS. As an example, putting this in `rightclick_run.mcfunction` will make the player say `Used COAS` when they right click a COAS item.
 
-```mcfunction
+```mcfunction:rightclick_run.mcfunction
 say Used COAS
 ```
 

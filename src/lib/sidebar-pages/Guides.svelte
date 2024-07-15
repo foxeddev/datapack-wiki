@@ -48,7 +48,7 @@
 
 <SidebarCategory name="Technical" icon={IconBrackets}>
   <SidebarPage label="Debugging" icon={IconBug} page="/guide/technical/debugging" />
-  <SidebarPage label="Generating Random Numbers" icon={IconDice} page="/guide/technical/random-numbers" />
+  <SidebarPage label="Random Numbers" icon={IconDice} page="/guide/technical/random-numbers" />
   <SidebarPage label="Player ID System" icon={IconID} page="/guide/technical/player-id-system" />
   <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/technical/raycasts" />
   <SidebarPage label="Slowcasts" icon={IconArrow} page="/guide/technical/slowcasts" />
