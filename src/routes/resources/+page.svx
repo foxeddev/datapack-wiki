@@ -3,16 +3,19 @@ title: Resources
 description: "Listed here are links to credible and reliable places to aid in command support and creation."
 ---
 
+<script lang="ts">
+import {Info, Warning, Tip, Version, Highlight} from '$lib/reusables';
+</script>
+
 # Resources
 Listed here are links to credible and reliable places to aid in command support and creation.
 
 ### Datapack Hub
-- [Discord](https://discord.datapackhub.net)
+|- <Highlight color="#738ADB">Discord</Highlight> https://discord.datapackhub.net
 
 ### MCStacker
-- [Website](https://mcstacker.net/)
-- [Discord](https://discord.gg/WCb6GNf/)
+|- <Highlight color="#138A8E">Website</Highlight> https://mcstacker.net/
+|- <Highlight color="#738ADB">Discord</Highlight> https://discord.gg/WCb6GNf/
 
 ### Data Pack Generators
-- [Website](https://misode.github.io/)
-
+|- <Highlight color="#138A8E">Website</Highlight> https://misode.github.io/
