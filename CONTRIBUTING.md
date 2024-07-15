@@ -85,11 +85,14 @@ It's recommended before you make your pull request that you run the `build` and 
 >
 > ```md
 > :::info
-> This is an info box!> :::
+> This is an info box!> 
+> :::
 > :::warning
-> This is a warning box!> :::
+> This is a warning box!> 
+> :::
 > :::tip
-> This is a tip box!> :::
+> This is a tip box!> 
+> :::
 > ```
 
 ## Adding a page to the sidebar
