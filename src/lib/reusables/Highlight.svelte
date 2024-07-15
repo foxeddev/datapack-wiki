@@ -8,7 +8,7 @@
 
 <style>
   span.dph-highlight {
-    border-radius: 6px;
+    border-radius: 3px;
     background-color: var(--background-color);
     padding: 0.2rem;
     /* box-shadow: 0px 2px 5px black;  */
