@@ -191,6 +191,6 @@ In reality, this method isn't the best one to use. Instead of having two command
 
 You're done! Once you `/reload` your pack, you should be free to play around with a simple exploding arrows datapack which you made with the help of this tutorial. Take a break to play around with it - you deserve one!
 
-And when you want to move on to other datpack ideas you might have, feel free to join our Discord server for extra support from our team of helpers. We're more than happy to help you on your journey to creating awesome Minecraft datapacks!
+And when you want to move on to other datapack ideas you might have, feel free to join our Discord server for extra support from our team of helpers. We're more than happy to help you on your journey to creating awesome Minecraft datapacks!
 
 <Discord />
