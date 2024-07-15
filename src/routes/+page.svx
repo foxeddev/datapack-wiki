@@ -20,4 +20,4 @@ With datapacks you can:
 Ready to learn? [Click here](/guide/getting-started) to get started.
 
 ## Join the community!
-Have questions, ideas, or datapack creations you want to share? Join the [Datapack Hub Discord server](https://discord.datapackhub.net/) to connect with other datapackers!
+<Discord />
