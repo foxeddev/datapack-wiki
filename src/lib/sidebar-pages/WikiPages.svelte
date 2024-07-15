@@ -46,8 +46,8 @@
 <SidebarCategory name="Datapack Files" icon={IconZip}>
   <SidebarPage label="Functions" icon={IconPennant} page="/wiki/files/functions" />
   <SidebarPage label="Tags" icon={IconFilters} page="/wiki/files/tags" />
+  <SidebarPage label="Recipes" icon={IconGrid} page="/wiki/files/recipes" />
   <SidebarPlaceholder label="Advancements" icon={IconStar} />
-  <SidebarPlaceholder label="Recipes" icon={IconGrid} />
   <SidebarPlaceholder label="Loot Tables" icon={IconAlienShapedWeirdGraphThingy} />
 </SidebarCategory>
 
