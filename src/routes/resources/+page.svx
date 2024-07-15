@@ -11,11 +11,10 @@ import {Info, Warning, Tip, Version, Highlight} from '$lib/reusables';
 Listed here are links to credible and reliable places to aid in command support and creation.
 
 ### Datapack Hub
-- <Highlight color="#738ADB">Discord</Highlight> [https://discord.datapackhub.net](https://discord.datapackhub.net)
+<Highlight color="#738ADB">Discord</Highlight> [https://discord.datapackhub.net](https://discord.datapackhub.net)
 
 ### MCStacker
-- <Highlight color="#DC2626">Website</Highlight> [https://mcstacker.net/](https://mcstacker.net/)
-- <Highlight color="#738ADB">Discord</Highlight> [https://discord.gg/WCb6GNf/](https://discord.gg/WCb6GNf/)
+<Highlight color="#DC2626">Website</Highlight> [https://mcstacker.net/](https://mcstacker.net/)
 
 ### Data Pack Generators
-- <Highlight color="#DC2626">Website</Highlight> [https://misode.github.io/](https://misode.github.io/)
+<Highlight color="#DC2626">Website</Highlight> [https://misode.github.io/](https://misode.github.io/)
