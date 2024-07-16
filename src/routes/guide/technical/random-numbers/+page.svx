@@ -9,13 +9,20 @@ import {   Version, } from '$lib/reusables';
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
-Generating a random number is very useful in programming for a variety of reasons, so lets lean how to do it with a datapack! The method for you will vary based on your datapack's Minecraft version, if you use 1.20.2+, it will be a bit easier, because of the acces to the `random` command.
+# Generating Random Numbers using Datapacks!
 
-# 1.20.2+
+Generating a random number is very useful in programming for a variety of reasons, so lets learn how to do it with a datapack! The method you will need to use will vary based on your datapack's Minecraft version.
 
-Use the `/random` command, TODO: put guide here.
+## 1.20.2+
 
-# 1.20.1 and below
+Because of the `/random` added in 1.20.2, it is much simpler to generate random numbers. It now only requires a single command:
+```hs
+execute store result . . . run random value 1..10
+```
+
+In the command you can change the values 1 and 10 to change the range. If you leave it as it is, it generates a random number between 1-10 and stores it in your prefered way (can be a scoreboard, storage,...).
+
+## 1.20.1 and below
 
 Lets begin by creating a new file in `data/<namespace>/loot_tables/`. We will call it `rng.json`, with that done, lets put this inside:
 
@@ -48,7 +55,7 @@ You can change the values 1 and 10 to change the range. If you leave it as it is
 
 ## See it in action!
 To use this, you will just have to store the result of summoning this loot table. So you can just do this:
-```mcfunction
+```hs
 execute store result . . . run loot spawn ~ ~ ~ loot <namespace>:rng
 ```
 
