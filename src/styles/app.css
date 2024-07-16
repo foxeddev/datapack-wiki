@@ -8,16 +8,20 @@
 }
 
 .md {
-  @apply prose prose-sm prose-zinc prose-invert max-w-full md:prose-base;
+  @apply prose prose-sm prose-stone prose-invert max-w-full md:prose-base;
   @apply prose-headings:mb-2 prose-h2:text-2xl prose-h2:mt-7;
   @apply prose-p:my-3;
   @apply prose-blockquote:rounded-l-sm prose-blockquote:font-normal prose-blockquote:not-italic;
-  @apply prose-pre:p-2 prose-pre:bg-stone-900;
-  @apply prose-code:bg-stone-950 prose-code:rounded-md prose-code:p-1 prose-code:prose-pre:p-0 prose-code:font-thin prose-code:before:content-none prose-code:after:content-none;
+
+  /* inline code blocks below */
+  @apply prose-code:bg-stone-800 prose-code:rounded-sm prose-code:border prose-code:text-orange-300 prose-code:border-stone-700 prose-code:p-1 prose-code:font-thin prose-code:before:content-none prose-code:after:content-none;
+  /* multi-line code blocks below */
+  @apply prose-pre:p-2 prose-pre:bg-stone-900 prose-code:prose-pre:p-0 prose-code:prose-pre:border-0;
+
   @apply prose-ol:mt-0 prose-ul:mt-0 prose-li:my-1;
   @apply prose-h2:border-b prose-h2:pb-2 prose-h2:border-white prose-h2:border-opacity-20;
   @apply prose-h3:border-b prose-h3:pb-2 prose-h3:border-white prose-h3:border-opacity-20;
-  @apply prose-thead:rounded-lg prose-th:p-2 prose-th:text-left prose-thead:bg-stone-800 prose-td:p-2 prose-tr:bg-stone-600/10;
+  @apply prose-th:p-2 prose-th:text-left prose-thead:bg-stone-800 prose-td:p-2 even:prose-tr:bg-stone-500/10 odd:prose-tr:bg-stone-700/10 prose-table:border prose-table:border-stone-700;
 }
 
 ::-webkit-scrollbar {
@@ -87,4 +91,8 @@
 
 .admonition-warning .admonition-heading h5 {
   @apply text-red-400;
+}
+
+.autolink {
+  @apply inline-block ml-2 stroke-stone-700 focus:stroke-stone-400 hover:stroke-stone-400 z-0
 }

@@ -85,7 +85,7 @@ You can do this really cool thing. It'll make your life a lot easier! But don't 
 <div class="lg:w-1/2 px-4">
 
 Result of the markdown:
-<div class="rounded-lg bg-stone-950 p-4">
+<div>
 
 # Heading 1
 Paragraph text under heading 1
