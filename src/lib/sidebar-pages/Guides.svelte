@@ -3,6 +3,7 @@
   import SidebarPage from "$lib/sidebar/SidebarPage.svelte";
   import SidebarCategory from "$lib/sidebar/SidebarCategory.svelte";
   import SidebarHeading from "$lib/sidebar/SidebarHeading.svelte";
+  import SidebarPlaceholder from "$lib/sidebar/SidebarPlaceholder.svelte";
 
   // Icon imports
   // https://tabler-icons.io
@@ -23,6 +24,7 @@
   import IconDice from "~icons/tabler/dice-5";
   import IconID from "~icons/tabler/id-badge";
   import IconGrid from "~icons/tabler/grid-3x3";
+  import IconItem from "~icons/tabler/icons";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -30,9 +32,13 @@
 <SidebarPage label="Home" icon={IconHome} page="/" />
 <SidebarPage label="Getting Started" icon={IconPennant} page="/guide/getting-started" />
 <SidebarPage label="Installing datapacks" icon={IconDownload} page="/guide/installing-a-datapack" />
+
 <SidebarHeading label="Advanced" />
 <SidebarCategory name="Adding new features" icon={IconNew}>
   <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/adding-new-features/jukebox-songs" />
+
+  <SidebarHeading label="Custom Items" />
+  <SidebarPlaceholder label="About" icon={IconItem} />
   <SidebarPage label="Custom Item Recipes" icon={IconGrid} page="/guide/adding-new-features/crafting-custom-items" />
 </SidebarCategory>
 
