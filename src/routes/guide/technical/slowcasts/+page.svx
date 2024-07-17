@@ -19,7 +19,7 @@ If you wanted it to move faster, however, you have to increase the distance it t
 A slowcast solves this problem by teleporting multiple times within a single tick to travel faster but still checking if it hits something on its way.
 
 :::info
-This tutorial uses a thing called a ___recursive function___. A recursive function is a function that runs itself over and over again.
+This tutorial uses a thing called a **_recursive function_**. A recursive function is a function that runs itself over and over again.
 :::
 
 ## Slowcasting to an entity
@@ -29,12 +29,14 @@ This method shows you how you can create and shoot a slowcast to detect entities
 Slowcasts can be useful if you want to create fast but not instantaneous moving projectiles for magic spells for example.
 
 To make a slowcast, you need:
+
 - set up a projectile with all the data it needs
 - a duration function to manage the travel distance
 - a step function that teleports the projectile and checks if it hit something
 - a temporary loop that calls the step function for all active projectiles.
 
 Let's start by creating all the necessary scoreboards in the load function.
+
 ```mcfunction:load.mcfunction
 scoreboard objectives add temp dummy
 scoreboard objectives add slowcast.steps dummy
@@ -43,15 +45,17 @@ scoreboard objectives add slowcast.duration dummy
 
 The next step is to initialize the projectile. This is done by running the following function as and at the player.
 It summons a new marker entity (any other entity works too) and runs the setup function as that entity.
+
 ```mcfunction:init.mcfunction
 execute anchored eyes positioned ^ ^ ^.3 summon minecraft:marker run function <namespace>:setup
 ```
 
-Sadly it is not possible to add nbt data in the summon sub-command so we have to add it  in the setup function too.
+Sadly it is not possible to add nbt data in the summon sub-command so we have to add it in the setup function too.
 We will give it a tag that marks it as a slowcast projectile.
 After that, we set all the scores it needs to function properly.
 In this example, you will see that instead of setting the scores directly it copies from temporary scoreboards.
 This is so that the values are not hardcoded and can be different for different projectiles without having to create a new setup function for each projectile. At the end, we then call the temporary loop function.
+
 ```mcfunction:setup.mcfunction
 tag @s add slowcast
 
@@ -63,20 +67,23 @@ function <namespace>:temp_tick
 
 The projectile is all set up and the loop function is called.
 The loop function is the part of this whole system that keeps everything running as long as there are active slowcast projectiles.
+
 ```mcfunction:temp_tick.mcfunction
 execute as @e[type=marker,tag=slowcast,scores={slowcast.duration=1..}] at @s run function <namespace>:duration
 
 execute if entity @n[type=marker,tag=slowcast] run schedule function <namespace>:temp_tick 1t
-``` 
+```
 
 Now the actual slowcast logic which handles the movement, travel distance, and hit detection.
 
 In the looping function the duration function is called, let's make this one first.
 This function is responsible for the slowcasts travel distance and calling the step function for the actual movement.
+
 1. decrease the duration score
 2. stores the projectile step count in a temporary scoreboard
 3. calls the step function 0.2 blocks further in the facing direction
 4. kill the projectile should it have a distance score of below 1 at the end of the function
+
 ```mcfunction:duration.mcfunction
 scoreboard players remove @s slowcast.duration 1
 
@@ -87,11 +94,13 @@ execute unless score @s slowcastDuration matches 1.. run kill
 ```
 
 In the called step function we handle the teleportation between the current and target position and check if the projectile has hit something on its way there.
+
 1. decrement the step score in the temporary scoreboard _(we still need the step score stored in the projectile for the next time we call the step function)_
 2. make some particles for the visuals (you could replace the particle command with another function call that does more complex stuff)
 3. execute a command as every entity _(excluding entities with the slowcast tag and players)_ whose hitbox intersects with both [virtual volumes](https://datapack.wiki/wiki/commands/target_selectors#dxdydz-arguments) run the hit function and kill the projectile.
 4. tp the projectile to the current position _(until now it only executed the command at this position but is still 0.1 block further back)_
 5. execute this function again one 0.1 block step forward should the temporary step counter still be over 1 _(recursion)_
+
 ```mcfunction.step:mcfunction
 scoreboard players remove steps temp 1
 

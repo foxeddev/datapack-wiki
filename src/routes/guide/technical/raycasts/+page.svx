@@ -31,17 +31,19 @@ Firstly, we'll make the function which, when you run it, will **start** the rayc
 To set a maximum distance, we store the maximum amount of times we want the function to run in a scoreboard. Every time the recursive function runs, we want to subtract one from that scoreboard, and only continue if the score is more than 0.
 
 First, you need to create a scoreboard in your load function.
+
 ```mcfunction:load.mcfunction
 scoreboard objectives add temp dummy
 ```
 
-Then, we can use this scoreboard to set the limit of the raycast before we run it _(In this case we set it to 1000 which is 100 blocks. 1000 steps * 0.1 blocks/step = 100 blocks)_.
+Then, we can use this scoreboard to set the limit of the raycast before we run it _(In this case we set it to 1000 which is 100 blocks. 1000 steps \* 0.1 blocks/step = 100 blocks)_.
 
 We also tag the entity executing the raycast so we can exclude it later for hit detection.
 
 Call The raycats function one step further in the facing direction.
 
 Remove the tag at the end of the function so it does not interfere with other raycasts that might be executed within the same tick.
+
 ```mcfunction:init.mcfunction
 tag @s add raycaster
 
@@ -61,12 +63,13 @@ Then we make the path of the raycast visible by summoning a few particles. Inste
 The next step is a bit more complex.
 We execute a command as every entity that is not the caster and whose hitbox intersects with the two differently offset [virtual volumes](https://datapack.wiki/wiki/commands/target_selectors#dxdydz-arguments).
 Near the end you see `unless function <namespace>:hit` this will run the function as the hit entity and, because all functions without a return command return false and we check for `unless`, this condition resolves to true and will return with the number 0, ending the raycast.
-Should no entity be in both volumes and the  function doesn't get run, the return command at the end won't be reached and the raycast will continue.
+Should no entity be in both volumes and the function doesn't get run, the return command at the end won't be reached and the raycast will continue.
 
 The last command checks if the raycast hit a wall.
 If it does, the raycast will end.
 If it doesn't, it will then check if the limit is reached, again ending if it is.
 Should the limit not be reached yet, it will move 0.1 blocks forward and call the raycast function again _(recursion)_.
+
 ```mcfunction:raycast.mcfunction
 scoreboard players remove raycastlimit temp 1
 

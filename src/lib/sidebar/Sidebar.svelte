@@ -26,7 +26,7 @@
   let page = "wiki";
 
   onMount(async () => {
-    const posts = await fetch("/search.json").then((r) => r.json());
+    const posts = await fetch("/search.json").then(r => r.json());
     createSearchIndex(posts);
     searchState = "done";
     page = sessionStorage.getItem("page") || "wiki";

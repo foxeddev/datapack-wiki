@@ -8,7 +8,7 @@ export function createSearchIndex(pages: Post[]) {
 
   for (let i = 0; i < pages.length; i++) {
     const page = pages[i];
-    const indexItem = `${page.title} ${page.content} ${page.url} ${page.tags.join(" ")}`;
+    const indexItem = `${page.title} ${page.content} ${page.url}}`;
     index.add(i, indexItem);
   }
 
@@ -20,5 +20,5 @@ export function search(query: string) {
   const match = query.replaceAll(/[\\^$*+?.()|[\]{}]/g, "\\$&");
   const results = index.search(match);
 
-  return results.map((i) => posts[i as number]).map((post) => ({ ...post }));
+  return results.map(i => posts[i as number]).map(post => ({ ...post }));
 }

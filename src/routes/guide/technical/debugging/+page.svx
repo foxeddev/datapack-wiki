@@ -46,6 +46,7 @@ tellraw @a {"score":{"name":"@s","objective":"some_scoreboard_objective"}}
 Based on the output of these commands in chat, you can use this to tell where your code goes wrong. (Just make sure to remove them after you've found the error, otherwise it can get annoying).
 
 You may want to keep the debug messages in the datapack, but you don't want it to be sent to every player. Fortunately for us, with the `tellraw` command, you can specify to who the message will be sent. This means you could only send the debug messages to those who have the tag `debug`:
+
 ```mcfunction
 tellraw @a[tag=debug] {"text":"Debug message sent only to people with the debug tag!"}
 ```

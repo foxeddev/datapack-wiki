@@ -8,16 +8,19 @@ import {LatestPackFormat, Version} from '$lib/reusables';
 </script>
 
 # Site Meta and Contribution
+
 This page is meant to be an introduction for contributors to the wiki. In it is multiple examples which you can examine raw in the [site source code](https://github.com/Datapack-Hub/wiki).
 
-
 ## Contributing
+
 The full contributing guide is available on a separate page [here](https://github.com/Datapack-Hub/wiki/blob/main/CONTRIBUTING.md).
 
 To contribute, please fork the **Datapack-Hub/wiki** repo on GitHub, make changes in your fork, then submit a pull request, explaining your changes.
 
 ## Formatting
+
 This section goes over how to format wiki pages. We like consistency, so please read carefully and use these features to your advantage:
+
 ### Basic formatting
 
 All content on the website (other than navbar, sidebar and things that are not the actual wiki pages) are made using a technology called mdsvex. This technology enables people like you to insert markdown with [svelte components](https://svelte.dev).
@@ -31,27 +34,32 @@ Each page is made of 3 parts:
 Each is crucial to making the page look and feel how it does.
 
 ### Formatting Examples
+
 <div class="flex flex-col lg:flex-row space-x-3">
 <div class="lg:w-1/2">
 
 Example Markdown used on the wiki:
-```md
+
+````md
 # Heading 1
+
 Paragraph text under heading 1
 
 ## Heading 2
+
 Paragraph text under heading 2
 
 ### Heading 3
+
 Paragraph text under heading 3
 
 Click the link to [go to the main page](/)
 
-I have some `inline code` for you. Here's some more: 
+I have some `inline code` for you. Here's some more:
 
 \```json
 {
-    "this.is":"cool!"
+"this.is":"cool!"
 }
 \```
 
@@ -62,11 +70,12 @@ I have some `inline code` for you. Here's some more:
 2. Second List Item
 
 | Which page? | How much I hate formatting it? |
-|---|---|
-| This one | Very much |
-| Other ones | Not as much |
+| ----------- | ------------------------------ |
+| This one    | Very much                      |
+| Other ones  | Not as much                    |
 
 ## Custom Elements
+
 :::info
 I am a very important piece of information. In this box, you might find educational info, or explanations for features.
 :::
@@ -80,29 +89,34 @@ You can do this really cool thing. It'll make your life a lot easier! But don't 
 :::
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
-```
+````
+
 </div>
 <div class="lg:w-1/2 px-4">
 
 Result of the markdown:
+
 <div>
 
 # Heading 1
+
 Paragraph text under heading 1
 
 ## Heading 2
+
 Paragraph text under heading 2
 
 ### Heading 3
+
 Paragraph text under heading 3
 
 Click the link to [go to the main page](/)
 
-I have some `inline code` for you. Here's some more: 
+I have some `inline code` for you. Here's some more:
 
 ```json
 {
-    "this.is":"cool!"
+  "this.is": "cool!"
 }
 ```
 
@@ -113,11 +127,12 @@ I have some `inline code` for you. Here's some more:
 2. Second List Item
 
 | Which page? | How much I hate formatting it? |
-|---|---|
-| This one | Very much |
-| Other ones | Not as much |
+| ----------- | ------------------------------ |
+| This one    | Very much                      |
+| Other ones  | Not as much                    |
 
 ## Custom Elements
+
 :::info
 I am a very important piece of information. In this box, you might find educational info, or explanations for features.
 :::
@@ -131,6 +146,7 @@ You can do this really cool thing. It'll make your life a lot easier! But don't 
 :::
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+
 </div>
 </div>
 </div>

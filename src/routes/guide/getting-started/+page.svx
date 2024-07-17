@@ -6,9 +6,11 @@ description: "Learn how to make datapacks with our beginner-friendly guide. Crea
 <script lang="ts">
 import { Version, Discord } from '$lib/reusables';
 </script>
+
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
 # Getting Started
+
 If you're new to datapacks, you're at the right place. Looking around, getting into datapack creation might seem confusing, but once you've grasped the basics, you'll be off to a good start!
 
 :::info
@@ -18,9 +20,11 @@ If you don't know what datapacks are, then take this explanation. Datapacks are 
 This guide will help you to create your first datapack, whether you've never tried coding before or if you've got loads of experience. The process of coding a datapack is a bit different to other typical programs. By the end of this tutorial, you'll have made a simple datapack which makes **arrows explode when they land!**
 
 ## Getting Started - Setting up an empty datapack
+
 <!-- <b style="color: #2563eb;">Learn:</b> How to set up an empty datapack to start working in -->
 
 The first step when creating a datapack is to **make a new world** to test it in. Go ahead and do that now - make sure that your world has **cheats enabled** and it is set to **creative mode**. Once you've created the world, the next step is to find and open your world folder:
+
 1. Save and quit your world
 2. Go to your world in the Singleplayer menu and hit "Edit"
 3. Press "Open World Folder"
@@ -34,43 +38,50 @@ Before we go further, if you have downloaded and installed Visual Studio Code an
 :::
 
 The first file we want to create is the `pack.mcmeta` file. This file will tell Minecraft that the folder is a datapack, as well as holding the basic information of the pack. **Create `pack.mcmeta`, and put this inside it**:
+
 ```json
 {
-    "pack":{
-        "description":"DATAPACK NAME HERE",
-        "pack_format":48
-    }
+  "pack": {
+    "description": "DATAPACK NAME HERE",
+    "pack_format": 48
+  }
 }
 ```
+
 If you're interested, here's what this file means:
+
 - `pack` is an object containing the metadata of the file.
   - `description` is the name of your datapack, usually along with a short description of what your pack does.
   - `pack_format` tells Minecraft what versions this datapack works in. `48` is the latest for 1.21
 
 ## Writing your first function
+
 :::info
 What are functions? In short, functions are the majority of what makes up most datapacks. A function is a file containing Minecraft commands. When a function is ran, every command in the function is ran in order. Functions are always ran as an entity (or as the Server) and at a position
 :::
 Let's get started by writing one simple function. In traditional programming function, let's make a function to show you "Hello World" when it is ran.
 
-1. Create a folder in your datapack called `data`. 
-2. In the `data` folder, create a new folder. 
-This folder is your **namespace** - it will contain all the data specific to your datapack. Usually this needs to have a **unique name** (one which other people would not have picked), but for this tutorial just call it `example`.
+1. Create a folder in your datapack called `data`.
+2. In the `data` folder, create a new folder.
+   This folder is your **namespace** - it will contain all the data specific to your datapack. Usually this needs to have a **unique name** (one which other people would not have picked), but for this tutorial just call it `example`.
 3. In the `example` folder, create a folder called `function`. This folder will contain all the **mcfunction** files.
 
 You should now have a folder structure that looks something like this:
+
 ```
 /world/datapacks/Example Datapack/data/example/function
 ```
+
 :::warning
 In versions earlier than 1.21, the function folder should be called functions, due to some pesky name changes Mojang introduced in a recent update.
 :::
 
-Once you're sure that's correct, you can start writing the actual function. 
+Once you're sure that's correct, you can start writing the actual function.
 
 In the `function` folder, create an empty file called `hello_world.mcfunction`. Open this file with any text editor (we reccomend Visual Studio Code)
 
 Inside `hello_world.mcfunction`, put the following:
+
 ```
 # Show the player Hello World on their screen
 title @s title "Hello World!"
@@ -78,12 +89,15 @@ title @s title "Hello World!"
 # Give the player a diamond
 give @s diamond
 ```
+
 It's that simple! Once you **save that file**, **rejoin your world** and then run `/reload`, you should be able to use the following command to run the function:
+
 ```
 /function example:hello_world
 ```
 
 ## What's next?
+
 Now you know how to create a basic function and run it, we'll next start to think about how to create our project. For more advanced projects, this can sometimes be the most difficult part. Luckily for us, what we want to create won't be too difficult.
 
 Let's break down the idea into smaller steps. Remember, we want to create a datapack which makes arrows explode.
@@ -95,11 +109,13 @@ Let's break down the idea into smaller steps. Remember, we want to create a data
 The next steps of this guide will guide you through the typical process of each of those steps.
 
 ## Running functions on a loop
+
 The first step on our list is to detect arrows which land on the ground. To do this, we need to run a command on a loop. Luckily, Minecraft makes this pretty easy for us.
 
-Firstly, let's make the function which you want to run on a loop. In the `function` folder, create a new `mcfunction` file - call this one `loop.mcfunction`. 
+Firstly, let's make the function which you want to run on a loop. In the `function` folder, create a new `mcfunction` file - call this one `loop.mcfunction`.
 
 For now, let's just make it say "Hi" every time it loops. You can do this by putting this in the new function:
+
 ```
 say Hi
 ```
@@ -114,75 +130,84 @@ To make this function run on a loop, we need to create a JSON file which tells M
 **`tick.json` is NOT a function**. In `tick.json`, we are going to put a **list of functions** which we want to run every tick. If you put any commands in tick.json, it will break your pack.
 
 In `tick.json`, put the following:
+
 ```json
 {
-    "values":[
-        "example:loop"
-    ]
+  "values": ["example:loop"]
 }
 ```
+
 - `values` is a list of function references which will be run on a loop.
 - `example:loop` is a reference to the `loop.mcfunction` file we created earlier. `example` refers to the namespace (the folder in `data`), and `loop` refers to the mcfunction file name.
 
 If you save this file, go back to your world, and run `/reload`, you should see that the chat is being spammed with "Hi" over and over again!
 
 ## Selecting the arrows
+
 Now we've created a function which will run infinitely on a loop, we can move on to detecting when an arrow is in the ground.
 
-As far as the game is concerned, an arrow is an **enity**, just like a pig, cow or zombie. Minecraft gives us a special way to **select** any types of entities with [target selectors](/commands/target_selectors). Once we've selected an entity, we can use the [/execute](/command/execute) command to run a command as the entity. 
+As far as the game is concerned, an arrow is an **enity**, just like a pig, cow or zombie. Minecraft gives us a special way to **select** any types of entities with [target selectors](/commands/target_selectors). Once we've selected an entity, we can use the [/execute](/command/execute) command to run a command as the entity.
 
 We can use these to select all arrows which are in the ground, and then run a command to make them explode (and then remove themselves).
 
 As mentioned, to select an entity, we need to use a target selectors. I'm going to teach you a bit about target selectors. You should pay attention here, but if you only want the code, scroll past this section.
 
 ### What are target selectors?
+
 Target selectors are a special bit of code we can use to find an entity in the world. They all start with an `@` symbol. There are 6 base target selectors:
 
-| Target Selector | Description |
-|---|---|
-| @e | **All Entities** - By itself, this selector will select every single entity which is currently loaded in the world |
-| @s | **This Entity** - This selector will select the entity which is currently running the command. For example, if I run a command as @s, then it will run the commands as me. |
-| @a | **All Players** - This selects all currently online players. (All players are always loaded in the world). |
-| @r | **Random Player** - This selects one random player. |
-| @p | **Nearest Player** - This selects the nearest player to the position this command is ran from. |
-| @n | **Nearest Entity** - This selects the nearest entity (player or non-player) to the position this command is ran from. |
+| Target Selector | Description                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| @e              | **All Entities** - By itself, this selector will select every single entity which is currently loaded in the world                                                         |
+| @s              | **This Entity** - This selector will select the entity which is currently running the command. For example, if I run a command as @s, then it will run the commands as me. |
+| @a              | **All Players** - This selects all currently online players. (All players are always loaded in the world).                                                                 |
+| @r              | **Random Player** - This selects one random player.                                                                                                                        |
+| @p              | **Nearest Player** - This selects the nearest player to the position this command is ran from.                                                                             |
+| @n              | **Nearest Entity** - This selects the nearest entity (player or non-player) to the position this command is ran from.                                                      |
 
-On it's own, a base target selector (like in the table) does not do much. We can narrow down the selection even more by using criteria. Criteria are put in square brackets after the base selector. 
+On it's own, a base target selector (like in the table) does not do much. We can narrow down the selection even more by using criteria. Criteria are put in square brackets after the base selector.
 
 For example, we can use `@e` with a `type` criteria to select all entities of a certain type - for example, `@e[type=minecraft:cow]` would select all cow entities.
 
 I'm not going to explain every single criteria you can use - you can view a list [here](/wiki/commands/target_selectors#additional-arguments). These are the basic ones which you might see quite often:
 
-| Criteria | Description |
-|---|---|
-| `[type=minecraft:arrow]` | **Entity Type** - This criteria will narrow down the selection to only include entities of a certain type. For good pack optimisation, you should use this often. |
-| `[distance=..5]` | **Distance to entity** - This criteria will only include entities based on their distance to their distance to the current position. `..` can be used to represent a greater/less than symbol - for example, `..5` means less than 5 blocks away. |
-| `[limit=2]` | **Limit selection** - Using the `limit` criteria, you can make specify a max amount of entities to be selected. This is often used in conjunction with the `sort` criteria. For example, `@e[sort=nearest,limit=1]` would select the nearest entity of any type. |
-| `[nbt={key:value}]` | **Entity Data** - This criteria will select entities if their NBT (entity data) matches a pattern. |
+| Criteria                 | Description                                                                                                                                                                                                                                                      |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `[type=minecraft:arrow]` | **Entity Type** - This criteria will narrow down the selection to only include entities of a certain type. For good pack optimisation, you should use this often.                                                                                                |
+| `[distance=..5]`         | **Distance to entity** - This criteria will only include entities based on their distance to their distance to the current position. `..` can be used to represent a greater/less than symbol - for example, `..5` means less than 5 blocks away.                |
+| `[limit=2]`              | **Limit selection** - Using the `limit` criteria, you can make specify a max amount of entities to be selected. This is often used in conjunction with the `sort` criteria. For example, `@e[sort=nearest,limit=1]` would select the nearest entity of any type. |
+| `[nbt={key:value}]`      | **Entity Data** - This criteria will select entities if their NBT (entity data) matches a pattern.                                                                                                                                                               |
 
 ### How are we going to use them?
+
 We can use these selectors to only select arrows which are in the ground. We can select all arrows with `@e[type=arrow]`, but this will also include arrows in the air. To select arrows in the ground, we can check if they have the data `{inGround:1b}`, so we would use `@e[type=arrow,nbt={inGround:1b}]`
 
 This target selector can be used in an `execute` command to run a command as the entity. Try putting this in your `loop.mcfunction`:
+
 ```
 execute as @e[type=arrow,nbt={inGround:1b}] at @s run say I'm an arrow, I'm in the ground!
 ```
+
 Reload your datapack and fire an arrow at at a block. You should see that your chat is spammed with messages, meaning that we successfully selected arrows in the ground, and executed a command as them!
 
 ## Make it go boom!
+
 Now we can move onto the fun part! We have a simple command which will run another command as any arrow in the ground. We only need to do two things with this command:
+
 - Spawn an explosion at the position of the arrow
 - Kill the arrow so that it only explodes once
 
 To create an explosion in Minecraft, we can simply summon a TNT entity. When a TNT entity is summoned, it will explode instantly.
+
 ```
 execute as @e[type=arrow,nbt={inGround:1b}] at @s run summon tnt
 ```
 
 Then, we just need to copy this command and make it kill the arrow after the explosion has happened. This is as simple as it sounds - we can use `/kill` to remove the arrow. Your finished `loop.mcfunction` should look like this:
+
 ```
 execute as @e[type=arrow,nbt={inGround:1b}] at @s run summon tnt
-kill @e[type=arrow,nbt={inGround:1b}] 
+kill @e[type=arrow,nbt={inGround:1b}]
 ```
 
 :::info

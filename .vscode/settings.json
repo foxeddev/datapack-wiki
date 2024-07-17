@@ -1,9 +1,4 @@
 {
-  "cSpell.words": [
-    "Datapack",
-    "datapacks",
-    "mcfunction",
-    "tabler"
-  ],
+  "cSpell.words": ["Datapack", "datapacks", "mcfunction", "tabler"],
   "diffEditor.codeLens": true
 }

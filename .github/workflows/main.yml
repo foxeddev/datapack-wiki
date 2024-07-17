@@ -1,6 +1,6 @@
 on:
   push:
-    
+
 name: pre-deploy
 jobs:
   compile-page-meta:

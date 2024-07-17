@@ -10,19 +10,23 @@ import {Version} from '$lib/reusables';
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
 # Pros and cons
+
 **Pros:**
+
 - Can also detect left clicks
 - Works in any world
 - Doesn't need to run every tick
 - Doesn't attract mob
 
 **Cons:**
+
 - Only works in 1.19.4+
 - Slows player down when holding right click
 - Requires an additional entity
 - Can't be interacted through (e.g. can't build,attack,... throught it)
 
 **Other:**
+
 - Detects up to 5 clicks/second when holding right click
 - Bound to a specific location, not player
 

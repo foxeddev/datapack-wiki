@@ -1,9 +1,18 @@
 {
+  "plugins": ["prettier-plugin-svelte"],
+  "overrides": [
+    { "files": "*.svelte", "options": { "parser": "svelte" } },
+    { "files": ["*.mdx", "*.svx"], "options": { "parser": "markdown" } }
+  ],
   "bracketSameLine": true,
   "printWidth": 120,
   "trailingComma": "es5",
   "semi": true,
-  "svelteIndentScriptAndStyle": true,
   "embeddedLanguageFormatting": "auto",
-  "svelteAllowShorthand": true
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "svelteAllowShorthand": true,
+  "svelteIndentScriptAndStyle": true,
+  "tabWidth": 2
 }

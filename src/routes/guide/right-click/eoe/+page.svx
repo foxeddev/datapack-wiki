@@ -10,16 +10,20 @@ import {Version} from '$lib/reusables';
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
 # Pros and cons
+
 **Pros:**
+
 - Doesn't require additional entities
 - Doesn't need to run every tick
 - Doesn't attract mobs
 
 **Cons:**
+
 - Only works in worlds without strongholds
 - Slows player down when holding right click
 
 **Other:**
+
 - Detects up to 20 clicks/second when holding right click
 - Bound to the player, not a specific location
 
@@ -30,6 +34,7 @@ This only works in world without strongholds, if you don't want that, you can ei
 :::
 
 This is just a guide, so you'll need to change a few things for your actual datapack:
+
 - Change `<namespace>` to your namespace
 - Change `<custom_data>` to whatever custom data you want
 
