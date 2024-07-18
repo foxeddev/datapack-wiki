@@ -1,6 +1,9 @@
 ---
 title: Tags
-description: "Registry tags, not to be confused with [entity tags](/wiki/command/tag), are essentially lists of groups such as blocks, items, entity types, etc. They use JSON format and are located in the `data/<namespace>/tags/<category>` folder."
+description:
+  "Registry tags, not to be confused with [entity tags](/wiki/command/tag), are essentially lists of groups such as
+  blocks, items, entity types, etc. They use JSON format and are located in the `data/<namespace>/tags/<category>`
+  folder."
 ---
 
 <script lang="ts">
@@ -11,11 +14,13 @@ import {Version} from '$lib/reusables';
 
 # Tags
 
-Registry tags, not to be confused with [entity tags](/wiki/command/tag), are essentially lists of groups such as blocks, items, entity types, etc. They use JSON format and are located in the `data/<namespace>/tags/<category>` folder.
+Registry tags, not to be confused with [entity tags](/wiki/command/tag), are essentially lists of groups such as blocks,
+items, entity types, etc. They use JSON format and are located in the `data/<namespace>/tags/<category>` folder.
 
 ## Special tags
 
-Minecraft uses some tags internally for certain behaviours. These tags are located in the `minecraft` namespace. For example:
+Minecraft uses some tags internally for certain behaviours. These tags are located in the `minecraft` namespace. For
+example:
 
 - any functions in the `#minecraft:load` function tag will be automatically run when a datapack is loaded
 - the `#minecraft:minable/pickaxe` block tag lists blocks which are mined faster using a pickaxe.
@@ -53,19 +58,23 @@ Tags have a very simple format, with two fields.
 
 ### `replace`
 
-`replace` is a boolean field which decides whether the tag should replace other tags with the same path, or merge with them. For example, if `"replace": true` is added to the `tick.json` function tag, only the tick functions in that datapack would load, as it would replace all other defined tick tags. If `replace` is false, it will merge with any values in `tick.json` within other packs.
-`replace` is an optional field, and if not specified will default to `false`.
+`replace` is a boolean field which decides whether the tag should replace other tags with the same path, or merge with
+them. For example, if `"replace": true` is added to the `tick.json` function tag, only the tick functions in that
+datapack would load, as it would replace all other defined tick tags. If `replace` is false, it will merge with any
+values in `tick.json` within other packs. `replace` is an optional field, and if not specified will default to `false`.
 
 ### `values`
 
-Values (`values`) is an array containing everything to group under this tag. Each element is either a string or an object containing an `id` field and a `required` field (object example `{"required": false, "id":"minecraft:stick"}` ). The plain string and the `id` field contain either the ID of the entry (such as `minecraft:diamond_block`), or the ID of another tag, beginning with a `#` (such as `#minecraft:logs`). The `required` field in the object is a boolean (`true` or `false`) which defines if this entry can be ignored if the id cannot be found.
+Values (`values`) is an array containing everything to group under this tag. Each element is either a string or an
+object containing an `id` field and a `required` field (object example `{"required": false, "id":"minecraft:stick"}` ).
+The plain string and the `id` field contain either the ID of the entry (such as `minecraft:diamond_block`), or the ID of
+another tag, beginning with a `#` (such as `#minecraft:logs`). The `required` field in the object is a boolean (`true`
+or `false`) which defines if this entry can be ignored if the id cannot be found.
 
 ### Example
 
 Here is an example tag, located in `data/<namespace>/tags/item/wood.json`.  
-:::info
-`#minecraft:logs` and `#minecraft:planks` are two item tags provided by Minecraft.
-:::
+:::info `#minecraft:logs` and `#minecraft:planks` are two item tags provided by Minecraft. :::
 
 ```json
 {

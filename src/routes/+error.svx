@@ -3,11 +3,14 @@
 </script>
 
 <svelte:head>
+
 <title>Error: {$page.status} | Datapack Hub</title>
 <meta name="description" content="You shouldn't be here..." />
 </svelte:head>
 
 # Error {$page.status}: {$page.error.message}
 
-There was an error when loading this page. Maybe it doesn't exist?
-If you think this is an error, please report it in our [Discord](https://discord.datapackhub.net/).
+There was an error when loading this page. Maybe it doesn't exist? If you think this is an error, please report it in
+our [Discord](https://discord.datapackhub.net/).
+
+- [Go back to the homepage](/)

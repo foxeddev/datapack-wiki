@@ -1,6 +1,8 @@
 ---
 title: Target Selectors
-description: "Target Selectors are used as an argument in commands to select entities and players in the world. We use target selectors to find players or mobs and do things to them."
+description:
+  "Target Selectors are used as an argument in commands to select entities and players in the world. We use target
+  selectors to find players or mobs and do things to them."
 ---
 
 <script lang="ts">
@@ -11,11 +13,15 @@ import {Version} from '$lib/reusables';
 
 # Target Selectors
 
-Target Selectors are used as an argument in commands to select entities and players in the world. We use target selectors to find players or mobs and do things to them. Many commands need to be given a target selector as an argument, or otherwise require being executed as an entity.
+Target Selectors are used as an argument in commands to select entities and players in the world. We use target
+selectors to find players or mobs and do things to them. Many commands need to be given a target selector as an
+argument, or otherwise require being executed as an entity.
 
-All target selectors start with an `@` symbol, followed by a base selector (see the table below), and optionally any other criteria which will narrow down the selection further.
+All target selectors start with an `@` symbol, followed by a base selector (see the table below), and optionally any
+other criteria which will narrow down the selection further.
 
-**Example:** `tellraw @a[distance=..10] "You're within 10 blocks of me"`. The target selector is `@a[distance=..10]`, and tells the game to only send the message to players within 10 blocks.
+**Example:** `tellraw @a[distance=..10] "You're within 10 blocks of me"`. The target selector is `@a[distance=..10]`,
+and tells the game to only send the message to players within 10 blocks.
 
 ## Base target selectors
 
@@ -34,19 +40,20 @@ In Java Edition, there are 6 base target selectors:
 
 </div>
 
-:::warning
-@e only selects entities in a loaded chunk. If an entity exists but is not currently being loaded, it will not select that entity.
-:::
+:::warning @e only selects entities in a loaded chunk. If an entity exists but is not currently being loaded, it will
+not select that entity. :::
 
 ## Additional arguments
 
-Target selectors can (and usually are) followed by additional arguments to filter the selection even more to only find the entities that you want. Target selector arguments are contained within square brackets after the base selector (`@e[...]`) and are written as `[<argument_name>:<argument_value>,<argument_name>=<argument_value>,...]`
+Target selectors can (and usually are) followed by additional arguments to filter the selection even more to only find
+the entities that you want. Target selector arguments are contained within square brackets after the base selector
+(`@e[...]`) and are written as `[<argument_name>:<argument_value>,<argument_name>=<argument_value>,...]`
 
-**Example**: In our previous example (`@a[distance=..10]`), we use the argument `distance=..10` to specify that we only want to target entities which are less than 10 blocks away.
+**Example**: In our previous example (`@a[distance=..10]`), we use the argument `distance=..10` to specify that we only
+want to target entities which are less than 10 blocks away.
 
-:::tip
-Most target selectors can be inverted by using =! meaning it will only select entities who do not match the argument. (E.g. @e[type=!minecraft:creeper] will select every entity that is NOT a creeper)
-:::
+:::tip Most target selectors can be inverted by using =! meaning it will only select entities who do not match the
+argument. (E.g. @e[type=!minecraft:creeper] will select every entity that is NOT a creeper) :::
 
 <div class="overflow-x-auto">
 
@@ -73,7 +80,8 @@ More information about the arguments:
 
 ### `type` argument
 
-The `type=<entity_type>` argument will filter the selection to only include entities of a certain type, or those in an entity_type tag.
+The `type=<entity_type>` argument will filter the selection to only include entities of a certain type, or those in an
+entity_type tag.
 
 `<entity_type>` must be a valid entity ID or entity_type tag ID. This argument can only be used with `@e` or `@s`.
 
@@ -95,7 +103,8 @@ The `name=<entity_name>` argument will filter the selection to only include enti
 
 ### `distance` argument
 
-The `distance=<value_or_range>` argument will filter the selection to only include entities who are within a distance range.
+The `distance=<value_or_range>` argument will filter the selection to only include entities who are within a distance
+range.
 
 `<value_or_range>` can either be a value (such as `7`) or a range (such as `..8` or `21..`)
 
@@ -108,7 +117,8 @@ The `distance=<value_or_range>` argument will filter the selection to only inclu
 
 ### `nbt` argument
 
-The `nbt=<object>` argument will filter the selection to only include entities which have or do not have specific NBT data.
+The `nbt=<object>` argument will filter the selection to only include entities which have or do not have specific NBT
+data.
 
 `<object>` is an NBT compound. The entity must match everything within the compound.
 
@@ -119,7 +129,8 @@ The `nbt=<object>` argument will filter the selection to only include entities w
 
 ### `sort` and `limit` arguments
 
-The `sort=<sort_type>,limit=<value>` will limit the amount of possible entities it will select and will select entities based on the priority defined in `<sort_type>`.
+The `sort=<sort_type>,limit=<value>` will limit the amount of possible entities it will select and will select entities
+based on the priority defined in `<sort_type>`.
 
 `<sort_type>` can be one of the following:
 
@@ -138,7 +149,8 @@ The `sort=<sort_type>,limit=<value>` will limit the amount of possible entities 
 
 ### `x`/`y`/`z` arguments
 
-The `x`/`y`/`z=<value>` arguments do not directly change the selection, but are used alongside other arguments to specify a starting position to work from.
+The `x`/`y`/`z=<value>` arguments do not directly change the selection, but are used alongside other arguments to
+specify a starting position to work from.
 
 This argument(s) will affect the arguments `distance`, `dx`/`dy`/`dz` and `sort`/`limit`.
 
@@ -148,29 +160,29 @@ This argument(s) will affect the arguments `distance`, `dx`/`dy`/`dz` and `sort`
 
 ### `dx`/`dy`/`dz` arguments
 
-The `dx/dy/dz` arguments will create a cuboid that is at least 1x1x1 blocks big and each value above 0 will increase the size of the cuboid in that direction by a full block.
+The `dx/dy/dz` arguments will create a cuboid that is at least 1x1x1 blocks big and each value above 0 will increase the
+size of the cuboid in that direction by a full block.
 
 Any entity fully or partially inside the cuboid will be selected.
 
-You can mix and match `dx`, `dz`, and `dz` however you want. To create the cuboid at least 1 of the three has to be there.
+You can mix and match `dx`, `dz`, and `dz` however you want. To create the cuboid at least 1 of the three has to be
+there.
 
-:::info
-The generated cuboid does not snap to the block grid
-:::
-:::info
-The base cuboid that gets generated with dx/dz/dz=0 will always stretch from the command origin to positive x/y/z
-:::
+:::info The generated cuboid does not snap to the block grid ::: :::info The base cuboid that gets generated with
+dx/dz/dz=0 will always stretch from the command origin to positive x/y/z :::
 
 **Examples**:
 
-- `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`: Selects any entities if any part of their hitbox is within the cuboid `w=10,h=20,l=5` starting from the position `x=10,y=13,z-87`
+- `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`: Selects any entities if any part of their hitbox is within the cuboid
+  `w=10,h=20,l=5` starting from the position `x=10,y=13,z-87`
 - `@e[x=7,y=3,z=9,dx=0,dy=0,dz=0]`: Selects any entities if their hitbox contains the point `x=7,y=3,z=9`
 
 ### `tag` argument
 
 The `tag=<tag>` argument will select entities which have the specified tag. `<tag>` is any tag string (no spaces).
 
-Entities do not naturally have tags - these are separate from `entity_type` tags such as that used in the `type` argument. Instead, these select entities based on the tags added with the `/tag` command or `Tags[]` NBT.
+Entities do not naturally have tags - these are separate from `entity_type` tags such as that used in the `type`
+argument. Instead, these select entities based on the tags added with the `/tag` command or `Tags[]` NBT.
 
 **Examples**:
 
@@ -179,7 +191,8 @@ Entities do not naturally have tags - these are separate from `entity_type` tags
 
 ### `team` argument
 
-The `team=<team_name>` argument will select entities which are in a specific team. Since entities can only be in one team at a time, you cannot use `team=` more than once, however you can duplicate negated team arguments (`team=!`).
+The `team=<team_name>` argument will select entities which are in a specific team. Since entities can only be in one
+team at a time, you cannot use `team=` more than once, however you can duplicate negated team arguments (`team=!`).
 
 `<team_name>` is any tag string (no spaces).
 
@@ -198,16 +211,19 @@ The `scores={<scoreboard>=<value>,...}` argument will select entities based on t
 **Examples**:
 
 - `@e[scores={foo=10}]`: Selects all entities with a score of exactly `10` on the `foo` scoreboard.
-- `@e[scores={foo=5,bar=7}]`: Selects all entities with a score of exactly `5` on the `foo` scoreboard and exactly `7` on the `bar` scoreboard.
+- `@e[scores={foo=5,bar=7}]`: Selects all entities with a score of exactly `5` on the `foo` scoreboard and exactly `7`
+  on the `bar` scoreboard.
 - `@e[scores={foo=8..}]`: Selects all entities with a score of `8` or more on the `foo` scoreboard.
 
 ### `predicate` argument
 
-The `predicate=<predicate>` argument will select entities based on whether they pass a predicate check. `<predicate>` is a predicate ID.
+The `predicate=<predicate>` argument will select entities based on whether they pass a predicate check. `<predicate>` is
+a predicate ID.
 
 **Examples**:
 
-- `@e[predicate=namespace:my_predicate]`: Selects all entities who pass the predicate in `/data/namespace/predicates/my_predicate.- - `@e[predicate=!namespace:another_predicate]`: Selects all entities who fail the predicate in `/data/namespace/predicates/another_predicate.json`
+- `@e[predicate=namespace:my_predicate]`: Selects all entities who pass the predicate in
+  `/data/namespace/predicates/my_predicate.- - `@e[predicate=!namespace:another_predicate]`: Selects all entities who fail the predicate in `/data/namespace/predicates/another_predicate.json`
 
 ### `gamemode` argument
 
@@ -219,21 +235,27 @@ The `gamemode=(survival|creative|adventure|spectator)` argument will select play
 
 ### `advancements` argument
 
-The `advancements={<advancement_name>=(true/false)}` argument will select players based on whether they've unlocked an advancement. `<advancement_name>` is an advancement ID.
+The `advancements={<advancement_name>=(true/false)}` argument will select players based on whether they've unlocked an
+advancement. `<advancement_name>` is an advancement ID.
 
 **Examples**:
 
-- `@a[advancements={minecraft:story/follow_ender_eye=true}]`: Selects all players who have unlocked the `follow_ender_eye` advancement.
-- `@a[advancements={minecraft:story/follow_ender_eye=false}]`: Selects all players who have not unlocked the `follow_ender_eye` advancement.
+- `@a[advancements={minecraft:story/follow_ender_eye=true}]`: Selects all players who have unlocked the
+  `follow_ender_eye` advancement.
+- `@a[advancements={minecraft:story/follow_ender_eye=false}]`: Selects all players who have not unlocked the
+  `follow_ender_eye` advancement.
 
 ### `advancements` argument
 
-The `advancements={<advancement_name>=(true/false)}` argument will select players based on whether they've unlocked an advancement. `<advancement_name>` is an advancement ID.
+The `advancements={<advancement_name>=(true/false)}` argument will select players based on whether they've unlocked an
+advancement. `<advancement_name>` is an advancement ID.
 
 **Examples**:
 
-- `@a[advancements={minecraft:story/follow_ender_eye=true}]`: Selects all players who have unlocked the `follow_ender_eye` advancement.
-- `@a[advancements={minecraft:story/follow_ender_eye=false}]`: Selects all players who have not unlocked the `follow_ender_eye` advancement.
+- `@a[advancements={minecraft:story/follow_ender_eye=true}]`: Selects all players who have unlocked the
+  `follow_ender_eye` advancement.
+- `@a[advancements={minecraft:story/follow_ender_eye=false}]`: Selects all players who have not unlocked the
+  `follow_ender_eye` advancement.
 
 ### `level` argument
 

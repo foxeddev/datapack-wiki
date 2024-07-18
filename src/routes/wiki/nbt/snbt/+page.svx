@@ -1,25 +1,35 @@
 ---
 title: SNBT Format
-description: "SNBT (Stringified Named Binary Tags) format is a JSON-like tree structure used in datapack development to manipulate the NBT data of an entity. SNBT is a human-readable version of NBT (Named Binary Tags), which is a format used by Minecraft to store data. NBT is used to store data about entities, items, blocks, structures, game saves, and more."
+description:
+  "SNBT (Stringified Named Binary Tags) format is a JSON-like tree structure used in datapack development to manipulate
+  the NBT data of an entity. SNBT is a human-readable version of NBT (Named Binary Tags), which is a format used by
+  Minecraft to store data. NBT is used to store data about entities, items, blocks, structures, game saves, and more."
 ---
 
 # SNBT Format
 
-SNBT (Stringified Named Binary Tags) format is a JSON-like tree structure used in datapack development to manipulate the NBT data of an entity. SNBT is a human-readable version of NBT (Named Binary Tags), which is a format used by Minecraft to store data. NBT is used to store data about entities, items, blocks, structures, game saves, and more.
+SNBT (Stringified Named Binary Tags) format is a JSON-like tree structure used in datapack development to manipulate the
+NBT data of an entity. SNBT is a human-readable version of NBT (Named Binary Tags), which is a format used by Minecraft
+to store data. NBT is used to store data about entities, items, blocks, structures, game saves, and more.
 
-SNBT consists of **key/value pairs**, which are represented as `key:value`. These are contained with **compounds**, marked with curly brackets (`{}`). Compounds can contain multiple key/value pairs, which are separated with commas, like so: `key:value,key:value,key:value`
+SNBT consists of **key/value pairs**, which are represented as `key:value`. These are contained with **compounds**,
+marked with curly brackets (`{}`). Compounds can contain multiple key/value pairs, which are separated with commas, like
+so: `key:value,key:value,key:value`
 
-An example SNBT structure looks like: `{name:"Silabear",age:102,friends:["Flynecraft","Aandeel","Cobblestone"],socials:{discord:"silabear",twitch:"silabearr"}}`
+An example SNBT structure looks like:
+`{name:"Silabear",age:102,friends:["Flynecraft","Aandeel","Cobblestone"],socials:{discord:"silabear",twitch:"silabearr"}}`
 
 ## Data Types
 
-SNBT has a few data types you can use to represent different types of data, including whole numbers, decimal numbers, string, text, booleans, and more.
+SNBT has a few data types you can use to represent different types of data, including whole numbers, decimal numbers,
+string, text, booleans, and more.
 
 ### Strings
 
 Strings can store any text value, or more technically, any sequence of unicode characters.
 
-**Format**: Strings are stored within either double or single quotes. For strings containing standard characters (`A-Z, a-z, 0-9, -,_,+,.`), the quotes are optional, but recommended. `"<text>"` or `'<text>'` or `<text>`
+**Format**: Strings are stored within either double or single quotes. For strings containing standard characters
+(`A-Z, a-z, 0-9, -,_,+,.`), the quotes are optional, but recommended. `"<text>"` or `'<text>'` or `<text>`
 
 **Example**: `name:"Silabear"`, `name:'Cobblestone'`, `name:Aandeel`
 
@@ -29,8 +39,10 @@ Strings can store any text value, or more technically, any sequence of unicode c
 
 - **Short** is a signed 16 bit integer, it can be any value from `-32,768` to `32,767`
 - **Int** is a signed 32 bit integer, it can be any value from `-2,147,483,648` to `2,147,483,647`
-- **Long** is a signed 64 bit integer, it can be any value from `-9,223,372,036,854,775,808` to `9,223,372,036,854,775,807`
+- **Long** is a signed 64 bit integer, it can be any value from `-9,223,372,036,854,775,808` to
+  `9,223,372,036,854,775,807`
 
-**Format**: Strings are stored within either double or single quotes. For strings containing standard characters (`A-Z, a-z, 0-9, -,_,+,.`), the quotes are optional, but recommended. `"<text>"` or `'<text>'` or `<text>`
+**Format**: Strings are stored within either double or single quotes. For strings containing standard characters
+(`A-Z, a-z, 0-9, -,_,+,.`), the quotes are optional, but recommended. `"<text>"` or `'<text>'` or `<text>`
 
 **Example**: `name:"Silabear"`, `name:'Cobblestone'`, `name:Aandeel`

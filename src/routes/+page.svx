@@ -9,7 +9,8 @@ import { Discord } from '$lib/reusables';
 
 # Welcome to the Datapack Wiki!
 
-This is a community-built wiki documenting features of Minecraft Datapacks. On this site, you can find all you need to know to start making your own datapacks, as well as resources for more advanced datapackers.
+This is a community-built wiki documenting features of Minecraft Datapacks. On this site, you can find all you need to
+know to start making your own datapacks, as well as resources for more advanced datapackers.
 
 ## What are Datapacks?
 

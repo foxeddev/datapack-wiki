@@ -26,29 +26,23 @@ for await (const file of matchingFiles) {
     continue;
   }
 
-  log.info("Reading", file);
   const rawContent = await defineFile(`./src/routes/${file}`).text();
 
   log.info("Transforming", file);
   const frontmatter = matter(rawContent); // parse markdown front matter
 
-  const fileWithoutPage = file.slice(0, -9); // remove the file name and extension
-  const filePath = fileWithoutPage.slice(2); // remove the leading slash and dot
+  const filePath = file.slice(0, -9).slice(2); // remove the file name and extension and leading slash
 
   // add to posts
   const contentNoHtml = stripHtml(frontmatter.content).result;
   const strippedMarkdown = await remark().use(stripMarkdown).process(contentNoHtml);
 
-  log.info("Adding to posts");
   posts.push({
     title: frontmatter.data.title || "MissingNo.",
     content: strippedMarkdown.value,
     url: "/" + filePath,
   });
 }
-
-// first post is the error page
-// posts.shift();
 
 // write to file
 log.info("Writing to file");

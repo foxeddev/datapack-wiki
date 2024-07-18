@@ -1,6 +1,7 @@
 ---
 title: Using an Interaction Entity for RC detection
-description: "If you want to learn how to detect right (and left) clicks on interaction entities, you are in the right place!"
+description:
+  "If you want to learn how to detect right (and left) clicks on interaction entities, you are in the right place!"
 ---
 
 <script lang="ts">
@@ -32,11 +33,12 @@ import {Version} from '$lib/reusables';
 
 # Using an Interaction Entity for Right Click Detection
 
-Firstly we will need to create an advancement, located in `data/<namespace>/advancement/`. You can call it hovewer you want, but for the purpose of this guide we will call it `interacted_with_interaction.json`. This advancement is used to detect when a player clicks on an interaction entity.
+Firstly we will need to create an advancement, located in `data/<namespace>/advancement/`. You can call it hovewer you
+want, but for the purpose of this guide we will call it `interacted_with_interaction.json`. This advancement is used to
+detect when a player clicks on an interaction entity.
 
-:::tip
-If you don't want to detect a click on every interaction, you can detect it on only some by checking their NBT data, and using Tags to differentiate them.
-:::
+:::tip If you don't want to detect a click on every interaction, you can detect it on only some by checking their NBT
+data, and using Tags to differentiate them. :::
 
 ```json:interacted_with_interaction.json
 {
@@ -56,7 +58,8 @@ If you don't want to detect a click on every interaction, you can detect it on o
 }
 ```
 
-Then just create a simple function in `data/<namespace>/function/`, and call it the same as you did in the advancement, for us that would be `rightclick_run.mcfunction`
+Then just create a simple function in `data/<namespace>/function/`, and call it the same as you did in the advancement,
+for us that would be `rightclick_run.mcfunction`
 
 ```mcfunction:rightclick_run.mcfunction
 # Revoke the advancement so we can detect the click again

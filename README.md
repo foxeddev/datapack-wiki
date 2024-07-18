@@ -4,7 +4,8 @@
 
 **_Currently WIP, expect bugs or missing pages_**
 
-The Datapack Wiki is a comprehensive, in-depth wiki, catered specifically for learning, understanding and building datapacks.
+The Datapack Wiki is a comprehensive, in-depth wiki, catered specifically for learning, understanding and building
+datapacks.
 
 ## Contributing
 
