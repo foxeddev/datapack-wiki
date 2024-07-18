@@ -27,4 +27,6 @@ function is a macro function. All functions are run independently and one after 
   `.mcfunction` file at `data/<namespace>/function/<function>`, and uses the NBT source if the function is a macro
   function.
 
-:::tip You can stop a function running in real-time using the return command. :::
+:::tip
+You can stop a function running in real-time using the return command.
+:::

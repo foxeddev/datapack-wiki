@@ -60,8 +60,10 @@ These fields are present in `blasting`, `campfire_cooking`, `smelting` and `smok
 | `experience`  | A number                                   | `0`                                    | The amount of experience gained from this recipe    |
 | `cookingtime` | An integer                                 | `100`, or `200` for `smelting` recipes | The number of ticks it takes to cook the ingredient |
 
-:::tip The vanilla recipes range between 0.1 and 1 experience, and take 200 ticks (10 seconds) for smelting, 100 ticks
-for blasting and smoking, and 600 ticks for campfire cooking :::
+:::tip
+The vanilla recipes range between 0.1 and 1 experience, and take 200 ticks (10 seconds) for smelting, 100 ticks
+for blasting and smoking, and 600 ticks for campfire cooking
+:::
 
 ### `crafting_shaped` fields
 
@@ -75,8 +77,12 @@ These fields are present in shaped crafting recipes.
 
 :::info If the rows are less than three characters long, or there are fewer than three rows, the recipe can be moved
 around the crafting grid. Recipes with two or fewer rows and columns can be crafting in the 2x2 crafting grid in the
-inventory. ::: :::tip This can be a bit hard to understand from the description; it may be helpful to read the
-[example](#example) to understand it better. :::
+inventory. 
+:::
+
+:::tip This can be a bit hard to understand from the description; it may be helpful to read the
+[example](#example) to understand it better.
+:::
 
 ### `crafting_shapeless` fields
 
@@ -142,7 +148,9 @@ Represents an ingredient in a recipe. An object containing:
 | `item` (optional) | A string | The id of the ingredient                                                  |
 | `tag` (optional)  | A string | The id of an [item tag](/wiki/files/tags) containing possible ingredients |
 
-:::info Unfortunately, components cannot be detected for recipe ingredients :::
+:::info 
+Unfortunately, components cannot be detected for recipe ingredients 
+:::
 
 #### Ingredient choice
 
@@ -169,8 +177,12 @@ specifying the count of the resulting item. If not included, the count defaults 
 This file adds a shaped crafting recipe to craft bedrock out of beds and rock (stone). For examples of every recipe
 type, see the [examples repository](TODO: put link here).
 
-This file should be placed in the `data/<namespace>/recipe` folder. :::info `minecraft:beds` is an
-[item tag](/wiki/files/tags) provided by Minecraft containing all colors of beds. :::
+This file should be placed in the `data/<namespace>/recipe` folder. 
+
+:::info
+`minecraft:beds` is an
+[item tag](/wiki/files/tags) provided by Minecraft containing all colors of beds.
+:::
 
 ```json:bedrock.json
 {

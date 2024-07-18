@@ -42,8 +42,10 @@ This is just a guide, so you'll need to change a few things for your actual data
 - Change `<namespace>` to your namespace
 - Change `<custom_data>` to whatever custom data you want
 
-:::warning You can use any item for the method, but if the item already has an existing right-click functionality (like
-placing a block), it will keep that. :::
+:::warning
+You can use any item for the method, but if the item already has an existing right-click functionality (like
+placing a block), it will keep that.
+:::
 
 The first step will be creating the advancement that detects when a player is "using" (in this case eating) the item,
 the name can be whatever you want ending in `json`, but for the purpose of this tutorial we will call it

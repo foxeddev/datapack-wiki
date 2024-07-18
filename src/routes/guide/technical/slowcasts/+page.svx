@@ -21,8 +21,10 @@ or blocks you might want to detect.
 A slowcast solves this problem by teleporting multiple times within a single tick to travel faster but still checking if
 it hits something on its way.
 
-:::info This tutorial uses a thing called a **_recursive function_**. A recursive function is a function that runs
-itself over and over again. :::
+:::info
+This tutorial uses a thing called a **_recursive function_**. A recursive function is a function that runs
+itself over and over again.
+:::
 
 ## Slowcasting to an entity
 
@@ -124,6 +126,9 @@ execute if score slowcastSteps temp matches 1.. positioned ^ ^ ^.1 run function 
 ```
 
 The hit function called in the hit detection does whatever you want it to do when hitting an entity. It could spawn an
-explosion, apply an effect, or simply deal some damage. :::tip When you make the hit function have a successful return
+explosion, apply an effect, or simply deal some damage. 
+:::tip
+When you make the hit function have a successful return
 value, it will not kill the projectile in the step function. You could use this to make a piercing projectile for
-example. :::
+example.
+:::

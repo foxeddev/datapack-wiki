@@ -74,7 +74,9 @@ or `false`) which defines if this entry can be ignored if the id cannot be found
 ### Example
 
 Here is an example tag, located in `data/<namespace>/tags/item/wood.json`.  
-:::info `#minecraft:logs` and `#minecraft:planks` are two item tags provided by Minecraft. :::
+:::info
+`#minecraft:logs` and `#minecraft:planks` are two item tags provided by Minecraft.
+:::
 
 ```json
 {

@@ -37,8 +37,10 @@ Firstly we will need to create an advancement, located in `data/<namespace>/adva
 want, but for the purpose of this guide we will call it `interacted_with_interaction.json`. This advancement is used to
 detect when a player clicks on an interaction entity.
 
-:::tip If you don't want to detect a click on every interaction, you can detect it on only some by checking their NBT
-data, and using Tags to differentiate them. :::
+:::tip
+If you don't want to detect a click on every interaction, you can detect it on only some by checking their NBT
+data, and using Tags to differentiate them.
+:::
 
 ```json:interacted_with_interaction.json
 {

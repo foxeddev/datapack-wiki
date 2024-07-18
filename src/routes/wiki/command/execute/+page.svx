@@ -55,8 +55,10 @@ The chat output would look like this:
 
 ## Subcommands
 
-:::info In this documentation, `...` represents another required subcommand, and `[...]` denotes that another subcommand
-is optional. :::
+:::info
+In this documentation, `...` represents another required subcommand, and `[...]` denotes that another subcommand
+is optional.
+:::
 
 ### `execute align <axes> ...`
 
@@ -76,8 +78,10 @@ Changes the execution anchor to the eyes or feet of the entity.
 
 `execute anchored eyes ...`
 
-:::warning When the position is changed not relative to the player, it resets back to feet. You can lock this though by
-using `positioned ^ ^ ^` after it. :::
+:::warning
+When the position is changed not relative to the player, it resets back to feet. You can lock this though by
+using `positioned ^ ^ ^` after it.
+:::
 
 ### `execute as <entity> ...`
 
@@ -177,7 +181,9 @@ Summons the specified entity at the current position, and executes the following
 ### `execute run <command>`
 
 Runs the specified command with the current context. Takes no further subcommands.  
-:::info This is useless by itself, and should always be preceded by other subcommands. :::
+:::info
+This is useless by itself, and should always be preceded by other subcommands.
+:::
 
 #### Examples:
 

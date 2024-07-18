@@ -80,13 +80,19 @@ I have some `inline code` for you. Here's some more:
 
 ## Custom Elements
 
-:::info I am a very important piece of information. In this box, you might find educational info, or explanations for
-features. :::
+:::info 
+I am a very important piece of information. In this box, you might find educational info, or explanations for
+features. 
+:::
 
-:::warning The stuff in this box is probably very important. You should read this box - it might contain information
-which affects your datapack. :::
+:::warning 
+The stuff in this box is probably very important. You should read this box - it might contain information
+which affects your datapack.
+:::
 
-:::tip You can do this really cool thing. It'll make your life a lot easier! But don't worry - it's only optional. :::
+:::tip 
+You can do this really cool thing. It'll make your life a lot easier! But don't worry - it's only optional.
+:::
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 ````
@@ -133,13 +139,19 @@ I have some `inline code` for you. Here's some more:
 
 ## Custom Elements
 
-:::info I am a very important piece of information. In this box, you might find educational info, or explanations for
-features. :::
+:::info 
+I am a very important piece of information. In this box, you might find educational info, or explanations for
+features. 
+:::
 
-:::warning The stuff in this box is probably very important. You should read this box - it might contain information
-which affects your datapack. :::
+:::warning
+The stuff in this box is probably very important. You should read this box - it might contain information
+which affects your datapack.
+:::
 
-:::tip You can do this really cool thing. It'll make your life a lot easier! But don't worry - it's only optional. :::
+:::tip
+You can do this really cool thing. It'll make your life a lot easier! But don't worry - it's only optional.
+:::
 
 <Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 

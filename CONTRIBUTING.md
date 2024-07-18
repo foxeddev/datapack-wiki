@@ -81,7 +81,7 @@ manager. These will check for common issues you may run into.
 > [!TIP] You can create info, warning, or tip boxes using the following syntax:
 >
 > ```md
-> :::info This is an info box!> ::: :::warning This is a warning box!> ::: :::tip This is a tip box!> :::
+> :::info This is an info box! ::: :::warning This is a warning box! ::: :::tip This is a tip box! :::
 > ```
 
 ## Adding a page to the sidebar
