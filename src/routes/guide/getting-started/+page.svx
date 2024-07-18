@@ -16,9 +16,11 @@ import { Version, Discord } from '$lib/reusables';
 If you're new to datapacks, you're at the right place. Looking around, getting into datapack creation might seem
 confusing, but once you've grasped the basics, you'll be off to a good start!
 
-:::info If you don't know what datapacks are, then take this explanation. Datapacks are essentially add-ons to Minecraft
+:::info 
+If you don't know what datapacks are, then take this explanation. Datapacks are essentially add-ons to Minecraft
 which can change the game, whether by adding a simple game mechanic, or creating completely new experiences! The best
-part is that they're really easy to create, even if you have little coding knowledge :::
+part is that they're really easy to create, even if you have little coding knowledge
+:::
 
 This guide will help you to create your first datapack, whether you've never tried coding before or if you've got loads
 of experience. The process of coding a datapack is a bit different to other typical programs. By the end of this
