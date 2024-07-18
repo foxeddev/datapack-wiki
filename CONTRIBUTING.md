@@ -66,11 +66,17 @@ manager. These will check for common issues you may run into.
    This command runs any `.mcfunction` file when called. You can also pass in a NBT compound or NBT source path.
    ```
 
-   :::info I am a very important piece of information. Please dont ignore me. I'm only smol. :::
+   :::info 
+   I am a very important piece of information. Please dont ignore me. I'm only smol. 
+   :::
 
-   :::warning The stuff in this box is probably very important. :::
+   :::warning 
+   The stuff in this box is probably very important. 
+   :::
 
-   :::tip You can do this really cool thing. It'll make your life a lot better! :::
+   :::tip 
+   You can do this really cool thing. It'll make your life a lot better! 
+   :::
 
 ## Syntax
 
@@ -81,7 +87,15 @@ manager. These will check for common issues you may run into.
 > [!TIP] You can create info, warning, or tip boxes using the following syntax:
 >
 > ```md
-> :::info This is an info box! ::: :::warning This is a warning box! ::: :::tip This is a tip box! :::
+> :::info 
+> This is an info box! 
+> ::: 
+> :::warning 
+> This is a warning box! 
+> ::: 
+> :::tip 
+> This is a tip box! 
+> :::
 > ```
 
 ## Adding a page to the sidebar
