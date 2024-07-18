@@ -15,4 +15,4 @@ To contribute, see our [Contributing Guide](/CONTRIBUTING.md)
 
 ## License
 
-TODO
+This project is licensed under the GNU General Public License v3.0. See [LICENSE](/LICENSE) for more information.
