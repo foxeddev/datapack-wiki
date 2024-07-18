@@ -75,12 +75,14 @@ These fields are present in shaped crafting recipes.
 | `key`     | An object                           | A map of characters to ingredients. Determines what the characters in `pattern` represent. Each key is the character which represents it, and the value being an [ingredient choice](#ingredient-choice).                                |
 | `result`  | A [counted result](#counted-result) | The result of the recipe                                                                                                                                                                                                                 |
 
-:::info If the rows are less than three characters long, or there are fewer than three rows, the recipe can be moved
+:::info 
+If the rows are less than three characters long, or there are fewer than three rows, the recipe can be moved
 around the crafting grid. Recipes with two or fewer rows and columns can be crafting in the 2x2 crafting grid in the
 inventory. 
 :::
 
-:::tip This can be a bit hard to understand from the description; it may be helpful to read the
+:::tip 
+This can be a bit hard to understand from the description; it may be helpful to read the
 [example](#example) to understand it better.
 :::
 
