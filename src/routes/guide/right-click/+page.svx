@@ -1,7 +1,7 @@
 ---
 title: Right Click Detection Summary
 description:
-  "Right click detection is a big part of making datapaks, so here is a quick summary of all the techniques you can use."
+  "Right click detection is a big part of making datapacks, so here is a quick summary of all the techniques you can use."
 ---
 
 <script lang="ts">
@@ -12,7 +12,7 @@ import {   Version, } from '$lib/reusables';
 
 # Right Click Detection Summary
 
-If you alredy know which right click detection technique you are goin to use, you can get more information about them on
+If you already know which right click detection technique you are going to use, you can get more information about them on
 their dedicated pages:
 
 - Using a [Carrot on a stick/WFOAS](/guide/right-click/coas)
@@ -29,7 +29,7 @@ their dedicated pages:
 | Eye Of Ender       |                                     | Slows player down when holding right click, only works in worlds without stronghold | Medium             | Detects up to 20 clicks/second when holding right click | Bound to player, not location   |
 | Interaction Entity | Also detects left clicks, an entity | Players can't break/hit/place through, requires an entity                           | Medium             | detects up to 5 clicks/second when holding right click  | Bound to location, not a player |
 
-**Aditional Info**
+**Additional Info**
 
 - COAS/WFOAS - This method works by using an `item.used` scoreboard objective which triggers when using either of the
   two items and then running commands as/at players with a score of 1 or higher.

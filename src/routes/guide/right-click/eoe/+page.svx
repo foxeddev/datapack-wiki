@@ -1,7 +1,7 @@
 ---
 title: Using an Eye of Ender for RC detection
 description:
-  "An intresting right click detection method for sure, due to the fact that it can only be used in worlds without
+  "An interesting right click detection method for sure, due to the fact that it can only be used in worlds without
   strongholds!"
 ---
 
@@ -32,8 +32,8 @@ import {Version} from '$lib/reusables';
 # Using an Eye of Ender for Right Click Detection
 
 :::warning
-This only works in world without strongholds, if you don't want that, you can either use a similiar method
-that works everywhere (using the Food Component method) or do some chnages to these functions, as specified at the end
+This only works in world without strongholds, if you don't want that, you can either use a similar method
+that works everywhere (using the Food Component method) or do some changes to these functions, as specified at the end
 of this guide.
 :::
 
@@ -42,7 +42,7 @@ This is just a guide, so you'll need to change a few things for your actual data
 - Change `<namespace>` to your namespace
 - Change `<custom_data>` to whatever custom data you want
 
-Using an Eye of Ender is a very similiar method to using the [Food Component](/guide/right-click/food_component), with
+Using an Eye of Ender is a very similar method to using the [Food Component](/guide/right-click/food_component), with
 the difference that this can only be used in worlds without strongholds. With that out of the way, the first file we
 will need to create will be an advancement. Located in `data/<namespace>/advancement/`, we will need to create a `.json`
 file, we are going to call it `used_eye_of_ender.json` for the rest of he guide.

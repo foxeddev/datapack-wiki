@@ -21,8 +21,8 @@ This guide will teach you the best methods for debugging datapacks.
 Bugs are a fancy programmer term for an error in your code. There are two main types of bugs:
 
 - **Syntax error**: This is a bug in the actual written code. This is caused by the code you write being incorrectly
-  written so that the computer literally can't read it. For example, writing "executr as @a" would be a syntax error
-  because "executr" isn't a command.
+  written so that the computer literally can't read it. For example, writing `executr as @a` would be a syntax error
+  because `executr` isn't a command.
 - **Logic error**: This is a bug where the written code is correctly written, but the code doesn't do what you want it
   to. This is caused by a mistake in the code logic. In the simplest example, if you want to give a player 32 diamonds,
   but you accidentally wrote 322.
@@ -31,7 +31,7 @@ Bugs are a fancy programmer term for an error in your code. There are two main t
 
 Syntax errors are pretty easy to spot and fix, due to Minecraft's output logs, which literally tell you if your code is
 incorrect. When you're coding datapacks, its a good idea to always have the logs open if you need to double check it.
-You can open the logs by opening the default Minecarft launcher and clicking "Settings", and then enabling "Open output
+You can open the logs by opening the default Minecraft launcher and clicking "Settings", and then enabling "Open output
 log when Minecraft: Java Edition starts", then just starting the game.
 
 ![A guide on how to open the Minecraft launchers output logs](https://i.postimg.cc/NFxkZV2g/image.png)
@@ -86,7 +86,7 @@ real project.
 
 ## Summary
 
-The first main method for debugging datapacks is using Minecrafts output logs, we've already learnt how to use those in
+The first main method for debugging datapacks is using Minecraft's output logs, we've already learnt how to use those in
 the first part of this guide. The second method is using the in-game commands, like `/say` and `/tellraw` to print
 information in real-time about how your datapack works. But those are not the only ones, you can use the
 `/scoreboard objectives setdisplay <objective>` command to show the values of a scoreboard on your screen in real-time,

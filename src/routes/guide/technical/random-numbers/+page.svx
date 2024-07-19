@@ -24,7 +24,7 @@ execute store result . . . run random value 1..10
 ```
 
 In the command you can change the values 1 and 10 to change the range. If you leave it as it is, it generates a random
-number between 1-10 and stores it in your prefered way (can be a scoreboard, storage,...).
+number between 1-10 and stores it in your preferred way (can be a scoreboard, storage,...).
 
 ## 1.20.1 and below
 

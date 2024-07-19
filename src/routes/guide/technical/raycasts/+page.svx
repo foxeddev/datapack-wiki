@@ -50,7 +50,7 @@ is 100 blocks. 1000 steps \* 0.1 blocks/step = 100 blocks)_.
 
 We also tag the entity executing the raycast so we can exclude it later for hit detection.
 
-Call The raycats function one step further in the facing direction.
+Call The raycasts function one step further in the facing direction.
 
 Remove the tag at the end of the function so it does not interfere with other raycasts that might be executed within the
 same tick.
@@ -73,7 +73,7 @@ We first decrement the limit value by 1.
 Then we make the path of the raycast visible by summoning a few particles. Instead of summoning particles, it could also
 run another function for more complex behavior.
 
-The next step is a bit more complex. We execute a command as every entity that is not the caster and whose hitbox
+The next step is a bit more complex. We execute a command as every entity that is not the caster and whose hit box
 intersects with the two differently offset
 [virtual volumes](https://datapack.wiki/wiki/commands/target_selectors#dxdydz-arguments). Near the end you see
 `unless function <namespace>:hit` this will run the function as the hit entity and, because all functions without a

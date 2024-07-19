@@ -24,7 +24,7 @@ import {Version} from '$lib/reusables';
 - Only works in 1.19.4+
 - Slows player down when holding right click
 - Requires an additional entity
-- Can't be interacted through (e.g. can't build,attack,... throught it)
+- Can't be interacted through (e.g. can't build,attack,... through it)
 
 **Other:**
 
@@ -33,7 +33,7 @@ import {Version} from '$lib/reusables';
 
 # Using an Interaction Entity for Right Click Detection
 
-Firstly we will need to create an advancement, located in `data/<namespace>/advancement/`. You can call it hovewer you
+Firstly we will need to create an advancement, located in `data/<namespace>/advancement/`. You can call it however you
 want, but for the purpose of this guide we will call it `interacted_with_interaction.json`. This advancement is used to
 detect when a player clicks on an interaction entity.
 

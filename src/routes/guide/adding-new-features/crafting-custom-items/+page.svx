@@ -77,7 +77,7 @@ https://misode.github.io/recipe/
 advancements work.**
 
 To create a crafting recipe for one of your custom items, you need just a little bit more than for a normal recipe. This
-is because of the fact that you coudn't use NBT in recipes before 1.20.5 dropped, so thats why we need a small
+is because of the fact that you couldn't use NBT in recipes before 1.20.5 dropped, so that's why we need a small
 workaround.
 
 Lets create the recipe first:
@@ -126,7 +126,7 @@ nbt._
 }
 ```
 
-Lasty we have to make the actual function that handles the item switching. You can either use a `give` command or, what
+Lastly we have to make the actual function that handles the item switching. You can either use a `give` command or, what
 I recommend more, define the item in a separate loot table and then use the `loot` command.
 
 ```mcfunction:craft_scuteaxe.mcfunction

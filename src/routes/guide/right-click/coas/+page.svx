@@ -30,7 +30,7 @@ To get started, we need to create a scoreboard with the criteria `item.used:mine
 later detect when a player uses the COAS (by right clicking on it).
 
 If you don't already have it, you'll need to create a load function with a command that creates a new scoreboard
-objective. You can name the objective whatever you want. We reccomend naming it something like `<namespace>.rc_coas`. In
+objective. You can name the objective whatever you want. We recommend naming it something like `<namespace>.rc_coas`. In
 your load function, put a **scoreboard command** such as this:
 
 ```mcfunction:load.mcfunction

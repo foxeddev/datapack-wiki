@@ -81,7 +81,7 @@ These commands require a permission level same or bigger than 2 to run them.
 - `/schedule function <function> <time> [append|replace] OR clear <function>` - Schedules a function
 - `/scoreboard objectives|players ...` - Manages scoreboard objectives and players
 - `/setblock <pos-XYZ> <block> [destroy|keep|replace]` - Changes or replaces a specified block with a different one
-- `/spawnpoint [<targets>] [<pos>] [<angle>]` - Changes the spawnpoint for a player
+- `/spawnpoint [<targets>] [<pos>] [<angle>]` - Changes the spawn point for a player
 - `/spectate <target> [<player>]` - Makes a player spectate an entity, the player has to be in spectator mode.
 - `/spreadplayers <center> <spreadDistance> <maxRange> [under <maxHeight>] <respectTeams> <targets>` - Teleport entities
   randomly across a specified area

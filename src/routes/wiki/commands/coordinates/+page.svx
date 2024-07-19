@@ -35,14 +35,14 @@ can change this using the commands "execute at" or "execute positioned".
 ## Relative Coordinates
 
 Using the symbols `~` and `^`, we can reference coordinates relative to the current coordinates (for example, you can
-get the posiiton `7 blocks above the current position`).
+get the position `7 blocks above the current position`).
 
 `~` represents the current position on any axis. For example, `12 ~ 76` would teleport me to `x=12` `z=76` but keep `y`
 as the current position. The coordinates `~ ~ ~` would represent the position of the command - this is useful to do
 something at the current position such as placing a block or summoning an entity.
 
 The `~` symbol can be followed by a number to include an offset to the current position. For example, `~ ~12 ~` would
-represent the current postion offsetted by 10 blocks on the y-axis (or in simpler terms: the position 10 blocks above
+represent the current position offset by 10 blocks on the y-axis (or in simpler terms: the position 10 blocks above
 the current position). This can also be a negative number.
 
 Similarly `^` represents a relative position, taking into account the current rotation too. The most common use for this

@@ -69,11 +69,11 @@ argument. (E.g. @e[type=!minecraft:creeper] will select every entity that is NOT
 | `nbt`              | `@a[nbt={SelectedItem:{id:"minecraft:stone"}}]`            | Filters to include entities with specific NBT data. NBT data will be partially matched - as long as the specified data exists on the entity, it doesn't matter what other data it has.                                                                                                                                                                                                                                     |
 | `sort` and `limit` | `@e[limit=1,sort=nearest]`                                 | These two arguments are often used together to find entities based on ordering. For example, `limit=5,sort=furthest` selects the 5 entities which are furthest away from the current position.                                                                                                                                                                                                                             |
 | `x`/`y`/`z`        | `@e[x=10,y=9,z=-5,distance=..5]`                           | Specifies a starting position to work from; affecting `distance`, `dx`/`dy`/`dz`, and `sort`/`limit`. If left blank, it defaults to `~ ~ ~`.                                                                                                                                                                                                                                                                               |
-| `dx`/`dy`/`dz`     | `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`                      | Creates a selection area (cuboid) which will only select entities if any of their hitbox is within the area. `x`/`y`/`z` is needed to specify the position of the bottom right corner of the cuboid - if it is left out it defaults to the current position. If all the `dxyz` values are `0` (or one is set to 0 and no others are set), then it will select any entities if the current position is inside their hitbox. |
+| `dx`/`dy`/`dz`     | `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`                      | Creates a selection area (cuboid) which will only select entities if any of their hit box is within the area. `x`/`y`/`z` is needed to specify the position of the bottom right corner of the cuboid - if it is left out it defaults to the current position. If all the `dxyz` values are `0` (or one is set to 0 and no others are set), then it will select any entities if the current position is inside their hit box. |
 | `tag`              | `@a[tag=CustomTag]`                                        | Selects entities with a specified tag added with the `/tag` command or `Tags[]` NBT. No entities have tags by default - tags can only be added by the datapack or by commands.                                                                                                                                                                                                                                             |
 | `team`             | `@a[team=red]`                                             | Selects entities in a specific team.                                                                                                                                                                                                                                                                                                                                                                                       |
 | `scores`           | `@e[scores={foo=10}]`                                      | Selects entities based on their value on a scoreboard. Like `distance`, you can use `..` to specify ranges.                                                                                                                                                                                                                                                                                                                |
-| `predicate`        | `@e[predicate=namespace:my_predicate]`                     | Selects entites based on whether they pass a custom predicate check.                                                                                                                                                                                                                                                                                                                                                       |
+| `predicate`        | `@e[predicate=namespace:my_predicate]`                     | Selects entities based on whether they pass a custom predicate check.                                                                                                                                                                                                                                                                                                                                                       |
 | `gamemode`         | `@a[gamemode=creative]`                                    | Selects players in a specific game mode.                                                                                                                                                                                                                                                                                                                                                                                   |
 | `advancements`     | `@a[advancements={minecraft:story/follow_ender_eye=true}]` | Selects players based on whether they have unlocked a specific advancement.                                                                                                                                                                                                                                                                                                                                                |
 | `level`            | `@a[level=10]`                                             | Selects players based on their current XP level (not amount of points).                                                                                                                                                                                                                                                                                                                                                    |
@@ -102,8 +102,12 @@ The `name=<entity_name>` argument will filter the selection to only include enti
 
 **Examples**:
 
-- `@e[name=Aron]`: Selects all entities named `Aron`
-- `@e[name="Aron Aronson"]`: Selects entities named `Aron Aaronson`
+- `@e[name=Aaron]`: Selects all entities named `Aaron`
+- `@e[name="Aaron Aaronson"]`: Selects entities named `Aaron Aaronson`
+
+:::tip
+Note that names with more than one word need to be surrounded by quotes.
+:::
 
 ### `distance` argument
 
@@ -182,9 +186,9 @@ dx/dz/dz=0 will always stretch from the command origin to positive x/y/z
 
 **Examples**:
 
-- `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`: Selects any entities if any part of their hitbox is within the cuboid
+- `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`: Selects any entities if any part of their hit box is within the cuboid
   `w=10,h=20,l=5` starting from the position `x=10,y=13,z-87`
-- `@e[x=7,y=3,z=9,dx=0,dy=0,dz=0]`: Selects any entities if their hitbox contains the point `x=7,y=3,z=9`
+- `@e[x=7,y=3,z=9,dx=0,dy=0,dz=0]`: Selects any entities if their hit box contains the point `x=7,y=3,z=9`
 
 ### `tag` argument
 

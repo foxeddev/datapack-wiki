@@ -50,17 +50,17 @@ This is a run-down of the fields in that file:
   the jukebox playing this song.
 - `description`: The description of the enchantment (should be a JSON text component).
 - `length_in_seconds`: The length of the song (in seconds)
-- `sound_event`: The ID of the sound (from the resourcepack) to play.
+- `sound_event`: The ID of the sound (from the resource pack) to play.
 
-If you don't understand what to put in `sound_event`, dont worry, the next part is going to focus specifically on this!
+If you don't understand what to put in `sound_event`, don't worry, the next part is going to focus specifically on this!
 
-## Adding custom music - Resourcepack
+## Adding custom music - Resource Pack
 
-This part is going to be optional in the case, that you only want a vanila Minecraft sound to play from the jukebox. In
+This part is going to be optional in the case, that you only want a vanilla Minecraft sound to play from the jukebox. In
 that case, change the `sound_id` in the `example_jukebox_song.json` file from the datapack to the sounds ID. (for
 example: `"sound_id": "minecraft:music_disc.cat"`).
 
-If you don't want to use a default Minecarft sound, then a resource pack is required to add the custom sound (in this
+If you don't want to use a default Minecraft sound, then a resource pack is required to add the custom sound (in this
 case, the music on the disc) to Minecraft, so that the datapack can read it.
 
 :::info

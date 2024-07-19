@@ -1,7 +1,7 @@
 ---
 title: Slowcast
 description:
-  "Like a raycast but in slow. Usefull if simply using tp every tick skips over too much when making it fast."
+  "Like a raycast but in slow. Useful if simply using tp every tick skips over too much when making it fast."
 ---
 
 <script lang="ts">
@@ -105,7 +105,7 @@ projectile has hit something on its way there.
    next time we call the step function)_
 2. make some particles for the visuals (you could replace the particle command with another function call that does more
    complex stuff)
-3. execute a command as every entity _(excluding entities with the slowcast tag and players)_ whose hitbox intersects
+3. execute a command as every entity _(excluding entities with the slowcast tag and players)_ whose hit box intersects
    with both [virtual volumes](https://datapack.wiki/wiki/commands/target_selectors#dxdydz-arguments) run the hit
    function and kill the projectile.
 4. tp the projectile to the current position _(until now it only executed the command at this position but is still 0.1
