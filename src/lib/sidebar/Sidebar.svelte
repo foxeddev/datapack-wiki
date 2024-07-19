@@ -5,7 +5,7 @@
 
   import IconSearch from "~icons/tabler/search";
 
-  import { sidebarExpanded } from "$lib";
+  import { sidebarExpanded } from "$lib/stores";
   import WikiPages from "$lib/sidebar-pages/WikiPages.svelte";
   import GuidePages from "$lib/sidebar-pages/Guides.svelte";
   import { onMount } from "svelte";
@@ -16,7 +16,7 @@
   import IconWiki from "~icons/tabler/globe";
   import IconGuides from "~icons/tabler/book-2";
 
-  import SidebarPage from "./SidebarPage.svelte";
+  import SidebarPage from "./navigation/SidebarPage.svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
 
   let results: Post[] = [];

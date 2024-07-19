@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded } from "$lib";
+  import { sidebarExpanded } from "$lib/stores";
   import type { ComponentType, SvelteComponent } from "svelte";
   import IconExpand from "~icons/tabler/chevron-right";
 

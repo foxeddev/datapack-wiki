@@ -1,12 +1,11 @@
+---
+title: Error
+description: You shouldn't be here...
+---
+
 <script lang="ts">
 	import { page } from '$app/stores';
 </script>
-
-<svelte:head>
-
-<title>Error: {$page.status} | Datapack Hub</title>
-<meta name="description" content="You shouldn't be here..." />
-</svelte:head>
 
 # Error {$page.status}: {$page.error.message}
 

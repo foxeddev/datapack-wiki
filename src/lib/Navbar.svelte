@@ -4,7 +4,7 @@
   import IconMenu from "~icons/tabler/menu-2";
   import IconEdit from "~icons/tabler/pencil";
 
-  import { sidebarExpanded } from "$lib";
+  import { sidebarExpanded } from "$lib/stores";
   import { page } from "$app/stores";
 
   let shareText = "Share";

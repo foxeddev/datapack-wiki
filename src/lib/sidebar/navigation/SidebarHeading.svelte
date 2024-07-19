@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded } from "$lib";
+  import { sidebarExpanded } from "$lib/stores";
 
   export let label: string;
 </script>

@@ -1,9 +1,9 @@
 <script lang="ts">
   // Page imports
-  import SidebarPage from "$lib/sidebar/SidebarPage.svelte";
-  import SidebarCategory from "$lib/sidebar/SidebarCategory.svelte";
-  import SidebarHeading from "$lib/sidebar/SidebarHeading.svelte";
-  import SidebarPlaceholder from "$lib/sidebar/SidebarPlaceholder.svelte";
+  import SidebarPage from "$lib/sidebar/navigation/SidebarPage.svelte";
+  import SidebarCategory from "$lib/sidebar/navigation/SidebarCategory.svelte";
+  import SidebarHeading from "$lib/sidebar/navigation/SidebarHeading.svelte";
+  import SidebarPlaceholder from "$lib/sidebar/navigation/SidebarPlaceholder.svelte";
 
   // Icon imports
   // https://tabler-icons.io
