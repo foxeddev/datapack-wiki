@@ -27,11 +27,12 @@ export async function search(query: string) {
   const match = htmlStripped.replaceAll(/[\\^$*+?.()|[\]{}]/g, "\\$&");
   const results = index.search(match);
 
-  return results.map(i => posts[i as number]).map(({content, title, url}) => {
-    return { content: getMatches(content, match), title: replaceWithHighlights(title, match), url };
-  });
+  return results
+    .map(i => posts[i as number])
+    .map(({ content, title, url }) => {
+      return { content: getMatches(content, match), title: replaceWithHighlights(title, match), url };
+    });
 }
-
 
 function getMatches(text: string, searchTerm: string, limit = 1) {
   const regex = new RegExp(searchTerm, "gi");

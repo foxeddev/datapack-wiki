@@ -17,7 +17,7 @@
   }
 
   $: if (searchState === "done") {
-    search(searchTerm).then(r => results = r);
+    search(searchTerm).then(r => (results = r));
   }
 </script>
 
