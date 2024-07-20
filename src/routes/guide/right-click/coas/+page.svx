@@ -1,6 +1,6 @@
 ---
 title: Using COAS/WFOAS for RC detection
-description: "If you don't know how to use a COAS for right click detection, this is the right guide to look at."
+description: "Using a carrot on a stick for right click detection is an easy way to detect right clicks with a datapack."
 ---
 
 <script lang="ts">
