@@ -32,7 +32,7 @@ as a command
 
 This function will give every player an apple, then tell them to enjoy the apple.
 
-```
+```mcfunction
 # Give a player the apple
 give @a minecraft:apple
 
@@ -53,15 +53,12 @@ represented as `someFunction(foo, bar)`
 
 In this example, we write a function that gives the player a number of diamonds using a macro.
 
-```mcfunction
-# data/example/function/macro.mcfunction
-
+```mcfunction:macro.mcfunction
 # When called, $(count) will be replaced with some number, producing a valid command
 $give @s diamond $(count)
 ```
 
-```
-# data/example/function/give.mcfunction
+```mcfunction:give.mcfunction
 function example:macro {count: 7}
 
 # This also works

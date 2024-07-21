@@ -1,11 +1,20 @@
 import adapter from "@sveltejs/adapter-cloudflare";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { mdsvex } from "mdsvex";
+import * as shiki from "shiki";
+import mcfunction from "./src/highlighting/mcfunction/mcfunction.tmLanguage.json" with { type: "json" };
+import { theme } from "./src/highlighting/hopscotch.js";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkAdmonitions from "remark-admonitions";
 import remarkCodeTitles from "remark-code-titles";
 import rehypeSlug from "rehype-slug";
 import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
+
+/** @type {import("shiki").BundledTheme} */
+const highlighter = await shiki.getHighlighter({
+  langs: [mcfunction, "json"],
+  themes: [theme],
+});
 
 const admonitionsOptions = {
   useDefaultTypes: false,
@@ -58,6 +67,12 @@ const config = {
       remarkPlugins: [[remarkAdmonitions, admonitionsOptions], [remarkCodeTitles]],
       rehypePlugins: [[rehypeSlug], [rehypeAutolinkHeadings, autoLinkOptions]],
       layout: "src/lib/MDLayout.svelte",
+      highlight: {
+        highlighter: (code, lang) => {
+          let generated = highlighter.codeToHtml(code, { lang, theme }).split("\n").join("<br/>");
+          return `{@html '${generated}'}`;
+        },
+      },
     }),
   ],
 
