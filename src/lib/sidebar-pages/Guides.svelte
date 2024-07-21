@@ -22,7 +22,7 @@
   import IconApple from "~icons/tabler/apple";
   import IconSelection from "~icons/tabler/new-section";
   import IconDice from "~icons/tabler/dice-5";
-  import IconID from "~icons/tabler/id-badge";
+  import IconID from "~icons/tabler/id-badge-2";
   import IconGrid from "~icons/tabler/grid-3x3";
   import IconItem from "~icons/tabler/icons";
 </script>
