@@ -65,7 +65,7 @@
   <SidebarPage label="SNBT" icon={IconNBT} page="/wiki/nbt/snbt" />
   <SidebarPlaceholder label="Entity NBT" icon={IconButterfly} />
   <SidebarPlaceholder label="Block NBT" icon={IconBox} />
-  <SidebarPlaceholder label="Storages" icon={IconCloud} />
+  <SidebarPage label="Storages" icon={IconCloud} page="/wiki/nbt/storages" />
 </SidebarCategory>
 
 <SidebarPlaceholder label="Worldgen" icon={IconWorldgen} />
