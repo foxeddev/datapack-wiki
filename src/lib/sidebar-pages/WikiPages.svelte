@@ -21,7 +21,7 @@
   import IconGrid from "~icons/tabler/grid-3x3";
   import IconButterfly from "~icons/tabler/butterfly";
   import IconCloud from "~icons/tabler/cloud";
-  import IconAlienShapedWeirdGraphThingy from "~icons/tabler/sitemap";
+  import IconChest from "~icons/tabler/brand-minecraft";
   import IconWorldgen from "~icons/tabler/mountain";
   import IconFilters from "~icons/tabler/filters";
   import IconList from "~icons/tabler/list-details";
@@ -48,7 +48,7 @@
   <SidebarPage label="Tags" icon={IconFilters} page="/wiki/files/tags" />
   <SidebarPage label="Recipes" icon={IconGrid} page="/wiki/files/recipes" />
   <SidebarPlaceholder label="Advancements" icon={IconStar} />
-  <SidebarPlaceholder label="Loot Tables" icon={IconAlienShapedWeirdGraphThingy} />
+  <SidebarPlaceholder label="Loot Tables" icon={IconChest} />
 </SidebarCategory>
 
 <SidebarCategory name="Command Reference" icon={IconCommands}>
