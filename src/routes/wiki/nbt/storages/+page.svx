@@ -12,14 +12,12 @@ import {Version} from '$lib/reusables';
 
 # Storages
 
-Storages are a way of storing NBT data in a world without attaching it to an entity or block. Storages are stored globally per world, and can only be manipulated through commands.
+Storages are a way of storing NBT data in a world without attaching it to an entity or block. Storages are stored globally per world, and can only be manipulated with the `/data` command. Storages are identified by their resource location, and don't need to be initialized beforehand, unlike scoreboards.
 
-Storages are identified by their resource location, and don't need to be initialized beforehand, unlike scoreboards. Storages are modified using the [`/data`](/wiki/command/data) command.
-
-Storages, unlike entity and block NBT have no fixed structure, and can contain whichever keys the datapack adds to it.
+Unlike entity and block NBT, storages have no fixed structure, and can contain whichever arbitrary keys are added to it.
 
 ## Example
-Storages are simply defined when a `/data` command modifies them. The only code needed therefore to initialize a storage is a `/data modify` or `/data merge` command, for example:
+Storages are defined when a `/data` command modifies them. Unlike scoreboards, storages do not need to be "created" - the only code needed to initialize a storage is a `/data modify` or `/data merge` command to that storage, for example:
 
 ```mcfunction
 data merge storage example:main {number: 1, message: "Hello!"}
