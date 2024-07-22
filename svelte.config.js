@@ -11,7 +11,7 @@ import rehypeSlug from "rehype-slug";
 import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
 
 const highlighter = await createHighlighter({
-  langs: [mcfunction, "json", "md"],
+  langs: [mcfunction, "json", "md", "javascript"],
   themes: [theme],
 });
 
