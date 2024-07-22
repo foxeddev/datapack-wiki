@@ -21,7 +21,7 @@
     <div class="flex-grow text-left">
       <span>{name}</span>
     </div>
-    <IconExpand class="transition-all {expanded ? 'rotate-0' : 'rotate-90'}" />
+    <IconExpand class="transition-all {expanded ? 'rotate-90' : 'rotate-0'}" />
   {/if}
 </button>
 

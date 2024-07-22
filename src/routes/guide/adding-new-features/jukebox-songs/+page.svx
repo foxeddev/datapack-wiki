@@ -31,7 +31,7 @@ Firstly, we are going to create the actual jukebox song file in the directory `d
 The file can be named whatever, but it has to be in the `.json` file format. For the purposes of this tutorial, we're
 gonna call it `example_jukebox_song.json`. Inside, we will put and configure this:
 
-```json
+```json:example_jukebox_song.json
 {
   "comparator_output": 13,
   "description": {
@@ -75,7 +75,7 @@ that `<namespace>` and `<title>` are the same values you put in the datapack's J
 Then, if you haven't already, you need to create a `sounds.json` file at the position `assets/<namespace>/sounds.json`.
 This file tells Minecraft what audio files map to what IDs. Put this inside:
 
-```json
+```json:sounds.json
 {
   "music_disc.<title>": {
     "sounds": [

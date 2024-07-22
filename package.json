@@ -11,8 +11,6 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
-    "@shikijs/rehype": "^1.11.0",
-    "@sveltejs/adapter-cloudflare": "^4.6.1",
     "@sveltejs/kit": "^2.5.18",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "autoprefixer": "^10.4.19",
@@ -31,7 +29,8 @@
   },
   "type": "module",
   "dependencies": {
-    "@iconify-json/tabler": "^1.1.118",
+    "@iconify-json/tabler": "^1.1.117",
+    "@sveltejs/adapter-auto": "^3.2.2",
     "@tailwindcss/typography": "^0.5.13",
     "flexsearch": "^0.7.43",
     "gray-matter": "^4.0.3",
