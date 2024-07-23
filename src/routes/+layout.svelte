@@ -1,4 +1,8 @@
 <script lang="ts">
+  import "../styles/fonts.css";
+  import "../styles/app.css";
+  import "../styles/admonitions.css";
+  
   import Navbar from "../lib/Navbar.svelte";
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
 
@@ -6,10 +10,6 @@
 
   import IconBeta from "~icons/tabler/flask-2-filled";
 
-  import "../styles/fonts.css";
-  import "../styles/app.css";
-  import "../styles/code_theme.css";
-  // import "remark-admonitions/styles/classic.css"
 
   let betaWarning: HTMLDivElement;
 </script>

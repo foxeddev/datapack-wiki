@@ -9,7 +9,7 @@
 
 .md {
   @apply prose prose-sm prose-stone prose-invert max-w-full md:prose-base;
-  @apply prose-headings:mb-2 prose-h2:text-2xl prose-h2:mt-7;
+  @apply prose-headings:mb-2 prose-h2:text-2xl prose-h2:mt-7 prose-headings:scroll-mt-16;
   @apply prose-p:my-3;
   @apply prose-blockquote:rounded-l-sm prose-blockquote:font-normal prose-blockquote:not-italic;
 
@@ -25,72 +25,19 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0.15rem;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply rounded-full bg-zinc-800;
+  @apply rounded-full bg-stone-700;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-zinc-500;
+  @apply rounded-full bg-stone-500;
 }
 
 .remark-code-title {
   @apply text-sm font-mono font-bold uppercase bg-[#322931] py-1 px-2 rounded-md -mb-4 w-fit;
-}
-
-/* Admonition styles */
-
-.admonition {
-  @apply w-fit min-w-[25%] border-l-4 p-3 my-2;
-}
-
-.admonition-heading h5 {
-  @apply flex text-sm gap-2 items-center mb-1 uppercase;
-}
-.admonition-heading h5 a[aria-hidden="true"] {
-  @apply hidden;
-}
-
-.admonition-content p {
-  @apply m-0;
-}
-
-.admonition-icon {
-  @apply w-4 h-4 inline-block;
-}
-
-.admonition-note {
-  @apply bg-slate-500/25 border-slate-600 fill-slate-400;
-}
-
-.admonition-note .admonition-heading h5 {
-  @apply text-slate-400;
-}
-
-.admonition-info {
-  @apply bg-blue-500/25 border-blue-600 fill-blue-400;
-}
-
-.admonition-info .admonition-heading h5 {
-  @apply text-blue-400;
-}
-
-.admonition-tip {
-  @apply bg-yellow-400/25 border-yellow-500 fill-yellow-300;
-}
-
-.admonition-tip .admonition-heading h5 {
-  @apply text-yellow-300;
-}
-
-.admonition-warning {
-  @apply bg-red-500/25 border-red-600 fill-red-400;
-}
-
-.admonition-warning .admonition-heading h5 {
-  @apply text-red-400;
 }
 
 .autolink {

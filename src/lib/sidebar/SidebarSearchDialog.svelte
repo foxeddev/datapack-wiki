@@ -24,10 +24,13 @@
 <dialog
   bind:this={dialog}
   class="w-[90%] md:w-3/4 lg:w-1/2 xl:w-1/3 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm">
-  <div class="bg-stone-800 w-full p-4 gap-1 rounded-lg">
+  <div class="bg-stone-800 w-full p-4 gap-1 rounded-md">
+    <!-- svelte-ignore a11y-autofocus -->
+    <!-- as much as svelte wants to yell at me for autofocus, it actually makes accessibility better -->
     <input
-      class="bg-stone-900 w-full rounded-sm focus:outline-0 text-white p-2 placeholder:text-stone-500 disabled:cursor-not-allowed"
+      class="bg-stone-900 w-full rounded-sm focus:outline-0 text-white p-2 placeholder:text-stone-500 disabled:cursor-not-allowed disabled:bg-stone-900/50"
       disabled={searchState === "waiting"}
+      autofocus
       autocomplete="off"
       spellcheck="false"
       type="search"

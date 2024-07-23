@@ -38,12 +38,12 @@
     {#if $sidebarExpanded}
       <button
         aria-label="Open Search Modal"
-        class="bg-black/45 p-2 py-1 rounded-lg flex items-center space-x-2 mt-1 mb-2"
+        class="bg-black/45 px-2 py-1 rounded-lg flex items-center space-x-2 mt-1 mb-2"
         on:click={async () => await dialog.showModal()}>
         <IconSearch />
         <span class="py-1 text-stone-500">Search...</span>
       </button>
-      <div class="flex items-center mb-2 ml-1 space-x-1">
+      <div class="flex items-center mb-2 space-x-1">
         <button
           class="{page == 'wiki'
             ? 'bg-stone-700'
