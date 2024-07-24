@@ -2,6 +2,7 @@
   import "../styles/fonts.css";
   import "../styles/app.css";
   import "../styles/admonitions.css";
+  import "../styles/code_theme.css";
   
   import Navbar from "../lib/Navbar.svelte";
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
