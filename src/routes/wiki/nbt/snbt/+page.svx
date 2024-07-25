@@ -6,6 +6,10 @@ description:
   Minecraft to store data. NBT is used to store data about entities, items, blocks, structures, game saves, and more."
 ---
 
+<script lang="ts">
+  import SNBTValidator from "$lib/interactive/SNBTValidator.svelte";
+</script>
+
 # SNBT Format
 
 SNBT (Stringified Named Binary Tags) format is a JSON-like tree structure used in datapack development to manipulate the
@@ -46,3 +50,9 @@ Strings can store any text value, or more technically, any sequence of unicode c
 (`A-Z, a-z, 0-9, -,_,+,.`), the quotes are optional, but recommended. `"<text>"` or `'<text>'` or `<text>`
 
 **Example**: `name:"Silabear"`, `name:'Cobblestone'`, `name:Aandeel`
+
+## Validator
+
+Below is a validator for SNBT. It will validate the input and show you if it is valid or not.
+
+<SNBTValidator />

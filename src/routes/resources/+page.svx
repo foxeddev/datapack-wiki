@@ -4,7 +4,7 @@ description: "Listed here are links to credible and reliable places to aid in co
 ---
 
 <script lang="ts">
-import {Info, Warning, Tip, Version, Highlight} from '$lib/reusables';
+import {Version, Highlight} from '$lib/reusables';
 </script>
 
 # Resources
@@ -14,15 +14,23 @@ Listed here are links to credible and reliable places to aid in command support 
 ### Datapack Hub
 
 <Highlight color="#738ADB">Discord</Highlight>
-<a href="https://discord.datapackhub.net">https://discord.datapackhub.net</a><br /><br /><Highlight color="#DC2626">Website</Highlight>
-<a href="https://datapackhub.net">https://datapackhub.net</a>
+<a href="https://discord.datapackhub.net">Datapack Hub Discord</a>
+
+<br><br>
+
+<Highlight color="#DC2626">Website</Highlight>
+<a href="https://datapackhub.net">Datapack Hub Website</a>
 
 ### MCStacker
 
 <Highlight color="#738ADB">Discord</Highlight>
-<a href="https://discord.gg/WCb6GNf">https://discord.gg/WCb6GNf</a><br /><br /><Highlight color="#DC2626">Website</Highlight>
-<a href="https://mcstacker.net">https://mcstacker.net</a>
+<a href="https://discord.gg/WCb6GNf">MCStacker Discord</a>
+
+<br><br>
+
+<Highlight color="#DC2626">Website</Highlight>
+<a href="https://mcstacker.net">MCStacker Website</a>
 
 ### Data Pack Generators
 
-<Highlight color="#DC2626">Website</Highlight> <a href="https://misode.github.io/">https://misode.github.io/</a>
+<Highlight color="#DC2626">Website</Highlight> <a href="https://misode.github.io/">Misode Data Pack Generator</a>

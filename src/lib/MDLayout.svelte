@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Seo from "sk-seo";
 
   export let title;
