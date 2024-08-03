@@ -6,7 +6,7 @@ description:
 ---
 
 <script lang="ts">
-import {   Version, } from '$lib/reusables';
+import { Version } from '$lib/reusables';
 </script>
 
 # Debugging your datapacks

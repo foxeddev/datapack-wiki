@@ -12,36 +12,98 @@ import {LatestPackFormat, Version} from '$lib/reusables';
 # Site Meta and Contribution
 
 This page is meant to be an introduction for contributors to the wiki. In it is multiple examples which you can examine
-raw in the [site source code](https://github.com/Datapack-Hub/wiki).
+unformatted in the [site source code](https://github.com/Datapack-Hub/wiki).
+
+**Last Updated:** 08-03-2024
 
 ## Contributing
 
-The full contributing guide is available on a separate page
-[here](https://github.com/Datapack-Hub/wiki/blob/main/CONTRIBUTING.md).
-
-To contribute, please fork the **Datapack-Hub/wiki** repo on GitHub, make changes in your fork, then submit a pull
+The full contributing guide is available on a [separate page here](https://github.com/Datapack-Hub/wiki/blob/main/CONTRIBUTING.md).
+To contribute, please fork the [Datapack-Hub/wiki](https://github.com/Datapack-Hub/wiki) repo on GitHub, make changes in your fork, then submit a pull
 request, explaining your changes.
 
 ## Formatting
 
-This section goes over how to format wiki pages. We like consistency, so please read carefully and use these features to
+This section goes over how we format wiki pages. We like to be consistent, so please read through this section carefully and use these features to
 your advantage:
 
 ### Basic formatting
 
-All content on the website (other than navbar, sidebar and things that are not the actual wiki pages) are made using a
-technology called mdsvex. This technology enables people like you to insert markdown with
+All content on the website (except navbar, sidebar and things that are not the actual wiki pages) are made using a
+technology called mdsvex. This technology enables people like you to insert Markdown along with
 [svelte components](https://svelte.dev).
 
 Each page is made of 3 parts:
 
-- front matter (metadata about the page such as title)
+- front matter (metadata about the page such as title, description, tags, versions, etc.)
 - content (the actual content of the page)
 - components (custom components that allow for interactivity or other features not able to be reproduced with markdown)
 
 Each is crucial to making the page look and feel how it does.
 
+Along with everything else, there is also a component called `Version` which is used to display the Minecraft version the page is validated and up to date with.
+
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+
+We recommend using this component on any page that is validated and up to date with the latest Minecraft version.
+
+:::tip
+It is recommended to know what the proper way to format markdown is in order to stay consistent and prevent confusion. 
+If you don't know it off by heart, try taking some of the recommendations from a program like Markdown Lint.
+:::
+
+### Front Matter
+
+We try to keep the front matter as minimal as possible, but it is still required to be present. Without it, the page will not display correctly on search engines or other sites. 
+Front matter may seem daunting, but it is quite simple. The front matter for this page looks like this:
+
+```md
+---
+title: "Site Development"
+description:
+  "This page is meant to be an introduction to developing a page for the wiki. In it is multiple examples which you can
+  examine raw in the [site source code](https://github.com/Datapack-Hub/wiki)."
+
+---
+```
+
+The title should be the same as the title in the sidebar in order to reduce confusion. The description should be a 
+short summary of the content of the page in order to show people what all is covered in the article. Some old pages 
+might not have a description or the description may be the first line on the page. In many cases this is not optimal, 
+so we recommend changing description field to provide a more detailed description of the page.
+
+### Custom Elements
+
+Our markdown system adds unlimited customizability to the way we format our pages. As of the time of writing, we currently have the following features:
+
+- Admonitions
+- Code Titles
+- Highlighting (WIP MCFunction Highlighting)
+
+Admonitions are a way to add a colored box to your page. They are used to highlight important information, warnings, tips, etc.
+
+:::info
+This is an example of an info box.
+:::
+
+Code titles are a way to add a title to a code block. They are used to make it easier to read code blocks.
+
+```js:example.js
+function example() {
+  console.log("Hello World!");
+}
+```
+
+Highlighting is a way to highlight specific text in a code block. It is used to make it easier to read code blocks.
+
+### Standardized Elements
+
+As of right now, the wiki uses a few elements that are standardized across the entire wiki. Right now this only consists of command syntax.
+You can find the command syntax we use in the [commands page](/wiki/commands/about).
+
 ### Formatting Examples
+
+The following examples demonstrate basic markdown formatting and some custom elements and markdown features. If you know what you're doing, feel free to skip it.
 
 <div class="flex flex-col lg:flex-row space-x-3">
 <div class="lg:w-1/2">

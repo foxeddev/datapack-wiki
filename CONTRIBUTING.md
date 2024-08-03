@@ -8,13 +8,13 @@ To contribute, please fork this repo and then submit a pull request with your ad
 > [!TIP] If you don't understand markdown or HTML, or if you require additional support, please
 > [join our Discord](https://discord.datapackhub.net) and we'd be happy to help!
 
-## (Optional, but reccomended) Setting up the development environment
+## (Optional, but recommended) Setting up the development environment
 
 Before you begin developing the site, it's a good idea to set up a local dev server so you can view your changes on the
 site in real-time. You only need a few requirements:
 
 - [Node](https://nodejs.org/en)
-- A package manager (`npm`, the default with node.js, is more than enough.
+- A package manager (`npm`, the default with node.js, is more than enough)
 - [Bun (optional)](https://bun.sh) - we use this to generate our search indexes, it can also be used to run the project
 
 ### Installing
@@ -54,7 +54,7 @@ manager. These will check for common issues you may run into.
 
    ```svelte
    <script lang="ts">
-     import { Tip } from "$lib/reusables";
+     import { Version } from "$lib/reusables";
    </script>
    ```
 
@@ -64,7 +64,6 @@ manager. These will check for common issues you may run into.
    # /function command
 
    This command runs any `.mcfunction` file when called. You can also pass in a NBT compound or NBT source path.
-   ```
 
    :::info 
    I am a very important piece of information. Please dont ignore me. I'm only smol. 
@@ -77,6 +76,7 @@ manager. These will check for common issues you may run into.
    :::tip 
    You can do this really cool thing. It'll make your life a lot better! 
    :::
+   ```
 
 ## Syntax
 

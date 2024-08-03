@@ -45,6 +45,7 @@ for await (const file of matchingFiles) {
 }
 
 // write to file
-log.info("Writing to file");
+log.start("Writing to file...");
 await write("./src/routes/search.json/meta.json", JSON.stringify(posts));
+
 log.success("Done!");

@@ -10,7 +10,7 @@ declare global {
     // interface Platform {}
   }
 
-  export type Post = {
+  export type Page = {
     title: string;
     content: string;
     url: string;

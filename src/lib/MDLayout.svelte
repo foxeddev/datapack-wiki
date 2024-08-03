@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Seo from "sk-seo";
 
   export let title;
@@ -10,7 +10,7 @@
   {description}
   author="Datapack Wiki"
   siteName="Datapack Wiki"
-  keywords="datapacks, datapack wiki, datapack docs, minecraft datapacks, datapack help, datapack creation"
+  keywords="datapacks, datapack wiki, datapack docs, minecraft datapacks, datapack help, datapack creation, dph"
   socials={[
     "https://discord.datapackhub.net",
     "https://planetminecraft.com/group/datapack_hub/",
