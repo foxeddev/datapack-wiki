@@ -1,4 +1,4 @@
-{
+export default {
   "name": "mcfunction",
   "scopeName": "source.mcfunction",
   "uuid": "8918dadd-8ebe-42d9-b1e9-0489ab228d9d",

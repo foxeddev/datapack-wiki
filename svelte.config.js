@@ -2,7 +2,7 @@ import adapter from "@sveltejs/adapter-auto";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { mdsvex } from "mdsvex";
 import { createHighlighter} from "shiki";
-import mcfunction from "./src/highlighting/mcfunction/mcfunction.tmLanguage.json" with { type: "json" };
+import mcfunction from "./src/highlighting/mcfunction/mcfunction.js";
 import { theme } from "./src/highlighting/hopscotch.js";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkAdmonitions from "remark-admonitions";
