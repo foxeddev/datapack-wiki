@@ -1,11 +1,19 @@
 import adapter from "@sveltejs/adapter-auto";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { mdsvex } from "mdsvex";
+import { createHighlighter} from "shiki";
+import mcfunction from "./src/highlighting/mcfunction/mcfunction.js";
+import { theme } from "./src/highlighting/hopscotch.js";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkAdmonitions from "remark-admonitions";
 import remarkCodeTitles from "remark-code-titles";
 import rehypeSlug from "rehype-slug";
 import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic";
+
+const highlighter = await createHighlighter({
+  langs: [mcfunction, "json", "md", "javascript"],
+  themes: [theme],
+});
 
 const admonitionsOptions = {
   useDefaultTypes: false,
@@ -59,6 +67,12 @@ const config = {
       remarkPlugins: [[remarkAdmonitions, admonitionsOptions], [remarkCodeTitles]],
       rehypePlugins: [[rehypeSlug], [rehypeAutolinkHeadings, autoLinkOptions]],
       layout: "src/lib/MDLayout.svelte",
+      highlight: {
+        highlighter: (code, lang) => {
+          let generated = highlighter.codeToHtml(code, { lang, theme });
+          return escapeHtml(generated);
+        },
+      },
     }),
   ],
 
@@ -68,5 +82,17 @@ const config = {
 
   extensions: [".svelte", ".svx"],
 };
+
+/**
+  * Returns code with curly braces and backticks replaced by HTML entity equivalents
+  * @param {string} html - highlighted HTML
+  * @returns {string} - escaped HTML
+  */
+ function escapeHtml(code) {
+   return code.replace(
+     /[{}`]/g,
+     (character) => ({ '{': '&lbrace;', '}': '&rbrace;', '`': '&grave;' }[character]),
+   );
+ }
 
 export default config;

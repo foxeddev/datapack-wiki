@@ -127,8 +127,6 @@ Click the link to [go to the main page](/)
 
 I have some `inline code` for you. Here's some more:
 
-\```json { "this.is":"cool!" } \```
-
 - List Item
 - Another List Item
 

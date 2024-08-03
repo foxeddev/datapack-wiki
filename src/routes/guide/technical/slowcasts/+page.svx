@@ -113,7 +113,7 @@ projectile has hit something on its way there.
 5. execute this function again one 0.1 block step forward should the temporary step counter still be over 1
    _(recursion)_
 
-```mcfunction.step:mcfunction
+```mcfunction:step.mcfunction
 scoreboard players remove steps temp 1
 
 particle flame ~ ~ ~ .1 .1 .1 0 1
