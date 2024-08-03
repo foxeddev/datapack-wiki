@@ -37,19 +37,53 @@ Strings can store any text value, or more technically, any sequence of unicode c
 
 **Example**: `name:"Silabear"`, `name:'Cobblestone'`, `name:Aandeel`
 
-### Short/Int/Long
+### Whole Numbers
 
 **Short**, **Int**, and **Long** data types all represent integers (whole numbers).
 
+- **Byte** is an unsigned 8 bit integers, it can be any value from `0` to `255`
 - **Short** is a signed 16 bit integer, it can be any value from `-32,768` to `32,767`
 - **Int** is a signed 32 bit integer, it can be any value from `-2,147,483,648` to `2,147,483,647`
 - **Long** is a signed 64 bit integer, it can be any value from `-9,223,372,036,854,775,808` to
   `9,223,372,036,854,775,807`
 
-**Format**: Strings are stored within either double or single quotes. For strings containing standard characters
-(`A-Z, a-z, 0-9, -,_,+,.`), the quotes are optional, but recommended. `"<text>"` or `'<text>'` or `<text>`
+**Format**: By default, numbers are stored as integers. To store a number in the other formats, you need to use the appropriate suffix.
+For shorts, ints, and longs, the prefix is `s`, `i`, and `l` respectively.
 
-**Example**: `name:"Silabear"`, `name:'Cobblestone'`, `name:Aandeel`
+**Example**: `count:1234s`, `bigNumber:1200000`, `reallyBigNumber:12123023687234L`, `byte:112b`
+
+### Decimal Numbers
+
+**Float** and **Double** data types both represent decimal numbers.
+
+- **Float** is a signed 32 bit floating point number, it can be any value from `-3.4028235E38` to `3.4028235E38`. It is precise to 7 decimal places.
+- **Double** is a signed 64 bit floating point number, it can be any value from `-1.7976931348623157E308` to
+  `1.7976931348623157E308`. It is precise to 15 decimal places.
+
+**Format**: By default, decimal numbers are stored as doubles. To store a number in the other formats, you need to use the
+appropriate suffix. For floats, the suffix is `f`. For doubles, the suffix is `d`.
+
+**Example**: `pi:3.1415926535d`, `e:2.718281828459045d`, `phi:1.6180f`
+
+### Bytes or Booleans
+
+In older versions of Minecraft, booleans were stored as bytes with `0b` representing 
+`false` and `1b` representing `true`. In newer versions, booleans were introduced.
+Essentially, booleans represent the old `0b` and `1b` with a more descriptive name.
+It's recommended to use booleans instead of bytes whenever possible, as they are more readable.
+
+### Arrays
+
+Arrays are used to store multiple values of the same type. There are currently 3 types of arrays:
+
+- **Byte Array**: Used to store multiple bytes
+- **Int Array**: Used to store multiple integers
+- **Long Array**: Used to store multiple longs
+
+**Format**: Arrays are defined using square brackets (`[]`), followed by the type of the array, a semicolon, and then your data. 
+The data still has to have prefixes if it needs it.
+
+**Example**: `[B;1b,2B,true,false]`, `[I;1,2,3,4,5]`, `[L;1l,2l,3l,4l,5l]`
 
 ## Validator
 

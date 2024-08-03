@@ -19,7 +19,7 @@
   import SidebarPage from "./navigation/SidebarPage.svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
 
-  let results: Post[] = [];
+  let results: Page[] = [];
 
   let page = "wiki";
 

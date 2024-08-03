@@ -2,9 +2,10 @@ import FlexSearch from "flexsearch";
 import { stripHtml } from "string-strip-html";
 
 let index: FlexSearch.Index;
-let posts: Post[] = [];
+let posts: Page[] = [];
 
-export function createSearchIndex(pages: Post[]) {
+// This function creates the search index from the given pages.
+export function createSearchIndex(pages: Page[]) {
   index = new FlexSearch.Index({ tokenize: "forward" });
 
   for (let i = 0; i < pages.length; i++) {
@@ -16,6 +17,7 @@ export function createSearchIndex(pages: Post[]) {
   posts = pages;
 }
 
+// This function replaces the given match with a highlighted version of the match.
 function replaceWithHighlights(text: string, match: string) {
   const regex = new RegExp(match, "gi");
   return text.replace(regex, match => `<mark>${match}</mark>`);
@@ -34,6 +36,7 @@ export async function search(query: string) {
     });
 }
 
+// This function returns an array of matches for the given text and search term.
 function getMatches(text: string, searchTerm: string, limit = 1) {
   const regex = new RegExp(searchTerm, "gi");
   const results = [];

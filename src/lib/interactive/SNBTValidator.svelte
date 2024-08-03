@@ -6,8 +6,15 @@
   let error = "";
 
   function validate() {
+
+    if (value.length === 0) {
+      valid = "unset";
+      error = "";
+      return;
+    }
+
     try {
-      parse(`{${value}}`);
+      parse(value);
       valid = "valid";
       error = "";
     } catch (e) {
@@ -29,4 +36,7 @@
       : 'ring-red-500'
     : 'ring-stone-700'}"
   placeholder="Paste your SNBT here..."></textarea>
-{error}
+<p class="text-red-500">
+  {error}
+</p>
+  

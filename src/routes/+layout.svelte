@@ -3,14 +3,13 @@
   import "../styles/app.css";
   import "../styles/admonitions.css";
   import "../styles/code_theme.css";
-  
+
   import Navbar from "../lib/Navbar.svelte";
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
 
   import { dev } from "$app/environment";
 
   import IconBeta from "~icons/tabler/flask-2-filled";
-
 
   let betaWarning: HTMLDivElement;
 </script>
