@@ -35,16 +35,16 @@
     </a>
   </div>
 
-  <div class="flex items-center space-x-2">
+  <div class="flex items-center gap-2">
     <a
       href="https://github.com/Datapack-Hub/wiki/blob/main/src/routes{$page.url.pathname}/%2Bpage.svx"
-      class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 hover:text-stone-100 aspect-square sm:aspect-auto"
+      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto"
       aria-label="Discord">
       <IconEdit />
       <span class="hidden sm:block">Edit</span>
     </a>
     <button
-      class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 hover:text-stone-100 aspect-square sm:aspect-auto"
+      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto"
       aria-label="Copy URL"
       on:click={copyUrl}>
       <IconShare />
@@ -52,7 +52,7 @@
     </button>
     <a
       href="https://discord.datapackhub.net"
-      class="bg-black/45 p-2 rounded-lg py-1 flex items-center space-x-2 hover:text-stone-100 aspect-square sm:aspect-auto"
+      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto"
       aria-label="Discord">
       <IconDiscord />
       <span class="hidden sm:block">Discord</span>

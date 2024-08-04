@@ -25,7 +25,7 @@
       {#if !dev}
         <div class="fixed z-50 bottom-0 w-fit flex items-center" bind:this={betaWarning}>
           <div class="bg-red-700 flex items-center">
-            <div class="p-3 flex items-center space-x-2 text-sm lg:text-base">
+            <div class="p-3 flex items-center gap-2 text-sm lg:text-base">
               <b>EARLY BETA</b>
               <IconBeta />
             </div>

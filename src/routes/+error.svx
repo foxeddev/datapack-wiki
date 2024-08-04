@@ -12,4 +12,4 @@ description: You shouldn't be here...
 There was an error when loading this page. Maybe it doesn't exist? If you think this is an error, please report it in
 our [Discord](https://discord.datapackhub.net/).
 
-- [Go back to the homepage](/)
+In the meantime, you can go back to the [homepage](/) or use the search in the sidebar.
