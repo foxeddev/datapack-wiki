@@ -8,7 +8,7 @@
       <span>JOIN OUR DISCORD SERVER</span>
     </div> -->
   <div class="flex items-center space-x-3">
-    <img alt="Datapack Hub Discord" src="/dph.png" class="not-prose h-16 m-2" />
+    <img alt="Datapack Hub Discord" src="/dph.png" class="not-prose h-16 m-2 hidden md:block" />
     <div class="flex flex-col">
       <div class="flex text-sm space-x-2 items-center text-orange-400 mb-1">
         <IconDiscord />

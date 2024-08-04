@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { sidebarExpanded, windowWidth } from "$lib/stores";
   import { createSearchIndex, search } from "../search";
 
   export let results: any[] = [];
@@ -38,7 +39,14 @@
       bind:value={searchTerm} />
     <div class="overflow-y-auto max-h-[50vh]">
       {#each results as result}
-        <a on:click={() => dialog.close()} href={result.url}>
+        <a
+          on:click={() => {
+            dialog.close();
+            if ($windowWidth < 640) {
+              $sidebarExpanded = false;
+            }
+          }}
+          href={result.url}>
           <div class="p-2 my-2 rounded-sm hover:bg-black/20 transition-all">
             <p class="text-stone-200 text-lg">
               {@html result.title}

@@ -31,7 +31,7 @@
       on:click={() => ($sidebarExpanded = !$sidebarExpanded)}><IconMenu /></button>
     <a class="flex items-center cursor-default hover:text-white p-1" href="/">
       <img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-8 mr-2" width="32" height="32" />
-      <h1 class="font-bold text-xl">Datapack Wiki</h1>
+      <h1 class="font-bold hidden text-lg lg:text-xl sm:block">Datapack Wiki</h1>
     </a>
   </div>
 
