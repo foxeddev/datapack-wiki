@@ -104,7 +104,7 @@ recommend Visual Studio Code)
 
 Inside `hello_world.mcfunction`, put the following:
 
-```
+```mcfunction
 # Show the player Hello World on their screen
 title @s title "Hello World!"
 
@@ -115,7 +115,7 @@ give @s diamond
 It's that simple! Once you **save that file**, **rejoin your world** and then run `/reload`, you should be able to use
 the following command to run the function:
 
-```
+```mcfunction
 /function example:hello_world
 ```
 
@@ -144,7 +144,7 @@ file - call this one `loop.mcfunction`.
 
 For now, let's just make it say "Hi" every time it loops. You can do this by putting this in the new function:
 
-```
+```mcfunction
 say Hi
 ```
 
@@ -228,7 +228,7 @@ have the data `{inGround:1b}`, so we would use `@e[type=arrow,nbt={inGround:1b}]
 This target selector can be used in an `execute` command to run a command as the entity. Try putting this in your
 `loop.mcfunction`:
 
-```
+```mcfunction
 execute as @e[type=arrow,nbt={inGround:1b}] at @s run say I'm an arrow, I'm in the ground!
 ```
 
@@ -246,14 +246,14 @@ We only need to do two things with this command:
 To create an explosion in Minecraft, we can simply summon a TNT entity. When a TNT entity is summoned, it will explode
 instantly.
 
-```
+```mcfunction
 execute as @e[type=arrow,nbt={inGround:1b}] at @s run summon tnt
 ```
 
 Then, we just need to copy this command and make it kill the arrow after the explosion has happened. This is as simple
 as it sounds - we can use `/kill` to remove the arrow. Your finished `loop.mcfunction` should look like this:
 
-```
+```mcfunction
 execute as @e[type=arrow,nbt={inGround:1b}] at @s run summon tnt
 kill @e[type=arrow,nbt={inGround:1b}]
 ```

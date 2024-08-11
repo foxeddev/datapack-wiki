@@ -39,7 +39,7 @@ For example, if there are two markers A and B, and the following command is run:
 `execute as @e[type=marker] run function example`  
 And the `example` function contained the following commands:
 
-```
+```mcfunction
 say first command
 say second command
 ```

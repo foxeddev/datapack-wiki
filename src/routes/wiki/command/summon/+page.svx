@@ -46,7 +46,7 @@ However, `execute summon` cannot provide any NBT to give the entity upon being s
 the command/function which is executed, which can be a bit tedious. An alternative to
 `execute summon minecraft:cow run function custom_function` would be the following:
 
-```
+```mcfunction
 summon minecraft:cow ~ ~ ~ {Tags:["newly_summoned_cow"]}
 execute as @n[type=cow,tag=newly_summoned_cow] at @s run function custom_function
 tag @n[type=cow,tag=newly_summoned_cow] remove newly_summoned_cow
