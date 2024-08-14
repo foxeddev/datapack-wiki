@@ -60,7 +60,7 @@
   <SidebarPage label="function" icon={IconCommand} page="/wiki/command/function" />
   <SidebarPage label="execute" icon={IconCommand} page="/wiki/command/execute" />
   <SidebarPage label="summon" icon={IconCommand} page="/wiki/command/summon" />
-  <SidebarPlaceholder label="data" icon={IconCommand} />
+  <SidebarPage label="data" icon={IconCommand} page="/wiki/command/data" />
 </SidebarCategory>
 
 <SidebarCategory name="NBT Data" icon={IconBraces}>
