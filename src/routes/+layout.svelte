@@ -11,7 +11,7 @@
 
   import IconBeta from "~icons/tabler/flask-2-filled";
 
-  let betaWarning: HTMLDivElement;
+  let betaWarning: HTMLDivElement | null = $state(null);
 </script>
 
 <div class="font-lexend h-full min-h-screen flex flex-col text-stone-200">
@@ -31,7 +31,7 @@
             </div>
             <div class="bg-red-800 p-3 flex items-center text-sm lg:text-base">
               <p>This wiki is in very early development. Your contributions are welcome!</p>
-              <button class="underline ml-2" on:click={() => betaWarning.remove()}>Dismiss</button>
+              <button class="underline ml-2" onclick={() => betaWarning?.remove()}>Dismiss</button>
             </div>
           </div>
         </div>

@@ -1,9 +1,9 @@
 <script lang="ts">
-  export let color: string = "FFFF00";
+  const { children, color = "FFFF00" }: any = $props();
 </script>
 
 <span style="--background-color: {color}BB;" class="dph-highlight">
-  <slot />
+  {@render children()}
 </span>
 
 <style>

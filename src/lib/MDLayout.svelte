@@ -1,8 +1,12 @@
 <script lang="ts">
   import Seo from "sk-seo";
 
-  export let title;
-  export let description;
+  type Props = {
+    title: string;
+    description: string;
+  };
+
+  const { title, description }: Props = $props();
 </script>
 
 <Seo

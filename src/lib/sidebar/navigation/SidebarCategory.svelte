@@ -1,17 +1,21 @@
 <script lang="ts">
   import { sidebarExpanded } from "$lib/stores";
-  import type { ComponentType, SvelteComponent } from "svelte";
   import IconExpand from "~icons/tabler/chevron-right";
 
-  export let name: string;
-  export let icon: ComponentType<SvelteComponent>;
+  type Props = {
+    name: string;
+    icon: any;
+    children: any
+  }
 
-  let expanded = false;
+  const { children, name, icon }: Props = $props();
+
+  let expanded = $state(false);
 </script>
 
 <button
   class="hover:bg-stone-700 hover:text-white hover:font-medium rounded-lg flex gap-2 cursor-default p-1 items-center w-full"
-  on:click={() => {
+  onclick={() => {
     expanded = !expanded;
     $sidebarExpanded = true;
   }}>
@@ -27,6 +31,6 @@
 
 {#if expanded && $sidebarExpanded}
   <div class="flex flex-col ml-4 pb-2">
-    <slot />
+    {@render children()}
   </div>
 {/if}

@@ -19,9 +19,9 @@
   import SidebarPage from "./navigation/SidebarPage.svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
 
-  let results: Page[] = [];
+  let results: Page[] = $state([]);
 
-  let page = "wiki";
+  let page = $state("wiki");
 
   onMount(async () => {
     page = sessionStorage.getItem("page") || "wiki";
@@ -39,7 +39,7 @@
       <button
         aria-label="Open Search Modal"
         class="bg-black/45 px-2 py-1 rounded-lg flex items-center gap-2 mt-1 mb-2"
-        on:click={async () => await dialog.showModal()}>
+        onclick={async () => await dialog.showModal()}>
         <IconSearch />
         <span class="py-1 text-stone-500">Search...</span>
       </button>
@@ -48,7 +48,7 @@
           class="{page == 'wiki'
             ? 'bg-stone-700'
             : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center gap-1"
-          on:click={() => {
+          onclick={() => {
             page = "wiki";
             sessionStorage.setItem("page", "wiki");
           }}>
@@ -58,7 +58,7 @@
           class="{page == 'guides'
             ? 'bg-stone-700'
             : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center gap-1"
-          on:click={() => {
+          onclick={() => {
             page = "guides";
             sessionStorage.setItem("page", "guides");
           }}>
@@ -88,7 +88,7 @@
     <button
       aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
       class="text-stone-200 text-lg transition-all {$sidebarExpanded ? 'rotate-0' : 'rotate-180'}"
-      on:click={() => ($sidebarExpanded = !$sidebarExpanded)}>
+      onclick={() => ($sidebarExpanded = !$sidebarExpanded)}>
       <IconCollapse />
     </button>
   </div>

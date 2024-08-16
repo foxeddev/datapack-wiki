@@ -7,7 +7,7 @@
   import { sidebarExpanded } from "$lib/stores";
   import { page } from "$app/stores";
 
-  let shareText = "Share";
+  let shareText = $state("Share");
 
   function copyUrl() {
     // the windows share menu looks ugly, so only show it on mobile which looks nice
@@ -28,7 +28,7 @@
     <button
       class="px-2 pr-3 sm:hidden"
       aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
-      on:click={() => ($sidebarExpanded = !$sidebarExpanded)}><IconMenu /></button>
+      onclick={() => ($sidebarExpanded = !$sidebarExpanded)}><IconMenu /></button>
     <a class="flex items-center cursor-default hover:text-white p-1" href="/">
       <img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-8 mr-2" width="32" height="32" />
       <h1 class="font-bold hidden text-lg lg:text-xl sm:block">Datapack Wiki</h1>
@@ -46,7 +46,7 @@
     <button
       class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto"
       aria-label="Copy URL"
-      on:click={copyUrl}>
+      onclick={copyUrl}>
       <IconShare />
       <span class="hidden sm:block">{shareText}</span>
     </button>
