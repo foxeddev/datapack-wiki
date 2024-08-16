@@ -5,7 +5,7 @@
 
   import IconSearch from "~icons/tabler/search";
 
-  import { sidebarExpanded } from "$lib/stores";
+  import { sidebarExpanded } from "$lib/stores.svelte";
   import WikiPages from "$lib/sidebar-pages/WikiPages.svelte";
   import GuidePages from "$lib/sidebar-pages/Guides.svelte";
   import { onMount } from "svelte";
