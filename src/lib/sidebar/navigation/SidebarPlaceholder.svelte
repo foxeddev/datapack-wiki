@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded } from "$lib/stores.svelte";
+  import { sidebarExpanded } from "$lib/stores";
   
   type Props = {
     label: string;

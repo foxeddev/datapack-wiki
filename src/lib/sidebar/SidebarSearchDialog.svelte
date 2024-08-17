@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded, windowWidth } from "$lib/stores.svelte";
+  import { sidebarExpanded, windowWidth } from "$lib/stores";
   import { createSearchIndex, search } from "../search";
 
 
