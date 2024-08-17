@@ -4,7 +4,7 @@
   import IconMenu from "~icons/tabler/menu-2";
   import IconEdit from "~icons/tabler/pencil";
 
-  import { sidebarExpanded } from "$lib/stores.svelte";
+  import { createData } from "$lib/stores.svelte";
   import { page } from "$app/stores";
 
   let shareText = $state("Share");
@@ -21,14 +21,16 @@
       }, 2000);
     }
   }
+
+  let data = createData();
 </script>
 
 <div class="bg-stone-800 flex w-full items-center p-2 h-12 sticky top-0 border-b border-stone-700 z-20">
   <div class="flex items-center flex-grow">
     <button
       class="px-2 pr-3 sm:hidden"
-      aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
-      onclick={() => ($sidebarExpanded = !$sidebarExpanded)}><IconMenu /></button>
+      aria-label="{data.sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
+      onclick={() => (data.sidebarExpanded = !data.sidebarExpanded)}><IconMenu /></button>
     <a class="flex items-center cursor-default hover:text-white p-1" href="/">
       <img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-8 mr-2" width="32" height="32" />
       <h1 class="font-bold hidden text-lg lg:text-xl sm:block">Datapack Wiki</h1>

@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { sidebarExpanded } from "$lib/stores.svelte";
+  import { createData } from "$lib/stores.svelte";
 
   const { label } = $props();
+  let data = createData();
 </script>
 
-<span class="uppercase text-sm mt-4 text-zinc-400 {$sidebarExpanded ? 'block' : 'hidden'}">{label}</span>
+<span class="uppercase text-sm mt-4 text-zinc-400 {data.sidebarExpanded ? 'block' : 'hidden'}">{label}</span>

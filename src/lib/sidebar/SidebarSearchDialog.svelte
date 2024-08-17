@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { sidebarExpanded, windowWidth } from "$lib/stores.svelte";
+  import { createData } from "$lib/stores.svelte";
   import { createSearchIndex, search } from "../search";
-
 
   let { results = $bindable([]) } = $props();
   let dialog: HTMLDialogElement;
@@ -23,6 +22,8 @@
       search(searchTerm).then(r => (results = r as any[]));
     }
   })
+
+  let { sidebarExpanded, windowWidth } = createData();
 </script>
 
 <dialog
@@ -45,8 +46,8 @@
         <a
           onclick={() => {
             dialog.close();
-            if ($windowWidth < 640) {
-              $sidebarExpanded = false;
+            if (windowWidth < 640) {
+              sidebarExpanded = false;
             }
           }}
           href={result.url}>

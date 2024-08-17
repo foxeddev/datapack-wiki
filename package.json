@@ -22,7 +22,7 @@
     "prettier-plugin-svelte": "^3.2.6",
     "string-strip-html": "^13.4.8",
     "strip-markdown": "^6.0.0",
-    "svelte": "^5.0.0-next.222",
+    "svelte": "^5.0.0-next.223",
     "svelte-check": "^3.8.5",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4",
