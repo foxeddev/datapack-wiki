@@ -1,19 +1,18 @@
 <script lang="ts">
-  import { createData } from "$lib/stores.svelte";
-
+  import { sidebarExpanded } from "$lib/stores.svelte";
+  
   type Props = {
     label: string;
     icon: any;
-  };
+  }
 
   const { label, icon }: Props = $props();
-  let data = createData();
 </script>
 
 <div class="cursor-default py-1 rounded-lg flex gap-2 pl-1 items-center text-stone-500">
   <svelte:component this={icon} />
 
-  {#if data.sidebarExpanded}
+  {#if $sidebarExpanded}
     <span>{label}</span>
   {/if}
 </div>

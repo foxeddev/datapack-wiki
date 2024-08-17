@@ -8,7 +8,6 @@ export function createData() {
   let windowWidth = $state(1920)
 
   sidebarExpanded = browser ? window.innerWidth > 768 : true;
-  windowWidth = browser ? window.innerWidth : 1920;
 
   return {
     get sidebarExpanded() {
@@ -22,3 +21,14 @@ export function createData() {
     },
   }
 }
+
+// The sidebarExpanded store is used to control the sidebar's visibility.
+export const sidebarExpanded = writable(browser ? window.innerWidth > 768 : true);
+
+// The windowWidth store is used to track the window width.
+export const windowWidth = readable(1920, set => {
+  if (browser) {
+    set(window.innerWidth);
+    addEventListener("resize", () => set(window.innerWidth));
+  }
+});

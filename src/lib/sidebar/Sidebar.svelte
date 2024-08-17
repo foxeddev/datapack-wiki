@@ -5,7 +5,7 @@
 
   import IconSearch from "~icons/tabler/search";
 
-  import { createData } from "$lib/stores.svelte";
+  import { sidebarExpanded } from "$lib/stores.svelte";
   import WikiPages from "$lib/sidebar-pages/WikiPages.svelte";
   import GuidePages from "$lib/sidebar-pages/Guides.svelte";
   import { onMount } from "svelte";
@@ -28,16 +28,14 @@
   });
 
   let dialog: SidebarSearchDialog;
-
-  let data = createData();
 </script>
 
 <aside
-  class="{data.sidebarExpanded
+  class="{$sidebarExpanded
     ? 'fixed w-full sm:w-80'
     : 'w-fit hidden sm:flex'} flex flex-col bg-stone-800 items-center h-[calc(100dvh-3rem)] sm:sticky top-12 z-50 border-r border-stone-700">
   <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full">
-    {#if data.sidebarExpanded}
+    {#if $sidebarExpanded}
       <button
         aria-label="Open Search Modal"
         class="bg-black/45 px-2 py-1 rounded-lg flex items-center gap-2 mt-1 mb-2"
@@ -84,13 +82,13 @@
     </div>
   </div>
   <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
-    {#if data.sidebarExpanded}
+    {#if $sidebarExpanded}
       <span class="flex-grow flex flex-col items-center">{INFOTEXT}</span>
     {/if}
     <button
-      aria-label="{data.sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
-      class="text-stone-200 text-lg transition-all {data.sidebarExpanded ? 'rotate-0' : 'rotate-180'}"
-      onclick={() => (data.sidebarExpanded = !data.sidebarExpanded)}>
+      aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
+      class="text-stone-200 text-lg transition-all {$sidebarExpanded ? 'rotate-0' : 'rotate-180'}"
+      onclick={() => ($sidebarExpanded = !$sidebarExpanded)}>
       <IconCollapse />
     </button>
   </div>
