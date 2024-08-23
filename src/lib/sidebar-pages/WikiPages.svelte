@@ -16,8 +16,7 @@
   import IconBox from "~icons/tabler/box";
   import IconCommand from "~icons/tabler/slash";
   import IconCommands from "~icons/tabler/slashes";
-  import IconSNBT from "~icons/tabler/braces";
-  import IconNBT from "~icons/tabler/file-digit";
+  import IconBraces from "~icons/tabler/braces";
   import IconStar from "~icons/tabler/star";
   import IconGrid from "~icons/tabler/grid-3x3";
   import IconButterfly from "~icons/tabler/butterfly";
@@ -42,7 +41,7 @@
   <SidebarPage label="Target Selectors" icon={IconAt} page="/wiki/commands/target_selectors" />
   <SidebarPage label="Coordinates" icon={IconTilde} page="/wiki/commands/coordinates" />
   <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item_components" />
-  <SidebarPlaceholder label="JSON Text" icon={IconSNBT} />
+  <SidebarPlaceholder label="JSON Text" icon={IconBraces} />
   <SidebarPlaceholder label="Resource Locations" icon={IconResourceLocation} />
 </SidebarCategory>
 
@@ -64,9 +63,8 @@
   <SidebarPlaceholder label="data" icon={IconCommand} />
 </SidebarCategory>
 
-<SidebarCategory name="NBT Data" icon={IconSNBT}>
-  <SidebarPlaceholder label="NBT Format" icon={IconNBT} />
-  <SidebarPage label="SNBT" icon={IconSNBT} page="/wiki/nbt/snbt" />
+<SidebarCategory name="NBT Data" icon={IconBraces}>
+  <SidebarPage label="NBT" icon={IconBraces} page="/wiki/nbt/nbt" />
   <SidebarPlaceholder label="Entity NBT" icon={IconButterfly} />
   <SidebarPlaceholder label="Block NBT" icon={IconBox} />
   <SidebarPage label="Storages" icon={IconCloud} page="/wiki/nbt/storages" />
