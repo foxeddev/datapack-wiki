@@ -28,6 +28,7 @@
   import IconComponents from "~icons/tabler/brackets-contain";
   import IconTilde from "~icons/tabler/tilde";
   import IconResourceLocation from "~icons/tabler/abc";
+  import IconNbtPath from "~icons/tabler/code";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -43,6 +44,7 @@
   <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item_components" />
   <SidebarPlaceholder label="JSON Text" icon={IconBraces} />
   <SidebarPlaceholder label="Resource Locations" icon={IconResourceLocation} />
+  <SidebarPlaceholder label="NBT Paths" icon={IconNbtPath} />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
