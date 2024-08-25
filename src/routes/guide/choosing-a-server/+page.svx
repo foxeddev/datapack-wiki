@@ -1,0 +1,147 @@
+---
+title: Choosing a Server
+description:
+  Learn the differences, pros and cons of different Minecraft server types, and which one is preferred for datapacks and
+  mods.
+---
+
+# Choosing a Server
+
+When you join a Minecraft server, you are playing on a computer running a special software. This software allows you to
+interact with other players on the server, and to play the game. There are many different types of Minecraft servers,
+from Paper, to Spigot, to Fabric, to Sponge, to Vanilla. Each server has their own set of pros and cons.
+
+In this guide, we focus on multiple aspects of the various servers, from performance, to plugin support, to datapack
+support to even features that are exclusive to certain server softwares.
+
+## Background Information
+
+Before we dive into the different server types, we need to talk about the different types of Minecraft servers.
+
+There are a few common types of Minecraft servers:
+
+- **Vanilla**: The vanilla server is the most basic server software, it's just the vanilla game.
+- **Bukkit-based**: Bukkit is a plugin-based server software that is used by many Minecraft servers. It is the most
+  popular of the server softwares as it provides a wide range of plugins and features.
+- **Modded**: Modded servers are based on the Fabric or Forge, which are mod-based server softwares. They are more
+  customizable than Bukkit-based servers, but are not as popular as Bukkit-based servers. The use of modded servers is
+  still very limited, making it hard to find a mod for your purposes.
+- **Sponge-based**: Sponge is a plugin-based server software that is used by many Minecraft servers. It is similar to
+  Bukkit-based servers, but is more customizable and has support for mods with SpongeForge.
+
+## Choosing a Server Type
+
+Choosing a server type is a personal choice, and depends on your preferences and needs. It is important to note that
+some server types may not be suitable for all Minecraft servers, and some server types may not be suitable for all
+Minecraft versions.
+
+Here are some factors to consider when choosing a server type:
+
+- **Performance**: If you are looking for a server that is fast and efficient, Paper or SpongeForge may be the best
+  choice.
+- **Mod Support**: If you are looking for a server that has a wide range of mods and plugins, Bukkit-based servers may
+  be the best choice.
+- **Datapack Support**: If you are looking for a server that supports datapacks, Paper or SpongeForge may be the best
+  choice.
+- **Modded Servers**: If you are looking for a server that is specifically designed for modded servers, Fabric or Forge
+  may be the best choice.
+- **Compatibility**: If you are looking for a server that is compatible with older Minecraft versions, Vanilla or Paper
+  may be the best choice.
+- **Mod Support**: If you are looking for a server that is compatible with older Minecraft versions, Vanilla or Paper
+  may be the best choice.
+
+In summary, it is important to consider your needs and preferences when choosing a server type.
+
+## Vanilla
+
+The vanilla server is the most basic server software, and is the one that you get when you download the jar file from
+the [official website](https://www.minecraft.net/en-us/download/server). It is the most bare bones server software and
+does not come with mod or plugin support. Beyond datapacks, it is not customizable at all as it is the base game
+software.
+
+| Pros                                            | Cons                         |
+| ----------------------------------------------- | ---------------------------- |
+| Easy to set up                                  | No mod support               |
+| Easy to manage                                  | No plugin support            |
+| Fastest to update (comes out with every update) | No performance optimizations |
+| Best compatibility with datapacks               | No mod support               |
+| No additional bug fixes                         | No additional bug fixes      |
+
+## Paper
+
+[Paper](https://papermc.io/) is a fork of Spigot, and is the most popular server software. It is the most customizable
+server software, and comes with excellent plugin support and amazing performance optimizations. Unfortunately, it is
+notorious for breaking some plugins and most datapacks for the sake of performance.
+
+| Pros                                                                     | Cons                                                                  |
+| ------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| Popular and well-supported                                               | Deprecates many plugin features for modernity and performance         |
+| Numerous performance optimizations                                       | Breaks many datapacks due to destructive performance optimizations    |
+| The gold standard for plugin support, expect almost every plugin to work | No mod support                                                        |
+| Modern and forward-looking                                               | Can take a while to update due to relying on Spigot as a base         |
+| Comes with extensive documentation and configuration options             | Some useful bugs are fixed by default (TNT duping, sand duping, etc.) |
+
+## Spigot
+
+[Spigot](https://www.spigotmc.org/) is another popular server software, it comes with some basic performance
+optimizations, and is not as customizable as Paper. It can cause some issues with datapacks but is easier to mitigate
+than Paper. When you think of plugins, this is likely the one you want to use.
+
+| Pros                                       | Cons                                                    |
+| ------------------------------------------ | ------------------------------------------------------- |
+| Popular and well-supported                 | No mod support                                          |
+| Comes with basic performance optimizations | Generally not as fast as other server softwares         |
+| Easier to manage than Paper                | Generally not as customizable as other server softwares |
+
+## (Neo)Forge
+
+Forge is a mod-based server software used by many Minecraft servers. It is usually used for modpacks on older Minecraft
+versions. Recently, a new fork of Forge called [NeoForge](https://neoforged.net) was released due to
+[multiple reasons](https://neoforged.net/news/2023-retrospection/). Its basically the same as Forge, but refactored and
+improved.
+
+| Pros                               | Cons                                             |
+| ---------------------------------- | ------------------------------------------------ |
+| Great for older Minecraft versions | Finding server-side mods are hard                |
+| Reputable mod support              | Different mod loaders are recommended nowadays   |
+| Generally fast                     | Generally not as popular as Bukkit-based servers |
+
+## Fabric
+
+[Fabric](https://fabricmc.net/) is a mod-based server software used by many Minecraft servers. It is usually used with
+modpacks to allow multiple people to play together on the same server. Fabric is used by most modern modded servers due
+to its fast boot time and cleanliness.
+
+| Pros                               | Cons                                             |
+| ---------------------------------- | ------------------------------------------------ |
+| Popular and well-supported         | Finding server-side mods are hard                |
+| Reputable mod support              | Hard to keep updated                             |
+| Generally fast                     | Generally not as popular as Bukkit-based servers |
+| Great for newer Minecraft versions | Support for older Minecraft versions is limited  |
+
+## SpongeVanilla
+
+[SpongeVanilla](https://spongepowered.org/downloads/spongevanilla) is the vanilla version of Sponge. It is very rarely
+used due to the lack of mods/plugins supporting it.
+
+| Pros                               | Cons                                                 |
+| ---------------------------------- | ---------------------------------------------------- |
+| Reputable mod/plugin support       | Support for newer Minecraft versions is experimental |
+| Generally fast                     | Generally not as popular as Bukkit-based servers     |
+| Great for older Minecraft versions | Finding Sponge mods are hard                         |
+
+## SpongeForge
+
+[SpongeForge](https://spongepowered.org/downloads/spongeforge) is a version of Sponge with support for Forge mods. It is
+very rarely used due to the lack of mods supporting it.
+
+| Pros                               | Cons                                                                             |
+| ---------------------------------- | -------------------------------------------------------------------------------- |
+| Reputable mod/plugin support       | Support for newer Minecraft versions is experimental                             |
+| Generally fast                     | Generally not as popular as Bukkit-based servers                                 |
+| Great for older Minecraft versions | Finding Sponge mods are hard, support for Forge mods is pinned at lower versions |
+
+## Summary
+
+In summary, every server type has its own set of pros and cons, and the best server type for you will depend on your
+specific needs and preferences.
