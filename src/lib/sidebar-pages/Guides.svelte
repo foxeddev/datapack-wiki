@@ -25,6 +25,7 @@
   import IconID from "~icons/tabler/id-badge-2";
   import IconGrid from "~icons/tabler/grid-3x3";
   import IconItem from "~icons/tabler/icons";
+  import IconServer from "~icons/tabler/server";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -32,6 +33,7 @@
 <SidebarPage label="Home" icon={IconHome} page="/" />
 <SidebarPage label="Getting Started" icon={IconPennant} page="/guide/getting-started" />
 <SidebarPage label="Installing datapacks" icon={IconDownload} page="/guide/installing-a-datapack" />
+<SidebarPage label="Choosing a Server" icon={IconServer} page="/guide/choosing-a-server" />
 
 <SidebarHeading label="Advanced" />
 <SidebarCategory name="Adding new features" icon={IconNew}>
