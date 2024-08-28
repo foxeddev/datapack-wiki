@@ -41,5 +41,5 @@
 }
 
 .autolink {
-  @apply inline-block ml-2 stroke-stone-700 focus:stroke-stone-400 hover:stroke-stone-400 z-0;
+  @apply inline-block ml-2 stroke-stone-700 focus:stroke-stone-400 hover:stroke-stone-400 z-0 motion-safe:transition-colors;
 }
