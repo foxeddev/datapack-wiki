@@ -29,7 +29,7 @@
   autocomplete="off"
   bind:value
   on:input={validate}
-  class="w-full h-full rounded-md bg-stone-800 p-2 text-stone-200 placeholder-stone-500 resize-none outline-none ring-2 transition-colors {valid !==
+  class="w-full h-full rounded-md bg-stone-800 p-2 text-stone-200 placeholder-stone-500 resize-none outline-none ring-2 motion-safe:transition-colors {valid !==
   'unset'
     ? valid === 'valid'
       ? 'ring-blue-500'

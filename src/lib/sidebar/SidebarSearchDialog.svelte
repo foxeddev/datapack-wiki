@@ -2,6 +2,8 @@
   import { sidebarExpanded, windowWidth } from "$lib/stores";
   import { createSearchIndex, search } from "../search";
 
+  import autoAnimate from "@formkit/auto-animate"
+
   export let results: any[] = [];
   let dialog: HTMLDialogElement;
 
@@ -37,7 +39,7 @@
       type="search"
       placeholder="Search for a page..."
       bind:value={searchTerm} />
-    <div class="overflow-y-auto max-h-[50vh]">
+    <div class="overflow-y-auto max-h-[50vh]" use:autoAnimate={{duration: 100}}>
       {#each results as result}
         <a
           on:click={() => {
@@ -47,7 +49,7 @@
             }
           }}
           href={result.url}>
-          <div class="p-2 my-2 rounded-sm hover:bg-black/20 transition-all">
+          <div class="p-2 my-2 rounded-sm hover:bg-black/20 motion-safe:transition-all">
             <p class="text-stone-200 text-lg">
               {@html result.title}
               <span class="text-stone-400 text-xs">{result.url}</span>
