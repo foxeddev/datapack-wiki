@@ -6,13 +6,26 @@ description:
 ---
 
 <script lang="ts">
-import {LatestPackFormat, Version} from '$lib/reusables';
+import {LatestPackFormat, Version, TreeRoot, TreeEntry} from '$lib/reusables';
 </script>
 
 # Site Meta and Contribution
 
 This page is meant to be an introduction for contributors to the wiki. In it is multiple examples which you can examine
 unformatted in the [site source code](https://github.com/Datapack-Hub/wiki).
+
+<TreeRoot>
+  <TreeEntry>Hello</TreeEntry>
+  <TreeEntry>
+    <TreeRoot>
+      <TreeEntry>
+        <TreeRoot>
+          <TreeEntry>Hi</TreeEntry>
+        </TreeRoot>
+      </TreeEntry>
+    </TreeRoot>
+  </TreeEntry>
+</TreeRoot>
 
 **Last Updated:** 08-03-2024
 

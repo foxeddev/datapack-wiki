@@ -1,0 +1,30 @@
+---
+title: Resource Locations
+description:
+  "A resource location is a kind of identified used in Minecraft to point to a certain piece of data, such as a function, item, or storage."
+---
+
+<script lang="ts">
+import {Version} from '$lib/reusables';
+</script>
+
+<Version> This page is up to date and validated for the Minecraft version: 1.21</Version>
+
+# Resource Locations
+A resource location is a kind of identified used in Minecraft to point to a certain piece of data, such as a function, item, or storage.
+
+A resource location is comprised of two main parts: The namespace and the path.  
+The namespace defines the general place that the resource location belongs to. Generally, this will be the namespace of your datapack, or the `minecraft` namespace if interacting with something in the vanilla game. The namespace can contain lowercase letters (`a-z`), numbers (`0-9`), `_`, `-` and `.`.
+The path defines specific information about the resource location. The path may contain the same characters as the namespace, and additionally `/`, to separate directories.  
+Syntactically, the namespace is separated from the path by a colon (`:`).
+
+Item IDs are an example of resource locations. The ID `minecraft:diamond` is a resource location with the namespace `minecraft` and the path `diamond`.
+:::tip
+If the namespace is omitted, it defaults to `minecraft`, meaning `diamond` can be used interchangeably with `minecraft:diamond`.
+:::
+
+Every file in a datapack has a resource location. It consists of the namespace it resides in, with the path being the path to the file, excluding the directory which determines the file type, so the advancement at `example/advancement/subfolder/foo.json` would have the resource location `example:subfolder/foo`, not `example:advancement/subfolder/foo`.
+
+:::tip
+[Data storages](/wiki/command/data) are identified by resource location. It is considered good practice to name your storages with the namespace of your datapack, and a path which describes the purpose of the storage. This could, for example, correspond to the function which uses it.
+:::

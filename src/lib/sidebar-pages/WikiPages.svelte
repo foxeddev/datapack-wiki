@@ -28,6 +28,7 @@
   import IconComponents from "~icons/tabler/brackets-contain";
   import IconTilde from "~icons/tabler/tilde";
   import IconResourceLocation from "~icons/tabler/abc";
+  import IconNbtPath from "~icons/tabler/code";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -42,7 +43,8 @@
   <SidebarPage label="Coordinates" icon={IconTilde} page="/wiki/commands/coordinates" />
   <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item_components" />
   <SidebarPlaceholder label="JSON Text" icon={IconBraces} />
-  <SidebarPlaceholder label="Resource Locations" icon={IconResourceLocation} />
+  <SidebarPage label="Resource Locations" icon={IconResourceLocation} page="/wiki/commands/resource_locations" />
+  <SidebarPlaceholder label="NBT Paths" icon={IconNbtPath} />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
@@ -60,7 +62,7 @@
   <SidebarPage label="function" icon={IconCommand} page="/wiki/command/function" />
   <SidebarPage label="execute" icon={IconCommand} page="/wiki/command/execute" />
   <SidebarPage label="summon" icon={IconCommand} page="/wiki/command/summon" />
-  <SidebarPlaceholder label="data" icon={IconCommand} />
+  <SidebarPage label="data" icon={IconCommand} page="/wiki/command/data" />
 </SidebarCategory>
 
 <SidebarCategory name="NBT Data" icon={IconBraces}>

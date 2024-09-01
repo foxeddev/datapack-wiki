@@ -4,7 +4,7 @@ description: TODO
 ---
 
 <script lang="ts">
-  import SNBTValidator from "$lib/interactive/SNBTValidator.svelte";
+  import SNBTValidator from "./SNBTValidator.svelte";
 </script>
 
 # NBT
