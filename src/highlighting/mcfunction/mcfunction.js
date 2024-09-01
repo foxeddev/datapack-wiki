@@ -1,737 +1,737 @@
 export default {
-  "name": "mcfunction",
-  "scopeName": "source.mcfunction",
-  "uuid": "8918dadd-8ebe-42d9-b1e9-0489ab228d9d",
-  "fileTypes": ["mcfunction", "bolt"],
-  "patterns": [
+  name: "mcfunction",
+  scopeName: "source.mcfunction",
+  uuid: "8918dadd-8ebe-42d9-b1e9-0489ab228d9d",
+  fileTypes: ["mcfunction", "bolt"],
+  patterns: [
     {
-      "include": "#root"
-    }
+      include: "#root",
+    },
   ],
-  "repository": {
-    "root": {
-      "patterns": [
+  repository: {
+    root: {
+      patterns: [
         {
-          "include": "#literals"
+          include: "#literals",
         },
         {
-          "include": "#comments"
+          include: "#comments",
         },
         {
-          "include": "#say"
+          include: "#say",
         },
         {
-          "include": "#names"
+          include: "#names",
         },
         {
-          "include": "#comments_inline"
+          include: "#comments_inline",
         },
         {
-          "include": "#subcommands"
+          include: "#subcommands",
         },
         {
-          "include": "#property"
+          include: "#property",
         },
         {
-          "include": "#operators"
+          include: "#operators",
         },
         {
-          "include": "#selectors"
-        }
-      ]
+          include: "#selectors",
+        },
+      ],
     },
-    "comments": {
-      "patterns": [
+    comments: {
+      patterns: [
         {
-          "applyEndPatternLast": 1,
-          "begin": "^\\s*(#[>!#])(.+)$",
-          "beginCaptures": {
-            "1": {
-              "name": "comment.block.mcfunction"
+          applyEndPatternLast: 1,
+          begin: "^\\s*(#[>!#])(.+)$",
+          beginCaptures: {
+            1: {
+              name: "comment.block.mcfunction",
             },
-            "2": {
-              "name": "markup.bold.mcfunction"
-            }
+            2: {
+              name: "markup.bold.mcfunction",
+            },
           },
-          "captures": {
-            "0": {
-              "name": "comment.block.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "comment.block.mcfunction",
+            },
           },
-          "end": "^(?!#)",
-          "name": "meta.comments",
-          "patterns": [
+          end: "^(?!#)",
+          name: "meta.comments",
+          patterns: [
             {
-              "include": "#comments_block"
-            }
-          ]
+              include: "#comments_block",
+            },
+          ],
         },
         {
-          "captures": {
-            "0": {
-              "name": "comment.line.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "comment.line.mcfunction",
+            },
           },
-          "match": "^\\s*#.*$",
-          "name": "meta.comments"
-        }
-      ]
+          match: "^\\s*#.*$",
+          name: "meta.comments",
+        },
+      ],
     },
-    "comments_inline": {
-      "patterns": [
+    comments_inline: {
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "comment.line.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "comment.line.mcfunction",
+            },
           },
-          "match": "#.*$",
-          "name": "meta.comments"
-        }
-      ]
+          match: "#.*$",
+          name: "meta.comments",
+        },
+      ],
     },
-    "comments_block": {
-      "patterns": [
+    comments_block: {
+      patterns: [
         {
-          "applyEndPatternLast": 1,
-          "begin": "^\\s*#[>!]",
-          "captures": {
-            "0": {
-              "name": "comment.block.mcfunction"
-            }
+          applyEndPatternLast: 1,
+          begin: "^\\s*#[>!]",
+          captures: {
+            0: {
+              name: "comment.block.mcfunction",
+            },
           },
-          "end": "$",
-          "name": "meta.comments_block",
-          "patterns": [
+          end: "$",
+          name: "meta.comments_block",
+          patterns: [
             {
-              "include": "#comments_block_emphasized"
-            }
-          ]
+              include: "#comments_block_emphasized",
+            },
+          ],
         },
         {
-          "applyEndPatternLast": 1,
-          "begin": "^\\s*#",
-          "captures": {
-            "0": {
-              "name": "comment.block.mcfunction"
-            }
+          applyEndPatternLast: 1,
+          begin: "^\\s*#",
+          captures: {
+            0: {
+              name: "comment.block.mcfunction",
+            },
           },
-          "end": "$",
-          "name": "meta.comments_block",
-          "patterns": [
+          end: "$",
+          name: "meta.comments_block",
+          patterns: [
             {
-              "include": "#comments_block_normal"
-            }
-          ]
-        }
-      ]
+              include: "#comments_block_normal",
+            },
+          ],
+        },
+      ],
     },
-    "comments_block_emphasized": {
-      "patterns": [
+    comments_block_emphasized: {
+      patterns: [
         {
-          "include": "#comments_block_special"
+          include: "#comments_block_special",
         },
         {
-          "captures": {
-            "0": {
-              "name": "markup.bold.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "markup.bold.mcfunction",
+            },
           },
-          "match": "\\S+",
-          "name": "meta.comments_block_emphasized"
-        }
-      ]
+          match: "\\S+",
+          name: "meta.comments_block_emphasized",
+        },
+      ],
     },
-    "comments_block_normal": {
-      "patterns": [
+    comments_block_normal: {
+      patterns: [
         {
-          "include": "#comments_block_special"
+          include: "#comments_block_special",
         },
         {
-          "captures": {
-            "0": {
-              "name": "comment.block.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "comment.block.mcfunction",
+            },
           },
-          "match": "\\S+",
-          "name": "meta.comments_block_normal"
+          match: "\\S+",
+          name: "meta.comments_block_normal",
         },
         {
-          "include": "#whitespace"
-        }
-      ]
+          include: "#whitespace",
+        },
+      ],
     },
-    "comments_block_special": {
-      "patterns": [
+    comments_block_special: {
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "markup.heading.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "markup.heading.mcfunction",
+            },
           },
-          "match": "@\\S+",
-          "name": "meta.comments_block_special"
+          match: "@\\S+",
+          name: "meta.comments_block_special",
         },
         {
-          "include": "#resource-name"
+          include: "#resource-name",
         },
         {
-          "captures": {
-            "0": {
-              "name": "variable.other.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "variable.other.mcfunction",
+            },
           },
-          "match": "[#%$][A-Za-z0-9_.#%$]+",
-          "name": "meta.comments_block_special"
-        }
-      ]
+          match: "[#%$][A-Za-z0-9_.#%$]+",
+          name: "meta.comments_block_special",
+        },
+      ],
     },
-    "literals": {
-      "patterns": [
+    literals: {
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "constant.numeric.boolean.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "constant.numeric.boolean.mcfunction",
+            },
           },
-          "match": "\\b(true|false|True|False)\\b",
-          "name": "meta.literals"
+          match: "\\b(true|false|True|False)\\b",
+          name: "meta.literals",
         },
         {
-          "captures": {
-            "0": {
-              "name": "variable.uuid.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "variable.uuid.mcfunction",
+            },
           },
-          "match": "\\b[0-9a-fA-F]+(?:-[0-9a-fA-F]+){4}\\b",
-          "name": "meta.names"
+          match: "\\b[0-9a-fA-F]+(?:-[0-9a-fA-F]+){4}\\b",
+          name: "meta.names",
         },
         {
-          "captures": {
-            "0": {
-              "name": "constant.numeric.float.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "constant.numeric.float.mcfunction",
+            },
           },
-          "match": "[+-]?\\d*\\.?\\d+([eE]?[+-]?\\d+)?[df]?\\b",
-          "name": "meta.literals"
+          match: "[+-]?\\d*\\.?\\d+([eE]?[+-]?\\d+)?[df]?\\b",
+          name: "meta.literals",
         },
         {
-          "captures": {
-            "0": {
-              "name": "constant.numeric.integer.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "constant.numeric.integer.mcfunction",
+            },
           },
-          "match": "[+-]?\\d+(b|B|L|l|s|S)?\\b",
-          "name": "meta.literals"
+          match: "[+-]?\\d+(b|B|L|l|s|S)?\\b",
+          name: "meta.literals",
         },
         {
-          "captures": {
-            "0": {
-              "name": "variable.other.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "variable.other.mcfunction",
+            },
           },
-          "match": "\\.\\.",
-          "name": "meta.ellipse.literals"
+          match: "\\.\\.",
+          name: "meta.ellipse.literals",
         },
         {
-          "applyEndPatternLast": 1,
-          "begin": "\"",
-          "beginCaptures": {
-            "0": {
-              "name": "punctuation.definition.string.begin.mcfunction"
-            }
+          applyEndPatternLast: 1,
+          begin: '"',
+          beginCaptures: {
+            0: {
+              name: "punctuation.definition.string.begin.mcfunction",
+            },
           },
-          "end": "\"",
-          "endCaptures": {
-            "0": {
-              "name": "punctuation.definition.string.end.mcfunction"
-            }
+          end: '"',
+          endCaptures: {
+            0: {
+              name: "punctuation.definition.string.end.mcfunction",
+            },
           },
-          "name": "string.quoted.double.mcfunction",
-          "patterns": [
+          name: "string.quoted.double.mcfunction",
+          patterns: [
             {
-              "include": "#literals_string-double"
-            }
-          ]
+              include: "#literals_string-double",
+            },
+          ],
         },
         {
-          "applyEndPatternLast": 1,
-          "begin": "'",
-          "beginCaptures": {
-            "0": {
-              "name": "punctuation.definition.string.begin.mcfunction"
-            }
+          applyEndPatternLast: 1,
+          begin: "'",
+          beginCaptures: {
+            0: {
+              name: "punctuation.definition.string.begin.mcfunction",
+            },
           },
-          "end": "'",
-          "endCaptures": {
-            "0": {
-              "name": "punctuation.definition.string.begin.mcfunction"
-            }
+          end: "'",
+          endCaptures: {
+            0: {
+              name: "punctuation.definition.string.begin.mcfunction",
+            },
           },
-          "name": "string.quoted.single.mcfunction",
-          "patterns": [
+          name: "string.quoted.single.mcfunction",
+          patterns: [
             {
-              "include": "#literals_string-single"
-            }
-          ]
-        }
-      ]
+              include: "#literals_string-single",
+            },
+          ],
+        },
+      ],
     },
-    "subcommands": {
-      "patterns": [
+    subcommands: {
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "entity.name.class.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "entity.name.class.mcfunction",
+            },
           },
-          "match": "[a-z_]+",
-          "name": "meta.literals"
-        }
-      ]
+          match: "[a-z_]+",
+          name: "meta.literals",
+        },
+      ],
     },
     "literals_string-double": {
-      "patterns": [
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "constant.character.escape.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "constant.character.escape.mcfunction",
+            },
           },
-          "match": "\\\\.",
-          "name": "meta.literals_string-double"
+          match: "\\\\.",
+          name: "meta.literals_string-double",
         },
         {
-          "captures": {
-            "0": {
-              "name": "constant.character.escape.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "constant.character.escape.mcfunction",
+            },
           },
-          "match": "\\\\",
-          "name": "meta.literals_string-double"
+          match: "\\\\",
+          name: "meta.literals_string-double",
         },
         {
-          "include": "#macro-name"
+          include: "#macro-name",
         },
         {
-          "captures": {
-            "0": {
-              "name": "string.quoted.double.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "string.quoted.double.mcfunction",
+            },
           },
-          "match": "[^\\\\\"]",
-          "name": "meta.literals_string-double"
-        }
-      ]
+          match: '[^\\\\"]',
+          name: "meta.literals_string-double",
+        },
+      ],
     },
     "literals_string-single": {
-      "patterns": [
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "constant.character.escape.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "constant.character.escape.mcfunction",
+            },
           },
-          "match": "\\\\.",
-          "name": "meta.literals_string-single"
+          match: "\\\\.",
+          name: "meta.literals_string-single",
         },
         {
-          "captures": {
-            "0": {
-              "name": "constant.character.escape.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "constant.character.escape.mcfunction",
+            },
           },
-          "match": "\\\\",
-          "name": "meta.literals_string-double"
+          match: "\\\\",
+          name: "meta.literals_string-double",
         },
         {
-          "include": "#macro-name"
+          include: "#macro-name",
         },
         {
-          "captures": {
-            "0": {
-              "name": "string.quoted.single.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "string.quoted.single.mcfunction",
+            },
           },
-          "match": "[^\\\\']",
-          "name": "meta.literals_string-single"
-        }
-      ]
+          match: "[^\\\\']",
+          name: "meta.literals_string-single",
+        },
+      ],
     },
-    "say": {
-      "patterns": [
+    say: {
+      patterns: [
         {
-          "begin": "^(\\s*)(say)",
-          "beginCaptures": {
-            "1": {
-              "name": "whitespace.mcfunction"
+          begin: "^(\\s*)(say)",
+          beginCaptures: {
+            1: {
+              name: "whitespace.mcfunction",
             },
-            "2": {
-              "name": "keyword.control.flow.mcfunction"
-            }
+            2: {
+              name: "keyword.control.flow.mcfunction",
+            },
           },
-          "end": "\\n",
-          "name": "meta.say.mcfunction",
-          "patterns": [
+          end: "\\n",
+          name: "meta.say.mcfunction",
+          patterns: [
             {
-              "captures": {
-                "0": {
-                  "name": "constant.character.escape.mcfunction"
-                }
+              captures: {
+                0: {
+                  name: "constant.character.escape.mcfunction",
+                },
               },
-              "match": "\\\\\\s*\\n",
-              "meta": "meta.say.backslash.mcfunction"
+              match: "\\\\\\s*\\n",
+              meta: "meta.say.backslash.mcfunction",
             },
             {
-              "include": "#literals_string-double"
+              include: "#literals_string-double",
             },
             {
-              "include": "#literals_string-single"
-            }
-          ]
+              include: "#literals_string-single",
+            },
+          ],
         },
         {
-          "begin": "(run)(\\s+)(say)",
-          "beginCaptures": {
-            "1": {
-              "name": "entity.name.mcfunction"
+          begin: "(run)(\\s+)(say)",
+          beginCaptures: {
+            1: {
+              name: "entity.name.mcfunction",
             },
-            "2": {
-              "name": "whitespace.mcfunction"
+            2: {
+              name: "whitespace.mcfunction",
             },
-            "3": {
-              "name": "keyword.control.flow.mcfunction"
-            }
+            3: {
+              name: "keyword.control.flow.mcfunction",
+            },
           },
-          "end": "\\n",
-          "name": "meta.say.mcfunction",
-          "patterns": [
+          end: "\\n",
+          name: "meta.say.mcfunction",
+          patterns: [
             {
-              "captures": {
-                "0": {
-                  "name": "constant.character.escape.mcfunction"
-                }
+              captures: {
+                0: {
+                  name: "constant.character.escape.mcfunction",
+                },
               },
-              "match": "\\\\\\s*\\n",
-              "meta": "meta.say.backslash.mcfunction"
+              match: "\\\\\\s*\\n",
+              meta: "meta.say.backslash.mcfunction",
             },
             {
-              "include": "#literals_string-double"
+              include: "#literals_string-double",
             },
             {
-              "include": "#literals_string-single"
-            }
-          ]
-        }
-      ]
+              include: "#literals_string-single",
+            },
+          ],
+        },
+      ],
     },
-    "names": {
-      "patterns": [
+    names: {
+      patterns: [
         {
-          "captures": {
-            "1": {
-              "name": "whitespace.mcfunction"
+          captures: {
+            1: {
+              name: "whitespace.mcfunction",
             },
-            "2": {
-              "name": "keyword.control.flow.mcfunction"
-            }
-          },
-          "match": "^(\\s*)([a-z_]+)(?=\\s)",
-          "name": "meta.names"
-        },
-        {
-          "captures": {
-            "1": {
-              "name": "whitespace.mcfunction"
+            2: {
+              name: "keyword.control.flow.mcfunction",
             },
-            "2": {
-              "name": "markup.italic.mcfunction"
+          },
+          match: "^(\\s*)([a-z_]+)(?=\\s)",
+          name: "meta.names",
+        },
+        {
+          captures: {
+            1: {
+              name: "whitespace.mcfunction",
             },
-            "3": {
-              "name": "whitespace.mcfunction"
+            2: {
+              name: "markup.italic.mcfunction",
             },
-            "4": {
-              "name": "keyword.control.flow.mcfunction"
-            }
-          },
-          "match": "^(\\s*)(\\$)( ?)([a-z_]*)",
-          "name": "meta.names"
-        },
-        {
-          "captures": {
-            "1": {
-              "name": "entity.name.mcfunction"
+            3: {
+              name: "whitespace.mcfunction",
             },
-            "2": {
-              "name": "whitespace.mcfunction"
+            4: {
+              name: "keyword.control.flow.mcfunction",
             },
-            "3": {
-              "name": "keyword.control.flow.mcfunction"
-            }
           },
-          "match": "(run)(\\s+)([a-z_]+)",
-          "name": "meta.names"
+          match: "^(\\s*)(\\$)( ?)([a-z_]*)",
+          name: "meta.names",
         },
         {
-          "include": "#resource-name"
-        },
-        {
-          "captures": {
-            "0": {
-              "name": "entity.name.mcfunction"
-            }
+          captures: {
+            1: {
+              name: "entity.name.mcfunction",
+            },
+            2: {
+              name: "whitespace.mcfunction",
+            },
+            3: {
+              name: "keyword.control.flow.mcfunction",
+            },
           },
-          "match": "[A-Za-z]+(?=\\W)",
-          "name": "meta.names"
+          match: "(run)(\\s+)([a-z_]+)",
+          name: "meta.names",
         },
         {
-          "captures": {
-            "0": {
-              "name": "string.unquoted.mcfunction"
-            }
+          include: "#resource-name",
+        },
+        {
+          captures: {
+            0: {
+              name: "entity.name.mcfunction",
+            },
           },
-          "match": "[A-Za-z_][A-Za-z0-9_.#%$]*",
-          "name": "meta.names"
+          match: "[A-Za-z]+(?=\\W)",
+          name: "meta.names",
         },
         {
-          "include": "#macro-name"
-        },
-        {
-          "captures": {
-            "0": {
-              "name": "variable.other.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "string.unquoted.mcfunction",
+            },
           },
-          "match": "([#%$]|((?<=\\s)\\.))[A-Za-z0-9_.#%$\\-]+",
-          "name": "meta.names"
-        }
-      ]
+          match: "[A-Za-z_][A-Za-z0-9_.#%$]*",
+          name: "meta.names",
+        },
+        {
+          include: "#macro-name",
+        },
+        {
+          captures: {
+            0: {
+              name: "variable.other.mcfunction",
+            },
+          },
+          match: "([#%$]|((?<=\\s)\\.))[A-Za-z0-9_.#%$\\-]+",
+          name: "meta.names",
+        },
+      ],
     },
     "macro-name": {
-      "patterns": [
+      patterns: [
         {
-          "captures": {
-            "1": {
-              "name": "punctuation.definition.template-expression.begin.mcfunction"
+          captures: {
+            1: {
+              name: "punctuation.definition.template-expression.begin.mcfunction",
             },
-            "2": {
-              "name": "variable.other.mcfunction"
+            2: {
+              name: "variable.other.mcfunction",
             },
-            "3": {
-              "name": "punctuation.definition.template-expression.end.mcfunction"
-            }
+            3: {
+              name: "punctuation.definition.template-expression.end.mcfunction",
+            },
           },
-          "match": "(\\$\\()([A-Za-z0-9_]*)(\\))",
-          "name": "meta.macro-name"
-        }
-      ]
+          match: "(\\$\\()([A-Za-z0-9_]*)(\\))",
+          name: "meta.macro-name",
+        },
+      ],
     },
-    "operators": {
-      "patterns": [
+    operators: {
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "constant.numeric.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "constant.numeric.mcfunction",
+            },
           },
-          "match": "[~^]",
-          "name": "meta.operators"
+          match: "[~^]",
+          name: "meta.operators",
         },
         {
-          "captures": {
-            "0": {
-              "name": "keyword.operator.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "keyword.operator.mcfunction",
+            },
           },
-          "match": "[\\-%?!+*<>\\\\/|&=.:,;]",
-          "name": "meta.operators"
-        }
-      ]
+          match: "[\\-%?!+*<>\\\\/|&=.:,;]",
+          name: "meta.operators",
+        },
+      ],
     },
-    "property": {
-      "patterns": [
+    property: {
+      patterns: [
         {
-          "applyEndPatternLast": 1,
-          "begin": "\\{",
-          "captures": {
-            "0": {
-              "name": "punctuation.mcfunction"
-            }
+          applyEndPatternLast: 1,
+          begin: "\\{",
+          captures: {
+            0: {
+              name: "punctuation.mcfunction",
+            },
           },
-          "end": "\\}",
-          "name": "meta.property.curly",
-          "patterns": [
+          end: "\\}",
+          name: "meta.property.curly",
+          patterns: [
             {
-              "include": "#resource-name"
+              include: "#resource-name",
             },
             {
-              "include": "#literals"
+              include: "#literals",
             },
             {
-              "include": "#property_key"
+              include: "#property_key",
             },
             {
-              "include": "#operators"
+              include: "#operators",
             },
             {
-              "include": "#property_value"
+              include: "#property_value",
             },
             {
-              "include": "$self"
-            }
-          ]
+              include: "$self",
+            },
+          ],
         },
         {
-          "applyEndPatternLast": 1,
-          "begin": "\\[",
-          "captures": {
-            "0": {
-              "name": "variable.other.mcfunction"
-            }
+          applyEndPatternLast: 1,
+          begin: "\\[",
+          captures: {
+            0: {
+              name: "variable.other.mcfunction",
+            },
           },
-          "end": "\\]",
-          "name": "meta.property.square",
-          "patterns": [
+          end: "\\]",
+          name: "meta.property.square",
+          patterns: [
             {
-              "include": "#resource-name"
+              include: "#resource-name",
             },
             {
-              "include": "#literals"
+              include: "#literals",
             },
             {
-              "include": "#property_key"
+              include: "#property_key",
             },
             {
-              "include": "#operators"
+              include: "#operators",
             },
             {
-              "include": "#property_value"
+              include: "#property_value",
             },
             {
-              "include": "$self"
-            }
-          ]
+              include: "$self",
+            },
+          ],
         },
         {
-          "applyEndPatternLast": 1,
-          "begin": "\\(",
-          "captures": {
-            "0": {
-              "name": "punctuation.mcfunction"
-            }
+          applyEndPatternLast: 1,
+          begin: "\\(",
+          captures: {
+            0: {
+              name: "punctuation.mcfunction",
+            },
           },
-          "end": "\\)",
-          "name": "meta.property.paren",
-          "patterns": [
+          end: "\\)",
+          name: "meta.property.paren",
+          patterns: [
             {
-              "include": "#resource-name"
+              include: "#resource-name",
             },
             {
-              "include": "#literals"
+              include: "#literals",
             },
             {
-              "include": "#property_key"
+              include: "#property_key",
             },
             {
-              "include": "#operators"
+              include: "#operators",
             },
             {
-              "include": "#property_value"
+              include: "#property_value",
             },
             {
-              "include": "$self"
-            }
-          ]
-        }
-      ]
+              include: "$self",
+            },
+          ],
+        },
+      ],
     },
-    "property_key": {
-      "patterns": [
+    property_key: {
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "variable.other.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "variable.other.mcfunction",
+            },
           },
-          "match": "#?[a-z_][a-z_\\.\\-]*\\:[a-z0-9_\\.\\-/]+(?=\\s*\\=:)",
-          "name": "meta.property_key"
+          match: "#?[a-z_][a-z_\\.\\-]*\\:[a-z0-9_\\.\\-/]+(?=\\s*\\=:)",
+          name: "meta.property_key",
         },
         {
-          "captures": {
-            "0": {
-              "name": "variable.other.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "variable.other.mcfunction",
+            },
           },
-          "match": "#?[a-z_][a-z0-9_\\.\\-/]+",
-          "name": "meta.property_key"
+          match: "#?[a-z_][a-z0-9_\\.\\-/]+",
+          name: "meta.property_key",
         },
         {
-          "captures": {
-            "0": {
-              "name": "variable.other.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "variable.other.mcfunction",
+            },
           },
-          "match": "[A-Za-z_]+[A-Za-z_\\-\\+]*",
-          "name": "meta.property_key"
-        }
-      ]
+          match: "[A-Za-z_]+[A-Za-z_\\-\\+]*",
+          name: "meta.property_key",
+        },
+      ],
     },
-    "property_value": {
-      "patterns": [
+    property_value: {
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "string.unquoted.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "string.unquoted.mcfunction",
+            },
           },
-          "match": "#?[a-z_][a-z_\\.\\-]*\\:[a-z0-9_\\.\\-/]+",
-          "name": "meta.property_value"
+          match: "#?[a-z_][a-z_\\.\\-]*\\:[a-z0-9_\\.\\-/]+",
+          name: "meta.property_value",
         },
         {
-          "captures": {
-            "0": {
-              "name": "string.unquoted.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "string.unquoted.mcfunction",
+            },
           },
-          "match": "#?[a-z_][a-z0-9_\\.\\-/]+",
-          "name": "meta.property_value"
-        }
-      ]
+          match: "#?[a-z_][a-z0-9_\\.\\-/]+",
+          name: "meta.property_value",
+        },
+      ],
     },
     "resource-name": {
-      "patterns": [
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "entity.name.function.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "entity.name.function.mcfunction",
+            },
           },
-          "match": "#?[a-z_][a-z0-9_.-]*:[a-z0-9_./-]+",
-          "name": "meta.resource-name"
+          match: "#?[a-z_][a-z0-9_.-]*:[a-z0-9_./-]+",
+          name: "meta.resource-name",
         },
         {
-          "captures": {
-            "0": {
-              "name": "entity.name.function.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "entity.name.function.mcfunction",
+            },
           },
-          "match": "#?[a-z0-9_\\.\\-]+\\/[a-z0-9_\\.\\-\\/]+",
-          "name": "meta.resource-name"
-        }
-      ]
+          match: "#?[a-z0-9_\\.\\-]+\\/[a-z0-9_\\.\\-\\/]+",
+          name: "meta.resource-name",
+        },
+      ],
     },
-    "selectors": {
-      "patterns": [
+    selectors: {
+      patterns: [
         {
-          "captures": {
-            "0": {
-              "name": "support.class.mcfunction"
-            }
+          captures: {
+            0: {
+              name: "support.class.mcfunction",
+            },
           },
-          "match": "@[a-z]+",
-          "name": "meta.selectors"
-        }
-      ]
-    }
-  }
-}
+          match: "@[a-z]+",
+          name: "meta.selectors",
+        },
+      ],
+    },
+  },
+};

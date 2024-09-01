@@ -6,7 +6,6 @@
   let error = "";
 
   function validate() {
-
     if (value.length === 0) {
       valid = "unset";
       error = "";
@@ -39,4 +38,3 @@
 <p class="text-red-500">
   {error}
 </p>
-  

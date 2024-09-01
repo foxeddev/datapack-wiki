@@ -2,7 +2,7 @@
   import { sidebarExpanded, windowWidth } from "$lib/stores";
   import { createSearchIndex, search } from "../search";
 
-  import autoAnimate from "@formkit/auto-animate"
+  import autoAnimate from "@formkit/auto-animate";
 
   export let results: any[] = [];
   let dialog: HTMLDialogElement;
@@ -39,7 +39,7 @@
       type="search"
       placeholder="Search for a page..."
       bind:value={searchTerm} />
-    <div class="overflow-y-auto max-h-[50vh]" use:autoAnimate={{duration: 100}}>
+    <div class="overflow-y-auto max-h-[50vh]" use:autoAnimate={{ duration: 100 }}>
       {#each results as result}
         <a
           on:click={() => {

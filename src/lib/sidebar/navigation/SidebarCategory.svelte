@@ -26,7 +26,7 @@
   {/if}
 </button>
 
-<div use:autoAnimate={{duration: 200}}>
+<div use:autoAnimate={{ duration: 200 }}>
   {#if expanded && $sidebarExpanded}
     <div class="flex flex-col ml-4 pb-2">
       <slot />
