@@ -1,5 +1,6 @@
 <script lang="ts">
   import { sidebarExpanded } from "$lib/stores";
+  import autoAnimate from "@formkit/auto-animate";
   import IconExpand from "~icons/tabler/chevron-right";
 
   type Props = {
@@ -25,12 +26,14 @@
     <div class="flex-grow text-left">
       <span>{name}</span>
     </div>
-    <IconExpand class="transition-all {expanded ? 'rotate-90' : 'rotate-0'}" />
+    <IconExpand class="motion-safe:transition-all {expanded ? 'rotate-90' : 'rotate-0'}" />
   {/if}
 </button>
 
-{#if expanded && $sidebarExpanded}
-  <div class="flex flex-col ml-4 pb-2">
-    {@render children()}
-  </div>
-{/if}
+<div use:autoAnimate={{ duration: 200 }}>
+  {#if expanded && $sidebarExpanded}
+    <div class="flex flex-col ml-4 pb-2">
+      {@render children()}
+    </div>
+  {/if}
+</div>

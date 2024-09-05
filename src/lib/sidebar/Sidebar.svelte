@@ -87,7 +87,7 @@
     {/if}
     <button
       aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
-      class="text-stone-200 text-lg transition-all {$sidebarExpanded ? 'rotate-0' : 'rotate-180'}"
+      class="text-stone-200 text-lg motion-safe:transition-all {$sidebarExpanded ? 'rotate-0' : 'rotate-180'}"
       onclick={() => ($sidebarExpanded = !$sidebarExpanded)}>
       <IconCollapse />
     </button>
