@@ -4,8 +4,7 @@
   import autoAnimate from "@formkit/auto-animate";
 
 
-  let { results = $bindable([] as any[]) } = $props();
-
+  let { results = $bindable([]) } = $props();
   let dialog: HTMLDialogElement;
 
   let searchTerm = $state("");
