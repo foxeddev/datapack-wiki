@@ -1,13 +1,13 @@
 <script lang="ts">
   import { sidebarExpanded, windowWidth } from "$lib/stores";
-  
+
   type Props = {
     icon: any;
     page: string;
     label: string;
-  }
+  };
 
-  const { icon, page, label }: Props = $props()
+  const { icon, page, label }: Props = $props();
 </script>
 
 <a

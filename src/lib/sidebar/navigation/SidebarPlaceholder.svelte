@@ -1,10 +1,10 @@
 <script lang="ts">
   import { sidebarExpanded } from "$lib/stores";
-  
+
   type Props = {
     label: string;
     icon: any;
-  }
+  };
 
   const { label, icon }: Props = $props();
 </script>

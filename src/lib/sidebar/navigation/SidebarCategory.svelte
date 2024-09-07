@@ -6,8 +6,8 @@
   type Props = {
     name: string;
     icon: any;
-    children: any
-  }
+    children: any;
+  };
 
   const { children, name, icon }: Props = $props();
 

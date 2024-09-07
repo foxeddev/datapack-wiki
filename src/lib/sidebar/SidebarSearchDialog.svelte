@@ -3,8 +3,11 @@
   import { createSearchIndex, search } from "../search";
   import autoAnimate from "@formkit/auto-animate";
 
+  type Props = {
+    results: any[];
+  };
 
-  let { results = $bindable([]) } = $props();
+  let { results = $bindable([]) }: Props = $props();
   let dialog: HTMLDialogElement;
 
   let searchTerm = $state("");
@@ -23,7 +26,7 @@
     if (searchState === "done") {
       search(searchTerm).then(r => (results = r as any[]));
     }
-  })
+  });
 </script>
 
 <dialog
