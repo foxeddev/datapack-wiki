@@ -6,13 +6,765 @@ title: Target Selectors
 import {Version} from '$lib/reusables';
 </script>
 
-<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+<Version>This page is validated and up to date with Minecraft Java: 1.21.2</Version>
 
 # Item Components
+Item components are data structures which can be applied to items in Minecraft to give them special attributes, such as a name, lore, being able to be eaten, etc. Each item has specific item components by default - for example, all food items will have the  `minecraft:food`  component, which makes the item edible.
 
-Item components are data structures which can be applied to items in Minecraft to give them special attributes, such as
-a name, lore, being able to be eaten, etc. Each item has specific item components by default - for example, all food
-items will have the `minecraft:food` component, which makes the item edible.
+A command such as  `/give`  or  `/item`  can be used to create an item which has additional item components, or remove item components from any item.
 
-A command such as `/give` or `/item` can be used to create an item which has additional item components, or remove item
-components from any item.
+## List of all Item Components
+This is a list of all item components in the game, with examples and an explanation of what they do! 
+If you want to see the default components of Minecraft's vanilla items, i can recommend a useful site to do exactly that: https://t0rnato.github.io/mc-components/
+
+### `attribute_modifiers`
+Used to apply attribute modifiers onto items. See attributes for more (WIP).
+
+**Fields:**
+- `minecraft:attribute_modifiers` - Can be defined as a compound or a list.
+  - `modifiers` - Contains a list of the attribute modifiers.
+    - `type` - The name of the attribute modifier you want to use (e.g. `block_interaction_range` or `scale`)
+    - `slot` - A slot the item must be in for the attribute modifier to take effect. Can be any of: `any`, `hand`,   `armor`, `mainhand`, `offhand`, `head`, `chest`, `legs`, `feet` or `body`.
+    - `id` - A unique resource location to identify the attribute modifier.
+    - `amount` - Specifies the amount of change the modifier's effect has. (See "example")
+    - `operation` - A modifier operation, can be any of `add_value`, `add_multiplied_base` or 
+    - `add_multiplied_total` (see [Attribute Modifiers](https://minecraft.wiki/w/Attribute#Modifiers) for more info.)
+  - `show_in_tooltip` - Whether to show the attribute modifiers in the item's tooltip. A boolean which default to `true`.
+
+**Example:** `/give @s diamond[attribute_modifiers=[{type:"block_interaction_range",slot:"hand",id:"example:reach",amount:4,operation:"add_value"}]]`
+- This command will give you a diamond which increases your block interaction range by 4 blocks when held in your hand.
+
+### `banner_patterns`
+This component allows you to apply banner patterns onto banners or shields. See the syntax below for more info!
+
+**Fields:**
+- `minecraft:banner_patterns` - Contains a list of all the patterns applied to the banner (or the shield).
+  - `color` - A dye color of the pattern. (e.g. `red`, `magenta`, ...)
+  - `pattern` - A banner pattern ID. (See "example")
+
+**Example:** `/give @s cyan_banner[banner_patterns=[{pattern:"minecraft:bricks",color:"black"},{pattern:"minecraft:rhombus",color:"magenta"}]]`
+- This command will give you a cyan banner with black bricks and magenta diamond patterns applied to it.
+
+### `base_color`
+This component specifies the base (dye) color of a banner shield.
+
+**Fields:**
+- `minecraft:base_color` - The dye color of the base. (e.g. `red`, `magenta`, ...)
+
+**Example:** `/give @s shield[base_color="cyan"]`
+- This command gives you a shield with a cyan banner applied to it.
+
+### `bees`
+A component used to specify the bees and their time in the hive. You can set the entity data, their minimum and current time in the hive.
+
+**Fields:**
+- `minecraft:bees` - A list of entities currently in the beehive/bee nest.
+  - `entity_data` - The Entity NBT data of your specified entity in the hive/nest. (See "example")
+  - `min_ticks_in_hive` - The minimum amount of ticks the specified entity has to stay in the hive/nest.
+  - `ticks_in_hive` -  The amount of ticks the specified entity has been inside the hive/nest
+
+**Example:** `/give @s beehive[bees=[{entity_data:{id:"bee",CustomName:'"Beeatrice"'},min_ticks_in_hive:69,ticks_in_hive:27}]]`
+- This command will give you a beehive with a bee called "Beeatrice".
+
+### `block_entity_data`
+Used to specify Block NBT data which gets applied to the block after it's placed.
+
+**Fields:**
+- `minecraft:block_entity_data` - The Block NBT data that is applied after the block is placed (**Important Note**: `x`, `y` and `z` tags are exluded, even if you specify them.)
+
+**Example:** `/give @s brewing_stand[block_entity_data={id:"brewing_stand",Fuel:20b}]`
+- This command will give you a brewing stand, which when placed down, alredy has its fuel full.
+
+### `block_state`
+Used to specify Block State properties which get applied to the block after it's placed.
+
+**Fields:**
+- `minecraft:block_state` - The block state properties to apply onto the block when placed.
+
+**Example:** `/give @s oak_leaves[block_state={waterlogged:"true"}]`
+- This command gives you an oak leaf, whoch when placed down appears waterlogged.
+
+### `bucket_entity_data`
+Specifies the Entity NBT applied to an entity when placed down from a bucket. Do note that only some NBT tags are applied.
+
+**Fields:**
+- `minecraft:bucket_entity_data` - The Entity NBT data which is applied when the entity is placed down from a bucket, only NBT tags specified below are applied.
+  - Only `NoAI`, `Silent`, `NoGravity`, `Glowing`, `Invulnerable`, `Health`, `Age`, `Variant`, `HuntingCooldown` and `BucketVariantTag` tags are applied!
+
+**Example:** `/give @s axolotl_bucket[bucket_entity_data={Variant:4,Glowing:1b}]`
+- The command will give you an axolotl bucket, which when placed down, spawns a blue glowing axolotl.
+
+### `bundle_contents`
+Used to define items stored inside of a bundle.
+
+**Fields:**
+- `minecraft:bundle_contents` - A list of item stacks of items stored inside a bundle.
+  - `id` - The ID of the item. Note that it **cannot** be `air`!
+  - `count` - The count of the item. If left out defaults to 1, the maximum count is 99.
+  - `components` - The [item components](#) of the item, optional.
+
+**Example:** `/give @s bundle[bundle_contents=[{id:"diamond",count:8},{id:"minecraft:coal_block",count:1,components:{"minecraft:item_name":'"Compressed Coal"'}}}]]`
+- When ran, this will give you a bundle with 2 different items inside, a diamond and a coal block with an [item name](#item-name) of "Compressed Coal".
+
+### `can_break`
+When present, the player holding the item will be able to break the specified blocks in adventure mode. Can be very handy in adventure maps, where you generally don't want the player to be able to break every block.
+
+**Fields:**
+- `minecraft:can_break` - Can either contain a list of blocks, or just a single block entry, in which case you can leave out the `predicates` field *(Example #2)*.
+  - `predicates` - A list with the block predicates which define which blocks the player can break. *(If you don't require to use a list, you can just directly specify a single block predicate instead, as seen in Example #2.)*
+    - `blocks` - Can be either a single block ID, a list of block IDs, or a block tag with a `#`, but never a list of block tags.
+    - `nbt` - The Block Entity NBT data which has to match to let the player break the block. (Optional)
+    - `state` - A compound with the Block State property which has to match to let the player break the block (Optional, Example #1)
+  - `show_in_tooltip` - Whether to show the "Can break" section in the item's tooltip. A boolean which default to `true`.
+
+**Examples:**
+*#1*: `/give @s iron_pickaxe[can_break={predicates:[{blocks:"oak_log"},{blocks:"oak_leaves","state":{"waterlogged":"true"}}],show_in_tooltip:false}]`
+- This command will give  you an iron pickaxe, which can only break oak logs and waterlogged oak leaves, its "Can break" tooltip is hidden.
+
+*#2:*`/give @s diamond_pickaxe[can_break={blocks:["diamond_block","diamond_ore"]}]`
+- This command gives you a diamond pickaxe which can only break diamond blocks and diamond ore.
+
+
+### `can_place_on`
+When present, the player holding the item will be able to place the held item/block onto a specified block in adventure mode. Works very simirarly to the `can_break` component.
+
+**Fields:**
+- `minecraft:can_place_on` - Can either contain a list of blocks, or just a single block entry, in which case you can leave out the `predicates` field.
+  - `predicates` - A list with the block predicates which define on which blocks the item can be placed. *(If you don't require to use a list, you can just directly specify a single block predicate instead.)*
+    - `blocks` - Can be either a single block ID, a list of block IDs, or a block tag with a `#`, but never a list of block tags.
+    - `nbt` - The Block Entity NBT data which has to match to let the player break the block. (Optional)
+    - `state` - A compound with the Block State property which has to match to let the player break the block (Optional)
+  - `show_in_tooltip` - Whether to show the "Can place on" section in the item's tooltip. A boolean which default to `true`.
+
+**Example:** `/give @s lever[can_place_on={predicates:[{blocks:"emerald_block"}],show_in_tooltip:true}]`
+- This gives you a lever which can only be placed onto an emerald block.
+
+### `charged_projectiles`
+Defines the items, projectiles, loaded into a crossbow. If this component isn't present, the crossbow won't be charged.
+
+**Fields:**
+- `minecraft:charged_projectiles` - Contains a list of items, projectiles, loaded into the crossbow.
+  - `id` - The ID of the item. Note that it **cannot** be `air`!
+  - `count` - The count of the item. If left out defaults to 1, the maximum count is 99.
+  - `components` - The [item components](#) of the item, optional.
+
+**Example:** `/give @s crossbow[charged_projectiles=[{id:"minecraft:firework_rocket",count:1,components:{"minecraft:fireworks":{flight_duration:1}}}]]`
+- When ran, this command gives you a crossbow loaded with a firework rocket with a [`fireworks`](#fireworks) component.
+
+### `container`
+Specified the items stored in a container.
+
+**Fields:**
+- `minecraft:container` - The items stored in this container.
+  - `slot` - A slot of this container. Can be anything between 0 and 255.
+  - `item` - A single item stack.
+    - `id` - The ID of the item. Note that it **cannot** be `air`!
+    - `count` - The count of the item. If left out defaults to 1, the maximum count is 99.
+    - `components` - The [item components](#) of the item, optional.
+
+**Example:** `/give @s dropper[container=[{slot:4,item:{id:"minecraft:diamond",count:1}}]]`
+- Gives you a dropper with a diamond in the middle (slot 4).
+
+### `container_loot`
+Used to add or change the loot table in a container.
+
+**Fields:**
+- `minecraft:container_loot` - The loot table of this container.
+  - `id` - The ID of a loot table.
+  - `seed` - The seed for generating the loot table. If unspecified or `0`, a random seed will be generated.
+
+**Example:** `/give @s chest[container_loot={loot_table:"chests/end_city_treasure"}]`
+- Gives you a chest with the end city treasure loot table inside.
+
+### `consumable`
+When present, lets the player consume the item, but note that if the item already has existing right-click functionality (like placing a block), it will keep that functionality. 
+If  [`food`](#food),  [`potion_contents`](#potion_contents),  [`ominous_bottle_amplifier`](#ominous_bottle_amplifier)  or  [`suspicious_stew_effects`](#suspicious_stew_effects)  are also present on this item, consuming it will apply the stats and effects of those components.
+This component is also very useful in datapacking, since it not only allows easy [right click detection](/guide/right-click/food_component), but if set-up correctly can also play any of the animation presets, allowing for more visuals in your custom items.
+
+**Fields:**
+- `minecraft:consumable` - If present, lets the item be consumed.
+  - `consume_seconds` - The amount of seconds it takes the player to consume the item, the default value is 1.6.
+  - `animation` - The animation that is player when consuming the item. Can be any of `none`, `eat`, `drink`, `block`, `bow`, `spear`, `crossbow`, `spyglass`, `toot_horn` or `brush`, the default is `eat`.
+  - `sound` - The sound event to play during when the item is consumed. The default value is `entity.generic.eat`.
+    - `sound_id` - A resource location of a sound file. (e.g. `entity.generic.explode`)
+    - `range` - An optional fixed range of the sound.
+  - `has_consume_particles` - If the item should have consume particles. A boolean which default to `true`.
+  - `on_consume_effects` - An optional list of effects which happen after the consumption of this item.
+    - `apply_effects` - If specified, will apply these status effects on consumption.
+      - `effects` - A list of status effects that are applied once the item is consumed.
+      - `probability` - A float that determines the probability of the above effects getting applied once the item is consumed. The default value is 1.0.
+    - `remove_effects` - If specified, will remove these status effects on consumption.
+      - `effects` - A list or a tag of status effects IDs that are removed once the item is consumed.
+    - `clear_all_effects` - If specified, will remove all status effects on consumption.
+    - `teleport_randomly` - If specified, will teleport the player in a radius on consumption.
+      - `diameter` - A float defining the radius of where the player can be teleported. The default value is 16.0.
+    - `play_sound` - If specified, will play a selected sound on consumption.
+      - `sound` - The sound event to play once the item is consumed.
+        - `sound_id` - A resource location of a sound file. (e.g. `entity.generic.explode`)
+        - `range` - An optional fixed range of the sound.
+
+**Examples:**
+*With the food component*: `/give @s apple[consumable={animation:'none', sound:'entity.generic.eat'},food={saturation:6,nutrition:9}]`
+- This command gives you an apple which doesnt have any consumption animation, and once consumed gives the player 6 saturation and 9 nutrition because the [`food`](#food) component is present on the item.
+
+*Teleport randomly*: `/give @s bone[consumable={consume_seconds:0.5,on_consume_effects:[{type:"minecraft:teleport_randomly","diameter":10}]}]`
+- This command gives you a bone which takes .5 seconds to consume, and once finished teleports the player to a random place in a diameter of 10 blocks.
+
+### `custom_data`
+Used to store custom data on your item, can be either an object or [SNBT](/wiki/nbt/nbt#snbt-format) string. This is very useful for making custom items in your datapacks. For example, you can "tag" your item with a specific value which you can later check to see if it really is your custom item the player is holding/using.
+
+**Fields:**
+- `minecraft:custom_data` - Contains key-value pairs of custom data on this item. Can be either an object or [SNBT](/wiki/nbt/nbt#snbt-format) string.
+  - `<key>` - A key-value pair. (Like `"my_custom_item":1b`)
+
+**Example:** `/give @s diamond_sword[custom_data={"my_custom_item":1b}]`
+- Gives you a diamond sword with the custom data `{"my_custom_item":1b}`.
+
+### `custom_model_data`
+Used to specify the custom model data of the item. Used in conjunction with a resourcepack, where you can specify the `"custom_model_data"` in the overrides section of item models.
+
+**Fields:**
+- `minecraft:custom_model_data` - The integer value used in conjunction with the `"custom_model_data"`field in the overrides section of item models.
+
+**Example:** `/give @s apple[custom_model_data=6091]`
+- Gives you an apple with the custom model data of `6091`.
+
+### `custom_name`
+Used to specify the item's custom name, like you can in an anvil. (Similiar to the [`item_name`](#item_name) component)
+This component takes priority over the [`item_name`](#item_name) component, can be renamed or removed using an anvil and, if unspecified otherwise, the item's name will default to being italic. (You can change that just by overwriting it in the text component)
+
+**Fields:**
+- `minecraft:custom_name` - A Raw JSON text component to use as this item's name. (See "example")
+
+**Example:** `/give @s [custom_name='[{"color":"gray","italic":false,"text":"The book of "},{"color":"gold","italic":true,"text":"lore!"}]']`
+- This command gives you a book with the name "The book of *lore!*", colored in gray and gold.
+
+### `damage`
+Specifies the number of uses **lost** (NOT remaining) from the item's durability. 
+
+**Fields:**
+- `minecraft:damage` - An integer that represents the number of uses consumed from the item's durability.
+
+**Example:** `/give @s mace[damage=499]`
+- This command will give you a mace which only has 1 durability left. (The [`max_durability`](#max_durability) of a mace is 500.)
+
+### `debug_stick_state`
+Used by the debug stick item to store the selected block state properties.
+
+**Fields:**
+- `minecraft:debug_stick_state` - The block state property of this debug stick.
+  - `<block id>` - A key-value pair, the key is the block ID and the value is the block state key. (For example: `"minecraft:mangrove_fence": "west"`)
+
+### `dyed_color`
+Specifies the color of the current leather armor piece. This is very useful in combination with a resourcepack, because if you allow tinting on your custom model applied any leather item, then you can color your specified part of the model in any color you selet in this component.
+
+**Fields:**
+- `minecraft:dyed_color` - Can be either a coumpound or an integer (See "example").
+  - `rgb` - The color applied to this leather armor piece. Represented as a decimal number.
+  - `show_in_tooltip` - Whether to show the item's color in the tooltip. A boolean which default to `true`.
+
+**Example:** `/give @s leather_chestplate[dyed_color={rgb:16711680,show_in_tooltip:true}]`
+- Gives you a leather chestplate that is dyed red.
+
+### `enchantment_glint_override`
+Used to override the enchantment glint on item, this works even when there are no enchantments on the item.
+
+**Fields:**
+- `minecraft:enchantment_glint_override` - A boolean which overrides the item's enchantment glint, `false` means it will never show the glint, while `true` will always display it (even if there are no enchantments on the item).
+
+**Examples:** 
+*Item with Glint*: `/give @s debug_stick[enchantment_glint_override=false]`
+- Gives you a debug stick without the glint, because normally it's applied to the debug stick by default.
+
+*Disable Item's Glint*: `/give @s trident[enchantment_glint_override=true]`
+- Gives you a trident which has an enchantment glint even thought it has no enchantments.
+
+### `enchantable`
+If present (and any enchantments are applicable), this item can be enchanted in an enchanting table.
+
+**Fields:**
+- `minecraft:enchantable` - If present, this item can be enchanted via an enchanting table.
+  - `value` - A higher value makes enchantments that have a higher cost a bigger chance to be picked.
+
+**Example:** `/give @s stick[enchantable={value:4}]`
+- Gives you a stick which can be enchanted (but only if there are any enchantments for a stick available!).
+
+### `enchantments`
+Specified the enchantments on this item. Do not confuse this component with the [`stored_enchantments`](#stored_enchantments) component, which only stores the enchantments on the item, meaning they aren't active (Like enchanted books, they only store the enchantment, don't function as it.)
+
+**Fields:**
+- `minecraft:enchantments` - Contains the enchantments on this item.
+  - `levels` - Contains key-value pairs of levels of enchantments on this item.
+    - `<enchantment ID>` - A single key-value pair, where the key is the ID of the enchantment and the value is the level of the enchantment you want.
+  - `show_in_tooltip` - Whether to show the enchantments in the item's tooltip. A boolean which default to `true`.
+
+**Examples:**
+*#1:* `/give @s diamond_boots[enchantments={protection:1,thorns:8}]`
+- Gives you diamond boots with protection 1 and thorns 8.
+
+*#2:* `/give @s gold_sword[enchantments={levels:{'minecraft:knockback':8},show_in_tooltip:false}]`
+
+### `equippable`
+This component lets the item be equipped into a specified slot with a specified model, sounds and allowed entities which can wear the armor.
+
+**Fields:**
+- `minecraft:equippable` - If this component is present, this item will be able to be equipped.
+  - `slot` - The slot this armor can be equipped into, can be any of `head`,`chest`, `legs`, `feet`, `body`, `mainhand`, or `offhand`.
+  - `equip_sound` - An optional sound event to play when the item is eqipped. If unspecified, `item.armor.equip_generic` will play.
+    - `sound_id` - A resource location of a sound file. (e.g. `entity.generic.explode`)
+    - `range` - An optional fixed range of the sound.
+  - `model` - An optional `namespace:id` of the equipment model to use when equipped.
+  - `allowed_entities` - An optional field which controls the entities that can equip this armor piece. Can either be an Entity ID an Entity Tag, or list of Entity IDs, but never a list of Entity Tags.
+  - `dispensable` - A boolean which defaults to `true`, defines wether the item can be equipped throught a dispenser.
+
+**Example:** `/give @s end_rod[equippable={slot:"head",equip_sound:"entity.generic.explode",dispensable:true}]`
+- Gives you a tnt which can be equipped onto a players head, and will play a special sound when done so.
+
+### `entity_data`
+Used to specify the NBT data of an entity that is spawned/created from an item (e.g. armor stand, spawn egg, ...)
+
+**Fields:**
+- `minecraft:entity_data` - The NBT entity data applied to an entity after it's spawned/created from an item.
+
+**Example:** `/give @s ghast_spawn_egg[entity_data={id:"minecraft:giant",Glowing:1b}]`
+- Gives you ghast spawn egg which spawns a glowing giant.
+
+### `fire_resistant`
+Defines if the item is fire resistant, meaning it won't burn in fire/lava.
+
+**Fields:**
+- `minecraft:fire_resistant` - If this empty object is set, then the item will become fire resistant, meaning it won't be able to burn in lava or fire.
+
+**Example:** `/give @s barrier[fire_resistant={}]`
+- Gives you a barrier which can be burned neither in lava or fire.
+
+### `firework_explosion`
+The firework explosion effect stored inside of a **firework star** (NOT a firework rocket, for that see the [`fireworks`](#fireworks) component).
+
+**Fields:**
+- `minecraft:firework_explosion` - The firework explosion effect inside of this firework star.
+  - `shape` - The shape of the firework explosion, can be any of `small_ball`, `large_ball`, `star`, `creeper` or `burst`.
+  - `colors` - The colors of the particles from the explosion, they are randomly selected from this array of integers (See "example").
+  - `fade_colors` - The fade colors of the initial particles from the explosion, they are randomly selected from this array of integers (See "example").
+  - `has_trail` - A boolean which decides whether the rocket should have a trail effect or not.
+  - `has_twinkle` - A boolean which decides whether the rocket should have a twinkle effect or not.
+
+**Example:** `/give @s firework_star[firework_explosion={shape:"creeper",has_twinkle:true,has_trail:true,colors:[I;16711680,16777215],fade_colors:[I;0]}]`
+- Gives you a firework star which stores an explosion effect which has a shape of a creeper, twinkles and has a trail, and has 2 randomly selected colors that both fade into black.
+
+### `fireworks`
+The firework explosion effects stored inside of a **firework rocket** (NOT a firework star, for that see the [`firework_explosion`](#firework_explosion) component).
+
+**Fields:**
+- `minecraft:fireworks` - A list of firework explosion effects spawned by this firework rocket. (A maximum of 256 entries)
+  - `shape` - The shape of the firework explosion, can be any of `small_ball`, `large_ball`, `star`, `creeper` or `burst`.
+  - `colors` - The colors of the particles from the explosion, they are randomly selected from this array of integers (See "example").
+  - `fade_colors` - The fade colors of the initial particles from the explosion, they are randomly selected from this array of integers (See "example").
+  - `has_trail` - A boolean which decides whether the rocket should have a trail effect or not.
+  - `has_twinkle` - A boolean which decides whether the rocket should have a twinkle effect or not.
+- `flight_duration` - An integer between -128 and 127, which defines the flight duration of this rocket.
+
+**Example:** `/give @s firework_rocket[fireworks={flight_duration:2,explosions:[{shape:"burst",has_trail:true,colors:[I;16190207,65314],fade_colors:[I;0]}]}]`
+- Gives you a firework rocket which on explosion has a shape of a large ball, doesn't twinkle but has a trail, and has 2 randomly selected colors that both fade into black.
+
+### `food`
+Used to set the food stats of this item after being consumed. This component by itself doesn't make the item consumable, for that use the [`consumable`](#consumable) item component. *(Note: this item did make the item consumable in version below 1.21.2, before the `consumable` component was added)*
+If this item also contains the [consumable](#consumable) component, these statistics will be applied when the player consumes the item.
+
+**Fields:**
+- `minecraft:food` - The food stats applied to the player after eating this item.
+  - `nutrition` - The nutrition to give the player after consuming this item.
+  - `saturation` - The saturation to give the player after consuming this item.
+  - `can_always_eat` - A boolean that default to `false`. If `true` the item will be able to be consumed even if the player isn't hungry.
+
+**Examples:** 
+*#1:* `/give @p apple[food={nutrition:96,saturation:27,can_always_eat:true}] 1`
+- Gives you an apple which can always be eaten, and if done so will award the player with 96 nutrition points and 27 saturation.
+
+*Non-conusmable item:* `/give @p diamond[food={nutrition:5,saturation:8,can_always_eat:false},consumable={consume_seconds:1}] 1`
+- Gives you a diamond which can be eaten if the player is hungry, once eaten gives the player 5 nutrition points and 8 saturation. (Can only be eaten because of the [`consumable`](#consumable) component)
+
+### `glider`
+Allows the player to glide (like you can with an elytra) if the item is [equipped](#equippable).
+
+**Fields:**
+- `minecraft:glider` - An empty object, which if set set, allows the player to glide when equipped.
+
+**Example:** `/give @s diamond_chestplate[glider={}]`
+- Gives you a diamond chestplate, which when equiped, allows the player to glide like you can with an elytra.
+
+### `hide_additional_tooltip`
+If present, will hide additional info, which comes from the item type, on the item's tooltip.
+
+**Fields:**
+- `minecraft:hide_additional_tooltip` - If set, will hide additional info on this item's tooltip.
+
+**Example:** `/give @s bolt_armor_trim_smithing_template[minecraft:hide_additional_tooltip={}]`
+- Gives you a bolt armor smithing template without the "smithing template" description.
+
+### `hide_tooltip`
+If present, will hide the whole tooltip from the item. (Including the name and even the tooltip box)
+
+**Fields:**
+- `minecraft:hide_additional_tooltip` - If set, will hide the whole tooltip of the item.
+
+**Example:** `/give @s spyglass[minecraft:hide_tooltip={}]`
+- Gives you a spyglass without any tooltip when hovered over.
+
+### `instrument`
+Used to add an instrument to a goat horn.
+
+**Fields:**
+- `minecraft:instrument` - The goat horn instrument on this item.
+  - `sound_event` - The sound event to play on the use of this goat horn.
+    - `sound_id` - A resource location of a sound file. (e.g. `entity.generic.explode`)
+    - `range` - An optional fixed range of the sound.
+  - `use_duration` - An integer for how long the use duration of this goat horn should be.
+  - `range` - A float for the range of the sound.
+
+**Examples:** 
+*Default Instrument*: `/give @s goat_horn[instrument="call_goat_horn"]`
+- Gives you a goat horn with the "Call" goat horn instrument.
+
+*Custom sound*: `/give @s goat_horn[instrument={use_duration:20,range:35,sound_event:"item.goat_horn.sound.5"}]`
+- Gives you a goat horn with a sound event and a custom cooldown.
+
+### `intangible_projectile`
+If present, makes the item not be able to be picked up by a player which is not in creative mode.
+
+**Fields:**
+- `minecraft:intangible_projectile` - If set, this projectile item can't be picked up by a non-creative player when fired.
+
+**Example:** `/give @s arrow[intangible_projectile={}]`
+- Gives you an arrow that cannot be picked up by a non-creative player.
+
+
+### `item_name`
+Used to specify the item's base name. (Similiar to the [`custom_name`](#custom_name) component)
+This component doesn't take priority over the [`custom_name`](#custom_name) component, but can't be renamed or removed using an anvil. And it won't default to italic, even if unspecified.
+
+**Fields:**
+- `minecraft:item_name` - A Raw JSON text component to use as this item's name. (See "example")
+
+**Example:** `/give @s stick[item_name='{"bold":true,"color":"light_purple","text":"Not-a-magic wand"}']`
+- This command gives you a stick with the name "Not-a-magic wand" in bold and colored in light purple.
+
+### `item_model`
+A components similiar to [`custom_model_data`](#custom_model_data), but here you specify the item model directly as a path. Is generally a better practice to use instead of custom model data, since it allows bigger compatibility between other datapacks.
+
+**Fields:**
+- `minecraft:item_model` - The `namespace:id` of the item model this item will display. (See "example")
+
+**Example:** `/give @s @s diamond[item_model="namespace:id"]`
+- Will give you a diamond with the model `namespace:id`, which will reference the model placed in`/assets/<namespace>/models/item/<id>`.
+
+### `jukebox_playable`
+Used to add custom or exisiting jukebox songs onto items and making them be able to be inserted into a jukebox. If you want to add your own custom jukebox songs, you can read the ["Adding Jukebox Songs"](/guide/adding-new-features/jukebox-songs) guide.
+
+**Fields:**
+- `minecraft:jukebox_playable` - Lets the item be inserted into a jukebox and play a custom song.
+  - `song` - A [Jukebox song](/guide/adding-new-features/jukebox-songs#setting-up-the-datapack) to play when put into a jukebox.
+  - `show_in_tooltip` - Whether to show the song in the item's tooltip. A boolean which default to `true`.
+
+**Example:** `/give @s snort_pottery_sherd[minecraft:jukebox_playable={song:"relic"}]`
+- This command gives you a Snort Pottery Sherd which can be inserted into a jukebox to play the song "Relic".
+
+### `lock`
+Used to lock a container to a certain "key", whic is an item with the same name as your specified "key" string.
+
+**Fields:**
+- `minecraft:lock` - If present, prevents the container from being opened unless the opener is holding an item whose name matches this string.
+
+**Example:** `/give @s dispenser[minecraft:lock="MyKey"]`
+- Gives you a dispenser which when placed can only be opened with an item whose name is "MyKey".
+
+### `lodestone_tracker`
+Stores information about a specific lodestone on a compass. Mainly used by the "Lodestone Compass" item.
+
+**Fields:**
+- `minecraft:lodestone_tracker` - Stores a specific lodestone on this compass.
+  - `target` - The information about the lodestone, if unspecified will spin the compass randomly.
+    - `pos` - The coordinates of the lodestone in an integer array.
+    - `dimension` - The dimension ID of where the lodestone is located.
+  - `tracked` - Default to `true`, which means this component will be removed once the lodestone is broken, if `false` it will be kept.
+
+**Example:** `/give @s compass[minecraft:lodestone_tracker={tracked:true,target:{pos:[I;89,64,-23],dimension:"overworld"}}]`
+- Gives you a (lodestone) compass which points towards a lodestone located at 89 64 -23 in the overworld. If there is no lodestone at that location the compass will spon randomly.
+
+
+### `lore`
+Used to specify the item's lore. (The lines of text under the item's name)
+
+**Fields:**
+- `minecraft:lore` - A list of Raw JSON text components to use as lines. The maximum amount of lines is 256. (See "example")
+
+**Example:** `/give @s book[lore=['[{"color":"gray","italic":false,"text":"Written by:"},{"color":"gray","italic":false,"text":" Diamond"}]','{"color":"dark_gray","italic":true,"text":"Published by DPH"}']]`
+- This command gives you a book with 2 lines of lore.
+
+### `map_color`
+Changes the color of the markings on the item of the map (Not the actual map when viewed).
+
+**Fields:**
+- `minecraft:map_color` - The decimal representation of a color used by the markings on the item of this map.
+
+**Example:** `/give @s filled_map[map_color=16718336]`
+- Gives you a map item with the markings on the map's item icon in red.
+
+### `map_decorations`
+Contains the icons that are displayed on a map. (Like an explorer map has for structures.)
+
+**Fields:**
+- `minecraft:map_decorations` - Contains key-value pairs of the icons that are displayed on this map when held.
+  - `<an arbitrary string>` - Should contain an arbitrary unique string for identification of this decoration. (See "example")
+    - `type` - The type of the decoration to display, can be any of `player`, `frame`, `red_marker`, `blue_marker`, `target_x`, `target_point`, `player_off_map`, `player_off_limits`, `mansion`, `monument`, `banner_white`, `banner_orange`, `banner_magenta`, `banner_light_blue`, `banner_yellow`, `banner_lime`, `banner_pink`, `banner_gray`, `banner_light_gray`, `banner_cyan`, `banner_purple`, `banner_blue`, `banner_brown`, `banner_green`, `banner_red`, `banner_black`, `red_x`, `village_desert`, `village_plains`, `village_savanna`, `village_snowy`, `village_taiga`, `jungle_temple` or `swamp_hut`.
+    - `x` - The X coordinates of where this decoration is placed in the world.
+    - `z` - The Z coordinates of where this decoration is placed in the world.
+    - `rotation` - The rotation ranging from 0.0 to 360.0 of this decoration's rotation. The default is `180`, which is the right way up.
+
+**Example:** `/give @s filled_map[map_decorations={"18340626":{type:"village_taiga",x:1.0,z:2.0,rotation:180.0},"7332285":{type:"mansion",x:3.0,z:4.0,rotation:360.0}}]`
+- Gives you a map with 2 decorations, one for a taiga village and one for a mansion.
+
+### `map_id`
+The map number of the map to show. Maps are stored in `.minecraft\saves\<YOUR WORLD>\data` and have file names such as `map_1.dat`. So this map data file could be used by setting the map number to `1`.
+
+**Fields:**
+- `minecraft:map_id` - The map number of the map to show.
+
+**Example:** `/give @s filled_map[map_id=2]`
+- Gives you a map with the map ID set to 2.
+
+### `max_damage`
+Sets the maximum amount of damage (meaning the max durability) this item can take. If unset, this item cannot take any damage, meaning it won't have any durability. Note that it cannot be combined with [`max_stack_size`](#max_stack_size).
+
+**Fields:**
+- `minecraft:max_damage` - The maximum durability this item can have (in other words the maximum damage this item can take).
+
+**Example:** `/give @s diamond_pickaxe[max_damage=1]`
+- This command gives you a diamond pickaxe which has only one durability, meaning it will break on one use.
+
+### `max_stack_size`
+Sets the maximum stack size of this item. The maximum can be 99, meaning you can stack the item upon the default 64. Note that it cannot be combined with [`max_damage`](#max_damage).
+
+**Fields:**
+- `minecraft:max_stack_size` - The maximum number of items that can stack on each other, can be any number between 1 and 99.
+
+**Example:** `/give @s diamond_pickaxe[max_damage=1]`
+- This command gives you a diamond pickaxe which has only one durability, meaning it will break on one use.
+
+### `note_block_sound`
+Can only be used on a player head, and defines the sound event to play when this head is placed on top of a note block.
+
+**Fields:**
+- `minecraft:note_block_sound` - An ID of the sound event that plays whne this player head is placed onto a note  block.
+
+**Example:** `/give @s player_head[note_block_sound="minecraft:entity.generic.hurt"]`
+- This command gives you a player head which when placed onto a note block plays the "hurt" sound effect. 
+
+### `ominous_bottle_amplifier`
+Used to define the amplifier amount of the Bad Omen effect on an Ominous Bottle.
+If this item also contains the [consumable](#consumable) component, this effect will be applied when the player consumes the item.
+
+**Fields:**
+- `minecraft:ominous_bottle_amplifier` - An integer between 0 and 4 which specifies the amplifier of the Bad Omen effect on this Ominous Bottle.
+
+**Example:** `/give @s ominous_bottle[ominous_bottle_amplifier=3] 1`
+
+### `pot_decorations`
+The sherds applied onto a decorated pot.
+
+**Fields:**
+- `minecraft:note_block_sound` - A list of sherds applied to this decorated pot, if the list has less than 4 enties the rest will default to `"minecraft:brick"`.
+  - `<item id>` - The ID of one of the sides, can either be a `brick` or one of the sherds.
+
+**Example:** `/give @s decorated_pot[pot_decorations=["minecraft:heart_pottery_sherd","minecraft:howl_pottery_sherd","minecraft:brick","minecraft:mourner_pottery_sherd"]]`
+
+### `potion_contents`
+Defines the status effects contained in a potion. Note that this can only be used on a potion, a splash potion, a lingering potion or a tipped arrow.
+If this item also contains the [consumable](#consumable) component, these effects will be applied when the player consumes the item.
+
+**Fields:**
+- `minecraft:potion_contents` - The status effects stored in this potion. Can also be defind as a string, in which case corresponds to the `potion` field (Example #2).
+  - `potion` - An optional field with the ID of the potion type.
+  - `custom_color` - An (overriding) color of this potion's texture and particles. Written as a decimal representation of the color.
+  - `custom_effects` -  A list of additional effects this potion applies once drank.
+    - `id` - The ID of the effect to apply.
+    - `amplifier` - The amplifier of the effect (Level 1 = value 0). An optional field that default to `0`.
+    - `duration` - The duration of the effect in ticks, where `-1` is infinite. An optional field that default to `1`.
+    - `ambient` - An optional boolean, which default to `false`, deciding if this effect should be ambinent (Meaning it will be less obstructive on screen, used by beacons).
+    - `show_particles` - An optional boolean, which default to `true`, decides whether or not to produce the effect's particles.
+    - `show_icon` - An optional boolean, which default to `true`, decided whether or not to show an icon of this effect.
+
+**Examples:** 
+*#1*: `/give @s potion[potion_contents={custom_color:393215,custom_effects:[{id:"minecraft:glowing",amplifier:0,duration:-1,show_particles:1b,show_icon:0b,ambient:1b}]}]`
+- Gives you a bluish-ly colored potion which when drank gives you a glowing effect. This effect is level 1 and is infinite, meaning it will never run out.
+
+*#2*: `/give @s potion[potion_contents={potion:"minecraft:night_vision"}]`
+
+### `profile`
+Used to change the "owner" of a player head.
+
+**Fields:**
+- `minecraft:profile` - The information of the "owner" of this player head. Can also be defind as a string, in which case corresponds to the `name` field.
+  - `name` -  The username of the "owner". (his IGN) If only this field is specified the others will be filled out automatically (Optional).
+  - `id` -  The UUID of the "owner" (Optional).
+  - `properties` -  A list of additional properties (Optional).
+    - `name` - The name of the property. (Optional)
+    - `value` - The texture data which is encoded in base64. (Optional)
+    - `signature` - The signature. (Optional)
+
+**Example:** `/give @s player_head[profile={name:"Silabear"}]`
+- When ran, gives a player head with the head of a player which name is "Silabear".
+
+### `rarity`
+Changes the rarity of the item. Setting a rarity changes the color of its default name. The colors are based on the rarity, where `common` is white, `uncommon` is yellow, `rare` is aqua and `epic` is light purple.
+
+**Fields:**
+- `minecraft:rarity` - A string which changes the rarity of the item, also sets the color of its default name. Can be any of `common`, `uncommon`, `rare` or `epic`.
+
+**Example:** `/give @s chorus_fruit[rarity="epic"]`
+- Gives the player a chorus fruit with the "epic" rarity, meaning it will have a light purple name.
+
+### `recipes`
+Can only be used on a knowledge book, where it stores the [recipes](/wiki/files/recipes) the player gets when the item is right-clicked.
+
+**Fields:**
+- `minecraft:recipes` - A list of recipes the player unlocks when right-clicking this book.
+  - `<recipe id>` - An ID of a recipe.
+
+**Example:** `/give @s knowledge_book[recipes=["iron_pickaxe","custom:recipe"]]`
+- A knowledge book which when right-clicked gives you two recipes, a recipe for an iron pickaxe and a [custom recipe](/wiki/files/recipes) with an ID of `custom:recipe`.
+
+### `repair_cost`
+Used to add a number of experience levels to add to the base level cost when reparing or renaming the item in an anvil.
+
+**Fields:**
+- `minecraft:repair_cost` - An integer which controls how many experience levels to add to the base level when using this item in an anvil.
+
+**Example:** `/give @s netherite_hoe[repair_cost=69]`
+- Gives you a netherite hoe which adds 69 experience levels when you want to repair, combine or rename this item.
+
+### `repairable`
+Allows the item to be repaired in an anvil using a specific ingredient. For example how you can repair an iron pickaxe with an iron ingot.
+
+**Fields:**
+- `minecraft:repairable` - Allows the item to be repaired in an anvil using a specific ingredient.
+  - `items` - Either a single item or a list of items which this item can be repaired by.
+
+**Example:** `/give @s elytra[repairable={items:"leather"}]`
+- Will give you an elytra which can be repaired by leather.
+
+### `stored_enchantments`
+Controls the stored enchantments on this item. Do not confuse this component with the [`enchantments`](#enchantments) component. "Stored enchantments" means they are not active, for example like on an enchanted book. If you use a knockback enchated book, it wont actually apply the knockback when an entity is hit.
+
+**Fields:**
+- `minecraft:stored_enchantments` - Stores the un-active enchantments on this item.
+  - `levels` - Contains key-value pairs of levels of un-active enchantments stored on this item.
+    - `<enchantment ID>` - A single key-value pair, where the key is the ID of the enchantment and the value is the level of the enchantment you want.
+  - `show_in_tooltip` - Whether to show the enchantments in the item's tooltip. A boolean which default to `true`.
+
+**Example:** `/give @s enchanted_book[stored_enchantments={levels:{"minecraft:knockback":2}}]`
+- When ran, gives an enchated book with knockback 2 as a stored enchantment.
+
+### `suspicious_stew_effects`
+Controls the effects applied when the suspicious stew is consumed.
+If this item also contains the [consumable](#consumable) component, these effects will be applied when the player consumes the item.
+
+**Fields:**
+- `minecraft:suspicious_stew_effects` - A list of effects to apply when this suspicious stew is consumed.
+  - `id` - The ID of the effect to apply.
+  - `duration` - The duration of the effect in ticks, defaults to `160`.
+
+**Example:** `/give @s suspicious_stew[suspicious_stew_effects=[{id:"minecraft:blindness",duration:100},{id:"minecraft:invisibility"}]]`
+
+### `tool`
+Used to control if this item is a tool, meaning it can break blocks with a certain speed.
+
+**Fields:**
+- `minecraft:tool` - Whether this item is a tool or not.
+  - `default_mining_speed` - A boolean which sets the default mining speed of this item, this is not used if there is a rule overriding it.
+  - `damage_per_block` - An integer defining the amount of durability to tak each time a block is broken with this item.
+  - `rules` - A list of rules which define and override the blocks which you can and can't break.
+    - `blocks` - The blocks which have special behaviour when being mined with this tool. Can be either a single block ID, a list of block IDs, or a block tag with a `#`, but never a list of block tags.
+    - `speed` - If specified, overrides the normal block breaking speed if you are breaking the specified block(s).
+    - `correct_for_drops` - Whether to drop the loot for the specified blocks or not.
+
+**Example:** `/give @s echo_shard[tool={default_mining_speed:5,damage_per_block:8,rules:[{speed:20,correct_for_drops:true,blocks:"#moss_replaceable"}]}]`
+- This command gives you an echo shard which has a default mining speed of 0.5, but any block which is in the [block tag](/wiki/files/tags#registries) `#moss_replaceable` will be mined at a minig speed of 20 and will be dropped when mined.
+
+### `trim`
+Stores the trims applied to a piece of armor.
+
+**Fields:**
+- `minecraft:trim` - Stores the trim applied to this armor piece.
+  - `pattern` - An ID of the trim pattern. (e.g. `minecraft:silence`)
+  - `material` - An ID of the trim material. (e.g. `minecraft:redstone`)
+  - `show_in_tooltip` - Whether to show trim applied to this piece of armor in the item's tooltip. A boolean which default to `true`.
+
+**Example:** `/give @s netherite_chestplate[trim={pattern:'minecraft:silence',material:'minecraft:redstone'}]`
+- Gives you a netherite chestplate with the "silence" armor trim coated in redstone.
+
+### `tooltip_style`
+Can change the item's tooltip style by specifing the direct path to your custom tooltip textures in a resourcepack.
+
+**Fields:**
+- `minecraft:tooltip_style` - The `namespace:id` of the item's toolitip. (See "example")
+
+**Example:** `/give @s conduit[toltip_style="namespace:id"]`
+- Will give you a conduit with a custom tooltip `namespace:id`, which will reference the files `<namespace>:tooltip/<id>_background` and `<namespace>:tooltip/<id>_frame` from a resourcepack.
+
+### `unbreakable`
+Whether this item takes durability damage or not.
+
+**Fields:**
+- `minecraft:unbreakable` - A list of effects to apply when this suspicious stew is consumed.
+  - `show_in_tooltip` - Whether to show that the item is "unbreakable" in the item's tooltip. A boolean which default to `true`.
+
+**Example:** `/give @s golden_pickaxe[unbreakable={}]`
+- Gives you a golden pickaxe which cannot take durability damage.
+
+### `use_cooldown`
+Used to apply a cooldown to all items of the same type when used.
+
+**Fields:**
+- `minecraft:use_cooldown` - If present, will apply a cooldown to all items of the same type when this item is used.
+  - `seconds` - The amount of seconds the cooldown will take.
+  - `cooldown_group` - An optional `namespace:id` which represents the cooldown group. If present, this item will share the cooldown will all items which have the same namespace id as this one. If left out, will instead take cooldown will all items of the same type (like a diamond with other diamonds).
+
+**Example:** `/give @s ender_pearl[use_cooldown={seconds:1.5, cooldown_group:"example:custom_item"}]`
+- Will give you an enderpearl which on use has a cooldown of 1.5 seconds and will share the cooldown will all other items that have the cooldown group `example:custom_item`.
+
+### `use_remainder`
+If present, will replace the item with a specified remainder item if its stack count has decreased after use. Like when you use a water bucket, a bucket will take its place instead.
+
+**Fields:**
+- `minecraft:use_remainder` - If present, will replace the item with a specified remainder item if its stack count has decreased after use.
+  - `id` - The ID of the item. Note that it **cannot** be `air`!
+  - `count` - The count of the item. If left out defaults to 1, the maximum count is 99.
+  - `components` - The [item components](#) of the item, optional.
+
+**Example:** `/give @s golden_apple[use_remainder={id:'minecraft:gold_nugget', count:1}]`
+- Gives you a golden apple which when consumed, will give the player a gold nugget.
+
+### `writable_book_content`
+The content writen in this Book and Quill.
+
+**Fields:**
+- `minecraft:writable_book_content` - The contents of this Book and Quill.
+  - `pages` - A list of pages with text in this book.
+    - `raw` - The raw text of this page.
+    - `filtered` - An optional "filtered" text of the page. This only shown to players which have chat filter enabled.
+
+### `written_book_content`
+The content and metadata in this Written Book.
+
+**Fields:**
+- `minecraft:suspicious_stew_effects` - The contents and metadata of this Written Book.
+  - `pages` - A list of pages with text in this item.
+    - `raw` - The raw text of this page.
+    - `filtered` - An optional "filtered" text of the page. This only shown to players which have chat filter.
+  - `title` - The title of this book.
+    - `raw` - The raw text as the title.
+    - `filtered` - An optional "filtered" text as this items title. This only shown to players which have chat filter enabled.
+  - `author` - The author of this Written Book.
+  - `generation` - Defines the number of times this Written Book has been copied. Where 0 is "original", 1 is "copy of original", 2 is "copy of copy", 3 is "tattered", default to 0.
+  - `resolved` - If this field is `true`, the JSON text components have already been resolved (like entity selectors, scores, etc...). If it's `false`, they are resolved when this book is opened by a player for the first time. Defaults to `false`.
