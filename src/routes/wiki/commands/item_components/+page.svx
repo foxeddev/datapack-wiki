@@ -1,5 +1,5 @@
 ---
-title: Target Selectors
+title: Item Components
 ---
 
 <script lang="ts">
@@ -14,8 +14,7 @@ Item components are data structures which can be applied to items in Minecraft t
 A command such as  `/give`  or  `/item`  can be used to create an item which has additional item components, or remove item components from any item.
 
 ## List of all Item Components
-This is a list of all item components in the game, with examples and an explanation of what they do! 
-If you want to see the default components of Minecraft's vanilla items, i can recommend a useful site to do exactly that: https://t0rnato.github.io/mc-components/
+This is a list of all item components in the game, with examples and an explanation of what they do!
 
 ### `attribute_modifiers`
 Used to apply attribute modifiers onto items. See attributes for more (WIP).
