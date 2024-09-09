@@ -25,13 +25,13 @@
     "svelte": "^5.0.0-next.244",
     "svelte-check": "^3.8.6",
     "tslib": "^2.7.0",
-    "typescript": "^5.5.4",
+    "typescript": "^5.6.2",
     "vite": "^5.4.3"
   },
   "type": "module",
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
-    "@iconify-json/tabler": "^1.2.0",
+    "@iconify-json/tabler": "^1.2.1",
     "@sveltejs/adapter-auto": "^3.2.4",
     "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "^4.0.0-alpha.23",
@@ -44,7 +44,7 @@
     "remark": "^15.0.1",
     "remark-admonitions": "^1.2.1",
     "remark-code-titles": "^0.1.2",
-    "shiki": "^1.16.2",
+    "shiki": "^1.16.3",
     "sk-seo": "^0.4.1",
     "tailwindcss": "^4.0.0-alpha.23",
     "unplugin-icons": "^0.19.3"
