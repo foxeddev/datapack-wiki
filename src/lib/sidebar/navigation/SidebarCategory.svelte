@@ -23,7 +23,7 @@
   <svelte:component this={icon} />
 
   {#if $sidebarExpanded}
-    <div class="flex-grow text-left">
+    <div class="grow text-left">
       <span>{name}</span>
     </div>
     <IconExpand class="motion-safe:transition-all {expanded ? 'rotate-90' : 'rotate-0'}" />

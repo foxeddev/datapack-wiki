@@ -34,7 +34,7 @@
   class="{$sidebarExpanded
     ? 'fixed w-full sm:w-80'
     : 'w-fit hidden sm:flex'} flex flex-col bg-stone-800 items-center h-[calc(100dvh-3rem)] sm:sticky top-12 z-50 border-r border-stone-700">
-  <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full">
+  <div class="flex flex-col p-2 pt-1 grow overflow-y-auto w-full">
     {#if $sidebarExpanded}
       <button
         aria-label="Open Search Modal"
@@ -67,7 +67,7 @@
       </div>
     {/if}
     <div class="flex flex-col h-full">
-      <div class="flex-grow">
+      <div class="grow">
         {#if page == "wiki"}
           <WikiPages />
         {:else}
@@ -83,7 +83,7 @@
   </div>
   <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
     {#if $sidebarExpanded}
-      <span class="flex-grow flex flex-col items-center">{INFOTEXT}</span>
+      <span class="grow flex flex-col items-center">{INFOTEXT}</span>
     {/if}
     <button
       aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
