@@ -230,4 +230,3 @@ You can do this really cool thing. It'll make your life a lot easier! But don't 
 
 </div>
 </div>
-</div>
