@@ -19,4 +19,6 @@
     "https://instagram.com/datapackhub",
   ]} />
 
-<slot />
+<main class="md px-6 md:px-10 lg:px-16 prose-headings:text-stone-200">
+  <slot />
+</main>

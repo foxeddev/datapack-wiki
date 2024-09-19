@@ -48,3 +48,7 @@ the current position). This can also be a negative number.
 Similarly `^` represents a relative position, taking into account the current rotation too. The most common use for this
 is to get a position in front of the direction of rotation. For example, you can use `^ ^ ^5` to get the position 5
 blocks in front of the current position in whatever direction the command or entity is rotated.
+
+- `^3 ^ ^` represents a vector 3 blocks perpendicular of the head (sway)
+- `^ ^3 ^` represents a vector 3 blocks "above" of the head (heave)
+- `^ ^ ^3` represents a vector 3 blocks in front of the head (surge)
