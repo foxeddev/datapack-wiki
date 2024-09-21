@@ -29,6 +29,7 @@
   import IconTilde from "~icons/tabler/tilde";
   import IconResourceLocation from "~icons/tabler/abc";
   import IconNbtPath from "~icons/tabler/code";
+  import IconSignature from "~icons/tabler/signature";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -39,12 +40,13 @@
   <SidebarPage label="About" icon={IconCommand} page="/wiki/commands/about" />
 
   <SidebarHeading label="Command Arguments" />
-  <SidebarPage label="Target Selectors" icon={IconAt} page="/wiki/commands/target_selectors" />
+  <SidebarPage label="Target Selectors" icon={IconAt} page="/wiki/commands/target-selectors" />
   <SidebarPage label="Coordinates" icon={IconTilde} page="/wiki/commands/coordinates" />
-  <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item_components" />
+  <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item-components" />
   <SidebarPlaceholder label="JSON Text" icon={IconBraces} />
-  <SidebarPage label="Resource Locations" icon={IconResourceLocation} page="/wiki/commands/resource_locations" />
+  <SidebarPage label="Resource Locations" icon={IconResourceLocation} page="/wiki/commands/resource-locations" />
   <SidebarPlaceholder label="NBT Paths" icon={IconNbtPath} />
+  <SidebarPlaceholder label="Namespaces" icon={IconSignature} />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>

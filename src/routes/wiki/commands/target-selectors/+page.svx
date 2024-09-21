@@ -66,7 +66,7 @@ argument. (E.g. @e[type=!minecraft:creeper] will select every entity that is NOT
 | `type`             | `@e[type=minecraft:pig]`                                   | Filters to only include entities of a certain type or entity_type tag. Valid with `@e`, `@s` and `@n`. `type` can be any entity ID or entity_type tag.                                                                                                                                                                                                                                                                     |
 | `name`             | `@e[name=Aron]`                                            | Filters to include entities with a specific name. `name` is a string - it cannot be JSON text.                                                                                                                                                                                                                                                                                                                             |
 | `distance`         | `@e[distance=6]`                                           | Filters to include entities within a certain distance or range. `..` is used to represent "greater/less than" operations - for example, `..6` means less than 6 and, `8..` means more than 8.                                                                                                                                                                                                                              |
-| `nbt`              | `@a[nbt={SelectedItem:{id:"minecraft:stone"}}]`            | Filters to include entities with specific NBT data. NBT data will be partially matched - as long as the specified data exists on the entity, it doesn't matter what other data it has.                                                                                                                                                                                                                                     |
+| `nbt`              | `@a[nbt={SelectedItem:{id:"minecraft:stone"}}]`            | Filters to include entities with specific [NBT data](/wiki/nbt/nbt). NBT data will be partially matched - as long as the specified data exists on the entity, it doesn't matter what other data it has.                                                                                                                                                                                                                                     |
 | `sort` and `limit` | `@e[limit=1,sort=nearest]`                                 | These two arguments are often used together to find entities based on ordering. For example, `limit=5,sort=furthest` selects the 5 entities which are furthest away from the current position.                                                                                                                                                                                                                             |
 | `x`/`y`/`z`        | `@e[x=10,y=9,z=-5,distance=..5]`                           | Specifies a starting position to work from; affecting `distance`, `dx`/`dy`/`dz`, and `sort`/`limit`. If left blank, it defaults to `~ ~ ~`.                                                                                                                                                                                                                                                                               |
 | `dx`/`dy`/`dz`     | `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`                      | Creates a selection area (cuboid) which will only select entities if any of their hit box is within the area. `x`/`y`/`z` is needed to specify the position of the bottom right corner of the cuboid - if it is left out it defaults to the current position. If all the `dxyz` values are `0` (or one is set to 0 and no others are set), then it will select any entities if the current position is inside their hit box. |
@@ -128,7 +128,7 @@ range.
 The `nbt=<object>` argument will filter the selection to only include entities which have or do not have specific NBT
 data.
 
-`<object>` is an NBT compound. The entity must match everything within the compound.
+`<object>` is an [NBT compound](/wiki/nbt/nbt). The entity must match everything within the compound.
 
 **Examples**:
 
@@ -195,7 +195,7 @@ dx/dz/dz=0 will always stretch from the command origin to positive x/y/z
 The `tag=<tag>` argument will select entities which have the specified tag. `<tag>` is any tag string (no spaces).
 
 Entities do not naturally have tags - these are separate from `entity_type` tags such as that used in the `type`
-argument. Instead, these select entities based on the tags added with the `/tag` command or `Tags[]` NBT.
+argument. Instead, these select entities based on the [tags](/wiki/files/tags) added with the `/tag` command or `Tags[]` NBT.
 
 **Examples**:
 
