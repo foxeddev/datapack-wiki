@@ -12,7 +12,7 @@ import {Version} from '$lib/reusables';
 
 # Storages
 
-Storages are a way of storing NBT data in a world without attaching it to an entity or block. Storages are stored globally per world, and can only be manipulated with the `/data` command. Storages are identified by their resource location, and don't need to be initialized beforehand, unlike scoreboards.
+Storages are a way of storing [NBT data](/wiki/nbt/nbt) in a world without attaching it to an entity or block. Storages are stored globally per world, and can only be manipulated with the `/data` command. Storages are identified by their resource location, and don't need to be initialized beforehand, unlike scoreboards.
 
 Unlike entity and block NBT, storages have no fixed structure, and can contain whichever arbitrary keys are added to it.
 

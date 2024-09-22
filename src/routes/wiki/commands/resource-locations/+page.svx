@@ -19,6 +19,7 @@ The path defines specific information about the resource location. The path may 
 Syntactically, the namespace is separated from the path by a colon (`:`).
 
 Item IDs are an example of resource locations. The ID `minecraft:diamond` is a resource location with the namespace `minecraft` and the path `diamond`.
+
 :::tip
 If the namespace is omitted, it defaults to `minecraft`, meaning `diamond` can be used interchangeably with `minecraft:diamond`.
 :::

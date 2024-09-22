@@ -29,10 +29,7 @@
   <div class="flex w-full h-[93%]">
     <Sidebar />
     <div id="content" class="py-12 w-full min-h-screen text-stone-200 bg-stone-900">
-      <main
-        class="md px-6 md:px-10 lg:px-16">
-        <slot />
-      </main>
+      <slot />
       {#if !dev}
         <div class="fixed z-50 bottom-0 w-fit flex items-center" bind:this={betaWarning}>
           <div class="bg-red-700 flex items-center">
