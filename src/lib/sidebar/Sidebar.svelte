@@ -27,7 +27,7 @@
     page = sessionStorage.getItem("page") || "wiki";
   });
 
-  let dialog: SidebarSearchDialog;
+  let dialog: any;
 </script>
 
 <aside
