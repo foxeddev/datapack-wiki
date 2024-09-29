@@ -1,6 +1,6 @@
 ---
 title: Recipes for your Custom Items
-description: "If you've ever wanted to add custom crafting recipes to your items, here is exactly how to do that!"
+description: "Learn how to make custom crafting recipes for custom items in Minecraft Datapacks."
 ---
 
 <script lang="ts">
