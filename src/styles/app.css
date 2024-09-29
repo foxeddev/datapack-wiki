@@ -17,8 +17,8 @@
   /* inline code blocks below */
   @apply prose-code:bg-stone-800 prose-code:rounded-sm prose-code:border prose-code:text-orange-300 prose-code:border-stone-700 prose-code:p-1 prose-code:font-thin prose-code:before:content-none prose-code:after:content-none prose-code:break-all;
   /* multi-line code blocks below */
-  @apply prose-pre:p-2 prose-code:prose-pre:p-0 prose-code:prose-pre:border-0 prose-pre:overflow-x-auto;
-
+  @apply prose-pre:p-2 prose-pre:bg-stone-900 prose-code:prose-pre:p-0 prose-code:prose-pre:border-0 prose-pre:overflow-x-auto;
+  @apply prose-headings:scroll-mt-20;
   @apply prose-ol:mt-0 prose-ul:mt-0 prose-li:my-1;
   @apply prose-h2:border-b prose-h2:pb-2 prose-h2:border-white prose-h2:border-opacity-20;
   @apply prose-h3:border-b prose-h3:pb-2 prose-h3:border-white prose-h3:border-opacity-20;

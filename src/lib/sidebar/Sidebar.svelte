@@ -74,7 +74,7 @@
           <GuidePages />
         {/if}
       </div>
-      <div>
+      <div class="mt-5">
         <SidebarPage label="Resources" icon={IconResources} page="/resources" />
         <SidebarPage label="Credits" icon={IconCredits} page="/credits" />
         <SidebarPage label="Contributing" icon={IconWiki} page="/contribute" />

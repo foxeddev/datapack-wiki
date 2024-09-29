@@ -1,0 +1,33 @@
+---
+title: Breaking changes
+description: "A list of breaking changes to datapacks"
+---
+
+<script lang="ts">
+import { Discord } from '$lib/reusables';
+</script>
+
+# List of breaking changes
+This is list of all breaking changes to datapacks (excluding resource packs) since 1.20. Thank you to Misode's Technical Changelog for the source of many of these.
+
+### 1.20.2
+- Entity effects in NBT now use namespaced IDs instead of numbers.
+- The structure for entity effects in NBT has been changed from `PascalCase` to `snake_case`.
+  - For mob effect instances:
+    - `Id` → `id`
+    - `Ambient` → `ambient`
+    - `Amplifier` → `amplifier`
+    - `Duration` → `duration`
+    - `ShowParticles` → `show_particles`
+    - `ShowIcon` → `show_icon`
+    - `HiddenEffect` → `hidden_effect`
+    - `FactorCalculationData` → `factor_calculation_data`
+  - For others:
+    - `CustomPotionEffects` → `custom_potion_effects` (potion, lingering_potion, splash_potion, tipped_arrow, arrow)
+    - `Effects` → `effects` (suspicious_stew, area_effect_cloud)
+    - `EffectId` → id` (suspicious_stew)
+    - `EffectDuration` → `duration` (suspicious_stew)
+    - `EffectId` and `EffectDuration` → stew_effects (mooshroom)
+    - `ActiveEffects` → `active_effects` (player, armor_stand, mobs)
+    - `Primary` → `primary_effect` (beacon)
+    - `Secondary` → `secondary_effect` (beacon)

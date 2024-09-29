@@ -34,6 +34,11 @@
       <h1 class="font-bold hidden text-lg lg:text-xl sm:block">Datapack Wiki</h1>
     </a>
   </div>
+  <div class="flex-grow flex justify-around px-2 py-1">
+    <div class="bg-red-900/50 px-2 py-1 rounded-lg space-x-3 items-center flex">
+      <b>ALPHA</b>
+    </div>
+  </div>
 
   <div class="flex items-center gap-2">
     <a
