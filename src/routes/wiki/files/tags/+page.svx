@@ -28,29 +28,30 @@ example:
 In many cases, modifying these special tags allows you to configure certain aspects of how Minecraft behaves.
 
 ## Registries
+Tags group various types in a specific registry (category), such as items, blocks, functions, game events, chat types, etc.
 
-Tags group various types in a specific registry (category).
+This list shows some of the possible registry types, as well as the path their tags should be put in.
 
-This list shows all of the possible registry types, as well as the path their tags should be put in.
-
-- Items (`/tags/item`)
-- Blocks (`/tags/block`)
-- Entity types (`/tags/entity_type`)
-- Functions (`/tags/function`)
-- Fluids (`/tags/fluid`)
-- Game Events (`/tags/game_event`)
-- Chat Types (`/tags/chat_type`)
-- Damage Types (`/tags/damage_type`)
-- Banner patterns (`/tags/banner_pattern`)
-- Cat variants (`/tags/cat_variant`)
-- Enchantments (`/tags/enchantment`)
-- Goat horns (`/tags/instrument`)
-- Paintings (`/tags/painting_variant`)
-- Entity POI (`/tags/point_of_interest_type`)
-- Biome (`/tags/worldgen/biome`)
-- Flat world preset (`/tags/worldgen/flat_level_generator_preset`)
-- Structures (`/tags/worldgen/structure`)
-- World preset (`/tags/worldgen/world_preset`)
+| Registry Types    | Path                                               | Example Value                 |
+|-------------------|----------------------------------------------------|-------------------------------|
+| Items             | `/tags/item`                                       | `"minecraft:apple"`           |
+| Blocks            | `/tags/block`                                      | `"minecraft:grass_block"`     |
+| Entity types      | `/tags/entity_type`                                | `"minecraft:pig"`             |
+| Functions         | `/tags/function`                                   | `"namespace:some_function"`   |
+| Fluids            | `/tags/fluid`                                      | `"minecraft:water"`           |
+| Game Events       | `/tags/game_event`                                 | `"minecraft:container_open"`  |
+| Chat Types        | `/tags/chat_type`                                  | `"minecraft:say_command"`     |
+| Damage Types      | `/tags/damage_type`                                | `"minecraft:fly_into_wall"`   |
+| Banner patterns   | `/tags/banner_pattern`                             | `"minecraft:square_top_right"`|
+| Cat variants      | `/tags/cat_variant`                                | `"minecraft:jellie"`          |
+| Enchantments      | `/tags/enchantment`                                | `"minecraft:sharpness"`       |
+| Goat horns        | `/tags/instrument`                                 | `"minecraft:seek_goat_horn"`  |
+| Paintings         | `/tags/painting_variant`                           | `"minecraft:skull_and_roses"` |
+| Entity POI        | `/tags/point_of_interest_type`                     | `"minecraft:cleric"`          |
+| Biome             | `/tags/worldgen/biome`                             | `"minecraft:plains"`          |
+| Flat world preset | `/tags/worldgen/flat_level_generator_preset`       | `"minecraft:classic_flat"`    |
+| Structures        | `/tags/worldgen/structure`                         | `"minecraft:village"`         |
+| World preset      | `/tags/worldgen/world_preset`                      | `"minecraft:large_biomes"`    |
 
 ## JSON format
 
@@ -72,15 +73,19 @@ another tag, beginning with a `#` (such as `#minecraft:logs`). The `required` fi
 or `false`) which defines if this entry can be ignored if the id cannot be found.
 
 ### Example
-
-Here is an example tag, located in `data/<namespace>/tags/item/wood.json`.  
-:::info
-`#minecraft:logs` and `#minecraft:planks` are two item tags provided by Minecraft.
-:::
+Here is an example `item` tag file:
 
 ```json
 {
   "replace": true,
-  "values": ["#minecraft:logs", "#minecraft:planks", "minecraft:chest", "minecraft:stick"]
+  "values": [
+    "#minecraft:logs", 
+    "#minecraft:planks", 
+    "minecraft:chest", 
+    "minecraft:stick"
+  ]
 }
 ```
+:::info
+Tag files can also reference other tags. In this case, `#minecraft:logs` and `#minecraft:planks` are two vanilla item tags. This item tag will contain whatever is defined in those two item tags as well.
+:::
