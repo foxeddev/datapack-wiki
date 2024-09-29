@@ -5,12 +5,15 @@
   export let description;
   export let tags = "";
 
-  let tags_arr = tags.split(",").map(el => el.trim()).filter(String)
+  let tagsArr = tags
+    .split(",")
+    .map(el => el.trim())
+    .filter(String);
 </script>
 
 <Seo
   title="{title} | Datapack Wiki"
-  description={description}
+  {description}
   author="Datapack Wiki"
   siteName="Datapack Wiki"
   keywords="datapacks, datapack wiki, datapack docs, minecraft datapacks, datapack help, datapack creation, dph"
@@ -25,11 +28,11 @@
 <main class="md px-6 md:px-10 lg:px-16 prose-headings:text-stone-200">
   <slot />
   {#if tags}
-  <div class="bg-stone-950/40 p-2 rounded-lg flex items-center space-x-3 my-10">
-    <span class="uppercase text-sm text-zinc-500">Tags:</span>
-    {#each tags_arr ?? [] as tag}
-      <span class="border border-yellow-500 px-1 text-yellow-500 rounded-lg uppercase text-sm">{tag}</span>
-    {/each}
-  </div>
+    <div class="bg-stone-950/40 p-2 rounded-lg flex items-center space-x-3 my-10">
+      <span class="uppercase text-sm text-zinc-500">Tags:</span>
+      {#each tagsArr ?? [] as tag}
+        <span class="border border-yellow-500 px-1 text-yellow-500 rounded-lg uppercase text-sm">{tag}</span>
+      {/each}
+    </div>
   {/if}
 </main>

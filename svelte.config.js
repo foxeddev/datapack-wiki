@@ -1,6 +1,6 @@
 import adapter from "@sveltejs/adapter-auto";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
-import { mdsvex } from "mdsvex";
+import { mdsvex, escapeSvelte } from "mdsvex";
 import { createHighlighter} from "shiki";
 import mcfunction from "./src/highlighting/mcfunction/mcfunction.js";
 import { theme } from "./src/highlighting/hopscotch.js"; // required btw
@@ -69,8 +69,8 @@ const config = {
       layout: "src/lib/MDLayout.svelte",
       highlight: {
         highlighter: (code, lang) => {
-          let generated = highlighter.codeToHtml(code, { lang, theme });
-          return escapeHtml(generated);
+          const generated = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }));
+          return `{@html \`${generated}\` }`;
         },
       },
     }),
@@ -82,17 +82,5 @@ const config = {
 
   extensions: [".svelte", ".svx"],
 };
-
-/**
-  * Returns code with curly braces and backticks replaced by HTML entity equivalents
-  * @param {string} html - highlighted HTML
-  * @returns {string} - escaped HTML
-  */
- function escapeHtml(code) {
-   return code.replace(
-     /[{}`]/g,
-     (character) => ({ '{': '&lbrace;', '}': '&rbrace;', '`': '&grave;' }[character]),
-   );
- }
 
 export default config;

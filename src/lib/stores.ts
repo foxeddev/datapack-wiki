@@ -16,7 +16,7 @@ export const windowWidth = readable(1920, set => {
 
 export const redirects = [
   {
-    "origin":"/wiki/nbt/storage",
-    "target":"/wiki/nbt/storages"
-  }
-]
+    origin: "/wiki/nbt/storage",
+    target: "/wiki/nbt/storages",
+  },
+];

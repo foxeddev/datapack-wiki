@@ -36,11 +36,16 @@ for await (const file of matchingFiles) {
   // add to posts
   const contentNoHtml = stripHtml(frontmatter.content).result;
   const strippedMarkdown = await remark().use(stripMarkdown).process(contentNoHtml);
+  const tags = frontmatter.data.tags || "";
 
   posts.push({
     title: frontmatter.data.title || "MissingNo.",
     content: strippedMarkdown.value,
     url: "/" + filePath,
+    tags: tags
+      .split(",")
+      .map(el => el.trim())
+      .filter(String),
   });
 }
 
