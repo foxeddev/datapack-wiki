@@ -4,9 +4,15 @@
   type Props = {
     title: string;
     description: string;
+    tags: string
   };
 
-  const { title, description }: Props = $props();
+  const { title, description, tags = "" }: Props = $props();
+
+  let tagsArr = tags
+    .split(",")
+    .map(el => el.trim())
+    .filter(String);
 </script>
 
 <Seo
@@ -25,4 +31,12 @@
 
 <main class="md px-6 md:px-10 lg:px-16 prose-headings:text-stone-200">
   <slot />
+  {#if tags}
+    <div class="bg-stone-950/40 p-2 rounded-lg flex items-center space-x-3 my-10">
+      <span class="uppercase text-sm text-zinc-500">Tags:</span>
+      {#each tagsArr ?? [] as tag}
+        <span class="border border-yellow-500 px-1 text-yellow-500 rounded-lg uppercase text-sm">{tag}</span>
+      {/each}
+    </div>
+  {/if}
 </main>

@@ -14,7 +14,8 @@
   let expanded = $state(false);
 </script>
 
-<button
+<a
+  href="#"
   class="hover:bg-stone-700 hover:text-white hover:font-medium rounded-lg flex gap-2 cursor-default p-1 items-center w-full"
   onclick={() => {
     expanded = !expanded;
@@ -28,7 +29,7 @@
     </div>
     <IconExpand class="motion-safe:transition-all {expanded ? 'rotate-90' : 'rotate-0'}" />
   {/if}
-</button>
+</a>
 
 <div use:autoAnimate={{ duration: 200 }}>
   {#if expanded && $sidebarExpanded}

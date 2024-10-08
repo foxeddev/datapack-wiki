@@ -27,6 +27,9 @@
   import IconList from "~icons/tabler/list-details";
   import IconComponents from "~icons/tabler/brackets-contain";
   import IconTilde from "~icons/tabler/tilde";
+  import IconInfo from "~icons/tabler/info-circle";
+  import IconBreak from "~icons/tabler/egg-cracked";
+  import IconNumbers from "~icons/tabler/123";
   import IconResourceLocation from "~icons/tabler/abc";
   import IconNbtPath from "~icons/tabler/code";
   import IconSignature from "~icons/tabler/signature";
@@ -35,6 +38,11 @@
 <!-- ADD PAGES AND CATEGORIES BELOW -->
 
 <SidebarPage label="Home" icon={IconHome} page="/" />
+
+<SidebarCategory name="Info" icon={IconInfo}>
+  <SidebarPage label="Breaking Changes" icon={IconBreak} page="/wiki/info/breaking-changes" />
+  <SidebarPlaceholder label="Pack Formats" icon={IconNumbers} />
+</SidebarCategory>
 
 <SidebarCategory name="Commands" icon={IconCommand}>
   <SidebarPage label="About" icon={IconCommand} page="/wiki/commands/about" />

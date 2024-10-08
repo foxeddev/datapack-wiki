@@ -6,7 +6,7 @@ description:
 ---
 
 <script lang="ts">
-import {LatestPackFormat, Version, TreeRoot, TreeEntry} from '$lib/reusables';
+import {LatestPackFormat, Version, TreeRoot, TreeEntry, Tabs} from '$lib/reusables';
 </script>
 
 # Site Meta and Contribution
@@ -14,7 +14,7 @@ import {LatestPackFormat, Version, TreeRoot, TreeEntry} from '$lib/reusables';
 This page is meant to be an introduction for contributors to the wiki. In it is multiple examples which you can examine
 unformatted in the [site source code](https://github.com/Datapack-Hub/wiki).
 
-<TreeRoot>
+<!-- <TreeRoot>
   <TreeEntry>Hello</TreeEntry>
   <TreeEntry>
     <TreeRoot>
@@ -25,7 +25,24 @@ unformatted in the [site source code](https://github.com/Datapack-Hub/wiki).
       </TreeEntry>
     </TreeRoot>
   </TreeEntry>
-</TreeRoot>
+</TreeRoot> -->
+
+<!-- <Tabs>
+  <div slot="pre">
+
+    ## Hi
+    
+    there
+
+  </div>
+  <div slot="post">
+
+    ## Hi
+    
+    there 2
+
+  </div>
+</Tabs> -->
 
 **Last Updated:** 08-03-2024
 

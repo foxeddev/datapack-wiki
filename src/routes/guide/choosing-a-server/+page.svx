@@ -1,7 +1,7 @@
 ---
 title: Choosing a Server
 description:
-  Learn the differences, pros and cons of different Minecraft server jars, and which one is preferred for datapacks and
+  Learn the differences, pros and cons of different Minecraft server softwares, and which one you should use for datapacks and
   mods.
 ---
 

@@ -3,6 +3,7 @@ title: Getting Started
 description:
   "Learn how to make datapacks with our beginner-friendly guide. Create a simple datapack which makes arrows explode
   when they land"
+tags: guide, beginner
 ---
 
 <script lang="ts">

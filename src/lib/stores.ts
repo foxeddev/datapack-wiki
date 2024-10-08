@@ -13,3 +13,10 @@ export const windowWidth = readable(1920, set => {
     addEventListener("resize", () => set(window.innerWidth));
   }
 });
+
+export const redirects = [
+  {
+    origin: "/wiki/nbt/storage",
+    target: "/wiki/nbt/storages",
+  },
+];

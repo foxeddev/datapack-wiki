@@ -40,8 +40,8 @@
   <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/adding-new-features/jukebox-songs" />
 
   <SidebarHeading label="Custom Items" />
-  <SidebarPlaceholder label="About" icon={IconItem} />
-  <SidebarPage label="Custom Item Recipes" icon={IconGrid} page="/guide/adding-new-features/crafting-custom-items" />
+  <SidebarPage label="Introduction" icon={IconItem} page="/guide/adding-new-features/custom-items/intro" />
+  <SidebarPage label="Custom Item Recipes" icon={IconGrid} page="/guide/adding-new-features/custom-items/crafting" />
 </SidebarCategory>
 
 <SidebarCategory name="Right Click Detection" icon={IconMouse}>

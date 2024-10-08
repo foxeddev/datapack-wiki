@@ -23,10 +23,35 @@ function replaceWithHighlights(text: string, match: string) {
   return text.replace(regex, match => `<mark>${match}</mark>`);
 }
 
-export async function search(query: string) {
+type SearchReturnType = Promise<{ content: string[]; title: string; url: string }[]>;
+
+export async function search(query: string): SearchReturnType {
   // remove regex special characters
   const htmlStripped = stripHtml(query).result;
   const match = htmlStripped.replaceAll(/[\\^$*+?.()|[\]{}]/g, "\\$&");
+
+  // TODO: Replace this with the tag feature from flexsearch
+  if (match.includes("tag:")) {
+    let words = match.split(" ");
+    for (let w of words) {
+      if (!w.includes("tag:")) {
+        continue;
+      }
+
+      let tags = w.substring(4).split(",");
+      let taggedPosts = posts
+        .filter(p => p.tags?.some(t => tags.includes(t)))
+        .map(({ title, url }) => {
+          return { content: [""], title, url };
+        });
+
+      console.log(taggedPosts);
+      console.log(tags);
+      if (taggedPosts.length == 0) return [];
+      return taggedPosts;
+    }
+  }
+
   const results = index.search(match);
 
   return results
