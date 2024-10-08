@@ -8,9 +8,62 @@ import { Discord } from '$lib/reusables';
 </script>
 
 # List of breaking changes
-This is list of all breaking changes to datapacks (excluding resource packs) since 1.20. Thank you to Misode's Technical Changelog for the source of many of these.
 
-### 1.20.2
+This is list of all breaking changes to datapacks (excluding resource packs). Special thanks to Misode's Technical
+Changelog for the source of many of these.
+
+## 1.21.2
+
+### [24w33a](https://www.minecraft.net/en-us/article/minecraft-snapshot-24w33a)
+
+- Attribute IDs do not have the `generic.`, `player.` or `zombie.` prefixes anymore.
+- Removed liquid carvers and changed biome format (the `carvers` field is now just a list of carvers)
+
+### [24w34a](https://www.minecraft.net/en-us/article/minecraft-snapshot-24w34a)
+
+- The `food` item component no longer automatically allows consumption of food, and now only holds the data relating to
+  it (meaning `nutrition`, `saturation` and `can_always_eat` are the only fields left in the component)
+- 🛠️ To fix this, just add the `consumable` component: `consumable={}`. You can customise this, read more in the
+  snapshot article.
+
+### [24w35a](https://www.minecraft.net/en-us/article/minecraft-snapshot-24w35a)
+
+- `/loot` command now returns an error when trying to drop from block without loot table (like air)
+- Special loot table `empty` has been removed.
+- Sheep now always uses a single loot table `entities/sheep`, but wool drops are still defined in sub-tables in
+  `entities/sheep/<color>`
+
+### [24w36a](https://www.minecraft.net/en-us/article/minecraft-snapshot-24w36a)
+
+- A lot of moved textures in resource packs (all armour, wolf armour, elytra, llama decor, horse armour and armour trim
+  files, and textures were moved to various new positions - you can view these in the vanilla resource pack)
+
+### [24w37a](https://www.minecraft.net/en-us/article/minecraft-snapshot-24w37a)
+
+- The `fire_resistant` component has been renamed to `damage_resistant`, with a new field:
+  - `types` - A `#` damage type tag, where items in entity form with this component, will be resistant to the damage
+    types included in the tag. Also affects whether it will be damaged when worn and damaged with this damage type.
+- The `killed_by_crossbow` advancement was renamed to `killed_by_arrow`.
+  - And will trigger whenever an arrow kills an entity, not just when fired from a crossbow.
+
+### [24w39a](https://www.minecraft.net/en-us/article/minecraft-snapshot-24w39a)
+
+- The previous `Lock` field of containers has been renamed to `lock` and is now an item predicate. (The lock data
+  component is now also an item predicate)
+- `boat` and `chest_boat` entity types have been split into separate types, one per variant (Type=oak ->
+  minecraft:oak_boat,...)
+  - Meaning the `minecraft:boat` entity sub-predicate has been removed.
+
+### [24w40a](https://www.minecraft.net/en-us/article/minecraft-snapshot-24w40a)
+
+- You now cannot ride Leash Knots, Lighting Bolts and Fishing Bobbers anymore with `/ride` command.
+- Renamed effect type `damage_item` to `change_item_damage`, now also supports negative amounts.
+
+Good luck fixing your datapacks, and you can always ask for help in one of our help channels if you need 👍 -# Last
+updated: 24w40a (08/10/2024). Written by Diamond and Silabear.
+
+## 1.20.2
+
 - Entity effects in NBT now use namespaced IDs instead of numbers.
 - The structure for entity effects in NBT has been changed from `PascalCase` to `snake_case`.
   - For mob effect instances:
