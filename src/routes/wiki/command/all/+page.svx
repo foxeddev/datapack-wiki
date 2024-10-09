@@ -90,7 +90,7 @@ These commands require a permission level same or bigger than 2 to run them.
 - `/summon <entity> [<pos>] [<nbt>]` - Summons an entity
 - `/tag <targets> add <name>|remove <name>| list` - Adds, removes or lists entities tags
 - `/team list|add|remove|empty|join|leave|modify ...` - Manages teams
-- `/teleport [<targets>] <destination|location> ...` - Teleport entities to a specified location. (ALIAS: `/tp`)
+- `/teleport [<targets>] <destination|location [<rotation>|facing <location|entity <facingTarget> [<facingAnchor>]>]> ...` - Teleport entities to a specified location. (ALIAS: `/tp`)
 - `/tellraw <targets> <message>` - Sends a JSON message to players
 - `/tick query|rate <rate>|freeze|unfreeze|step [<time>|stop]|sprint [<time>|stop]` - Controls or checks the tick rate
   of a world
