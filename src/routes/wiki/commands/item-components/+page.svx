@@ -32,7 +32,7 @@ Used to apply attribute modifiers onto items. See attributes for more (WIP).
     - `type` - The name of the attribute modifier you want to use (e.g. `block_interaction_range` or `scale`)
     - `slot` - A slot the item must be in for the attribute modifier to take effect. Can be any of: `any`, `hand`,
       `armor`, `mainhand`, `offhand`, `head`, `chest`, `legs`, `feet` or `body`.
-    - `id` - A unique resource location to identify the attribute modifier.
+    - `id` - A unique [resource location](/wiki/commands/resource-locations) to identify the attribute modifier.
     - `amount` - Specifies the amount of change the modifier's effect has. (See "example")
     - `operation` - A modifier operation, can be any of `add_value`, `add_multiplied_base` or
     - `add_multiplied_total` (see [Attribute Modifiers](https://minecraft.wiki/w/Attribute#Modifiers) for more info.)
@@ -138,7 +138,7 @@ Used to define items stored inside of a bundle.
 - `minecraft:bundle_contents` - A list of item stacks of items stored inside a bundle.
   - `id` - The ID of the item. Note that it **cannot** be `air`!
   - `count` - The count of the item. If left out defaults to 1, the maximum count is 99.
-  - `components` - The [item components](#) of the item, optional.
+  - `components` - The [item components](#item-components) of the item, optional.
 
 **Example:**
 `/give @s bundle[bundle_contents=[{id:"diamond",count:8},{id:"minecraft:coal_block",count:1,components:{"minecraft:item_name":'"Compressed Coal"'}}}]]`
@@ -206,7 +206,7 @@ Defines the items, projectiles, loaded into a crossbow. If this component isn't 
 - `minecraft:charged_projectiles` - Contains a list of items, projectiles, loaded into the crossbow.
   - `id` - The ID of the item. Note that it **cannot** be `air`!
   - `count` - The count of the item. If left out defaults to 1, the maximum count is 99.
-  - `components` - The [item components](#) of the item, optional.
+  - `components` - The [item components](#item-components) of the item, optional.
 
 **Example:**
 `/give @s crossbow[charged_projectiles=[{id:"minecraft:firework_rocket",count:1,components:{"minecraft:fireworks":{flight_duration:1}}}]]`
@@ -224,7 +224,7 @@ Specified the items stored in a container.
   - `item` - A single item stack.
     - `id` - The ID of the item. Note that it **cannot** be `air`!
     - `count` - The count of the item. If left out defaults to 1, the maximum count is 99.
-    - `components` - The [item components](#) of the item, optional.
+    - `components` - The [item components](#item-components) of the item, optional.
 
 **Example:** `/give @s dropper[container=[{slot:4,item:{id:"minecraft:diamond",count:1}}]]`
 
@@ -260,23 +260,23 @@ but if set-up correctly can also play any of the animation presets, allowing for
   - `animation` - The animation that is player when consuming the item. Can be any of `none`, `eat`, `drink`, `block`,
     `bow`, `spear`, `crossbow`, `spyglass`, `toot_horn` or `brush`, the default is `eat`.
   - `sound` - The sound event to play during when the item is consumed. The default value is `entity.generic.eat`.
-    - `sound_id` - A resource location of a sound file. (e.g. `entity.generic.explode`)
+    - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
     - `range` - An optional fixed range of the sound.
   - `has_consume_particles` - If the item should have consume particles. A boolean which default to `true`.
   - `on_consume_effects` - An optional list of effects which happen after the consumption of this item.
-    - `apply_effects` - If specified, will apply these status effects on consumption.
-      - `effects` - A list of status effects that are applied once the item is consumed.
-      - `probability` - A float that determines the probability of the above effects getting applied once the item is
-        consumed. The default value is 1.0.
-    - `remove_effects` - If specified, will remove these status effects on consumption.
-      - `effects` - A list or a tag of status effects IDs that are removed once the item is consumed.
-    - `clear_all_effects` - If specified, will remove all status effects on consumption.
-    - `teleport_randomly` - If specified, will teleport the player in a radius on consumption.
-      - `diameter` - A float defining the radius of where the player can be teleported. The default value is 16.0.
-    - `play_sound` - If specified, will play a selected sound on consumption.
-      - `sound` - The sound event to play once the item is consumed.
-        - `sound_id` - A resource location of a sound file. (e.g. `entity.generic.explode`)
-        - `range` - An optional fixed range of the sound.
+    - `type` - The type of effect to apply. Can be any of `apply_effects`, `remove_effects`, `clear_all_effects`, `teleport_randomly` or `play_sound`:
+      - `apply_effects` - If specified, will apply these status effects on event activation.
+        - `effects` - A list of status effects to apply.
+        - `probability` - A float that determines the probability of the above effects getting applied. The default value is 1.0.
+      - `remove_effects` - If specified, will remove these status effects on event activation.
+        - `effects` - A list or a tag of status effects IDs that should be removed.
+      - `clear_all_effects` - If specified, will remove all status effects on event activation.
+      - `teleport_randomly` - If specified, will teleport the player in a radius on event activation.
+        - `diameter` - A float defining the radius of where the player can be teleported. The default value is 16.0.
+      - `play_sound` - If specified, will play a selected sound on event activation.
+        - `sound` - The sound event to play.
+          - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
+          - `range` - An optional fixed range of the sound.
 
 **Examples:** _With the food component_:
 `/give @s apple[consumable={animation:'none', sound:'entity.generic.eat'},food={saturation:6,nutrition:9}]`
@@ -348,6 +348,44 @@ Specifies the number of uses **lost** (NOT remaining) from the item's durability
 
 - This command will give you a mace which only has 1 durability left. (The [`max_durability`](#max_durability) of a mace
   is 500.)
+
+### `damage_resistant`
+
+Items with this component, when in entity form, will be resistant to the damage types included in the component's damage tag. This component also affects whether the equipped item will be damaged when the wearer is hurt by the given damage type.
+
+**Fields:**
+
+- `minecraft:damage_resistant` - If set, the items, when in entity form or equipped, will be invulnerable to the damage types below.
+  - `types` - A hash-prefixed [`#damage type`](/wiki/files/tags#registries) tag the item should be invulnerable to.
+
+**Example:** `/give @s barrier[damage_resistant={types:"#minecraft:lava"}]`
+
+- Gives you a barrier which is invulnerable to lava damage.
+
+### `death_protection`
+
+This component works like the totem of undying, by reviving the holder of the item with this component. Once revived you can specify the effects that should be given to the player.
+
+**Fields:**
+
+- `minecraft:death_protection` - When the holder of this item dies, he will be revived by restoring a single health point.
+  - `death_effects` - An optional list of effects which happen when the holder is revived.
+    - `type` - The type of effect to apply. Can be any of `apply_effects`, `remove_effects`, `clear_all_effects`, `teleport_randomly` or `play_sound`:
+      - `apply_effects` - If specified, will apply these status effects on event activation.
+        - `effects` - A list of status effects to apply.
+        - `probability` - A float that determines the probability of the above effects getting applied. The default value is 1.0.
+      - `remove_effects` - If specified, will remove these status effects on event activation.
+        - `effects` - A list or a tag of status effects IDs that should be removed.
+      - `clear_all_effects` - If specified, will remove all status effects on event activation.
+      - `teleport_randomly` - If specified, will teleport the player in a radius on event activation.
+        - `diameter` - A float defining the radius of where the player can be teleported. The default value is 16.0.
+      - `play_sound` - If specified, will play a selected sound on event activation.
+        - `sound` - The sound event to play.
+          - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
+          - `range` - An optional fixed range of the sound.
+
+**Example:** `/give @s bone[death_protection={death_effects:[{type:"minecraft:teleport_randomly","diameter":10}]}]`
+- Gives you a bone which will revive the player when he dies, and when done so, will randomly teleport the player in a diameter of 10 blocks.
 
 ### `debug_stick_state`
 
@@ -427,8 +465,7 @@ _#2:_ `/give @s gold_sword[enchantments={levels:{'minecraft:knockback':8},show_i
 
 ### `equippable`
 
-This component lets the item be equipped into a specified slot with a specified model, sounds and allowed entities which
-can wear the armor.
+This component lets the item be equipped into a specified slot with a specified model, sounds and allowed entities which can wear the armor.
 
 **Fields:**
 
@@ -437,16 +474,19 @@ can wear the armor.
     or `offhand`.
   - `equip_sound` - An optional sound event to play when the item is eqipped. If unspecified, `item.armor.equip_generic`
     will play.
-    - `sound_id` - A resource location of a sound file. (e.g. `entity.generic.explode`)
+    - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
     - `range` - An optional fixed range of the sound.
   - `model` - An optional `namespace:id` of the equipment model to use when equipped.
   - `allowed_entities` - An optional field which controls the entities that can equip this armor piece. Can either be an
     Entity ID an Entity Tag, or list of Entity IDs, but never a list of Entity Tags.
-  - `dispensable` - A boolean which defaults to `true`, defines wether the item can be equipped throught a dispenser.
+  - `dispensable` - A boolean which defaults to `true`, defines whether the item can be equipped throught a dispenser.
+  - `swappable` - A boolean which defaults to `true`, defines whether the item can be equipped into the specified slot by right-clicking.
+  - `damage_on_hurt` - A boolean which defaults to `true`, defines whether the item will be damaged when the wearing entity is damaged.
+  - `camera_overlay` - An optional [resource location](/wiki/commands/resource-locations) of an overlay texture to use when equipped. The ID will address a texture under the `textures/` folder and automatically assumed to be `.png`. (`misc/pumpkinblur` will adress `textures/misc/pumpkinblur.png`)
 
-**Example:** `/give @s end_rod[equippable={slot:"head",equip_sound:"entity.generic.explode",dispensable:true}]`
+**Example:** `/give @s tnt[equippable={slot:"head",equip_sound:"entity.generic.explode",model:"minecraft:end_rod",dispensable:true,swappable:true,damage_on_hurt:true}]`
 
-- Gives you a tnt which can be equipped onto a players head, and will play a special sound when done so.
+- Gives you a tnt which can be equipped onto a players head, and will play a special sound when done so. The item can be dispensed using dispensers, swapped by right-clicking and will not take damage when the wearing entity does.
 
 ### `entity_data`
 
@@ -459,19 +499,6 @@ Used to specify the NBT data of an entity that is spawned/created from an item (
 **Example:** `/give @s ghast_spawn_egg[entity_data={id:"minecraft:giant",Glowing:1b}]`
 
 - Gives you ghast spawn egg which spawns a glowing giant.
-
-### `fire_resistant`
-
-Defines if the item is fire resistant, meaning it won't burn in fire/lava.
-
-**Fields:**
-
-- `minecraft:fire_resistant` - If this empty object is set, then the item will become fire resistant, meaning it won't
-  be able to burn in lava or fire.
-
-**Example:** `/give @s barrier[fire_resistant={}]`
-
-- Gives you a barrier which can be burned neither in lava or fire.
 
 ### `firework_explosion`
 
@@ -591,7 +618,7 @@ Used to add an instrument to a goat horn.
 
 - `minecraft:instrument` - The goat horn instrument on this item.
   - `sound_event` - The sound event to play on the use of this goat horn.
-    - `sound_id` - A resource location of a sound file. (e.g. `entity.generic.explode`)
+    - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
     - `range` - An optional fixed range of the sound.
   - `use_duration` - An integer for how long the use duration of this goat horn should be.
   - `range` - A float for the range of the sound.
@@ -619,9 +646,7 @@ If present, makes the item not be able to be picked up by a player which is not 
 
 ### `item_name`
 
-Used to specify the item's base name. (Similiar to the [`custom_name`](#custom_name) component) This component doesn't
-take priority over the [`custom_name`](#custom_name) component, but can't be renamed or removed using an anvil. And it
-won't default to italic, even if unspecified.
+Used to specify the item's base name. (Similiar to the [`custom_name`](#custom_name) component) Note that this component has the lowest priority and won't take priority over the [`custom_name`](#custom_name) or [`potion_contents`](#potion_contents) component. This name hovewer can't be renamed or removed using an anvil, and it won't default to italic.
 
 **Fields:**
 
@@ -665,16 +690,16 @@ want to add your own custom jukebox songs, you can read the
 
 ### `lock`
 
-Used to lock a container to a certain "key", whic is an item with the same name as your specified "key" string.
+Used to lock a container to a certain "key". The "key" must be an item with the same data as the container item's lock.
 
 **Fields:**
 
 - `minecraft:lock` - If present, prevents the container from being opened unless the opener is holding an item whose
-  name matches this string.
+  data is the same as the container's one.
 
-**Example:** `/give @s dispenser[minecraft:lock="MyKey"]`
+**Example:** `/give @s dispenser[minecraft:lock={components:{"minecraft:custom_name":"'My Key'"}}]`
 
-- Gives you a dispenser which when placed can only be opened with an item whose name is "MyKey".
+- Gives you a dispenser which when placed can only be opened with an item whose name is "My Key". Note: you can use any component or data, not just [`custom_name`](#custom_name)
 
 ### `lodestone_tracker`
 
@@ -801,8 +826,7 @@ Can only be used on a player head, and defines the sound event to play when this
 
 ### `ominous_bottle_amplifier`
 
-Used to define the amplifier amount of the Bad Omen effect on an Ominous Bottle. If this item also contains the
-[consumable](#consumable) component, this effect will be applied when the player consumes the item.
+Used to define the amplifier amount of the Bad Omen effect on an Ominous Bottle. If this item also contains the [consumable](#consumable) component, this effect will be applied when the player consumes the item.
 
 **Fields:**
 
@@ -826,9 +850,7 @@ The sherds applied onto a decorated pot.
 
 ### `potion_contents`
 
-Defines the status effects contained in a potion. Note that this can only be used on a potion, a splash potion, a
-lingering potion or a tipped arrow. If this item also contains the [consumable](#consumable) component, these effects
-will be applied when the player consumes the item.
+Defines the status effects contained in a potion. Note that this can only be used on a potion, a splash potion, a lingering potion or a tipped arrow. If this item also contains the [consumable](#consumable) component, these effects will be applied when the player consumes the item.
 
 **Fields:**
 
@@ -846,6 +868,7 @@ will be applied when the player consumes the item.
     - `show_particles` - An optional boolean, which default to `true`, decides whether or not to produce the effect's
       particles.
     - `show_icon` - An optional boolean, which default to `true`, decided whether or not to show an icon of this effect.
+  - `custom_name` - An optional string that is used by the game to generate containing stack name. This name has a higher priority than the [item_name](#item_name) component. (Example: If the value was `foo`, and the item would be `minecraft:lingering_potion`, the name of item will be translation of `item.minecraft.lingering_potion.effect.foo`.)
 
 **Examples:** _#1_:
 `/give @s potion[potion_contents={custom_color:393215,custom_effects:[{id:"minecraft:glowing",amplifier:0,duration:-1,show_particles:1b,show_icon:0b,ambient:1b}]}]`
@@ -1057,7 +1080,7 @@ you use a water bucket, a bucket will take its place instead.
   decreased after use.
   - `id` - The ID of the item. Note that it **cannot** be `air`!
   - `count` - The count of the item. If left out defaults to 1, the maximum count is 99.
-  - `components` - The [item components](#) of the item, optional.
+  - `components` - The [item components](#item-components) of the item, optional.
 
 **Example:** `/give @s golden_apple[use_remainder={id:'minecraft:gold_nugget', count:1}]`
 
