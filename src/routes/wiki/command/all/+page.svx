@@ -77,6 +77,7 @@ These commands require a permission level same or bigger than 2 to run them.
   previous version)
 - `/return <value>|fail|run <command>` - Control execution flow inside functions and change their return value
 - `/ride <target> mount <vehicle>|dismount` - Used to make an entity ride or dismount a different entity
+- `/rotate <target> <rotation|facing <location|entity <facingTarget> [<facingAnchor>]>>` - Used to rotate an entity, works similarly to /teleport but doesn't dismount the entity it's riding.
 - `/say <message>` - Sends a message into chat to all players
 - `/schedule function <function> <time> [append|replace] OR clear <function>` - Schedules a function
 - `/scoreboard objectives|players ...` - Manages scoreboard objectives and players
