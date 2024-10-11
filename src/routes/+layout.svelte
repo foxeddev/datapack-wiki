@@ -1,5 +1,6 @@
 <script lang="ts">
   import "../styles/app.css";
+  import "../styles/admonitions.css";
   import "../styles/code_theme.css";
   import "../styles/fonts.css";
 
