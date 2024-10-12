@@ -4,7 +4,7 @@
   type Props = {
     title: string;
     description: string;
-    tags: string
+    tags: string;
   };
 
   const { title, description, tags = "" }: Props = $props();
