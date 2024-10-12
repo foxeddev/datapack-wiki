@@ -7,7 +7,7 @@
     tags: string;
   };
 
-  const { title, description, tags = "" }: Props = $props();
+  const { children, title, description, tags = "" }: Props = $props();
 
   let tagsArr = tags
     .split(",")
@@ -30,7 +30,7 @@
   ]} />
 
 <main class="md px-6 md:px-10 lg:px-16 prose-headings:text-stone-200">
-  <slot />
+  {@render children?.()}
   {#if tags}
     <div class="bg-stone-950/40 p-2 rounded-lg flex items-center space-x-3 my-10">
       <span class="uppercase text-sm text-zinc-500">Tags:</span>

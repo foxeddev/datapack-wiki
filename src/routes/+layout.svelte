@@ -10,6 +10,11 @@
   import { dev } from "$app/environment";
 
   import IconBeta from "~icons/tabler/flask-2-filled";
+  interface Props {
+    children?: import('svelte').Snippet;
+  }
+
+  let { children }: Props = $props();
 
   let betaWarning: HTMLDivElement | null = $state(null);
 
@@ -30,7 +35,7 @@
   <div class="flex w-full h-[93%]">
     <Sidebar />
     <div id="content" class="py-12 w-full min-h-screen text-stone-200 bg-stone-900">
-      <slot />
+      {@render children?.()}
       {#if !dev}
         <div class="fixed z-50 bottom-0 w-fit flex items-center" bind:this={betaWarning}>
           <div class="bg-red-700 flex items-center">

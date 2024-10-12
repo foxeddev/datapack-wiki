@@ -1,9 +1,14 @@
 <script lang="ts">
-  export let label = "No Label!";
 
   import IconThing from "~icons/tabler/CaretDown";
+  interface Props {
+    label?: string;
+    children?: import('svelte').Snippet;
+  }
 
-  let open = true;
+  let { label = "No Label!", children }: Props = $props();
+
+  let open = $state(true);
 </script>
 
 <ul class="not-prose flex flex-col h-auto">
@@ -12,6 +17,6 @@
     <p class="w-max">{label}</p>
   </button>
   {#if open}
-    <slot />
+    {@render children?.()}
   {/if}
 </ul>

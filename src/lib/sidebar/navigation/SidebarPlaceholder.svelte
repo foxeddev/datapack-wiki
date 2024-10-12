@@ -7,10 +7,12 @@
   };
 
   const { label, icon }: Props = $props();
+
+  const SvelteComponent = $derived(icon);
 </script>
 
 <div class="cursor-default py-1 rounded-lg flex gap-2 pl-1 items-center text-stone-500">
-  <svelte:component this={icon} />
+  <SvelteComponent />
 
   {#if $sidebarExpanded}
     <span>{label}</span>
