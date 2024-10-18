@@ -1,4 +1,4 @@
-import { Glob, file as defineFile, write } from "bun";
+import { file as defineFile, Glob, write } from "bun";
 import matter from "gray-matter";
 import stripMarkdown from "strip-markdown";
 import { remark } from "remark";
@@ -35,7 +35,9 @@ for await (const file of matchingFiles) {
 
   // add to posts
   const contentNoHtml = stripHtml(frontmatter.content).result;
-  const strippedMarkdown = await remark().use(stripMarkdown).process(contentNoHtml);
+  const strippedMarkdown = await remark().use(stripMarkdown).process(
+    contentNoHtml,
+  );
   const tags = frontmatter.data.tags || "";
 
   posts.push({
@@ -44,7 +46,7 @@ for await (const file of matchingFiles) {
     url: "/" + filePath,
     tags: tags
       .split(",")
-      .map(el => el.trim())
+      .map((el) => el.trim())
       .filter(String),
   });
 }

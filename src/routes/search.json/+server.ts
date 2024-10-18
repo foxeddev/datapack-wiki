@@ -3,6 +3,6 @@ import posts from "./meta.json";
 
 export const prerender = true;
 
-export async function GET() {
+export function GET() {
   return json(posts);
 }

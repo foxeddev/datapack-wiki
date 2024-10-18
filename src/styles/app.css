@@ -10,19 +10,29 @@
 
 .md {
   @apply prose prose-sm prose-stone prose-invert max-w-full md:prose-base;
-  @apply prose-headings:mb-2 prose-h2:text-2xl prose-h2:mt-7 prose-headings:scroll-mt-16;
+  @apply prose-headings:mb-2 prose-h2:text-2xl prose-h2:mt-7
+    prose-headings:scroll-mt-16;
   @apply prose-p:my-3;
-  @apply prose-blockquote:rounded-l-sm prose-blockquote:font-normal prose-blockquote:not-italic;
+  @apply prose-blockquote:rounded-l-sm prose-blockquote:font-normal
+    prose-blockquote:not-italic;
 
   /* inline code blocks below */
-  @apply prose-code:bg-stone-800 prose-code:rounded-sm prose-code:border prose-code:text-orange-300 prose-code:border-stone-700 prose-code:p-1 prose-code:font-thin prose-code:before:content-none prose-code:after:content-none prose-code:break-all;
+  @apply prose-code:bg-stone-800 prose-code:rounded-sm prose-code:border
+    prose-code:text-orange-300 prose-code:border-stone-700 prose-code:p-1
+    prose-code:font-thin prose-code:before:content-none
+    prose-code:after:content-none prose-code:break-all;
   /* multi-line code blocks below */
-  @apply prose-pre:p-2 prose-pre:bg-stone-900 prose-code:prose-pre:p-0 prose-code:prose-pre:border-0 prose-pre:overflow-x-auto;
+  @apply prose-pre:p-2 prose-pre:bg-stone-900 prose-code:prose-pre:p-0
+    prose-code:prose-pre:border-0 prose-pre:overflow-x-auto;
   @apply prose-headings:scroll-mt-20;
   @apply prose-ol:mt-0 prose-ul:mt-0 prose-li:my-1;
-  @apply prose-h2:border-b prose-h2:pb-2 prose-h2:border-white prose-h2:border-opacity-20;
-  @apply prose-h3:border-b prose-h3:pb-2 prose-h3:border-white prose-h3:border-opacity-20;
-  @apply prose-th:p-2 prose-th:text-left prose-thead:bg-stone-800 prose-td:p-2 even:prose-tr:bg-stone-500/10 odd:prose-tr:bg-stone-700/10 prose-table:border prose-table:border-stone-700 prose-table:m-0;
+  @apply prose-h2:border-b prose-h2:pb-2 prose-h2:border-white
+    prose-h2:border-opacity-20;
+  @apply prose-h3:border-b prose-h3:pb-2 prose-h3:border-white
+    prose-h3:border-opacity-20;
+  @apply prose-th:p-2 prose-th:text-left prose-thead:bg-stone-800 prose-td:p-2
+    even:prose-tr:bg-stone-500/10 odd:prose-tr:bg-stone-700/10
+    prose-table:border prose-table:border-stone-700 prose-table:m-0;
 }
 
 ::-webkit-scrollbar {
@@ -38,9 +48,11 @@
 }
 
 .remark-code-title {
-  @apply text-sm font-mono font-bold uppercase bg-[#322931] py-1 px-2 rounded-md -mb-4 w-fit;
+  @apply text-sm font-mono font-bold uppercase bg-[#322931] py-1 px-2 rounded-md
+    -mb-4 w-fit;
 }
 
 .autolink {
-  @apply inline-block ml-2 stroke-stone-700 focus:stroke-stone-400 hover:stroke-stone-400 z-0 motion-safe:transition-colors;
+  @apply inline-block ml-2 stroke-stone-700 focus:stroke-stone-400
+    hover:stroke-stone-400 z-0 motion-safe:transition-colors;
 }

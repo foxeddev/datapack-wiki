@@ -1,7 +1,7 @@
 import { createConsola } from "consola";
 import fg from "fast-glob";
 import matter from "gray-matter";
-import { readFile, writeFile, readdir } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { remark } from "remark";
 import { stripHtml } from "string-strip-html";
 import stripMarkdown from "strip-markdown";
@@ -16,7 +16,7 @@ const log = createConsola({
 // Sorry!
 
 const posts = [];
-const matchingFiles = fg.stream("**/+page.svx", {dot: true});
+const matchingFiles = fg.stream("**/+page.svx", { dot: true });
 
 // read all routes
 for await (const file of matchingFiles) {
@@ -35,7 +35,9 @@ for await (const file of matchingFiles) {
 
   // add to posts
   const contentNoHtml = stripHtml(frontmatter.content).result;
-  const strippedMarkdown = await remark().use(stripMarkdown).process(contentNoHtml);
+  const strippedMarkdown = await remark().use(stripMarkdown).process(
+    contentNoHtml,
+  );
 
   posts.push({
     title: frontmatter.data.title || "MissingNo.",
