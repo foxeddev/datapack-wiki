@@ -8,7 +8,6 @@
   import { sidebarExpanded } from "$lib/stores";
   import WikiPages from "$lib/sidebar-pages/WikiPages.svelte";
   import GuidePages from "$lib/sidebar-pages/Guides.svelte";
-  import { onMount } from "svelte";
 
   import IconCollapse from "~icons/tabler/chevron-left";
   import IconCredits from "~icons/tabler/address-book";
@@ -23,7 +22,7 @@
 
   let page = $state("wiki");
 
-  onMount(async () => {
+  $effect(() => {
     page = sessionStorage.getItem("page") || "wiki";
   });
 

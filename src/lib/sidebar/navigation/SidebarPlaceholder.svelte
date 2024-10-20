@@ -8,11 +8,11 @@
 
   const { label, icon }: Props = $props();
 
-  const SvelteComponent = $derived(icon);
+  const Icon = $derived(icon);
 </script>
 
 <div class="cursor-default py-1 rounded-lg flex gap-2 pl-1 items-center text-stone-500">
-  <SvelteComponent />
+  <Icon />
 
   {#if $sidebarExpanded}
     <span>{label}</span>

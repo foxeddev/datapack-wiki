@@ -13,7 +13,7 @@
 
   let expanded = $state(false);
 
-  const SvelteComponent = $derived(icon);
+  const Icon = $derived(icon);
 </script>
 
 <a
@@ -23,7 +23,7 @@
     expanded = !expanded;
     $sidebarExpanded = true;
   }}>
-  <SvelteComponent />
+  <Icon />
 
   {#if $sidebarExpanded}
     <div class="grow text-left">
