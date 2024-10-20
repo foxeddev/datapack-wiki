@@ -77,6 +77,7 @@ These commands require a permission level same or bigger than 2 to run them.
   previous version)
 - `/return <value>|fail|run <command>` - Control execution flow inside functions and change their return value
 - `/ride <target> mount <vehicle>|dismount` - Used to make an entity ride or dismount a different entity
+- `/rotate <target> <rotation|facing <location|entity <facingTarget> [<facingAnchor>]>>` - Used to rotate an entity, works similarly to /teleport but doesn't dismount the entity it's riding.
 - `/say <message>` - Sends a message into chat to all players
 - `/schedule function <function> <time> [append|replace] OR clear <function>` - Schedules a function
 - `/scoreboard objectives|players ...` - Manages scoreboard objectives and players
@@ -89,7 +90,7 @@ These commands require a permission level same or bigger than 2 to run them.
 - `/summon <entity> [<pos>] [<nbt>]` - Summons an entity
 - `/tag <targets> add <name>|remove <name>| list` - Adds, removes or lists entities tags
 - `/team list|add|remove|empty|join|leave|modify ...` - Manages teams
-- `/teleport [<targets>] <destination|location> ...` - Teleport entities to a specified location. (ALIAS: `/tp`)
+- `/teleport [<targets>] <destination|location [<rotation>|facing <location|entity <facingTarget> [<facingAnchor>]>]> ...` - Teleport entities to a specified location. (ALIAS: `/tp`)
 - `/tellraw <targets> <message>` - Sends a JSON message to players
 - `/tick query|rate <rate>|freeze|unfreeze|step [<time>|stop]|sprint [<time>|stop]` - Controls or checks the tick rate
   of a world

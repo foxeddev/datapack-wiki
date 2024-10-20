@@ -20,33 +20,31 @@ export function createSearchIndex(pages: Page[]) {
 // This function replaces the given match with a highlighted version of the match.
 function replaceWithHighlights(text: string, match: string) {
   const regex = new RegExp(match, "gi");
-  return text.replace(regex, match => `<mark>${match}</mark>`);
+  return text.replace(regex, (match) => `<mark>${match}</mark>`);
 }
 
-type SearchReturnType = Promise<{ content: string[]; title: string; url: string }[]>;
+type SearchReturnType = { content: string[]; title: string; url: string }[];
 
-export async function search(query: string): SearchReturnType {
+export function search(query: string): SearchReturnType {
   // remove regex special characters
   const htmlStripped = stripHtml(query).result;
   const match = htmlStripped.replaceAll(/[\\^$*+?.()|[\]{}]/g, "\\$&");
 
-  // TODO: Replace this with the tag feature from flexsearch
+  // TODO: Possibly replace this with the tag feature from FlexSearch
   if (match.includes("tag:")) {
-    let words = match.split(" ");
-    for (let w of words) {
+    const words = match.split(" ");
+    for (const w of words) {
       if (!w.includes("tag:")) {
         continue;
       }
 
-      let tags = w.substring(4).split(",");
-      let taggedPosts = posts
-        .filter(p => p.tags?.some(t => tags.includes(t)))
+      const tags = w.substring(4).split(",");
+      const taggedPosts = posts
+        .filter((p) => p.tags?.some((t) => tags.includes(t)))
         .map(({ title, url }) => {
           return { content: [""], title, url };
         });
 
-      console.log(taggedPosts);
-      console.log(tags);
       if (taggedPosts.length == 0) return [];
       return taggedPosts;
     }
@@ -55,9 +53,13 @@ export async function search(query: string): SearchReturnType {
   const results = index.search(match);
 
   return results
-    .map(i => posts[i as number])
+    .map((i) => posts[i as number])
     .map(({ content, title, url }) => {
-      return { content: getMatches(content, match), title: replaceWithHighlights(title, match), url };
+      return {
+        content: getMatches(content, match),
+        title: replaceWithHighlights(title, match),
+        url,
+      };
     });
 }
 
@@ -73,7 +75,7 @@ function getMatches(text: string, searchTerm: string, limit = 1) {
     matches++;
   }
 
-  return results.map(index => {
+  return results.map((index) => {
     const start = index - 80;
     const end = index + 80;
     const textBlock = text.substring(start, end).trim();

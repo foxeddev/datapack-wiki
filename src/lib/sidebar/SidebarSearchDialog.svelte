@@ -24,7 +24,7 @@
 
   $effect(() => {
     if (searchState === "done") {
-      search(searchTerm).then(r => (results = r as any[]));
+      results = search(searchTerm);
     }
   });
 </script>
