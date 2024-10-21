@@ -20,7 +20,7 @@ export function createSearchIndex(pages: Page[]) {
 // This function replaces the given match with a highlighted version of the match.
 function replaceWithHighlights(text: string, match: string) {
   const regex = new RegExp(match, "gi");
-  return text.replace(regex, (match) => `<mark>${match}</mark>`);
+  return text.replace(regex, match => `<mark>${match}</mark>`);
 }
 
 type SearchReturnType = { content: string[]; title: string; url: string }[];
@@ -40,7 +40,7 @@ export function search(query: string): SearchReturnType {
 
       const tags = w.substring(4).split(",");
       const taggedPosts = posts
-        .filter((p) => p.tags?.some((t) => tags.includes(t)))
+        .filter(p => p.tags?.some(t => tags.includes(t)))
         .map(({ title, url }) => {
           return { content: [""], title, url };
         });
@@ -53,7 +53,7 @@ export function search(query: string): SearchReturnType {
   const results = index.search(match);
 
   return results
-    .map((i) => posts[i as number])
+    .map(i => posts[i as number])
     .map(({ content, title, url }) => {
       return {
         content: getMatches(content, match),
@@ -73,7 +73,7 @@ function getMatches(text: string, searchTerm: string, limit = 1) {
     results.push(match.index);
   }
 
-  return results.map((index) => {
+  return results.map(index => {
     const start = index - 80;
     const end = index + 80;
     const textBlock = text.substring(start, end).trim();

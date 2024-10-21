@@ -8,14 +8,7 @@
 
 pre.shiki,
 pre.shiki > code {
-  font-family:
-    "Fira Mono",
-    Menlo,
-    Monaco,
-    "Lucida Console",
-    "Courier New",
-    Courier,
-    monospace;
+  font-family: "Fira Mono", Menlo, Monaco, "Lucida Console", "Courier New", Courier, monospace;
   line-height: 1.375;
   direction: ltr;
   text-align: left;
