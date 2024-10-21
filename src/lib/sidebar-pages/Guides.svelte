@@ -3,7 +3,6 @@
   import SidebarPage from "$lib/sidebar/navigation/SidebarPage.svelte";
   import SidebarCategory from "$lib/sidebar/navigation/SidebarCategory.svelte";
   import SidebarHeading from "$lib/sidebar/navigation/SidebarHeading.svelte";
-  import SidebarPlaceholder from "$lib/sidebar/navigation/SidebarPlaceholder.svelte";
 
   // Icon imports
   // https://tabler-icons.io

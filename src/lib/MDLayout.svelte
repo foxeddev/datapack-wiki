@@ -25,7 +25,7 @@
     "https://instagram.com/datapackhub",
   ]} />
 
-<main class="md px-6 md:px-10 lg:px-16 prose-headings:text-stone-200">
+<main class="md px-4 md:px-8 lg:px-16 prose-headings:text-stone-200">
   <slot />
   {#if tags}
     <div class="bg-stone-950/40 p-2 rounded-lg flex items-center space-x-3 my-10">

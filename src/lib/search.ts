@@ -67,12 +67,10 @@ export function search(query: string): SearchReturnType {
 function getMatches(text: string, searchTerm: string, limit = 1) {
   const regex = new RegExp(searchTerm, "gi");
   const results = [];
-  let matches = 0;
   let match;
 
   while ((match = regex.exec(text)) !== null && results.length < limit) {
     results.push(match.index);
-    matches++;
   }
 
   return results.map((index) => {
