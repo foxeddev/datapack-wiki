@@ -36,7 +36,6 @@
     <input
       class="bg-stone-900 w-full rounded-sm focus:outline-0 text-white p-2 placeholder:text-stone-500 disabled:cursor-not-allowed disabled:bg-stone-900/50"
       disabled={searchState === "waiting"}
-      autofocus
       id="search-box"
       autocomplete="off"
       spellcheck="false"

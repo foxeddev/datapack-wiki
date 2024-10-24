@@ -3,7 +3,7 @@ import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { escapeSvelte, mdsvex } from "mdsvex";
 import { createHighlighter } from "shiki";
 import mcfunction from "./src/highlighting/mcfunction/mcfunction.js";
-import { theme } from "./src/highlighting/hopscotch.js"; // required btw
+import { theme } from "./src/highlighting/kanagawa-wave.js"; // required btw
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkAdmonitions from "remark-admonitions";
 import remarkCodeTitles from "remark-code-titles";
