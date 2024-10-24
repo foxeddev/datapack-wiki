@@ -1,7 +1,8 @@
 <script lang="ts">
+  import type { Snippet } from "svelte";
   import IconTick from "~icons/tabler/rosette-discount-check";
   interface Props {
-    children?: import('svelte').Snippet;
+    children?: Snippet;
   }
 
   let { children }: Props = $props();

@@ -1,12 +1,13 @@
 <script lang="ts">
   import { sidebarExpanded } from "$lib/stores";
   import autoAnimate from "@formkit/auto-animate";
+  import type { Snippet } from "svelte";
   import IconExpand from "~icons/tabler/chevron-right";
 
   type Props = {
     name: string;
     icon: any;
-    children: any;
+    children: Snippet;
   };
 
   const { children, name, icon }: Props = $props();

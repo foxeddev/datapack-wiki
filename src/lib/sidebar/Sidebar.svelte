@@ -17,12 +17,13 @@
 
   import SidebarPage from "./navigation/SidebarPage.svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
+  import { onMount } from "svelte";
 
   let results: Page[] = $state([]);
 
   let page = $state("wiki");
 
-  $effect(() => {
+  onMount(() => {
     page = sessionStorage.getItem("page") || "wiki";
   });
 

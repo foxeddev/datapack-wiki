@@ -1,7 +1,7 @@
 <script lang="ts">
   import { sidebarExpanded, windowWidth } from "$lib/stores";
-  import { createSearchIndex, search } from "../search";
   import autoAnimate from "@formkit/auto-animate";
+  import { createSearchIndex, search } from "../search";
 
   type Props = {
     results: any[];

@@ -1,9 +1,11 @@
 <script lang="ts">
+  import type { Snippet } from "svelte";
+
 
   import IconThing from "~icons/tabler/CaretDown";
   interface Props {
     label?: string;
-    children?: import('svelte').Snippet;
+    children?: Snippet;
   }
 
   let { label = "No Label!", children }: Props = $props();
@@ -17,6 +19,10 @@
     <p class="w-max">{label}</p>
   </button>
   {#if open}
-    {@render children?.()}
+    {#if children}
+      {@render children?.()}
+    {:else}
+      No Content!
+    {/if}
   {/if}
 </ul>
