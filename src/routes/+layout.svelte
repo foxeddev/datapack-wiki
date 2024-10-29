@@ -1,8 +1,5 @@
 <script lang="ts">
   import "../styles/app.css";
-  import "../styles/admonitions.css";
-  import "../styles/code_theme.css";
-  import "../styles/fonts.css";
 
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
   import Navbar from "../lib/Navbar.svelte";

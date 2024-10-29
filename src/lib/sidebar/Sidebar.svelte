@@ -5,25 +5,24 @@
 
   import IconSearch from "~icons/tabler/search";
 
+  import GuidePages from "$lib/sidebar/tabs/Guides.svelte";
+  import WikiPages from "$lib/sidebar/tabs/WikiPages.svelte";
   import { sidebarExpanded } from "$lib/stores";
-  import WikiPages from "$lib/sidebar-pages/WikiPages.svelte";
-  import GuidePages from "$lib/sidebar-pages/Guides.svelte";
 
-  import IconCollapse from "~icons/tabler/chevron-left";
   import IconCredits from "~icons/tabler/address-book";
   import IconResources from "~icons/tabler/book";
-  import IconWiki from "~icons/tabler/globe";
   import IconGuides from "~icons/tabler/book-2";
+  import IconCollapse from "~icons/tabler/chevron-left";
+  import IconWiki from "~icons/tabler/globe";
 
   import SidebarPage from "./navigation/SidebarPage.svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
-  import { onMount } from "svelte";
 
   let results: Page[] = $state([]);
 
   let page = $state("wiki");
 
-  onMount(() => {
+  $effect(() => {
     page = sessionStorage.getItem("page") || "wiki";
   });
 

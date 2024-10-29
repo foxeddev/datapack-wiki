@@ -16,11 +16,6 @@ Listed here are links to credible and reliable places to aid in command support 
 <Highlight color="#738ADB">Discord</Highlight>
 <a href="https://discord.datapackhub.net">Datapack Hub Discord</a>
 
-<br><br>
-
-<Highlight color="#DC2626">Website</Highlight>
-<a href="https://datapackhub.net">Datapack Hub Website</a>
-
 ### MCStacker
 
 <Highlight color="#738ADB">Discord</Highlight>
