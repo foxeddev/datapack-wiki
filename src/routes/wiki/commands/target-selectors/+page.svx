@@ -236,7 +236,8 @@ a predicate ID.
 **Examples**:
 
 - `@e[predicate=namespace:my_predicate]`: Selects all entities who pass the predicate in
-  `/data/namespace/predicates/my_predicate.- - `@e[predicate=!namespace:another_predicate]`: Selects all entities who fail the predicate in `/data/namespace/predicates/another_predicate.json`
+  `data/namespace/predicates/my_predicate`.
+- `@e[predicate=!namespace:another_predicate]`: Selects all entities who fail the predicate in `data/namespace/predicates/another_predicate.json`
 
 ### `gamemode` argument
 
