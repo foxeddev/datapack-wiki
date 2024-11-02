@@ -1,11 +1,13 @@
 ---
-title: Breaking changes
-description: "A list of breaking changes to datapacks"
+title: Breaking Changes
+description: "A list of breaking changes to datapacks."
 ---
 
 <script lang="ts">
-import { Discord } from '$lib/reusables';
+import { Version } from '$lib/reusables';
 </script>
+
+<Version>This page is validated and up to date with Minecraft Java: 1.21.3</Version>
 
 # List of breaking changes
 
@@ -13,34 +15,31 @@ This is list of all breaking changes to datapacks (excluding resource packs). Sp
 Changelog for the source of many of these.
 
 ## 1.21.2
-- **Item Component changes**
-  - The `food` item component no longer automatically allows for consumption of food, and now only holds the data relating to it (meaning `nutrition`, `saturation` and `can_always_eat` are the only fields left in the component)
-    - 🛠️ To fix this, just add the `consumable` component: `consumable={}`. You can customize this component even more, you can read about it [here](/wiki/commands/item-components#consumable).
-  - The [`lock`](/wiki/commands/item-components#lock) has been changed into an item predicate, with a format of `lock={ITEM_PREDICATE_HERE}`
-    - 🛠️ The previous `lock="MyKey"` would now look like `lock={components:{"minecraft:custom_name":"'MyKey'"}}`
-  - The `fire_resistant` component has been renamed to `damage_resistant`, with a new field
-    - `types` - A `#` damage type tag. Items in entity form or worn by players with this component will be resistant to the damage types included in the tag.
-- **Loot Table changes**
-  - The `/loot` command now returns an error when trying to drop from block without loot table (like air)
-  - The special loot table `empty` has been removed.
-  - Sheep now always use a single loot table `entities/sheep`, but wool drops are still defined in sub-tables in  `entities/sheep/<color>`
+**Item Components**
+- The [`food`](/wiki/commands/item-components#food) item component no longer automatically allows for consumption of food, and now only holds the data relating to it (meaning `nutrition`, `saturation` and `can_always_eat` are the only fields left in the component)
+  - 🛠️ To fix this, just add the [`consumable`](/wiki/commands/item-components#consumable) component: `consumable={}`. You can customize this component even more, you can read about it [here](/wiki/commands/item-components#consumable).
+- The [`lock`](/wiki/commands/item-components#lock) has been changed into an item predicate, with a format of `lock={ITEM_PREDICATE}`
+  - 🛠️ The previous `lock="MyKey"` would now look like `lock={components:{"minecraft:custom_name":"'MyKey'"}}`
+- The `fire_resistant` component has been renamed to [`damage_resistant`](/wiki/commands/item-components#damage_resistant), with a new field
+  - `types` - A `#` damage type tag. Items in entity form or worn by players with this component will be resistant to the damage types included in the tag.
+
+**Loot Tables**
+- The `/loot` command now returns an error when trying to drop from block without loot table (like air)
+- The special loot table `empty` has been removed.
+- Sheep now always use a single loot table `entities/sheep`, but wool drops are still defined in sub-tables in  `entities/sheep/<color>`
+
+**Other**
 - Attribute IDs now don't have the `generic.`, `player.` or `zombie.` prefixes anymore (`generic.scale` -> `scale`).
-- Removed liquid carvers and changed biome format (the `carvers` field is now just a list of carvers)
-- The `killed_by_crossbow` advancement was renamed to `killed_by_arrow`, and will now trigger whenever an arrow kills an entity, not just when fired from a crossbow.
-- The previous `Lock` field of containers has been renamed to `lock` and is now an item predicate.
 - `boat` and `chest_boat` entity types have been split into separate types, one per variant (`Type=oak` ->
-  `minecraft:oak_boat`,...)
+`minecraft:oak_boat`,...)
   - With that the `minecraft:boat` entity sub-predicate has been removed.
+- The previous `Lock` field of containers has been renamed to `lock` and is now an item predicate.
 - You now cannot ride Leash Knots, Lighting Bolts and Fishing Bobbers with `/ride` command.
+- The `killed_by_crossbow` advancement was renamed to `killed_by_arrow`, and will now trigger whenever an arrow kills an entity, not just when fired from a crossbow.
 - Renamed effect type `damage_item` to `change_item_damage`, which now also supports negative amounts.
-
-- **Some Resourcepack Changes** 
-  - **Note:** This DOES NOT include all breaking resourcepack changes, just the most important ones.
-  - A lot of moved textures in resource packs (all armour, wolf armour, elytra, llama decor, horse armour and armour trim files, and textures were moved to various new positions - you can view these in the vanilla resource pack)
-
+- Removed liquid carvers and changed biome format (the `carvers` field is now just a list of carvers)
 
 ## 1.20.2
-
 - Entity effects in NBT now use namespaced IDs instead of numbers.
 - The structure for entity effects in NBT has been changed from `PascalCase` to `snake_case`.
   - For mob effect instances:
