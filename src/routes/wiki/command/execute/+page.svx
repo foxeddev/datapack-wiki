@@ -10,7 +10,7 @@ description:
 import {Version} from '$lib/reusables';
 </script>
 
-<Version> This page is up to date and validated for the Minecraft version: 1.20.6</Version>
+<Version> This page is up to date and validated for the Minecraft version: 1.21.3</Version>
 
 # /execute command
 
