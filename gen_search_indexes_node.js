@@ -12,9 +12,6 @@ const log = createConsola({
   },
 });
 
-// Requires Bun to be installed
-// Sorry!
-
 const posts = [];
 const matchingFiles = fg.stream("**/+page.svx", { dot: true });
 
