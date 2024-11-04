@@ -21,6 +21,7 @@
     prose-code:text-orange-300 prose-code:border-stone-700 prose-code:p-1
     prose-code:font-thin prose-code:before:content-none
     prose-code:after:content-none prose-code:break-all;
+
   /* multi-line code blocks below */
   @apply prose-pre:p-2 prose-pre:bg-stone-900 prose-code:prose-pre:p-0
     prose-code:prose-pre:border-0 prose-pre:overflow-x-auto;
