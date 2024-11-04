@@ -12,7 +12,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
-    "@sveltejs/kit": "^2.7.3",
+    "@sveltejs/kit": "^2.7.4",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "consola": "^3.2.3",
     "mdsvex": "^0.12.3",
@@ -20,19 +20,19 @@
     "prettier-plugin-svelte": "^3.2.7",
     "string-strip-html": "^13.4.8",
     "strip-markdown": "^6.0.0",
-    "svelte": "^5.1.4",
+    "svelte": "^5.1.9",
     "svelte-check": "^4.0.5",
-    "tslib": "^2.8.0",
+    "tslib": "^2.8.1",
     "typescript": "^5.6.3",
     "vite": "^5.4.10"
   },
   "type": "module",
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
-    "@iconify-json/tabler": "^1.2.6",
+    "@iconify-json/tabler": "^1.2.7",
     "@sveltejs/adapter-auto": "^3.3.1",
     "@tailwindcss/typography": "^0.5.15",
-    "@tailwindcss/vite": "^4.0.0-alpha.30",
+    "@tailwindcss/vite": "^4.0.0-alpha.31",
     "flexsearch": "^0.7.43",
     "gray-matter": "^4.0.3",
     "hast-util-from-html-isomorphic": "^2.0.0",
@@ -44,7 +44,7 @@
     "remark-code-titles": "^0.1.2",
     "shiki": "^1.22.2",
     "sk-seo": "^0.4.2",
-    "tailwindcss": "^4.0.0-alpha.30",
+    "tailwindcss": "^4.0.0-alpha.31",
     "unplugin-icons": "^0.19.3"
   }
 }
