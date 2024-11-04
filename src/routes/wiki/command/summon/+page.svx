@@ -7,7 +7,7 @@ description: "The /summon command is used to summon an entity at a position, alo
 import {Version} from '$lib/reusables';
 </script>
 
-<Version> This page is up to date and validated for the Minecraft version: 1.21</Version>
+<Version> This page is up to date and validated for the Minecraft version: 1.21.3</Version>
 
 # /summon command
 
