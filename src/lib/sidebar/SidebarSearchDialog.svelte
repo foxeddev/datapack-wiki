@@ -1,14 +1,17 @@
 <script lang="ts">
   import { sidebarExpanded, windowWidth } from "$lib/stores";
+  import autoAnimate from "@formkit/auto-animate";
   import { createSearchIndex, search } from "../search";
 
-  import autoAnimate from "@formkit/auto-animate";
+  type Props = {
+    results: any[];
+  };
 
-  export let results: any[] = [];
+  let { results = $bindable([]) }: Props = $props();
   let dialog: HTMLDialogElement;
 
-  let searchTerm = "";
-  let searchState: "waiting" | "done" = "waiting";
+  let searchTerm = $state("");
+  let searchState: "waiting" | "done" = $state("waiting");
 
   export async function showModal() {
     dialog.showModal();
@@ -19,21 +22,21 @@
     searchState = "done";
   }
 
-  $: if (searchState === "done") {
-    results = search(searchTerm);
-  }
+  $effect(() => {
+    if (searchState === "done") {
+      results = search(searchTerm);
+    }
+  });
 </script>
 
 <dialog
   bind:this={dialog}
-  class="w-[90%] md:w-3/4 lg:w-1/2 xl:w-1/3 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm">
+  class="w-[90%] md:w-3/4 lg:w-1/2 xl:w-1/3 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm m-auto">
   <div class="bg-stone-800 w-full p-4 gap-1 rounded-md">
-    <!-- svelte-ignore a11y-autofocus -->
-    <!-- as much as svelte wants to yell at me for autofocus, it actually makes accessibility better -->
     <input
       class="bg-stone-900 w-full rounded-sm focus:outline-0 text-white p-2 placeholder:text-stone-500 disabled:cursor-not-allowed disabled:bg-stone-900/50"
       disabled={searchState === "waiting"}
-      autofocus
+      id="search-box"
       autocomplete="off"
       spellcheck="false"
       type="search"
@@ -42,7 +45,7 @@
     <div class="overflow-y-auto max-h-[50vh]" use:autoAnimate={{ duration: 100 }}>
       {#each results as result}
         <a
-          on:click={() => {
+          onclick={() => {
             dialog.close();
             if ($windowWidth < 640) {
               $sidebarExpanded = false;
@@ -62,6 +65,6 @@
       {/each}
     </div>
 
-    <button class="bg-stone-700 w-full rounded-sm p-2 mt-2 text-white" on:click={() => dialog.close()}>Close</button>
+    <button class="bg-stone-700 w-full rounded-sm p-2 mt-2 text-white" onclick={() => dialog.close()}>Close</button>
   </div>
 </dialog>

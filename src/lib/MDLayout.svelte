@@ -1,9 +1,15 @@
 <script lang="ts">
   import Seo from "sk-seo";
+  import type { Snippet } from "svelte";
 
-  export let title;
-  export let description;
-  export let tags = "";
+  type Props = {
+    title: string;
+    description: string;
+    tags: string;
+    children: Snippet
+  };
+
+  const { children, title, description, tags = "" }: Props = $props();
 
   let tagsArr = tags
     .split(",")
@@ -26,7 +32,7 @@
   ]} />
 
 <main class="md px-4 md:px-8 lg:px-16 prose-headings:text-stone-200">
-  <slot />
+  {@render children()}
   {#if tags}
     <div class="bg-stone-950/40 p-2 rounded-lg flex items-center space-x-3 my-10">
       <span class="uppercase text-sm text-zinc-500">Tags:</span>

@@ -1,4 +1,5 @@
 /* Admonition styles */
+@import "tailwindcss";
 
 .admonition {
   @apply w-fit min-w-[25%] border-l-4 p-3 my-2;

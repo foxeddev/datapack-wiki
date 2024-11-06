@@ -1,9 +1,9 @@
 <script lang="ts">
   import { parse } from "nbtify";
 
-  let value = "";
-  let valid = "unset";
-  let error = "";
+  let value = $state("");
+  let valid = $state("unset");
+  let error = $state("");
 
   function validate() {
     if (value.length === 0) {
@@ -27,7 +27,7 @@
   spellcheck="false"
   autocomplete="off"
   bind:value
-  on:input={validate}
+  oninput={validate}
   class="w-full h-full rounded-md bg-stone-800 p-2 text-stone-200 placeholder-stone-500 resize-none outline-none ring-2 motion-safe:transition-colors {valid !==
   'unset'
     ? valid === 'valid'

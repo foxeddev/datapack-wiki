@@ -5,41 +5,40 @@
 
   import IconSearch from "~icons/tabler/search";
 
+  import GuidePages from "$lib/sidebar/tabs/Guides.svelte";
+  import WikiPages from "$lib/sidebar/tabs/WikiPages.svelte";
   import { sidebarExpanded } from "$lib/stores";
-  import WikiPages from "$lib/sidebar-pages/WikiPages.svelte";
-  import GuidePages from "$lib/sidebar-pages/Guides.svelte";
-  import { onMount } from "svelte";
 
-  import IconCollapse from "~icons/tabler/chevron-left";
   import IconCredits from "~icons/tabler/address-book";
   import IconResources from "~icons/tabler/book";
-  import IconWiki from "~icons/tabler/globe";
   import IconGuides from "~icons/tabler/book-2";
+  import IconCollapse from "~icons/tabler/chevron-left";
+  import IconWiki from "~icons/tabler/globe";
 
   import SidebarPage from "./navigation/SidebarPage.svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
 
-  let results: Page[] = [];
+  let results: Page[] = $state([]);
 
-  let page = "wiki";
+  let page = $state("wiki");
 
-  onMount(async () => {
+  $effect(() => {
     page = sessionStorage.getItem("page") || "wiki";
   });
 
-  let dialog: SidebarSearchDialog;
+  let dialog: any;
 </script>
 
 <aside
   class="{$sidebarExpanded
     ? 'fixed w-full sm:w-80'
     : 'w-fit hidden sm:flex'} flex flex-col bg-stone-800 items-center h-[calc(100dvh-3rem)] sm:sticky top-12 z-50 border-r border-stone-700">
-  <div class="flex flex-col p-2 pt-1 flex-grow overflow-y-auto w-full">
+  <div class="flex flex-col p-2 pt-1 grow overflow-y-auto w-full">
     {#if $sidebarExpanded}
       <button
         aria-label="Open Search Modal"
         class="bg-black/45 px-2 py-1 rounded-lg flex items-center gap-2 mt-1 mb-2"
-        on:click={async () => await dialog.showModal()}>
+        onclick={async () => await dialog.showModal()}>
         <IconSearch />
         <span class="py-1 text-stone-500">Search...</span>
       </button>
@@ -48,7 +47,7 @@
           class="{page == 'wiki'
             ? 'bg-stone-700'
             : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center gap-1"
-          on:click={() => {
+          onclick={() => {
             page = "wiki";
             sessionStorage.setItem("page", "wiki");
           }}>
@@ -58,7 +57,7 @@
           class="{page == 'guides'
             ? 'bg-stone-700'
             : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center gap-1"
-          on:click={() => {
+          onclick={() => {
             page = "guides";
             sessionStorage.setItem("page", "guides");
           }}>
@@ -67,7 +66,7 @@
       </div>
     {/if}
     <div class="flex flex-col h-full">
-      <div class="flex-grow">
+      <div class="grow">
         {#if page == "wiki"}
           <WikiPages />
         {:else}
@@ -83,12 +82,12 @@
   </div>
   <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
     {#if $sidebarExpanded}
-      <span class="flex-grow flex flex-col items-center">{INFOTEXT}</span>
+      <span class="grow flex flex-col items-center">{INFOTEXT}</span>
     {/if}
     <button
       aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
       class="text-stone-200 text-lg motion-safe:transition-all {$sidebarExpanded ? 'rotate-0' : 'rotate-180'}"
-      on:click={() => ($sidebarExpanded = !$sidebarExpanded)}>
+      onclick={() => ($sidebarExpanded = !$sidebarExpanded)}>
       <IconCollapse />
     </button>
   </div>

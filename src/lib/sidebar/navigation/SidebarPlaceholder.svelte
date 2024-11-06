@@ -1,13 +1,18 @@
 <script lang="ts">
   import { sidebarExpanded } from "$lib/stores";
-  import type { ComponentType, SvelteComponent } from "svelte";
 
-  export let label: string;
-  export let icon: ComponentType<SvelteComponent>;
+  type Props = {
+    label: string;
+    icon: any;
+  };
+
+  const { label, icon }: Props = $props();
+
+  const Icon = $derived(icon);
 </script>
 
 <div class="cursor-default py-1 rounded-lg flex gap-2 pl-1 items-center text-stone-500">
-  <svelte:component this={icon} />
+  <Icon />
 
   {#if $sidebarExpanded}
     <span>{label}</span>
