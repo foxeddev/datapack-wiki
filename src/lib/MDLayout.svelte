@@ -6,7 +6,7 @@
     title: string;
     description: string;
     tags: string;
-    children: Snippet
+    children: Snippet;
   };
 
   const { children, title, description, tags = "" }: Props = $props();

@@ -13,10 +13,9 @@
 
 @theme {
   --font-family-lexend: "Lexend", sans-serif;
-  
+
   --color-dph-orange: oklch(69.27% 0.2042 40.82);
 }
-
 
 ::-webkit-scrollbar {
   width: 4px;

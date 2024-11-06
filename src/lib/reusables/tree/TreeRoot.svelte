@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
 
-
   import IconThing from "~icons/tabler/CaretDown";
   interface Props {
     label?: string;

@@ -11,7 +11,7 @@
         <span>JOIN OUR DISCORD SERVER</span>
       </div>
       <p>
-        If you need any more help with your datapacks, don't hesitate to join the 
+        If you need any more help with your datapacks, don't hesitate to join the
         <span class="text-orange-400">Datapack Hub</span> Discord server!
         <br />
         Join us now!
