@@ -7,7 +7,7 @@ description: "Recipes are files which define crafting recipes in-game."
 import {Version} from '$lib/reusables';
 </script>
 
-<Version> This page is up to date and validated for the Minecraft version: 1.21</Version>
+<Version>This page is up to date and validated for the Minecraft version: 1.21.3</Version>
 
 # Recipes
 
@@ -55,7 +55,7 @@ These fields are present in `blasting`, `campfire_cooking`, `smelting` and `smok
 
 | Field         | Format                                     | Default value                          | Description                                         |
 | ------------- | ------------------------------------------ | -------------------------------------- | --------------------------------------------------- |
-| `ingredient`  | An [ingredient choice](#ingredient-choice) | _required_                             | The ingredient which gets cooked                    |
+| `ingredient`  | An [ingredient](#ingredient) | _required_                             | The ingredient which gets cooked                    |
 | `result`      | A [single result](#single-result)          | _required_                             | The result of cooking the ingredient                |
 | `experience`  | A number                                   | `0`                                    | The amount of experience gained from this recipe    |
 | `cookingtime` | An integer                                 | `100`, or `200` for `smelting` recipes | The number of ticks it takes to cook the ingredient |
@@ -72,7 +72,7 @@ These fields are present in shaped crafting recipes.
 | Field     | Format                              | Description                                                                                                                                                                                                                              |
 | --------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `pattern` | An array of strings                 | The pattern for the crafting recipe. Represents rows of the crafting grid. Each row contains up to three characters, each representing an ingredient, spaces can be used to indicate an empty slot. All rows must be of the same length. |
-| `key`     | An object                           | A map of characters to ingredients. Determines what the characters in `pattern` represent. Each key is the character which represents it, and the value being an [ingredient choice](#ingredient-choice).                                |
+| `key`     | An object                           | A map of characters to ingredients. Determines what the characters in `pattern` represent. Each key is the character which represents it, and the value being an [ingredient](#ingredient).                                |
 | `result`  | A [counted result](#counted-result) | The result of the recipe                                                                                                                                                                                                                 |
 
 :::info 
@@ -92,7 +92,7 @@ These fields are present in shapeless crafting recipes.
 
 | Field         | Format                                               | Description                                |
 | ------------- | ---------------------------------------------------- | ------------------------------------------ |
-| `ingredients` | An array of [ingredient choices](#ingredient-choice) | The ingredients needed to craft the recipe |
+| `ingredients` | An array of [ingredients](#ingredient) | The ingredients needed to craft the recipe |
 | `result`      | A [counted result](#counted-result)                  | The result of the recipe                   |
 
 ### `crafting_special_*` fields
@@ -123,9 +123,9 @@ These fields are present in `smithing_transform` and `smithing_trim` recipes.
 
 | Field      | Format                                    | Description                                                            |
 | ---------- | ----------------------------------------- | ---------------------------------------------------------------------- |
-| `template` | A [single ingredient](#single-ingredient) | The item to be used as the template in the recipe                      |
-| `base`     | A [single ingredient](#single-ingredient) | The base item to be upgraded or trimmed                                |
-| `addition` | A [single ingredient](#single-ingredient) | The item used to upgrade or trim the base                              |
+| `template` | An [ingredient](#ingredient) | The item to be used as the template in the recipe                      |
+| `base`     | An [ingredient](#ingredient) | The base item to be upgraded or trimmed                                |
+| `addition` | An [ingredient](#ingredient) | The item used to upgrade or trim the base                              |
 | `result`   | A [counted result](#counted-result)       | The result of the recipe, only present in `smithing_transform` recipes |
 
 ### `stonecutting`
@@ -134,33 +134,22 @@ These fields are present in stonecutting recipes.
 
 | Field        | Format                                    | Description                   |
 | ------------ | ----------------------------------------- | ----------------------------- |
-| `ingredient` | A [single ingredient](#single-ingredient) | The ingredient for the recipe |
+| `ingredient` | An [ingredient](#ingredient)              | The ingredient for the recipe |
 | `result`     | A [counted result](#counted-result)       | The result of the recipe      |
 
 ### Common data structures
 
 This is a list of common data structures used in different recipe formats.
 
-#### Single ingredient
+#### Ingredient
 
-Represents an ingredient in a recipe. An object containing:
-
-| Field             | Format   | Description                                                               |
-| ----------------- | -------- | ------------------------------------------------------------------------- |
-| `item` (optional) | A string | The id of the ingredient                                                  |
-| `tag` (optional)  | A string | The id of an [item tag](/wiki/files/tags) containing possible ingredients |
+Represents possible ingredients for a recipe. Can be an item's [resource location](/wiki/commands/resource-locations), the hash-prefixed resource location of an item tag (e.g. `#minecraft:logs`), or an array of valid item resource locations.
 
 :::info 
 Unfortunately, components cannot be detected for recipe ingredients 
 :::
 
-#### Ingredient choice
-
-Represents possible ingredients for a recipe. A [single ingredient](#single-ingredient), or array of single
-ingredients.  
-If it is an array, all entries are valid ingredients for the recipe.
-
-### Single result
+#### Single result
 
 Represents a single item, the result of a recipe. An object containing:
 
@@ -169,7 +158,7 @@ Represents a single item, the result of a recipe. An object containing:
 | `id`                    | A string  | The id of the resulting item                                                                      |
 | `components` (optional) | An object | A map of [component](/wiki/commands/item_components) names to values, added to the resulting item |
 
-### Counted result
+#### Counted result
 
 Represents the result of a recipe. A [single result](#single-result), with an optional `count` field, an integer
 specifying the count of the resulting item. If not included, the count defaults to `1`.
@@ -195,12 +184,8 @@ This file should be placed in the `data/<namespace>/recipe` folder.
     "___"
   ],
   "key": {
-    "_": {
-      "tag": "minecraft:beds"
-    },
-    "X": {
-      "item": "minecraft:stone"
-    }
+    "_": "#minecraft:beds",
+    "X": "minecraft:stone"
   },
   "result": {
     "id": "minecraft:bedrock"
