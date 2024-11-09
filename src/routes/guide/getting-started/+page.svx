@@ -10,7 +10,7 @@ tags: guide, beginner
 import { Version, Discord } from '$lib/reusables';
 </script>
 
-<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+<Version version="1.21"/>
 
 # Getting Started
 

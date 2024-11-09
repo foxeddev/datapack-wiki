@@ -6,7 +6,7 @@ title: All Commands List
 import {Version} from '$lib/reusables';
 </script>
 
-<Version>This page is validated and up to date with Minecraft Java: 1.21.3</Version>
+<Version version="1.21.3"/>
 
 # Syntax
 

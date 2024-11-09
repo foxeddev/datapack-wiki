@@ -7,7 +7,7 @@ description: "This guide will teach you how to generate random numbers using dat
 import {   Version, } from '$lib/reusables';
 </script>
 
-<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+<Version version="1.21"/>
 
 # Generating Random Numbers using Datapacks!
 

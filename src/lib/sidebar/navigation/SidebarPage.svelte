@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded, windowWidth } from "$lib/stores";
+  import { sidebarExpanded, windowWidth } from "$lib/stores.svelte";
 
   type Props = {
     icon: any;

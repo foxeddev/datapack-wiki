@@ -7,7 +7,7 @@
 
   import GuidePages from "$lib/sidebar/tabs/Guides.svelte";
   import WikiPages from "$lib/sidebar/tabs/WikiPages.svelte";
-  import { sidebarExpanded } from "$lib/stores";
+  import { sidebarExpanded } from "$lib/stores.svelte";
 
   import IconCredits from "~icons/tabler/address-book";
   import IconResources from "~icons/tabler/book";

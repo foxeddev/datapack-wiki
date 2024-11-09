@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded, windowWidth } from "$lib/stores";
+  import { sidebarExpanded, windowWidth } from "$lib/stores.svelte";
   import autoAnimate from "@formkit/auto-animate";
   import { createSearchIndex, search } from "../search";
 
