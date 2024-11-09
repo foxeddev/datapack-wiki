@@ -1,28 +1,10 @@
 <script lang="ts">
   import { latestMCData } from "$lib/stores.svelte";
-  import { onMount } from "svelte";
   import IconTick from "~icons/tabler/rosette-discount-check";
   import IconPencil from "~icons/tabler/pencil";
   interface Props {
     version: string;
   }
-
-  type PackFormatEntry = {
-    data_pack_version: number;
-    stable: boolean;
-    id: string;
-  };
-  const url = "https://raw.githubusercontent.com/misode/mcmeta/summary/versions/data.min.json";
-
-  onMount(async () => {
-    if (!latestMCData.changed) {
-      const data: PackFormatEntry[] = await fetch(url).then(r => r.json());
-      const filtered = data.filter(v => v.stable);
-      latestMCData.packFormat = filtered[0].data_pack_version;
-      latestMCData.gameVersion = filtered[0].id;
-      latestMCData.changed = true;
-    }
-  });
 
   let { version }: Props = $props();
 </script>

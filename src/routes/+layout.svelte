@@ -8,24 +8,19 @@
 
   import IconBeta from "~icons/tabler/flask-2-filled";
   import type { Snippet } from "svelte";
+  import type { PageData } from "./$types";
+  import { latestMCData } from "$lib/stores.svelte";
   interface Props {
     children: Snippet;
+    data: PageData
   }
 
-  let { children }: Props = $props();
+  let { children, data }: Props = $props();
+
+  latestMCData.packFormat = data.packFormat || 0;
+  latestMCData.gameVersion = data.gameVersion || "1.0";
 
   let betaWarning: HTMLDivElement | null = $state(null);
-
-  // onNavigate(async (navigation) => {
-  //   if (!document.startViewTransition) return;
-
-  //   return new Promise((resolve) => {
-  //     document.startViewTransition(async () => {
-  //       resolve();
-  //       await navigation.complete;
-  //     });
-  // });
-  // })
 </script>
 
 <div class="font-lexend h-full min-h-screen flex flex-col text-stone-200">

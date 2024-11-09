@@ -14,6 +14,7 @@ export const windowWidth = readable(1920, set => {
   }
 });
 
+// These are just default values, they will be updated automatically on the server
 export let latestMCData = $state({
   packFormat: 57,
   gameVersion: "1.21.1",

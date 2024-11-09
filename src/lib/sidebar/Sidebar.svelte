@@ -1,25 +1,23 @@
 <script lang="ts">
   // ! IMPORTANT: If you want to add pages or categories, this is not the place to do it!
-
-  const INFOTEXT = "pack_format: 48 (1.21)";
-
+  
   import IconSearch from "~icons/tabler/search";
-
+  
   import GuidePages from "$lib/sidebar/tabs/Guides.svelte";
   import WikiPages from "$lib/sidebar/tabs/WikiPages.svelte";
-  import { sidebarExpanded } from "$lib/stores.svelte";
-
+  import { latestMCData, sidebarExpanded } from "$lib/stores.svelte";
+  
   import IconCredits from "~icons/tabler/address-book";
   import IconResources from "~icons/tabler/book";
   import IconGuides from "~icons/tabler/book-2";
   import IconCollapse from "~icons/tabler/chevron-left";
   import IconWiki from "~icons/tabler/globe";
-
+  
   import SidebarPage from "./navigation/SidebarPage.svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
-
+  
   let results: Page[] = $state([]);
-
+  
   let page = $state("wiki");
 
   $effect(() => {
@@ -82,7 +80,7 @@
   </div>
   <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
     {#if $sidebarExpanded}
-      <span class="grow flex flex-col items-center">{INFOTEXT}</span>
+      <span class="grow flex flex-col items-center">pack_format: {latestMCData.packFormat} ({latestMCData.gameVersion})</span>
     {/if}
     <button
       aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
