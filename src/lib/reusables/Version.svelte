@@ -23,7 +23,7 @@
       {#if version == latestMCData.gameVersion}
         This page is validated and up to date with Minecraft Java: {version}
       {:else}
-        This page was last updated with information for Minecraft {version}, and may not be accurate for newer versions.
+        This page was last updated with information for Minecraft {version}, and may be missing new features and changes.
       {/if}
     </span>
   </div>
