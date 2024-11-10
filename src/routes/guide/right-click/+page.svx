@@ -8,14 +8,14 @@ description:
 import {   Version, } from '$lib/reusables';
 </script>
 
-<Version version="1.21"/>
+<Version version="1.21.3"/>
 
 # Right Click Detection Summary
 
 If you already know which right click detection technique you are going to use, you can get more information about them on their dedicated pages:
 
 - Using a [Carrot on a stick/WFOAS](/guide/right-click/coas)
-- Using a [Food Component](/guide/right-click/food_component)
+- Using a [Consumable Component](/guide/right-click/consumable_component)
 - Using an [Eye of Ender](/guide/right-click/eoe)
 - Clicking an [Interaction Entity](/guide/right-click/interaction)
 
@@ -24,13 +24,13 @@ If you already know which right click detection technique you are going to use, 
 | Method             | Pros                                | Cons                                                                                | Difficulty to make | X clicks/second                                         | Player/Location                 |
 | ------------------ | ----------------------------------- | ----------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------- | ------------------------------- | ----------------------------- |
 | COAS/WFOAS         |                                     | Attracks pigs/striders when held, requires a command that runs every tick           | Easy               | Detects up to 5 clicks/second when holding right click  | Bound to player, not location   |
-| Food Component     | Can detect clicks from any item,    | Only works 1.20.5+, slows player down when holding right click                      | Medium             | Detects up to 20 clicks/second when holding right click | Bound to player, not location   | Bound to player, not location |
+| Consumable Component     | Can detect clicks from any item,    | Only works 1.20.5+, slows player down when holding right click                      | Medium             | Detects up to 20 clicks/second when holding right click | Bound to player, not location   | Bound to player, not location |
 | Eye Of Ender       |                                     | Slows player down when holding right click, only works in worlds without stronghold | Medium             | Detects up to 20 clicks/second when holding right click | Bound to player, not location   |
 | Interaction Entity | Also detects left clicks, an entity | Players can't break/hit/place through, requires an entity                           | Medium             | detects up to 5 clicks/second when holding right click  | Bound to location, not a player |
 
 **Additional Info**
 
 - COAS/WFOAS - This method works by using an `item.used` scoreboard objective which triggers when using either of the two items and then running commands as/at players with a score of 1 or higher.
-- Food Component - This method works by using an item with a very long eating time which will never finish, in combination with an advancement to detect when you begin eating it.
+- Consumable Component - This method works by using an item with a very long consumption time which will never finish, in combination with an advancement to detect when you begin eating it.
 - Eye Of Ender - This method works by using an advancement to detect whenever a player uses an eye of ender and then executing code as/at them.
 - Interaction Entity - This method works by using an advancement to check whether a player interacted with an interaction entity and then executing code.

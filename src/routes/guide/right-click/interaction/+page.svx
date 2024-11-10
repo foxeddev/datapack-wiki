@@ -8,7 +8,7 @@ description:
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21"/>
+<Version version="1.21.3"/>
 
 # Pros and cons
 

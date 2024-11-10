@@ -1,5 +1,5 @@
 ---
-title: Using the Food Component for RC detection
+title: Using the Consumable Component for RC detection
 description:
   "This is one of the best right click detection methods, because you can bind it to ANY item. So why not learn how to
   use it?"
@@ -9,7 +9,7 @@ description:
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21"/>
+<Version version="1.21.3"/>
 
 # Pros and cons
 
@@ -31,9 +31,9 @@ import {Version} from '$lib/reusables';
 - Detects up to 20 clicks/second when holding right click
 - Bound to the player, not a specific location
 
-# Using the Food Component for Right Click Detection
+# Using the Consumable Component for Right Click Detection
 
-Using the `food` component for right-click detection is one of the most flexible methods, simply because you can put it
+Using the `consumable` component for right-click detection is one of the most flexible methods, simply because you can put it
 on (almost) ANY item. This method is not limited to a single item, like using a coas. You can use any item you want.
 
 This is just a guide, so you'll need to change a few things for your actual datapack:
@@ -49,9 +49,9 @@ placing a block), it will keep that.
 
 The first step will be creating the advancement that detects when a player is "using" (in this case eating) the item,
 the name can be whatever you want ending in `json`, but for the purpose of this tutorial we will call it
-`click_food.json`. Then put this file into `data/<namespace>/advancement/`
+`click_consumable.json`. Then put this file into `data/<namespace>/advancement/`
 
-```json:click_food.json
+```json:click_consumable.json
 {
   "criteria": {
     "requirement": {
@@ -84,16 +84,22 @@ the item can be clicked again.
 
 ```mcfunction:rightclick_run.mcfunction
 # Revoke the advancement from the player so it can be used again
-advancement revoke @s only <namespace>:click_food
+advancement revoke @s only <namespace>:click_consumable
 # Announce the use of the item in chat, feel free to replace this with whatever
 # your logic here...
-say I successfully used food component detection!
+say I successfully used consumable component detection!
 ```
 
 ## See it in action!
 
-After `/reload`ing the datapack, we will now need to give ourselves the actual item with the custom food component. (You
+After `/reload`ing the datapack, we will now need to give ourselves the actual item with the custom consumable component. (You
 can run this in the chat to test it, or put it in a function to trigger when you want):
+
+```mcfunction
+give @s minecraft:stick[minecraft:consumable={consume_seconds:999999999}, minecraft:custom_data={<custom_data>:true}]
+```
+
+**For versions below 1.21.2, use this instead:**
 
 ```mcfunction
 give @s stick[minecraft:food={nutrition:0, saturation:0, can_always_eat:true, eat_seconds:999999999}, minecraft:custom_data={<custom_data>:true}]
@@ -101,7 +107,7 @@ give @s stick[minecraft:food={nutrition:0, saturation:0, can_always_eat:true, ea
 
 ## How it works
 
-We've added a food component to our custom stick item, allowing it to be consumed like food. The player won't actually
-eat it, since `eat_seconds` is set to `999999999`, so it would take them over 30 years. The food component lets the
+We've added a consumable component to our custom stick item, allowing it to be consumed like food. The player won't actually
+eat it, since `consume_seconds` is set to `999999999`, so it would take them over 30 years. The consumable component lets the
 player try to eat it, which can be detected using an advancement. That advancement runs a function which removes the
 advancement so it can be triggered again next tick, and runs whatever code you want to the item to trigger.

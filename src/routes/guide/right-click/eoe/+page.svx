@@ -9,7 +9,7 @@ description:
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21"/>
+<Version version="1.21.3"/>
 
 # Pros and cons
 
@@ -59,12 +59,13 @@ file, we are going to call it `used_eye_of_ender.json` for the rest of he guide.
           ],
           "predicates": {
             "minecraft:custom_data": {"<custom_data>": true}
+          }
         }
       }
+    },
+    "rewards": {
+      "function": "<namespace>:rightclick_run"
     }
-  },
-  "rewards": {
-    "function": "<namespace>:rightclick_run"
   }
 }
 ```

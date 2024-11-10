@@ -7,7 +7,7 @@ description: "Using a carrot on a stick for right click detection is an easy way
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21"/>
+<Version version="1.21.3"/>
 
 # Detecting right clicks: carrot on a stick
 
