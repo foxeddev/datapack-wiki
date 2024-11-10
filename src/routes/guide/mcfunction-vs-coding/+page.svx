@@ -48,6 +48,8 @@ function dph:cool_function {Potato:true}
 
 # Usage with entity NBT:
 execute as @p run dph:cool_function with entity @s SelectedItem
+
+# this is in the dph:cool_function function
 $say The player running this function is holding $(count) items with ID $(id)!
 
 # Storages
