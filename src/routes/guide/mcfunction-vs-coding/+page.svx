@@ -1,0 +1,66 @@
+---
+title: MCFunction vs Coding
+description: "Learn the differences between using MCFunctions and traditional coding."
+---
+
+# MCFunction vs Traditional Coding
+
+Many people will join the datapack community with experience with traditional programming languages. While this can be
+helpful for understanding topics, there are a lot of differences between the two, many of which can seem confusing when
+you are used to a free-er language. In this guide we touch on some common questions and problems people run into when
+trying to apply traditional coding logic to MCFunction.
+
+## Q: How do you do variables in MCFunction?
+
+MCFunction isn't like most programming languages, MCFunction uses scoreboards, storages and macros (1.20.5+) as their variables.
+
+**Scoreboards** are like a table. They store a name and a value which you can then retrieve and modify later. You can use both entity names/UUIDs and "fake player" names (names not associated with any player), allowing for easy combination of variables and entity scores. Scoreboards can only hold 32-bit integers and other data types (such as floats, doubles or strings) can not be stored this way.
+
+[Storages](/wiki/nbt/storages) are a way of storing [NBT data](/wiki/nbt/nbt) without attaching it to an entity or block. Storages are stored globally per world and unlike scoreboards, don’t need to be initialized beforehand. Unlike entity and block NBT, storages have no fixed structure, and can contain whichever arbitrary keys are added to it.
+
+**Macros** are like fancy string templating, when a function is supplied with macros, it will go through the function file
+and replace the macro with its value (block, entity, storage). Interestingly, this also works function-wide, meaning you could use them as mock arguments.
+
+:::warning
+The performance impact with macros can be slow in some cases, with estimates showing that a macro is equivalent to 5-10 commands,
+and in a performance tight situation, it may be significantly slower than other methods. Be careful with how you use them to avoid performance problems!
+:::
+
+Below are some examples of their usage:
+
+```mcfunction
+# Scoreboards
+# creates a new table called storage
+# (dummy means it does not track any statistic)
+scoreboard objectives add storage dummy
+
+# adds a fake player named steps to storage 
+scoreboard players add steps storage
+
+# sets the value of a player to 42
+scoreboard players set Cbble_ temp 42
+
+# Macros
+# Run cool function with a macro
+function dph:cool_function with block ~ ~ ~ <nbt_path>
+function dph:cool_function with entity @e[type=minecraft:squid,limit=1,sort=nearest] <nbt_path>
+function dph:cool_function {Potato:true}
+
+# Usage with entity NBT:
+execute as @p run dph:cool_function with entity @s SelectedItem
+$say The player running this function is holding $(count) items with ID $(id)!
+
+# Storages
+data merge storage example:main {number: 1, message: "Hello!"}
+data modify storage example:main other_number set from storage example:main number
+data modify storage compound.array append value 42
+```
+
+(Get more info on storages on [the wiki page](/wiki/nbt/storages))
+
+## Q: How do you loop in MCFunction?
+
+Looping in most cases is done with 1 of 2 methods, depending on the use case:
+
+1. **Recursive Function Calls:** This is when a function calls itself which will loop until some end condition is met, or forever, if one is never met.
+2. **Tick Functions** (`#minecraft:tick`): This is a special tag you can declare that will run every function declared in it every tick, it is best practice to only have one of these function in a datapack at a time.
