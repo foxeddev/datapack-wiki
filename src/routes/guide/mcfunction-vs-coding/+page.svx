@@ -22,7 +22,7 @@ types (such as floats, doubles or strings) can not be stored this way.
 world and unlike scoreboards, don’t need to be initialized beforehand. Unlike entity and block NBT, storages have no fixed structure, and can contain whichever 
 arbitrary keys are added to it.
 
-**Macros** are like fancy string templating, when a function is supplied with macros, it will go through the function file
+[Macros](/wiki/files/functions#macro-functions) are like fancy string templating, when a function is supplied with macros, it will go through the function file
 and replace the macro with its value (block, entity, storage). Interestingly, this also works function-wide, meaning you could use them as mock arguments.
 
 :::warning
