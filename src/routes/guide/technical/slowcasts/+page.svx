@@ -22,7 +22,7 @@ A slowcast solves this problem by teleporting multiple times within a single tic
 it hits something on its way.
 
 :::info
-This tutorial uses a thing called a __recursive function__. A recursive function is a function that runs
+This tutorial uses a thing called a **_recursive function_**. A recursive function is a function that runs
 itself over and over again.
 :::
 
