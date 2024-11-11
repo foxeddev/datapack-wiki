@@ -7,7 +7,7 @@ description: "Learn the differences between using MCFunctions and traditional co
 
 Many people will join the datapack community with experience with traditional programming languages. While this can be
 helpful for understanding topics, there are a lot of differences between the two, many of which can seem confusing when
-you are used to a free-er language. In this guide we touch on some common questions and problems people run into when
+you are used to a more traditional programming language. In this guide we touch on some common questions and problems people run into when
 trying to apply traditional coding logic to MCFunction.
 
 ## Q: How do you do variables in MCFunction?
@@ -38,8 +38,8 @@ Below are some examples of their usage:
 # (dummy means it does not track any statistic)
 scoreboard objectives add storage dummy
 
-# adds a fake player named steps to storage 
-scoreboard players add steps storage
+# adds a fake player named "$steps" to storage (using prefix "$" to avoid collisions with real players, good practice)
+scoreboard players set $steps storage 41
 
 # sets the value of a player to 42
 scoreboard players set Cbble_ storage 42
