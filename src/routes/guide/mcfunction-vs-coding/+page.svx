@@ -12,7 +12,7 @@ trying to apply traditional coding logic to MCFunction.
 
 ## Q: How do you do variables in MCFunction?
 
-MCFunction isn't like most programming languages, MCFunction uses scoreboards, storages and macros (1.20.5+) as their variables.
+MCFunction isn't like most programming languages, MCFunction uses scoreboards, storages and macros (1.20.2+) as their variables.
 
 **Scoreboards** are like a table. They store a name and a value which you can then retrieve and modify later. You can use both entity names/UUIDs and "fake player" 
 names (names not associated with any player), allowing for easy combination of variables and entity scores. Scoreboards can only hold 32-bit integers and other data 
