@@ -46,7 +46,7 @@ scoreboard players set Cbble_ temp 42
 
 # Macros
 # Run cool function with a macro
-function dph:cool_function with block ~ ~ ~ <nbt_path>
+function dph:cool_function with block ~ ~ ~ Items
 function dph:cool_function with entity @e[type=minecraft:squid,limit=1,sort=nearest] <nbt_path>
 function dph:cool_function {Potato:true}
 
