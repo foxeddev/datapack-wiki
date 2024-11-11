@@ -59,7 +59,7 @@ $say The player running this function is holding $(count) items with ID $(id)!
 # Storages
 data merge storage example:main {number: 1, message: "Hello!"}
 data modify storage example:main other_number set from storage example:main number
-data modify storage compound.array append value 42
+data modify storage example:main compound.array append value 42
 ```
 
 (Get more info on storages on [the wiki page](/wiki/nbt/storages))
