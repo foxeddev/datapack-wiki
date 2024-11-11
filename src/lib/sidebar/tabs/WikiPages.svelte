@@ -54,7 +54,6 @@
   <SidebarPlaceholder label="JSON Text" icon={IconBraces} />
   <SidebarPage label="Resource Locations" icon={IconResourceLocation} page="/wiki/commands/resource-locations" />
   <SidebarPlaceholder label="NBT Paths" icon={IconNbtPath} />
-  <SidebarPlaceholder label="Namespaces" icon={IconSignature} />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
