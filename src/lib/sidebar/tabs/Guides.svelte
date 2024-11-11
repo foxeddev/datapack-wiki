@@ -31,8 +31,9 @@
 
 <SidebarPage label="Home" icon={IconHome} page="/" />
 <SidebarPage label="Getting Started" icon={IconPennant} page="/guide/getting-started" />
-<SidebarPage label="Installing datapacks" icon={IconDownload} page="/guide/installing-a-datapack" />
+<SidebarPage label="Installing Datapacks" icon={IconDownload} page="/guide/installing-a-datapack" />
 <SidebarPage label="Choosing a Server" icon={IconServer} page="/guide/choosing-a-server" />
+<SidebarPage label="MCFunction vs Code" icon={IconServer} page="/guide/mcfunction-vs-coding" />
 
 <SidebarHeading label="Advanced" />
 <SidebarCategory name="Adding new features" icon={IconNew}>
