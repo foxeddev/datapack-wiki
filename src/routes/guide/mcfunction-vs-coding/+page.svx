@@ -42,7 +42,7 @@ scoreboard objectives add storage dummy
 scoreboard players add steps storage
 
 # sets the value of a player to 42
-scoreboard players set Cbble_ temp 42
+scoreboard players set Cbble_ storage 42
 
 # Macros
 # Run cool function with a macro
