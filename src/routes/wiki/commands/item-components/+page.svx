@@ -1036,7 +1036,7 @@ Can change the item's tooltip style by specifing the direct path to your custom 
 **Example:** `/give @s conduit[tooltip_style="namespace:id"]`
 
 - Will give you a conduit with a custom tooltip `namespace:id`, which will reference the files
-  `<namespace>:tooltip/<id>_background` and `<namespace>:tooltip/<id>_frame` from a resourcepack.
+  `/assets/<namespace>/textures/gui/sprites/tooltip/<id>_background` and `/assets/<namespace>/textures/gui/sprites/tooltip/<id>_frame` from a resourcepack.
 
 ### `unbreakable`
 
