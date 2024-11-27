@@ -7,7 +7,7 @@
  */
 
 pre.shiki,
-pre.shiki > code {
+pre.shiki>code {
   font-family: "Fira Mono", Menlo, Monaco, "Lucida Console", "Courier New", Courier, monospace;
   line-height: 1.375;
   direction: ltr;
@@ -27,12 +27,13 @@ pre.shiki > code {
   word-break: break-all;
   word-wrap: break-word;
 }
-pre.shiki > code {
+
+pre.shiki>code {
   background: unset;
   color: unset;
 }
 
-pre.shiki > code {
+pre.shiki>code {
   font-size: 1em;
 }
 
@@ -44,12 +45,12 @@ pre.shiki {
 }
 
 /* Inline code */
-:not(pre.shiki) > code {
+:not(pre.shiki)>code {
   padding: 0.1em;
   border-radius: 0.3em;
 }
 
-pre > code.highlight {
+pre>code.highlight {
   outline: 0.4em solid red;
   outline-offset: 0.4em;
 }
