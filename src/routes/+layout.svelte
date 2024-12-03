@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "../styles/fonts.css"
   import "../styles/app.css";
 
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
