@@ -1,9 +1,10 @@
-@import "tailwindcss";
-
-@import "./admonitions.css";
 @import "./fonts.css";
 @import "./code_theme.css";
+
+@import "tailwindcss";
+
 @import "./md.css";
+@import "./admonitions.css";
 
 :root {
   scroll-behavior: smooth;
