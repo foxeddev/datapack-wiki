@@ -1,4 +1,6 @@
 <script lang="ts">
+  // NEVER MOVE THIS INTO APP.CSS IT WILL BREAK
+  // - cbble_
   import "../styles/fonts.css"
   import "../styles/app.css";
 
