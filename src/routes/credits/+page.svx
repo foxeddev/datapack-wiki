@@ -15,7 +15,7 @@ awesome contributors! You can contribute to this wiki on our GitHub - click the 
 These people run and develop the site, making any and all important decisions.
 
 - [Silabear](https://silabear.carrd.co)
-- Cobblestone
+- [Cobblestone](https://madefrom.rocks)
 - [Aandeel](https://aandeel.co.uk/)
 
 ### Editors

@@ -29,6 +29,7 @@
     "https://github.com/Datapack-Hub",
     "https://x.com/DatapackHub",
     "https://instagram.com/datapackhub",
+    "https://bsky.app/profile/datapackhub.bsky.social",
   ]} />
 
 <main class="md px-4 md:px-8 lg:px-16 prose-headings:text-stone-200">
