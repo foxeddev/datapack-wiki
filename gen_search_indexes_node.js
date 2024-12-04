@@ -2,8 +2,8 @@ import { createConsola } from "consola";
 import fg from "fast-glob";
 import matter from "gray-matter";
 import { readFile, writeFile } from "node:fs/promises";
-import { remark } from "remark";
 import { stripHtml } from "string-strip-html";
+import RemoveMarkdown from "remove-markdown";
 
 const log = createConsola({
   formatOptions: {

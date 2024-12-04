@@ -1,9 +1,8 @@
 import { file as defineFile, Glob, write } from "bun";
 import matter from "gray-matter";
-import stripMarkdown from "strip-markdown";
-import { remark } from "remark";
 import { stripHtml } from "string-strip-html";
 import { createConsola } from "consola";
+import RemoveMarkdown from "remove-markdown";
 
 const log = createConsola({
   formatOptions: {
