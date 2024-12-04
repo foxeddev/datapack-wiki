@@ -1,7 +1,7 @@
 <script lang="ts">
   // NEVER MOVE THIS INTO APP.CSS IT WILL BREAK
   // - cbble_
-  import "../styles/fonts.css"
+  import "../styles/fonts.css";
   import "../styles/app.css";
 
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
@@ -15,7 +15,7 @@
   import { latestMCData } from "$lib/stores.svelte";
   interface Props {
     children: Snippet;
-    data: PageData
+    data: PageData;
   }
 
   let { children, data }: Props = $props();

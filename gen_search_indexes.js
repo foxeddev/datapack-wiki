@@ -35,9 +35,8 @@ for await (const file of matchingFiles) {
 
   // add to posts
   const contentNoHtml = stripHtml(frontmatter.content).result;
-  const strippedMarkdown = await remark().use(stripMarkdown).process(
-    contentNoHtml,
-  );
+  const strippedMarkdown = RemoveMarkdown(contentNoHtml)
+
   const tags = frontmatter.data.tags || "";
 
   posts.push({
