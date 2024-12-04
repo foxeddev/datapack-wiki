@@ -8,7 +8,7 @@ description:
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21.3"/>
+<Version version="1.21.4"/>
 
 # Resource Locations
 A resource location is a kind of identified used in Minecraft to point to a certain piece of data, such as a function, item, or storage.

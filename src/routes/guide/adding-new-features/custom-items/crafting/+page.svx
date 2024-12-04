@@ -7,7 +7,7 @@ description: "Learn how to make custom crafting recipes for custom items in Mine
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21"/>
+<Version version="1.21.4"/>
 
 # Creating Recipes for your Custom Items
 

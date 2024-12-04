@@ -8,7 +8,7 @@ tags: beginner, guide, custom_items, item_components
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21.3"/>
+<Version version="1.21"/>
 
 # Creating Custom Items
 In this guide, we will go over the basics explaining how custom items work, as well as how to make your own using item components. This guide will not go over how to give your custom items a texture or model.
