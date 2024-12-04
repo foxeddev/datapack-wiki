@@ -7,12 +7,31 @@ description: "A list of breaking changes to datapacks."
 import { Version } from '$lib/reusables';
 </script>
 
-<Version version="1.21.3"/>
+<Version version="1.21.4"/>
 
 # List of breaking changes
 
 This is list of all breaking changes to datapacks (excluding resource packs). Special thanks to Misode's Technical
 Changelog for the source of many of these.
+
+## 1.21.4
+**Item Components**
+- Field `model` in `minecraft:equippable` component has been renamed to `asset_id`.
+- The `minecraft:dyed` component now tint's based on the model, not item ID.
+- The `minecraft:custom_model_data` component has new fields `floats`, `flags`, `strings`, `colors`.
+- Item blocks with `minecraft:block_entity_data` component will now set block entity data only if id tag matches type of placed block entity
+
+**Renames**
+- The `TNTFuse` field of TNT Minecarts has been renamed to `fuse`
+- Changed some Furnace, Smoker and Blast Furnace data. From camelCase to snake_case.
+   * Renamed `CookTime` to `cooking_time_spent`
+   * Renamed `CookTimeTotal` to `cooking_total_time`
+   * Renamed `BurnTime` to `lit_time_remaining`
+
+**Other**
+- Removed `#tall_flowers` block tag. With that the `#flowers` and `#tall_flowers` item tags were also removed.
+- The `trail` particle has a new required field: `duration` - Indicates, in ticks, for how long the particles should travel to its destination.
+- 🎨 The item model resource pack format got completely changed, now allowing for tinting, layered, conditional, and much more!
 
 ## 1.21.2
 **Item Components**
