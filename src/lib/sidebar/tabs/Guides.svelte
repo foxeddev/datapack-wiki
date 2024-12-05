@@ -9,7 +9,7 @@
   // import Icon<whatever name> from "~icons/tabler/<icon ID>"
   import IconHome from "~icons/tabler/home";
   import IconPennant from "~icons/tabler/pennant";
-  import IconNew from "~icons/tabler/test-pipe-2";
+  import IconNew from "~icons/tabler/flask-2-filled";
   import IconMusic from "~icons/tabler/music";
   import IconBug from "~icons/tabler/bug";
   import IconDownload from "~icons/tabler/download";
