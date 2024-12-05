@@ -12,7 +12,7 @@
   import IconNew from "~icons/tabler/test-pipe-2";
   import IconMusic from "~icons/tabler/music";
   import IconBug from "~icons/tabler/bug";
-  import IconDownload from "~icons/tabler/zip";
+  import IconDownload from "~icons/tabler/download";
   import IconArrow from "~icons/tabler/arrow-down-left-circle";
   import IconBrackets from "~icons/tabler/code";
   import IconMouse from "~icons/tabler/mouse";
