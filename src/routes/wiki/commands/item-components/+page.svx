@@ -6,7 +6,7 @@ title: Item Components
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21.3"/>
+<Version version="1.21.4"/>
 
 # Item Components
 
@@ -308,17 +308,19 @@ you can later check to see if it really is your custom item the player is holdin
 
 ### `custom_model_data`
 
-Used to specify the custom model data of the item. Used in conjunction with a resourcepack, where you can specify the
-`"custom_model_data"` in the overrides section of item models.
+Used to specify the custom model data of the item. Used in conjunction with a resourcepack, where they can now specify different parts of your [item model definition](https://minecraft.wiki/w/Items_model_definition).
 
 **Fields:**
 
-- `minecraft:custom_model_data` - The integer value used in conjunction with the `"custom_model_data"`field in the
-  overrides section of item models.
+- `minecraft:custom_model_data` - Can change how an item renders based on its use in the [item model definition](https://minecraft.wiki/w/Items_model_definition)
+  - `floats` - A list of floats (1.64)
+  - `flags` - A list of booleans (true/false)
+  - `strings` - A list of strings ("hello world")
+  - `colors` - A list of RGB values.
 
-**Example:** `/give @s apple[custom_model_data=6091]`
+**Example:** `/give @s apple[custom_model_data={floats:[86,2.2],flags:[false,1b],strings:["hi world","string"],colors:[I;16711680,8906751]}]`
 
-- Gives you an apple with the custom model data of `6091`.
+- Gives you an apple with some 
 
 ### `custom_name`
 
@@ -399,9 +401,7 @@ Used by the debug stick item to store the selected block state properties.
 
 ### `dyed_color`
 
-Specifies the color of the current leather armor piece. This is very useful in combination with a resourcepack, because
-if you allow tinting on your custom model applied any leather item, then you can color your specified part of the model
-in any color you selet in this component.
+Specifies the color of the current leather armor piece. Tint is based on the model, not item ID.
 
 **Fields:**
 
@@ -476,7 +476,7 @@ This component lets the item be equipped into a specified slot with a specified 
     will play.
     - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
     - `range` - An optional fixed range of the sound.
-  - `model` - An optional `namespace:id` of the equipment model to use when equipped.
+  - `asset_id` - An optional `namespace:id` of the equipment model to use when equipped.
   - `allowed_entities` - An optional field which controls the entities that can equip this armor piece. Can either be an
     Entity ID an Entity Tag, or list of Entity IDs, but never a list of Entity Tags.
   - `dispensable` - A boolean which defaults to `true`, defines whether the item can be equipped throught a dispenser.
