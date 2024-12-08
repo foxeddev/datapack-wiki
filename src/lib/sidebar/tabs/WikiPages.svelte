@@ -32,7 +32,6 @@
   import IconNumbers from "~icons/tabler/123";
   import IconResourceLocation from "~icons/tabler/abc";
   import IconNbtPath from "~icons/tabler/code";
-  import IconSignature from "~icons/tabler/signature";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->

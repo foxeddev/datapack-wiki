@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded, windowWidth } from "$lib/stores.svelte";
+  import { windowInfo } from "$lib/stores.svelte";
   import autoAnimate from "@formkit/auto-animate";
   import { createSearchIndex, search } from "../search";
 
@@ -47,8 +47,8 @@
         <a
           onclick={() => {
             dialog.close();
-            if ($windowWidth < 640) {
-              $sidebarExpanded = false;
+            if (windowInfo.width < 640) {
+              windowInfo.isNavOpen = false;
             }
           }}
           href={result.url}>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded } from "$lib/stores.svelte";
+  import { windowInfo } from "$lib/stores.svelte";
 
   type Props = {
     label: string;
@@ -14,7 +14,7 @@
 <div class="cursor-default py-1 rounded-lg flex gap-2 pl-1 items-center text-stone-500">
   <Icon />
 
-  {#if $sidebarExpanded}
+  {#if windowInfo.isNavOpen}
     <span>{label}</span>
   {/if}
 </div>
