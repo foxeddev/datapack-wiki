@@ -9,23 +9,24 @@ import {Version, Highlight} from '$lib/reusables';
 
 # Resources
 
-Listed here are links to credible and reliable places to aid in command support and creation.
+Listed here are links to credible and reliable places and libraries to aid in command/datapack support and creation.
 
-### Datapack Hub
+## Libraries
 
-<Highlight color="#738ADB">Discord</Highlight>
+ - <Highlight color="#2ED141">Library</Highlight>
+<a href="https://www.planetminecraft.com/data-pack/taglib/">TagLib</a>
+
+## Communities
+
+- <Highlight color="#738ADB">Discord</Highlight>
 <a href="https://discord.datapackhub.net">Datapack Hub Discord</a>
 
-### MCStacker
-
-<Highlight color="#738ADB">Discord</Highlight>
+- <Highlight color="#738ADB">Discord</Highlight>
 <a href="https://discord.gg/WCb6GNf">MCStacker Discord</a>
 
-<br><br>
-
-<Highlight color="#DC2626">Website</Highlight>
+- <Highlight color="#DC2626">Website</Highlight>
 <a href="https://mcstacker.net">MCStacker Website</a>
 
 ### Data Pack Generators
 
-<Highlight color="#DC2626">Website</Highlight> <a href="https://misode.github.io/">Misode Data Pack Generator</a>
+- <Highlight color="#DC2626">Website</Highlight> <a href="https://misode.github.io/">Misode Data Pack Generator</a>

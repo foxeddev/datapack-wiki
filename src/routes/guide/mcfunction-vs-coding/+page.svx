@@ -93,7 +93,7 @@ MCFunction does math in an interesting way; it uses scoreboard operations in ord
 [variety of math operations](https://minecraft.wiki/w/Scoreboard#Score_operations).
 
 :::note
-MCFunction does not come with complex math like trigonometry, absolutes, a pre-defined Pi, logarithms, or even square root! These all must be implemented either by 
+MCFunction does not come with complex math like trigonometry, absolutes, a pre-defined Pi, or even square root! These all must be implemented either by 
 hand or with a third-party library.
 :::
 

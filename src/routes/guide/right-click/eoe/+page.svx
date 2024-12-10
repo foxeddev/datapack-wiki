@@ -11,7 +11,9 @@ import {Version} from '$lib/reusables';
 
 <Version version="1.21"/>
 
-# Pros and cons
+# Eye of Ender Right Click Detection
+
+## Pros and cons
 
 **Pros:**
 
@@ -29,7 +31,7 @@ import {Version} from '$lib/reusables';
 - Detects up to 20 clicks/second when holding right click
 - Bound to the player, not a specific location
 
-# Using an Eye of Ender for Right Click Detection
+## Usage
 
 :::warning
 This only works in world without strongholds, if you don't want that, you can either use a similar method

@@ -11,7 +11,9 @@ import {Version} from '$lib/reusables';
 
 <Version version="1.21"/>
 
-# Pros and cons
+# Food Right Click Detection
+
+## Pros and cons
 
 **Pros:**
 
@@ -31,7 +33,7 @@ import {Version} from '$lib/reusables';
 - Detects up to 20 clicks/second when holding right click
 - Bound to the player, not a specific location
 
-# Using the Food Component for Right Click Detection
+## Usage
 
 Using the `food` component for right-click detection is one of the most flexible methods, simply because you can put it
 on (almost) ANY item. This method is not limited to a single item, like using a coas. You can use any item you want.
@@ -90,7 +92,7 @@ advancement revoke @s only <namespace>:click_food
 say I successfully used food component detection!
 ```
 
-## See it in action!
+### See it in action!
 
 After `/reload`ing the datapack, we will now need to give ourselves the actual item with the custom food component. (You
 can run this in the chat to test it, or put it in a function to trigger when you want):
@@ -99,7 +101,7 @@ can run this in the chat to test it, or put it in a function to trigger when you
 give @s stick[minecraft:food={nutrition:0, saturation:0, can_always_eat:true, eat_seconds:999999999}, minecraft:custom_data={<custom_data>:true}]
 ```
 
-## How it works
+### How it works
 
 We've added a food component to our custom stick item, allowing it to be consumed like food. The player won't actually
 eat it, since `eat_seconds` is set to `999999999`, so it would take them over 30 years. The food component lets the

@@ -10,7 +10,9 @@ import {Version} from '$lib/reusables';
 
 <Version version="1.21"/>
 
-# Pros and cons
+# Interaction Right Click Detection
+
+## Pros and cons
 
 **Pros:**
 
@@ -31,7 +33,7 @@ import {Version} from '$lib/reusables';
 - Detects up to 5 clicks/second when holding right click
 - Bound to a specific location, not player
 
-# Using an Interaction Entity for Right Click Detection
+## Usage
 
 Firstly we will need to create an advancement, located in `data/<namespace>/advancement/`. You can call it however you
 want, but for the purpose of this guide we will call it `interacted_with_interaction.json`. This advancement is used to
