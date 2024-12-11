@@ -61,7 +61,7 @@ Each is crucial to making the page look and feel how it does.
 
 Along with everything else, there is also a component called `Version` which is used to display the Minecraft version the page is validated and up to date with.
 
-<Version version="1.21.3"/>
+<Version version=""/>
 
 We recommend using this component on any page that is validated and up to date with the latest Minecraft version.
 
@@ -166,5 +166,5 @@ which affects your datapack.
 You can do this really cool thing. It'll make your life a lot easier! But don't worry - it's only optional.
 :::
 
-<Version version="1.21.3"/>
+<Version version=""/>
 ```
