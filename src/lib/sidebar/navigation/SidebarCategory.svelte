@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded } from "$lib/stores.svelte";
+  import { windowInfo } from "$lib/stores.svelte";
   import autoAnimate from "@formkit/auto-animate";
   import type { Snippet } from "svelte";
   import IconExpand from "~icons/tabler/chevron-right";
@@ -22,11 +22,11 @@
   class="hover:bg-stone-700 hover:text-white hover:font-medium rounded-lg flex gap-2 cursor-default p-1 items-center w-full"
   onclick={() => {
     expanded = !expanded;
-    $sidebarExpanded = true;
+    windowInfo.isNavOpen = true;
   }}>
   <Icon />
 
-  {#if $sidebarExpanded}
+  {#if windowInfo.isNavOpen}
     <div class="grow text-left">
       <span>{name}</span>
     </div>
@@ -35,7 +35,7 @@
 </a>
 
 <div use:autoAnimate={{ duration: 200 }}>
-  {#if expanded && $sidebarExpanded}
+  {#if expanded && windowInfo.isNavOpen}
     <div class="flex flex-col ml-4 pb-2">
       {@render children()}
     </div>

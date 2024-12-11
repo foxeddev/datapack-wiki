@@ -1,22 +1,24 @@
 ---
 title: Choosing a Server
 description:
-  Learn the differences, pros and cons of different Minecraft server softwares, and which one you should use for datapacks and
-  mods and plugins.
+  Learn the differences, pros and cons of different Minecraft server softwares, and which one you should use for
+  datapacks, mods and/or plugins.
 ---
 
 # Choosing a Server
 
 When you join a Minecraft server, you are playing on a computer running a special software. This software allows you to
-interact with other players on the server and play the game. There are many different choices when it comes to Minecraft
-servers which can become overwhelming for many people.
+interact with other players on the server and play the game. There are so many different choices when it comes to
+choosing Minecraft server JARs that it can easily become overwhelming.
 
 In this guide, we focus on multiple aspects of the various servers, from performance, to datapack support to even
 features that are exclusive to certain server softwares.
 
 ## Background Information
 
-Before we dive into the different server jars, we need to talk about the different types of Minecraft servers.
+Before we dive into the different server JARs, we need to talk about the different types of Minecraft servers.
+Throughout this guide, we will be using the term "server JAR" to refer to the actual Minecraft server file. These JARs
+are Java executable files that run the Minecraft server.
 
 There are a few common types of Minecraft servers:
 
@@ -42,33 +44,34 @@ Beyond datapacks, it is not customizable at all.
 | Designed with exclusively datapacks in mind     | Limited customizations  |
 | No additional bug fixes                         | No additional bug fixes |
 
-:::info 
+:::info
 For some, a lack of bug fixes can be both positive and negative. Mileage may vary!
 :::
 
-:::info 
-Even if it says bad performance, many servers in this list are still quite fast. For small servers on decent hardware,
-it doesn't really matter what you choose
+:::info
+Even if it says bad performance, many servers in this list are still quite fast. For small servers on decent
+hardware, it doesn't really matter what you choose
 :::
 
 ## Spigot
 
 [Spigot](https://www.spigotmc.org/) is another popular server software, it comes with some basic performance
-optimizations, and is not as customizable as Paper. It can cause some issues with datapacks but mitigating datapack-related
-bugs is significantly easier when compared to Paper. If you want plugins and datapacks, this is likely the one you want.
+optimizations, and is not as customizable as Paper. It can cause some issues with datapacks but mitigating
+datapack-related bugs is significantly easier when compared to Paper. If you want plugins and datapacks, this is likely
+the one you want.
 
-| Pros                                       | Cons                                                    |
-| ------------------------------------------ | ------------------------------------------------------- |
-| Popular and well-supported                 | Bad datapack support by default                         |
-| Comes with basic performance optimizations | A bit older, May be lacking APIs other servers have     |
-| Datapack bugs are less common              | Not as customizable as other server softwares           |
+| Pros                                       | Cons                                                |
+| ------------------------------------------ | --------------------------------------------------- |
+| Popular and well-supported                 | Bad datapack support by default                     |
+| Comes with basic performance optimizations | A bit older, May be lacking APIs other servers have |
+| Datapack bugs are less common              | Not as customizable as other server softwares       |
 
 ## Paper
 
 [Paper](https://papermc.io/) is a fork of Spigot, and it's the most popular Bukkit server JAR according to
-[bStats](https://bstats.org/global/bukkit). It is one of the most customizable server software on this list and comes with
-excellent plugin support and amazing performance optimizations. Unfortunately, it is notorious for breaking datapacks and
-even some plugins for the sake of performance, modernity and bug fixes.
+[bStats](https://bstats.org/global/bukkit). It is one of the most customizable server software on this list and comes
+with excellent plugin support and amazing performance optimizations. Unfortunately, it is notorious for breaking
+datapacks and even some plugins for the sake of performance, modernity and bug fixes.
 
 | Pros                                                         | Cons                                                                  |
 | ------------------------------------------------------------ | --------------------------------------------------------------------- |
@@ -79,9 +82,9 @@ even some plugins for the sake of performance, modernity and bug fixes.
 
 ## Forge
 
-[Forge](https://minecraftforge.net/) is a mod-based server software used primarily by older Minecraft servers.
-Forge is the gold standard for mods for versions >1.13 while still offering support for latest versions.
-Many mod packs such as RLCraft, Pixelmon, ATM (All The Mods) will **only** run on Forge.
+[Forge](https://minecraftforge.net/) is a mod-based server software used primarily by older Minecraft servers. Forge is
+the gold standard for mods for versions >1.13 while still offering support for latest versions. Many mod packs such as
+RLCraft, Pixelmon, ATM (All The Mods) will **only** run on Forge.
 
 | Pros                                  | Cons                                                    |
 | ------------------------------------- | ------------------------------------------------------- |
@@ -90,8 +93,8 @@ Many mod packs such as RLCraft, Pixelmon, ATM (All The Mods) will **only** run o
 | Many mods do not affect DP features   |                                                         |
 
 :::note
-It's recommended to use [NeoForge](#neoforge) on the latest version when possible. 
-This will offer the bestest of Datapack features and the most modern mods
+It's recommended to use [NeoForge](#neoforge) on the latest version when possible. This will offer the bestest
+of Datapack features and the most modern mods
 :::
 
 :::warning
@@ -101,8 +104,9 @@ By choosing an older Minecraft version you will lose out on a lot of cool datapa
 ## NeoForge
 
 [NeoForge](https://neoforged.net) is a mod-based server software used by many Minecraft servers. It is a fork of Forge
-designed to be cleaner and more modern, with significant reworks to many bloated parts of Forge. It is designed to be 
-used with new versions of Minecraft and many mods that did target the latest version of Forge will now target NeoForge or both!
+designed to be cleaner and more modern, with significant reworks to many bloated parts of Forge. It is designed to be
+used with new versions of Minecraft and many mods that did target the latest version of Forge will now target NeoForge
+or both!
 
 | Pros                                | Cons                                                       |
 | ----------------------------------- | ---------------------------------------------------------- |
@@ -113,16 +117,16 @@ used with new versions of Minecraft and many mods that did target the latest ver
 ## Fabric
 
 [Fabric](https://fabricmc.net/) is another mod-based server software. Fabric is used by most modern modded servers due
-to its fast boot time, flawless injection and great mods. Fabric is likely the best modded server for use with datapacks 
+to its fast boot time, flawless injection and great mods. Fabric is likely the best modded server for use with datapacks
 due to how cleanly code is injected.
 
-| Pros                               | Cons                                                 |
-| ---------------------------------- | ---------------------------------------------------- |
-| Popular and well-supported         | Finding server-side mods are hard                    |
-| Mods rarely affect datapacks       | Hard to troubleshoot                                 |
-| Great for newer Minecraft versions | Support for older Minecraft versions is limited      |
+| Pros                               | Cons                                            |
+| ---------------------------------- | ----------------------------------------------- |
+| Popular and well-supported         | Finding server-side mods are hard               |
+| Mods rarely affect datapacks       | Hard to troubleshoot                            |
+| Great for newer Minecraft versions | Support for older Minecraft versions is limited |
 
-:::tip 
+:::tip
 You may see people talk about Cardboard. It's a mod that can add the Paper API to your Fabric server, but the
 actual functionality is very limited and its slow to update.
 
@@ -156,12 +160,13 @@ Similarly to SpongeVanilla, it is very rarely used due to the lack of mods suppo
 
 ### Minestom
 
-Minestom is a very high performance, lightweight server jar designed for extreme customizability at the expense of doing everything yourself.
+Minestom is a very high performance, lightweight server jar designed for extreme customizability at the expense of doing
+everything yourself.
 
-:::warning 
+:::warning
 This server jar is basically an empty shell and is only recommended for highly technical purposes. You need
-to program everything you want into this server yourself, including features you may expect to come with the jar (lighting). You
-have been warned!
+to program everything you want into this server yourself, including features you may expect to come with the jar
+(lighting). You have been warned!
 :::
 
 | Pros                                                | Cons                                           |
@@ -172,7 +177,12 @@ have been warned!
 
 ### Proxies (BungeeCord, Velocity, Waterfall, etc.)
 
-These "servers" are different from the rest, as they themselves are not servers, but rather [proxies](https://simple.wikipedia.org/wiki/Proxy_server).
+These "servers" are different from the rest, as they themselves are not servers, but rather
+[proxies](https://simple.wikipedia.org/wiki/Proxy_server).
 
-Most Minecraft servers can't handle more than a hundred-or-so people at once, so how do giant servers like Hypixel have tens of thousands of people on at one time?
-Imagine a large server with many mini games. Every time you teleport to a game, a proxy is sending you to a completely different server, usually dedicated to running **just** that game. Larger servers can have thousands of people online at a time because not everyone is in one server, they are split between tens or hundreds of servers. Simply put, the proxy is like glue, sticking servers together and allowing people to "teleport" between them.
+Most Minecraft servers can't handle more than a hundred-or-so people at once, so how do giant servers like Hypixel have
+tens of thousands of people on at one time? Imagine a large server with many mini games. Every time you teleport to a
+game, a proxy is sending you to a completely different server, usually dedicated to running **just** that game. Larger
+servers can have thousands of people online at a time because not everyone is in one server, they are split between tens
+or hundreds of servers. Simply put, the proxy is like glue, sticking servers together and allowing people to "teleport"
+between them.

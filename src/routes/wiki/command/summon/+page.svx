@@ -7,7 +7,7 @@ description: "The /summon command is used to summon an entity at a position, alo
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21.3"/>
+<Version version="1.21.4"/>
 
 # /summon command
 

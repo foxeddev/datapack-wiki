@@ -7,12 +7,31 @@ description: "A list of breaking changes to datapacks."
 import { Version } from '$lib/reusables';
 </script>
 
-<Version version="1.21.3"/>
+<Version version="1.21.4"/>
 
 # List of breaking changes
 
 This is list of all breaking changes to datapacks (excluding resource packs). Special thanks to Misode's Technical
 Changelog for the source of many of these.
+
+## 1.21.4
+**Item Components**
+- Field `model` in [`equippable`](/wiki/commands/item-components#equippable) component has been renamed to `asset_id`.
+- The [`dyed`](/wiki/commands/item-components#dyed) component now tint's based on the model, not item ID.
+- The [`custom_model_data`](/wiki/commands/item-components#custom_model_data) component has new fields `floats`, `flags`, `strings`, `colors`.
+- Item blocks with [`block_entity_data`](/wiki/commands/item-components#block_entity_data) component will now set block entity data only if id tag matches type of placed block entity
+
+**Renames**
+- The `TNTFuse` field of TNT Minecarts has been renamed to `fuse`
+- Changed some Furnace, Smoker and Blast Furnace data. From camelCase to snake_case.
+   * Renamed `CookTime` to `cooking_time_spent`
+   * Renamed `CookTimeTotal` to `cooking_total_time`
+   * Renamed `BurnTime` to `lit_time_remaining`
+
+**Other**
+- Removed `#tall_flowers` block tag. With that the `#flowers` and `#tall_flowers` item tags were also removed.
+- The `trail` particle has a new required field: `duration` - Indicates, in ticks, for how long the particles should travel to its destination.
+- 🎨 The item model resource pack format got completely changed, now allowing for tinting, layered, conditional, and much more!
 
 ## 1.21.2
 **Item Components**
@@ -29,8 +48,8 @@ Changelog for the source of many of these.
 - Sheep now always use a single loot table `entities/sheep`, but wool drops are still defined in sub-tables in  `entities/sheep/<color>`
 
 **Other**
-- Attribute IDs now don't have the `generic.`, `player.` or `zombie.` prefixes anymore (`generic.scale` -> `scale`).
-- `boat` and `chest_boat` entity types have been split into separate types, one per variant (`Type=oak` ->
+- Attribute IDs now don't have the `generic.`, `player.` or `zombie.` prefixes anymore (`generic.scale` → `scale`).
+- `boat` and `chest_boat` entity types have been split into separate types, one per variant (`Type=oak` →
 `minecraft:oak_boat`,...)
   - With that the `minecraft:boat` entity sub-predicate has been removed.
 - The previous `Lock` field of containers has been renamed to `lock` and is now an item predicate.
@@ -38,6 +57,66 @@ Changelog for the source of many of these.
 - The `killed_by_crossbow` advancement was renamed to `killed_by_arrow`, and will now trigger whenever an arrow kills an entity, not just when fired from a crossbow.
 - Renamed effect type `damage_item` to `change_item_damage`, which now also supports negative amounts.
 - Removed liquid carvers and changed biome format (the `carvers` field is now just a list of carvers)
+
+## 1.21
+**General Renames**
+- All folders which previously had plural names (except `tags`) now have singular names. A list of all changed folders can be found below:
+    - `structures` → `structure`
+    - `advancements` → `advancement`
+    - `recipes` → `recipe`
+    - `loot_tables` → `loot_table`
+    - `predicates` → `predicate`
+    - `item_modifiers` → `item_modifier`
+    - `functions` → `function`
+    - `tags/functions` → `tags/function`
+    - `tags/items` → `tags/item`
+    - `tags/blocks` → `tags/block`
+    - `tags/entity_types` → `tags/entity_type`
+    - `tags/fluids` → `tags/fluid`
+    - `tags/game_events` → `tags/game_event`
+- The `uuid` and `name` arguments have been replaced with a singular namespaced `id` argument.
+  - 🛠️ For example: `attribute ... modifier add <uuid> <name> 0.5 add_value` would now look like `attribute ... modifier add <namespace:id> 0.5 add_value`
+
+**Entity NBT**
+- Entity attribute format has changed:
+  - `Attributes` → `attributes`
+    - `Name` → `id`
+    - `Base` → `base`
+    - `Modifiers` → `modifiers` *(Now stores modifiers in the same format as modifiers in the [`minecraft:attribute_modifiers`](https://minecraft.fandom.com/wiki/Commands/item-components#attribute_modifiers) item component)*
+      - `UUID` → `uuid`
+      - `Name` → `id`
+      - `Amount` → `amount`
+      - `Operation` → `operation` *(This is now a named constant instead of an int)*
+        - `add_value` - now a string, previously `0`
+        - `add_multiplied_base` - now a string, previously `1`
+        - `add_multiplied_total` - now a string, previously `2`
+  - 🛠️ For example: `summon ... {Attributes:[{Name:"generic.scale",Base:2,Modifiers:[{UUID:[I;1,0,0,0],Name:"example_modifier",Amount:1,Operation:0}]}]}` would now look like `summon ... {attributes:[{id:"generic.scale",base:2,modifiers:[{id:"tutorial:example_modifier",amount:1,operation:"add_value"}]}]}`
+- Replaced the `power` NBT tag with an `acceleration_power` tag. This controls the projectile's acceleration (and maximum speed).
+  - This applies to: `dragon_fireball`, `large_fireball`, `small_fireball`, `fireball`, `breeze_wind_charge`, `wind_charge`, `wither_skull`.
+- The field `ShotFromCrossbow` from projectile NBT has been removed. A new `weapon` field has been added to replace this feature.
+  - 🛠️ For example: `@e[type=arrow,nbt={ShotFromCrossbow:1b}]` would now look like `@e[type=arrow,nbt={weapon:{id:"minecraft:crossbow"}}]`
+
+**Tags**
+- Removed the `#minecraft:music_discs` item tag
+
+**Predicates**
+- Some predicate fields have been renamed:
+  - `killer` → `attacker`
+  - `direct_killer` → `direct_attacker`
+  - `killer_player` → `attacking_player`
+- The `random_chance_with_looting` has been renamed (because it's now controlled by enchantments) to `random_chance_with_enchanted_bonus`. The fields were updated accordingly:
+  - The `looting_multiplier` field has been removed
+  - The `chance` field has been removed.
+  - `enchantment` - is a new field containing the namespaced:id of the Enchantment that grants the bonus chance
+  - `enchanted_chance` is a new field for the chance for an enchanted item. A level-based value.
+  - `unenchanted_chance` - is a new field specifying the chance for an unenchanted item.
+- If you are testing for an enchantment on your item, the field `enchantment` → `enchantments`. Can be either an Enchantment, a list of Enchantments or an #Enchantment Tag.
+
+**Item Modifiers**
+- The `looting_enchant` field has been replaced by `enchanted_count_increase`. This has a new field `enchantment` (specifies which enchantment).
+- Under `enchant_randomly` the field `enchantments` is now called `options`.
+- Under `enchant_with_levels` the field `treasure` was removed.
+- Under `copy_name` the field `killer` → `attacking_entity` and `killer_player` → `last_damage_player`
 
 ## 1.20.2
 - Entity effects in NBT now use namespaced IDs instead of numbers.

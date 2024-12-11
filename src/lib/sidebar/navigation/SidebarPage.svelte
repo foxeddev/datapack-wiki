@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { sidebarExpanded, windowWidth } from "$lib/stores.svelte";
+  import { windowInfo } from "$lib/stores.svelte";
 
   type Props = {
     icon: any;
@@ -14,11 +14,11 @@
 
 <a
   href={page}
-  onclick={() => ($windowWidth < 768 ? ($sidebarExpanded = !$sidebarExpanded) : null)}
+onclick={() => (windowInfo.width < 768 ? (windowInfo.isNavOpen = !windowInfo.isNavOpen) : null)}
   class="hover:bg-stone-700 hover:text-white hover:font-medium cursor-default py-1 rounded-lg flex gap-2 pl-1 items-center">
   <Icon />
 
-  {#if $sidebarExpanded}
+  {#if windowInfo.isNavOpen}
     <span>{label}</span>
   {/if}
 </a>

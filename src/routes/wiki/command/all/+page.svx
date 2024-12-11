@@ -6,7 +6,7 @@ title: All Commands List
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21.3"/>
+<Version version="1.21.4"/>
 
 # Syntax
 
@@ -26,7 +26,7 @@ These commands require a permission level same or bigger than 2 to run them.
 
 - `/advancement grant|revoke <targets> everything|only|from|through|until (<advancement>|)` - Gives, removes or checks
   player advancements
-- `/attribute <target> <attribute> get|base|modifier ...` - Can change or read attributes
+- `/attribute <target> <attribute> get|base|modifier|reset ...` - Can change or read attributes
 - `/bossbar list|add|remove|set|get [<id>] ...` - Changes and creates bossbars
 - `/clear [<targets>] [<item>] [<maxCount>]` - Clears items from the players inventory
 - `/clone <begin-xyz> <end-xyz> ... OR /clone from <sourceDimension> <begin-xyz> <end-xyz> ...` - Copies blocks in an

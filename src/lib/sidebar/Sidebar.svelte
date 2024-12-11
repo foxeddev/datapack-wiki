@@ -1,38 +1,39 @@
 <script lang="ts">
   // ! IMPORTANT: If you want to add pages or categories, this is not the place to do it!
-  
+
   import IconSearch from "~icons/tabler/search";
-  
+
   import GuidePages from "$lib/sidebar/tabs/Guides.svelte";
   import WikiPages from "$lib/sidebar/tabs/WikiPages.svelte";
-  import { latestMCData, sidebarExpanded } from "$lib/stores.svelte";
-  
+  import { latestMCData, windowInfo } from "$lib/stores.svelte";
+
   import IconCredits from "~icons/tabler/address-book";
   import IconResources from "~icons/tabler/book";
   import IconGuides from "~icons/tabler/book-2";
   import IconCollapse from "~icons/tabler/chevron-left";
   import IconWiki from "~icons/tabler/globe";
-  
+
   import SidebarPage from "./navigation/SidebarPage.svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
-  
+  import type { SvelteComponent } from "svelte";
+
   let results: Page[] = $state([]);
-  
+
   let page = $state("wiki");
 
   $effect(() => {
     page = sessionStorage.getItem("page") || "wiki";
   });
 
-  let dialog: any;
+  let dialog: SvelteComponent;
 </script>
 
 <aside
-  class="{$sidebarExpanded
+  class="{windowInfo.isNavOpen
     ? 'fixed w-full sm:w-80'
     : 'w-fit hidden sm:flex'} flex flex-col bg-stone-800 items-center h-[calc(100dvh-3rem)] sm:sticky top-12 z-50 border-r border-stone-700">
   <div class="flex flex-col p-2 pt-1 grow overflow-y-auto w-full">
-    {#if $sidebarExpanded}
+    {#if windowInfo.isNavOpen}
       <button
         aria-label="Open Search Modal"
         class="bg-black/45 px-2 py-1 rounded-lg flex items-center gap-2 mt-1 mb-2"
@@ -79,13 +80,14 @@
     </div>
   </div>
   <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
-    {#if $sidebarExpanded}
-      <span class="grow flex flex-col items-center">pack_format: {latestMCData.packFormat} ({latestMCData.gameVersion})</span>
+    {#if windowInfo.isNavOpen}
+      <span class="grow flex flex-col items-center"
+        >pack_format: {latestMCData.packFormat} ({latestMCData.gameVersion})</span>
     {/if}
     <button
-      aria-label="{$sidebarExpanded ? 'Collapse' : 'Expand'} Sidebar"
-      class="text-stone-200 text-lg motion-safe:transition-all {$sidebarExpanded ? 'rotate-0' : 'rotate-180'}"
-      onclick={() => ($sidebarExpanded = !$sidebarExpanded)}>
+      aria-label="{windowInfo.isNavOpen ? 'Collapse' : 'Expand'} Sidebar"
+      class="text-stone-200 text-lg motion-safe:transition-all {windowInfo.isNavOpen ? 'rotate-0' : 'rotate-180'}"
+      onclick={() => (windowInfo.isNavOpen = !windowInfo.isNavOpen)}>
       <IconCollapse />
     </button>
   </div>

@@ -7,9 +7,9 @@ description: "Using a carrot on a stick for right click detection is an easy way
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21.3"/>
+<Version version="1.21.4"/>
 
-# Detecting right clicks: carrot on a stick
+# Carrot on a Stick Right Click Detection
 
 Using a carrot on a stick (or a warped fungus on a stick) is perhaps one of the simplest methods of right-click
 detection, requiring only a single tick command and a scoreboard. This method works due to the `used:carrot_on_a_stick`

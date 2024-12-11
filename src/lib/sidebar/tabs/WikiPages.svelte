@@ -15,7 +15,7 @@
   import IconPennant from "~icons/tabler/pennant";
   import IconBox from "~icons/tabler/box";
   import IconCommand from "~icons/tabler/slash";
-  import IconCommands from "~icons/tabler/slashes";
+  import IconCommands from "~icons/tabler/terminal";
   import IconBraces from "~icons/tabler/braces";
   import IconStar from "~icons/tabler/star";
   import IconGrid from "~icons/tabler/grid-3x3";
@@ -32,7 +32,6 @@
   import IconNumbers from "~icons/tabler/123";
   import IconResourceLocation from "~icons/tabler/abc";
   import IconNbtPath from "~icons/tabler/code";
-  import IconSignature from "~icons/tabler/signature";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->

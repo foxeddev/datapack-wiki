@@ -1,18 +1,21 @@
 <script lang="ts">
+  // NEVER MOVE THIS INTO APP.CSS IT WILL BREAK
+  // - cbble_
+  import "../styles/fonts.css";
   import "../styles/app.css";
 
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
   import Navbar from "../lib/Navbar.svelte";
 
-  import { dev } from "$app/environment";
+  import { browser, dev } from "$app/environment";
 
   import IconBeta from "~icons/tabler/flask-2-filled";
   import type { Snippet } from "svelte";
   import type { PageData } from "./$types";
-  import { latestMCData } from "$lib/stores.svelte";
+  import { latestMCData, windowInfo } from "$lib/stores.svelte";
   interface Props {
     children: Snippet;
-    data: PageData
+    data: PageData;
   }
 
   let { children, data }: Props = $props();
@@ -21,6 +24,12 @@
   latestMCData.gameVersion = data.gameVersion || "1.0";
 
   let betaWarning: HTMLDivElement | null = $state(null);
+
+  $effect(() => {
+    if (!browser) return;
+    windowInfo.width = window.innerWidth;
+    windowInfo.isNavOpen = window.innerWidth > 768;
+  });
 </script>
 
 <div class="font-lexend h-full min-h-screen flex flex-col text-stone-200">

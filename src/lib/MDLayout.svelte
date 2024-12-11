@@ -29,6 +29,7 @@
     "https://github.com/Datapack-Hub",
     "https://x.com/DatapackHub",
     "https://instagram.com/datapackhub",
+    "https://bsky.app/profile/datapackhub.bsky.social",
   ]} />
 
 <main class="md px-4 md:px-8 lg:px-16 prose-headings:text-stone-200">
@@ -36,7 +37,7 @@
   {#if tags}
     <div class="bg-stone-950/40 p-2 rounded-lg flex items-center space-x-3 my-10">
       <span class="uppercase text-sm text-zinc-500">Tags:</span>
-      {#each tagsArr ?? [] as tag}
+      {#each tagsArr as tag}
         <span class="border border-yellow-500 px-1 text-yellow-500 rounded-lg uppercase text-sm">{tag}</span>
       {/each}
     </div>

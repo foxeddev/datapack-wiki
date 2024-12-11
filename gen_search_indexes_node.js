@@ -2,9 +2,8 @@ import { createConsola } from "consola";
 import fg from "fast-glob";
 import matter from "gray-matter";
 import { readFile, writeFile } from "node:fs/promises";
-import { remark } from "remark";
 import { stripHtml } from "string-strip-html";
-import stripMarkdown from "strip-markdown";
+import RemoveMarkdown from "remove-markdown";
 
 const log = createConsola({
   formatOptions: {
@@ -32,13 +31,12 @@ for await (const file of matchingFiles) {
 
   // add to posts
   const contentNoHtml = stripHtml(frontmatter.content).result;
-  const strippedMarkdown = await remark().use(stripMarkdown).process(
-    contentNoHtml,
-  );
+  const strippedMarkdown = RemoveMarkdown(contentNoHtml)
+
 
   posts.push({
     title: frontmatter.data.title || "MissingNo.",
-    content: strippedMarkdown.value,
+    content: strippedMarkdown,
     url: "/" + filePath,
   });
 }

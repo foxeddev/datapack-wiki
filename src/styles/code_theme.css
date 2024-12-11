@@ -27,6 +27,7 @@ pre.shiki > code {
   word-break: break-all;
   word-wrap: break-word;
 }
+
 pre.shiki > code {
   background: unset;
   color: unset;

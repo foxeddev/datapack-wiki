@@ -14,6 +14,6 @@ export const load = (async () => {
 
   return {
     packFormat: filtered[0].data_pack_version,
-    gameVersion: filtered[0].id
+    gameVersion: filtered[0].id,
   };
 }) satisfies LayoutServerLoad;

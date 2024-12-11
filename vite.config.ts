@@ -12,4 +12,10 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
+  build: {
+    cssMinify: "lightningcss",
+  },
+  css: {
+    transformer: "lightningcss"
+  }
 });

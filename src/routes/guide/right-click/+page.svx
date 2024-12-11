@@ -28,7 +28,7 @@ If you already know which right click detection technique you are going to use, 
 | Eye Of Ender       |                                     | Slows player down when holding right click, only works in worlds without stronghold | Medium             | Detects up to 20 clicks/second when holding right click | Bound to player, not location   |
 | Interaction Entity | Also detects left clicks, an entity | Players can't break/hit/place through, requires an entity                           | Medium             | detects up to 5 clicks/second when holding right click  | Bound to location, not a player |
 
-**Additional Info**
+### Additional Info
 
 - COAS/WFOAS - This method works by using an `item.used` scoreboard objective which triggers when using either of the two items and then running commands as/at players with a score of 1 or higher.
 - Consumable Component - This method works by using an item with a very long consumption time which will never finish, in combination with an advancement to detect when you begin eating it.
