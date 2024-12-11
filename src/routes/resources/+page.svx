@@ -11,22 +11,49 @@ import {Version, Highlight} from '$lib/reusables';
 
 Listed here are links to credible and reliable places and libraries to aid in command/datapack support and creation.
 
-## Libraries
-
- - <Highlight color="#2ED141">Library</Highlight>
-<a href="https://www.planetminecraft.com/data-pack/taglib/">TagLib</a>
-
 ## Communities
 
-- <Highlight color="#738ADB">Discord</Highlight>
-<a href="https://discord.datapackhub.net">Datapack Hub Discord</a>
+- <Highlight color="#738ADB">Discord</Highlight> <a href="https://discord.datapackhub.net">Datapack Hub Discord</a>
 
-- <Highlight color="#738ADB">Discord</Highlight>
-<a href="https://discord.gg/WCb6GNf">MCStacker Discord</a>
+- <Highlight color="#DC2626">Website</Highlight> <a href="https://smithed.net/">Smithed</a>
 
-- <Highlight color="#DC2626">Website</Highlight>
-<a href="https://mcstacker.net">MCStacker Website</a>
+- <Highlight color="#738ADB">Discord</Highlight> <a href="https://discord.com/invite/gkp6UqEUph">Smithed Discord</a>
 
-### Data Pack Generators
+- <Highlight color="#738ADB">Discord</Highlight> <a href="https://discord.gg/Ayav9YPQra">ShaderLABS</a>
+- <Highlight color="#738ADB">Discord</Highlight> <a href="https://discord.gg/blockbench">Blockbench Discord</a>
+- <Highlight color="#738ADB">Discord</Highlight> <a href="https://discord.gg/optifine">Optifine Discord</a>
+- <Highlight color="#738ADB">Discord</Highlight> <a href="https://discord.gg/DtevV9NmaR">FabricMC Discord</a>
+- <Highlight color="#738ADB">Discord</Highlight> <a href="https://discord.gg/minecraft">Minecraft Discord</a>
+- <Highlight color="#738ADB">Discord</Highlight> <a href="https://animated-java.dev/discord">Animated Java Discord</a>
+- <Highlight color="#738ADB">Discord</Highlight> <a href="https://dsc.gg/datapackjam">Datapack Jam Discord</a>
+- <Highlight color="#738ADB">Discord</Highlight> <a href="https://discord.gg/5y5FBz5">Dataworld Discord [FRENCH
+  ONLY]</a>
+
+## Generators
 
 - <Highlight color="#DC2626">Website</Highlight> <a href="https://misode.github.io/">Misode Data Pack Generator</a>
+- <Highlight color="#DC2626">Website</Highlight> <a href="https://crafting.thedestruc7i0n.ca/">TheDestruc7i0n Recipe
+  Generator</a>
+- <Highlight color="#DC2626">Website</Highlight> <a href="https://minecraft.tools/">Minecraft Tools</a>
+- <Highlight color="#DC2626">Website</Highlight> <a href="https://minecraftjson.com/">Minecraft JSON (JSON
+  text/tellraw)</a>
+
+- <Highlight color="#DC2626">Website</Highlight> <a href="https://mcstacker.net">MCStacker Website</a>
+
+## Templates/Reference
+
+- <Highlight color="#DC2626">Website</Highlight> <a href="https://minecraft.wiki/">Minecraft Wiki</a>
+- <Highlight color="#DC2626">Website</Highlight> <a href="https://github.com/misode/mcmeta">Misode's MCMeta</a>
+
+## Tutorials/Content Creation
+
+- <Highlight color="#DC2626">Website</Highlight> <a href="https://www.youtube.com/@CloudWolfMinecraft">Cloud Wolf</a>
+- <Highlight color="#DC2626">Website</Highlight>
+  <a href="https://www.planetminecraft.com/blog/custom-structure-gen-documentation/">Structure Generation Guide</a>
+- <Highlight color="#DC2626">Website</Highlight>
+  <a href="https://www.planetminecraft.com/blog/custom-world-generation-documentation/">World Generation Guide</a>
+
+## Libraries
+
+- <Highlight color="#2ED141">Library</Highlight> <a href="https://www.planetminecraft.com/data-pack/taglib/">TagLib</a>
+- <Highlight color="#2ED141">Library</Highlight> <a href="https://docs.smithed.dev/libraries/">Smithed (Libraries)</a>
