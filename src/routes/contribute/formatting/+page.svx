@@ -25,7 +25,7 @@ technology called mdsvex. This technology enables people like you to insert Mark
 It is recommended to know what the proper way to format Markdown is in order to stay consistent and prevent confusion.
 
 - The front matter title should be the same as the title in the sidebar and the title on the page (heading 1 or single #)
-- Effects like bold and italics sparingly and only when emphasis is needed
+- Use effects like bold and italics sparingly and only when emphasis is needed
 - Use headings to break up the page into sections
 - Code blocks can be used to show code snippets or commands
 - Admonitions can be used to show important information
