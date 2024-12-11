@@ -26,8 +26,7 @@ arbitrary keys are added to it.
 and replace the macro with its value (block, entity, storage). Interestingly, this also works function-wide, meaning you could use them as mock arguments.
 
 :::warning
-The performance impact with macros can be slow in some cases, with estimates showing that a macro is equivalent to 5-10 commands,
-and in a performance tight situation, it may be significantly slower than other methods. Be careful with how you use them to avoid performance problems!
+Macros can be significantly slower than other methods, it is best to only use them when necessary or in non-performance-critical code.
 :::
 
 Below are some examples of their usage:

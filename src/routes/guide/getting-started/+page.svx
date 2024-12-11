@@ -27,7 +27,7 @@ This guide will help you to create your first datapack, whether you've never tri
 of experience. The process of coding a datapack is a bit different to other typical programs. By the end of this
 tutorial, you'll have made a simple datapack which makes **arrows explode when they land!**
 
-## Getting Started - Setting up an empty datapack
+## Setting up an empty datapack
 
 <!-- <b style="color: #2563eb;">Learn:</b> How to set up an empty datapack to start working in -->
 
@@ -39,12 +39,10 @@ is to find and open your world folder:
 2. Go to your world in the Singleplayer menu and hit "Edit"
 3. Press "Open World Folder"
 
-This folder opens contains all the data in your Minecraft world. You should see that there's lots of other subfolders in
-this folder. Find the one which is called `datapacks`, and open it.
-
-This folder is where the world's datapacks are stored. Create a folder - this will be the root folder of your datapack
-project. The name doesn't matter. I'm just going to call it `Example Datapack`. **Open this new folder**. Inside this
-folder is where all the data starts from.
+The folder that opens contains all the data in your Minecraft world. You should see that there's lots of other subfolders in
+this folder. Find the one which is called `datapacks`, and open it. This folder is where the world's datapacks are stored. 
+Create a folder - this will be the root folder of your datapack project. The name doesn't matter. 
+I'm just going to call it `Example Datapack`. **Open this new folder**. Inside this folder is where all the data starts from.
 
 :::tip
 Before we go further, if you have downloaded and installed Visual Studio Code and the relevant extensions, then
@@ -79,7 +77,7 @@ always ran as an entity (or as the Server) and at a position
 :::
 
 Let's get started by writing one simple function. In
-traditional programming function, let's make a function to show you "Hello World" when it is ran.
+traditional programming fashion, let's make a function to show you "Hello World" when it is ran.
 
 1. Create a folder in your datapack called `data`.
 2. In the `data` folder, create a new folder. This folder is your **namespace** - it will contain all the data specific
@@ -105,7 +103,7 @@ recommend Visual Studio Code)
 
 Inside `hello_world.mcfunction`, put the following:
 
-```mcfunction
+```mcfunction:hello_world.mcfunction
 # Show the player Hello World on their screen
 title @s title "Hello World!"
 
@@ -162,7 +160,7 @@ every tick. If you put any commands in tick.json, it will break your pack.
 
 In `tick.json`, put the following:
 
-```json
+```json:tick.json
 {
   "values": ["example:loop"]
 }
@@ -180,7 +178,7 @@ over and over again!
 Now we've created a function which will run infinitely on a loop, we can move on to detecting when an arrow is in the
 ground.
 
-As far as the game is concerned, an arrow is an **enity**, just like a pig, cow or zombie. Minecraft gives us a special
+As far as the game is concerned, an arrow is an **entity**, just like a pig, cow or zombie. Minecraft gives us a special
 way to **select** any types of entities with [target selectors](/commands/target_selectors). Once we've selected an
 entity, we can use the [/execute](/command/execute) command to run a command as the entity.
 
@@ -197,12 +195,12 @@ There are 6 base target selectors:
 
 | Target Selector | Description                                                                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| @e              | **All Entities** - By itself, this selector will select every single entity which is currently loaded in the world                                                         |
-| @s              | **This Entity** - This selector will select the entity which is currently running the command. For example, if I run a command as @s, then it will run the commands as me. |
-| @a              | **All Players** - This selects all currently online players. (All players are always loaded in the world).                                                                 |
-| @r              | **Random Player** - This selects one random player.                                                                                                                        |
-| @p              | **Nearest Player** - This selects the nearest player to the position this command is ran from.                                                                             |
-| @n              | **Nearest Entity** - This selects the nearest entity (player or non-player) to the position this command is ran from.                                                      |
+| `@e`            | **All Entities** - By itself, this selector will select every single entity which is currently loaded in the world                                                         |
+| `@s`            | **This Entity** - This selector will select the entity which is currently running the command. For example, if I run a command as @s, then it will run the commands as me. |
+| `@a`            | **All Players** - This selects all currently online players. (All players are always loaded in the world).                                                                 |
+| `@r`            | **Random Player** - This selects one random player.                                                                                                                        |
+| `@p`            | **Nearest Player** - This selects the nearest player to the position this command is ran from.                                                                             |
+| `@n`            | **Nearest Entity** - This selects the nearest entity (player or non-player) to the position this command is ran from.                                                      |
 
 On it's own, a base target selector (like in the table) does not do much. We can narrow down the selection even more by
 using criteria. Criteria are put in square brackets after the base selector.
@@ -229,7 +227,7 @@ have the data `{inGround:1b}`, so we would use `@e[type=arrow,nbt={inGround:1b}]
 This target selector can be used in an `execute` command to run a command as the entity. Try putting this in your
 `loop.mcfunction`:
 
-```mcfunction
+```mcfunction:loop.mcfunction
 execute as @e[type=arrow,nbt={inGround:1b}] at @s run say I'm an arrow, I'm in the ground!
 ```
 
@@ -254,7 +252,7 @@ execute as @e[type=arrow,nbt={inGround:1b}] at @s run summon tnt
 Then, we just need to copy this command and make it kill the arrow after the explosion has happened. This is as simple
 as it sounds - we can use `/kill` to remove the arrow. Your finished `loop.mcfunction` should look like this:
 
-```mcfunction
+```mcfunction:loop.mcfunction
 execute as @e[type=arrow,nbt={inGround:1b}] at @s run summon tnt
 kill @e[type=arrow,nbt={inGround:1b}]
 ```
@@ -263,7 +261,7 @@ kill @e[type=arrow,nbt={inGround:1b}]
 In reality, this method isn't the best one to use. Instead of having two commands for this, you can just execute
 a function as the arrow which will summon the TNT at @s's position, and then kill @s. By only using the @e selector once
 and then referring to @s, you remove extra stress from the computer. For now, it doesn't matter - this guide is designed
-to give you a better idea of the logic rather than the little details
+to give you a better idea of the logic rather than the little details.
 :::
 
 You're done! Once you `/reload` your pack, you should be free to play around with a simple exploding arrows datapack
