@@ -28,7 +28,7 @@ It is recommended to know what the proper way to format Markdown is in order to 
 - Use effects like bold and italics sparingly and only when emphasis is needed
 - Use headings to break up the page into sections
 - Code blocks can be used to show code snippets or commands
-- Admonitions can be used to show important information
+- [Admonitions](#custom-elements) can be used to show important information
 - Tables should be used to show large amounts of data
 
 :::warning
