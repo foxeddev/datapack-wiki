@@ -12,10 +12,13 @@
   import IconGuides from "~icons/tabler/book-2";
   import IconCollapse from "~icons/tabler/chevron-left";
   import IconWiki from "~icons/tabler/globe";
+  import IconMarkdown from "~icons/tabler/markdown";
+  import IconBranch from "~icons/tabler/git-branch";
 
   import SidebarPage from "./navigation/SidebarPage.svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
   import type { SvelteComponent } from "svelte";
+  import SidebarCategory from "./navigation/SidebarCategory.svelte";
 
   let results: Page[] = $state([]);
 
@@ -73,9 +76,12 @@
         {/if}
       </div>
       <div class="mt-5">
+        <SidebarCategory name="Contribution" icon={IconWiki}>
+          <SidebarPage label="Formatting" icon={IconMarkdown} page="/contribute/formatting" />
+          <SidebarPage label="Git Practices" icon={IconBranch} page="/contribute/git-practices" />
+        </SidebarCategory>
         <SidebarPage label="Resources" icon={IconResources} page="/resources" />
         <SidebarPage label="Credits" icon={IconCredits} page="/credits" />
-        <SidebarPage label="Contributing" icon={IconWiki} page="/contribute" />
       </div>
     </div>
   </div>

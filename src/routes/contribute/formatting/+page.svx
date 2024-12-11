@@ -1,7 +1,7 @@
 ---
-title: "Site Development"
+title: "Page Formatting"
 description:
-  "This page is meant to be an introduction to developing a page for the wiki. In it is multiple examples which you can
+  "This page is an introduction to formatting a page for the wiki. In it is multiple examples which you can
   examine raw in the [site source code](https://github.com/Datapack-Hub/wiki)."
 ---
 
@@ -9,46 +9,33 @@ description:
 import {Version, TreeRoot, TreeEntry, Highlight} from '$lib/reusables';
 </script>
 
-# Site Meta and Contribution
+# Page Formatting
 
-This page is meant to be an introduction for contributors to the wiki. In it is multiple examples which you can examine
-unformatted in the [site source code](https://github.com/Datapack-Hub/wiki).
-
-<!-- <TreeRoot>
-  <TreeEntry>Hello</TreeEntry>
-  <TreeEntry>
-    <TreeRoot>
-      <TreeEntry>
-        <TreeRoot>
-          <TreeEntry>Hi</TreeEntry>
-        </TreeRoot>
-      </TreeEntry>
-    </TreeRoot>
-  </TreeEntry>
-</TreeRoot> -->
-
-**Last Updated:** 12-07-2024 
-
-## Contributing
-
-The full contributing guide is available on a [separate page here](https://github.com/Datapack-Hub/wiki/blob/main/CONTRIBUTING.md).
-To contribute, please fork the [Datapack-Hub/wiki](https://github.com/Datapack-Hub/wiki) repo on GitHub, make changes in your fork, then submit a pull
-request, explaining your changes.
-
-## Formatting
+**Last Updated:** 12-11-2024 
 
 This section goes over how we format wiki pages. We like to be consistent, so please read through this section carefully and use these features to
 your advantage:
 
-### Basic formatting
+## Basic formatting
 
-All content on the website (except navbar, sidebar and things that are not the actual wiki pages) are made using a
+All content on the website (except a few small exceptions) are made using a
 technology called mdsvex. This technology enables people like you to insert Markdown along with
 [svelte components](https://svelte.dev).
 
-:::tip
-It is recommended to know what the proper way to format markdown is in order to stay consistent and prevent confusion. 
-If you don't know it off by heart, try taking some of the recommendations from a program like Markdown Lint.
+It is recommended to know what the proper way to format Markdown is in order to stay consistent and prevent confusion.
+
+- The front matter title should be the same as the title in the sidebar and the title on the page (heading 1 or single #)
+- Effects like bold and italics sparingly and only when emphasis is needed
+- Use headings to break up the page into sections
+- Code blocks can be used to show code snippets or commands
+- Admonitions can be used to show important information
+- Tables should be used to show large amounts of data
+
+:::warning
+Many markdown formatters do not work well with admonitions, so we recommend manually formatting whenever possible. 
+Try breaking up lines to make it easier to read.
+
+We recommend 80-100 characters per line.
 :::
 
 Each page is made of 3 parts:
@@ -65,7 +52,7 @@ Along with everything else, there is also a component called `Version` which is 
 
 We recommend using this component on any page that is validated and up to date with the latest Minecraft version.
 
-### Front Matter
+## Front Matter
 
 We try to keep the front matter as minimal as possible, but it is still required to be present. Without it, the page will not display correctly on search engines or other sites. 
 Front matter may seem daunting, but it is quite simple. The front matter for this page looks like this:
@@ -74,7 +61,7 @@ Front matter may seem daunting, but it is quite simple. The front matter for thi
 ---
 title: "Site Development"
 description:
-  "This page is meant to be an introduction to developing a page for the wiki. In it is multiple examples which you can
+  "This page is meant to be an introduction to formatting a page for the wiki. In it is multiple examples which you can
   examine raw in the [site source code](https://github.com/Datapack-Hub/wiki)."
 ---
 ```
@@ -84,7 +71,7 @@ short summary of the content of the page in order to show people what all is cov
 might not have a description or the description may be the first line on the page. In many cases this is not optimal, 
 so we recommend changing description field to provide a more detailed description of the page.
 
-### Custom Elements
+## Custom Elements
 
 Our markdown system adds unlimited customizability to the way we format our pages. As of the time of writing, we currently have the following features:
 
@@ -113,12 +100,12 @@ Highlighting is a way to highlight specific text. It isn't commonly used, but it
 > <Highlight color="#DC2626">Highlighted Text</Highlight>
 > like this.
 
-### Standardized Elements
+## Standardized Elements
 
 As of right now, the wiki uses a few elements that are standardized across the entire wiki. Right now this only consists of command syntax.
 You can find the command syntax we use in the [commands page](/wiki/commands/about).
 
-### Formatting Examples
+## Formatting Examples
 
 Example Markdown used on the wiki:
 
