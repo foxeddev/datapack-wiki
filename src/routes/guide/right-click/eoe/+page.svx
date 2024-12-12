@@ -1,29 +1,43 @@
 ---
-title: Using an Eye of Ender for RC Detection
-description: "An interesting right-click detection method for sure, due to the fact that it can only be used in worlds without strongholds! This method works by leveraging advancements and functions, making it both efficient and versatile."
+title: Using an Eye of Ender for RC detection
+description: "An intresting right click detection method for sure, due to the fact that it can only be used in worlds without strongholds!"
 ---
 
 <script lang="ts">
-import { Version } from '$lib/reusables';
+import {Version} from '$lib/reusables';
 </script>
 
-<Version version="1.21"/>
+<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
 
-# Eye of Ender Right Click Detection
+# Pros and cons
+**Pros:**
+- Doesn't require additional entities
+- Doesn't need to run every tick
+- Doesn't attract mobs
 
-Using an Eye of Ender is a unique way to detect right clicks in Minecraft. This method works by leveraging advancements and functions, making it both efficient and versatile. However, it’s important to note that this method is mostly used in worlds without strongholds, but it can be adapted for use in those worlds if necessary.
+**Cons:**
+- Only works in worlds without strongholds
+- Slows player down when holding right click
+
+**Other:**
+- Detects up to 20 clicks/second when holding right click
+- Bound to the player, not a specific location
+
+# Using an Eye of Ender for Right Click Detection
 
 :::warning
-This only works in worlds without strongholds. If you don't want that limitation, you can either use a similar method that works everywhere (e.g., the [Consumable Component](/guide/right-click/food_component) method) or make changes to these functions, as specified at the end of this guide.
+This only works in world without strongholds, if you don't want that, you can either use a similiar method that works everywhere (using the Food Component method) or do some chnages to these functions, as specified at the end of this guide.
 :::
 
-## Setup and Usage
+This is just a guide, so you'll need to change a few things for your actual datapack:
+- Change `<namespace>` to your namespace
+- Change `<custom_data>` to whatever custom data you want
 
-To start, we'll create an advancement that detects when a player right-clicks while holding an Eye of Ender. Create the following JSON file in `data/<namespace>/advancement/<advancement_name>.json`. You can use any name you prefer, but for the sake of this guide, we'll call it `used_eye_of_ender.json`:
+Using an Eye of Ender is a very similiar method to using the [Food Component](/guide/right-click/food_component), with the difference that this can only be used in worlds without strongholds. With that out of the way, the first file we will need to create will be an advancement. Located in `data/<namespace>/advancement/`, we will need to create a `.json` file, we are going to call it `used_eye_of_ender.json` for the rest of he guide.
 
 ```json:used_eye_of_ender.json
 {
- "criteria": {
+  "criteria": {
     "requirement": {
       "trigger": "minecraft:using_item",
       "conditions": {
@@ -33,7 +47,6 @@ To start, we'll create an advancement that detects when a player right-clicks wh
           ],
           "predicates": {
             "minecraft:custom_data": {"<custom_data>": true}
-          }
         }
       }
     }
@@ -44,20 +57,14 @@ To start, we'll create an advancement that detects when a player right-clicks wh
 }
 ```
 
-This advancement will trigger a function whenever the player uses an eye of ender.
-
-Next, we'll create a function located in `data/<namespace>/functions/<name>.mcfunction`, again you can call it whatever you want, but for the sake of this tutorial, it's going to be `rightclick_run.mcfunction`. The function will revoke the advancement, allowing it to detect the right-click again, and execute our own commands. Here’s an example of what it might look like:
+Now that we have the advancement, we can detect if the player is holding right click and call our function, that is located in `data/<namespace>/function/`. You will have to call this function the same name as you did in the advancement, for us that is `rightclick_run.mcfunction`.
 
 ```mcfunction:rightclick_run.mcfunction
-# Revoke the advancement to allow reuse
+# Revoke the advancement from the player so it can be used again
 advancement revoke @s only <namespace>:used_eye_of_ender
-
-# Replace this with your desired logic
-say I successfully used eye of ender right click detection!
+# Announce the use of the item in chat, feel free to replace this with whatever
+# your logic here...
+say I successfully used EoE detection!
 ```
 
-If you want to make this method compatible with worlds containing strongholds, you can either block the target of ender eyes in the `pack.mcmeta` or kill the eye and give it back after it being used.
-
-:::note
-Add a subheading for detecting clicks on worls with strongholds?
-:::
+If you want this method to work in worlds with strongholds, you can either block the target of ender eyes in the pack.mcmeta or killing the eye and giving it back after it being used.
