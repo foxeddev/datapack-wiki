@@ -1,53 +1,42 @@
 ---
 title: Using an Eye of Ender for RC detection
-description:
-  "An interesting right click detection method for sure, due to the fact that it can only be used in worlds without
-  strongholds!"
+description: "An intresting right click detection method for sure, due to the fact that it can only be used in worlds without strongholds!"
 ---
 
 <script lang="ts">
 import {Version} from '$lib/reusables';
 </script>
 
-<Version version="4"/>
+<Version version="1.21.4"/>
 
 # Eye of Ender Right Click Detection
 
 ## Pros and cons
 
 **Pros:**
-
 - Doesn't require additional entities
 - Doesn't need to run every tick
 - Doesn't attract mobs
 
 **Cons:**
-
 - Only works in worlds without strongholds
 - Slows player down when holding right click
 
 **Other:**
-
 - Detects up to 20 clicks/second when holding right click
 - Bound to the player, not a specific location
 
-## Usage
+# Using an Eye of Ender for Right Click Detection
 
 :::warning
-This only works in world without strongholds, if you don't want that, you can either use a similar method
-that works everywhere (using the Food Component method) or do some changes to these functions, as specified at the end
-of this guide.
+This only works in world without strongholds, if you don't want that, you can either use a similiar method that works everywhere (using the Food Component method) or do some chnages to these functions, as specified at the end of this guide.
 :::
 
 This is just a guide, so you'll need to change a few things for your actual datapack:
-
 - Change `<namespace>` to your namespace
 - Change `<custom_data>` to whatever custom data you want
 
-Using an Eye of Ender is a very similar method to using the [Food Component](/guide/right-click/food_component), with
-the difference that this can only be used in worlds without strongholds. With that out of the way, the first file we
-will need to create will be an advancement. Located in `data/<namespace>/advancement/`, we will need to create a `.json`
-file, we are going to call it `used_eye_of_ender.json` for the rest of he guide.
+Using an Eye of Ender is a very similiar method to using the [Food Component](/guide/right-click/food_component), with the difference that this can only be used in worlds without strongholds. With that out of the way, the first file we will need to create will be an advancement. Located in `data/<namespace>/advancement/`, we will need to create a `.json` file, we are going to call it `used_eye_of_ender.json` for the rest of he guide.
 
 ```json:used_eye_of_ender.json
 {
@@ -72,9 +61,7 @@ file, we are going to call it `used_eye_of_ender.json` for the rest of he guide.
 }
 ```
 
-Now that we have the advancement, we can detect if the player is holding right click and call our function, that is
-located in `data/<namespace>/function/`. You will have to call this function the same name as you did in the
-advancement, for us that is `rightclick_run.mcfunction`.
+Now that we have the advancement, we can detect if the player is holding right click and call our function, that is located in `data/<namespace>/function/`. You will have to call this function the same name as you did in the advancement, for us that is `rightclick_run.mcfunction`.
 
 ```mcfunction:rightclick_run.mcfunction
 # Revoke the advancement from the player so it can be used again
@@ -84,5 +71,4 @@ advancement revoke @s only <namespace>:used_eye_of_ender
 say I successfully used EoE detection!
 ```
 
-If you want this method to work in worlds with strongholds, you can either block the target of ender eyes in the
-pack.mcmeta or killing the eye and giving it back after it being used.
+If you want this method to work in worlds with strongholds, you can either block the target of ender eyes in the pack.mcmeta or killing the eye and giving it back after it being used.
