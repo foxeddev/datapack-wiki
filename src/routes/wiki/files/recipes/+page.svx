@@ -108,7 +108,7 @@ Possible special recipes:
 | `crafting_special_bannerduplicate`    | The recipe for copying banners                       |
 | `crafting_special_bookcloning`        | The recipe for copying written books                 |
 | `crafting_special_firework_rocket`    | The recipe for crafting firework rockets             |
-| `crafting_special_firework_star`-     | The recipe for crafting firework stars               |
+| `crafting_special_firework_star`      | The recipe for crafting firework stars               |
 | `crafting_special_firework_star_fade` | The recipe for adding fade colors to firework stars  |
 | `crafting_special_mapcloning`         | The recipe for copying maps                          |
 | `crafting_special_mapextending`       | The recipe for extending maps                        |
