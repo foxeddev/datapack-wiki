@@ -5,7 +5,7 @@ description: "This page is an introduction to our Git practices a page for the w
 
 # Git Practices
 
-**Last Updated:** 12-11-2024
+**Last Updated:** 12-13-2024
 
 This page is an introduction to how we use Git in the wiki repository. In order to keep the wiki consistent and
 reputable, we have a few rules that we follow.
@@ -20,13 +20,13 @@ merged.
 
 ### Branch Naming
 
-We use `kebab-case` for branch names. This means that the branch name should be all lowercase and use hyphens to
+We use `kebab-case` for branch names meaning the branch name should be all lowercase with hyphens to
 separate words. For example, if you are working on a page called "Adding New Features", the branch name should be
 `adding-new-features`.
 
 ### Branch Workflow
 
-When you are ready to merge your changes into the main branch, you should create a pull request (PR) and assign it to a
+When you are ready to merge your changes into the main branch, create a pull request (PR) and assign it to a
 reviewer. The reviewer will review your changes and either approve or request changes. Once approved, the changes will
 be merged into the main branch.
 
@@ -59,7 +59,7 @@ recommended.
 
 ## Merging
 
-Whenever you start working on a new branch or features, you should pull the latest changes from the main branch. This
+Whenever you start working on a new branch or features, pull the latest changes from the main branch. This
 will ensure that you have the most up-to-date changes.
 
 You will likely run into an issue with the `search.json` file, which is used to generate the search index. This file is
@@ -79,6 +79,5 @@ bun ./gen_search_indexes.js
 - Always use the `main` branch as the base branch for your PRs. This will reduce the chances of conflicts and ensure
   that your changes are merged correctly.
 - Make a description of your changes in your PR.
-- Reviewers: Make sure to proofread changes before approving them.
-- Reviewers: It's not required, but it's recommended to make sure the changes follow American English for consistency
-  sake.
+- Reviewers: Proofread changes before approving them.
+- Reviewers: It's not required, but it's recommended the changes follow American English for consistency sake.
