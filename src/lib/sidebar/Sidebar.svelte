@@ -85,14 +85,15 @@
       </div>
     </div>
   </div>
-  <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
+  <div class="flex text-sm text-stone-600 p-3 items-center w-full">
     {#if windowInfo.isNavOpen}
-      <span class="grow flex flex-col items-center"
-        >pack_format: {latestMCData.packFormat} ({latestMCData.gameVersion})</span>
+      <span class="grow flex flex-col">pack_format: {latestMCData.packFormat} ({latestMCData.gameVersion})</span>
     {/if}
     <button
       aria-label="{windowInfo.isNavOpen ? 'Collapse' : 'Expand'} Sidebar"
-      class="text-stone-200 text-lg motion-safe:transition-all {windowInfo.isNavOpen ? 'rotate-0' : 'rotate-180'}"
+      class="hidden sm:block text-stone-200 text-lg motion-safe:transition-all {windowInfo.isNavOpen
+        ? 'rotate-0'
+        : 'rotate-180'}"
       onclick={() => (windowInfo.isNavOpen = !windowInfo.isNavOpen)}>
       <IconCollapse />
     </button>

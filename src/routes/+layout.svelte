@@ -13,6 +13,7 @@
   import type { Snippet } from "svelte";
   import type { PageData } from "./$types";
   import { latestMCData, windowInfo } from "$lib/stores.svelte";
+  import { innerWidth } from "svelte/reactivity/window";
   interface Props {
     children: Snippet;
     data: PageData;
@@ -25,10 +26,16 @@
 
   let betaWarning: HTMLDivElement | null = $state(null);
 
+
+  
+  windowInfo.width = innerWidth.current || 1920;
+  windowInfo.isNavOpen = (innerWidth.current || 1920) >= 768;
+
   $effect(() => {
-    if (!browser) return;
-    windowInfo.width = window.innerWidth;
-    windowInfo.isNavOpen = window.innerWidth > 768;
+    console.log("%c📦 Datapack Wiki", `color: oklch(69.27% 0.2042 40.82); font-size: 24pt; font-weight: 600;`);
+    console.log("If you know what you're doing here, and you want to help develop the wiki, contact a DPH admin.");
+  
+    console.log("Or just chill here, I'm a website, I can't stop you.");
   });
 </script>
 
