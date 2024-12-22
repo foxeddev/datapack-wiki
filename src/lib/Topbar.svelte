@@ -27,6 +27,7 @@
   // silly easter egg
   let lastFewInputs: string[] = [];
   let logoFlipped = $state(false);
+  let logoBonked = $state(false);
 
   export async function handleKeyInput(e: KeyboardEvent) {
     lastFewInputs.push(e.key);
@@ -34,8 +35,12 @@
       lastFewInputs.shift();
     }
 
-    if (lastFewInputs.join("").includes("databonk")) {
+    if (lastFewInputs.join("").includes("dataflip")) {
       logoFlipped = !logoFlipped;
+    }
+
+    if (lastFewInputs.join("").includes("databonk")) {
+      logoBonked = !logoBonked;
     }
   }
 </script>
@@ -52,7 +57,7 @@
       <img
         alt="Datapack Hub Logo"
         src="/logos/dph.svg"
-        class="h-8 mr-2 {logoFlipped ? 'rotate-180' : ''} transition-transform"
+        class="h-8 mr-2 {logoFlipped ? 'rotate-180' : ''} {logoBonked ? 'scale-y-50' : ''} transition-transform"
         width="32"
         height="32" />
       <h1 class="font-bold hidden text-lg lg:text-xl sm:block">Datapack Wiki</h1>
