@@ -14,7 +14,7 @@ const log = createConsola({
 // Sorry!
 
 const posts = [];
-const fileGlob = new Glob("./**/*.{svx,md}");
+const fileGlob = new Glob("./**/+page.svx");
 const matchingFiles = fileGlob.scan("./src/routes");
 
 // read all routes

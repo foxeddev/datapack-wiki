@@ -22,7 +22,25 @@
       }, 2000);
     }
   }
+
+
+  // silly easter egg
+  let lastFewInputs: string[] = [];
+  let logoFlipped = $state(false);
+
+  export async function handleKeyInput(e: KeyboardEvent) {
+    lastFewInputs.push(e.key);
+    if (lastFewInputs.length > 8) {
+      lastFewInputs.shift();
+    }
+
+    if (lastFewInputs.join("").includes("databonk")) {
+      logoFlipped = !logoFlipped;
+    }
+  }
 </script>
+
+<svelte:window onkeydown={e => handleKeyInput(e)} />
 
 <div class="bg-stone-800 flex w-full items-center justify-between p-2 h-12 sticky top-0 border-b border-stone-700 z-20">
   <div class="flex items-center grow">
@@ -31,7 +49,12 @@
       aria-label="{windowInfo.isNavOpen ? 'Collapse' : 'Expand'} Sidebar"
       onclick={() => (windowInfo.isNavOpen = !windowInfo.isNavOpen)}><IconMenu /></button>
     <a class="flex items-center cursor-default hover:text-white p-1" href="/">
-      <img alt="Datapack Hub Logo" src="/logos/dph.svg" class="h-8 mr-2" width="32" height="32" />
+      <img
+        alt="Datapack Hub Logo"
+        src="/logos/dph.svg"
+        class="h-8 mr-2 {logoFlipped ? 'rotate-180' : ''} transition-transform"
+        width="32"
+        height="32" />
       <h1 class="font-bold hidden text-lg lg:text-xl sm:block">Datapack Wiki</h1>
       <div class="bg-red-900/50 px-2 py-1 rounded-lg space-x-3 items-center flex mx-2">
         <b>ALPHA</b>

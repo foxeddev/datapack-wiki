@@ -1,6 +1,5 @@
 <script lang="ts">
   import { windowInfo } from "$lib/stores.svelte";
-  import autoAnimate from "@formkit/auto-animate";
   import type { Snippet } from "svelte";
   import IconExpand from "~icons/tabler/chevron-right";
 
@@ -34,7 +33,7 @@
   {/if}
 </a>
 
-<div use:autoAnimate={{ duration: 200 }}>
+<div>
   {#if expanded && windowInfo.isNavOpen}
     <div class="flex flex-col ml-4 pb-2">
       {@render children()}
