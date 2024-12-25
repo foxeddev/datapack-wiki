@@ -65,7 +65,7 @@
         <button
           class="{page == 'wiki'
             ? 'bg-stone-700'
-            : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center gap-1"
+            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1"
           onclick={() => {
             page = "wiki";
             sessionStorage.setItem("page", "wiki");
@@ -75,7 +75,7 @@
         <button
           class="{page == 'guides'
             ? 'bg-stone-700'
-            : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center gap-1"
+            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1"
           onclick={() => {
             page = "guides";
             sessionStorage.setItem("page", "guides");
