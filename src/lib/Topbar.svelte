@@ -71,7 +71,7 @@
     <a
       href="https://github.com/Datapack-Hub/wiki/blob/main/src/routes{page.url.pathname}/%2Bpage.svx"
       class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto"
-      aria-label="Discord">
+      aria-label="Edit">
       <IconEdit />
       <span class="hidden sm:block">Edit</span>
     </a>
