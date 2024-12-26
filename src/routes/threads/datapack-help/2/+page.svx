@@ -1,0 +1,11 @@
+---
+title: Test Question 3
+description: mirrored question
+tags: beginner, worldgen
+---
+
+<script lang="ts">
+import { Discord } from '$lib/reusables';
+</script>
+
+# Test3

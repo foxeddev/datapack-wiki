@@ -5,6 +5,7 @@
 
   import GuidePages from "$lib/sidebar/tabs/Guides.svelte";
   import WikiPages from "$lib/sidebar/tabs/WikiPages.svelte";
+  import HelpThreads from "$lib/sidebar/tabs/HelpThreads.svelte";
   import { latestMCData, windowInfo } from "$lib/stores.svelte";
 
   import IconCredits from "~icons/tabler/address-book";
@@ -14,6 +15,7 @@
   import IconWiki from "~icons/tabler/globe";
   import IconMarkdown from "~icons/tabler/markdown";
   import IconBranch from "~icons/tabler/git-branch";
+  import IconHelpThreads from "~icons/tabler/message-question";
 
   import SidebarPage from "./navigation/SidebarPage.svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
@@ -82,14 +84,26 @@
           }}>
           <IconGuides /><span>Guides</span>
         </button>
+        <button
+          class="{page == 'helpThreads'
+            ? 'bg-stone-700'
+            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1"
+          onclick={() => {
+            page = "helpThreads";
+            sessionStorage.setItem("page", "helpThreads");
+          }}>
+          <IconHelpThreads /><span>Threads</span>
+        </button>
       </div>
     {/if}
     <div class="flex flex-col h-full">
       <div class="grow">
         {#if page == "wiki"}
           <WikiPages />
-        {:else}
+        {:else if page == "guides"}
           <GuidePages />
+        {:else}
+          <HelpThreads />
         {/if}
       </div>
       <div class="mt-5">

@@ -1,0 +1,25 @@
+---
+title: Resourcepack Help Threads
+description: "Mirror of resolved resourcepack help threads in the Datapack Hub Discord server"
+---
+
+<script lang="ts">
+    import { Discord, PageButtonList } from '$lib/reusables';
+    
+    // Preprocess the help thread data here to keep the component generic
+    const pages = import.meta.glob("/src/routes/threads/resourcepack-help/*/+page.svx", {query:"raw", import:"default", eager:true});
+    const formatted_pages = Object.entries(pages).map((rec) => {
+        const lines = (rec[1] as string).split("\n");
+        
+        return {
+            path: rec[0].slice("/src/routes".length, -"/+page.svx".length),
+            title: lines.find(line => line.startsWith("title: "))!.slice("title: ".length),
+            tags: lines.find(line => line.startsWith("tags: "))!.slice("tags: ".length),
+            description: lines.find(line => line.startsWith("description: "))!.slice("title: ".length),
+        }
+    });
+</script>
+
+# Resolved Help Threads
+---
+<PageButtonList pages_data={formatted_pages} />
