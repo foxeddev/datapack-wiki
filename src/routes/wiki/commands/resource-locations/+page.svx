@@ -11,21 +11,29 @@ import {Version} from '$lib/reusables';
 <Version version="1.21.4"/>
 
 # Resource Locations
-A resource location is a kind of identified used in Minecraft to point to a certain piece of data, such as a function, item, or storage.
+A resource location is a way of referencing a resource in a datapack (or resourcepack), such as a function. 
 
-A resource location is comprised of two main parts: The namespace and the path.  
-The namespace defines the general place that the resource location belongs to. Generally, this will be the namespace of your datapack, or the `minecraft` namespace if interacting with something in the vanilla game. The namespace can contain lowercase letters (`a-z`), numbers (`0-9`), `_`, `-` and `.`.
-The path defines specific information about the resource location. The path may contain the same characters as the namespace, and additionally `/`, to separate directories.  
-Syntactically, the namespace is separated from the path by a colon (`:`).
+## Example
+This is an example of a resource location for a function:
+```ansi
+[2;35m/function[0m my_namespace:some_folder/my_function[2;33m[2;37m[2;34m[2;35m[2;31m[0;31m[0;30m[0;30m[0;30m[0;30m[0m[0;30m[0m[0;30m[0m[0;30m[0m[0;31m[0m[2;31m[0m[2;35m[0m[2;34m[0m[2;37m[0m[2;33m[0m
+```
+This resource location would try and access the function `/data/my_namespace/function/some_folder/my_function.mcfunction`. Notice how we don't need to specify the `function` folder in the resource location, as it is implied by the `/function` command.
 
-Item IDs are an example of resource locations. The ID `minecraft:diamond` is a resource location with the namespace `minecraft` and the path `diamond`.
+## Resource locations for tags
+To reference a tag (ie the function tag `#minecraft:load`), you can use the `#` symbol before the tag name. For example:
+```ansi
+[2;35m/function[0m #minecraftload[2;33m[2;37m[2;34m[2;35m[2;31m[0;31m[0;30m[0;30m[0;30m[0;30m[0m[0;30m[0m[0;30m[0m[0;30m[0m[0;31m[0m[2;31m[0m[2;35m[0m[2;34m[0m[2;37m[0m[2;33m[0m
+```
+This resource location would try and access the tag `/data/minecraft/tags/function/load.json`. In this case, all functions in the tag would be ran.
 
-:::tip
-If the namespace is omitted, it defaults to `minecraft`, meaning `diamond` can be used interchangeably with `minecraft:diamond`.
-:::
+## Default namespace
+If the namespace (`my_namespace`, before the colon) is left out, it will default to the `minecraft` namespace.
 
-Every file in a datapack has a resource location. It consists of the namespace it resides in, with the path being the path to the file, excluding the directory which determines the file type, so the advancement at `example/advancement/subfolder/foo.json` would have the resource location `example:subfolder/foo`, not `example:advancement/subfolder/foo`.
+```ansi
+[2;35m/function[0m some_folder/my_function[2;33m[2;37m[2;34m[2;35m[2;31m[0;31m[0;30m[0;30m[0;30m[0;30m[0m[0;30m[0m[0;30m[0m[0;30m[0m[0;31m[0m[2;31m[0m[2;35m[0m[2;34m[0m[2;37m[0m[2;33m[0m
+```
+This resource location would try and access `/data/minecraft/function/some_folder/my_function.mcfunction`.
 
-:::tip
-[Data storages](/wiki/command/data) are identified by resource location. It is considered good practice to name your storages with the namespace of your datapack, and a path which describes the purpose of the storage. This could, for example, correspond to the function which uses it.
-:::
+## Allowed characters
+A file name (and resource location) can only contain lowercase letters (`a-z`), numbers (`0-9`), underscores (`_`), dashes (`-`) and periods (`.`). In a resource location, `/` can be used to separate folders.
