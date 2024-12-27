@@ -8,6 +8,7 @@ description: TODO
 </script>
 
 # NBT
+NBT (Named Binary Tags) is a structured (key/value) data format used by Minecraft to store data about entities, items, blocks, structures, player data, worldgen, and more. You can use it to store custom data in items and NBT storages.
 
 ## SNBT Format
 SNBT (Stringified Named Binary Tags) format is a JSON-like tree structure used in datapack development to manipulate the
@@ -19,11 +20,41 @@ marked with curly brackets (`{}`). Compounds can contain multiple key/value pair
 so: `key:value,key:value,key:value`
 
 An example SNBT structure looks like:
-`{name:"Silabear",age:102,friends:["Flynecraft","Aandeel","Cobblestone"],socials:{discord:"silabear",twitch:"silabearr"}}`
+`{name:"Silabear",age:102,friends:["Flynecraft","Aandeel","Cobblestone"],socials:{discord:"silabear"}}`
+
+## NBT storages
+Storages allow you to store NBT data in a world without binding it to a physical object (item, entity, block), but rather storing it under a namespaced ID (e.g `example:main`). Storages are stored globally per world, and can only be accessed with `/data`. Storages don't need to be initialized beforehand, unlike scoreboards.
+
+Unlike entity and block NBT, storages have no fixed structure, and can contain whichever arbitrary keys are added to it.
+
+### Storage example
+Storages are defined when a `/data` command modifies them. Unlike scoreboards, storages do not need to be "created" -
+the only code needed to initialize a storage is a `/data modify` or `/data merge` command to that storage, for example:
+
+```mcfunction
+data merge storage example:main {number: 1, message: "Hello!"}
+data modify storage example:main other_number set from storage example:main number
+data modify storage compound.array append value 42
+```
+
+The `example:main` storage would now contain the following data:
+
+<!-- Javascript is used here because it's almost identical syntax to SNBT -->
+
+```javascript
+{
+  number: 1,
+  message: "Hello!",
+  other_number: 1,
+  compound: {
+    array: [42]
+  }
+}
+```
+
 
 ## Data Types
-
-SNBT has a few data types you can use to represent different types of data, including whole numbers, decimal numbers,
+There are a few data types you can use to represent different types of data, including whole numbers, decimal numbers,
 string, text, booleans, and more.
 
 ### Strings
