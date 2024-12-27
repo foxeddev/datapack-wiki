@@ -7,9 +7,12 @@ description: "An intresting right click detection method for sure, due to the fa
 import {Version} from '$lib/reusables';
 </script>
 
-<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+<Version version="1.21.4"/>
 
-# Pros and cons
+# Eye of Ender Right Click Detection
+
+## Pros and cons
+
 **Pros:**
 - Doesn't require additional entities
 - Doesn't need to run every tick
@@ -47,12 +50,13 @@ Using an Eye of Ender is a very similiar method to using the [Food Component](/g
           ],
           "predicates": {
             "minecraft:custom_data": {"<custom_data>": true}
+          }
         }
       }
+    },
+    "rewards": {
+      "function": "<namespace>:rightclick_run"
     }
-  },
-  "rewards": {
-    "function": "<namespace>:rightclick_run"
   }
 }
 ```
