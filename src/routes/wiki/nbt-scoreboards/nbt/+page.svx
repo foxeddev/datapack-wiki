@@ -22,6 +22,34 @@ so: `key:value,key:value,key:value`
 An example SNBT structure looks like:
 `{name:"Silabear",age:102,friends:["Flynecraft","Aandeel","Cobblestone"],socials:{discord:"silabear"}}`
 
+## NBT paths
+NBT paths are used to reference a specific location within an NBT structure. They are used in commands like `/data get` and `/data modify` to access or modify NBT data. 
+
+NBT paths are made up of a series of keys, separated by dots (`.`). Square brackets (`[]`) can be used to access items in an array, either by index `array[0]` or by object value (`array[{age:102}]`)
+
+Imagine the following NBT structure:
+
+```javascript
+{
+  root: {
+    version: 1,
+    title: "Targets",
+    people: [
+      {name: "Silabear", age: 102},
+      {name: "Aandeel", age: 100}
+    ]
+  }
+}
+```
+
+The following are examples of NBT paths:
+- `root.version`: would give the value `1`.
+- `root.title`: would give the value `"Targets"`.
+- `root.people[0]`: would give the value `{name: "Silabear", age: 102}`.
+- `root.people[0].name`: would give the value `"Silabear"`.
+- `root.people[{name:"Aandeel"}]`: would give the value `{name: "Aandeel", age: 100}`.
+- `root.people[{name:"Aandeel"}].age`: would give the value `100`.
+
 ## NBT storages
 Storages allow you to store NBT data in a world without binding it to a physical object (item, entity, block), but rather storing it under a namespaced ID (e.g `example:main`). Storages are stored globally per world, and can only be accessed with `/data`. Storages don't need to be initialized beforehand, unlike scoreboards.
 

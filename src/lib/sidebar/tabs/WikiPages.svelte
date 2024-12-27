@@ -51,7 +51,6 @@
   <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item-components" />
   <SidebarPlaceholder label="JSON Text" icon={IconBraces} />
   <SidebarPage label="Resource Locations" icon={IconResourceLocation} page="/wiki/commands/resource-locations" />
-  <SidebarPlaceholder label="NBT Paths" icon={IconNbtPath} />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
