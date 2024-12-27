@@ -1,18 +1,20 @@
 <script lang="ts">
   // NEVER MOVE THIS INTO APP.CSS IT WILL BREAK
   // - cbble_
-  import "../styles/fonts.css";
   import "../styles/app.css";
+  import "../styles/fonts.css";
 
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
-  import Navbar from "../lib/Navbar.svelte";
+  import Navbar from "../lib/Topbar.svelte";
 
-  import { browser, dev } from "$app/environment";
+  import { dev } from "$app/environment";
 
-  import IconBeta from "~icons/tabler/flask-2-filled";
-  import type { Snippet } from "svelte";
-  import type { PageData } from "./$types";
   import { latestMCData, windowInfo } from "$lib/stores.svelte";
+  import type { Snippet } from "svelte";
+  import { innerWidth } from "svelte/reactivity/window";
+  import IconBeta from "~icons/tabler/flask-2-filled";
+  import type { PageData } from "./$types";
+  import SidebarSearchDialog from "$lib/sidebar/SidebarSearchDialog.svelte";
   interface Props {
     children: Snippet;
     data: PageData;
@@ -25,10 +27,13 @@
 
   let betaWarning: HTMLDivElement | null = $state(null);
 
+  windowInfo.width = innerWidth.current || 1920;
+  windowInfo.isNavOpen = (innerWidth.current || 1920) >= 768;
+
   $effect(() => {
-    if (!browser) return;
-    windowInfo.width = window.innerWidth;
-    windowInfo.isNavOpen = window.innerWidth > 768;
+    console.log("%c📦 Datapack Wiki", `color: oklch(69.27% 0.2042 40.82); font-size: 24pt; font-weight: 600;`);
+    console.log("If you know what you're doing here, and you want to help develop the wiki, contact a DPH admin.");
+    console.log("Or just chill here, I'm a website, I can't stop you.");
   });
 </script>
 

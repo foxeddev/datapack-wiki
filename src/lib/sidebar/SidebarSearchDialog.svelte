@@ -1,6 +1,5 @@
 <script lang="ts">
   import { windowInfo } from "$lib/stores.svelte";
-  import autoAnimate from "@formkit/auto-animate";
   import { createSearchIndex, search } from "../search";
 
   type Props = {
@@ -12,6 +11,11 @@
 
   let searchTerm = $state("");
   let searchState: "waiting" | "done" = $state("waiting");
+
+  export async function showModalWithEvent(e: KeyboardEvent) {
+    e.preventDefault();
+    await showModal();
+  }
 
   export async function showModal() {
     dialog.showModal();
@@ -29,6 +33,8 @@
   });
 </script>
 
+<svelte:window onkeydown="{e => e.key == "k" && e.ctrlKey ? showModalWithEvent(e) : null}"/>
+
 <dialog
   bind:this={dialog}
   class="w-[90%] md:w-3/4 lg:w-1/2 xl:w-1/3 bg-transparent backdrop:bg-black/50 backdrop:backdrop-blur-sm m-auto">
@@ -42,7 +48,7 @@
       type="search"
       placeholder="Search for a page..."
       bind:value={searchTerm} />
-    <div class="overflow-y-auto max-h-[50vh]" use:autoAnimate={{ duration: 100 }}>
+    <div class="overflow-y-auto max-h-[50vh]">
       {#each results as result}
         <a
           onclick={() => {

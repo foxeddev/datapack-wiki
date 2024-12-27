@@ -55,5 +55,5 @@ Listed here are links to credible and reliable places and libraries to aid in co
 
 ## Libraries
 
-- <Highlight color="#2ED141">Library</Highlight> <a href="https://www.planetminecraft.com/data-pack/taglib/">TagLib</a>
+- <Highlight color="#2ED141">Library</Highlight> <a href="https://github.com/HeDeAnTheonlyone/Taglib/">TagLib</a>
 - <Highlight color="#2ED141">Library</Highlight> <a href="https://docs.smithed.dev/libraries/">Smithed (Libraries)</a>

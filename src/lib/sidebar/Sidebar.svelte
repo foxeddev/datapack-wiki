@@ -29,7 +29,19 @@
   });
 
   let dialog: SvelteComponent;
+
+  export async function handleKeyInput(e: KeyboardEvent) {
+    if(e.key == "ArrowLeft" && windowInfo.isNavOpen) {
+      windowInfo.isNavOpen = false;
+    }
+
+    if(e.key == "ArrowRight" && !windowInfo.isNavOpen) {
+      windowInfo.isNavOpen = true;
+    }
+  }
 </script>
+
+<svelte:window onkeydown="{e => handleKeyInput(e)}"/>
 
 <aside
   class="{windowInfo.isNavOpen
@@ -39,16 +51,21 @@
     {#if windowInfo.isNavOpen}
       <button
         aria-label="Open Search Modal"
-        class="bg-black/45 px-2 py-1 rounded-lg flex items-center gap-2 mt-1 mb-2"
+        class="bg-black/45 px-2 py-1 rounded-lg flex justify-between items-center mt-1 mb-2"
         onclick={async () => await dialog.showModal()}>
-        <IconSearch />
-        <span class="py-1 text-stone-500">Search...</span>
+        <div class="flex items-center gap-2">
+          <IconSearch />
+          <span class="py-1 text-stone-500">Search...</span>
+        </div>
+        <p class="text-stone-400 text-xs md:block hidden">
+          <kbd class="bg-stone-800 px-1.5 py-1 rounded-sm">Ctrl</kbd> <kbd class="bg-stone-800 px-1.5 py-1 rounded-sm">K</kbd>
+        </p>
       </button>
       <div class="flex items-center mb-2 gap-1">
         <button
           class="{page == 'wiki'
             ? 'bg-stone-700'
-            : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center gap-1"
+            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1"
           onclick={() => {
             page = "wiki";
             sessionStorage.setItem("page", "wiki");
@@ -58,7 +75,7 @@
         <button
           class="{page == 'guides'
             ? 'bg-stone-700'
-            : 'bg-stone-800'} hover:text-white px-2 py-1 rounded-md flex items-center gap-1"
+            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1"
           onclick={() => {
             page = "guides";
             sessionStorage.setItem("page", "guides");
@@ -85,14 +102,15 @@
       </div>
     </div>
   </div>
-  <div class="hidden sm:flex text-sm text-stone-600 p-2 items-center w-full">
+  <div class="flex text-sm text-stone-600 p-3 items-center w-full">
     {#if windowInfo.isNavOpen}
-      <span class="grow flex flex-col items-center"
-        >pack_format: {latestMCData.packFormat} ({latestMCData.gameVersion})</span>
+      <span class="grow flex flex-col">pack_format: {latestMCData.packFormat} ({latestMCData.gameVersion})</span>
     {/if}
     <button
       aria-label="{windowInfo.isNavOpen ? 'Collapse' : 'Expand'} Sidebar"
-      class="text-stone-200 text-lg motion-safe:transition-all {windowInfo.isNavOpen ? 'rotate-0' : 'rotate-180'}"
+      class="hidden sm:block text-stone-200 text-lg motion-safe:transition-all {windowInfo.isNavOpen
+        ? 'rotate-0'
+        : 'rotate-180'}"
       onclick={() => (windowInfo.isNavOpen = !windowInfo.isNavOpen)}>
       <IconCollapse />
     </button>

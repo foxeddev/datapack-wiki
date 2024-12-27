@@ -61,7 +61,7 @@ const config = {
   preprocess: [
     vitePreprocess(),
     mdsvex({
-      extensions: [".svx", ".md"],
+      extensions: [".svx"],
       remarkPlugins: [[remarkAdmonitions, admonitionsOptions], [remarkCodeTitles]],
       rehypePlugins: [[rehypeSlug], [rehypeAutolinkHeadings, autoLinkOptions]],
       layout: "src/lib/MDLayout.svelte",
