@@ -13,13 +13,11 @@
   import IconAt from "~icons/tabler/at";
   import IconZip from "~icons/tabler/file-zip";
   import IconPennant from "~icons/tabler/pennant";
-  import IconBox from "~icons/tabler/box";
   import IconCommand from "~icons/tabler/slash";
   import IconCommands from "~icons/tabler/terminal";
   import IconBraces from "~icons/tabler/braces";
   import IconStar from "~icons/tabler/star";
   import IconGrid from "~icons/tabler/grid-3x3";
-  import IconButterfly from "~icons/tabler/butterfly";
   import IconCloud from "~icons/tabler/cloud";
   import IconChest from "~icons/tabler/brand-minecraft";
   import IconWorldgen from "~icons/tabler/mountain";
@@ -32,6 +30,7 @@
   import IconNumbers from "~icons/tabler/123";
   import IconResourceLocation from "~icons/tabler/abc";
   import IconNbtPath from "~icons/tabler/code";
+  import IconScoreboard from "~icons/tabler/Table";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -52,7 +51,6 @@
   <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item-components" />
   <SidebarPlaceholder label="JSON Text" icon={IconBraces} />
   <SidebarPage label="Resource Locations" icon={IconResourceLocation} page="/wiki/commands/resource-locations" />
-  <SidebarPlaceholder label="NBT Paths" icon={IconNbtPath} />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
@@ -73,11 +71,9 @@
   <SidebarPage label="data" icon={IconCommand} page="/wiki/command/data" />
 </SidebarCategory>
 
-<SidebarCategory name="NBT Data" icon={IconBraces}>
-  <SidebarPage label="NBT" icon={IconBraces} page="/wiki/nbt/nbt" />
-  <SidebarPlaceholder label="Entity NBT" icon={IconButterfly} />
-  <SidebarPlaceholder label="Block NBT" icon={IconBox} />
-  <SidebarPage label="Storages" icon={IconCloud} page="/wiki/nbt/storages" />
+<SidebarCategory name="NBT and Scoreboards" icon={IconBraces}>
+  <SidebarPage label="NBT data" icon={IconBraces} page="/wiki/nbt-scoreboards/nbt" />
+  <SidebarPage label="Scoreboards" icon={IconScoreboard} page="/wiki/nbt-scoreboards/scoreboards" />
 </SidebarCategory>
 
 <SidebarPlaceholder label="Worldgen" icon={IconWorldgen} />
