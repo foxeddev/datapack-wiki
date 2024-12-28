@@ -10,7 +10,7 @@ tags: guide, beginner
 import { Version, Discord } from '$lib/reusables';
 </script>
 
-<Version version="1.21"/>
+<Version version="1.21.4"/>
 
 # Getting Started
 
@@ -57,7 +57,7 @@ as well as holding the basic information of the pack. **Create `pack.mcmeta`, an
 {
   "pack": {
     "description": "DATAPACK NAME HERE",
-    "pack_format": 48
+    "pack_format": 61
   }
 }
 ```
@@ -66,7 +66,7 @@ If you're interested, here's what this file means:
 
 - `pack` is an object containing the metadata of the file.
   - `description` is the name of your datapack, usually along with a short description of what your pack does.
-  - `pack_format` tells Minecraft what versions this datapack works in. `48` is the latest for 1.21
+  - `pack_format` tells Minecraft what versions this datapack works in. `61` is the latest for 1.21.4
 
 ## Writing your first function
 

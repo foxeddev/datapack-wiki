@@ -9,7 +9,7 @@ description:
 import { Version } from '$lib/reusables';
 </script>
 
-<Version version="1.21"/>
+<Version version="1.21.4"/>
 
 # Raycasting
 
@@ -17,7 +17,7 @@ Raycasting is when we shoot a line from the player's eyes in the direction they 
 player is looking at and do something to it, such as spawning an explosion.
 
 :::info
-This tutorial uses a neat thing called a <ins>recursive function</ins>. A recursive function is a function that
+This tutorial uses a neat thing called a **_recursive function_**. A recursive function is a function that
 runs itself over and over again.
 :::
 

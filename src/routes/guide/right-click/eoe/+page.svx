@@ -7,7 +7,11 @@ description: "An intresting right click detection method for sure, due to the fa
 import {Version} from '$lib/reusables';
 </script>
 
-<Version>This page is validated and up to date with Minecraft Java: 1.21</Version>
+<Version version="1.21.4"/>
+
+# Eye of Ender Right Click Detection
+
+## Pros and cons
 
 # Eye of Ender Right Click Detection
 
@@ -34,12 +38,13 @@ To detect when an eye of ender is being used, you must create a `using_item` adv
           ],
           "predicates": {
             "minecraft:custom_data": {"custom_id": "your_custom_item_id"}
+          }
         }
       }
+    },
+    "rewards": {
+      "function": "<namespace>:rightclick_run"
     }
-  },
-  "rewards": {
-    "function": "<namespace>:rightclick_run"
   }
 }
 ```

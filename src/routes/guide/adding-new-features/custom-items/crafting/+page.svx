@@ -61,7 +61,7 @@ Here is an example of a recipe with the output of a custom item:
         "default_mining_speed": 3,
         "damage_per_block": 1
       },
-      "minecraft:item_name": "\"{\\\"text\\\":\\\"sCUTE-axe\\\"}\""
+      "minecraft:item_name": "{\\\"text\\\":\\\"sCUTE-axe\\\"}"
     }
   }
 }
