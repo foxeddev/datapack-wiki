@@ -70,3 +70,4 @@ User-agent: img2dataset
 User-agent: omgili
 User-agent: omgilibot
 Disallow: /
+Disallow: /meta.json
