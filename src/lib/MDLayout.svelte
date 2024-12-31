@@ -19,11 +19,13 @@
 </script>
 
 <Seo
-  title="{title} | Datapack Wiki"
+  title="{title} - Datapack Wiki"
   {description}
   author="Datapack Wiki"
   siteName="Datapack Wiki"
   keywords="datapacks, datapack wiki, datapack docs, minecraft datapacks, datapack help, datapack creation, dph"
+  name="Datapack Wiki"
+  schemaOrg={true}
   canonical="https://datapack.wiki{page.url.pathname}"
   socials={[
     "https://discord.datapackhub.net",
