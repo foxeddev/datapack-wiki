@@ -42,7 +42,7 @@
     "rehype-slug": "^6.0.0",
     "remark-admonitions": "^1.2.1",
     "remark-code-titles": "^0.1.2",
-    "shiki": "^1.24.4",
+    "shiki": "^1.25.1",
     "sk-seo": "^0.5.1",
     "tailwindcss": "^4.0.0-beta.8",
     "unplugin-icons": "^0.22.0"
