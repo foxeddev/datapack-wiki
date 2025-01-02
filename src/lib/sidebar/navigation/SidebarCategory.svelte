@@ -11,20 +11,14 @@
 
   const { children, name, icon }: Props = $props();
 
-  let expanded = $state(false);
-
   const Icon = $derived(icon);
 </script>
 
 <details
-  bind:open={() => expanded,
-  v => {
-    expanded = v;
-    windowInfo.isNavOpen = true;
-  }}
+  ontoggle={() => windowInfo.isNavOpen = true}
   class="w-full group">
   <summary
-    class="rounded-lg cursor-default p-1 w-full flex gap-2 items-center text-left hover:bg-stone-700 hover:text-white hover:font-medium">
+    class="rounded-lg cursor-pointer p-1 w-full flex gap-2 items-center text-left hover:bg-stone-700 hover:text-white hover:font-medium">
     <Icon />
     {#if windowInfo.isNavOpen}
       <span class="grow">{name}</span>

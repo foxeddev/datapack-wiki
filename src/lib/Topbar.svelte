@@ -52,7 +52,7 @@
       class="px-2 pr-3 sm:hidden"
       aria-label="{windowInfo.isNavOpen ? 'Collapse' : 'Expand'} Sidebar"
       onclick={() => (windowInfo.isNavOpen = !windowInfo.isNavOpen)}><IconMenu /></button>
-    <a class="flex items-center cursor-default hover:text-white p-1" href="/">
+    <a class="flex items-center hover:text-white p-1" href="/">
       <img
         alt="Datapack Hub Logo"
         src="/logos/dph.svg"
