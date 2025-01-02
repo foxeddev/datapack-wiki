@@ -35,6 +35,8 @@ for await (const file of matchingFiles) {
   // add to posts
   const contentNoHtml = stripHtml(frontmatter.content).result;
   const strippedMarkdown = RemoveMarkdown(contentNoHtml)
+    .replace(/:::.*/, "")
+    .replace(/:::/, "") // remove admonitions
 
   const tags = frontmatter.data.tags || "";
 
