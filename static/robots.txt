@@ -70,3 +70,8 @@ User-agent: img2dataset
 User-agent: omgili
 User-agent: omgilibot
 Disallow: /
+
+User-agent: *
+Disallow: /search.json
+
+Sitemap: https://datapack.wiki/sitemap.xml

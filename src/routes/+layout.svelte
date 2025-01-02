@@ -14,7 +14,6 @@
   import { innerWidth } from "svelte/reactivity/window";
   import IconBeta from "~icons/tabler/flask-2-filled";
   import type { PageData } from "./$types";
-  import SidebarSearchDialog from "$lib/sidebar/SidebarSearchDialog.svelte";
   interface Props {
     children: Snippet;
     data: PageData;
