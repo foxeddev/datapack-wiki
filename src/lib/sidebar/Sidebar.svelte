@@ -31,17 +31,17 @@
   let dialog: SvelteComponent;
 
   export async function handleKeyInput(e: KeyboardEvent) {
-    if(e.key == "ArrowLeft" && windowInfo.isNavOpen) {
+    if (e.key == "ArrowLeft" && windowInfo.isNavOpen) {
       windowInfo.isNavOpen = false;
     }
 
-    if(e.key == "ArrowRight" && !windowInfo.isNavOpen) {
+    if (e.key == "ArrowRight" && !windowInfo.isNavOpen) {
       windowInfo.isNavOpen = true;
     }
   }
 </script>
 
-<svelte:window onkeydown="{e => handleKeyInput(e)}"/>
+<svelte:window onkeydown={e => handleKeyInput(e)} />
 
 <aside
   class="{windowInfo.isNavOpen
@@ -58,7 +58,8 @@
           <span class="py-1 text-stone-500">Search...</span>
         </div>
         <p class="text-stone-400 text-xs md:block hidden">
-          <kbd class="bg-stone-800 px-1.5 py-1 rounded-sm">Ctrl</kbd> <kbd class="bg-stone-800 px-1.5 py-1 rounded-sm">K</kbd>
+          <kbd class="bg-stone-800 px-1.5 py-1 rounded-sm">Ctrl</kbd>
+          <kbd class="bg-stone-800 px-1.5 py-1 rounded-sm">K</kbd>
         </p>
       </button>
       <div class="flex items-center mb-2 gap-1">

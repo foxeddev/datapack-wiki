@@ -7,6 +7,6 @@ export const GET: RequestHandler = async () => {
   return await sitemap.response({
     origin: "https://datapack.wiki",
     excludeRoutePatterns: ["^/sitemap.xml", "^/meta.json", "^/robots.txt", "^/search.json"],
-    defaultChangefreq: "weekly"
+    defaultChangefreq: "weekly",
   });
 };

@@ -23,7 +23,6 @@
     }
   }
 
-
   // silly easter egg
   let lastFewInputs: string[] = [];
   let logoFlipped = $state(false);
