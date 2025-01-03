@@ -4,19 +4,12 @@
   import IconSearch from "~icons/tabler/search";
   import type { SvelteComponent } from "svelte";
   import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
-  import { windowInfo } from "$lib/stores.svelte";
 
   let dialog: SvelteComponent;
 
   let results: Page[] = $state([]);
 
   let { keyActivated }: { keyActivated?: boolean } = $props();
-
-  let page = $state("wiki");
-
-  $effect(() => {
-    page = sessionStorage.getItem("page") || "wiki";
-  });
 </script>
 
 <button
