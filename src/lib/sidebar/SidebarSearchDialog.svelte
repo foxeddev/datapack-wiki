@@ -4,15 +4,19 @@
 
   type Props = {
     results: any[];
+    keyActivated?: boolean;
   };
 
-  let { results = $bindable([]) }: Props = $props();
+  let { results = $bindable([]), keyActivated }: Props = $props();
   let dialog: HTMLDialogElement;
 
   let searchTerm = $state("");
   let searchState: "waiting" | "done" = $state("waiting");
 
   export async function showModalWithEvent(e: KeyboardEvent) {
+    if(!keyActivated) {
+      return
+    }
     e.preventDefault();
     await showModal();
   }
