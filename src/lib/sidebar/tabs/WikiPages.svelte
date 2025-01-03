@@ -50,7 +50,7 @@
   <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/concepts/item-components" />
   <SidebarPage label="JSON Text" icon={IconBraces} page="/wiki/concepts/json-text" />
   <SidebarPage label="Resource Locations" icon={IconResourceLocation} page="/wiki/concepts/resource-locations" />
-  <SidebarPlaceholder label="Ranges" icon={IconRange} />
+  <SidebarPage label="Ranges" icon={IconRange} page="/wiki/concepts/ranges" />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
