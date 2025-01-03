@@ -18,7 +18,7 @@
   import IconBraces from "~icons/tabler/braces";
   import IconStar from "~icons/tabler/star";
   import IconGrid from "~icons/tabler/grid-3x3";
-  import IconCloud from "~icons/tabler/cloud";
+  import IconPredicate from "~icons/tabler/bleach";
   import IconChest from "~icons/tabler/brand-minecraft";
   import IconWorldgen from "~icons/tabler/mountain";
   import IconFilters from "~icons/tabler/filters";
@@ -29,8 +29,9 @@
   import IconBreak from "~icons/tabler/egg-cracked";
   import IconNumbers from "~icons/tabler/123";
   import IconResourceLocation from "~icons/tabler/abc";
-  import IconNbtPath from "~icons/tabler/code";
   import IconScoreboard from "~icons/tabler/Table";
+  import IconRange from "~icons/tabler/math-lower";
+  import IconConcepts from "~icons/tabler/blocks";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -42,23 +43,23 @@
   <SidebarPlaceholder label="Pack Formats" icon={IconNumbers} />
 </SidebarCategory>
 
-<SidebarCategory name="Commands" icon={IconCommand}>
-  <SidebarPage label="About" icon={IconCommand} page="/wiki/commands/about" />
-
-  <SidebarHeading label="Command Arguments" />
-  <SidebarPage label="Target Selectors" icon={IconAt} page="/wiki/commands/target-selectors" />
-  <SidebarPage label="Coordinates" icon={IconTilde} page="/wiki/commands/coordinates" />
-  <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item-components" />
-  <SidebarPage label="JSON Text" icon={IconBraces} page="/wiki/commands/json-text" />
-  <SidebarPage label="Resource Locations" icon={IconResourceLocation} page="/wiki/commands/resource-locations" />
+<SidebarCategory name="Concepts" icon={IconConcepts}>
+  <SidebarPage label="Commands" icon={IconCommand} page="/wiki/concepts/commands" />
+  <SidebarPage label="Target Selectors" icon={IconAt} page="/wiki/concepts/target-selectors" />
+  <SidebarPage label="Coordinates" icon={IconTilde} page="/wiki/concepts/coordinates" />
+  <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/concepts/item-components" />
+  <SidebarPage label="JSON Text" icon={IconBraces} page="/wiki/concepts/json-text" />
+  <SidebarPage label="Resource Locations" icon={IconResourceLocation} page="/wiki/concepts/resource-locations" />
+  <SidebarPage label="Ranges" icon={IconRange} page="/wiki/concepts/ranges" />
 </SidebarCategory>
 
 <SidebarCategory name="Datapack Files" icon={IconZip}>
   <SidebarPage label="Functions" icon={IconPennant} page="/wiki/files/functions" />
-  <SidebarPage label="Tags" icon={IconFilters} page="/wiki/files/tags" />
-  <SidebarPage label="Recipes" icon={IconGrid} page="/wiki/files/recipes" />
+  <SidebarPlaceholder label="Predicates" icon={IconPredicate} />
   <SidebarPlaceholder label="Advancements" icon={IconStar} />
   <SidebarPlaceholder label="Loot Tables" icon={IconChest} />
+  <SidebarPage label="Recipes" icon={IconGrid} page="/wiki/files/recipes" />
+  <SidebarPage label="Tags" icon={IconFilters} page="/wiki/files/tags" />
 </SidebarCategory>
 
 <SidebarCategory name="Command Reference" icon={IconCommands}>

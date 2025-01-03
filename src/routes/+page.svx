@@ -5,15 +5,16 @@ description: "Welcome to the Datapack Hub Wiki!"
 
 <script lang="ts">
 import { Discord } from '$lib/reusables';
+import SearchBox from '$lib/sidebar/SearchBox.svelte';
 </script>
 
 # Welcome to the Datapack Wiki!
-
 This is a community-built wiki documenting features of Minecraft Datapacks. On this site, you can find all you need to
-know to start making your own datapacks, as well as resources for more advanced datapackers.
+know to start making your own datapacks, along with guides on key concepts.
+
+<SearchBox />
 
 ## What are Datapacks?
-
 Datapacks are similar to mods, but they are vanilla,
 
 With datapacks you can:
