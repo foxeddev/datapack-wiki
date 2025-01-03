@@ -54,23 +54,15 @@ This list shows some of the possible registry types, as well as the path their t
 | World preset      | `/tags/worldgen/world_preset`                      | `"minecraft:large_biomes"`    |
 
 ## JSON format
+Tag files follow a very simple format, with two fields.
+- `replace`: Can be `true` or `false` (defaults to `false`). If `true`, the tag will overwrite other tags with the same path. If `false`, it will merge with them.
+- `values`: An array containing everything to group under this tag. Each element can either be
+  - an id (e.g. `"minecraft:apple"`)
+  - an object with an `id` field and a `required` field (e.g. `{"required": false, "id":"minecraft:stick"}`). If `required` is `false`, the tag will still skip nonexistent ids.
 
-Tags have a very simple format, with two fields.
-
-### `replace`
-
-`replace` is a boolean field which decides whether the tag should replace other tags with the same path, or merge with
-them. For example, if `"replace": true` is added to the `tick.json` function tag, only the tick functions in that
-datapack would load, as it would replace all other defined tick tags. If `replace` is false, it will merge with any
-values in `tick.json` within other packs. `replace` is an optional field, and if not specified will default to `false`.
-
-### `values`
-
-Values (`values`) is an array containing everything to group under this tag. Each element is either a string or an
-object containing an `id` field and a `required` field (object example `{"required": false, "id":"minecraft:stick"}` ).
-The plain string and the `id` field contain either the ID of the entry (such as `minecraft:diamond_block`), or the ID of
-another tag, beginning with a `#` (such as `#minecraft:logs`). The `required` field in the object is a boolean (`true`
-or `false`) which defines if this entry can be ignored if the id cannot be found.
+:::info
+Tags can also reference other tags. For example, if a tag file contains `#minecraft:logs`, it will also contain the entire contents of the `minecraft:logs` tag. A tag is represented by an ID beginning with a `#`. For more information, refer to the [resource locations](/wiki/commands/resource-locations#resource-locations-for-tags) page.
+:::
 
 ### Example
 Here is an example `item` tag file:
@@ -85,7 +77,3 @@ Here is an example `item` tag file:
     "minecraft:stick"
   ]
 }
-```
-:::info
-Tag files can also reference other tags. In this case, `#minecraft:logs` and `#minecraft:planks` are two vanilla item tags. This item tag will contain whatever is defined in those two item tags as well.
-:::

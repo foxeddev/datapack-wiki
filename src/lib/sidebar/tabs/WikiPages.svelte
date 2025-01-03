@@ -49,7 +49,7 @@
   <SidebarPage label="Target Selectors" icon={IconAt} page="/wiki/commands/target-selectors" />
   <SidebarPage label="Coordinates" icon={IconTilde} page="/wiki/commands/coordinates" />
   <SidebarPage label="Item Components" icon={IconComponents} page="/wiki/commands/item-components" />
-  <SidebarPlaceholder label="JSON Text" icon={IconBraces} />
+  <SidebarPage label="JSON Text" icon={IconBraces} page="/wiki/commands/json-text" />
   <SidebarPage label="Resource Locations" icon={IconResourceLocation} page="/wiki/commands/resource-locations" />
 </SidebarCategory>
 
