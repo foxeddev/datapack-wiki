@@ -11,32 +11,23 @@
 
   const { children, name, icon }: Props = $props();
 
-  let expanded = $state(false);
-
   const Icon = $derived(icon);
 </script>
 
-<a
-  href="#"
-  class="hover:bg-stone-700 hover:text-white hover:font-medium rounded-lg flex gap-2 cursor-default p-1 items-center w-full"
-  onclick={() => {
-    expanded = !expanded;
-    windowInfo.isNavOpen = true;
-  }}>
-  <Icon />
-
+<details
+  ontoggle={() => windowInfo.isNavOpen = true}
+  class="w-full group">
+  <summary
+    class="rounded-lg cursor-pointer p-1 w-full flex gap-2 items-center text-left hover:bg-stone-700 hover:text-white hover:font-medium">
+    <Icon />
+    {#if windowInfo.isNavOpen}
+      <span class="grow">{name}</span>
+      <IconExpand class="motion-safe:transition-all group-open:rotate-90 rotate-0" />
+    {/if}
+  </summary>
   {#if windowInfo.isNavOpen}
-    <div class="grow text-left">
-      <span>{name}</span>
-    </div>
-    <IconExpand class="motion-safe:transition-all {expanded ? 'rotate-90' : 'rotate-0'}" />
-  {/if}
-</a>
-
-<div>
-  {#if expanded && windowInfo.isNavOpen}
     <div class="flex flex-col ml-4 pb-2">
       {@render children()}
     </div>
   {/if}
-</div>
+</details>

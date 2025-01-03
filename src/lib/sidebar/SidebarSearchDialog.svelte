@@ -33,7 +33,7 @@
   });
 </script>
 
-<svelte:window onkeydown="{e => e.key == "k" && e.ctrlKey ? showModalWithEvent(e) : null}"/>
+<svelte:window onkeydown={e => (e.key == "k" && e.ctrlKey ? showModalWithEvent(e) : null)} />
 
 <dialog
   bind:this={dialog}
