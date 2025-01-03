@@ -22,7 +22,6 @@ runs itself over and over again.
 :::
 
 ## Raycast to an entity
-
 This method will show you how to find what entity that a player is looking at. This is useful for many reasons - if you
 wanted to make a gun datapack, you'd need to damage the entity that a player is looking at in order to damage them.
 

@@ -26,17 +26,22 @@
   import IconItem from "~icons/tabler/icons";
   import IconServer from "~icons/tabler/server";
   import IconDifference from "~icons/tabler/layers-difference";
+  import IconZip from "~icons/tabler/file-zip";
+  import IconScoreboard from "~icons/tabler/table";
+  import IconDivide from "~icons/tabler/divide";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
 
 <SidebarPage label="Home" icon={IconHome} page="/" />
 <SidebarPage label="Getting Started" icon={IconPennant} page="/guide/getting-started" />
-<SidebarPage label="Installing Datapacks" icon={IconDownload} page="/guide/installing-a-datapack" />
-<SidebarPage label="Choosing a Server" icon={IconServer} page="/guide/choosing-a-server" />
-<SidebarPage label="MCFunction vs Code" icon={IconDifference} page="/guide/mcfunction-vs-coding" />
 
-<SidebarHeading label="Advanced" />
+<SidebarCategory name="Datapack Meta" icon={IconZip}>
+  <SidebarPage label="Installing Datapacks" icon={IconDownload} page="/guide/installing-a-datapack" />
+  <SidebarPage label="Choosing a Server" icon={IconServer} page="/guide/choosing-a-server" />
+  <SidebarPage label="MCFunction vs Code" icon={IconDifference} page="/guide/mcfunction-vs-coding" />
+</SidebarCategory>
+
 <SidebarCategory name="Adding new features" icon={IconNew}>
   <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/adding-new-features/jukebox-songs" />
 
@@ -55,10 +60,14 @@
   <SidebarPage label="Interaction Entity" icon={IconSelection} page="/guide/right-click/interaction" />
 </SidebarCategory>
 
-<SidebarCategory name="Technical" icon={IconBrackets}>
-  <SidebarPage label="Debugging" icon={IconBug} page="/guide/technical/debugging" />
-  <SidebarPage label="Random Numbers" icon={IconDice} page="/guide/technical/random-numbers" />
-  <SidebarPage label="Player ID System" icon={IconID} page="/guide/technical/player-id-system" />
-  <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/technical/raycasts" />
-  <SidebarPage label="Slowcasts" icon={IconArrow} page="/guide/technical/slowcasts" />
+<SidebarCategory name="NBT and Scores" icon={IconScoreboard}>
+  <SidebarPage label="Random Numbers" icon={IconDice} page="/guide/nbt-and-scores/random-numbers" />
+  <SidebarPage label="Player ID System" icon={IconID} page="/guide/nbt-and-scores/player-id-system" />
+  <SidebarPage label="Floating Point Division" icon={IconDivide} page="/guide/nbt-and-scores/division" />
+</SidebarCategory>
+
+<SidebarCategory name="Misc" icon={IconBrackets}>
+  <SidebarPage label="Debugging" icon={IconBug} page="/guide/misc/debugging" />
+  <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/misc/raycasts" />
+  <SidebarPage label="Slowcasts" icon={IconArrow} page="/guide/misc/slowcasts" />
 </SidebarCategory>

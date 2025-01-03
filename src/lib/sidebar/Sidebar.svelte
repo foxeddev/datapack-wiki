@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SearchBox from './SearchBox.svelte';
+
   // ! IMPORTANT: If you want to add pages or categories, this is not the place to do it!
 
   import IconSearch from "~icons/tabler/search";
@@ -49,19 +51,7 @@
     : 'w-fit hidden sm:flex'} flex flex-col bg-stone-800 items-center h-[calc(100dvh-3rem)] sm:sticky top-12 z-50 border-r border-stone-700">
   <div class="flex flex-col p-2 pt-1 grow overflow-y-auto w-full">
     {#if windowInfo.isNavOpen}
-      <button
-        aria-label="Open Search Modal"
-        class="bg-black/45 px-2 py-1 rounded-lg flex justify-between items-center mt-1 mb-2"
-        onclick={async () => await dialog.showModal()}>
-        <div class="flex items-center gap-2">
-          <IconSearch />
-          <span class="py-1 text-stone-500">Search...</span>
-        </div>
-        <p class="text-stone-400 text-xs md:block hidden">
-          <kbd class="bg-stone-800 px-1.5 py-1 rounded-sm">Ctrl</kbd>
-          <kbd class="bg-stone-800 px-1.5 py-1 rounded-sm">K</kbd>
-        </p>
-      </button>
+      <SearchBox />
       <div class="flex items-center mb-2 gap-1">
         <button
           class="{page == 'wiki'
