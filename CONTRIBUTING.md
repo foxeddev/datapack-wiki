@@ -7,7 +7,8 @@ to know how to write Markdown, and very limited HTML knowledge.
 To contribute, please fork this repo and then submit a pull request with your
 added changes.
 
-> [!TIP] If you don't understand markdown or HTML, or if you require additional
+> [!TIP]
+> If you don't understand markdown or HTML, or if you require additional
 > support, please [join our Discord](https://discord.datapackhub.net) and we'd
 > be happy to help!
 
@@ -89,16 +90,27 @@ you may run into.
 
 ...
 
-> [!TIP] You can create info, warning, or tip boxes using the following syntax:
+> [!TIP]
+> You can create info, warning, or tip boxes using the following syntax:
 >
 > ```md
-> :::info This is an info box! ::: :::warning This is a warning box! ::: :::tip
-> This is a tip box! :::
+> :::info
+> This is an info box!
+> :::
+>
+> :::warning
+> This is a warning box!
+> :::
+>
+> :::tip
+> This is a tip box!
+> :::
 > ```
 
 ## Adding a page to the sidebar
 
-> [!NOTE] If you don't know where to put a page on the sidebar, then mention
+> [!NOTE]
+> If you don't know where to put a page on the sidebar, then mention
 > that in your PR, and someone else will add it for you. The sidebar pages are
 > stored in `/src/lib/sidebar-pages/WikiPages.svelte`.
 

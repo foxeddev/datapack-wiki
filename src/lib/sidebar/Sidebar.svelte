@@ -3,8 +3,6 @@
 
   // ! IMPORTANT: If you want to add pages or categories, this is not the place to do it!
 
-  import IconSearch from "~icons/tabler/search";
-
   import GuidePages from "$lib/sidebar/tabs/Guides.svelte";
   import WikiPages from "$lib/sidebar/tabs/WikiPages.svelte";
   import { latestMCData, windowInfo } from "$lib/stores.svelte";
@@ -18,19 +16,13 @@
   import IconBranch from "~icons/tabler/git-branch";
 
   import SidebarPage from "./navigation/SidebarPage.svelte";
-  import SidebarSearchDialog from "./SidebarSearchDialog.svelte";
-  import type { SvelteComponent } from "svelte";
   import SidebarCategory from "./navigation/SidebarCategory.svelte";
-
-  let results: Page[] = $state([]);
 
   let page = $state("wiki");
 
   $effect(() => {
     page = sessionStorage.getItem("page") || "wiki";
   });
-
-  let dialog: SvelteComponent;
 
   export async function handleKeyInput(e: KeyboardEvent) {
     if (e.key == "ArrowLeft" && windowInfo.isNavOpen) {
@@ -43,7 +35,7 @@
   }
 </script>
 
-<svelte:window onkeydown={e => handleKeyInput(e)} />
+<svelte:window on:keydown={handleKeyInput} />
 
 <aside
   class="{windowInfo.isNavOpen
@@ -51,7 +43,7 @@
     : 'w-fit hidden sm:flex'} flex flex-col bg-stone-800 items-center h-[calc(100dvh-3rem)] sm:sticky top-12 z-50 border-r border-stone-700">
   <div class="flex flex-col p-2 pt-1 grow overflow-y-auto w-full">
     {#if windowInfo.isNavOpen}
-      <SearchBox />
+      <SearchBox keyActivated />
       <div class="flex items-center mb-2 gap-1">
         <button
           class="{page == 'wiki'
@@ -107,5 +99,3 @@
     </button>
   </div>
 </aside>
-
-<SidebarSearchDialog bind:this={dialog} bind:results />

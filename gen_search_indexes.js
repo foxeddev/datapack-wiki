@@ -25,9 +25,9 @@ for await (const file of matchingFiles) {
     continue;
   }
 
+  log.info("Transforming", file);
   const rawContent = await defineFile(`./src/routes/${file}`).text();
 
-  log.info("Transforming", file);
   const frontmatter = matter(rawContent); // parse markdown front matter
 
   const filePath = file.slice(0, -9).slice(2); // remove the file name and extension and leading slash
