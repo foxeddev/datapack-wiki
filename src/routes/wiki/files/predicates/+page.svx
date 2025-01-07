@@ -37,7 +37,7 @@ This predicate will use the `entity_properties` condition check if the player is
 
 We can use `@a[predicate=namespace:my_predicate]` to select all players who match the predicate. For example:
 ```mcfunction
-execute as @a[predicate=namespace:my_predicate] run say I am holding beef in a desert temple :D
+execute as @a[predicate=namespace:my_predicate] run say I am holding beef in a desert village :D
 ```
 
 ## JSON Format
