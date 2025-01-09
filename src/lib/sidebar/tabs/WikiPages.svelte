@@ -56,7 +56,7 @@
 <SidebarCategory name="Datapack Files" icon={IconZip}>
   <SidebarPage label="Functions" icon={IconPennant} page="/wiki/files/functions" />
   <SidebarPage label="Predicates" icon={IconPredicate} page="/wiki/files/predicates" />
-  <SidebarPlaceholder label="Advancements" icon={IconStar} />
+  <SidebarPage label="Advancements" icon={IconStar} page="/wiki/files/advancements" />
   <SidebarPlaceholder label="Loot Tables" icon={IconChest} />
   <SidebarPage label="Recipes" icon={IconGrid} page="/wiki/files/recipes" />
   <SidebarPage label="Tags" icon={IconFilters} page="/wiki/files/tags" />
