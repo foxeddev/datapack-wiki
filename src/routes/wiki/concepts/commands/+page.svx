@@ -1,6 +1,6 @@
 ---
 title: Commands
-description: Commands tell the game to do things. [Functions](/wiki/files/functions) are files which are made up of many commands. They form the basic building blocks for any function datapack.
+description: "Commands tell the game to do things. [Functions](/wiki/files/functions) are files which are made up of many commands. They form the basic building blocks for any function datapack."
 ---
 
 <script lang="ts">

@@ -29,6 +29,7 @@
   import IconZip from "~icons/tabler/file-zip";
   import IconScoreboard from "~icons/tabler/table";
   import IconDivide from "~icons/tabler/divide";
+  import IconList from "~icons/tabler/list";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -64,6 +65,7 @@
   <SidebarPage label="Random Numbers" icon={IconDice} page="/guide/nbt-and-scores/random-numbers" />
   <SidebarPage label="Player ID System" icon={IconID} page="/guide/nbt-and-scores/player-id-system" />
   <SidebarPage label="Floating Point Division" icon={IconDivide} page="/guide/nbt-and-scores/division" />
+  <SidebarPage label="Array Iteration" icon={IconList} page="/guide/nbt-and-scores/array-iteration" />
 </SidebarCategory>
 
 <SidebarCategory name="Misc" icon={IconBrackets}>
