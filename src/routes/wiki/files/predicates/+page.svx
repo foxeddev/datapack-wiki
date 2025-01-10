@@ -43,6 +43,8 @@ execute as @a[predicate=namespace:my_predicate] run say I am holding beef in a d
 ## JSON Format
 Each predicate is represented as a JSON object. Predicate files can either contain one predicate object, or a list of predicate objects. Each predicate object needs a `condition` field, which specifies the type of condition to check. The rest of the fields depend on the condition type.
 
+Certain objects are commonly reused within different predicate (and advancement) conditions. Below are some of them, along with their JSON structure:
+
 ### Number providers
 A number provider is used in a predicate to provide a number. This could be a constant, score value, random value, etc. 
 
@@ -68,8 +70,17 @@ This can simply be a number (e.g `4` or `5.87`). This can also be an object with
     - `min`: The minimum number to return. This should be a number or number provider.
     - `max`: The maximum number to return. This should be a number or number provider.
 
+### Item matcher
+An item matcher is used to match an item with advanced filters for components and count. 
+
+An item matcher is an object which can consist of the following fields:
+- `items`: The item type(s) to match. This can either be string (with an item ID or item tag ID), or an array of item IDs.
+- `count`: The count of the item stack. This can either be an integer or an object with a `min` and `max` key to match a range of counts.
+- `components`: An object containing the item components to match. The key is the component name, and the value is the expected value in the component. This will only match if the component is **exactly** the same as the value - if any other data is in the component, it will be false.
+- `predicate`: Like `components`, but will match if the component at least contains the specified data, rather than only matching if it is exactly the same.
+
 ## Conditions
-These are all the possible conditions that can be used in a predicate file.
+These are all the possible conditions that can be used in a predicate.
 
 ### `block_state_property`
 `block_state_property` checks if the block state(s) of the block is/are equal to a specified value(s). This predicate type is not usable with `execute if predicate`, instead, this predicate is used in a loot table to check a block.
@@ -98,7 +109,7 @@ These are all the possible conditions that can be used in a predicate file.
 
 **Fields**:
 - `entity`: Who to check. Can be `this` (equivalent of `@s`), `attacker` (the entity that attacked), `direct_entity` (the entity that caused the damage), or `attacking_player`.
-- `predicate`: An object containing all the entity properties to check. There are lots of these, and going into full detail would take a lot of space:
+- `predicate`: An object containing all the entity properties to check. There are lots of these, and going into full detail would take a lot of space (use a generator like [misode.github.io](https://misode.github.io) to create these more efficiently):
     - `type`: The entity type to match. For instance, `minecraft:player`.
     - `type_specific`: An object that contains properties which may only be specific to one type of entity.
     - `team`: The team that the entity is on.
@@ -106,7 +117,7 @@ These are all the possible conditions that can be used in a predicate file.
     - `location`: A `location_check` predicate to match the entity's location.
     - `distance`: An object which is used to match the distance between the entity and wherever the predicate is being checked.
     - `flags`: An object which is used to match certain true/false flags of the entity, such as if they are on fire, or if they are sneaking.
-    - `equipment`: An object which is used to match the equipment (head, chest, mainhand, etc.) of the entity. The key is the slot (e.g `head`), and the value is an item subpredicate (as seen in `match_tool`)
+    - `equipment`: An object which is used to match the equipment (head, chest, mainhand, etc.) of the entity. The key is the slot (e.g `head`), and the value is an item matcher.
     - `vehicle`: Another `entity_properties` predicate to match the entity which this entity is riding.
     - `passenger`: Another `entity_properties` predicate to match the entity which is riding this entity.
     - `stepping_on`: Following the same structure as `location`, this matches the block the entity is standing on.
@@ -156,11 +167,7 @@ These are all the possible conditions that can be used in a predicate file.
 `match_tool` matches the item used to perform an action. Contrary to what may seem intuitive, this can *not* be used to check the player's mainhand item in a predicate referenced in `predicate=` or `execute if predicate` - this is only for loot tables and advancements.
 
 **Fields**:
-- `predicate`: An object containing the following keys:
-    - `items`: An item ID or list of item IDs to match. For instance, `["minecraft:honeycomb", "minecraft:debug_stick"]`.
-    - `count`: The count of the item to match. This should be a single int, or an object containing a `min` and `max` number provider to match a range.
-    - `components`: An object containing the item components to match. The key is the component name, and the value is the expected value in the component. This will only match if the component is **exactly** the same as the value - if any other data is in the component, it will be false.
-    - `predicate`: Like `components`, but will match if the component at least contains the specified data, rather than only matching if it is exactly the same.
+- `predicate`: An item matcher.
 
 ### `random_chance`
 `random_chance` will be true if a random decimal is less than the value in `chance`. For instance, `0.5` would be true 50% of the time, `0.25` would be true 25% of the time, etc.

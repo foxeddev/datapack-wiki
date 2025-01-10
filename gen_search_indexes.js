@@ -43,6 +43,7 @@ for await (const file of matchingFiles) {
   posts.push({
     title: frontmatter.data.title || "MissingNo.",
     content: strippedMarkdown,
+    description: frontmatter.data.description || null,
     url: "/" + filePath,
     tags: tags
       .split(",")
