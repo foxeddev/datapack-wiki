@@ -84,12 +84,6 @@ you may run into.
    :::tip You can do this really cool thing. It'll make your life a lot better! :::
    ```
 
-## Syntax
-
-`function <function>` - Runs a function
-
-...
-
 > [!TIP]
 > You can create info, warning, or tip boxes using the following syntax:
 >
