@@ -55,7 +55,7 @@ To do this, create a new file called `placeable.json` under `data/minecraft/tags
 ```json:placeable.json
 {
   "values": [
-    "<namespace>:example_painting.json"
+    "<namespace>:example_painting"
   ]
 }
 ```

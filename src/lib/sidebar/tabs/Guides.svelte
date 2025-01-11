@@ -30,6 +30,7 @@
   import IconScoreboard from "~icons/tabler/table";
   import IconDivide from "~icons/tabler/divide";
   import IconList from "~icons/tabler/list";
+  import IconPainting from "~icons/tabler/photo-plus";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -45,6 +46,7 @@
 
 <SidebarCategory name="Adding new features" icon={IconNew}>
   <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/adding-new-features/jukebox-songs" />
+  <SidebarPage label="Painting Variants" icon={IconPainting} page="/guide/adding-new-features/painting-variants" />
 
   <SidebarHeading label="Custom Items" />
   <SidebarPage label="Introduction" icon={IconItem} page="/guide/adding-new-features/custom-items/intro" />
