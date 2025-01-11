@@ -1,6 +1,6 @@
 ---
 title: Home
-description: "Welcome to the Datapack Wiki, your ultimate resource for everything related to Minecraft datapacks. Explore comprehensive guides, tutorials, and documentation to master the art of creating and modifying Minecraft datapacks."
+description: "Welcome to the Datapack Wiki, a resource for everything related to Minecraft Datapacks. We've got guides, tutorials, and documentation to help you build your knowledge about data packs."
 ---
 
 <script lang="ts">
