@@ -9,7 +9,7 @@ import SearchBox from '$lib/sidebar/SearchBox.svelte';
 </script>
 
 # Welcome to the Datapack Wiki!
-Welcome to the Datapack Wiki (by Datapack Hub), a resource for everything related to Minecraft Datapacks. This community-built wiki is Provides guides, tutorials, and documentation to help you create and modify Minecraft Datapacks.
+Welcome to the Datapack Wiki (by Datapack Hub), a resource for everything related to Minecraft Datapacks. This community-built wiki has got guides, tutorials, and documentation to help you create and modify Minecraft Datapacks.
 
 <SearchBox />
 
