@@ -15,7 +15,7 @@
         <span class="text-orange-400">Datapack Hub</span> Discord server!
         <br />
         Join us now!
-        <a href="https://discord.datapackhub.net" class="underline text-orange-400">https://discord.datapackhub.net/</a>
+        <a href="https://discord.gg/xHTHbZqXr6" class="underline text-orange-400">https://discord.gg/xHTHbZqXr6</a>
       </p>
     </div>
   </div>

@@ -1,14 +1,8 @@
 ---
 title: Using the Consumable component for RC detection
-description:
-  "Using the minecraft:consumable component to detect when the user right clicks an item in a datapack."
+description: "Using the minecraft:consumable component to detect when the user right clicks an item in a datapack."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Consumable Component Right Click Detection
 The `minecraft:consumable` component can be a helpful indicator of when an item is right clicked by the player in a Minecraft datapack. We can detect usage of an item with the `consumable` and `food` components with an advancement which can trigger a function. This method can be used on almost any type of item.

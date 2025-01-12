@@ -1,13 +1,8 @@
 ---
 title: Advancements
 description: In a datapack, we can create advancements, which can additionally be used to detect events.
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Advancements
 Advancement files are used to create in-game advancements. These can have display properties to make them visible to the player, like how vanilla advancements work. In many function datapacks, we can use hidden custom advancements to detect events (e.g player attacks entity) and then run a function.

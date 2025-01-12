@@ -1,13 +1,8 @@
 ---
 title: Predicates
 description: Predicates are a type of file which can be called to check if a certain condition is true.
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Predicates
 Predicates are a type of file which can be called to check if a certain condition is true. For instance, you can create a predicate to check if a player is walking, if an entity is above a specific Y level, or if a player is holding an item. They are extremely versatile and, in many cases, more optimised than `execute if` commands.

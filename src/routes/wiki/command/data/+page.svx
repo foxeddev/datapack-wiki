@@ -1,14 +1,8 @@
 ---
 title: /data
-description:
-  "The data command is used to modify and fetch NBT data of blocks, entities and storages."
+description: "The data command is used to modify and fetch NBT data of blocks, entities and storages."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # /data command
 The `/data` command is used to modify and fetch NBT data of [blocks](/wiki/nbt/block-nbt), [entities](/wiki/nbt/entity-nbt) and [storages](/wiki/nbt/storages).
@@ -20,7 +14,7 @@ Player data cannot be modified using commands. All subcommands fail when trying 
 ## Subcommands
 ### `get <source> [path] [scale]`
 Gets the data from a data source, and a `path`, if specified. Multiplies the resulting value by `scale`, if specified.  
-`source` is a [data source](#data-source), `path` is an [nbt path](/wiki/commands/nbt_paths) and `scale` is a number.  
+`source` is a [data source](#data-source), `path` is an [nbt path](/wiki/concepts/nbt_paths) and `scale` is a number.  
 If `scale` is set, and the data at that path it not a number, the command fails.
 
 After fetching the NBT at the path, if it exists, it prints the data in [SNBT](/wiki/nbt/snbt) format in the chat. Therefore, its main use is manually inspecting NBT data. However, it also returns the integer representation <!-- TODO: we probably want to explain ths somewhere --> of the fetched data, so it can be used in combination with `execute store` or `return run` to convert NBT into an integer.
@@ -40,7 +34,7 @@ This command fails if the given entity or block does exist, or if the block is n
 
 ### `modify <target> <path> <action> <source>`
 Modifies the NBT data at the specified path of the given data source. This gives more fine-grained control that `data merge`.  
-`target` is the [data source](#data-source) to modify and `path` is an [NBT path](/wiki/commands/nbt_paths), the specific sub-path of that data source.  
+`target` is the [data source](#data-source) to modify and `path` is an [NBT path](/wiki/concepts/nbt_paths), the specific sub-path of that data source.  
 `action` determines what kind of modification occurs. There are 5 possible actions, as below.  
 `source` determines the source of the data being used to modify the `target`. See [source](#source) below.
 
@@ -75,11 +69,11 @@ The `example:main` storage looks like this: `{a: {b: {c: {d: 10}}}}`.
 `source` determines the value modifying `target`. It can be one of:
 
 - `value <value>` - Gets the value from an [SNBT literal](/wiki/nbt/snbt).
-- `from <data-source> [path]` - Gets the data from the specified [data source](#data-source) and [path](/wiki/commands/nbt_paths).
+- `from <data-source> [path]` - Gets the data from the specified [data source](#data-source) and [path](/wiki/concepts/nbt_paths).
 - `string <data-source> [path] [start] [end]` - Gets the data from the specified [data source](#data-source) and ensures that it's a string. If `start` or `end` is specified, truncates the string using those values. `start` is inclusive, while `end` is exclusive. Both numbers are allowed to be negative, counting from the end of the string. For example, the indices `1 -1` remove one character from each end of the string, while `0 1` takes the first character.
 
 ### `remove <source> <path>`
-Removes the NBT data from `source` at `path`. `source` is a [data source](#data-source) and `path` is an [NBT path](/wiki/commands/nbt_paths).  
+Removes the NBT data from `source` at `path`. `source` is a [data source](#data-source) and `path` is an [NBT path](/wiki/concepts/nbt_paths).  
 This deletes compound keys, and removes array and list elements, shifting proceeding elements left. It cannot, however, be used to delete an entire storage using the special `{}` path; only single keys of the root storage.
 
 :::tip

@@ -79,7 +79,7 @@
       <span class="hidden sm:block">{shareText}</span>
     </button>
     <a
-      href="https://discord.datapackhub.net"
+      href="https://discord.gg/xHTHbZqXr6"
       class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto"
       aria-label="Discord">
       <IconDiscord />
