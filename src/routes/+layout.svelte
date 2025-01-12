@@ -42,20 +42,6 @@
     <Sidebar />
     <div id="content" class="py-12 w-full min-h-screen text-stone-200 bg-stone-900">
       {@render children()}
-      {#if !dev}
-        <div class="fixed z-50 bottom-0 w-fit flex items-center" bind:this={betaWarning}>
-          <div class="bg-red-700 flex items-center">
-            <div class="p-3 flex items-center gap-2 text-sm lg:text-base">
-              <b>EARLY BETA</b>
-              <IconBeta />
-            </div>
-            <div class="bg-red-800 p-3 flex items-center text-sm lg:text-base">
-              <p>This wiki is in very early development. Your contributions are welcome!</p>
-              <button class="underline ml-2" onclick={() => betaWarning?.remove()}>Dismiss</button>
-            </div>
-          </div>
-        </div>
-      {/if}
     </div>
   </div>
 </div>

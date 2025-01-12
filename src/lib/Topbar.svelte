@@ -60,9 +60,6 @@
         width="32"
         height="32" />
       <h1 class="font-bold hidden text-lg lg:text-xl sm:block">Datapack Wiki</h1>
-      <div class="bg-red-900/50 px-2 py-1 rounded-lg space-x-3 items-center flex mx-2">
-        <b>ALPHA</b>
-      </div>
     </a>
   </div>
 
