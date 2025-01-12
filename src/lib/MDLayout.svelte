@@ -19,7 +19,7 @@
 </script>
 
 <Seo
-  title="{title} - Datapack Wiki"
+  title="{title ? title + " - " : ""} Datapack Wiki"
   {description}
   author="Datapack Wiki"
   siteName="Datapack Wiki"
