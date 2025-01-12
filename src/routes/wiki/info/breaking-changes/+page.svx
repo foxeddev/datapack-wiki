@@ -16,10 +16,10 @@ Changelog for the source of many of these.
 
 ## 1.21.4
 **Item Components**
-- Field `model` in [`equippable`](/wiki/commands/item-components#equippable) component has been renamed to `asset_id`.
-- The [`dyed`](/wiki/commands/item-components#dyed) component now tint's based on the model, not item ID.
-- The [`custom_model_data`](/wiki/commands/item-components#custom_model_data) component has new fields `floats`, `flags`, `strings`, `colors`.
-- Item blocks with [`block_entity_data`](/wiki/commands/item-components#block_entity_data) component will now set block entity data only if id tag matches type of placed block entity
+- Field `model` in [`equippable`](/wiki/concepts/item-components#equippable) component has been renamed to `asset_id`.
+- The [`dyed`](/wiki/concepts/item-components#dyed) component now tint's based on the model, not item ID.
+- The [`custom_model_data`](/wiki/concepts/item-components#custom_model_data) component has new fields `floats`, `flags`, `strings`, `colors`.
+- Item blocks with [`block_entity_data`](/wiki/concepts/item-components#block_entity_data) component will now set block entity data only if id tag matches type of placed block entity
 
 **Renames**
 - The `TNTFuse` field of TNT Minecarts has been renamed to `fuse`
@@ -35,11 +35,11 @@ Changelog for the source of many of these.
 
 ## 1.21.2
 **Item Components**
-- The [`food`](/wiki/commands/item-components#food) item component no longer automatically allows for consumption of food, and now only holds the data relating to it (meaning `nutrition`, `saturation` and `can_always_eat` are the only fields left in the component)
-  - 🛠️ To fix this, just add the [`consumable`](/wiki/commands/item-components#consumable) component: `consumable={}`. You can customize this component even more, you can read about it [here](/wiki/commands/item-components#consumable).
-- The [`lock`](/wiki/commands/item-components#lock) has been changed into an item predicate, with a format of `lock={ITEM_PREDICATE}`
+- The [`food`](/wiki/concepts/item-components#food) item component no longer automatically allows for consumption of food, and now only holds the data relating to it (meaning `nutrition`, `saturation` and `can_always_eat` are the only fields left in the component)
+  - 🛠️ To fix this, just add the [`consumable`](/wiki/concepts/item-components#consumable) component: `consumable={}`. You can customize this component even more, you can read about it [here](/wiki/concepts/item-components#consumable).
+- The [`lock`](/wiki/concepts/item-components#lock) has been changed into an item predicate, with a format of `lock={ITEM_PREDICATE}`
   - 🛠️ The previous `lock="MyKey"` would now look like `lock={components:{"minecraft:custom_name":"'MyKey'"}}`
-- The `fire_resistant` component has been renamed to [`damage_resistant`](/wiki/commands/item-components#damage_resistant), with a new field
+- The `fire_resistant` component has been renamed to [`damage_resistant`](/wiki/concepts/item-components#damage_resistant), with a new field
   - `types` - A `#` damage type tag. Items in entity form or worn by players with this component will be resistant to the damage types included in the tag.
 
 **Loot Tables**
@@ -82,7 +82,7 @@ Changelog for the source of many of these.
   - `Attributes` → `attributes`
     - `Name` → `id`
     - `Base` → `base`
-    - `Modifiers` → `modifiers` *(Now stores modifiers in the same format as modifiers in the [`minecraft:attribute_modifiers`](https://minecraft.fandom.com/wiki/Commands/item-components#attribute_modifiers) item component)*
+    - `Modifiers` → `modifiers` *(Now stores modifiers in the same format as modifiers in the [`minecraft:attribute_modifiers`](https://minecraft.fandom.com/wiki/concepts/item-components#attribute_modifiers) item component)*
       - `UUID` → `uuid`
       - `Name` → `id`
       - `Amount` → `amount`

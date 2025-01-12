@@ -106,7 +106,7 @@ projectile has hit something on its way there.
 2. make some particles for the visuals (you could replace the particle command with another function call that does more
    complex stuff)
 3. execute a command as every entity _(excluding entities with the slowcast tag and players)_ whose hit box intersects
-   with both [virtual volumes](https://datapack.wiki/wiki/commands/target_selectors#dxdydz-arguments) run the hit
+   with both [virtual volumes](https://datapack.wiki/wiki/concepts/target_selectors#dxdydz-arguments) run the hit
    function and kill the projectile.
 4. tp the projectile to the current position _(until now it only executed the command at this position but is still 0.1
    block further back)_

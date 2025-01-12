@@ -64,7 +64,7 @@ tag @s remove raycaster
 
 In the raycast function, we just want to check if the function has hit an entity, and if not, run it again until it does, hits a wall, or reaches the raycasts limit, moving slightly each time.
 
-The next step is a bit more complex. We execute a command as every entity that is not the caster and whose hitbox intersects with the current path of the raycast (using [virtual volumes](https://datapack.wiki/wiki/commands/target_selectors#dxdydz-arguments)). The command will `return run <namespace>:hit` if the raycast hits an entity. The `return run` will stop the raycast from running further, and then will run the `hit` function as the entity it has hit.
+The next step is a bit more complex. We execute a command as every entity that is not the caster and whose hitbox intersects with the current path of the raycast (using [virtual volumes](https://datapack.wiki/wiki/concepts/target_selectors#dxdydz-arguments)). The command will `return run <namespace>:hit` if the raycast hits an entity. The `return run` will stop the raycast from running further, and then will run the `hit` function as the entity it has hit.
 
 The last command checks if the raycast hit a wall. If it does, the raycast will end. If it doesn't, it will then check
 if the limit is reached, again ending if it is. Should the limit not be reached yet, it will move `0.1` blocks forward and

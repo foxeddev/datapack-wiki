@@ -82,7 +82,7 @@ function <function> [...]
 
 ## Q: How do I do conditionals?
 
-You can also do some basic conditionals with [selectors](/wiki/commands/target-selectors), but most if not all conditionals are done with the 
+You can also do some basic conditionals with [selectors](/wiki/concepts/target-selectors), but most if not all conditionals are done with the 
 [`execute if`](/wiki/command/execute#execute-ifunless-ltconditiongt-) subcommand, which accepts a variety of different inputs and check if they match/are equal. 
 You can learn more about `execute if` on the [execute page](/wiki/command/execute#execute-ifunless-ltconditiongt-).
 

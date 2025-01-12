@@ -36,7 +36,7 @@ Used to apply attribute modifiers onto items. See attributes for more (WIP).
     - `type` - The name of the attribute modifier you want to use (e.g. `block_interaction_range` or `scale`)
     - `slot` - A slot the item must be in for the attribute modifier to take effect. Can be any of: `any`, `hand`,
       `armor`, `mainhand`, `offhand`, `head`, `chest`, `legs`, `feet` or `body`.
-    - `id` - A unique [resource location](/wiki/commands/resource-locations) to identify the attribute modifier.
+    - `id` - A unique [resource location](/wiki/concepts/resource-locations) to identify the attribute modifier.
     - `amount` - Specifies the amount of change the modifier's effect has. (See "example")
     - `operation` - A modifier operation, can be any of `add_value`, `add_multiplied_base` or
     - `add_multiplied_total` (see [Attribute Modifiers](https://minecraft.wiki/w/Attribute#Modifiers) for more info.)
@@ -264,7 +264,7 @@ but if set-up correctly can also play any of the animation presets, allowing for
   - `animation` - The animation that is player when consuming the item. Can be any of `none`, `eat`, `drink`, `block`,
     `bow`, `spear`, `crossbow`, `spyglass`, `toot_horn` or `brush`, the default is `eat`.
   - `sound` - The sound event to play during when the item is consumed. The default value is `entity.generic.eat`.
-    - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
+    - `sound_id` - A [resource location](/wiki/concepts/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
     - `range` - An optional fixed range of the sound.
   - `has_consume_particles` - If the item should have consume particles. A boolean which default to `true`.
   - `on_consume_effects` - An optional list of effects which happen after the consumption of this item.
@@ -279,7 +279,7 @@ but if set-up correctly can also play any of the animation presets, allowing for
         - `diameter` - A float defining the radius of where the player can be teleported. The default value is 16.0.
       - `play_sound` - If specified, will play a selected sound on event activation.
         - `sound` - The sound event to play.
-          - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
+          - `sound_id` - A [resource location](/wiki/concepts/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
           - `range` - An optional fixed range of the sound.
 
 **Examples:** _With the food component_:
@@ -387,7 +387,7 @@ This component works like the totem of undying, by reviving the holder of the it
         - `diameter` - A float defining the radius of where the player can be teleported. The default value is 16.0.
       - `play_sound` - If specified, will play a selected sound on event activation.
         - `sound` - The sound event to play.
-          - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
+          - `sound_id` - A [resource location](/wiki/concepts/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
           - `range` - An optional fixed range of the sound.
 
 **Example:** `/give @s bone[death_protection={death_effects:[{type:"minecraft:teleport_randomly","diameter":10}]}]`
@@ -478,7 +478,7 @@ This component lets the item be equipped into a specified slot with a specified 
     or `offhand`.
   - `equip_sound` - An optional sound event to play when the item is eqipped. If unspecified, `item.armor.equip_generic`
     will play.
-    - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
+    - `sound_id` - A [resource location](/wiki/concepts/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
     - `range` - An optional fixed range of the sound.
   - `asset_id` - An optional `namespace:id` of the equipment model to use when equipped.
   - `allowed_entities` - An optional field which controls the entities that can equip this armor piece. Can either be an
@@ -486,7 +486,7 @@ This component lets the item be equipped into a specified slot with a specified 
   - `dispensable` - A boolean which defaults to `true`, defines whether the item can be equipped throught a dispenser.
   - `swappable` - A boolean which defaults to `true`, defines whether the item can be equipped into the specified slot by right-clicking.
   - `damage_on_hurt` - A boolean which defaults to `true`, defines whether the item will be damaged when the wearing entity is damaged.
-  - `camera_overlay` - An optional [resource location](/wiki/commands/resource-locations) of an overlay texture to use when equipped. The ID will address a texture under the `textures/` folder and automatically assumed to be `.png`. (`misc/pumpkinblur` will adress `textures/misc/pumpkinblur.png`)
+  - `camera_overlay` - An optional [resource location](/wiki/concepts/resource-locations) of an overlay texture to use when equipped. The ID will address a texture under the `textures/` folder and automatically assumed to be `.png`. (`misc/pumpkinblur` will adress `textures/misc/pumpkinblur.png`)
 
 **Example:** `/give @s tnt[equippable={slot:"head",equip_sound:"entity.generic.explode",model:"minecraft:end_rod",dispensable:true,swappable:true,damage_on_hurt:true}]`
 
@@ -622,7 +622,7 @@ Used to add an instrument to a goat horn.
 
 - `minecraft:instrument` - The goat horn instrument on this item.
   - `sound_event` - The sound event to play on the use of this goat horn.
-    - `sound_id` - A [resource location](/wiki/commands/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
+    - `sound_id` - A [resource location](/wiki/concepts/resource-locations) of a sound file. (e.g. `entity.generic.explode`)
     - `range` - An optional fixed range of the sound.
   - `use_duration` - An integer for how long the use duration of this goat horn should be.
   - `range` - A float for the range of the sound.

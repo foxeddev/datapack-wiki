@@ -23,7 +23,7 @@ summon <entity> [position] [nbt data]
 
 - `<entity>`: an ID of a minecraft entity. For example: `minecraft:cow`, `marker`, `zombie`. If the namespace
   (`minecraft:`) is omitted, it will default to the `minecraft` namespace.
-- `[position]` (optional): the [coordinates](/wiki/commands/coordinates) at which the entity should be spawned.
+- `[position]` (optional): the [coordinates](/wiki/concepts/coordinates) at which the entity should be spawned.
   (Defaults to the current position).
 - `[nbt data]` (optional): a compound containing the NBT (in [SNBT format](/wiki/nbt/snbt)) which the entity should be
   spawned with. For example: `{NoAI:1b}`.
