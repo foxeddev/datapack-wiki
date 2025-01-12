@@ -1,0 +1,118 @@
+---
+title: Adding Smithing Trims
+description: "Learn how to add custom smithing trims patterns to Minecraft just with a datapack and a resourcepack!"
+tags: beginner, guide, custom_items
+---
+
+<script lang="ts">
+import {Version} from '$lib/reusables';
+</script>
+
+<Version version="1.21.4"/>
+
+# How to add custom Armor Trims
+
+This guide is split into three parts, adding a custom armor trim pattern, adding a custom armor trim color pallete and adding a custom trimmable item. These parts can be done without following the other one.
+
+This will only work in 1.20+, as armor trims were added in the snapshot 23w04a. 
+:::info 
+This guide requires you
+to have at least a small understanding of datapacks. If you don't understand this guide, you can read the [Getting Started
+guide](/guide/getting-started). 
+:::
+
+To start you will need a basic datapack, if you don't know how to make one, see the
+[Getting Started](/guide/getting-started) guide.
+
+## Adding an armor trim pattern
+### Setting up the datapack - Armor Trim Pattern
+
+To start, we are going to create the main trim pattern file in the directory `data/<namespace>/trim_pattern/`.
+You can name the file whatever you want, but it has to be in the `.json` file format. For the purposes of this tutorial, we're
+going to call it `example_pattern.json`. Inside, we will put and configure these settings:
+
+```json:example_pattern.json
+{
+  "asset_id": "<namespace>:example_pattern",
+  "description": "Example Trim",
+  "template_item": "minecraft:diamond_block",
+  "decal": false
+}
+```
+
+This is a run-down of the fields in that file:
+- `description`: A text component to use as this trim's description name.
+- `template_item`: The item that represents the template item (E.g. the bolt armor trim used the `bolt_armor_trim_smithing_template` item).
+- `asset_id`: The resource location which is used in the resourcepack.
+
+If you are not sure what to put in `asset_id`, don't worry, the resource pack part is going to focus on that!
+
+Now, we are going to add the recipe file into `data/example/recipe/`. You can see more about the recipe's format [here](/wiki/files/recipes#smithing-fields).
+
+```json:example_armor_trim.json
+{
+  "type": "minecraft:smithing_trim",
+  "addition": "#minecraft:trim_materials",
+  "base": "#minecraft:trimmable_armor",
+  "template": "minecraft:diamond_block"
+}
+```
+
+### Finishing up with the resourcepack - Armor Trim Pattern
+
+To finish off, we'll need to add the actual definition for all the different colors and armor types. This can be done by changing the armor trim's atlas file. This file can be found in `assets/minecraft/atlases/armor_trims.json`. Please note that the exact spelling and the use of the Minecraft namespace is required here!
+
+```json:armor_trims.json
+{
+  "sources": [
+    {
+      "type": "minecraft:paletted_permutations",
+      "textures": [
+        "<namespace>:trims/entity/humanoid/example_template",
+        "<namespace>:trims/entity/humanoid_leggings/example_template",
+      ],
+      "palette_key": "trims/color_palettes/trim_palette",
+      "permutations": {
+        "quartz": "trims/color_palettes/quartz",
+        "iron": "trims/color_palettes/iron",
+        "gold": "trims/color_palettes/gold",
+        "diamond": "trims/color_palettes/diamond",
+        "netherite": "trims/color_palettes/netherite",
+        "redstone": "trims/color_palettes/redstone",
+        "copper": "trims/color_palettes/copper",
+        "emerald": "trims/color_palettes/emerald",
+        "lapis": "trims/color_palettes/lapis",
+        "amethyst": "trims/color_palettes/amethyst",
+        "iron_darker": "trims/color_palettes/iron_darker",
+        "gold_darker": "trims/color_palettes/gold_darker",
+        "diamond_darker": "trims/color_palettes/diamond_darker",
+        "netherite_darker": "trims/color_palettes/netherite_darker",
+        "resin": "trims/color_palettes/resin"
+      }
+    }
+  ]
+}
+```
+
+And now to finish, we'll need the actual trim textures. These should be grayscale images using the same colors as `textures/trims/color_palettes/trim_palette` (can be seen below).
+These black-and-white colors will be automatically replaced by the game when a trim color pallete is applied. An example file of `<namespace>:trims/entity/humanoid/example_template` and `<namespace>:trims/entity/humanoid_leggings/example_template` can also be found below.
+
+![textures/trims/color_palettes/trim_palette](https://i.imgur.com/o4SPsPS.png)
+
+![example_template](https://i.imgur.com/PIW9bpM.png)
+![example_template_leggings](https://i.imgur.com/aTyP6pN.png)
+
+Once you save the above files, you need to reload the resource pack, and reload it with the keybind **F3 + T**
+in-game. You will also need to leave and rejoin the world to update the datapack.
+
+:::warning
+For this to work, you will need to leave and rejoin the world, just using the `/reload` command won't do the trick here!
+:::
+
+
+
+
+
+
+## Adding an armor trim color pallete
+### Setting up the datapack - Armor Trim Color Pallete
