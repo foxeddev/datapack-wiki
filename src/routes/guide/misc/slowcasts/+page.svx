@@ -1,14 +1,8 @@
 ---
 title: Slowcast
-description:
-  "Like a raycast but in slow. Useful if simply using tp every tick skips over too much when making it fast."
+description: "Like a raycast but in slow. Useful if simply using tp every tick skips over too much when making it fast."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import { Version } from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Slowcasting
 

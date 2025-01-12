@@ -1,13 +1,8 @@
 ---
 title: /summon
 description: "The /summon command is used to summon an entity at a position, along with any entity NBT."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # /summon command
 

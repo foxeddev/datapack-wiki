@@ -1,8 +1,6 @@
 ---
 title: Installing a Datapack
-description:
-  "So you've found a nice datapack for Minecraft, and the next step is to get it into your game. This guide will explain
-  how to install a datapack onto a world which exists, a new world."
+description: "So you've found a nice datapack for Minecraft, and the next step is to get it into your game. This guide will explain how to install a datapack onto a world which exists, a new world."
 ---
 
 # Introduction

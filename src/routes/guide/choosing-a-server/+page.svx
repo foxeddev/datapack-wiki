@@ -1,8 +1,6 @@
 ---
 title: Choosing a Server
-description:
-  Learn the differences, pros and cons of different Minecraft server softwares, and which one you should use for
-  datapacks, mods and/or plugins.
+description: "Learn the differences, pros and cons of different Minecraft server softwares, and which one you should use for datapacks, mods and/or plugins."
 ---
 
 # Choosing a Server

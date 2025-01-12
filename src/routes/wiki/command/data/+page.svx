@@ -1,14 +1,8 @@
 ---
 title: /data
-description:
-  "The data command is used to modify and fetch NBT data of blocks, entities and storages."
+description: "The data command is used to modify and fetch NBT data of blocks, entities and storages."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # /data command
 The `/data` command is used to modify and fetch NBT data of [blocks](/wiki/nbt/block-nbt), [entities](/wiki/nbt/entity-nbt) and [storages](/wiki/nbt/storages).

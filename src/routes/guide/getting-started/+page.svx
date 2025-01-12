@@ -2,13 +2,8 @@
 title: How to Make a Minecraft Datapack - Beginner's Guide
 tags: guide, beginner, Minecraft, datapack, tutorial, step-by-step
 description: Learn how to create a Minecraft datapack with our beginner's guide. This step-by-step tutorial will help you understand the basics of datapack creation, even if you have little coding knowledge. Start enhancing your Minecraft experience today!
+version: 1.21.4
 ---
-
-<script lang="ts">
-import { Version, Discord } from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # How to make a Minecraft Datapack
 Datapacks are a Minecraft feature that lets you customize Minecraft worlds without mods. They allow you to modify and enhance the game by adding new features and mechanics by using Minecraft commands, advancements, worldgen, and more! This guide will walk you through the process of creating your first Minecraft datapack from scratch in the latest version.

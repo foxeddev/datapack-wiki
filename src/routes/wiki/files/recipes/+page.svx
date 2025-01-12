@@ -1,13 +1,8 @@
 ---
 title: Recipes
 description: "Recipes are files which define crafting recipes in-game."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Recipes
 

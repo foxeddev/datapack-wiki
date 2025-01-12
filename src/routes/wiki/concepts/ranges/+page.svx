@@ -1,13 +1,8 @@
 ---
 title: Ranges
 description: A range specifies a set of values between two numbers.
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Ranges
 A range specifies a set of values between two numbers. Ranges are used in some commands (such as `execute`) and selectors to specify a set of values to compare against.

@@ -2,15 +2,17 @@
   import { page } from "$app/state";
   import Seo from "sk-seo";
   import type { Snippet } from "svelte";
+  import Version from "./reusables/Version.svelte";
 
   type Props = {
     title: string;
     description: string;
     tags: string;
+    version: string;
     children: Snippet;
   };
 
-  const { children, title, description, tags = "" }: Props = $props();
+  const { children, title, description, version, tags = "" }: Props = $props();
 
   let tagsArr = tags
     .split(",")
@@ -37,6 +39,9 @@
   ]} />
 
 <main class="md px-4 md:px-8 lg:px-16 prose-headings:text-stone-200">
+  {#if version}
+  <Version version={version} />
+  {/if}
   {@render children()}
   {#if tags}
     <div class="bg-stone-950/40 p-2 rounded-lg flex items-center space-x-3 my-10">

@@ -1,13 +1,8 @@
 ---
 title: Breaking Changes
 description: "A list of breaking changes to datapacks."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import { Version } from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # List of breaking changes
 
