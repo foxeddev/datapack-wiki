@@ -3,7 +3,11 @@ title: All Commands List
 version: 1.21.4
 ---
 
-# Syntax
+# List of all commands
+This is a list of all commands along with what they do basically, organised by permission level.
+
+## Syntax
+We use the following syntax to make it easier to understand which arguments are needed.
 
 | Variable                 | Meaning                                                                            |
 | ------------------------ | ---------------------------------------------------------------------------------- |
@@ -13,7 +17,7 @@ version: 1.21.4
 | `(entryA│entryB│entryC)` | Pick one of these. This is required                                                |
 | `...`                    | Some syntax is left out, you can find more about the command on its dedicated page |
 
-# List of all commands
+## List
 
 ### Permission level 2+
 
