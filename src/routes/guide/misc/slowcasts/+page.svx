@@ -95,7 +95,7 @@ scoreboard players remove @s slowcast.duration 1
 scoreboard players operation steps temp = @s slowcast.steps
 execute positioned ^ ^ ^.1 run function <namespace>:step
 
-execute unless score @s slowcastDuration matches 1.. run kill
+execute unless score @s slowcast.duration matches 1.. run kill
 ```
 
 In the called step function we handle the teleportation between the current and target position and check if the
@@ -122,7 +122,7 @@ execute as @e[type=!player,type=!marker,dx=0] positioned ~-.99 ~-.99 ~-.99 if en
 
 tp ~ ~ ~
 
-execute if score slowcastSteps temp matches 1.. positioned ^ ^ ^.1 run function <namespace>:step
+execute if score slowcast.steps temp matches 1.. positioned ^ ^ ^.1 run function <namespace>:step
 ```
 
 The hit function called in the hit detection does whatever you want it to do when hitting an entity. It could spawn an
