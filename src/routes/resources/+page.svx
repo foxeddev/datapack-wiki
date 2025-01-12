@@ -47,7 +47,7 @@ Listed here are links to credible and reliable places and libraries to aid in co
 
 ## Tutorials/Content Creation
 
-- <Highlight color="#DC2626">Website</Highlight> <a href="https://www.youtube.com/@Cl0udWolf">Cloud Wolf</a>
+- <Highlight color="#FF0000">YouTube</Highlight> <a href="https://www.youtube.com/@Cl0udWolf">Cloud Wolf</a>
 - <Highlight color="#DC2626">Website</Highlight>
   <a href="https://www.planetminecraft.com/blog/custom-structure-gen-documentation/">Structure Generation Guide</a>
 - <Highlight color="#DC2626">Website</Highlight>
