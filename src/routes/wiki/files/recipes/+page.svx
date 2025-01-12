@@ -1,13 +1,8 @@
 ---
 title: Recipes
 description: "Recipes are files which define crafting recipes in-game."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Recipes
 
@@ -163,7 +158,7 @@ This is a list of common data structures used in different recipe formats.
 
 #### Ingredient
 
-Represents possible ingredients for a recipe. Can be an item's [resource location](/wiki/commands/resource-locations), the hash-prefixed resource location of an item tag (e.g. `#minecraft:logs`), or an array of valid item resource locations.
+Represents possible ingredients for a recipe. Can be an item's [resource location](/wiki/concepts/resource-locations), the hash-prefixed resource location of an item tag (e.g. `#minecraft:logs`), or an array of valid item resource locations.
 
 :::info
 Unfortunately, components cannot be detected for recipe ingredients 
@@ -176,7 +171,7 @@ Represents a single item, the result of a recipe. An object containing:
 | Field                   | Format    | Description                                                                                       |
 | ----------------------- | --------- | ------------------------------------------------------------------------------------------------- |
 | `id`                    | A string  | The id of the resulting item                                                                      |
-| `components` (optional) | An object | A map of [component](/wiki/commands/item_components) names to values, added to the resulting item |
+| `components` (optional) | An object | A map of [component](/wiki/concepts/item_components) names to values, added to the resulting item |
 
 #### Counted result
 

@@ -1,13 +1,8 @@
 ---
 title: Commands
 description: "Commands tell the game to do things. [Functions](/wiki/files/functions) are files which are made up of many commands. They form the basic building blocks for any function datapack."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Commands
 Commands are the basic building blocks of most datapacks. Each command is a simple instruction which can tell the game

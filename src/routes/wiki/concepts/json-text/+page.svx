@@ -1,13 +1,8 @@
 ---
 title: JSON Text
 description: Styled text in Minecraft commands is done through a JSON text format.
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # JSON Text
 Styled text (bold, underline, colours, etc) is represented as JSON in Minecraft. A JSON text component is a way to format styled text in Minecraft commands, and is used in many places such as `/tellraw`, `/title`, and more.

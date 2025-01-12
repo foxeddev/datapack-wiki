@@ -1,13 +1,8 @@
 ---
 title: Player ID System
 description: Create a player ID system in a Minecraft datapack for linking players to entities.
+version: 1.21.4
 ---
-
-<script lang="ts">
-import { Version } from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Player ID System
 This guide will explain how to create a player ID system within a datapack. A player ID system gives each player a unique score on a scoreboard, which can then be used to link players to entities, or for the player to be able to select another player easily.

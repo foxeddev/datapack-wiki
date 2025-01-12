@@ -1,15 +1,8 @@
 ---
 title: Raycasts
-description:
-  "Raycasting is when we shoot a line from the player's eyes in the direction they are looking. We use this to get what
-  the player is looking at, and do something to it, such as spawning an explosion."
+description: "Raycasting is when we shoot a line from the player's eyes in the direction they are looking. We use this to get what the player is looking at, and do something to it, such as spawning an explosion."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import { Version } from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Raycasting
 Raycasting is when we shoot a line from the player's eyes in the direction they are looking. We use this to get what the
@@ -64,7 +57,7 @@ tag @s remove raycaster
 
 In the raycast function, we just want to check if the function has hit an entity, and if not, run it again until it does, hits a wall, or reaches the raycasts limit, moving slightly each time.
 
-The next step is a bit more complex. We execute a command as every entity that is not the caster and whose hitbox intersects with the current path of the raycast (using [virtual volumes](https://datapack.wiki/wiki/commands/target_selectors#dxdydz-arguments)). The command will `return run <namespace>:hit` if the raycast hits an entity. The `return run` will stop the raycast from running further, and then will run the `hit` function as the entity it has hit.
+The next step is a bit more complex. We execute a command as every entity that is not the caster and whose hitbox intersects with the current path of the raycast (using [virtual volumes](https://datapack.wiki/wiki/concepts/target_selectors#dxdydz-arguments)). The command will `return run <namespace>:hit` if the raycast hits an entity. The `return run` will stop the raycast from running further, and then will run the `hit` function as the entity it has hit.
 
 The last command checks if the raycast hit a wall. If it does, the raycast will end. If it doesn't, it will then check
 if the limit is reached, again ending if it is. Should the limit not be reached yet, it will move `0.1` blocks forward and

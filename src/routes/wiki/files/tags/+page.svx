@@ -4,13 +4,8 @@ description:
   "Registry tags, not to be confused with [entity tags](/wiki/command/tag), are essentially lists of groups such as
   blocks, items, entity types, etc. They use JSON format and are located in the `data/<namespace>/tags/<category>`
   folder."
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Tags
 
@@ -61,7 +56,7 @@ Tag files follow a very simple format, with two fields.
   - an object with an `id` field and a `required` field (e.g. `{"required": false, "id":"minecraft:stick"}`). If `required` is `false`, the tag will still skip nonexistent ids.
 
 :::info
-Tags can also reference other tags. For example, if a tag file contains `#minecraft:logs`, it will also contain the entire contents of the `minecraft:logs` tag. A tag is represented by an ID beginning with a `#`. For more information, refer to the [resource locations](/wiki/commands/resource-locations#resource-locations-for-tags) page.
+Tags can also reference other tags. For example, if a tag file contains `#minecraft:logs`, it will also contain the entire contents of the `minecraft:logs` tag. A tag is represented by an ID beginning with a `#`. For more information, refer to the [resource locations](/wiki/concepts/resource-locations#resource-locations-for-tags) page.
 :::
 
 ### Example

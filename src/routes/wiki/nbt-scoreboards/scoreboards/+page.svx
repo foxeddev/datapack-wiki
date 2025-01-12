@@ -1,10 +1,8 @@
 ---
 title: Scoreboards
-description: TODO
+description: Scoreboards are a way of storing numerical data attributed to a player or entity in a Minecraft Datapack.
+version: 1.21.4
 ---
-
-<script lang="ts">
-</script>
 
 # Scoreboards
 Scoreboards are a key/value system for storing numbers bound to a player in Minecraft. On a scoreboard objective, each player can have a score, which is an integer value. This player does not need to exist - **fake players** can be used to store a number without attaching it to a player but rather an arbitrary name.

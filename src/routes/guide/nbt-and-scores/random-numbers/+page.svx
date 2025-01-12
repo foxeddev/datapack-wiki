@@ -1,13 +1,8 @@
 ---
 title: Generating Random Numbers
 description: Generate a random number in a datapack using the /random command, or alternatively, a loot table.
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {   Version, } from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Generating Random Numbers using Datapacks!
 Generating a random number is very useful in programming for many reasons. Minecraft 1.20.2 added the `/random` command, which lets us do this very easily. However, if you are using an older version, you can still generate random numbers using loot tables.

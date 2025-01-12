@@ -65,22 +65,11 @@ Keep lines under 100 characters.
 
 Each page is made of 3 parts:
 
-- front matter (metadata about the page such as title, description, tags, versions, etc.)
+- front matter (metadata about the page such as title, description, tags, version, etc.)
 - content (the actual content of the page)
 - components (custom components that allow for interactivity or other features not able to be reproduced with markdown)
 
 Each is crucial to making the page look and feel how it does.
-
-There is also a component called `Version` which is used to display the Minecraft version
-the page is validated and up to date with.
-
-<Version version="1.21.4"/>
-
-```md
-<Version version="1.21.4"/>
-```
-
-This component should be used at the top of all pages, specifying that the page is validated and up to date with the latest Minecraft version.
 
 ### Frontmatter
 
@@ -91,11 +80,13 @@ this:
 ```md
 title: "Site Development"
 description: "This page is meant to be an introduction to formatting a page for the wiki. In it is multiple examples which you can examine raw in the [site source code](https://github.com/Datapack-Hub/wiki)."
+version: 1.21.4
 ```
 
 Front matter is denoted with triple hyphens (`---`) at the top of the page and the end of the front matter.
-The title should be the same as the title in the sidebar in order to reduce confusion. The description should be a short
-summary of the content of the page in order to show people what all is covered in the article.
+- The `title` should be the same as the title in the sidebar in order to reduce confusion. 
+- The `description` should be a short summary of the content of the page in order to show people what all is covered in the article. 
+- The `version` should be set to the latest version that the page has been and works in. If the page works in 1.21.4 but not in 1.21.5 or later, this should be set to 1.21.4.
 
 ### Custom Elements
 
@@ -135,4 +126,4 @@ Highlighting is a way to highlight specific text. It isn't commonly used, but ex
 ## Standardized Elements
 
 The wiki uses a few elements that are standardized across the entire wiki. Right now this only consists
-of command syntax. You can find the command syntax we use in the [commands page](/wiki/commands/about).
+of command syntax. You can find the command syntax we use in the [commands page](/wiki/concepts/about).

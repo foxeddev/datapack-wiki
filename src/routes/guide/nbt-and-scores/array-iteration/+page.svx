@@ -1,13 +1,8 @@
 ---
 title: Array Iteration
 description: This guide explains how to loop through an array's items in a Minecraft datapack
+version: 1.21.4
 ---
-
-<script lang="ts">
-import { Version } from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Array Iteration
 Array Iteration allows us to loop through an array and do something with each item individually (for example, add every item in an array, output each array item individually, modify all elements in an array, combine strings in an array, etc.)
