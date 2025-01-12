@@ -10,11 +10,11 @@ import {Version} from '$lib/reusables';
 
 <Version version="1.21.4"/>
 
-# How to add custom Armor Trims
+# How to add custom Smithing Trims
 
-This guide is split into three parts, adding a custom armor trim pattern, adding a custom armor trim color pallete and adding a custom trimmable item. These parts can be done without following the other one.
+This guide is split into three parts, adding a custom smithing trim pattern, adding a custom smithing trim color palette and adding a custom trimmable item. These parts can be done without following the other one.
 
-This will only work in 1.20+, as armor trims were added in the snapshot 23w04a. 
+This will only work in 1.20+, as smithing trims were added in the snapshot 23w04a. 
 :::info 
 This guide requires you
 to have at least a small understanding of datapacks. If you don't understand this guide, you can read the [Getting Started
@@ -24,8 +24,8 @@ guide](/guide/getting-started).
 To start you will need a basic datapack, if you don't know how to make one, see the
 [Getting Started](/guide/getting-started) guide.
 
-## Adding an armor trim pattern
-### Setting up the datapack - Armor Trim Pattern
+## Adding a smithing trim pattern
+### Setting up the datapack - Smithing Trim Pattern
 
 To start, we are going to create the main trim pattern file in the directory `data/<namespace>/trim_pattern/`.
 You can name the file whatever you want, but it has to be in the `.json` file format. For the purposes of this tutorial, we're
@@ -47,7 +47,7 @@ This is a run-down of the fields in that file:
 
 If you are not sure what to put in `asset_id`, don't worry, the resource pack part is going to focus on that!
 
-Now, we are going to add the recipe file into `data/example/recipe/`. You can see more about the recipe's format [here](/wiki/files/recipes#smithing-fields).
+Now, we are going to add the recipe file into `data/<namespace>/recipe/`. You can see more about the recipe's format [here](/wiki/files/recipes#smithing-fields).
 
 ```json:example_armor_trim.json
 {
@@ -58,7 +58,7 @@ Now, we are going to add the recipe file into `data/example/recipe/`. You can se
 }
 ```
 
-### Finishing up with the resourcepack - Armor Trim Pattern
+### Finishing up with the resourcepack - Smithing Trim Pattern
 
 To finish off, we'll need to add the actual definition for all the different colors and armor types. This can be done by changing the armor trim's atlas file. This file can be found in `assets/minecraft/atlases/armor_trims.json`. Please note that the exact spelling and the use of the Minecraft namespace is required here!
 
@@ -95,12 +95,14 @@ To finish off, we'll need to add the actual definition for all the different col
 ```
 
 And now to finish, we'll need the actual trim textures. These should be grayscale images using the same colors as `textures/trims/color_palettes/trim_palette` (can be seen below).
-These black-and-white colors will be automatically replaced by the game when a trim color pallete is applied. An example file of `<namespace>:trims/entity/humanoid/example_template` and `<namespace>:trims/entity/humanoid_leggings/example_template` can also be found below.
 
-![textures/trims/color_palettes/trim_palette](https://i.imgur.com/o4SPsPS.png)
+<img src="https://i.postimg.cc/tTyTmCMN/trim-palette.png" alt="Vanilla default trim material file" width="300" style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-![example_template](https://i.imgur.com/PIW9bpM.png)
-![example_template_leggings](https://i.imgur.com/aTyP6pN.png)
+These black-and-white colors will be automatically replaced by the game when a trim color palette is applied. 
+An example file of `<namespace>:trims/entity/humanoid/example_template` and `<namespace>:trims/entity/humanoid_leggings/example_template` can also be found below.
+
+<img src="https://i.imgur.com/PIW9bpM.png" alt="Example template" width="300" style="image-rendering: pixelated; image-rendering: crisp-edges;">
+<img src="https://i.imgur.com/aTyP6pN.png" alt="Example leggings template" width="300" style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 Once you save the above files, you need to reload the resource pack, and reload it with the keybind **F3 + T**
 in-game. You will also need to leave and rejoin the world to update the datapack.
@@ -109,10 +111,408 @@ in-game. You will also need to leave and rejoin the world to update the datapack
 For this to work, you will need to leave and rejoin the world, just using the `/reload` command won't do the trick here!
 :::
 
+## Adding a smithing trim color palette
+### Setting up the datapack - Smithing Trim Color Palette
 
+For this example, we are going to add a new trim color palette. To start, we are going to create the main trim color palette file in the directory `data/<namespace>/trim_material/`.
+Once again, you can name the file whatever you want, but it has to be in the `.json` file format. For the purposes of this tutorial, we're
+going to call it `matexample.json`. Inside, we will put and configure these settings:
 
+```json:matexample.json
+{
+  "asset_name": "matexample",
+  "description": {
+    "text": "Example Material",
+    "color": "#00e09d"
+  },
+  "ingredient": "minecraft:barrier"
+}
+```
 
+This is a run-down of the fields in that file:
+- `description`: A text component to use as this trim's material description name.
+- `ingredient`: The item that represents the material.
+- `asset_name`: The resource location which is used in the resourcepack.
+- `override_armor_materials`: A list of optional armors which should have a different color palette. (E.g. Gold trim on gold armor has a darker color palette.)
 
+Next, we are going to add the `ingredient` item to the `#minecraft:trim_materials` item tag. This ensures the item can be used as an ingredient in the smithing table. This file is located in `data/minecraft/tags/items/`. Please note that the exact spelling and the use of the Minecraft namespace is required here!
 
-## Adding an armor trim color pallete
-### Setting up the datapack - Armor Trim Color Pallete
+```json:trim_materials.json
+{
+  "values": [
+    "minecraft:barrier"
+  ]
+}
+```
+
+### Finishing up with the resourcepack - Smithing Trim Color Palette
+
+To finish off, we'll need to add the material definition in the resourcepack. This can be done by changing the armor trim's atlas file. This file can be found in `assets/minecraft/atlases/armor_trims.json`. Please note that the exact spelling and the use of the Minecraft namespace is required here!
+
+```json:armor_trims.json
+{
+  "sources": [
+    {
+      "type": "paletted_permutations",
+      "textures": [
+        "trims/models/armor/bolt",
+        "trims/models/armor/bolt_leggings",
+        "trims/models/armor/flow",
+        "trims/models/armor/flow_leggings",
+        "trims/models/armor/coast",
+        "trims/models/armor/coast_leggings",
+        "trims/models/armor/sentry",
+        "trims/models/armor/sentry_leggings",
+        "trims/models/armor/dune",
+        "trims/models/armor/dune_leggings",
+        "trims/models/armor/wild",
+        "trims/models/armor/wild_leggings",
+        "trims/models/armor/ward",
+        "trims/models/armor/ward_leggings",
+        "trims/models/armor/eye",
+        "trims/models/armor/eye_leggings",
+        "trims/models/armor/vex",
+        "trims/models/armor/vex_leggings",
+        "trims/models/armor/tide",
+        "trims/models/armor/tide_leggings",
+        "trims/models/armor/snout",
+        "trims/models/armor/snout_leggings",
+        "trims/models/armor/rib",
+        "trims/models/armor/rib_leggings",
+        "trims/models/armor/spire",
+        "trims/models/armor/spire_leggings",
+        "trims/models/armor/silence",
+        "trims/models/armor/silence_leggings",
+        "trims/models/armor/wayfinder",
+        "trims/models/armor/wayfinder_leggings",
+        "trims/models/armor/raiser",
+        "trims/models/armor/raiser_leggings",
+        "trims/models/armor/shaper",
+        "trims/models/armor/shaper_leggings",
+        "trims/models/armor/host",
+        "trims/models/armor/host_leggings"
+      ],
+      "palette_key": "trims/color_palettes/trim_palette",
+      "permutations": {
+        "matexample": "<namespace>:trims/color_palettes/matexample"
+      }
+    }
+  ]
+}
+```
+
+And next, we are going to modify `assets/minecraft/atlases/blocks.json`:
+
+```json:blocks.json
+{
+  "sources": [
+    {
+      "type": "paletted_permutations",
+      "textures": [
+        "trims/items/leggings_trim",
+        "trims/items/chestplate_trim",
+        "trims/items/helmet_trim",
+        "trims/items/boots_trim"
+      ],
+      "palette_key": "trims/color_palettes/trim_palette",
+      "permutations": {
+        "matexample": "<namespace>:trims/color_palettes/matexample"
+      }
+    }
+  ]
+}
+```
+
+Here, the key-value pair should be the same as the `asset_name` field from the datapack file we created before.
+
+Now, we will need to create the actual material color palette texture. Since we are using Vanilla's default `palette_key`, this image needs to have a width of 8 and a height of 1. You can see an example palette below.
+This image should be saved in `assets/<namespace>/textures/trims/color_palettes/` as `matexample.png`
+
+<img src="https://i.postimg.cc/Yqyvq7vt/pallete.png" alt="Example color palette image" width="300" style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Now comes the last and possibly worst part, adding the item models and their definition for all the armor pieces. I will only show this on the diamond chestplate but you will have to do it for all armor pieces.
+
+To do this, create a new file in `assets/<namespace>/models/item/` called `diamond_chestplate_matexample_trim.json`, where `matexample` is the name of your trim material.
+Inside that file, put this:
+
+```json:diamond_chestplate_matexample_trim.json
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/diamond_chestplate",
+    "layer1": "minecraft:trims/items/chestplate_trim_matexample"
+  }
+}
+```
+
+And inside `assets/minecraft/items/diamond_chestplate.json` put and configure this:
+
+```json:diamond_chestplate_matexample_trim.json
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_quartz_trim"
+        },
+        "when": "minecraft:quartz"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_iron_trim"
+        },
+        "when": "minecraft:iron"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_netherite_trim"
+        },
+        "when": "minecraft:netherite"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_redstone_trim"
+        },
+        "when": "minecraft:redstone"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_copper_trim"
+        },
+        "when": "minecraft:copper"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_gold_trim"
+        },
+        "when": "minecraft:gold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_emerald_trim"
+        },
+        "when": "minecraft:emerald"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_diamond_trim"
+        },
+        "when": "minecraft:diamond"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_lapis_trim"
+        },
+        "when": "minecraft:lapis"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_amethyst_trim"
+        },
+        "when": "minecraft:amethyst"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_resin_trim"
+        },
+        "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_chestplate_matexample_trim"
+        },
+        "when": "minecraft:matexample"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/diamond_chestplate"
+    },
+    "property": "minecraft:trim_material"
+  }
+}
+```
+
+Here, the majority of the file remains the same as default, only the last trim model definition was added.
+
+Once you save the above files, you need to reload the resource pack, and reload it with the keybind **F3 + T**
+in-game. You will also need to leave and rejoin the world to update the datapack.
+
+:::warning
+For this to work, you will need to leave and rejoin the world, just using the `/reload` command won't do the trick here!
+:::
+
+## Adding a trimmable item
+### Setting up the datapack - Smithable Item
+
+This example will make the `diamond_pickaxe` a smithable item. This time the datapack side of things is going to be simple. We are just going to add the `diamond_pickaxe` to the `#minecraft:trimmable_armor` item tag, which is located in `data/minecraft/tags/item/`. Once again, the Minecraft directory is required here.
+
+```json:trimmable_armor.json
+{
+  "values": [
+    "minecraft:diamond_pickaxe"
+  ]
+}
+```
+
+### Finishing up with the resourcepack - Smithable Item
+
+In the resourcepack, we'll need to customize the diamond pickaxe's item model definition. This is located inside of `assets/minecraft/items/`
+
+```json:diamond_chestplate.json
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_quartz_trim"
+        },
+        "when": "minecraft:quartz"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_iron_trim"
+        },
+        "when": "minecraft:iron"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_netherite_trim"
+        },
+        "when": "minecraft:netherite"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_redstone_trim"
+        },
+        "when": "minecraft:redstone"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_copper_trim"
+        },
+        "when": "minecraft:copper"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_gold_trim"
+        },
+        "when": "minecraft:gold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_emerald_trim"
+        },
+        "when": "minecraft:emerald"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_diamond_trim"
+        },
+        "when": "minecraft:diamond"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_lapis_trim"
+        },
+        "when": "minecraft:lapis"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_amethyst_trim"
+        },
+        "when": "minecraft:amethyst"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/diamond_pickaxe_resin_trim"
+        },
+        "when": "minecraft:resin"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/diamond_pickaxe"
+    },
+    "property": "minecraft:trim_material"
+  }
+}
+```
+
+Next we will need to create the following file for all the materials listed i nthe file above. All of them are going to be created in the `assets/minecraft/models/item/` directory.
+
+```json:diamond_pickaxe_resin_trim.json
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/diamond_pickaxe",
+    "layer1": "minecraft:trims/items/pickaxe_trim_resin"
+  }
+}
+```
+
+You might have noticed that the above file mentions a texture called `pickaxe_trim_resin`. However, we do not need to create this texture file as it is generated automatically by the game. But for it to work, we need to create the atlas file inside `assets/minecraft/atlases/blocks.json`.
+
+```json:blocks.json
+{
+  "sources": [
+    {
+      "type": "paletted_permutations",
+      "textures": [
+        "example:trims/items/pickaxe_trim"
+      ],
+      "palette_key": "trims/color_palettes/trim_palette",
+      "permutations": {
+        "quartz": "trims/color_palettes/quartz",
+        "iron": "trims/color_palettes/iron",
+        "gold": "trims/color_palettes/gold",
+        "diamond": "trims/color_palettes/diamond",
+        "netherite": "trims/color_palettes/netherite",
+        "redstone": "trims/color_palettes/redstone",
+        "copper": "trims/color_palettes/copper",
+        "emerald": "trims/color_palettes/emerald",
+        "lapis": "trims/color_palettes/lapis",
+        "amethyst": "trims/color_palettes/amethyst",
+        "resin": "trims/color_palettes/resin"
+      }
+    }
+  ]
+}
+```
+
+Now for the last step, we will need to create the `pickaxe_trim` texture. This is a black-and-white mask which is applied on-top of the diamond pickaxe when it has a trim applied.
+This image has to be located in `assets/example/textures/trims/items/` with the name `axe_trim.png` The texture I used can be found below:
+
+<img src="https://i.postimg.cc/J0FHgCJ7/pickaxe-trim.png" alt="Example color palette image" width="100" style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Once you save the above files, you need to reload the resource pack, and reload it with the keybind **F3 + T**
+in-game. You will also need to leave and rejoin the world to update the datapack.
+
+:::warning
+For this to work, you will need to leave and rejoin the world, just using the `/reload` command won't do the trick here!
+:::
