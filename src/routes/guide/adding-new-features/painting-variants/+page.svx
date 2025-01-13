@@ -1,7 +1,7 @@
 ---
 title: Adding Paitings
 description: "Learn how to add custom paitings to Minecraft just with a datapack and a resourcepack!"
-tags: beginner, guide, custom_items, item_components
+tags: beginner, guide, custom_items
 ---
 
 <script lang="ts">
@@ -68,7 +68,7 @@ Optionally, you can change the author and title in the datapack definition to us
 
 ## See it in action
 
-Once you save the above files, you need to reload the resource pack, and reload it with the keybind **F3 + T**
+Once you save the above files, you need to reload the resource pack with the keybind **F3 + T**
 in-game. You will also need to leave and rejoin the world to update the datapack.
 
 :::warning

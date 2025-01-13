@@ -2,6 +2,7 @@
 title: Adding Jukebox Songs
 description:
   "Learn how to create custom music discs and custom jukebox songs with Minecraft datapacks"
+tags: beginner, guide, custom_items, item_components
 ---
 
 <script lang="ts">
@@ -90,7 +91,7 @@ This file tells Minecraft what audio files map to what IDs. Put this inside:
 
 ## See it in action
 
-Once you save the above files, you need to activate the resource pack, and reload it with the keybind **F3 + T**
+Once you save the above files, you need to activate the resource pack with the keybind **F3 + T**
 in-game. You will also need to leave and rejoin the world to update the datapack.
 
 :::warning
