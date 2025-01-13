@@ -1,14 +1,8 @@
 ---
 title: Adding Smithing Trims
 description: "Learn how to add custom smithing trims patterns to Minecraft just with a datapack and a resourcepack!"
-tags: beginner, guide, custom_items
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # How to add custom Smithing Trims
 

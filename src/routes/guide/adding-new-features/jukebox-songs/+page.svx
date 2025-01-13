@@ -1,15 +1,8 @@
 ---
 title: Adding Jukebox Songs
-description:
-  "Learn how to create custom music discs and custom jukebox songs with Minecraft datapacks"
-tags: beginner, guide, custom_items, item_components
+description: "Learn how to create custom music discs and custom jukebox songs with Minecraft datapacks"
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # How to add custom jukebox songs
 

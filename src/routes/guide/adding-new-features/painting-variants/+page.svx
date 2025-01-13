@@ -1,14 +1,8 @@
 ---
 title: Adding Paitings
 description: "Learn how to add custom paitings to Minecraft just with a datapack and a resourcepack!"
-tags: beginner, guide, custom_items
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # How to add custom paintings
 
