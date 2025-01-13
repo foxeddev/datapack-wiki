@@ -277,4 +277,24 @@ The `level=<value>` argument selects players based on their current XP level (no
 - `@a[level=10]`: Selects all players who have an XP level of exactly 10.
 - `@a[level=4..]`: Selects all players who have an XP level of 4 or more.
 
-### TODO x_rotation and y_rotation
+### `x_rotation` argument
+
+The `x_rotation=<value>` argument selects players based on their vertical rotation (pitch).
+
+`<value>` can be a floating point value or float range from -90 to 90
+
+**Examples**:
+
+- `@a[x_rotation=0..90]`: Selects all players who are looking below the horizon or directly at the horizon.
+- `@a[x_rotation=90]`: Selects all players who are looking straight down.
+
+### `y_rotation` argument
+
+The `y_rotation=<value>` argument selects players based on their horizontal rotation (yaw).
+
+`<value>` can be a floating point value or float range from -180 to 180
+
+**Examples**:
+
+- `@a[y_rotation=-180]`: Selects all players who are facing exactly due north.
+- `@a[y_rotation=-180..-90]`: Selects all players who are looking between north and east or exactly north or east.
