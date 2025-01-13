@@ -63,7 +63,7 @@ the only code needed to initialize a storage is a `/data modify` or `/data merge
 ```mcfunction
 data merge storage example:main {number: 1, message: "Hello!"}
 data modify storage example:main other_number set from storage example:main number
-data modify storage compound.array append value 42
+data modify storage example:main compound.array append value 42
 ```
 
 The `example:main` storage would now contain the following data:
