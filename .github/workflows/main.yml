@@ -1,5 +1,7 @@
 on:
   push:
+    branches: 
+      - main
 
 name: pre-deploy
 jobs:
@@ -26,5 +28,6 @@ jobs:
       - uses: dsanders11/github-app-commit-action@v1
         with:
           message: 📦 Refreshed pages metadata!
+          fail-on-no-changes: false
           token: ${{ steps.app-token.outputs.token }}
           
