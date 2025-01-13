@@ -113,7 +113,7 @@ These commands can be run by any player, no matter their permission level.
 - `/msg <targets> <message>` - Sends a private message to a player. (Alias `/tell` and `/w`)
 - `/tell <targets> <message>` - Sends a private message to a player (Alias `/msg` and `/w`)
 - `/w <targets> <message>` - Sends a private message to a player (Alias `/tell` and `/msg`)
-- `/trigger <objective> [add|set] [<value>]` - Displays the world's seed
+- `/trigger <objective> [add|set] [<value>]` - Triggers a scoreboard objective (see [Scoreboards](/wiki/nbt-scoreboards/scoreboards#trigger-objectives))
 
 ### Multiplayer Commands
 
