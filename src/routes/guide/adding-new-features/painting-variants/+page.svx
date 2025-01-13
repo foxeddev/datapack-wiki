@@ -26,7 +26,7 @@ going to call it `example_painting.json`. Inside, we will put and configure thes
 
 ```json:example_painting.json
 {
-  "asset_id": "<namespace>:<example_painting-texture>",
+  "asset_id": "<namespace>:example_painting-texture",
   "title": "Example Painting",
   "author": "Datapack Hub",
   "height": 1,
