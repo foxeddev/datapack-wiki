@@ -2,18 +2,13 @@
 title: Recipes for your Custom Items
 description: "Learn how to make custom items with Minecraft Java datapacks"
 tags: beginner, guide, custom_items, item_components
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {Version} from '$lib/reusables';
-</script>
-
-<Version version="1.21"/>
 
 # Creating Custom Items
 In this guide, we will go over the basics explaining how custom items work, as well as how to make your own using item components. This guide will not go over how to give your custom items a texture or model.
 
-Since 1.21, it has been easy to create custom items in Minecraft. 1.21 introduced [item components](/wiki/commands/item-components), which are like tags you can put on items to change their appearance or functionality. This is the basis for how custom items work - we take an item which already exists, then add or remove item components from that item to give it the desired feel and functionality.
+Since 1.21, it has been easy to create custom items in Minecraft. 1.21 introduced [item components](/wiki/concepts/item-components), which are like tags you can put on items to change their appearance or functionality. This is the basis for how custom items work - we take an item which already exists, then add or remove item components from that item to give it the desired feel and functionality.
 
 In this guide we will create a custom edible item which can mine sand instantly and makes the player glow who eats it.
 

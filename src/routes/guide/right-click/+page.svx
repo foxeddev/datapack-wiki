@@ -1,13 +1,8 @@
 ---
 title: Right Click Detection Summary
 description: This section goes over the various ways of detecting right clicks with a Minecraft datapack.
+version: 1.21.4
 ---
-
-<script lang="ts">
-import {   Version, } from '$lib/reusables';
-</script>
-
-<Version version="1.21.4" />
 
 # Right Click Detection
 There a few ways we can detect right clicks in a Minecraft datapack, depending on your situation. Here are the methods we can use:

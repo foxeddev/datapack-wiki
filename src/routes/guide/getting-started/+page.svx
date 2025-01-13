@@ -2,13 +2,12 @@
 title: How to Make a Minecraft Datapack - Beginner's Guide
 tags: guide, beginner, Minecraft, datapack, tutorial, step-by-step
 description: Learn how to create a Minecraft datapack with our beginner's guide. This step-by-step tutorial will help you understand the basics of datapack creation, even if you have little coding knowledge. Start enhancing your Minecraft experience today!
+version: 1.21.4
 ---
 
 <script lang="ts">
-import { Version, Discord } from '$lib/reusables';
+import { Discord } from '$lib/reusables';
 </script>
-
-<Version version="1.21.4"/>
 
 # How to make a Minecraft Datapack
 Datapacks are a Minecraft feature that lets you customize Minecraft worlds without mods. They allow you to modify and enhance the game by adding new features and mechanics by using Minecraft commands, advancements, worldgen, and more! This guide will walk you through the process of creating your first Minecraft datapack from scratch in the latest version.
@@ -175,7 +174,7 @@ Now we've created a function which will run infinitely on a loop, we can move on
 ground.
 
 As far as the game is concerned, an arrow is an **entity**, just like a pig, cow or zombie. Minecraft gives us a special
-way to **select** any types of entities with [target selectors](/commands/target_selectors). Once we've selected an
+way to **select** any types of entities with [target selectors](/concepts/target_selectors). Once we've selected an
 entity, we can use the [/execute](/command/execute) command to run a command as the entity.
 
 We can use these to select all arrows which are in the ground, and then run a command to make them explode (and then
@@ -205,7 +204,7 @@ For example, we can use `@e` with a `type` criteria to select all entities of a 
 `@e[type=minecraft:cow]` would select all cow entities.
 
 I'm not going to explain every single criteria you can use - you can view a list
-[here](/wiki/commands/target_selectors#additional-arguments). These are the basic ones which you might see quite often:
+[here](/wiki/concepts/target_selectors#additional-arguments). These are the basic ones which you might see quite often:
 
 | Criteria                 | Description                                                                                                                                                                                                                                                      |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

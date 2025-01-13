@@ -1,6 +1,7 @@
 ---
 title: NBT
-description: TODO
+description: NBT is Minecraft's way of storing internal data, such as item data, entity data, and block data. In datapacks, we can use it to store data in custom data storages.
+version: 1.21.4
 ---
 
 <script lang="ts">

@@ -60,9 +60,6 @@
         width="32"
         height="32" />
       <h1 class="font-bold hidden text-lg lg:text-xl sm:block">Datapack Wiki</h1>
-      <div class="bg-red-900/50 px-2 py-1 rounded-lg space-x-3 items-center flex mx-2">
-        <b>ALPHA</b>
-      </div>
     </a>
   </div>
 
@@ -82,7 +79,7 @@
       <span class="hidden sm:block">{shareText}</span>
     </button>
     <a
-      href="https://discord.datapackhub.net"
+      href="https://discord.gg/xHTHbZqXr6"
       class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto"
       aria-label="Discord">
       <IconDiscord />

@@ -1,13 +1,8 @@
 ---
 title: Player ID System
 description: Create a player ID system in a Minecraft datapack for linking players to entities.
+version: 1.21.4
 ---
-
-<script lang="ts">
-import { Version } from '$lib/reusables';
-</script>
-
-<Version version="1.21.4"/>
 
 # Player ID System
 This guide will explain how to create a player ID system within a datapack. A player ID system gives each player a unique score on a scoreboard, which can then be used to link players to entities, or for the player to be able to select another player easily.
@@ -19,8 +14,8 @@ Firstly, we need to create a scoreboard objective to store the players' IDs. Thi
 # Create the playerid scoreboard
 scoreboard objectives add playerid dummy
 
-# Set the max score on the playerid scoreboard to 1
-scoreboard players set .max playerid 1
+# Set the max score on the playerid scoreboard to 1, unless already set
+execute unless score .max playerid matches 1.. run scoreboard players set .max playerid 1
 ```
 
 Next, we need to assign an ID to the player when they first join the world. Create a function which increments the max player ID by one, and then assigns that value to the player.

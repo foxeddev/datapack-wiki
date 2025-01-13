@@ -1,16 +1,9 @@
 ---
 title: Debugging your Datapacks
-description:
-  "Sometimes your datapack won't work, and you will have to figure out what exactly doesn't work in them. And this guide
-  will help you with exactly that!"
+description: "Sometimes your datapack won't work, and you will have to figure out what exactly doesn't work in them. And this guide will help you with exactly that!"
 ---
 
-<script lang="ts">
-import { Version } from '$lib/reusables';
-</script>
-
 # Debugging your datapacks
-
 There will come times when your datapack won't work, and you will have to figure out what exactly doesn't work in it.
 Don't worry if this happens to you, if you're like any of the rest of us, this will happen often. Code will almost never
 work the first time you try it. An error in your code is referred to as a bug. Removing these bugs is called debugging.
