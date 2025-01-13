@@ -25,8 +25,8 @@ jobs:
       - run: bun ./gen_search_indexes.js
 
       - run: |
-          git config user.email "index-bot"
-          git config user.username "index-bot"
+          git config user.email "indexer[bot]"
+          git config user.username "indexer.bot"
           git add .
           git commit -a -m "📦 Refreshed pages metadata!"
           git push
