@@ -25,6 +25,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2.0.1
       - run: bun install
       - run: bun ./gen_search_indexes.js
+      - run: git add .
       - uses: dsanders11/github-app-commit-action@v1
         with:
           message: 📦 Refreshed pages metadata!
