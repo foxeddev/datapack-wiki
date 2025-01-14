@@ -30,6 +30,11 @@ The actual text of a JSON text object can be either static text or from a source
   - `fallback`: This can also optionally be used to specify what to display if the translation is not found. If this is not specified, the key itself will be displayed if the translation is not found. This should be a string value.
 - `"keybind":"<keybind id>"`: The key which a player has bound to a keybind. (For example, `key.jump` would show the text `Space`, assuming the player has not changed the keybind).
 
+**Example**: This JSON text object will display the value of the path `ShopData.Name` in the NBT storage `minecraft:xyz`:
+```json
+{"nbt":"ShopData.Name","storage":"minecraft:xyz"}
+```
+
 ### Style properties
 The following properties can be used in a JSON text object to change the **style** of the text:
 - `color`: The colour of the text. This can be one of the 16 standard colours (e.g `"red"`, `"light_purple"`, etc.), or a hex colour code (e.g `"#ff0000"`).
