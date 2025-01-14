@@ -11,6 +11,7 @@ ones.
 Recipes are JSON files located in the `data/<namespace>/recipe` folder.
 
 ## JSON format
+For information about the JSON format in general, see the [JSON](/wiki/info/json) page.
 
 Since recipe files represent a variety of different recipe types, the format can vary. However, there are some fields
 which appear in every recipe file.

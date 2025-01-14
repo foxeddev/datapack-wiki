@@ -38,6 +38,8 @@ execute as @a[predicate=namespace:my_predicate] run say I am holding beef in a d
 ## JSON Format
 Each predicate is represented as a JSON object. Predicate files can either contain one predicate object, or a list of predicate objects. Each predicate object needs a `condition` field, which specifies the type of condition to check. The rest of the fields depend on the condition type.
 
+For more information about the JSON format in general, see the [JSON](/wiki/info/json) page.
+
 Certain objects are commonly reused within different predicate (and advancement) conditions. Below are some of them, along with their JSON structure:
 
 ### Number providers

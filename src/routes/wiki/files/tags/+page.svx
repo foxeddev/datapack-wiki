@@ -8,7 +8,6 @@ version: 1.21.4
 ---
 
 # Tags
-
 Registry tags, not to be confused with [entity tags](/wiki/command/tag), are essentially lists of groups such as blocks,
 items, entity types, etc. They use JSON format and are located in the `data/<namespace>/tags/<category>` folder.
 
@@ -49,6 +48,8 @@ This list shows some of the possible registry types, as well as the path their t
 | World preset      | `/tags/worldgen/world_preset`                      | `"minecraft:large_biomes"`    |
 
 ## JSON format
+For information about the JSON format in general, see the [JSON](/wiki/info/json) page.
+
 Tag files follow a very simple format, with two fields.
 - `replace`: Can be `true` or `false` (defaults to `false`). If `true`, the tag will overwrite other tags with the same path. If `false`, it will merge with them.
 - `values`: An array containing everything to group under this tag. Each element can either be
