@@ -22,8 +22,19 @@ This guide will help you to create your first datapack, whether you've never tri
 of experience. The process of coding a datapack is a bit different to other typical programs. By the end of this
 tutorial, you'll have made a simple datapack which makes **arrows explode when they land!**
 
-## Setting up an empty datapack
+## Prerequisites
+Minecraft Datapacks basically just consist of text files inside folders. For this reason, you can *technically* make a datapack with just the default text editor and a file explorer. However, if you are able to, we **highly suggest** downloading a code editor such as Visual Studio Code. 
 
+With VS Code, you will be able to view errors in your datapack, autocomplete commands, and highlight syntax with different colours so that making datapacks isn't as painful as using Notepad.
+
+- Download Visual Studio Code: https://code.visualstudio.com/download
+- Get the VS Code extensions for datapack development: https://marketplace.visualstudio.com/items?itemName=amandin.dpc-pack
+
+:::info
+If you prefer not to download programs, then you can use a web version of Visual Studio Code which essentially has all the same features, except it can be slower or more difficult to work with. https://vscode.dev/
+:::
+
+## Setting up an empty datapack
 <!-- <b style="color: #2563eb;">Learn:</b> How to set up an empty datapack to start working in -->
 
 The first step when creating a datapack is to **make a new world** to test it in. Go ahead and do that now - make sure
@@ -40,9 +51,8 @@ Create a folder - this will be the root folder of your datapack project. The nam
 I'm just going to call it `Example Datapack`. **Open this new folder**. Inside this folder is where all the data starts from.
 
 :::tip
-Before we go further, if you have downloaded and installed Visual Studio Code and the relevant extensions, then
-you should be able to right click inside the new folder that you created and "Open in Code". If not, then no worries, it
-isn't required.
+If you are using Visual Studio Code, at this point you should open it, find `Open Folder`, and open the newly created folder. Navigating through your datapack will be *so much easier*!
+![image.png](https://i.postimg.cc/6ptvVNMj/image.png)
 :::
 
 The first file we want to create is the `pack.mcmeta` file. This file will tell Minecraft that the folder is a datapack,
