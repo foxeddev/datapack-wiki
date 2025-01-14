@@ -93,7 +93,7 @@ entity_type tag.
 
 The `name=<entity_name>` argument will filter the selection to only include entities who have a specific name.
 
-`<entity_name>` is a string (it cannot be a JSON text component).
+`<entity_name>` is a simple string. This can not be a text component but `name=Freddie` would still match a styled name like `{"text":"Freddie","color":"blue"}` or similar.
 
 **Examples**:
 
