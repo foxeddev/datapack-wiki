@@ -137,7 +137,7 @@ based on the priority defined in `<sort_type>`.
 
 `<sort_type>` can be one of the following:
 
-- `arbitrary`: does not sort in any guaranteed order
+- `arbitrary`: sort in entity load order, which is arbitrary
 - `nearest`: sort in increasing order of distance
 - `furthest`: sort in decreasing order of distance
 - `random`: sort randomly (default type for `@r`)
