@@ -9,6 +9,8 @@ Styled text (bold, underline, colours, etc) is represented as JSON in Minecraft.
 
 Instead of just using standard text (for example `"Hello World"`), we can use JSON text to format the text in a variety of ways, including colours, text effects, click events, hover events, language-based text, accessing NBT data, and more.
 
+For more information about the JSON format in general, see the [JSON](/wiki/info/json) page.
+
 ## Format
 A JSON text component is formatted as either an object (`{"text":"Hello World","color":"red"}`), or an array of objects (`[{"text":"Hello"},{"text":"World"}]`). An object could just be a normal string (`["Hello", "World"]` is valid JSON text). 
 
@@ -29,6 +31,11 @@ The actual text of a JSON text object can be either static text or from a source
   - `with`: This can also optionally be used to insert arguments into the translation key. This should be an array of JSON text objects.
   - `fallback`: This can also optionally be used to specify what to display if the translation is not found. If this is not specified, the key itself will be displayed if the translation is not found. This should be a string value.
 - `"keybind":"<keybind id>"`: The key which a player has bound to a keybind. (For example, `key.jump` would show the text `Space`, assuming the player has not changed the keybind).
+
+**Example**: This JSON text object will display the value of the path `ShopData.Name` in the NBT storage `minecraft:xyz`:
+```json
+{"nbt":"ShopData.Name","storage":"minecraft:xyz"}
+```
 
 ### Style properties
 The following properties can be used in a JSON text object to change the **style** of the text:
