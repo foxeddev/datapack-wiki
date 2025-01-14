@@ -163,8 +163,8 @@ This argument(s) will affect the arguments `distance`, `dx`/`dy`/`dz` and `sort`
 
 ### `dx`/`dy`/`dz` arguments
 
-The `dx/dy/dz` arguments will create a cuboid that is at least 1x1x1 blocks big and each value above 0 will increase the
-size of the cuboid in that direction by a full block.
+The `dx/dy/dz` arguments will create a cuboid that is at least 1x1x1 blocks big and the given value will increase the
+size of the cuboid in that direction by the given value in blocks.
 
 Any entity fully or partially inside the cuboid will be selected.
 
@@ -182,8 +182,8 @@ dx/dz/dz=0 will always stretch from the command origin to positive x/y/z
 **Examples**:
 
 - `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`: Selects any entities if any part of their hit box is within the cuboid
-  `w=10,h=20,l=5` starting from the position `x=10,y=13,z-87`
-- `@e[x=7,y=3,z=9,dx=0,dy=0,dz=0]`: Selects any entities if their hit box contains the point `x=7,y=3,z=9`
+  `w=11,h=21,l=6` starting from the position `x=10,y=13,z-87`
+- `@e[x=7,y=3,z=9,dx=0,dy=0,dz=0]`: Selects any entities if their hit box overlaps with the block at `x=7,y=3,z=9`
 
 ### `tag` argument
 
