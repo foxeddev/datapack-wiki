@@ -64,7 +64,7 @@ argument. (E.g. @e[type=!minecraft:creeper] will select every entity that is NOT
 | `nbt`              | `@a[nbt={SelectedItem:{id:"minecraft:stone"}}]`            | Filters to include entities with specific [NBT data](/wiki/nbt/nbt). NBT data will be partially matched - as long as the specified data exists on the entity, it doesn't matter what other data it has.                                                                                                                                                                                                                                     |
 | `sort` and `limit` | `@e[limit=1,sort=nearest]`                                 | These two arguments are often used together to find entities based on ordering. For example, `limit=5,sort=furthest` selects the 5 entities which are furthest away from the current position.                                                                                                                                                                                                                             |
 | `x`/`y`/`z`        | `@e[x=10,y=9,z=-5,distance=..5]`                           | Specifies a starting position to work from; affecting `distance`, `dx`/`dy`/`dz`, and `sort`/`limit`. If left blank, it defaults to `~ ~ ~`.                                                                                                                                                                                                                                                                               |
-| `dx`/`dy`/`dz`     | `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`                      | Creates a selection area (cuboid) which will only select entities if any of their hit box is within the area. `x`/`y`/`z` is needed to specify the position of the bottom right corner of the cuboid - if it is left out it defaults to the current position. If all the `dxyz` values are `0` (or one is set to 0 and no others are set), then it will select any entities if the current position is inside their hit box. |
+| `dx`/`dy`/`dz`     | `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`                      | Creates a selection area (cuboid) which will only select entities if part of their hit box is within the area. The current position or `x`/`y`/`z` is used as the position of the cuboid's corner, where the coordinates are the smallest. If at least one of the `dx`/`dy`/`dz` values are set, the others default to 0 if not set. The checked area is always 1 block bigger in the positive direction than specified, so the smallest checkable area is a 1x1x1 cube with all values at 0. |
 | `tag`              | `@a[tag=CustomTag]`                                        | Selects entities with a specified tag added with the `/tag` command or `Tags[]` NBT. No entities have tags by default - tags can only be added by the datapack or by commands.                                                                                                                                                                                                                                             |
 | `team`             | `@a[team=red]`                                             | Selects entities in a specific team.                                                                                                                                                                                                                                                                                                                                                                                       |
 | `scores`           | `@e[scores={foo=10}]`                                      | Selects entities based on their value on a scoreboard. Like `distance`, you can use `..` to specify ranges.                                                                                                                                                                                                                                                                                                                |
@@ -82,7 +82,7 @@ More information about the arguments:
 The `type=<entity_type>` argument will filter the selection to only include entities of a certain type, or those in an
 entity_type tag.
 
-`<entity_type>` must be a valid entity ID or entity_type tag ID. This argument can only be used with `@e` or `@s`.
+`<entity_type>` must be a valid entity ID or entity_type tag ID. This argument can only be used with `@e`, `@s` or `@n`.
 
 **Examples**:
 
@@ -93,7 +93,7 @@ entity_type tag.
 
 The `name=<entity_name>` argument will filter the selection to only include entities who have a specific name.
 
-`<entity_name>` is a string (it cannot be a JSON text component).
+`<entity_name>` is a simple string. This can not be a text component but `name=Freddie` would still match a styled name like `{"text":"Freddie","color":"blue"}` or similar.
 
 **Examples**:
 
@@ -137,7 +137,7 @@ based on the priority defined in `<sort_type>`.
 
 `<sort_type>` can be one of the following:
 
-- `arbitrary`: does not sort in any guaranteed order
+- `arbitrary`: sort in entity load order, which is arbitrary
 - `nearest`: sort in increasing order of distance
 - `furthest`: sort in decreasing order of distance
 - `random`: sort randomly (default type for `@r`)
@@ -163,8 +163,8 @@ This argument(s) will affect the arguments `distance`, `dx`/`dy`/`dz` and `sort`
 
 ### `dx`/`dy`/`dz` arguments
 
-The `dx/dy/dz` arguments will create a cuboid that is at least 1x1x1 blocks big and each value above 0 will increase the
-size of the cuboid in that direction by a full block.
+The `dx/dy/dz` arguments will create a cuboid that is at least 1x1x1 blocks big and the given value will increase the
+size of the cuboid in that direction by the given value in blocks.
 
 Any entity fully or partially inside the cuboid will be selected.
 
@@ -182,8 +182,8 @@ dx/dz/dz=0 will always stretch from the command origin to positive x/y/z
 **Examples**:
 
 - `@e[x=10,y=13,z=87,dx=10,dy=20,dz=5]`: Selects any entities if any part of their hit box is within the cuboid
-  `w=10,h=20,l=5` starting from the position `x=10,y=13,z-87`
-- `@e[x=7,y=3,z=9,dx=0,dy=0,dz=0]`: Selects any entities if their hit box contains the point `x=7,y=3,z=9`
+  `w=11,h=21,l=6` starting from the position `x=10,y=13,z-87`
+- `@e[x=7,y=3,z=9,dx=0,dy=0,dz=0]`: Selects any entities if their hit box overlaps with the block at `x=7,y=3,z=9`
 
 ### `tag` argument
 
