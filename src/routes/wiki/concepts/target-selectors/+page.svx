@@ -82,7 +82,7 @@ More information about the arguments:
 The `type=<entity_type>` argument will filter the selection to only include entities of a certain type, or those in an
 entity_type tag.
 
-`<entity_type>` must be a valid entity ID or entity_type tag ID. This argument can only be used with `@e` or `@s`.
+`<entity_type>` must be a valid entity ID or entity_type tag ID. This argument can only be used with `@e`, `@s` or `@n`.
 
 **Examples**:
 
