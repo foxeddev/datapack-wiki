@@ -221,7 +221,7 @@ Here, the key-value pair under `permutations` should be the same as the `asset_n
 Now, we will need to create the actual material color palette texture. Since we are using Vanilla's default `palette_key`, this image needs to have a width of 8 and a height of 1. You can see an example palette below.
 This image should be saved in `assets/<namespace>/textures/trims/color_palettes/` as `matexample.png`
 
-<img src="https://i.postimg.cc/Yqyvq7vt/pallete.png" alt="Example color palette image" width="300" style="image-rendering: pixelated; image-rendering: crisp-edges;">
+<img src="https://i.postimg.cc/Yqyvq7vt/pallete.png" alt="Example color palette" width="300" style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 Now comes the last and also hardest part, adding the item models and their definition for all the armor pieces. I will only show this on the diamond chestplate but **you will have to create a file for every single armor pieces!**
 
@@ -501,7 +501,7 @@ You might have noticed that the file above mentions a `pickaxe_trim_resin` textu
 Now for the last step, we will need to create the `pickaxe_trim` texture. This is a black-and-white mask which is applied on-top of the diamond pickaxe when it has a trim applied. Please note that the file has to use the same colors as Vanillas `textures/trims/color_palettes/trim_palette` (this file can be seen in the [Smithing Trim Pattern](/guide/adding-new-features/smithing-trims#finishing-up-with-the-resourcepack---smithing-trim-pattern) chapter.)
 This image has to be located in `assets/minecraft/textures/trims/items/` with the name `pickaxe_trim.png` The texture I used can be found below:
 
-<img src="https://i.postimg.cc/J0FHgCJ7/pickaxe-trim.png" alt="Example color palette image" width="100" style="image-rendering: pixelated; image-rendering: crisp-edges;">
+<img src="https://i.postimg.cc/J0FHgCJ7/pickaxe-trim.png" alt="Example color palette" width="100" style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 Once you save the above files, you need to reload the resource pack with the keybind **F3 + T**
 in-game. You will also need to leave and rejoin the world to update the datapack.
