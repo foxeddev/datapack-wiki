@@ -40,7 +40,7 @@
 
 <SidebarCategory name="Info" icon={IconInfo}>
   <SidebarPage label="Breaking Changes" icon={IconBreak} page="/wiki/info/breaking-changes" />
-  <SidebarPlaceholder label="Pack Formats" icon={IconNumbers} />
+  <SidebarPage label="JSON format" icon={IconBraces} page="/wiki/info/json" />
 </SidebarCategory>
 
 <SidebarCategory name="Concepts" icon={IconConcepts}>
