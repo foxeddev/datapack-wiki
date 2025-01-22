@@ -43,76 +43,10 @@ Each criteria object contains a `trigger` and `conditions` fields. There are man
 The `player` condition can exist with any advancement trigger (except `minecraft:impossible`). This condition can either be an object (an `entity_properties` predicate) or a list of other predicates (any predicate type) to further match the player.
 :::
 
-The rest of section lists the possible types of `trigger`s:
+You can see all the advancement criteria using a generator such as [misode.github.io](https://misode.github.io/advancement).
+<!-- I will add these all at a later date, I have some already but it's proving to take a while to add them all in - Silabear -->
 
-### `minecraft:allay_drop_item_on_block`
-`allay_drop_item_on_block` will trigger when a player's allay drops an item on a block.
+## Using advancements to detect events
+By specifying a `function` in the `rewards` section, and not including any `display` information, you can make an advancement essentially just become an event listener (something that will run a function when the player does something). In order for this to work multiple times, the function must revoke the advancement from the player (using `advancement revoke @s only ...`), so that it can be regained later.
 
-- `location`: a predicate used to check the position the item was dropped at.
-
-### `minecraft:any_block_use`
-
-### `minecraft:avoid_vibration`
-`avoid_vibration` will trigger when a player avoids sending a vibration (because they are crouching). 
-
-No other `conditions` can be used with this.
-
-### `minecraft:bee_nest_destroyed`
-`bee_nest_destroyed` will trigger when a player destoys a `bee_nest` or `beehive`.
-
-- `block`: The ID of the destroyed block to match. This accepts any value, but will only work with bee nests or beehives. This should be a string
-- `item`: The item used to destroy the block. This should be an item matcher (see [Item Matchers](/wiki/files/predicates#item-matcher))
-- `num_bees_inside`: The number of bees that were inside the destroyed block. This should be an integer
-
-### `minecraft:bred_animals`
-`bred_animals` will trigger when a player breeds two animals (and spawns a baby animal).
-
-- `parent`: An `entity_properties` predicate or list of other predicates (any type) to match the first parent of the baby.
-- `partner`: An `entity_properties` predicate or list of other predicates (any type) to match the second parent of the baby.
-- `child`: An `entity_properties` predicate or list of other predicates (any type) to match the baby.
-
-### `minecraft:brewed_potion`
-`brewed_potion` triggers when a player creates a potion (in a brewing table).
-
-- `potion`: The ID of the brewed potion to match.
-
-### `minecraft:changed_dimension`
-`changed_dimension` will trigger when a player moves from one dimension to another (by any means).
-
-- `from`: The ID of the dimension the player was in before they changed dimension.
-- `to`: The ID of the dimension the player was in after they changed dimension.
-
-### `minecraft:channeled_lightning`
-`channeled_lightning` will trigger when a player uses the Channeling enchantment to spawn lightning on an entity or a lightning rod.
-
-- `victims`: A list of `entity_properties` predicates or list of other predicates (any type) to match the targets of the lightning bolt. Each list item represents one entity. All entities in this list must be struck by the lightning bolt in order for the advancement to trigger.
-
-### `minecraft:construct_beacon`
-`construct_beacon` triggers when a player constructs or updates the base of (blocks below) a beacon.
-
-- `level`: The level of the new beacon. This should either be an integer or an object containing a `max` and `min` value to match a range.
-
-### `minecraft:consume_item`
-`consume_item` triggers when a player consumes an item (with the `consumable` component)
-
-- `item`: The item that was consumed. This should be an item matcher (see [Item Matchers](/wiki/files/predicates#item-matcher))
-
-### `minecraft:crafter_recipe_crafted`
-`crafter_recipe_crafted` triggers when a player uses a crafter to craft a recipe.
-
-- `recipe`: The ID of the recipe that was crafted. This should be a string with a recipe ID.
-- `ingredients`: A list of item matchers to match the items used in the crafting recipe.
-
-### `minecraft:cured_zombie_villager`
-`cured_zombie_villager` triggers when a player cures a zombie villager by turning it back into a villager.
-
-- `villager`: A list of `entity_properties` predicates or list of other predicates (any type) to match the villager that the zombie villager was turned into
-- `zombie`: A list of `entity_properties` predicates or list of other predicates (any type) to match the zombie villager.
-
-### `minecraft:default_block_use`
-
-### `minecraft:`
-
-:::note
-im only on letter d this is so boring but i wanted to push this anyway (do not keep in prod plz) plz someone else finish this i want to go outside and breath a fresh air plz plz
-:::
+Note that the advanement will run the function **as** the player, but not **at** the player.
