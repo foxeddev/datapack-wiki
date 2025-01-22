@@ -52,7 +52,7 @@ I'm just going to call it `Example Datapack`. **Open this new folder**. Inside t
 
 :::tip
 If you are using Visual Studio Code, at this point you should open it, find `Open Folder`, and open the newly created folder. Navigating through your datapack will be *so much easier*!
-![image.png](https://i.postimg.cc/6ptvVNMj/image.png)
+![open folder location](https://i.postimg.cc/6ptvVNMj/image.png)
 :::
 
 The first file we want to create is the `pack.mcmeta` file. This file will tell Minecraft that the folder is a datapack,
