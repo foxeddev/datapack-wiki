@@ -1,13 +1,75 @@
+
 ---
 title: Breaking Changes
 description: "A list of breaking changes to datapacks."
-version: 1.21.4
+version: 1.21.5
 ---
 
 # List of breaking changes
 
-This is list of all breaking changes to datapacks (excluding resource packs). Special thanks to Misode's Technical
-Changelog for the source of many of these.
+This is list of all breaking changes to datapacks (excluding resource packs). Special thanks to [Misode's Technical
+Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https://minecraft.wiki/) for the source of many of these.
+
+## 1.21.5
+- Trim pattern and trim material items are no longer specified in the trim registries, but instead in the recipes and items respectively
+- Field `background` in advancement definition no longer contains `textures/` prefix and `.png` suffix
+
+**Other**
+- Wolf Variants
+	- In the wold variants file, the fields `angry_texture`, `tame_texture` and `wild_texture` have been grouped in field `assets` and renamed to `angry`, `tame` and `wild`.
+	- Added field `spawn_conditions`, which describes where the variant can spawn. See more in the changelog under "Spawn conditions".
+- The registry definitions for trim patterns and trim materials no longer include an `item` field
+	- Instead, this mapping in patterns and materials is defined by the recipe and item components respectively
+
+**Data Types**
+- The data format of Text Components was changed from [JSON](/wiki/info/json) to [SNBT](/wiki/nbt-scoreboards/nbt#snbt-format).
+	- With that, all the special formats and values were changed. You can read more about it on the changelog.
+	- For example, `minecraft:custom_name="{"text":"Renamed item"}"` is now `minecraft:custom_name={text:'Renamed item'}`. Or the previous `/tellraw @s ""text":"Hello world""` is now `/tellraw @s {text:'Hello world'}`
+
+**Tags**
+- Renamed `#bypasses_shield` to `#bypasses_blocking` in damage type tags
+- Removed `#default_spawns` and `#full_moon_spawns` in cat variant tags
+
+**Entities & Entity Data**
+- The `potion` entity type has been split into `splash_potion` and `lingering_potion`
+
+- The `ArmorDropChances`, `HandDropChances`, and `body_armor_drop_chance` fields have been merged into a `drop_chances` field.
+	- The  format is a list of `equipment_slot:value` variables. E.g. `drop_chances:{chest:0.1,feet:1.0}`
+	- And drop chances with a default value are no longer stored. The  `drop_chances`  field is removed entirely if all defaults.
+- The `ArmorItems`, `HandItems`, and `body_armor_item` fields have been merged into an `equipment` field
+	- The format is a list of `equipment_slot:item_stack` variables. E.g. `equipment:{chest:{id:'minecraft:diamond_chestplate'}}`.
+	- This affects all mobs and Armor Stands, but not players.
+- The format of saddles has been unified between mobs, becoming a new equipment slot, stored in the `equipment.saddle` field.
+	- This is a pure rename from the previous `SaddleItem` in horse-like mobs. In striders and pigs this replaces the old `Saddle` boolean.
+	- The Saddle dropping on death is now affected by the `drop_chances` field.
+- The `FallDistance` field has been changed from float to double and is now called `fall_distance`
+
+**Commands**
+- The `horse.saddle` item slot has been renamed to `saddle`, and now supports any entity that can equip a Saddle.
+- The behavior of `setblock` and `fill` commands have changed in how they handle block entity data:
+    - If the block entity data is not specified, and the existing block has data, the block entity data will be preserved
+    - If the block entity data is specified, the block entity data will be set to the specified value
+    - To clear the block entity data explicitly, you must now specify the block entity data as `{}`
+    - The operation is now successful if either the block state changed or the block entity data changed
+
+**Item Componenents**
+- Entities now have a set of components fro changing variants and other apperance like stuff.
+	- Mob buckets and paintings available in creative menu will now use new variants instead of `minecraft:entity_data` component
+	- Custom tooltips for Bucket of Tropical Fish and Painting items are now based on new components instead of `minecraft:bucket_entity_data` and `minecraft:entity_data`
+- The `hide_additional_tooltip` and `hide_tooltip` component were removed, and replaced by the new `tooltip_display` component. This means that all the items which used this will now need to be hidden using the new component.
+- All item components which had a `show_in_tooltip` field, had this field removed. The old behaviours can be done using the new `tooltip_display` component.
+- In the [`dyed`](/wiki/concepts/item-components#dyed) component, the color field now always uses its simplified form, with the rgb field inlined to top-level (e.g. `dyed_color={rgb:12345}` -> `dyed_color=12345`).
+- In the [`can_place_on`](/wiki/concepts/item-components#can_place_on) and [`can_break`](/wiki/concepts/item-components#can_break), the predicates field has been inlined to top-level, and supports either a single element or list. (e.g. `can_place_on={predicates:[{blocks:'stone'},{blocks:'dirt'}]}` -> `can_place_on=[{blocks:'stone'},{blocks:'dirt'}]`)
+- The [`enchantments`](/wiki/concepts/item-components#enchantments) and [`stored_enchantments`](/wiki/concepts/item-components#stored_enchantments) components, will now always use their simplified form, with the `levels` field inlined to top-level (e.g. `enchantments={levels:{sharpness:2}}` -> `enchantments={sharpness:2}`)
+
+**Recipes**
+- The `base` ingredient field is no longer optional in the `smithing_transform` recipe type.
+- The `base`, `template`, and `addition` ingredient fields in the `smihing_trim` are no longer optional in the `smithing_trim` recipe type.
+
+**Predicates**
+- Some entity sub-predicates have been removed and replaced by a combination of `components` predicate and variant entity components
+	- These include: `axolotl`, `fox`, `mooshroom`, `rabbit`, `horse`, `llama`, `villager`, `parrot`, `salmon`, `tropical fish`, `painting`, `cat`, `frog`, `wolf`, `pig`
+- Field `color` has been removed from `minecraft:sheep` sub-predicate
 
 ## 1.21.4
 **Item Components**
