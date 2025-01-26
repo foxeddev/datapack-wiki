@@ -28,7 +28,7 @@ These commands can be run by any player, no matter their permission level.
 - `/random <roll|value> <range>` - Creates a random value (`<sequence>` requires Permission Level 2+)
 - `/seed` - Displays the world's seed, permission level 0 only in singleplayer
 - `/teammsg <message>` - Sends a message to all players in the same team of the command runner. (Alias `/tm`)
-- `/me <message>` - Displays: "* <Player's Name> <message>" in chat
+- `/me <message>` - Displays: `* <Player's Name> <message>` in chat
 - `/msg <targets> <message>` - Sends a private message to a player. (Alias `/tell` and `/w`)
 - `/trigger <objective> [add|set] [<value>]` - Triggers a scoreboard objective (see [Scoreboards](/wiki/nbt-scoreboards/scoreboards#trigger-objectives))
 
