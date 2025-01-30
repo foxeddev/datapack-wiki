@@ -65,7 +65,7 @@ call the raycast function again _(recursion)_.
 
 ```mcfunction:raycast.mcfunction
 # Remove one from the raycast limit
-scoreboard players remove .raycastlimit raycast 1
+scoreboard players remove .raycastLimit raycast 1
 
 # Optional: display a particle
 particle minecraft:flame
