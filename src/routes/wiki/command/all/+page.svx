@@ -1,6 +1,6 @@
 ---
 title: All Commands List
-version: 1.21.4
+version: 1.21.5
 ---
 
 # List of all commands
@@ -91,6 +91,7 @@ These commands require a permission level same or bigger than 2 to run them.
 - `/team list|add|remove|empty|join|leave|modify ...` - Manages teams
 - `/teleport [<targets>] <destination|location [<rotation>|facing <location|entity <facingTarget> [<facingAnchor>]>]> ...` - Teleport entities to a specified location. (ALIAS: `/tp`)
 - `/tellraw <targets> <message>` - Sends a JSON message to players
+- `/test ...` - Calls and manages [Game Tests](https://minecraft.wiki/w/GameTest). More info on the [Minecraft Wiki](https://minecraft.wiki/w/Commands/test)
 - `/tick query|rate <rate>|freeze|unfreeze|step [<time>|stop]|sprint [<time>|stop]` - Controls or checks the tick rate
   of a world
 - `/time add <time>|query (daytime|gametime|day)|set <daytime|gametime|day)|time>` - Controls or checks the time of a

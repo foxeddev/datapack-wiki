@@ -11,10 +11,9 @@ This is list of all breaking changes to datapacks (excluding resource packs). Sp
 Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https://minecraft.wiki/) for the source of many of these.
 
 ## 1.21.5
+**Other**
 - Trim pattern and trim material items are no longer specified in the trim registries, but instead in the recipes and items respectively
 - Field `background` in advancement definition no longer contains `textures/` prefix and `.png` suffix
-
-**Other**
 - Wolf Variants
 	- In the wold variants file, the fields `angry_texture`, `tame_texture` and `wild_texture` have been grouped in field `assets` and renamed to `angry`, `tame` and `wild`.
 	- Added field `spawn_conditions`, which describes where the variant can spawn. See more in the changelog under "Spawn conditions".
@@ -27,7 +26,6 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 	- For example, `minecraft:custom_name="{"text":"Renamed item"}"` is now `minecraft:custom_name={text:'Renamed item'}`. Or the previous `/tellraw @s ""text":"Hello world""` is now `/tellraw @s {text:'Hello world'}`
 
 **Tags**
-- Renamed `#bypasses_shield` to `#bypasses_blocking` in damage type tags
 - Removed `#default_spawns` and `#full_moon_spawns` in cat variant tags
 
 **Entities & Entity Data**
@@ -93,7 +91,7 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 ## 1.21.2
 **Item Components**
 - The [`food`](/wiki/concepts/item-components#food) item component no longer automatically allows for consumption of food, and now only holds the data relating to it (meaning `nutrition`, `saturation` and `can_always_eat` are the only fields left in the component)
-  - 🛠️ To fix this, just add the [`consumable`](/wiki/concepts/item-components#consumable) component: `consumable={}`. You can customize this component even more, you can read about it [here](/wiki/concepts/item-components#consumable).
+  - 🛠️ To fix this, just add the [`consumable`](/wiki/concepts/item-components#consumable) component: `consumable={}`. This component is very customizable, you can read about it [here](/wiki/concepts/item-components#consumable).
 - The [`lock`](/wiki/concepts/item-components#lock) has been changed into an item predicate, with a format of `lock={ITEM_PREDICATE}`
   - 🛠️ The previous `lock="MyKey"` would now look like `lock={components:{"minecraft:custom_name":"'MyKey'"}}`
 - The `fire_resistant` component has been renamed to [`damage_resistant`](/wiki/concepts/item-components#damage_resistant), with a new field
