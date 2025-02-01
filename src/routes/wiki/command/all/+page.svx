@@ -12,10 +12,20 @@ We use the following syntax to make it easier to understand which arguments are 
 | Variable                 | Meaning                                                                            |
 | ------------------------ | ---------------------------------------------------------------------------------- |
 | `<argumentName>`         | An argument.                                                                       |
-| `[<entry>]`                | An optional entry.                                                                 |
+| `[<entry>]`              | An optional entry.                                                                 |
 | `<entryA│entryB│entryC>` | Pick one of these. This is required.                                               |
 | `[entryA│entryB│entryC]` | Pick one of these. This is optional.                                               |
 | `...`                    | Some syntax is left out, you can find more about the command on its dedicated page |
+
+## Common Parameters
+
+Parameters that show up commonly
+
+| Variable                 | Meaning                                                                            |
+| ------------------------ | ---------------------------------------------------------------------------------- |
+| `target(s)`              | A [Target Selector](https://datapack.wiki/wiki/concepts/target-selectors).         |
+| `range`                  | A [Range](https://datapack.wiki/wiki/concepts/ranges).                             |
+| `time`                   | Indicates time (`1s` = 1 second, `1t` = 1 game tick)                               |
 
 ## List of commands by Permission Level
 
@@ -29,7 +39,7 @@ These commands can be run by any player, no matter their permission level.
 - `/seed` - Displays the world's seed, permission level 0 only in singleplayer
 - `/teammsg <message>` - Sends a message to all players in the same team of the command runner. (Alias `/tm`)
 - `/me <message>` - Displays: `* <Player's Name> <message>` in chat
-- `/msg <targets> <message>` - Sends a private message to a player. (Alias `/tell` and `/w`)
+- `/msg <player> <message>` - Sends a private message to a player. (Alias `/tell` and `/w`)
 - `/trigger <objective> [add|set] [<value>]` - Triggers a scoreboard objective (see [Scoreboards](/wiki/nbt-scoreboards/scoreboards#trigger-objectives))
 
 ### Permission level 1
