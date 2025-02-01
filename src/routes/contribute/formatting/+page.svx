@@ -126,4 +126,4 @@ Highlighting is a way to highlight specific text. It isn't commonly used, but ex
 ## Standardized Elements
 
 The wiki uses a few elements that are standardized across the entire wiki. Right now this only consists
-of command syntax. You can find the command syntax we use in the [commands page](/wiki/concepts/commands).
+of command syntax. You can find the command syntax we use in the [commands page](/wiki/command/all).
