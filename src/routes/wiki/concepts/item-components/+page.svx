@@ -16,4 +16,4 @@ items will have the [`minecraft:consumable`](#consumable) component, which makes
 A command such as `/give` or `/item` can be used to create an item which has additional item components, or remove item
 components from any item.
 
-You can check out all the components and their structure on the Minecraft Wiki: https://minecraft.wiki/w/Data_component_format#List_of_components
+You can check out all the components and their data structure on the Minecraft Wiki: https://minecraft.wiki/w/Data_component_format#List_of_components
