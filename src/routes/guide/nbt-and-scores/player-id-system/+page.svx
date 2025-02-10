@@ -8,24 +8,22 @@ version: 1.21.4
 This guide will explain how to create a player ID system within a datapack. A player ID system gives each player a unique score on a scoreboard, which can then be used to link players to entities, or for the player to be able to select another player easily.
 
 ## Assigning player IDs
-Firstly, we need to create a scoreboard objective to store the players' IDs. This scoreboard needs a fake player in order to store the maximum ID value so that no two players end up with the same ID.
+Firstly, we need to create a scoreboard objective to store the players' IDs. This scoreboard will also hold a counter of the IDs given in a fake player so that no two players end up with the same ID.
 
 ```mcfunction:load.mcfunction
 # Create the playerid scoreboard
 scoreboard objectives add playerid dummy
-
-# Set the max score on the playerid scoreboard to 1, unless already set
-execute unless score .max playerid matches 1.. run scoreboard players set .max playerid 1
 ```
 
-Next, we need to assign an ID to the player when they first join the world. Create a function which increments the max player ID by one, and then assigns that value to the player.
+Next, we need to assign an ID to the player when they first join the world. Create a function which assigns the value of the max player ID counter to the player, and then increments it by one.
 
 ```mcfunction:assign_id.mcfunction
+# Assign the max player ID to the player
+# (When this is first ran, .max playerid is not set and read as 0, so the first player gets the ID 0)
+scoreboard players operation @s playerid = .max playerid
+
 # Increment the max player ID by one
 scoreboard players add .max playerid 1
-
-# Assign the max player ID to the player
-scoreboard players operation @s playerid = .max playerid
 ```
 
 Finally, we need to make this function run when a player first joins the world. We can do this using a `tick` advancement - it will only trigger when the player first joins the world.
