@@ -27,12 +27,14 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 
 **Tags**
 - Removed `#default_spawns` and `#full_moon_spawns` in cat variant tags
+- Renamed `#dead_bush_may_place_on` block tag to `#dry_vegetation_may_place_on` 
 
 **Entities & Entity Data**
 - The `potion` entity type has been split into `splash_potion` and `lingering_potion`
 
+- A lot of fields will no longer be preserved, or have been removed (You can see them all on https://www.minecraft.net/en-us/article/minecraft-snapshot-25w07a)
 - The `ArmorDropChances`, `HandDropChances`, and `body_armor_drop_chance` fields have been merged into a `drop_chances` field.
-	- The  format is a list of `equipment_slot:value` variables. E.g. `drop_chances:{chest:0.1,feet:1.0}`
+	- The format is a list of `equipment_slot:value` variables. E.g. `drop_chances:{chest:0.1,feet:1.0}`
 	- And drop chances with a default value are no longer stored. The  `drop_chances`  field is removed entirely if all defaults.
 - The `ArmorItems`, `HandItems`, and `body_armor_item` fields have been merged into an `equipment` field
 	- The format is a list of `equipment_slot:item_stack` variables. E.g. `equipment:{chest:{id:'minecraft:diamond_chestplate'}}`.
@@ -41,6 +43,11 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 	- This is a pure rename from the previous `SaddleItem` in horse-like mobs. In striders and pigs this replaces the old `Saddle` boolean.
 	- The Saddle dropping on death is now affected by the `drop_chances` field.
 - The `FallDistance` field has been changed from float to double and is now called `fall_distance`
+- The armor and off-hand equipment of Players is now also stored in the `equipment` field *(although items written into the Inventory using armor and off-hand slot numbers still work)*
+- `Pos`, `Motion`, and `Rotation` values without the correct number of components (3, 3, and 2 respectively) will now be fully discarded, instead of only selecting the specified components
+- The `SleepingX`, `SleepingY`, and `SleepingZ` fields have been merged into a single `sleeping_pos` field (e.g. `sleeping_pos: [I;1,2,3]`)
+- Block States in the entity data of Arrows, Minecarts, Block Displays, Endermen, Falling Blocks, Primed TNT, or Piston Moving Blocks are no longer allowed to be specified as an empty object
+- The `Tags` field and many others will no longer be preserved if removed (See https://www.minecraft.net/en-us/article/minecraft-snapshot-25w07a for more)
 
 **Commands**
 - The `horse.saddle` item slot has been renamed to `saddle`, and now supports any entity that can equip a Saddle.
@@ -68,6 +75,7 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 - Some entity sub-predicates have been removed and replaced by a combination of `components` predicate and variant entity components
 	- These include: `axolotl`, `fox`, `mooshroom`, `rabbit`, `horse`, `llama`, `villager`, `parrot`, `salmon`, `tropical fish`, `painting`, `cat`, `frog`, `wolf`, `pig`
 - Field `color` has been removed from `minecraft:sheep` sub-predicate
+- The `stepping_on` entity predicate can now only evaluate to true if the entity is on ground
 
 ## 1.21.4
 **Item Components**
