@@ -1,7 +1,7 @@
 ---
 title: Adding Smithing Trims
 description: "Learn how to add custom smithing trims patterns to Minecraft just with a datapack and a resourcepack!"
-version: 1.21.4
+version: 1.21.5
 ---
 
 # How to add custom Smithing Trims
@@ -138,7 +138,7 @@ Next, we are going to add the `ingredient` item to the `#minecraft:trim_material
 }
 ```
 
-As of 1.21.5, every item you want to work as a trim material, needs to have the `provides_trim_material` item component. So to give ourselfs a barrier which provides our custom trim material, we can use this `/give` command:
+As of 1.21.5, every item you want to work as a trim material, needs to have the [`provides_trim_material`](https://minecraft.wiki/w/Data_component_format#provides_trim_material) item component. So to give ourselfs a barrier which provides our custom trim material, we can use this `/give` command:
 
 ```mcfunction
 /give @s barrier[provides_trim_material="<namespace>:matexample"] 1
