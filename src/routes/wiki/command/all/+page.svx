@@ -47,8 +47,8 @@ These commands require a permission level same or bigger than 2 to run them.
   enchant items with a level higher than what is possible in survival.)
 - `/execute ...` - Executes a different command (See more here: [/execute](/wiki/command/execute))
 - `/experience add|set|query <targets> ...` - Adds, removes or checks the players experience points (ALIAS: `/xp`)
-- `/fill <from-XYZ> <to-XYZ> <block> [destroy|hollow|keep|outline|replace [<filter>]]` -
-- `/fillbiome <from-XYZ> <to-XYZ> <biome> [replace <filter>]` -
+- `/fill <from-XYZ> <to-XYZ> <block> <[keep]|[replace <filter>] [destroy|hollow|outline|strict]>` - Fills blocks in a specified region
+- `/fillbiome <from-XYZ> <to-XYZ> <biome> [replace <filter>]` - Fills biomes in a specified region
 - `/forceload add <from> [<to>]|remove all OR <from> [<to>]|query [<pos>]>` - Forces chunks to be loaded constantly
 - `/function <name> <arguments>|with (block <sourcePos>|entity <source>|storage <source>) [<path>]` - Triggers a
   function
@@ -80,7 +80,7 @@ These commands require a permission level same or bigger than 2 to run them.
 - `/say <message>` - Sends a message into chat to all players
 - `/schedule function <function> <time> [append|replace] OR clear <function>` - Schedules a function
 - `/scoreboard objectives|players ...` - Manages scoreboard objectives and players
-- `/setblock <pos-XYZ> <block> [destroy|keep|replace]` - Changes or replaces a specified block with a different one
+- `/setblock <pos-XYZ> <block> [destroy|keep|replace|strict]` - Changes or replaces a specified block with a different one
 - `/spawnpoint [<targets>] [<pos>] [<angle>]` - Changes the spawn point for a player
 - `/spectate <target> [<player>]` - Makes a player spectate an entity, the player has to be in spectator mode.
 - `/spreadplayers <center> <spreadDistance> <maxRange> [under <maxHeight>] <respectTeams> <targets>` - Teleport entities

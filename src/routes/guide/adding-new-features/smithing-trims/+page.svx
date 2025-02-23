@@ -28,15 +28,14 @@ going to call it `example_pattern.json`. Inside, we will put and configure these
 {
   "asset_id": "<namespace>:example_template",
   "description": "Example Trim",
-  "template_item": "minecraft:diamond_block",
   "decal": false
 }
 ```
 
 This is a run-down of the fields in that file:
 - `description`: A text component to use as this trim's description name.
-- `template_item`: The item that represents the template item (E.g. the bolt armor trim used the `bolt_armor_trim_smithing_template` item).
 - `asset_id`: The resource location which is used in the resourcepack.
+- `decal`: Whether or not the pattern texture should be masked based on the underlying armor. Optional, defaults to false.
 
 If you are not sure what to put in `asset_id`, don't worry, the resource pack part is going to focus on that!
 
@@ -47,9 +46,12 @@ Now, we are going to add the recipe file into `data/<namespace>/recipe/`. You ca
   "type": "minecraft:smithing_trim",
   "addition": "#minecraft:trim_materials",
   "base": "#minecraft:trimmable_armor",
-  "template": "minecraft:diamond_block"
+  "template": "minecraft:diamond_block",
+  "pattern": "<namespace>:example_template"
 }
 ```
+
+Here we have to specify the template item which is going to be used for the pattern, and the trim pattern ID itself.
 
 ### Finishing up with the resourcepack - Smithing Trim Pattern
 
@@ -104,8 +106,8 @@ in-game. You will also need to leave and rejoin the world to update the datapack
 For this to work, you will need to leave and rejoin the world, just using the `/reload` command won't do the trick here!
 :::
 
-## Adding a smithing trim color palette
-### Setting up the datapack - Smithing Trim Color Palette
+## Adding a smithing trim material
+### Setting up the datapack - Smithing Trim Material
 
 For this example, we are going to add a new trim color palette. To start, we are going to create the main trim color palette file in the directory `data/<namespace>/trim_material/`.
 Once again, you can name the file whatever you want, but it has to be in the `.json` file format. For the purposes of this tutorial, we're
@@ -117,14 +119,12 @@ going to call it `matexample.json`. Inside, we will put and configure these sett
   "description": {
     "text": "Example Material",
     "color": "#00e09d"
-  },
-  "ingredient": "minecraft:barrier"
+  }
 }
 ```
 
 This is a run-down of the fields in that file:
 - `description`: A text component to use as this trim's material description name.
-- `ingredient`: The item that represents the material.
 - `asset_name`: The resource location which is used in the resourcepack.
 - `override_armor_materials`: A list of optional armors which should have a different color palette. (E.g. Gold trim on gold armor has a darker color palette.)
 
@@ -138,7 +138,13 @@ Next, we are going to add the `ingredient` item to the `#minecraft:trim_material
 }
 ```
 
-### Finishing up with the resourcepack - Smithing Trim Color Palette
+As of 1.21.5, every item you want to work as a trim material, needs to have the `provides_trim_material` item component. So to give ourselfs a barrier which provides our custom trim material, we can use this `/give` command:
+
+```mcfunction
+/give @s barrier[provides_trim_material="<namespace>:matexample"] 1
+```
+
+### Finishing up with the resourcepack - Smithing Trim Material
 
 To finish off, we'll need to add the material definition in the resourcepack. This can be done by changing the armor trim's atlas file. This file can be found in `assets/minecraft/atlases/armor_trims.json`. Please note that the exact spelling and the use of the Minecraft namespace is required here!
 

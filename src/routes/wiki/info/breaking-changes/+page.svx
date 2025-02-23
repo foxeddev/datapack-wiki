@@ -13,6 +13,8 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 ## 1.21.5
 **Other**
 - Trim pattern and trim material items are no longer specified in the trim registries, but instead in the recipes and items respectively
+  - 🛠️ To fix this: 1) Trim Pattern - delete the field `template_item` from your trim pattern file, and add a new field containing your trim pattern id into your smithing trim pattern recipe. See the [Smithing Trims guide](/guide/adding-new-features/smithing-trims#adding-a-smithing-trim-pattern) for an example.
+  -        2) Trim Material - delete the field `ingredient` from your trim material file, and add the `provides_trim_material` item component to your item. (E.g. `barrier[provides_trim_material='minecraft:iron']`)
 - Field `background` in advancement definition no longer contains `textures/` prefix and `.png` suffix
 - Wolf Variants
 	- In the wold variants file, the fields `angry_texture`, `tame_texture` and `wild_texture` have been grouped in field `assets` and renamed to `angry`, `tame` and `wild`.
