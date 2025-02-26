@@ -48,7 +48,54 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 - `Pos`, `Motion`, and `Rotation` values without the correct number of components (3, 3, and 2 respectively) will now be fully discarded, instead of only selecting the specified components
 - The `SleepingX`, `SleepingY`, and `SleepingZ` fields have been merged into a single `sleeping_pos` field (e.g. `sleeping_pos: [I;1,2,3]`)
 - Block States in the entity data of Arrows, Minecarts, Block Displays, Endermen, Falling Blocks, Primed TNT, or Piston Moving Blocks are no longer allowed to be specified as an empty object
-- The `Tags` field and many others will no longer be preserved if removed (See https://www.minecraft.net/en-us/article/minecraft-snapshot-25w07a for more)
+
+<details><summary>Lots of entity and block entity data fields now have a new default value. Click to see them all</summary>
+
+**Entity Data**
+- `creeper` - `Fuse` defaults to 30; `ExplosionRadius` defaults to 3; <br>
+- `tnt` - `block_state` defaults to `tnt`; `fuse` defaults to 80; `explosion_power` defaults to 4; <br>
+- `goat` - `HasLeftHorn` and `HasRightHorn` fields default to true; <br>
+- `interaction` - `width` and `height` fields default to 1; <br>
+- `allay` - `CanDuplicate` field removed (now controlled by `DuplicationCooldown`); <br>
+- `cat` - `CollarColor` defaults to 14 (red); <br>
+- `dolphin` - `TreasurePosX`, `TreasurePosY`, `TreasurePosZ` fields removed; `Moistness` defaults to 2400; <br>
+- `falling_block` - `BlockState` defaults to sand; `HurtEntities` defaults to false (or true if BlockState is anvil); `FallHurtAmount` defaults to 0; `FallHurtMax` defaults to 40; `DropItem` defaults to true; <br>
+- `fox` - `Trusted` field defaults to empty; <br>
+- `phantom` - `Size` renamed to `size`; `AX`, `AY`, and `AZ` fields collected into a single `anchor_pos` field; <br>
+- `player` - `SpawnX`, `SpawnY`, `SpawnZ`, `SpawnAngle`, `SpawnDimension`, and `SpawnForced` fields collected into a single `respawn` field; `enteredNetherPosition` renamed to `entered_nether_pos`; <br>
+- `turtle` - `HomePosX`, `HomePosY`, and `HomePosZ` fields collected into a single `home_pos` field; `HasEgg` renamed to `has_egg`; <br>
+- `vex` - `LifeTicks` renamed to `life_ticks`; `BoundX`, `BoundY`, and `BoundZ` fields collected into a single `bound_pos` field; <br>
+- `wolf` - `CollarColor` defaults to 14 (red); <br>
+- `area_effect_cloud` - `Duration` defaults to -1 (infinite); <br>
+- `ender_dragon` - `DragonDeathTime` defaults to 0; <br>
+- `firework_rocket` - `ShotAtAngle` defaults to false; <br>
+- `ghast` - `ExplosionPower` defaults to 1; <br>
+- `item` - `Health` defaults to 5; `PickupDelay` defaults to 0; `Age` defaults to 0; <br>
+- `item_frame` and `glow_item_frame` - `ItemDropChance` defaults to 1.0; <br>
+- `shulker` - `Color` defaults to 16 (no color); <br>
+- `skeleton` - `StrayConversionTime` field removed; <br>
+- `spectral_arrow` - `Duration` defaults to 200; <br>
+- `snow_golem` - `Pumpkin` defaults to true; <br>
+- `tnt_minecart` - `fuse` defaults to 80; `explosion_power` defaults to 4; `explosion_speed_factor` defaults to 1; <br>
+- `trader_llama` - `DespawnDelay` defaults to 47999; <br>
+- `villager` - `FoodLevel` and `Xp` fields default to 0; <br>
+- `wandering_trader` - `DespawnDelay` defaults to 0; <br>
+- `zombie` - `DrownedConversionTime` field removed; <br>
+- `zombie_villager` - `Xp` defaults to 0; <br>
+- `arrow`, `spectral_arrow`, `trident` - `damage` defaults to 2; <br>
+- `dragon_fireball`, `wind_charge`, `breeze_wind_charge`, `wither_skull`, `small_fireball`, and `large_fireball` - `acceleration_power` defaults to 0.1; <br>
+- `small_fireball` and `large_fireball` - `ExplosionPower` defaults to 1; <br>
+- `block_display`, `item_display`, and `text_display` - `interpolation_duration`, `teleport_duration`, and `start_interpolation` fields default to 0; `view_range` defaults to 1; `shadow_radius` defaults to 0; `shadow_strength` defaults to 1; `width` and `height` fields default to 0; <br>
+
+**Block Entity Data**
+- `campfire` - `CookingTimes` and `CookingTotalTimes` fields removed; <br>
+- `chiseled_bookshelf` - `last_interacted_slot` defaults to -1; <br>
+- `hopper` - `TransferCooldown` defaults to -1; <br>
+- `jigsaw` - `name`, `target`, and `pool` fields default to `minecraft:empty`; `final_state` defaults to `minecraft:air`; <br>
+- `sculk_shrieker` - `warning_level` defaults to 0; <br>
+- `structure_block` - `ignoreEntities` and `showboundingbox` fields default to true; `posY` defaults to 1;
+
+</details>
 
 **Commands**
 - The `horse.saddle` item slot has been renamed to `saddle`, and now supports any entity that can equip a Saddle.
@@ -64,9 +111,9 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 	- Custom tooltips for Bucket of Tropical Fish and Painting items are now based on new components instead of [`bucket_entity_data`](https://minecraft.wiki/w/Data_component_format#bucket_entity_data) and [`entity_data`](https://minecraft.wiki/w/Data_component_format#entity_data)
 - The `hide_additional_tooltip` and `hide_tooltip` component were removed, and replaced by the new [`tooltip_display`](https://minecraft.wiki/w/Data_component_format#tooltip_display) component. This means that all the items which used this will now need to be hidden using the new component.
 - All item components which had a `show_in_tooltip` field, had this field removed. The old behaviours can be done using the new `tooltip_display` component.
-- In the [`dyed`](https://minecraft.wiki/w/Data_component_format#dyed_color) component, the color field now always uses its simplified form, with the rgb field inlined to top-level (e.g. `dyed_color={rgb:12345}` -> `dyed_color=12345`).
-- In the [`can_place_on`](https://minecraft.wiki/w/Data_component_format#can_place_on) and [`can_break`](https://minecraft.wiki/w/Data_component_format#can_break), the predicates field has been inlined to top-level, and supports either a single element or list. (e.g. `can_place_on={predicates:[{blocks:'stone'},{blocks:'dirt'}]}` -> `can_place_on=[{blocks:'stone'},{blocks:'dirt'}]`)
-- The [`enchantments`](https://minecraft.wiki/w/Data_component_format#enchantments) and [`stored_enchantments`](https://minecraft.wiki/w/Data_component_format#stored_enchantments) components, will now always use their simplified form, with the `levels` field inlined to top-level (e.g. `enchantments={levels:{sharpness:2}}` -> `enchantments={sharpness:2}`)
+- In the [`dyed`](https://minecraft.wiki/w/Data_component_format#dyed_color) component, the color field now always uses its simplified form, with the rgb field inlined to top-level (e.g. `dyed_color={rgb:12345}` → `dyed_color=12345`).
+- In the [`can_place_on`](https://minecraft.wiki/w/Data_component_format#can_place_on) and [`can_break`](https://minecraft.wiki/w/Data_component_format#can_break), the predicates field has been inlined to top-level, and supports either a single element or list. (e.g. `can_place_on={predicates:[{blocks:'stone'},{blocks:'dirt'}]}` → `can_place_on=[{blocks:'stone'},{blocks:'dirt'}]`)
+- The [`enchantments`](https://minecraft.wiki/w/Data_component_format#enchantments) and [`stored_enchantments`](https://minecraft.wiki/w/Data_component_format#stored_enchantments) components, will now always use their simplified form, with the `levels` field inlined to top-level (e.g. `enchantments={levels:{sharpness:2}}` → `enchantments={sharpness:2}`)
 
 **Recipes**
 - The `base` ingredient field is no longer optional in the [`smithing_transform`](/wiki/files/recipes#smithing-fields) recipe type.
