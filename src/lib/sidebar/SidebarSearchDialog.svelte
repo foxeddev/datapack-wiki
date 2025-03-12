@@ -14,8 +14,8 @@
   let searchState: "waiting" | "done" = $state("waiting");
 
   export async function showModalWithEvent(e: KeyboardEvent) {
-    if(!keyActivated) {
-      return
+    if (!keyActivated) {
+      return;
     }
     e.preventDefault();
     await showModal();
