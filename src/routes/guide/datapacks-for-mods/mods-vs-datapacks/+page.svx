@@ -7,36 +7,36 @@ version: 1.21.4
 # Mods vs Datapacks
 
 Mods and datapacks are two commonly confused topics in Minecraft, and knowing the difference between them could help you
-decide which fits your use case.
+decide which better fits your use case.
 
 ## What is a mod?
 
 Simply put, mods are a modifications to the base game, which includes [Java code mods](https://minecraft.wiki/w/Mod),
 datapacks, resource packs and Bukkit plugins. In this guide, we will only address two of these topics, Java code mods
-and datapacks. For the remainder of this guide, when you hear mod, we will be referring to Java code mods.
+and datapacks. _For the remainder of this guide, when you hear mod, we will be referring to Java code mods._
 
 ## Datapacks
 
 Datapacks are extensions to vanilla features and are officially supported by Mojang Studios. Datapacks are becoming
-increasingly powerful with the advent of new data-driven features, commands and technical features such as interactions
+increasingly powerful with the advent of new data-driven features, commands and technical additions such as interactions
 or block displays.
 
 Datapacks can be used to define custom world generation, [advancements](/wiki/files/advancements), enchantments, loot
-tables, [recipes](/wiki/files/recipes) and many contain [commands](/wiki/files/functions) which can be used in maps or
+tables, [recipes](/wiki/files/recipes) and many contain [functions](/wiki/files/functions) which can be used in maps or
 servers to create unique mod-like features. There are many impressive datapacks that can be confused for mods, which is
 where some of the confusion between them in mods stem from.
 
 Due to how they work, datapacks can be more limited compared to mods. New features have to be added by Mojang themselves
 before they can be used in datapacks and many custom features such as custom entities and custom blocks have yet to be
 implemented. In addition to this, _anything_ that requires the Minecraft client such as rendering changes or key input
-is not possible, as datapacks are installed on the server/world and not on the client.
+is not possible, as datapacks are installed on the server/world.
 
 ## Mod
 
 Mods are unofficial changes to the game's code using Java and in most cases a mod loader such as Fabric, Forge, NeoForge, etc.
 __Mods are not supported by Mojang Studios.__ Mods allow you to do anything you want with the game on both the client and the server.
 They give you full control of everything in the game from game rendering, to blocks, to key input, to even networking. They allow for
-much more complex interactions but are also significantly harder to learn.
+much more complex interactions with some minor caveats.
 
 :::warning
 Do not install mods from suspicious sources, as they have near full access to anything on your computer including sensitive files.
@@ -45,6 +45,9 @@ Always download from a reputable distributor such as [Modrinth](https://modrinth
 :::
 
 :::info
-Many mods internally use datapacks to easily implement custom world generation, [advancements](/wiki/files/advancements),
-enchantments, loot tables, and [recipes](/wiki/files/recipes) and in some cases custom items and blocks.
+Mods can include data and asset files alongside code. This includes shipping model/texture files in the resource pack format, recipe files in the datapack format, and more.
+
+In some cases, mods can simply be datapacks in a specially formatted JAR file!
 :::
+
+Mods that add blocks or unique interactions can only be used on servers if everyone on the server uses the required mods, which can be hard to manage especially with larger packs. Mods can also be harder to debug and troubleshoot, especially if they utilize parts of Minecraft's obfuscated code. A strength of datapacks is that anyone can join a server that uses them since they are fully vanilla.

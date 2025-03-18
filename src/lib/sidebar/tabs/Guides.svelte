@@ -32,6 +32,12 @@
   import IconList from "~icons/tabler/list";
   import IconPainting from "~icons/tabler/photo-plus";
   import IconDiamond from "~icons/tabler/diamond";
+  import IconCoffee from "~icons/tabler/coffee";
+  import IconVersus from "~icons/tabler/vs";
+  import IconBuilding from "~icons/tabler/building-factory-2";
+  import IconCottage from "~icons/tabler/building-cottage";
+  import IconTrees from "~icons/tabler/trees";
+  import SidebarPlaceholder from "../navigation/SidebarPlaceholder.svelte";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -71,6 +77,14 @@
   <SidebarPage label="Floating Point Division" icon={IconDivide} page="/guide/nbt-and-scores/division" />
   <SidebarPage label="Array Iteration" icon={IconList} page="/guide/nbt-and-scores/array-iteration" />
 </SidebarCategory>
+
+<SidebarCategory name="Datapacks for Mods" icon={IconCoffee}>
+  <SidebarPage label="Mods vs Datapacks" icon={IconVersus} page="/guide/datapacks-for-mods/mods-vs-datapacks" />
+  <SidebarPlaceholder label="Create" icon={IconBuilding} />
+  <SidebarPlaceholder label="Farmer's Delight" icon={IconCottage} />
+  <SidebarPlaceholder label="Twilight Forest" icon={IconTrees} />
+</SidebarCategory>
+
 
 <SidebarCategory name="Misc" icon={IconBrackets}>
   <SidebarPage label="Debugging" icon={IconBug} page="/guide/misc/debugging" />
