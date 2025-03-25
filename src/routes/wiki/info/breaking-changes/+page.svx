@@ -11,6 +11,8 @@ This is list of all breaking changes to datapacks (excluding resource packs). Sp
 Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https://minecraft.wiki/) for the source of many of these.
 
 ## [1.21.5](https://minecraft.wiki/w/Java_Edition_1.21.5#Technical)
+You can also watch this video from Conure covering the breaking datapack changes: [Why Your Datapack Broke in 1.21.5](https://www.youtube.com/watch?v=sE7P3QYFniM&list=PLgbPk8f9bw9rtYmnIpcd0__q9cjVqmx1l&index=4&ab_channel=Conure)
+
 **Other**
 - Trim pattern and trim material items are no longer specified in the trim registries, but instead in the recipes and items respectively
   - 🛠️ To fix this:
@@ -127,6 +129,8 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 - The `stepping_on` entity predicate can now only evaluate to true if the entity is on ground
 
 ## [1.21.4](https://minecraft.wiki/w/Java_Edition_1.21.4#Technical)
+You can also watch this video from Conure covering the breaking datapack changes: [Why Your Datapack Broke in 1.21.4](https://www.youtube.com/watch?v=N2rU-3_2txc&list=PLgbPk8f9bw9rtYmnIpcd0__q9cjVqmx1l&index=3&ab_channel=Conure)
+
 **Item Components**
 - Field `model` in [`equippable`](https://minecraft.wiki/w/Data_component_format#equippable) component has been renamed to `asset_id`.
 - The [`dyed`](https://minecraft.wiki/w/Data_component_format#dyed_color) component now tint's based on the model, not item ID.
@@ -146,6 +150,8 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 - 🎨 The item model resource pack format got completely changed, now allowing for tinting, layered, conditional, and much more!
 
 ## [1.21.2](https://minecraft.wiki/w/Java_Edition_1.21.2#Technical)
+You can also watch this video from Conure covering the breaking datapack changes: [Why Your Datapack Broke in 1.21.2](https://www.youtube.com/watch?v=Xqj4EAebj80&list=PLgbPk8f9bw9rtYmnIpcd0__q9cjVqmx1l&index=2&ab_channel=Conure)
+
 **Item Components**
 - The [`food`](https://minecraft.wiki/w/Data_component_format#food) item component no longer automatically allows for consumption of food, and now only holds the data relating to it (meaning `nutrition`, `saturation` and `can_always_eat` are the only fields left in the component)
   - 🛠️ To fix this, just add the [`consumable`](https://minecraft.wiki/w/Data_component_format#consumable) component: `consumable={}`. This component is very customizable, you can read about it [here](https://minecraft.wiki/w/Data_component_format#consumable).
@@ -171,6 +177,8 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 - Removed liquid carvers and changed biome format (the `carvers` field is now just a list of carvers)
 
 ## [1.21](https://minecraft.wiki/w/Java_Edition_1.21#Technical)
+You can also watch this video from Conure covering the breaking datapack changes: [Why Your Datapack Broke in 1.21](https://www.youtube.com/watch?v=QiSoehiXV_c&list=PLgbPk8f9bw9rtYmnIpcd0__q9cjVqmx1l&index=1&ab_channel=Conure)
+
 **General Renames**
 - All folders which previously had plural names (except `tags`) now have singular names. A list of all changed folders can be found below:
     - `structures` → `structure`
