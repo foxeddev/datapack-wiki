@@ -10,7 +10,7 @@ version: 1.21.5
 This is list of all breaking changes to datapacks (excluding resource packs). Special thanks to [Misode's Technical
 Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https://minecraft.wiki/) for the source of many of these.
 
-## 1.21.5
+## [1.21.5](https://minecraft.wiki/w/Java_Edition_1.21.5#Technical)
 **Other**
 - Trim pattern and trim material items are no longer specified in the trim registries, but instead in the recipes and items respectively
   - 🛠️ To fix this:
@@ -126,7 +126,7 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 - Field `color` has been removed from `minecraft:sheep` sub-predicate
 - The `stepping_on` entity predicate can now only evaluate to true if the entity is on ground
 
-## 1.21.4
+## [1.21.4](https://minecraft.wiki/w/Java_Edition_1.21.4#Technical)
 **Item Components**
 - Field `model` in [`equippable`](https://minecraft.wiki/w/Data_component_format#equippable) component has been renamed to `asset_id`.
 - The [`dyed`](https://minecraft.wiki/w/Data_component_format#dyed_color) component now tint's based on the model, not item ID.
@@ -145,7 +145,7 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 - The `trail` particle has a new required field: `duration` - Indicates, in ticks, for how long the particles should travel to its destination.
 - 🎨 The item model resource pack format got completely changed, now allowing for tinting, layered, conditional, and much more!
 
-## 1.21.2
+## [1.21.2](https://minecraft.wiki/w/Java_Edition_1.21.2#Technical)
 **Item Components**
 - The [`food`](https://minecraft.wiki/w/Data_component_format#food) item component no longer automatically allows for consumption of food, and now only holds the data relating to it (meaning `nutrition`, `saturation` and `can_always_eat` are the only fields left in the component)
   - 🛠️ To fix this, just add the [`consumable`](https://minecraft.wiki/w/Data_component_format#consumable) component: `consumable={}`. This component is very customizable, you can read about it [here](https://minecraft.wiki/w/Data_component_format#consumable).
@@ -170,7 +170,7 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 - Renamed effect type `damage_item` to `change_item_damage`, which now also supports negative amounts.
 - Removed liquid carvers and changed biome format (the `carvers` field is now just a list of carvers)
 
-## 1.21
+## [1.21](https://minecraft.wiki/w/Java_Edition_1.21#Technical)
 **General Renames**
 - All folders which previously had plural names (except `tags`) now have singular names. A list of all changed folders can be found below:
     - `structures` → `structure`
@@ -230,7 +230,7 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 - Under `enchant_with_levels` the field `treasure` was removed.
 - Under `copy_name` the field `killer` → `attacking_entity` and `killer_player` → `last_damage_player`
 
-## 1.20.2
+## [1.20.2](https://minecraft.wiki/w/Java_Edition_1.20.2#Changes)
 - Entity effects in NBT now use namespaced IDs instead of numbers.
 - The structure for entity effects in NBT has been changed from `PascalCase` to `snake_case`.
   - For mob effect instances:
