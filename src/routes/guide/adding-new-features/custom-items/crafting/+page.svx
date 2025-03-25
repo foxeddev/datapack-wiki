@@ -1,7 +1,7 @@
 ---
 title: Recipes for your Custom Items
 description: "Learn how to make custom crafting recipes for custom items in Minecraft Datapacks."
-version: 1.21.4
+version: 1.21.5
 ---
 
 # Creating Recipes for your Custom Items
@@ -11,7 +11,7 @@ developing for. The first one is for the Minecraft version 1.20.5+ (Datapack for
 specified in the output with [item components](/wiki/concepts/item_components). The second method is for all version
 before 1.20.5.
 
-## After 1.20.5
+## 1.20.5 and newer
 
 This is the easier method of the two, only requiring you to put the item id and components into the recipe output.
 
@@ -66,7 +66,7 @@ In the example, you can see that the result has a `"components"` field, where yo
 custom item should have. I can also recommend a useful site for generating recipes with specified components:
 https://misode.github.io/recipe/
 
-## Before 1.20.5
+## 1.20.4 and below
 
 **This part of the guide assumes that you already knowledge some basic commands and how crafting recipes and
 advancements work.**

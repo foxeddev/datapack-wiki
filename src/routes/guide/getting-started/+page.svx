@@ -2,7 +2,7 @@
 title: How to Make a Minecraft Datapack - Beginner's Guide
 tags: guide, beginner, Minecraft, datapack, tutorial, step-by-step
 description: Learn how to create a Minecraft datapack with our beginner's guide. This step-by-step tutorial will help you understand the basics of datapack creation, even if you have little coding knowledge. Start enhancing your Minecraft experience today!
-version: 1.21.4
+version: 1.21.5
 ---
 
 <script lang="ts">
@@ -184,8 +184,8 @@ Now we've created a function which will run infinitely on a loop, we can move on
 ground.
 
 As far as the game is concerned, an arrow is an **entity**, just like a pig, cow or zombie. Minecraft gives us a special
-way to **select** any types of entities with [target selectors](/concepts/target_selectors). Once we've selected an
-entity, we can use the [/execute](/command/execute) command to run a command as the entity.
+way to **select** any types of entities with [target selectors](/wiki/concepts/target-selectors). Once we've selected an
+entity, we can use the [/execute](/wiki/command/execute) command to run a command as the entity.
 
 We can use these to select all arrows which are in the ground, and then run a command to make them explode (and then
 remove themselves).
