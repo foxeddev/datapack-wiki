@@ -9,7 +9,7 @@ import {Version, TreeRoot, TreeEntry, Highlight} from '$lib/reusables';
 
 # Page Formatting
 
-**Last Updated:** 12-13-2024
+**Last Updated:** 1-31-2025
 
 This section goes over how we format wiki pages. We like to be consistent, so please read through this section carefully
 and use these features to your advantage:
@@ -34,9 +34,9 @@ their first language!
 
 When writing, **try** to follow these guidelines:
 
-1. Use the active voice. For example, instead of `The player can use the command`, write `Players can use the command`.
+1. Use the active voice. For example, instead of `The pig is teleported by the command`, write `The command teleported the pig`.
 2. Don't use unnecessary adverbs or adjectives
-3. Don't use the words: _obvious, simple, basic, easy, actual, just, clear,_ and _however_
+3. Try not to use the words: _obvious, simple, basic, easy, actual, just, clear,_ and _however_
 4. Explicitly reference what you are explaining
 5. Use `'s` for indicating possession
 6. Use the [Oxford comma](https://simple.wikipedia.org/wiki/Serial_comma)
@@ -126,4 +126,4 @@ Highlighting is a way to highlight specific text. It isn't commonly used, but ex
 ## Standardized Elements
 
 The wiki uses a few elements that are standardized across the entire wiki. Right now this only consists
-of command syntax. You can find the command syntax we use in the [commands page](/wiki/concepts/about).
+of command syntax. You can find the command syntax we use in the [commands page](/wiki/command/all).

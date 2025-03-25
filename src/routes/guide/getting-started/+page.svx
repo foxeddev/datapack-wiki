@@ -82,7 +82,7 @@ always ran as an entity (or as the Server) and at a position
 :::
 
 Let's get started by writing one simple function. In
-traditional programming fashion, let's make a function to show you "Hello World" when it is ran.
+traditional programming fashion, let's make a function which sends "Hello World" to chat.
 
 1. Create a folder in your datapack called `data`.
 2. In the `data` folder, create a new folder. This folder is your **namespace** - it will contain all the data specific
@@ -97,7 +97,7 @@ You should now have a folder structure that looks something like this:
 ```
 
 :::warning
-In versions earlier than 1.21, the function folder should be called functions, due to some pesky name changes
+In versions earlier than 1.21, the function folder should be called `functions`, due to some pesky name changes
 Mojang introduced in a recent update.
 :::
 

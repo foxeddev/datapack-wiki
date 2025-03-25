@@ -35,7 +35,7 @@ This would create the following scoreboard:
 
 You can also put **fake players** on a dummy objective. These work just like normal players on an objective, except they don't exist. You can specify a fake player by using a special character such as a `#`, `$`, `.`, etc. before the name. For example:
 ```mcfunction
-scoreboard players set intelligence #max 150
+scoreboard players set #max intelligence 150
 ```
 
 ### Criteria-based objectives
