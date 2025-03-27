@@ -1,7 +1,7 @@
 ---
 title: MCFunction vs Coding
 description: "Learn the differences between using MCFunctions and traditional coding."
-version: 1.21.4
+version: 1.21.5
 ---
 
 # MCFunction vs Traditional Coding
@@ -15,12 +15,12 @@ trying to apply traditional coding logic to MCFunction.
 
 MCFunction isn't like most programming languages, MCFunction uses scoreboards, storages and macros (1.20.2+) as their variables.
 
-**Scoreboards** are like a table. They store a name and a value which you can then retrieve and modify later. You can use both entity names/UUIDs and "fake player" 
+[Scoreboards](/wiki/nbt-scoreboards/scoreboards) are like a table. They store a name and a value which you can then retrieve and modify later. You can use both entity names/UUIDs and "fake player" 
 names (names not associated with any player), allowing for easy combination of variables and entity scores. Scoreboards can only hold 32-bit integers and other data 
 types (such as floats, doubles or strings) can not be stored this way.
 
-[Storages](/wiki/nbt/storages) are a way of storing [NBT data](/wiki/nbt/nbt) without attaching it to an entity or block. Storages are stored globally per 
-world and unlike scoreboards, don’t need to be initialized beforehand. Unlike entity and block NBT, storages have no fixed structure, and can contain whichever 
+[Storages](/wiki/nbt-scoreboards/nbt#nbt-storages) are a way of storing [NBT data](/wiki/nbt-scoreboards/nbt) without attaching it to an entity or block. Storages are stored globally per 
+world and unlike scoreboards, don't need to be initialized beforehand. Unlike entity and block NBT, storages have no fixed structure, and can contain whichever 
 arbitrary keys are added to it.
 
 [Macros](/wiki/files/functions#macro-functions) are like fancy string templating, when a function is supplied with macros, it will go through the function file
@@ -62,7 +62,7 @@ data modify storage example:main other_number set from storage example:main numb
 data modify storage example:main compound.array append value 42
 ```
 
-(Get more info on storages on [the wiki page](/wiki/nbt/storages))
+(Get more info on storages on [the wiki page](/wiki/nbt-scoreboards/nbt#nbt-storages))
 
 ## Q: How do you loop in MCFunction?
 

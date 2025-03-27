@@ -1,6 +1,6 @@
 ---
 title: All Commands List
-version: 1.21.4
+version: 1.21.5
 ---
 
 # List of all commands
