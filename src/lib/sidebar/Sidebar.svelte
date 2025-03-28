@@ -1,5 +1,5 @@
 <script lang="ts">
-  import SearchBox from './SearchBox.svelte';
+  import SearchBox from "./SearchBox.svelte";
 
   // ! IMPORTANT: If you want to add pages or categories, this is not the place to do it!
 
@@ -98,4 +98,7 @@
       <IconCollapse />
     </button>
   </div>
+  {#if windowInfo.isNavOpen}
+    <span class="text-xs px-3 pb-3 text-stone-600">DATAPACK WIKI IS NOT AFFILIATED OR ENDORSED BY MOJANG STUDIOS</span>
+  {/if}
 </aside>
