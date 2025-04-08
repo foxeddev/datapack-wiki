@@ -2,13 +2,24 @@
 ---
 title: Breaking Changes
 description: "A list of breaking changes to datapacks."
-version: 1.21.5
+version: 1.21.6
 ---
 
 # List of breaking changes
 
 This is list of all breaking changes to datapacks (excluding resource packs). Special thanks to [Misode's Technical
 Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https://minecraft.wiki/) for the source of many of these.
+
+## [1.21.6](https://minecraft.wiki/w/Java_Edition_1.21.6#Technical)
+
+**Other**
+- The sound event id `block.sand.wind` has been renamed to `block.dry_grass.ambient`
+
+**Entity Data**
+- The `Particle` field in the `area_effect_cloud` entity has been renamed to `custom_particle`, and now always functions as an exact override for the default colored `entity_effect` particle
+
+**Tags**
+- Renamed `#plays_ambient_desert_block_sounds` block tag to `#triggers_ambient_desert_sand_block_sounds` 
 
 ## [1.21.5](https://minecraft.wiki/w/Java_Edition_1.21.5#Technical)
 You can also watch this video from Conure covering the breaking datapack changes: [Why Your Datapack Broke in 1.21.5](https://www.youtube.com/watch?v=sE7P3QYFniM&list=PLgbPk8f9bw9rtYmnIpcd0__q9cjVqmx1l&index=4&ab_channel=Conure)
