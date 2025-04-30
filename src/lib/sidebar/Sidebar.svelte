@@ -98,4 +98,7 @@
       <IconCollapse />
     </button>
   </div>
+  {#if windowInfo.isNavOpen}
+    <span class="text-xs px-3 pb-3 text-stone-600">DATAPACK WIKI IS NOT AFFILIATED OR ENDORSED BY MOJANG STUDIOS</span>
+  {/if}
 </aside>
