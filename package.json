@@ -10,7 +10,7 @@
     "format": "prettier --write ./src/**",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "postinstall": "patch-package"
+    "postinstall": "npx patch-package"
   },
   "devDependencies": {
     "@sveltejs/kit": "^2.20.7",
