@@ -85,7 +85,6 @@
   <SidebarPlaceholder label="Twilight Forest" icon={IconTrees} />
 </SidebarCategory>
 
-
 <SidebarCategory name="Misc" icon={IconBrackets}>
   <SidebarPage label="Debugging" icon={IconBug} page="/guide/misc/debugging" />
   <SidebarPage label="Raycasts" icon={IconArrow} page="/guide/misc/raycasts" />

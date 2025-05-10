@@ -7,12 +7,9 @@
   import Sidebar from "$lib/sidebar/Sidebar.svelte";
   import Navbar from "../lib/Topbar.svelte";
 
-  import { dev } from "$app/environment";
-
   import { latestMCData, windowInfo } from "$lib/stores.svelte";
   import type { Snippet } from "svelte";
   import { innerWidth } from "svelte/reactivity/window";
-  import IconBeta from "~icons/tabler/flask-2-filled";
   import type { PageData } from "./$types";
   interface Props {
     children: Snippet;
@@ -23,8 +20,6 @@
 
   latestMCData.packFormat = data.packFormat || 0;
   latestMCData.gameVersion = data.gameVersion || "1.0";
-
-  let betaWarning: HTMLDivElement | null = $state(null);
 
   windowInfo.width = innerWidth.current || 1920;
   windowInfo.isNavOpen = (innerWidth.current || 1920) >= 768;

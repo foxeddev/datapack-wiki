@@ -72,7 +72,13 @@
         </a>
       {/each}
     </div>
-    <p class="text-stone-400 mt-2">{searchState === "waiting" ? "Loading data..." : results.length === 0 ? "No results" : results.length + " result(s) found!"}</p>
+    <p class="text-stone-400 mt-2">
+      {searchState === "waiting"
+        ? "Loading data..."
+        : results.length === 0
+          ? "No results"
+          : results.length + " result(s) found!"}
+    </p>
 
     <button class="bg-stone-700 w-full rounded-sm p-2 mt-2 text-white" onclick={() => dialog.close()}>Close</button>
   </div>
