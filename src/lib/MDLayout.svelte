@@ -37,7 +37,7 @@
     "https://instagram.com/datapackhub",
   ]} />
 
-<main class="md px-4 md:px-8 lg:px-16 prose-headings:text-stone-200">
+<main class="md px-4 md:px-8 lg:px-16 prose-headings:text-stone-200" id="main_content">
   {#if version}
     <Version {version} />
   {/if}

@@ -32,7 +32,7 @@ for await (const file of matchingFiles) {
   const strippedMarkdown = RemoveMarkdown(contentNoHtml)
     .replaceAll(/:::.*/g, "")
     .replaceAll(/:::/g, "") // remove admonitions
-    .replaceAll(/[^\S\r\n]{2,}/g); // remove extra spaces
+    .replaceAll(/[^\S\r\n]{2,}/g, ""); // remove extra spaces
 
   const tags = frontmatter.data.tags || "";
 

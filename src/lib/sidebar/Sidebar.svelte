@@ -41,14 +41,14 @@
   class="{windowInfo.isNavOpen
     ? 'fixed w-full sm:w-80'
     : 'w-fit hidden sm:flex'} flex flex-col bg-stone-800 items-center h-[calc(100dvh-3rem)] sm:sticky top-12 z-50 border-r border-stone-700">
-  <div class="flex flex-col p-2 pt-1 grow overflow-y-auto w-full">
+  <div class="flex flex-col p-2 pt-1 grow overflow-y-auto w-full" id="nav_side">
     {#if windowInfo.isNavOpen}
       <SearchBox keyActivated />
       <div class="flex items-center mb-2 gap-1">
         <button
           class="{page == 'wiki'
             ? 'bg-stone-700'
-            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1"
+            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1 focus:outline-2 focus:outline-dph-orange"
           onclick={() => {
             page = "wiki";
             sessionStorage.setItem("page", "wiki");
@@ -58,7 +58,7 @@
         <button
           class="{page == 'guides'
             ? 'bg-stone-700'
-            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1"
+            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1 focus:outline-2 focus:outline-dph-orange"
           onclick={() => {
             page = "guides";
             sessionStorage.setItem("page", "guides");
@@ -91,7 +91,7 @@
     {/if}
     <button
       aria-label="{windowInfo.isNavOpen ? 'Collapse' : 'Expand'} Sidebar"
-      class="hidden sm:block text-stone-200 text-lg motion-safe:transition-all {windowInfo.isNavOpen
+      class="hidden sm:block text-stone-200 text-lg motion-safe:transition-all focus:outline-2 focus:outline-dph-orange {windowInfo.isNavOpen
         ? 'rotate-0'
         : 'rotate-180'}"
       onclick={() => (windowInfo.isNavOpen = !windowInfo.isNavOpen)}>
