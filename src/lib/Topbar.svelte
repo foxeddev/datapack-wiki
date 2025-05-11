@@ -47,8 +47,12 @@
 <svelte:window onkeydown={e => handleKeyInput(e)} />
 
 <div class="bg-stone-800 flex w-full items-center justify-between p-2 h-12 sticky top-0 border-b border-stone-700 z-20">
-  <a class="absolute -translate-y-30 -translate-x-1/2 left-1/2 focus:outline-2 outline-blue-500 focus:translate-y-0" href="#nav_side">Go To Nav</a>
-  <a class="absolute -translate-y-30 -translate-x-1/2 left-1/2 focus:outline-2 outline-blue-500 focus:translate-y-0" href="#main_content">Go To Content</a>
+  <a
+    class="absolute -translate-y-30 -translate-x-1/2 left-1/2 focus:outline-2 outline-blue-500 focus:translate-y-0"
+    href="#nav_side">Go To Nav</a>
+  <a
+    class="absolute -translate-y-30 -translate-x-1/2 left-1/2 focus:outline-2 outline-blue-500 focus:translate-y-0"
+    href="#main_content">Go To Content</a>
   <div class="flex items-center grow">
     <button
       class="px-2 pr-3 sm:hidden focus:outline-2 focus:outline-dph-orange"
