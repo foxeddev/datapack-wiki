@@ -48,7 +48,7 @@
         <button
           class="{page == 'wiki'
             ? 'bg-stone-700'
-            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1 focus:outline-2 focus:outline-dph-orange"
+            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1 focus-visible:outline-2 focus-visible:outline-dph-orange"
           onclick={() => {
             page = "wiki";
             sessionStorage.setItem("page", "wiki");
@@ -58,7 +58,7 @@
         <button
           class="{page == 'guides'
             ? 'bg-stone-700'
-            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1 focus:outline-2 focus:outline-dph-orange"
+            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1 focus-visible:outline-2 focus-visible:outline-dph-orange"
           onclick={() => {
             page = "guides";
             sessionStorage.setItem("page", "guides");
@@ -91,7 +91,7 @@
     {/if}
     <button
       aria-label="{windowInfo.isNavOpen ? 'Collapse' : 'Expand'} Sidebar"
-      class="hidden sm:block text-stone-200 text-lg motion-safe:transition-all focus:outline-2 focus:outline-dph-orange {windowInfo.isNavOpen
+      class="hidden sm:block text-stone-200 text-lg motion-safe:transition-all focus-visible:outline-2 focus-visible:outline-dph-orange {windowInfo.isNavOpen
         ? 'rotate-0'
         : 'rotate-180'}"
       onclick={() => (windowInfo.isNavOpen = !windowInfo.isNavOpen)}>
