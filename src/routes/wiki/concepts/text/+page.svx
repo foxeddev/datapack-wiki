@@ -71,7 +71,7 @@ The following properties can be used in a text component to add **interactivity*
 
 **Example**: This text will be "Click me", in blue, and when clicked, it will run the command `/say Hello`:
 ```json
-{text: "Click me", "click_event": {"action": "run_command", "command": "/say Hello"}}
+{text: "Click me", click_event: {"action": "run_command", "command": "/say Hello"}}
 ```
 
 ### Other
