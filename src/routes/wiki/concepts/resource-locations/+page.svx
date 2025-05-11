@@ -10,23 +10,23 @@ A resource location is a way of referencing a resource in a datapack (or resourc
 
 ## Example
 This is an example of a resource location for a function:
-```ansi
-[2;35m/function[0m my_namespace:some_folder/my_function[2;33m[2;37m[2;34m[2;35m[2;31m[0;31m[0;30m[0;30m[0;30m[0;30m[0m[0;30m[0m[0;30m[0m[0;30m[0m[0;31m[0m[2;31m[0m[2;35m[0m[2;34m[0m[2;37m[0m[2;33m[0m
+```mcfunction
+/function my_namespace:some_folder/my_function
 ```
 This resource location would try and access the function `/data/my_namespace/function/some_folder/my_function.mcfunction`. Notice how we don't need to specify the `function` folder in the resource location, as it is implied by the `/function` command.
 
 ## Resource locations for tags
 To reference a tag (ie the function tag `#minecraft:load`), you can use the `#` symbol before the tag name. For example:
-```ansi
-[2;35m/function[0m #minecraft:load[2;33m[2;37m[2;34m[2;35m[2;31m[0;31m[0;30m[0;30m[0;30m[0;30m[0m[0;30m[0m[0;30m[0m[0;30m[0m[0;31m[0m[2;31m[0m[2;35m[0m[2;34m[0m[2;37m[0m[2;33m[0m
+```mcfunction
+/function #minecraft:load
 ```
 This resource location would try and access the tag `/data/minecraft/tags/function/load.json`. In this case, all functions in the tag would be ran.
 
 ## Default namespace
 If the namespace (`my_namespace`, before the colon) is left out, it will default to the `minecraft` namespace.
 
-```ansi
-[2;35m/function[0m some_folder/my_function[2;33m[2;37m[2;34m[2;35m[2;31m[0;31m[0;30m[0;30m[0;30m[0;30m[0m[0;30m[0m[0;30m[0m[0;30m[0m[0;31m[0m[2;31m[0m[2;35m[0m[2;34m[0m[2;37m[0m[2;33m[0m
+```mcfunction
+/function some_folder/my_function
 ```
 This resource location would try and access `/data/minecraft/function/some_folder/my_function.mcfunction`.
 

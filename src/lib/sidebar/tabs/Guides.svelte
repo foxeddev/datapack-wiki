@@ -48,7 +48,7 @@
 <SidebarCategory name="Datapack Meta" icon={IconZip}>
   <SidebarPage label="Installing Datapacks" icon={IconDownload} page="/guide/installing-a-datapack" />
   <SidebarPage label="Choosing a Server" icon={IconServer} page="/guide/choosing-a-server" />
-  <SidebarPage label="MCFunction vs Code" icon={IconDifference} page="/guide/mcfunction-vs-coding" />
+  <SidebarPage label="MCFunction vs Code" icon={IconDifference} page="/guide/mcf-vs-code" />
 </SidebarCategory>
 
 <SidebarCategory name="Adding new features" icon={IconNew}>
@@ -84,7 +84,6 @@
   <SidebarPlaceholder label="Farmer's Delight" icon={IconCottage} />
   <SidebarPlaceholder label="Twilight Forest" icon={IconTrees} />
 </SidebarCategory>
-
 
 <SidebarCategory name="Misc" icon={IconBrackets}>
   <SidebarPage label="Debugging" icon={IconBug} page="/guide/misc/debugging" />
