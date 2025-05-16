@@ -14,6 +14,11 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 
 **Other**
 - The sound event id `block.sand.wind` has been renamed to `block.dry_grass.ambient`
+- All JSON files (in worlds, packs, configuration, etc.) are now parsed in strict mode
+- Users will now be prompted for confirmation before executing a command from the `run_command` click action in books and chat if the command requires permissions higher than 0. This is not a breaking change, just a warning which shows to the player.
+
+**Item Componenents**
+- The `painting/variant` component no longer accepts inline variants
 
 **Entity Data**
 - The `Particle` field in the `area_effect_cloud` entity has been renamed to `custom_particle`, and now always functions as an exact override for the default colored `entity_effect` particle
