@@ -1,0 +1,59 @@
+---
+title: Dialogs
+description: "Dialogs are pop-up menus that you can send to the user"
+version: 1.21.6
+---
+
+# Dialogs
+A dialog is a "pop-up" menu/form which we can send to the user by using the `/dialog` command. They can show information to the user, and can also consist of text inputs, check boxes, select menus, and number inputs, which can be used in a command. 
+
+For example, you could create a settings menu for your datapack with a dialog. They can open the dialog with a function (which runs the `/dialog show` command), and when they are done, their inputs in the form will be converted into a command which will change the settings of the datapack.
+
+Dialogs are stored as JSON files in the `/data/<namespace>/dialog/` folder.
+
+## Types of dialog
+There are many different types of dialog that we can create. All dialogs can have a title (displayed at the top of the screen) and **body text** (displayed after the title and before the contents of the dialog), but the contents of the dialog differ:
+- **Confirmation** (`minecraft:confirmation`): This type of dialog consists of body text and two actions (typically this would be "Yes" and "No", "Accept" and "Deny", etc.)
+- **Notice** (`minecraft:notice`): This is the simplest type of dialog. This just consists of body text and an action.
+- **Multi Action** (`minecraft:multi_action`): This type of dialog consists of body text, any number of actions, and a close button. The buttons can be arranged in columns.
+- **Simple Input Form** (`minecraft:simple_input_form`): This type of dialog consists of any number of inputs (text inputs, number sliders, checkboxes, and select menus) and a submit action.
+- **Multi Action Input Form** (`minecraft:multi_action_input_form`): This type of dialog consists of any number of inputs (text inputs, number sliders, checkboxes, and select menus) and any number of actions. Each action can do something different with the data from the form.
+- **Dialog List** (`minecraft:dialog_list`): This type of dialog consists of any number of buttons, which will open another dialog when clicked. The buttons can be arranged in columns.
+- **Server Links** (`minecraft:server_links`): This type of dialog will display the server's preset custom links. It has no effect on singleplayer, or if the server hasn't supplied any custom links.
+
+:::info
+The **body** can contain items as well as text. If an item is used, then it will display graphically, and will look as if it is in the inventory when it is hovered over by the cursor.
+:::
+
+## Inputs
+There are different types of input we can use on form dialogs (simple input form and multi action input form):
+- **Text** (`minecraft:text`): Allows the user to enter text.
+- **Number range** (`minecraft:number_range`): Allows the user to select a number with a slider (like in the settings menu)
+- **Boolean** (`minecraft:boolean`): This is a checkbox. When the checkbox is ticked, then the value is `true`, and vice versa.
+- **Single Option** (`minecraft:single_option`): Allows the user to select one from a list of options. It looks like a button, but you click on it to cycle through the values.
+
+These inputs are pretty customisable. For instance, Text, Number range, and Single Option types can have a custom width, text inputs can be made multiline, etc.
+
+## Actions
+Actions are basically buttons (e.g the submit button) which will do something when clicked. On forms, actions will run a command which uses the inputs from the form, like a submit button. On other dialog types, they can do things such as running a set command, opening a URL, opening another dialog, etc.
+
+### Form Actions
+On a form (simple input form, multi action input form), an action can have an **On Submit** field. This field can specify a command macro to run, where the macro IDs are the IDs of the inputs in the form.
+
+For example, if a simple input form has one text input with the ID `name` and the user has entered the value `Silabear`, and the action runs the command `kill @a[name=$(name)]`, then when the action is clicked, the player will run the command `kill @a[name=Silabear]`.
+
+:::warning
+Note that the player needs permission to run the command. This means that, if the player does not have operator status, then most useful commands cannot be run.
+:::
+
+### Non-form Actions
+On other dialogs, the action button can have a normal click event when the player is clicked (like in text components). This click event can be: Open URL, Run Command, Suggest Command, Copy Text to Clipboard, or Show Dialog.
+
+## JSON Format
+The [Minecraft Wiki](https://minecraft.wiki/w/Dialog) goes into detail on the JSON format of a dialog file. However, we recommend that you use [Misode's Dialog Editor](https://misode.github.io/dialog/) to create dialog files, which also allows you to preview the dialog in the browser.
+
+## Using dialogs
+Dialogs can be shown to a player in three different ways:
+- **`/dialog` command**: The `/dialog` command can be used to show a dialog to a player at any time. For example, `/dialog show @a namespace:my_dialog` will show the dialog in `/data/namespace/dialog/my_dialog.json` to all players.
+- **Pause Screen**: Any dialogs listed in the dialog tag `minecraft:pause_screen_additions` (`/data/minecraft/tags/dialog/pause_screen_additions.json`) will be available from the pause screen. If this tag only has one dialog, then there will be a button on the pause screen which opens that dialog. If there are more dialogs in the tag, then the button on the pause screen will open a menu which lets you open any of the dialogs in the tag. Note that this replaces the "Send Feedback"/"Report Bugs" button on the home screen if used.
+- **Click Events**: In text components and actions in other dialogs, one click event type is **Open Dialog**. This lets the player open a dialog when they click on text (in chat, in a book, on a sign, etc) or a button (in a dialog).

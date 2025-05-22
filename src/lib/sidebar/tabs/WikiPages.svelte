@@ -32,6 +32,7 @@
   import IconScoreboard from "~icons/tabler/Table";
   import IconRange from "~icons/tabler/math-lower";
   import IconConcepts from "~icons/tabler/blocks";
+  import IconDialog from "~icons/tabler/category-2";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -59,6 +60,7 @@
   <SidebarPage label="Advancements" icon={IconStar} page="/wiki/files/advancements" />
   <SidebarPlaceholder label="Loot Tables" icon={IconChest} />
   <SidebarPage label="Recipes" icon={IconGrid} page="/wiki/files/recipes" />
+  <SidebarPage label="Dialogs" icon={IconDialog} page="/wiki/files/dialogs" />
   <SidebarPage label="Tags" icon={IconFilters} page="/wiki/files/tags" />
 </SidebarCategory>
 
