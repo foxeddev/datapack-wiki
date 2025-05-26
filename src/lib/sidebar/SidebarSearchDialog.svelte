@@ -82,6 +82,6 @@
             : results.length + " result(s) found!"}
     </p>
 
-    <button class="bg-stone-700 w-full rounded-sm p-2 mt-2 text-white" onclick={() => dialog.close()}>Close</button>
+    <button class="bg-stone-700 w-full rounded-sm p-2 mt-2 text-white cursor-pointer" onclick={() => dialog.close()}>Close</button>
   </div>
 </dialog>
