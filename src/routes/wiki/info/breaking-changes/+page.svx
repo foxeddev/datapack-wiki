@@ -13,6 +13,7 @@ Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https:/
 ## [1.21.6](https://minecraft.wiki/w/Java_Edition_1.21.6#Technical)
 
 **Other**
+- If you are using an item which renders bigger than its inventory size is (most likely for a barrel/custom GUI), it will break with this version. You can change the item model to behave like previously by changing the newly added `oversized_in_gui` item model field in the resource pack.
 - The sound event id `block.sand.wind` has been renamed to `block.dry_grass.ambient`
 - All JSON files (in worlds, packs, configuration, etc.) are now parsed in strict mode
 - Users will now be prompted for confirmation before executing a command from the `run_command` click action in books and chat if the command requires permissions higher than 0. This is not a breaking change, just a warning which shows to the player.
