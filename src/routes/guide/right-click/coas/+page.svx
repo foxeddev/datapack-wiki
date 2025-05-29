@@ -21,7 +21,7 @@ When it goes up, we know that the player has right clicked a COAS, and we can ru
 
 ## Method
 
-To get started, we need to create a scoreboard with the criteria `item.used:minecraft.carrot_on_a_stick`, so that we can
+To get started, we need to create a scoreboard with the criteria `minecraft.used:minecraft.carrot_on_a_stick`, so that we can
 later detect when a player uses the COAS (by right clicking on it).
 
 If you don't already have it, you'll need to create a load function with a command that creates a new scoreboard
