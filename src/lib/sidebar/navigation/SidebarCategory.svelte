@@ -16,10 +16,10 @@
 
 <details ontoggle={() => (windowInfo.isNavOpen = true)} class="w-full group marker:hidden">
   <summary
-    class="rounded-lg cursor-pointer p-1 w-fit flex gap-2 items-center text-left hover:bg-stone-700 hover:text-white hover:font-medium marker:hidden focus-visible:outline-2 focus-visible:outline-dph-orange">
+    class="rounded-lg cursor-pointer p-1 w-full flex gap-2 items-center justify-between text-left hover:bg-stone-700 hover:text-white hover:font-medium marker:hidden focus-visible:outline-2 focus-visible:outline-dph-orange">
     <Icon />
     {#if windowInfo.isNavOpen}
-      <span class="grow">{name}</span>
+      <span>{name}</span>
       <IconExpand class="motion-safe:transition-all group-open:rotate-90 rotate-0" />
     {/if}
   </summary>
