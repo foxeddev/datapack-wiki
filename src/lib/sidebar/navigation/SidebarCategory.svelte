@@ -19,7 +19,7 @@
     class="rounded-lg cursor-pointer p-1 w-full flex gap-2 items-center text-left hover:bg-stone-700 hover:text-white hover:font-medium marker:hidden focus-visible:outline-2 focus-visible:outline-dph-orange">
     <Icon />
     {#if windowInfo.isNavOpen}
-      <span class="grow min-w-0">{name}</span>
+      <span class="grow min-w-0 will-change-transform">{name}</span>
       <IconExpand class="motion-safe:transition-all group-open:rotate-90 rotate-0" />
     {/if}
   </summary>
