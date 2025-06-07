@@ -12,7 +12,6 @@
 
 <style>
   span.dph-highlight {
-    border-radius: 3px;
     background-color: var(--background-color);
     padding: 0.2rem;
   }
