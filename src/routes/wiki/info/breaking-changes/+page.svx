@@ -1,13 +1,30 @@
 ---
 title: Breaking Changes
 description: "A list of breaking changes to datapacks."
-version: 1.21.5
+version: 1.21.6
 ---
 
 # List of breaking changes
 
 This is list of all breaking changes to datapacks (excluding resource packs). Special thanks to [Misode's Technical
 Changelog](https://misode.github.io/changelog/) and the [Minecraft Wiki](https://minecraft.wiki/) for the source of many of these.
+
+## [1.21.6](https://minecraft.wiki/w/Java_Edition_1.21.6#Technical)
+
+**Other**
+- If you are using an item which renders bigger than its inventory size is (most likely for a barrel/custom GUI), it will break with this version. You can change the item model to behave like previously by changing the newly added `oversized_in_gui` item model field in the resource pack.
+- The sound event id `block.sand.wind` has been renamed to `block.dry_grass.ambient`
+- All JSON files (in worlds, packs, configuration, etc.) are now parsed in strict mode
+- Users will now be prompted for confirmation before executing a command from the `run_command` click action in books and chat if the command requires permissions higher than 0. This is not a breaking change, just a warning which shows to the player.
+
+**Item Componenents**
+- The `painting/variant` component no longer accepts inline variants
+
+**Entity Data**
+- The `Particle` field in the `area_effect_cloud` entity has been renamed to `custom_particle`, and now always functions as an exact override for the default colored `entity_effect` particle
+
+**Tags**
+- Renamed `#plays_ambient_desert_block_sounds` block tag to `#triggers_ambient_desert_sand_block_sounds` 
 
 ## [1.21.5](https://minecraft.wiki/w/Java_Edition_1.21.5#Technical)
 You can also watch this video from Conure covering the breaking datapack changes: [Why Your Datapack Broke in 1.21.5](https://www.youtube.com/watch?v=sE7P3QYFniM&list=PLgbPk8f9bw9rtYmnIpcd0__q9cjVqmx1l&index=4&ab_channel=Conure)

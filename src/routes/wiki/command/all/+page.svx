@@ -1,6 +1,6 @@
 ---
 title: All Commands List
-version: 1.21.5
+version: 1.21.6
 ---
 
 # List of all commands
@@ -57,8 +57,9 @@ These commands require a permission level same or bigger than 2 to run them.
 - `/clone <<begin-xyz> <end-xyz> ... | from <sourceDimension> <begin-xyz> <end-xyz> ...>` - Copies blocks in an area from one place to another, or from one dimension to another
 - `/damage <target> <amount> [<damageType>] [at <location>]|[by <entity>] [from <cause>]` - Damages selected entities/players.
 - `/data <get|merge|modify|remove> ...` - Changes block entity or entity NBT data. See more on its [dedicated page](/wiki/command/data).
-- `/datapack disable <name>|enable <name> <first|last|before|after>|list [available|enabled]` - Enables and disables selected datapacks
+- `/datapack disable <name>|enable <name> <first|last|before|after>|list [available|enabled]|create <id> <name>` - Enables, disables or creates a datapack
 - `/defaultgamemode <survival|adventure|creative|spectator>` - Sets the default gamemode of a world
+- `/dialog <show <targets> <dialog>|clear <targets>>` - Shows and hides [dialog](/wiki/files/dialogs) screens from players
 - `/difficulty [peaceful|easy|normal|hard]` - Sets or gets the difficulty of a world
 - `/effect <clear [<targets>] [<effect>]|give <targets> <effect> [<seconds>|infinite] [<amplifier>] [<hideParticles>]>` - Changes the entity's active effects
 - `/enchant <targets> <enchantment> [<level>]` - Adds enchantments onto held item. (Note that you can't enchant items with a level higher than what is possible in survival)
@@ -134,6 +135,7 @@ These commands require a permission level same or bigger than 4 to run them.
 - `/save-off` - Disables automatic server saves
 - `/setidletimeout <minutes>` - Used to set the time before idle players are kicked (If 0 - disabled)
 - `/stop` - Stops the server
+- `/version` - Sends the server's version info (the name, protocol version and the resourcepack and datapack formats).
 
 ## List of commands by Server Type
 
