@@ -19,11 +19,6 @@ const matchingFiles = fileGlob.scan("./src/routes");
 
 // read all routes
 for await (const file of matchingFiles) {
-  // ignore the error page
-  if (file.includes("+error.svx")) {
-    log.warn("Skipping error page");
-    continue;
-  }
 
   log.info("Transforming", file);
   const rawContent = await defineFile(`./src/routes/${file}`).text();
@@ -35,8 +30,9 @@ for await (const file of matchingFiles) {
   // add to posts
   const contentNoHtml = stripHtml(frontmatter.content).result;
   const strippedMarkdown = RemoveMarkdown(contentNoHtml)
-    .replace(/:::.*/, "")
-    .replace(/:::/, "") // remove admonitions
+    .replaceAll(/:::.*/g, "")
+    .replaceAll(/:::/g, "") // remove admonitions
+    .replaceAll(/[^\S\r\n]{2,}/g, ""); // remove extra spaces
 
   const tags = frontmatter.data.tags || "";
 

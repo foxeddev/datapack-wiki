@@ -16,6 +16,9 @@ export default defineConfig({
     cssMinify: "lightningcss",
   },
   css: {
-    transformer: "lightningcss"
-  }
+    transformer: "lightningcss",
+  },
+  server: {
+    allowedHosts: ["fc7a-24-141-246-63.ngrok-free.app"],
+  },
 });

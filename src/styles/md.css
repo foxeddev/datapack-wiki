@@ -5,7 +5,8 @@
   @apply prose-img:my-1;
   @apply prose-headings:mb-2 prose-h2:text-2xl prose-h2:mt-7 prose-headings:scroll-mt-16 prose-headings:text-stone-200;
   @apply prose-p:my-3;
-  @apply prose-blockquote:rounded-l-sm prose-blockquote:font-normal
+  @apply prose-a:text-orange-400 prose-a:hover:text-orange-300;
+  @apply prose-blockquote:prose-blockquote:font-normal
     prose-blockquote:not-italic;
 
   /* inline code blocks below */
@@ -14,7 +15,7 @@
   @apply prose-ol:mt-0 prose-ul:mt-0 prose-li:my-1;
   @apply prose-h2:border-b prose-h2:pb-2 prose-h2:border-white/20;
   @apply prose-h3:border-b prose-h3:pb-2 prose-h3:border-white/20;
-  @apply prose-th:p-2 prose-th:text-left prose-thead:bg-stone-800 prose-td:p-2 even:prose-tr:bg-stone-500/10 odd:prose-tr:bg-stone-700/10 prose-table:border prose-table:border-stone-700 prose-table:m-0 prose-table:w-1/2;
+  @apply prose-th:p-2 prose-th:text-left prose-thead:bg-stone-800 prose-td:p-2 even:prose-tr:bg-stone-500/10 odd:prose-tr:bg-stone-700/10 prose-table:border prose-table:border-stone-700 prose-table:m-0 prose-table:w-auto;
   /* multi-line code blocks below */
   @apply prose-pre:bg-stone-900 prose-code:prose-pre:p-0 prose-pre:prose-code:!border-0 prose-pre:overflow-x-auto;
 }

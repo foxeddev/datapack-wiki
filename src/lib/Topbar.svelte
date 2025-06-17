@@ -47,12 +47,18 @@
 <svelte:window onkeydown={e => handleKeyInput(e)} />
 
 <div class="bg-stone-800 flex w-full items-center justify-between p-2 h-12 sticky top-0 border-b border-stone-700 z-20">
+  <a
+    class="absolute -translate-y-30 -translate-x-1/2 left-1/2 focus-visible:outline-2 outline-blue-500 focus-visible:translate-y-0"
+    href="#nav_side">Go To Nav</a>
+  <a
+    class="absolute -translate-y-30 -translate-x-1/2 left-1/2 focus-visible:outline-2 outline-blue-500 focus-visible:translate-y-0"
+    href="#main_content">Go To Content</a>
   <div class="flex items-center grow">
     <button
-      class="px-2 pr-3 sm:hidden"
+      class="px-2 pr-3 sm:hidden focus-visible:outline-2 focus-visible:outline-dph-orange"
       aria-label="{windowInfo.isNavOpen ? 'Collapse' : 'Expand'} Sidebar"
       onclick={() => (windowInfo.isNavOpen = !windowInfo.isNavOpen)}><IconMenu /></button>
-    <a class="flex items-center hover:text-white p-1" href="/">
+    <a class="flex items-center hover:text-white p-1 focus-visible:outline-2 focus-visible:outline-dph-orange" href="/">
       <img
         alt="Datapack Hub Logo"
         src="/logos/dph.svg"
@@ -66,13 +72,13 @@
   <div class="flex items-center gap-2">
     <a
       href="https://github.com/Datapack-Hub/wiki/blob/main/src/routes{page.url.pathname}/%2Bpage.svx"
-      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto"
+      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto focus-visible:outline-2 focus-visible:outline-dph-orange"
       aria-label="Edit">
       <IconEdit />
       <span class="hidden sm:block">Edit</span>
     </a>
     <button
-      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto"
+      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto focus-visible:outline-2 focus-visible:outline-dph-orange cursor-pointer"
       aria-label="Copy URL"
       onclick={copyUrl}>
       <IconShare />
@@ -80,7 +86,7 @@
     </button>
     <a
       href="https://discord.gg/xHTHbZqXr6"
-      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto"
+      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto focus-visible:outline-2 focus-visible:outline-dph-orange"
       aria-label="Discord">
       <IconDiscord />
       <span class="hidden sm:block">Discord</span>

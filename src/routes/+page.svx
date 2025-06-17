@@ -1,4 +1,5 @@
 ---
+title: Home
 description: "Welcome to the Datapack Wiki, a resource for everything related to Minecraft Datapacks. We've got guides, tutorials, and documentation to help you build your knowledge about data packs."
 ---
 

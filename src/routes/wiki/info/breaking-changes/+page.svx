@@ -1,4 +1,3 @@
-
 ---
 title: Breaking Changes
 description: "A list of breaking changes to datapacks."

@@ -1,3 +1,6 @@
+// Compatibility for Node.js
+// Use the Bun script if you are using Bun
+
 import { createConsola } from "consola";
 import fg from "fast-glob";
 import matter from "gray-matter";
@@ -16,12 +19,6 @@ const matchingFiles = fg.stream("**/+page.svx", { dot: true });
 
 // read all routes
 for await (const file of matchingFiles) {
-  // ignore the error page
-  if (file.includes("+error.svx")) {
-    log.warn("Skipping error page");
-    continue;
-  }
-
   const rawContent = await readFile(file);
 
   log.info("Transforming", file);
@@ -32,14 +29,21 @@ for await (const file of matchingFiles) {
   // add to posts
   const contentNoHtml = stripHtml(frontmatter.content).result;
   const strippedMarkdown = RemoveMarkdown(contentNoHtml)
-    .replace(/:::.*/, "")
-    .replace(/:::/, "") // remove admonitions
+    .replaceAll(/:::.*/g, "")
+    .replaceAll(/:::/g, "") // remove admonitions
+    .replaceAll(/[^\S\r\n]{2,}/g, ""); // remove extra spaces
 
+  const tags = frontmatter.data.tags || "";
 
   posts.push({
     title: frontmatter.data.title || "MissingNo.",
     content: strippedMarkdown,
+    description: frontmatter.data.description || null,
     url: "/" + filePath,
+    tags: tags
+      .split(",")
+      .map(el => el.trim())
+      .filter(String),
   });
 }
 
