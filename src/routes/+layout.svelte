@@ -31,11 +31,11 @@
   });
 </script>
 
-<div class="font-lexend h-full min-h-screen flex flex-col text-stone-200">
+<div class="font-lexend h-full min-h-dvh flex flex-col text-stone-200">
   <Navbar />
   <div class="flex w-full h-[93%]">
     <Sidebar />
-    <div id="content" class="py-12 w-full min-h-screen text-stone-200 bg-stone-900">
+    <div id="content" class="py-12 w-full min-h-dvh text-stone-200 bg-stone-900">
       {@render children()}
     </div>
   </div>

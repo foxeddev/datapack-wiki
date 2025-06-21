@@ -91,7 +91,7 @@ string, text, booleans, and more.
 Strings can store any text value, or more technically, any sequence of unicode characters.
 
 **Format**: Strings are stored within either double or single quotes. For strings containing standard characters
-(`A-Z, a-z, 0-9, -,_,+,.`), the quotes are optional (as long as the text starfts with a letter), but recommended. `"<text>"` or `'<text>'` or `<text>`
+(`A-Z, a-z, 0-9, -,_,+,.`), the quotes are optional (as long as the text starts with a letter), but recommended. `"<text>"` or `'<text>'` or `<text>`
 
 **Example**: `name:"Silabear"`, `name:'Cobblestone'`, `name:Aandeel`
 
@@ -135,7 +135,7 @@ In older versions of Minecraft, booleans were stored as bytes with `0b` represen
 ### Lists/Arrays
 Lists, or number arrays are used to store multiple values. Lists can store different types of values, whereas number arrays can only store the same type of number. In practicality, you often do not need to think about the difference
 
-**Format**: Theyu are defined using square brackets (`[]`), with the values separated by commas. Number arrays can be prefixed with the type of numbr the array is going to store and a semicolon (for instance, a list starting with `[B;` will only store bytes)
+**Format**: They are defined using square brackets (`[]`), with the values separated by commas. Number arrays can be prefixed with the type of number the array is going to store and a semicolon (for instance, a list starting with `[B;` will only store bytes)
 
 **Example**: `["Silabear", 15, true, 242]`, `[B;1b,2B,true,false]`, `["Kanokarob", "LadyEternal", "lionlance", "thederdiscohund", "theblackswitch"]`, `[L;1l,2l,3l,4l,5l]`
 

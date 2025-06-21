@@ -24,12 +24,16 @@
     page = sessionStorage.getItem("page") || "wiki";
   });
 
-  export async function handleKeyInput(e: KeyboardEvent) {
-    if (e.key == "ArrowLeft" && windowInfo.isNavOpen) {
+  export async function handleKeyInput(e: KeyboardEvent & {
+    currentTarget: EventTarget & Window;
+}) {
+    const doc = e.currentTarget.document;
+    const notAnInput = !(doc.activeElement instanceof HTMLInputElement) && !(doc.activeElement instanceof HTMLTextAreaElement);
+    if (e.key == "ArrowLeft" && windowInfo.isNavOpen && notAnInput) {
       windowInfo.isNavOpen = false;
     }
 
-    if (e.key == "ArrowRight" && !windowInfo.isNavOpen) {
+    if (e.key == "ArrowRight" && !windowInfo.isNavOpen && notAnInput) {
       windowInfo.isNavOpen = true;
     }
   }

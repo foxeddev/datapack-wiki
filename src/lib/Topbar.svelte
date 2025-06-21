@@ -28,7 +28,14 @@
   let logoFlipped = $state(false);
   let logoBonked = $state(false);
 
-  export async function handleKeyInput(e: KeyboardEvent) {
+  export async function handleKeyInput(e: KeyboardEvent & {
+    currentTarget: EventTarget & Window;
+}) {
+    const doc = e.currentTarget.document;
+    const notAnInput = !(doc.activeElement instanceof HTMLInputElement) && !(doc.activeElement instanceof HTMLTextAreaElement);
+
+    if(!notAnInput) return;
+
     lastFewInputs.push(e.key);
     if (lastFewInputs.length > 8) {
       lastFewInputs.shift();
