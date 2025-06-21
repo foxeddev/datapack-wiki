@@ -33,6 +33,7 @@ This wiki is run by Datapack Hub. We aren't responsible for the content on exter
 - <Highlight color="#DC2626">Website</Highlight> <a href="https://minecraftjson.com/">Minecraft JSON</a> - Generate JSON Text.
 - <Highlight color="#DC2626">Website</Highlight> <a href="https://bdengine.app/">Block Display Engine</a> - Create models with display entities and export as commands.
 - <Highlight color="#DC2626">Website</Highlight> <a href="https://haselkern.com/Minecraft-ArmorStand/">haselkern's ArmorStand</a> - Generate summon commands for armor stands in any pose.
+- <Highlight color="#DC2626">Website</Highlight> <a href="https://text.datapackhub.net/">Datapack Hub's Text Editor</a> - Create /tellraw commands and text components (JSON text) for Minecraft Java Edition with our easy-to-use, modern online tool!
 
 ## Tools
 - <Highlight color="#C44500">Tool</Highlight> <a href="https://github.com/StickyPiston-Hosting/Easy-Map-Updater">Easy Map Updater</a> - A toolset for automatically updating Minecraft maps (including datapacks) to the latest version.
