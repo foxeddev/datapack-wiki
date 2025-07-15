@@ -2,7 +2,7 @@
 title: How to Make a Minecraft Datapack - Beginner's Guide
 tags: guide, beginner, Minecraft, datapack, tutorial, step-by-step
 description: Learn how to create a Minecraft datapack with our beginner's guide. This step-by-step tutorial will help you understand the basics of datapack creation, even if you have little coding knowledge. Start enhancing your Minecraft experience today!
-version: 1.21.6
+version: 1.21.7
 ---
 
 <script lang="ts">
@@ -62,7 +62,7 @@ as well as holding the basic information of the pack. **Create `pack.mcmeta`, an
 {
   "pack": {
     "description": "DATAPACK NAME HERE",
-    "pack_format": 80
+    "pack_format": 81
   }
 }
 ```
@@ -71,7 +71,7 @@ If you're interested, here's what this file means:
 
 - `pack` is an object containing the metadata of the file.
   - `description` is the name of your datapack, usually along with a short description of what your pack does.
-  - `pack_format` tells Minecraft what versions this datapack works in. `80` is the latest for 1.21.6
+  - `pack_format` tells Minecraft what versions this datapack works in. `81` is the latest for 1.21.7
 
 ## Writing your first function
 
