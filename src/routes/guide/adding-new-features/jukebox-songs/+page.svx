@@ -43,7 +43,7 @@ This is a run-down of the fields in that file:
 - `comparator_output`: A value between 1 and 15, representing the redstone output when a comparator is placed next to
   the jukebox playing this song.
 - `description`: The description of the enchantment (should be a JSON text component).
-- `length_in_seconds`: The length of the song (in seconds)
+- `length_in_seconds`: The length of the song (in seconds).
 - `sound_event`: The ID of the sound (from the resource pack) to play.
 
 If you don't understand what to put in `sound_event`, don't worry, the next part is going to focus specifically on this!
@@ -93,7 +93,7 @@ trick here!
 :::
 
 To get the music disc, you need to get an item which has the `minecraft:jukebox_playable` component. This can be any
-item - it doesn't have to necessarily be an already existing music disc (but you can if you want)
+item - it doesn't have to necessarily be an already existing music disc (but you can if you want).
 
 ```mcfunction
 give @s minecraft:YOUR_ITEM[minecraft:jukebox_playable={song:"<datapack namespace>:example_jukebox_song"}]
