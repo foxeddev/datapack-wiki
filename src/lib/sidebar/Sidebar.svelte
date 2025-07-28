@@ -24,11 +24,14 @@
     page = sessionStorage.getItem("page") || "wiki";
   });
 
-  export async function handleKeyInput(e: KeyboardEvent & {
-    currentTarget: EventTarget & Window;
-}) {
+  export async function handleKeyInput(
+    e: KeyboardEvent & {
+      currentTarget: EventTarget & Window;
+    }
+  ) {
     const doc = e.currentTarget.document;
-    const notAnInput = !(doc.activeElement instanceof HTMLInputElement) && !(doc.activeElement instanceof HTMLTextAreaElement);
+    const notAnInput =
+      !(doc.activeElement instanceof HTMLInputElement) && !(doc.activeElement instanceof HTMLTextAreaElement);
     if (e.key == "ArrowLeft" && windowInfo.isNavOpen && notAnInput) {
       windowInfo.isNavOpen = false;
     }
@@ -52,7 +55,7 @@
         <button
           class="{page == 'wiki'
             ? 'bg-stone-700'
-            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1 focus-visible:outline-2 focus-visible:outline-dph-orange"
+            : 'bg-stone-800'} cursor-pointer hover:text-white hover:font-medium px-2 py-1 rounded-md flex items-center gap-1 focus-visible:outline-2 focus-visible:outline-dph-orange"
           onclick={() => {
             page = "wiki";
             sessionStorage.setItem("page", "wiki");
@@ -62,7 +65,7 @@
         <button
           class="{page == 'guides'
             ? 'bg-stone-700'
-            : 'bg-stone-800'} hover:text-stone-400 px-2 py-1 rounded-md flex items-center gap-1 focus-visible:outline-2 focus-visible:outline-dph-orange"
+            : 'bg-stone-800'} cursor-pointer hover:text-white hover:font-medium px-2 py-1 rounded-md flex items-center gap-1 focus-visible:outline-2 focus-visible:outline-dph-orange"
           onclick={() => {
             page = "guides";
             sessionStorage.setItem("page", "guides");
