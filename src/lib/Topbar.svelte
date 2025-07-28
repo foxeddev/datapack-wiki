@@ -79,13 +79,13 @@
   <div class="flex items-center gap-2">
     <a
       href="https://github.com/Datapack-Hub/wiki/blob/main/src/routes{page.url.pathname}/%2Bpage.svx"
-      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto focus-visible:outline-2 focus-visible:outline-dph-orange"
+      class="p-2 rounded-lg py-1 flex items-center gap-2 hover:bg-stone-700 hover:text-white hover:font-medium aspect-square sm:aspect-auto focus-visible:outline-2 focus-visible:outline-dph-orange"
       aria-label="Edit">
       <IconEdit />
       <span class="hidden sm:block">Edit</span>
     </a>
     <button
-      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto focus-visible:outline-2 focus-visible:outline-dph-orange cursor-pointer"
+      class="p-2 rounded-lg py-1 flex items-center gap-2 hover:bg-stone-700 hover:text-white hover:font-medium aspect-square sm:aspect-auto focus-visible:outline-2 focus-visible:outline-dph-orange cursor-pointer"
       aria-label="Copy URL"
       onclick={copyUrl}>
       <IconShare />
@@ -93,7 +93,7 @@
     </button>
     <a
       href="https://discord.gg/xHTHbZqXr6"
-      class="bg-black/45 p-2 rounded-lg py-1 flex items-center gap-2 hover:text-stone-100 aspect-square sm:aspect-auto focus-visible:outline-2 focus-visible:outline-dph-orange"
+      class="p-2 rounded-lg py-1 flex items-center gap-2 hover:bg-stone-700 hover:text-white hover:font-medium aspect-square sm:aspect-auto focus-visible:outline-2 focus-visible:outline-dph-orange"
       aria-label="Discord">
       <IconDiscord />
       <span class="hidden sm:block">Discord</span>
