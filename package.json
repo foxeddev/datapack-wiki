@@ -46,6 +46,6 @@
     "shiki": "^3.8.1",
     "sk-seo": "^0.5.4",
     "tailwindcss": "^4.1.11",
-    "unplugin-icons": "^22.1.0"
+    "unplugin-icons": "^22.2.0"
   }
 }
