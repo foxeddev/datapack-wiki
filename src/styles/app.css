@@ -31,3 +31,7 @@
 mark {
   background-color: var(--color-dph-orange);
 }
+
+#content {
+  overflow: auto;
+}
