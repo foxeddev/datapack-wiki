@@ -37,9 +37,6 @@
   import IconBuilding from "~icons/tabler/building-factory-2";
   import IconCottage from "~icons/tabler/building-cottage";
   import IconTrees from "~icons/tabler/trees";
-  import IconBackhoe from "~icons/tabler/backhoe";
-  import IconMountain from "~icons/tabler/mountain";
-  import IconBuildingCastle from "~icons/tabler/building-castle";
   import SidebarPlaceholder from "../navigation/SidebarPlaceholder.svelte";
 </script>
 
@@ -88,10 +85,6 @@
   <SidebarPlaceholder label="Twilight Forest" icon={IconTrees} />
 </SidebarCategory>
 
-<SidebarCategory name="World Generation" icon={IconBackhoe}>
-  <SidebarPage label="Custom World Generation" icon={IconMountain} page="/guide/worldgen/custom-worldgen"></SidebarPage>
-  <SidebarPlaceholder label="Custom Structures" icon={IconBuildingCastle}></SidebarPlaceholder>
-</SidebarCategory>
 
 <SidebarCategory name="Misc" icon={IconBrackets}>
   <SidebarPage label="Debugging" icon={IconBug} page="/guide/misc/debugging" />

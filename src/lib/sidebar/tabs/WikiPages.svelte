@@ -20,19 +20,20 @@
   import IconGrid from "~icons/tabler/grid-3x3";
   import IconPredicate from "~icons/tabler/bleach";
   import IconChest from "~icons/tabler/brand-minecraft";
-  import IconWorldgen from "~icons/tabler/mountain";
   import IconFilters from "~icons/tabler/filters";
   import IconList from "~icons/tabler/list-details";
   import IconComponents from "~icons/tabler/brackets-contain";
   import IconTilde from "~icons/tabler/tilde";
   import IconInfo from "~icons/tabler/info-circle";
   import IconBreak from "~icons/tabler/egg-cracked";
-  import IconNumbers from "~icons/tabler/123";
   import IconResourceLocation from "~icons/tabler/abc";
   import IconScoreboard from "~icons/tabler/Table";
   import IconRange from "~icons/tabler/math-lower";
   import IconConcepts from "~icons/tabler/blocks";
   import IconDialog from "~icons/tabler/category-2";
+  import IconBackhoe from "~icons/tabler/backhoe";
+  import IconMountain from "~icons/tabler/mountain";
+  import IconBuildingCastle from "~icons/tabler/building-castle";
 </script>
 
 <!-- ADD PAGES AND CATEGORIES BELOW -->
@@ -79,4 +80,7 @@
   <SidebarPage label="Scoreboards" icon={IconScoreboard} page="/wiki/nbt-scoreboards/scoreboards" />
 </SidebarCategory>
 
-<SidebarPlaceholder label="Worldgen" icon={IconWorldgen} />
+<SidebarCategory name="World Generation" icon={IconBackhoe}>
+  <SidebarPage label="Custom World Generation" icon={IconMountain} page="/wiki/worldgen/custom-worldgen"></SidebarPage>
+  <SidebarPlaceholder label="Custom Structures" icon={IconBuildingCastle}></SidebarPlaceholder>
+</SidebarCategory>
