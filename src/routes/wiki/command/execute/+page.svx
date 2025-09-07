@@ -1,7 +1,7 @@
 ---
 title: /execute
 description: "The execute command is used to execute other commands conditionally, or in a different context. The execute command is made up of multiple subcommands, which can be chained repeatedly and in any order to modify context in various ways."
-version: 1.21.7
+version: 1.21.8
 ---
 
 # /execute command
@@ -24,8 +24,10 @@ run. The context includes:
 
 ## Forking
 
-Some commands cause a fork. That is, the following chain of subcommands get executed more than once. When a command is
-forked, it executes the fork as a whole, then proceeds to the next fork.
+Some subcommands can split the command execution into multiple branches. This
+is called forking. This means any subcommands that follow will be executed
+multiple times, once for each branch. Minecraft will finish executing all
+subcommands in the first branch before moving on to the next.
 
 For example, if there are two markers A and B, and the following command is run:
 `execute as @e[type=marker] run function example`  

@@ -37,6 +37,12 @@
   import IconBuilding from "~icons/tabler/building-factory-2";
   import IconCottage from "~icons/tabler/building-cottage";
   import IconTrees from "~icons/tabler/trees";
+  import IconBackhoe from "~icons/tabler/backhoe";
+  import IconMountain from "~icons/tabler/mountain";
+  import IconBuildingCastle from "~icons/tabler/building-castle";
+  import IconBrandSpeedtest from "~icons/tabler/brand-speedtest";
+  import IconRuler2 from "~icons/tabler/ruler-2";
+  import IconMathMaxMin from "~icons/tabler/math-max-min";
   import SidebarPlaceholder from "../navigation/SidebarPlaceholder.svelte";
 </script>
 
@@ -76,6 +82,11 @@
   <SidebarPage label="Player ID System" icon={IconID} page="/guide/nbt-and-scores/player-id-system" />
   <SidebarPage label="Floating Point Division" icon={IconDivide} page="/guide/nbt-and-scores/division" />
   <SidebarPage label="Array Iteration" icon={IconList} page="/guide/nbt-and-scores/array-iteration" />
+</SidebarCategory>
+
+<SidebarCategory name="Performance" icon={IconBrandSpeedtest}>
+  <SidebarPage label="How to Measure Performance" icon={IconRuler2} page="/guide/performance/how-to-measure" />
+  <SidebarPage label="Write Optimized Code" icon={IconMathMaxMin} page="/guide/performance/write-optimized-code" />
 </SidebarCategory>
 
 <SidebarCategory name="Datapacks for Mods" icon={IconCoffee}>

@@ -1,12 +1,12 @@
-import FlexSearch from "flexsearch"; // types are borked rn
+import { Index } from "flexsearch";
 import { stripHtml } from "string-strip-html";
 
-let index: FlexSearch.Index;
+let index: Index;
 let posts: Page[] = [];
 
 // This function creates the search index from the given pages.
 export function createSearchIndex(pages: Page[]) {
-  index = new FlexSearch.Index({ tokenize: "forward" });
+  index = new Index({ tokenize: "forward" });
 
   for (let i = 0; i < pages.length; i++) {
     const page = pages[i];
