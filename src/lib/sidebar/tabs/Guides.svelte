@@ -96,10 +96,6 @@
   <SidebarPlaceholder label="Twilight Forest" icon={IconTrees} />
 </SidebarCategory>
 
-<SidebarCategory name="World Generation" icon={IconBackhoe}>
-  <SidebarPage label="Custom World Generation" icon={IconMountain} page="/guide/worldgen/custom-worldgen"></SidebarPage>
-  <SidebarPlaceholder label="Custom Structures" icon={IconBuildingCastle}></SidebarPlaceholder>
-</SidebarCategory>
 
 <SidebarCategory name="Misc" icon={IconBrackets}>
   <SidebarPage label="Debugging" icon={IconBug} page="/guide/misc/debugging" />
