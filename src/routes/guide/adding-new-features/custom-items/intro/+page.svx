@@ -1,5 +1,5 @@
 ---
-title: Recipes for your Custom Items
+title: Creating Custom Items
 description: "Learn how to make custom items with Minecraft Java datapacks"
 tags: beginner, guide, custom_items, item_components
 version: 1.21.8

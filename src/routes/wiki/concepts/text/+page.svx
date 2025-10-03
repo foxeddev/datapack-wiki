@@ -147,6 +147,7 @@ run the command `/say Hello`:
   should be a string value.
 
 ## Text component generators
+Writing text components manually is tedious - there are numerous generators which can be used to quickly create text components. We recommend [our Minecraft Text Generator](https://text.datapackhub.net) which has an easy UI, cool features like gradient creators, and is updated for modern versions.
 
 Writing text components manually is tedious - there are numerous generators
 which can be used to quickly create text components. We reccomend

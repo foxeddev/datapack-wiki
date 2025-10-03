@@ -40,6 +40,10 @@
   import IconBackhoe from "~icons/tabler/backhoe";
   import IconMountain from "~icons/tabler/mountain";
   import IconBuildingCastle from "~icons/tabler/building-castle";
+  import IconBrandSpeedtest from "~icons/tabler/brand-speedtest";
+  import IconRuler2 from "~icons/tabler/ruler-2";
+  import IconMathMaxMin from "~icons/tabler/math-max-min";
+  import IconCat from "~icons/tabler/cat";
   import SidebarPlaceholder from "../navigation/SidebarPlaceholder.svelte";
 </script>
 
@@ -58,6 +62,7 @@
   <SidebarPage label="Jukebox Songs" icon={IconMusic} page="/guide/adding-new-features/jukebox-songs" />
   <SidebarPage label="Painting Variants" icon={IconPainting} page="/guide/adding-new-features/painting-variants" />
   <SidebarPage label="Smithing Trims" icon={IconDiamond} page="/guide/adding-new-features/smithing-trims" />
+  <SidebarPage label="Mob Variants" icon={IconCat} page="/guide/adding-new-features/mob-variants" />
 
   <SidebarHeading label="Custom Items" />
   <SidebarPage label="Introduction" icon={IconItem} page="/guide/adding-new-features/custom-items/intro" />
@@ -81,6 +86,11 @@
   <SidebarPage label="Array Iteration" icon={IconList} page="/guide/nbt-and-scores/array-iteration" />
 </SidebarCategory>
 
+<SidebarCategory name="Performance" icon={IconBrandSpeedtest}>
+  <SidebarPage label="How to Measure Performance" icon={IconRuler2} page="/guide/performance/how-to-measure" />
+  <SidebarPage label="Write Optimized Code" icon={IconMathMaxMin} page="/guide/performance/write-optimized-code" />
+</SidebarCategory>
+
 <SidebarCategory name="Datapacks for Mods" icon={IconCoffee}>
   <SidebarPage label="Mods vs Datapacks" icon={IconVersus} page="/guide/datapacks-for-mods/mods-vs-datapacks" />
   <SidebarPlaceholder label="Create" icon={IconBuilding} />
@@ -88,10 +98,6 @@
   <SidebarPlaceholder label="Twilight Forest" icon={IconTrees} />
 </SidebarCategory>
 
-<SidebarCategory name="World Generation" icon={IconBackhoe}>
-  <SidebarPage label="Custom World Generation" icon={IconMountain} page="/guide/worldgen/custom-worldgen"></SidebarPage>
-  <SidebarPlaceholder label="Custom Structures" icon={IconBuildingCastle}></SidebarPlaceholder>
-</SidebarCategory>
 
 <SidebarCategory name="Misc" icon={IconBrackets}>
   <SidebarPage label="Debugging" icon={IconBug} page="/guide/misc/debugging" />

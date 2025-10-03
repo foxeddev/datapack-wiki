@@ -6,11 +6,7 @@ description:
 ---
 
 # JSON Format
-
-JSON is a data storage type used by Minecraft Datapacks for files such as
-[predicates](/wiki/files/predicates) and [tags](/wiki/files/tags), as well as in
-[JSON Text](/wiki/concepts/text). JSON is a way of storing data, usually used in
-`.json` files but is also seen in `.mcmeta` files too.
+JSON is a data storage type used by Minecraft Datapacks for files such as [predicates](/wiki/files/predicates) and [tags](/wiki/files/tags), as well as in [Styled Text](/wiki/concepts/json-text). JSON is a way of storing data, usually used in `.json` files but is also seen in `.mcmeta` files too.
 
 ## How JSON works
 
