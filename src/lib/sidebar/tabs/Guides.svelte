@@ -37,9 +37,7 @@
   import IconBuilding from "~icons/tabler/building-factory-2";
   import IconCottage from "~icons/tabler/building-cottage";
   import IconTrees from "~icons/tabler/trees";
-  import IconBackhoe from "~icons/tabler/backhoe";
-  import IconMountain from "~icons/tabler/mountain";
-  import IconBuildingCastle from "~icons/tabler/building-castle";
+  import IconPhotoPlus from "~icons/tabler/photo-plus";
   import IconBrandSpeedtest from "~icons/tabler/brand-speedtest";
   import IconRuler2 from "~icons/tabler/ruler-2";
   import IconMathMaxMin from "~icons/tabler/math-max-min";
@@ -67,6 +65,10 @@
   <SidebarHeading label="Custom Items" />
   <SidebarPage label="Introduction" icon={IconItem} page="/guide/adding-new-features/custom-items/intro" />
   <SidebarPage label="Custom Item Recipes" icon={IconGrid} page="/guide/adding-new-features/custom-items/crafting" />
+  <SidebarPage
+    label="Custom Item Models and Textures"
+    icon={IconPhotoPlus}
+    page="/guide/adding-new-features/custom-items/models" />
 </SidebarCategory>
 
 <SidebarCategory name="Right Click Detection" icon={IconMouse}>
@@ -97,7 +99,6 @@
   <SidebarPlaceholder label="Farmer's Delight" icon={IconCottage} />
   <SidebarPlaceholder label="Twilight Forest" icon={IconTrees} />
 </SidebarCategory>
-
 
 <SidebarCategory name="Misc" icon={IconBrackets}>
   <SidebarPage label="Debugging" icon={IconBug} page="/guide/misc/debugging" />
