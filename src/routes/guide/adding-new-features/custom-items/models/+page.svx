@@ -10,9 +10,7 @@ This guide uses the `item_model` item component to change the model and texture 
 
 :::warning
 
-Before Minecraft version 1.21., `CustomModelData` was used to change the look of items. It was replaced with item models
-in Minecraft version 1.21.4, so it won't work in later versions. Item Models use a **completely different method**
-compared to Custom Model Data.
+Before Minecraft version 1.21.4, Custom Model Data was used to change the look of items. Item Models use a completely different approach on changing an item's appearance and are better in most cases.
 
 :::
 
@@ -74,8 +72,6 @@ When you have your model and texture file, you will have to place your model in 
 `assets/namespace/models/item/your_model.json` folder and your texture in
 `assets/namespace/textures/item/your_item.json`. You can use any name, but it makes sense to keep it lowercase and with
 underscores (**\_**) instead of spaces.
-
-- Textures
 
 Your model file will now probably look like this:
 
