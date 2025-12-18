@@ -3,7 +3,7 @@ title: Using an Eye of Ender for RC detection
 description:
   "An intresting right click detection method for sure, due to the fact that it
   can only be used in worlds without strongholds!"
-version: 1.21.8
+version: 1.21.11
 ---
 
 # Eye of Ender Right Click Detection
@@ -12,7 +12,7 @@ version: 1.21.8
 
 This only works in world without strongholds, if you don't want that, you can
 either use a similiar method that works everywhere (using the Food Component
-method) or do some chnages to these functions, as specified at the end of this
+method) or do some changes to these functions, as specified at the end of this
 guide.
 
 :::
