@@ -89,7 +89,7 @@
 </SidebarCategory>
 
 <SidebarCategory name="Performance" icon={IconBrandSpeedtest}>
-  <SidebarPage label="How to Measure Performance" icon={IconRuler2} page="/guide/performance/how-to-measure" />
+  <SidebarPage label="Measure Performance" icon={IconRuler2} page="/guide/performance/how-to-measure" />
   <SidebarPage label="Write Optimized Code" icon={IconMathMaxMin} page="/guide/performance/write-optimized-code" />
 </SidebarCategory>
 
