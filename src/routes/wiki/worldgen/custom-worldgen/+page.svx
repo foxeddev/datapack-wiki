@@ -3,7 +3,7 @@ title: Custom World Generation
 description:
   This guide goes over how to create every step of a custom dimension, which
   includes custom biomes, terrain, and features.
-version: 1.21.8
+version: 1.21.11
 ---
 
 # Custom World Generation
@@ -20,7 +20,7 @@ of these things, you can generally skip to those respective sections.
 - Generating terrain
 - Creating biomes
 - Arranging biomes
-- Creating features (ores, trees, etc.)
+- Creating features (Ores, trees, etc.)
 - Many sub-tasks related to the above
 
 At the same time, this documentation will express some of the major limitations
@@ -45,7 +45,7 @@ irrespective of difficulty.
   - Light level
   - Daylight cycle (on/off)
   - etc.
-- Custom Biomes (Surface and Cave)
+- Custom Biomes (Surface and Cave), with:
   - Natural features (Trees, ores, flowers, etc.)
   - Custom colors and ambient particles
 - Custom Biome layout (including of vanilla biomes)
@@ -59,7 +59,7 @@ Structures, which you can find
 
 To begin creating a Custom Dimension, there are a few folders you should create
 in a data pack. If you’re unfamiliar with the general structure of a data pack,
-you should check out our [Data Pack Starter Guide](/guide/getting-started).
+you should check out guide on [how to make a datapack](/guide/getting-started).
 
 In your namespace folder, you will create the following folders, organized as
 such:
@@ -102,7 +102,7 @@ configured_features, but be on the lookout for this behavior elsewhere.
 
 ## Dimension Type
 
-**Folders:** `dimension_type`
+**Folder:** `dimension_type`
 
 When creating a new dimension, or modifying an existing one, it’s recommended to
 start with the Dimension Type. The Dimension Type is what defines the very broad
@@ -111,16 +111,13 @@ Nether (Ultrawarm), whether Beds and/or Respawn Anchors work or explode, and
 what light level Hostile Mobs need to spawn. Most of these fields are self
 explanatory, and most of them are required.
 
-`dimension_type/overworld.json`
-
-```json
+```json:dimension_type/overworld.json
 {
   "ambient_light": 0.0,
-  "bed_works": true,
+  "attributes": {...},
   "coordinate_scale": 1.0,
-  "effects": "minecraft:overworld",
+  "default_clock": "minecraft:overworld",
   "has_ceiling": false,
-  "has_raids": true,
   "has_skylight": true,
   "height": 384,
   "infiniburn": "#minecraft:infiniburn_overworld",
@@ -132,28 +129,26 @@ explanatory, and most of them are required.
     "max_inclusive": 7,
     "min_inclusive": 0
   },
-  "natural": true,
-  "piglin_safe": false,
-  "respawn_anchor_works": false,
-  "ultrawarm": false
+  "timelines": "#minecraft:in_overworld"
 }
 ```
 
-To create this, simply add a .json file to the dimension_type folder, and set
-the name to that of the dimension you are creating/modifying. Like all file
+[[View on mcmeta]](https://github.com/misode/mcmeta/blob/data/data/minecraft/dimension_type/overworld.json)
+
+To create this, simply add a `.json` file to the `dimension_type` folder, and
+set the name to that of the dimension you are creating/modifying. Like all file
 names, it must have no capital letters, and no special characters except
 underscores. Then generate the list of fields with
 [Misode](https://misode.github.io/dimension-type/).
 
-Note that some fields, like “has ceiling”, don’t do what you would expect – this
+Note that some fields, like `has_ceiling`, don’t do what you would expect – this
 field doesn’t actually give the dimension a physical ceiling, that’s handled in
-the terrain. Similarly, “Effects” pretty much just changes the skybox and
-determines whether the time affects the light level.
+the terrain.
 
 ## Noise Settings
 
-**Folders:** `noise_settings`  
-**Optional Folders:** `density_function`, `noise`
+**Folder:** `noise_settings` <br> **Optional Folders:** `density_function`,
+`noise`
 
 The Noise Settings are one of the largest files you will create. This single
 file per dimension controls all of the following:
@@ -182,52 +177,52 @@ below the same point (about Y=-50).
 ### Noise Router (Terrain)
 
 The Noise Router is responsible for most factors relating to the terrain, which
-is to say, whether a given block is air/fluid or the default_block, before
-surface_rules or biome features are added. In addition, the Noise Router
+is to say, whether a given block is air/fluid or the `default_block`, before
+Surface Rules or Biome Features are added. In addition, the Noise Router
 includes several fields that don’t directly influence the terrain, but may
 approximate it for use in making biome distribution conform to the terrain.
 
 The Noise Router contains several fields. All of these fields are density
-functions, which can be defined in-line or referenced from the density_function
-folder. These are essentially formulas of variable length and complexity, that
-use a variety of functions to determine a value between 0 and 1 for every
-coordinate. For density functions that affect terrain, this determines whether
-the block is air/fluid (respecting sea level), or the default_block,
+functions, which can be defined in-line or referenced from the
+`density_function` folder. These are essentially formulas of variable length and
+complexity, that use a variety of functions to determine a value between 0 and 1
+for every coordinate. For density functions that affect terrain, this determines
+whether the block is air/fluid (respecting sea level), or the `default_block`,
 respectively.
 
 Let’s look at what each of these density functions are responsible for.
 
-#### barrier, fluid_level_floodedness, fluid_level_spread
+#### `barrier`, `fluid_level_floodedness`, `fluid_level_spread`
 
 These all relate to some facet of Aquifer generation, if they are enabled.
 
-#### lava
+#### `lava`
 
-Used to determine whether an aquifer is lava or not. Does not affect the lava
+Used to determine whether an aquifer is Lava or not. Does not affect the Lava
 that floods the bottom of the world.
 
-#### vein_toggle, vein_ridged, vein_gap
+#### `vein_toggle`, `vein_ridged`, `vein_gap`
 
 Used to control the shape, density, and rarity of both Iron and Copper Large Ore
 Veins. Cannot change what these blocks are made of, but whether the vein is
-Copper or Iron is based on the vein_toggle noise range.
+Copper or Iron is based on the `vein_toggle` noise range.
 
-#### temperature, vegetation
+#### `temperature`, `vegetation`
 
-Correspond to the “temperature,” and “humidity,” parameters in the dimension’s
+Correspond to the `temperature` and `humidity` parameters in the dimension’s
 biome source, respectively. Ostensibly create the noise maps that biomes are
 placed relative to. These density functions don’t affect terrain at all.
 
-#### continents, erosion, depth, ridges
+#### `continents`, `erosion`, `depth`, `ridges`
 
-Correspond to the “continentalness,” “erosion,” “depth”, and "weirdness"
-parameters in the dimension’s biome source, respectively. Like the temperature
-and vegetation density functions, whatever is put in these fields will not
+Correspond to the `continentalness`, `erosion`, `depth`, and `weirdness`
+parameters in the dimension’s biome source, respectively. Like the `temperature`
+and `vegetation` density functions, whatever is put in these fields will not
 directly affect terrain, and ostensibly just create noise maps for the biome
-source to use. However, in the vanilla overworld, these fields are used to
+source to use. However, in the Vanilla Overworld, these fields are used to
 reference separate density function files that also get referenced elsewhere, to
-inform the terrain. This means that unlike the temperate and vegetation density
-functions, these correspond to certain parts of the terrain.
+inform the terrain. This means that unlike the `temperature` and `vegetation`
+density functions, these correspond to certain parts of the terrain.
 
 For example, high erosion parameter values match up with where the terrain is
 more flat, because of how it gets referenced by other density functions that
@@ -235,39 +230,37 @@ impact terrain.
 
 :::tip
 
-Temperature and vegetation are also all capable of behaving more like
-continents, erosion, and depth, but it’s generally not necessary to have so many
-parameters that conform to terrain, and can in fact make biome distribution
-harder and more time consuming.
+`temperature` and `vegetation` are also all capable of behaving more like
+`continents`, `erosion`, and `depth`, but it’s generally not necessary to have
+so many parameters that conform to terrain, and can in fact make biome
+distribution harder and more time consuming.
 
 :::
 
-#### initial_density_without_jaggedness
+#### `initial_density_without_jaggedness`
 
-Used for aquifers and surface_rules, in order to more accurately determine where
-the surface of the world is so that neither can generate above that surface.
-Typically, will be similar to the final_density, but with the surface slightly
-lowered, and with noise caves unaccounted for. Similar to the above few
+Used for `aquifers` and `surface_rules`, in order to more accurately determine
+where the surface of the world is so that neither can generate above that
+surface. Typically, will be similar to the `final_density`, but with the surface
+slightly lowered, and with noise caves unaccounted for. Similar to the above few
 functions, it does not affect terrain at all.
 
-#### final_density
+#### `final_density`
 
 This is the density function that actually creates the bulk of the terrain. As
-such, it’s often the largest and most complex part of the noise_settings file,
-barring surface_rules. It controls not only the surface, including hills,
-mountains, valleys, and oceans, but also the large noise caves and noodle caves
+such, it’s often the largest and most complex part of the `noise_settings` file,
+barring `surface_rules`. It controls not only the surface, including hills,
+mountains, valleys, and oceans, but also the Large Noise caves and Noodle caves
 introduced in the Caves and Cliffs update. And, as alluded to above, you still
-need at least the continents and erosion density functions to align with the
+need at least the `continents` and `erosion` density functions to align with the
 general shape of this density function if you plan to have ocean biomes generate
 only where the terrain dips below sea level, or mountain biomes generate only
 where the terrain spikes up to look like mountains.
 
-In the
-[vanilla Overworld](https://github.com/misode/mcmeta/blob/data/data/minecraft/worldgen/noise_settings/overworld.json),
-the final_density is split into two distinct parts: The part that handles the
-shape of the surface, including mountains, hills, rivers, and oceans; and the
-part that handles the large noise caves underground. These are separated by an
-in-line range_choice density function.
+In the Vanilla Overworld, the `final_density` is split into two distinct parts:
+The part that handles the shape of the surface, including mountains, hills,
+rivers, and oceans; and the part that handles the large noise caves underground.
+These are separated by an in-line `range_choice` density function.
 
 Density functions are very complex, and being very math-heavy, difficult to dive
 into and learn about; an in-depth understanding of them and how to apply them is
@@ -282,54 +275,55 @@ Density affects the terrain, and provides some basic steps to manipulate it, and
 of course
 [Misode’s generator](https://misode.github.io/worldgen/noise-settings/) to help
 visualize individual density functions or chains of them. However, as a brief
-introduction, this guide will attempt to describe, roughly, how the vanilla
-overworld's final_density applies important density functions to shape the
+introduction, this guide will attempt to describe, roughly, how the Vanilla
+Overworld's `final_density` applies important density functions to shape the
 world's surface.
 
-#### sloped_cheese
+#### `sloped_cheese`
 
-Used as the input in the aforementioned range_choice density function to
+Used as the input in the aforementioned `range_choice` density function to
 distinguish between the surface and underground (for noise caves), as well as
 the main density function that gets applied to the surface. It multiplies the
-depth and the jaggedness density functions with the factor density function,
-combining the various shapes they create into one coherent surface shape.
+`depth` and the `jaggedness` density functions with the `factor` density
+function, combining the various shapes they create into one coherent surface
+shape.
 
-#### factor
+#### `factor`
 
-Contains a complex spline that functionally combines the continents, erosion,
-and ridges_folded density functions. These three on their own are ostensibly
-noise maps like temperature and vegetation, but this spline translates them into
-terrain. Continents is used to create a transition between high and low terrain,
-with erosion added to flatten the terrain, and ridges_folded (which just
-references ridges with some multipliers) to carve rivers or raise peaks on
-mountains.
+Contains a complex spline that functionally combines the `continents`,
+`erosion`, and `ridges_folded` density functions. These three on their own are
+ostensibly noise maps like `temperature` and `vegetation`, but this spline
+translates them into terrain. Continents is used to create a transition between
+high and low terrain, with erosion added to flatten the terrain, and
+`ridges_folded` (which just references `ridges` with some multipliers) to carve
+rivers or raise peaks on mountains.
 
-#### depth
+#### `depth`
 
 Creates a gradient from the surface of the world down, where the surface and
 everything above it is assigned a value of 0, and ascends towards 1 as the world
 height decreases. It gets the coordinates of the surface by referencing the
-offset density function.
+`offset` density function.
 
-#### offset
+#### `offset`
 
-Similar to factor, and uses the continents, erosion, and ridges_folded density
-functions in a similar way to create a shape similar to the terrain's surface,
-but slightly offset so that the depth density function doesn't start the
-gradient until a little below the surface (generally).
+Similar to `factor`, and uses the `continents`, `erosion`, and `ridges_folded`
+density functions in a similar way to create a shape similar to the terrain's
+surface, but slightly offset so that the `depth` density function doesn't start
+the gradient until a little below the surface (generally).
 
-#### jaggedness
+#### `jaggedness`
 
-Similar to factor, and uses the continents, erosion, and ridges_folded density
-functions in a similar way to create a more jagged version of the surface shape.
-This gets diluted some due to being combined with both offset and factor higher
-up the chain, but results in some hills populating flatter areas, which also
-helps to break up otherwise smooth or flat mountains so they look more natural
-and rolling.
+Similar to `factor`, and uses the `continents`, `erosion`, and `ridges_folded`
+density functions in a similar way to create a more jagged version of the
+surface shape. This gets diluted some due to being combined with both `offset`
+and `factor` higher up the chain, but results in some hills populating flatter
+areas, which also helps to break up otherwise smooth or flat mountains so they
+look more natural and rolling.
 
 ### Surface Rules
 
-Surface Rules are what add the surface layers to terrain. This is
+Surface Rules are what add the Surface Layers to terrain. This is
 highly-configurable, but at its most basic level, it’s what decides that the
 ground in Forests is made up of Grass Blocks and Dirt, and that Deserts have
 Sand and Sandstone. Surface Rules can also allow for different blocks to make up
@@ -355,31 +349,42 @@ in your Noise Settings:
 Inside the sequence brackets, you can add yet more objects. There are four
 different types:
 
-- **Sequence:** Allows you to add a new nested list. Generally, it’s good
-  practice to nest sequences inside of a condition that will apply to multiple
-  child conditions or blocks.
-- **Block:** Defines the block that gets placed. Usually used at the end of a
-  series of conditions.
-- **Bandlands:** Not a typo. Just places the hardcoded Badlands terracotta
-  pattern, and doesn’t have any additional fields.
-- **Condition:** This is the most prominent part of Surface Rules. There are
-  multiple kinds of conditions, including biome, Y level, steep, and more.
-  Regardless of the condition you select, it will always have the additional
-  field “then run”, which just accepts another object type from the above list.
+#### `sequence`
+
+Allows you to add a new nested list. Generally, it’s good practice to nest
+sequences inside of a condition that will apply to multiple child conditions or
+blocks.
+
+#### `block`
+
+Defines the block that gets placed. Usually used at the end of a series of
+conditions.
+
+#### `bandlands`
+
+Not a typo. Just places the hardcoded Badlands terracotta pattern, and doesn’t
+have any additional fields.
+
+#### `condition`
+
+This is the most prominent part of Surface Rules. There are multiple kinds of
+conditions, including Biome, Y-Level, Steep, and more. Regardless of the
+condition you select, it will always have the additional field `then_run`, which
+just accepts another object type from the above list.
 
 You may find yourself using combinations of conditions, with or without
 sequences, to get a satisfying surface. This guide won't go over every surface
 rule condition, but here are some common ones and how they are often used.
 
-#### above_preliminary_surface
+##### `above_preliminary_surface`
 
-Uses the initial_density_without_jaggedness density function to determine where
-the surface of the world is. Not using this would just mean that the surface
-rule would apply in noise caves as well. If you’re not using an
-initial_density_without_jaggedness density function, there’s no other real harm
-in choosing not to use this condition.
+Uses the `initial_density_without_jaggedness` density function to determine
+where the surface of the world is. Not using this would just mean that the
+surface rule would apply in noise caves as well. If you’re not using an
+`initial_density_without_jaggedness` density function, there’s no other real
+harm in choosing not to use this condition.
 
-#### stone_depth
+##### `stone_depth`
 
 This condition finds the blocks that are actually on the surface via heightmap,
 ignoring water, and works even if there was no preliminary surface condition
@@ -389,42 +394,42 @@ likely to cause chunk generation lag. It’s best to use it minimally, as high u
 in the Surface Rule as you can. Oftentimes, you will need at least two of these:
 One for the top surface, and one for the secondary surface.
 
-#### water
+##### `water`
 
 Can be used to have its child conditions apply based on the fluid level at that
-location, including not being in fluid. The vanilla Overworld surface rule uses
+location, including not being in fluid. The Vanilla Overworld Surface Rule uses
 this a lot, and it’s a great way to alleviate the impact of an earlier
-stone_depth condition.
+`stone_depth` condition.
 
-#### biome
+##### `biome`
 
-Specifies which biome(s) to apply the rest of the rule to.
+Specifies which Biome(s) to apply the rest of the rule to.
 
-#### y_above
+##### `y_above`
 
 Causes the rest of the rule to only apply to blocks above the specified Y value.
 You can add an optional multiplier for this value, or choose to add the
-stone_depth from previous conditions to this calculation.
+`stone_depth` from previous conditions to this calculation.
 
-It’s best to look at how the Overworld’s surface rule uses combinations of
+It’s best to look at how the Overworld’s Surface Rule uses combinations of
 conditions to produce a surface of, for example, Grass Blocks with 2-4 layers of
-Dirt underneath. The vanilla Overworld Surface Rule is not as extreme as the
+Dirt underneath. The Vanilla Overworld Surface Rule is not as extreme as the
 vanilla Overworld Dimension file (up next), but it is a little more lengthy and
 sophisticated than can reasonably be pasted here.
 [Misode’s generator](https://misode.github.io/worldgen/noise-settings/) has a
-feature to view the vanilla Overworld Noise Settings as a preset, which includes
+feature to view the Vanilla Overworld Noise Settings as a preset, which includes
 the Surface Rule; this may be useful to get a more user-friendly view of how the
 conditions fit together.
 
 ## Dimension
 
-**Folders:** `dimension`
+**Folder:** `dimension`
 
 The Dimension file is where you reference both the Dimension Type and Noise
 Settings you would like this dimension to use by their namespaced ID. The name
 of this file is also what will become the namespaced ID of this dimension for
-commands such as `/execute` in, regardless of the names of the noise_settings or
-dimension_type files referenced. Lastly, this is where you will list all of the
+commands such as `/execute` in, regardless of the names of the `noise_settings` or
+`dimension_type` files referenced. Lastly, this is where you will list all of the
 biomes you want to appear in the world, using parameters to define which biomes
 can appear where on several noise maps.
 
